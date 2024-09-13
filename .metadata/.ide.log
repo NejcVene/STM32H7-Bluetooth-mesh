@@ -2109,3 +2109,22 @@ java.lang.NullPointerException: Cannot invoke "javax.swing.JTextField.getText()"
 2024-09-13 16:40:49,706 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1502mS.
 2024-09-13 16:40:49,717 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 11mS.
 2024-09-13 16:40:49,769 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-09-13 19:04:02,381 [INFO] WebApp:354 - JxBrowser engine has been closed 
+2024-09-13 19:04:06,800 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2024-09-13 19:04:06,802 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2024-09-13 19:04:06,802 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2024-09-13 19:04:06,803 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2024-09-13 19:04:06,803 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2024-09-13 19:04:06,803 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2024-09-13 22:32:32,487 [INFO] Activator:176 - 
+
+
+2024-09-13 22:32:32,489 [INFO] Activator:177 - !SESSION log4j initialized
+2024-09-13 22:32:37,558 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2024-09-13 22:32:45,502 [INFO] ApplicationProperties:184 - Using Application install path: F:\Nejc\Programi\STM32CubeIDE_1.10.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.1.202404110753
+2024-09-13 22:32:45,518 [INFO] DbMcusXml:78 - Set database path to: F:\Nejc\Programi\STM32CubeIDE_1.10.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.1.202404110753\\db\/mcu/
+2024-09-13 22:32:45,518 [INFO] ApiDb:274 - Set plugin database path to: F:\Nejc\Programi\STM32CubeIDE_1.10.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.1.202404110753\\db\/plugins/boardmanager/
+2024-09-13 22:32:45,518 [WARN] ApiDb:259 - Overriding images path with different value:  => F:\Nejc\Programi\STM32CubeIDE_1.10.1\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.11.1.202404110753\\db\/plugins/mcufinder/images/
+2024-09-13 22:32:45,527 [INFO] ApiDb:250 - Set database path to: C:\Users\Nejc\.stmcufinder\plugins\mcufinder//mcu/
+2024-09-13 22:32:45,528 [INFO] DbMcusAds:125 - Set database path to: C:\Users\Nejc\.stmcufinder\plugins\mcufinder//mcu/
+2024-09-13 22:32:45,530 [INFO] CrossReferenceDbSqlite:203 - Set database path to: C:\Users\Nejc\.stmcufinder\plugins\mcufinder//mcu/cs/

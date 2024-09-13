@@ -17,11 +17,16 @@ public:
 
     virtual void changeToStartScreen()
     {
-        gotoScreen1ScreenNoTransition();
+        gotoHomeScreenScreenNoTransition();
     }
 
     // Screen1
-    void gotoScreen1ScreenNoTransition();
+    void gotoScreen1ScreenWipeTransitionEast();
+
+    // HomeScreen
+    void gotoHomeScreenScreenNoTransition();
+
+    void gotoHomeScreenScreenWipeTransitionEast();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -29,7 +34,12 @@ protected:
     Model& model;
 
     // Screen1
-    void gotoScreen1ScreenNoTransitionImpl();
+    void gotoScreen1ScreenWipeTransitionEastImpl();
+
+    // HomeScreen
+    void gotoHomeScreenScreenNoTransitionImpl();
+
+    void gotoHomeScreenScreenWipeTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

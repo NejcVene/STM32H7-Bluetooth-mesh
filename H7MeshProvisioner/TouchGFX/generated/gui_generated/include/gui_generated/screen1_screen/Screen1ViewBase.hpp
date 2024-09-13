@@ -42,6 +42,7 @@ protected:
     touchgfx::Image image1;
     touchgfx::ButtonWithLabel onBtn;
     touchgfx::ButtonWithLabel offBtn;
+    touchgfx::ButtonWithLabel buttonWithLabel1;
 
 private:
 

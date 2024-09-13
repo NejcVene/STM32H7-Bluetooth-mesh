@@ -1,0 +1,20 @@
+#include <gui/homescreen_screen/HomeScreenView.hpp>
+
+HomeScreenView::HomeScreenView()
+{
+
+}
+
+void HomeScreenView::setupScreen()
+{
+    HomeScreenViewBase::setupScreen();
+    // mainDigitalClock
+    digitalHours = mainDigitalClock.getCurrentHour();
+    digitalMinutes = mainDigitalClock.getCurrentMinute();
+    digitalSeconds = mainDigitalClock.getCurrentSecond();
+}
+
+void HomeScreenView::tearDownScreen()
+{
+    HomeScreenViewBase::tearDownScreen();
+}

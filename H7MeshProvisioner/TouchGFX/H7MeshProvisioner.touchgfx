@@ -9,7 +9,7 @@
             "Name": "image1",
             "Width": 480,
             "Height": 272,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x272_waves.png"
+            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x272_meteor_rain.png"
           },
           {
             "Type": "ButtonWithLabel",
@@ -56,6 +56,29 @@
             },
             "TextRotation": "0",
             "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "X": 120,
+            "Y": 202,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "TextId": "__SingleUse_BATJ",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
           }
         ],
         "Interactions": [
@@ -80,6 +103,247 @@
               "Type": "ActionCustom",
               "FunctionName": "GUI_OffBtn"
             }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "HomeScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "HomeScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_meteor_rain.png"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "deviceBtn",
+            "X": 240,
+            "Y": 14,
+            "Width": 100,
+            "Height": 100,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 76,
+                "TextId": "__SingleUse_7Z3U",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "IconButtonStyle",
+                "X": 25,
+                "Y": 25,
+                "IconReleased": "__generated\\icon_theme_images_hardware_device_hub_50_50_E8F6FB.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_hardware_device_hub_50_50_E8F6FB.svg.png"
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\small_fill_active.json",
+                "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_active.png",
+                "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_pressed.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "undefinedBtn",
+            "X": 365,
+            "Y": 147,
+            "Width": 100,
+            "Height": 100,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 76,
+                "TextId": "__SingleUse_XGDV",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "IconButtonStyle",
+                "X": 25,
+                "Y": 25,
+                "IconReleased": "__generated\\icon_theme_images_maps_multiple_stop_50_50_E8F6FB.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_maps_multiple_stop_50_50_E8F6FB.svg.png"
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\small_fill_disabled.json",
+                "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_disabled.png",
+                "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_disabled.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "settingsBtn",
+            "X": 240,
+            "Y": 147,
+            "Width": 100,
+            "Height": 100,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 76,
+                "TextId": "__SingleUse_RE6P",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "IconButtonStyle",
+                "X": 25,
+                "Y": 25,
+                "IconReleased": "__generated\\icon_theme_images_action_settings_50_50_E8F6FB.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_settings_50_50_E8F6FB.svg.png"
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\small_fill_normal.json",
+                "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_normal.png",
+                "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_pressed.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "addDeviceBtn",
+            "X": 365,
+            "Y": 14,
+            "Width": 100,
+            "Height": 100,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 76,
+                "TextId": "__SingleUse_RUCY",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "IconButtonStyle",
+                "X": 28,
+                "Y": 25,
+                "IconReleased": "__generated\\icon_theme_images_device_bluetooth_searching_50_50_E8F6FB.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_device_bluetooth_searching_50_50_E8F6FB.svg.png"
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\small_fill_action.json",
+                "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_action.png",
+                "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_pressed.png"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "container1",
+            "X": 10,
+            "Y": 14,
+            "Width": 209,
+            "Height": 233,
+            "Components": [
+              {
+                "Type": "TiledImage",
+                "Name": "tiledImage2",
+                "Y": 2,
+                "Width": 209,
+                "Height": 231,
+                "FileName": "__generated\\alternate_theme_images_dividers_vertical_small_thick_light.png"
+              },
+              {
+                "Type": "DigitalClock",
+                "Name": "mainDigitalClock",
+                "Y": 25,
+                "Width": 209,
+                "Height": 51,
+                "TextColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextId": "__SingleUse_PGKI",
+                "DisplaySeconds": true,
+                "DisplayLeadingZeroForHourIndicator": true
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "deviceBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen1"
+            }
           }
         ]
       }
@@ -91,7 +355,7 @@
       "Height": 272
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Screen1",
+    "StartupScreenName": "HomeScreen",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

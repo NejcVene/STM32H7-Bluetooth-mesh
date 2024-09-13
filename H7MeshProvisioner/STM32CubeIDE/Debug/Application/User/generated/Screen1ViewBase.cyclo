@@ -51,13 +51,14 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:132:10:void touchgfx::ButtonWithLabel::updateTextPosition()	2
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:24:18:virtual void Screen1ViewBase::GUI_OnBtn()	1
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:28:18:virtual void Screen1ViewBase::GUI_OffBtn()	1
+../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:34:26:FrontendApplication& Screen1ViewBase::application()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<Screen1Presenter>::~View()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<Screen1Presenter>::~View()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:9:1:Screen1ViewBase::Screen1ViewBase()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:37:1:Screen1ViewBase::~Screen1ViewBase()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:37:1:virtual Screen1ViewBase::~Screen1ViewBase()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:42:6:virtual void Screen1ViewBase::setupScreen()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:47:6:void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	3
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:45:1:Screen1ViewBase::~Screen1ViewBase()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:45:1:virtual Screen1ViewBase::~Screen1ViewBase()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:50:6:virtual void Screen1ViewBase::setupScreen()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp:55:6:void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	4
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:39:5:touchgfx::View<T>::View() [with T = Screen1Presenter]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:134:7:constexpr touchgfx::GenericCallback<const touchgfx::AbstractButton&>::GenericCallback()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:373:5:touchgfx::Callback<dest_type, T1, void, void>::Callback(dest_type*, void (dest_type::*)(T1)) [with dest_type = Screen1ViewBase; T1 = const touchgfx::AbstractButton&]	1

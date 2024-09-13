@@ -14,7 +14,7 @@ Screen1ViewBase::Screen1ViewBase() :
     add(__background);
 
     image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_WAVES_ID));
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_METEOR_RAIN_ID));
     add(image1);
 
     onBtn.setXY(120, 65);
@@ -32,6 +32,14 @@ Screen1ViewBase::Screen1ViewBase() :
     offBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     offBtn.setAction(buttonCallback);
     add(offBtn);
+
+    buttonWithLabel1.setXY(120, 202);
+    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
+    buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_BATJ));
+    buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel1.setAction(buttonCallback);
+    add(buttonWithLabel1);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -59,5 +67,12 @@ void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When offBtn clicked call virtual function
         //Call GUI_OffBtn
         GUI_OffBtn();
+    }
+    if (&src == &buttonWithLabel1)
+    {
+        //Interaction1
+        //When buttonWithLabel1 clicked change screen to HomeScreen
+        //Go to HomeScreen with screen transition towards East
+        application().gotoHomeScreenScreenWipeTransitionEast();
     }
 }
