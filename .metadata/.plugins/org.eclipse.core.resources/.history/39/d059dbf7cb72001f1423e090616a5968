@@ -1,0 +1,16 @@
+#include <gui/adddevicescreen_screen/AddDeviceScreenView.hpp>
+
+AddDeviceScreenView::AddDeviceScreenView()
+{
+
+}
+
+void AddDeviceScreenView::setupScreen()
+{
+    AddDeviceScreenViewBase::setupScreen();
+}
+
+void AddDeviceScreenView::tearDownScreen()
+{
+    AddDeviceScreenViewBase::tearDownScreen();
+}

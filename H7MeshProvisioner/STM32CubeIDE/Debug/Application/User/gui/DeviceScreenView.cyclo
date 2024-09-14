@@ -1,0 +1,11 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../../TouchGFX/generated/gui_generated/include/gui_generated/devicescreen_screen/DeviceScreenViewBase.hpp:24:18:virtual void DeviceScreenViewBase::GUI_OnBtn()	1
+../../TouchGFX/generated/gui_generated/include/gui_generated/devicescreen_screen/DeviceScreenViewBase.hpp:28:18:virtual void DeviceScreenViewBase::GUI_OffBtn()	1
+../../TouchGFX/gui/include/gui/devicescreen_screen/DeviceScreenView.hpp:11:13:DeviceScreenView::~DeviceScreenView()	1
+../../TouchGFX/gui/include/gui/devicescreen_screen/DeviceScreenView.hpp:11:13:virtual DeviceScreenView::~DeviceScreenView()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/devicescreen_screen/DeviceScreenView.cpp:3:1:DeviceScreenView::DeviceScreenView()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/devicescreen_screen/DeviceScreenView.cpp:8:6:virtual void DeviceScreenView::setupScreen()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/devicescreen_screen/DeviceScreenView.cpp:13:6:virtual void DeviceScreenView::tearDownScreen()	1

@@ -28,6 +28,9 @@ public:
 
     void gotoHomeScreenScreenWipeTransitionEast();
 
+    // AddDeviceScreen
+    void gotoAddDeviceScreenScreenWipeTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -40,6 +43,9 @@ protected:
     void gotoHomeScreenScreenNoTransitionImpl();
 
     void gotoHomeScreenScreenWipeTransitionEastImpl();
+
+    // AddDeviceScreen
+    void gotoAddDeviceScreenScreenWipeTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

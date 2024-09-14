@@ -333,7 +333,7 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "a",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "deviceBtn"
@@ -343,6 +343,162 @@
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "b",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "addDeviceBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "AddDeviceScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "AddDeviceScreen",
+        "CanvasBufferSize": 7200,
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_meteor_rain.png"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "scrollableContainer1",
+            "X": 29,
+            "Y": 11,
+            "Width": 423,
+            "Height": 250,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "FlexButton",
+                "Name": "foudNodeBtn",
+                "Width": 423,
+                "Height": 50,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 16,
+                    "TextId": "__SingleUse_MVY0",
+                    "TextRotation": "0",
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_JF9F"
+                    },
+                    "ColorReleased": {
+                      "Red": 10,
+                      "Green": 10,
+                      "Blue": 10
+                    },
+                    "ColorPressed": {
+                      "Red": 10,
+                      "Green": 10,
+                      "Blue": 10
+                    }
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 423,
+                    "Height": 50,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 5,
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "ColorBorderReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "modalWindow1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_containers_small_wide_outlined_light.png",
+            "ModalX": 133,
+            "ModalY": 61,
+            "ModalWidth": 214,
+            "ModalHeight": 150,
+            "Alpha": 54,
+            "Components": [
+              {
+                "Type": "CircleProgress",
+                "Name": "circleProgress1",
+                "X": 52,
+                "Y": 8,
+                "Width": 110,
+                "Height": 110,
+                "Color": {
+                  "Red": 52,
+                  "Green": 94,
+                  "Blue": 116
+                },
+                "CenterX": 55.0,
+                "CenterY": 55.0,
+                "Radius": 50.0,
+                "LineWidth": 10.0,
+                "EndAngle": 360.0,
+                "CapPrecision": "Butt",
+                "FileNameBackground": "__generated\\alternate_theme_images_widgets_circleprogress_backgrounds_small.png",
+                "ProgressRangeMax": 100
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1",
+                "X": 62,
+                "Y": 126,
+                "Width": 90,
+                "Height": 17,
+                "TextId": "__SingleUse_M33F",
+                "TextRotation": "0",
+                "AutoSize": true
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_ProvisionNode",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "foudNodeBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ProvisionNode"
             }
           }
         ]

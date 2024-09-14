@@ -13,6 +13,8 @@
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <gui/homescreen_screen/HomeScreenView.hpp>
 #include <gui/homescreen_screen/HomeScreenPresenter.hpp>
+#include <gui/adddevicescreen_screen/AddDeviceScreenView.hpp>
+#include <gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -67,4 +69,17 @@ void FrontendApplicationBase::gotoHomeScreenScreenWipeTransitionEast()
 void FrontendApplicationBase::gotoHomeScreenScreenWipeTransitionEastImpl()
 {
     touchgfx::makeTransition<HomeScreenView, HomeScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// AddDeviceScreen
+
+void FrontendApplicationBase::gotoAddDeviceScreenScreenWipeTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoAddDeviceScreenScreenWipeTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoAddDeviceScreenScreenWipeTransitionEastImpl()
+{
+    touchgfx::makeTransition<AddDeviceScreenView, AddDeviceScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

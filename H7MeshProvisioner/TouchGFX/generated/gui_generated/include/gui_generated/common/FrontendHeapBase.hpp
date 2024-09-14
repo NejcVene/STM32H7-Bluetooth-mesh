@@ -18,6 +18,8 @@
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <gui/homescreen_screen/HomeScreenView.hpp>
 #include <gui/homescreen_screen/HomeScreenPresenter.hpp>
+#include <gui/adddevicescreen_screen/AddDeviceScreenView.hpp>
+#include <gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp>
 
 
 /**
@@ -42,7 +44,8 @@ public:
      */
     typedef touchgfx::meta::TypeList< Screen1View,
             touchgfx::meta::TypeList< HomeScreenView,
-            touchgfx::meta::Nil >
+            touchgfx::meta::TypeList< AddDeviceScreenView,
+            touchgfx::meta::Nil > >
             > GeneratedViewTypes;
 
     /**
@@ -56,7 +59,8 @@ public:
      */
     typedef touchgfx::meta::TypeList< Screen1Presenter,
             touchgfx::meta::TypeList< HomeScreenPresenter,
-            touchgfx::meta::Nil >
+            touchgfx::meta::TypeList< AddDeviceScreenPresenter,
+            touchgfx::meta::Nil > >
             > GeneratedPresenterTypes;
 
     /**

@@ -56,6 +56,7 @@ HomeScreenViewBase::HomeScreenViewBase() :
     addDeviceBtn.setText(TypedText(T___SINGLEUSE_RUCY));
     addDeviceBtn.setTextPosition(0, 76, 100, 100);
     addDeviceBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
+    addDeviceBtn.setAction(flexButtonCallback);
     addDeviceBtn.setPosition(365, 14, 100, 100);
     add(addDeviceBtn);
 
@@ -90,9 +91,16 @@ void HomeScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButto
 {
     if (&src == &deviceBtn)
     {
-        //Interaction1
+        //a
         //When deviceBtn clicked change screen to Screen1
         //Go to Screen1 with screen transition towards East
         application().gotoScreen1ScreenWipeTransitionEast();
+    }
+    if (&src == &addDeviceBtn)
+    {
+        //b
+        //When addDeviceBtn clicked change screen to AddDeviceScreen
+        //Go to AddDeviceScreen with screen transition towards East
+        application().gotoAddDeviceScreenScreenWipeTransitionEast();
     }
 }

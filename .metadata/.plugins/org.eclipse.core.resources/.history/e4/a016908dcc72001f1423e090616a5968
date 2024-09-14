@@ -1,0 +1,34 @@
+#include <gui/adddevicescreen_screen/AddDeviceScreenView.hpp>
+
+AddDeviceScreenView::AddDeviceScreenView()
+{
+
+}
+
+void AddDeviceScreenView::setupScreen()
+{
+    AddDeviceScreenViewBase::setupScreen();
+    modalWindow1.show();
+}
+
+void AddDeviceScreenView::tearDownScreen()
+{
+    AddDeviceScreenViewBase::tearDownScreen();
+}
+
+void AddDeviceScreenView::handleTickEvent() {
+
+	int currentValue = circleProgress.getValue();
+	int16_t max;
+	int16_t min;
+	circleProgress.getRange(min, max);
+
+	if (currentValue == min) {
+		increase = true;
+	} else if (currentValue == max) {
+		increase = false;
+	}
+	int nextValue = increase == true ? currentValue+1 : currentValue-1;
+	circleProgress.setValue(nextValue);
+
+}

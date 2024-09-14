@@ -159,3 +159,24 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-09-13 22:32:45.153
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-09-14 20:51:24.343 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=sl_SI
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-09-14 20:51:36.414
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-09-14 20:51:36.417
+!MESSAGE Log4j2 initialized with config file F:\Nejc\Projekti\BLEMeshHomeAutomation\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-14 20:51:47.872
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/Screen1ViewBase.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-09-14 20:51:49.006
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-14 20:52:41.411
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/Screen1ViewBase.cpp from Makefile generation (invalid resource)

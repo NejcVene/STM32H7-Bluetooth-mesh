@@ -160,12 +160,6 @@
     <Filter Include="Source Files\gui\common">
       <UniqueIdentifier>3A522F89-A73E-6E53-AEAC-73A95A74AE57</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\screen1_screen">
-      <UniqueIdentifier>184B301D-4B3F-AB34-3A98-36790FFEAAF2</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\screen1_screen">
-      <UniqueIdentifier>8F8783D1-1EE7-2AFF-8452-F9E21AD5A247</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\generated\simulator\include">
       <UniqueIdentifier>AA1C0D2E-F64F-1C72-2EAF-727E530F9C48</UniqueIdentifier>
     </Filter>
@@ -195,6 +189,24 @@
     </Filter>
     <Filter Include="Header Files\generated\gui_generated\homescreen_screen">
       <UniqueIdentifier>46F48C30-1143-D6B0-00F2-E7DDACD777C7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\adddevicescreen_screen">
+      <UniqueIdentifier>653BFFE1-1DF8-B8D4-66B6-BAE5D29C49F8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\adddevicescreen_screen">
+      <UniqueIdentifier>D2573A42-2448-C998-FB8C-08D29D1FCCA4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\adddevicescreen_screen">
+      <UniqueIdentifier>F1107EC8-D657-D121-4B1D-FE90E9F8FA5E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\adddevicescreen_screen">
+      <UniqueIdentifier>0CC859F8-1601-3E8B-57D0-9C31E50134E9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screen1_screen">
+      <UniqueIdentifier>E0E462D9-FDFC-2BF4-B038-2A2341B466DC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screen1_screen">
+      <UniqueIdentifier>796CAA80-5DA8-434D-A4B4-EBE691462ECD</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -231,9 +243,6 @@
     <ClCompile Include="..\..\gui\src\screen1_screen\Screen1View.cpp">
       <Filter>Source Files\gui\screen1_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\screen1_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
       <Filter>Source Files\generated\simulator\video</Filter>
     </ClCompile>
@@ -245,6 +254,18 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\homescreen_screen\HomeScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\homescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\adddevicescreen_screen\AddDeviceScreenPresenter.cpp">
+      <Filter>Source Files\gui\adddevicescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\adddevicescreen_screen\AddDeviceScreenView.cpp">
+      <Filter>Source Files\gui\adddevicescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\adddevicescreen_screen\AddDeviceScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\adddevicescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screen1_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -688,9 +709,6 @@
     <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1View.hpp">
       <Filter>Header Files\gui\screen1_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\screen1_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
       <Filter>Header Files\generated\gui_generated\common</Filter>
     </ClInclude>
@@ -705,6 +723,18 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\homescreen_screen\HomeScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\homescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\adddevicescreen_screen\AddDeviceScreenPresenter.hpp">
+      <Filter>Header Files\gui\adddevicescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\adddevicescreen_screen\AddDeviceScreenView.hpp">
+      <Filter>Header Files\gui\adddevicescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\adddevicescreen_screen\AddDeviceScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\adddevicescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screen1_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

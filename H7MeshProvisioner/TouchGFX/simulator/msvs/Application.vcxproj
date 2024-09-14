@@ -22,11 +22,14 @@
     <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
     <ClCompile Include="..\..\gui\src\screen1_screen\Screen1Presenter.cpp"/>
     <ClCompile Include="..\..\gui\src\screen1_screen\Screen1View.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp"/>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
     <ClCompile Include="..\..\gui\src\homescreen_screen\HomeScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\homescreen_screen\HomeScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\homescreen_screen\HomeScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\adddevicescreen_screen\AddDeviceScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\adddevicescreen_screen\AddDeviceScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\adddevicescreen_screen\AddDeviceScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -177,12 +180,15 @@
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1Presenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\screen1_screen\Screen1View.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\homescreen_screen\HomeScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\homescreen_screen\HomeScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\homescreen_screen\HomeScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\adddevicescreen_screen\AddDeviceScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\adddevicescreen_screen\AddDeviceScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\adddevicescreen_screen\AddDeviceScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
