@@ -13,61 +13,66 @@ HomeScreenViewBase::HomeScreenViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_METEOR_RAIN_ID));
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
     tiledImage1.setPosition(0, 0, 480, 272);
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    deviceBtn.setBitmaps(Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_SMALL_FILL_ACTIVE_ID), Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_SMALL_FILL_PRESSED_ID));
+    deviceBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
     deviceBtn.setBitmapXY(0, 0);
-    deviceBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_E8F6FB_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_E8F6FB_SVG_ID));
-    deviceBtn.setIconXY(25, 25);
+    deviceBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_3DA9FC_SVG_ID));
+    deviceBtn.setIconXY(36, 36);
     deviceBtn.setText(TypedText(T___SINGLEUSE_7Z3U));
-    deviceBtn.setTextPosition(0, 76, 100, 100);
-    deviceBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
+    deviceBtn.setTextPosition(0, 97, 121, 121);
+    deviceBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
     deviceBtn.setAction(flexButtonCallback);
-    deviceBtn.setPosition(240, 14, 100, 100);
+    deviceBtn.setPosition(219, 10, 121, 121);
     add(deviceBtn);
 
-    undefinedBtn.setBitmaps(Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_SMALL_FILL_DISABLED_ID), Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_SMALL_FILL_DISABLED_ID));
+    undefinedBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
     undefinedBtn.setBitmapXY(0, 0);
-    undefinedBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_MAPS_MULTIPLE_STOP_50_50_E8F6FB_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_MAPS_MULTIPLE_STOP_50_50_E8F6FB_SVG_ID));
-    undefinedBtn.setIconXY(25, 25);
+    undefinedBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_MAPS_MULTIPLE_STOP_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_MAPS_MULTIPLE_STOP_50_50_3DA9FC_SVG_ID));
+    undefinedBtn.setIconXY(36, 36);
     undefinedBtn.setText(TypedText(T___SINGLEUSE_XGDV));
-    undefinedBtn.setTextPosition(0, 76, 100, 100);
-    undefinedBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
-    undefinedBtn.setPosition(365, 147, 100, 100);
+    undefinedBtn.setTextPosition(0, 97, 121, 121);
+    undefinedBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    undefinedBtn.setPosition(350, 141, 121, 121);
     add(undefinedBtn);
 
-    settingsBtn.setBitmaps(Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_SMALL_FILL_NORMAL_ID), Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_SMALL_FILL_PRESSED_ID));
+    settingsBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
     settingsBtn.setBitmapXY(0, 0);
-    settingsBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_E8F6FB_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_E8F6FB_SVG_ID));
-    settingsBtn.setIconXY(25, 25);
+    settingsBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
+    settingsBtn.setIconXY(36, 36);
     settingsBtn.setText(TypedText(T___SINGLEUSE_RE6P));
-    settingsBtn.setTextPosition(0, 76, 100, 100);
-    settingsBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
-    settingsBtn.setPosition(240, 147, 100, 100);
+    settingsBtn.setTextPosition(0, 97, 121, 121);
+    settingsBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    settingsBtn.setPosition(219, 141, 121, 121);
     add(settingsBtn);
 
-    addDeviceBtn.setBitmaps(Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_SMALL_FILL_ACTION_ID), Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_SMALL_FILL_PRESSED_ID));
+    addDeviceBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
     addDeviceBtn.setBitmapXY(0, 0);
-    addDeviceBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_DEVICE_BLUETOOTH_SEARCHING_50_50_E8F6FB_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_DEVICE_BLUETOOTH_SEARCHING_50_50_E8F6FB_SVG_ID));
-    addDeviceBtn.setIconXY(28, 25);
+    addDeviceBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_DEVICE_BLUETOOTH_SEARCHING_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_DEVICE_BLUETOOTH_SEARCHING_50_50_3DA9FC_SVG_ID));
+    addDeviceBtn.setIconXY(36, 36);
     addDeviceBtn.setText(TypedText(T___SINGLEUSE_RUCY));
-    addDeviceBtn.setTextPosition(0, 76, 100, 100);
-    addDeviceBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
+    addDeviceBtn.setTextPosition(0, 97, 121, 121);
+    addDeviceBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
     addDeviceBtn.setAction(flexButtonCallback);
-    addDeviceBtn.setPosition(365, 14, 100, 100);
+    addDeviceBtn.setPosition(350, 10, 121, 121);
     add(addDeviceBtn);
 
-    container1.setPosition(10, 14, 209, 233);
-    tiledImage2.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_DIVIDERS_VERTICAL_SMALL_THICK_LIGHT_ID));
-    tiledImage2.setPosition(0, 2, 209, 231);
-    tiledImage2.setOffset(0, 0);
-    container1.add(tiledImage2);
+    container1.setPosition(10, 10, 199, 252);
+    image1.setXY(0, 0);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_H7MAININFO_ID));
+    container1.add(image1);
 
-    mainDigitalClock.setPosition(0, 25, 209, 51);
-    mainDigitalClock.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1.setXY(68, 179);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(9, 64, 103));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2JW3));
+    container1.add(textArea1);
+
+    mainDigitalClock.setPosition(0, 35, 199, 51);
+    mainDigitalClock.setColor(touchgfx::Color::getColorFromRGB(9, 64, 103));
     mainDigitalClock.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PGKI));
     mainDigitalClock.displayLeadingZeroForHourIndicator(true);
     mainDigitalClock.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR);

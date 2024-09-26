@@ -6,6 +6,12 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_RUCY" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Add device</Translation>
+      </Text>
+      <Text Id="__SingleUse_2JW3" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">25*C</Translation>
+      </Text>
       <Text Id="__SingleUse_JF9F" Alignment="Left" TypographyId="Small">
         <Translation Language="GB"></Translation>
       </Text>
@@ -26,9 +32,6 @@
       </Text>
       <Text Id="__SingleUse_RE6P" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">Settings</Translation>
-      </Text>
-      <Text Id="__SingleUse_RUCY" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Add device</Translation>
       </Text>
       <Text Id="__SingleUse_7Z3U" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">Devices</Translation>

@@ -11,6 +11,8 @@
 #include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
 
 class HomeScreenViewBase : public touchgfx::View<HomeScreenPresenter>
@@ -35,7 +37,8 @@ protected:
     touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  settingsBtn;
     touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  addDeviceBtn;
     touchgfx::Container container1;
-    touchgfx::TiledImage tiledImage2;
+    touchgfx::Image image1;
+    touchgfx::TextArea textArea1;
     touchgfx::DigitalClock mainDigitalClock;
 
 private:

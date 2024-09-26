@@ -127,173 +127,169 @@
             "Name": "tiledImage1",
             "Width": 480,
             "Height": 272,
-            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_meteor_rain.png"
+            "FileName": "H7Background.png"
           },
           {
             "Type": "FlexButton",
             "Name": "deviceBtn",
-            "X": 240,
-            "Y": 14,
-            "Width": 100,
-            "Height": 100,
+            "X": 219,
+            "Y": 10,
+            "Width": 121,
+            "Height": 121,
             "ButtonTrigger": {
               "Type": "ClickButtonTrigger"
             },
             "ButtonStyles": [
               {
                 "Type": "TextButtonStyle",
-                "Y": 76,
+                "Y": 97,
                 "TextId": "__SingleUse_7Z3U",
                 "TextRotation": "0",
                 "ColorReleased": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
                 },
                 "ColorPressed": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
                 }
               },
               {
                 "Type": "IconButtonStyle",
-                "X": 25,
-                "Y": 25,
-                "IconReleased": "__generated\\icon_theme_images_hardware_device_hub_50_50_E8F6FB.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_hardware_device_hub_50_50_E8F6FB.svg.png"
+                "X": 36,
+                "Y": 36,
+                "IconReleased": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png"
               },
               {
                 "Type": "ImageButtonStyle",
-                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\small_fill_active.json",
-                "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_active.png",
-                "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_pressed.png"
+                "ImageReleased": "H7Button.png",
+                "ImagePressed": "H7Button.png"
               }
             ]
           },
           {
             "Type": "FlexButton",
             "Name": "undefinedBtn",
-            "X": 365,
-            "Y": 147,
-            "Width": 100,
-            "Height": 100,
+            "X": 350,
+            "Y": 141,
+            "Width": 121,
+            "Height": 121,
             "ButtonTrigger": {
               "Type": "ClickButtonTrigger"
             },
             "ButtonStyles": [
               {
                 "Type": "TextButtonStyle",
-                "Y": 76,
+                "Y": 97,
                 "TextId": "__SingleUse_XGDV",
                 "TextRotation": "0",
                 "ColorReleased": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
                 },
                 "ColorPressed": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
                 }
               },
               {
                 "Type": "IconButtonStyle",
-                "X": 25,
-                "Y": 25,
-                "IconReleased": "__generated\\icon_theme_images_maps_multiple_stop_50_50_E8F6FB.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_maps_multiple_stop_50_50_E8F6FB.svg.png"
+                "X": 36,
+                "Y": 36,
+                "IconReleased": "__generated\\icon_theme_images_maps_multiple_stop_50_50_3DA9FC.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_maps_multiple_stop_50_50_3DA9FC.svg.png"
               },
               {
                 "Type": "ImageButtonStyle",
-                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\small_fill_disabled.json",
-                "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_disabled.png",
-                "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_disabled.png"
+                "ImageReleased": "H7Button.png",
+                "ImagePressed": "H7Button.png"
               }
             ]
           },
           {
             "Type": "FlexButton",
             "Name": "settingsBtn",
-            "X": 240,
-            "Y": 147,
-            "Width": 100,
-            "Height": 100,
+            "X": 219,
+            "Y": 141,
+            "Width": 121,
+            "Height": 121,
             "ButtonTrigger": {
               "Type": "ClickButtonTrigger"
             },
             "ButtonStyles": [
               {
                 "Type": "TextButtonStyle",
-                "Y": 76,
+                "Y": 97,
                 "TextId": "__SingleUse_RE6P",
                 "TextRotation": "0",
                 "ColorReleased": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
                 },
                 "ColorPressed": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
                 }
               },
               {
                 "Type": "IconButtonStyle",
-                "X": 25,
-                "Y": 25,
-                "IconReleased": "__generated\\icon_theme_images_action_settings_50_50_E8F6FB.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_action_settings_50_50_E8F6FB.svg.png"
+                "X": 36,
+                "Y": 36,
+                "IconReleased": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png"
               },
               {
                 "Type": "ImageButtonStyle",
-                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\small_fill_normal.json",
-                "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_normal.png",
-                "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_pressed.png"
+                "ImageReleased": "H7Button.png",
+                "ImagePressed": "H7Button.png"
               }
             ]
           },
           {
             "Type": "FlexButton",
             "Name": "addDeviceBtn",
-            "X": 365,
-            "Y": 14,
-            "Width": 100,
-            "Height": 100,
+            "X": 350,
+            "Y": 10,
+            "Width": 121,
+            "Height": 121,
             "ButtonTrigger": {
               "Type": "ClickButtonTrigger"
             },
             "ButtonStyles": [
               {
                 "Type": "TextButtonStyle",
-                "Y": 76,
+                "Y": 97,
                 "TextId": "__SingleUse_RUCY",
                 "TextRotation": "0",
                 "ColorReleased": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
                 },
                 "ColorPressed": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
                 }
               },
               {
                 "Type": "IconButtonStyle",
-                "X": 28,
-                "Y": 25,
-                "IconReleased": "__generated\\icon_theme_images_device_bluetooth_searching_50_50_E8F6FB.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_device_bluetooth_searching_50_50_E8F6FB.svg.png"
+                "X": 36,
+                "Y": 36,
+                "IconReleased": "__generated\\icon_theme_images_device_bluetooth_searching_50_50_3DA9FC.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_device_bluetooth_searching_50_50_3DA9FC.svg.png"
               },
               {
                 "Type": "ImageButtonStyle",
-                "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\small_fill_action.json",
-                "ImageReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_action.png",
-                "ImagePressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_small_fill_pressed.png"
+                "ImageReleased": "H7Button.png",
+                "ImagePressed": "H7Button.png"
               }
             ]
           },
@@ -301,28 +297,43 @@
             "Type": "Container",
             "Name": "container1",
             "X": 10,
-            "Y": 14,
-            "Width": 209,
-            "Height": 233,
+            "Y": 10,
+            "Width": 199,
+            "Height": 252,
             "Components": [
               {
-                "Type": "TiledImage",
-                "Name": "tiledImage2",
-                "Y": 2,
-                "Width": 209,
-                "Height": 231,
-                "FileName": "__generated\\alternate_theme_images_dividers_vertical_small_thick_light.png"
+                "Type": "Image",
+                "Name": "image1",
+                "Width": 199,
+                "Height": 252,
+                "RelativeFilename": "H7MainInfo.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1",
+                "X": 68,
+                "Y": 179,
+                "Width": 62,
+                "Height": 24,
+                "TextId": "__SingleUse_2JW3",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
+                },
+                "AutoSize": true
               },
               {
                 "Type": "DigitalClock",
                 "Name": "mainDigitalClock",
-                "Y": 25,
-                "Width": 209,
+                "Y": 35,
+                "Width": 199,
                 "Height": 51,
                 "TextColor": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
                 },
                 "TextId": "__SingleUse_PGKI",
                 "DisplaySeconds": true,
