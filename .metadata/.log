@@ -255,3 +255,213 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 02:31:23.779
 !MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_maps_multiple_stop_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+!SESSION 2024-09-26 15:01:22.493 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=sl_SI
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-09-26 15:01:33.555
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-09-26 15:01:33.559
+!MESSAGE Log4j2 initialized with config file F:\Nejc\Projekti\BLEMeshHomeAutomation\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-09-26 15:01:46.174
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:02:04.601
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_containers_small_wide_outlined_light.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:02:04.602
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_dividers_vertical_small_thick_light.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:02:04.602
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_action.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:02:04.602
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_active.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:02:04.603
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_disabled.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:02:04.603
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_normal.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:02:04.603
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_pressed.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:02:04.605
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_circleprogress_backgrounds_small.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:02:04.607
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_action_settings_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:02:04.608
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_device_bluetooth_searching_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:02:04.609
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_hardware_device_hub_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:02:04.610
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_maps_multiple_stop_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:13.518
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_containers_small_wide_outlined_light.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:13.519
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_dividers_vertical_small_thick_light.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:13.519
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_action.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:13.519
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_active.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:13.519
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_disabled.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:13.520
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_normal.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:13.520
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_pressed.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:13.522
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_circleprogress_backgrounds_small.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:13.524
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_action_settings_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:13.525
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_device_bluetooth_searching_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:13.526
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_hardware_device_hub_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:13.527
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_maps_multiple_stop_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:36.277
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_containers_small_wide_outlined_light.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:36.277
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_dividers_vertical_small_thick_light.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:36.277
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_action.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:36.277
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_active.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:36.278
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_disabled.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:36.278
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_normal.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:36.278
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_pressed.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:36.280
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_circleprogress_backgrounds_small.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:36.281
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_action_settings_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:36.282
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_device_bluetooth_searching_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:36.283
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_hardware_device_hub_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-26 15:03:36.283
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_maps_multiple_stop_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+!SESSION 2024-09-26 20:49:53.420 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=sl_SI
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-09-26 20:50:02.010
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-09-26 20:50:02.012
+!MESSAGE Log4j2 initialized with config file F:\Nejc\Projekti\BLEMeshHomeAutomation\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-09-26 20:50:12.665
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:32:38.967
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_containers_small_wide_outlined_light.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:32:38.967
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_dividers_vertical_small_thick_light.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:32:38.967
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_action.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:32:38.967
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_active.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:32:38.968
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_disabled.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:32:38.968
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_normal.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:32:38.968
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_pressed.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:32:38.971
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_circleprogress_backgrounds_small.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:32:38.974
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_action_settings_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:32:38.976
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_device_bluetooth_searching_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:32:38.978
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_hardware_device_hub_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:32:38.981
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_maps_multiple_stop_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:33:32.422
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_containers_small_wide_outlined_light.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:33:32.422
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_dividers_vertical_small_thick_light.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:33:32.422
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_action.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:33:32.423
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_active.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:33:32.423
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_disabled.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:33:32.423
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_normal.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:33:32.423
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_small_fill_pressed.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:33:32.425
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_alternate_theme_images_widgets_circleprogress_backgrounds_small.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:33:32.428
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_action_settings_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:33:32.429
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_device_bluetooth_searching_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:33:32.430
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_hardware_device_hub_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain.arm-none.oss 2 2 2024-09-27 01:33:32.432
+!MESSAGE Ignored L/STM32H750B-DK/Application/User/generated/image_icon_theme_images_maps_multiple_stop_50_50_E8F6FB.svg.cpp from Makefile generation (invalid resource)

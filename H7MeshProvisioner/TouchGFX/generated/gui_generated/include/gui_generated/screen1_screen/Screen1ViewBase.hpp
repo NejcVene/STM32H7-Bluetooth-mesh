@@ -8,8 +8,10 @@
 #include <mvp/View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/containers/ScrollableContainer.hpp>
+#include <gui/containers/DeviceToggle.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -39,10 +41,12 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image image1;
+    touchgfx::TiledImage tiledImage1;
     touchgfx::ButtonWithLabel onBtn;
     touchgfx::ButtonWithLabel offBtn;
     touchgfx::ButtonWithLabel buttonWithLabel1;
+    touchgfx::ScrollableContainer scrollableContainer1;
+    DeviceToggle deviceToggle1;
 
 private:
 

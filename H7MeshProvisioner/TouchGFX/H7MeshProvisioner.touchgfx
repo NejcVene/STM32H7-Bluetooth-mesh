@@ -5,17 +5,17 @@
         "Name": "Screen1",
         "Components": [
           {
-            "Type": "Image",
-            "Name": "image1",
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
             "Width": 480,
             "Height": 272,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x272_meteor_rain.png"
+            "FileName": "H7Background.png"
           },
           {
             "Type": "ButtonWithLabel",
             "Name": "onBtn",
-            "X": 120,
-            "Y": 65,
+            "X": 283,
+            "Y": -105,
             "Width": 240,
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
@@ -37,8 +37,8 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "offBtn",
-            "X": 120,
-            "Y": 136,
+            "X": 283,
+            "Y": -50,
             "Width": 240,
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
@@ -60,8 +60,8 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel1",
-            "X": 120,
-            "Y": 202,
+            "X": 43,
+            "Y": -105,
             "Width": 240,
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
@@ -79,6 +79,26 @@
             },
             "TextRotation": "0",
             "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "scrollableContainer1",
+            "Width": 480,
+            "Height": 272,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": []
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "deviceToggle1",
+            "X": 10,
+            "Y": 10,
+            "Width": 460,
+            "Height": 60,
+            "CustomContainerDefinitionName": "DeviceToggle"
           }
         ],
         "Interactions": [
@@ -311,10 +331,10 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea1",
-                "X": 68,
-                "Y": 179,
-                "Width": 62,
-                "Height": 24,
+                "X": 60,
+                "Y": 176,
+                "Width": 78,
+                "Height": 30,
                 "TextId": "__SingleUse_2JW3",
                 "TextRotation": "0",
                 "Color": {
@@ -380,15 +400,13 @@
             "Name": "tiledImage1",
             "Width": 480,
             "Height": 272,
-            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_meteor_rain.png"
+            "FileName": "H7Background.png"
           },
           {
             "Type": "ScrollableContainer",
             "Name": "scrollableContainer1",
-            "X": 29,
-            "Y": 11,
-            "Width": 423,
-            "Height": 250,
+            "Width": 480,
+            "Height": 272,
             "HorizontalScrollEnabled": true,
             "VerticalScrollEnabled": true,
             "ScrollbarsVisibleOnPressed": true,
@@ -397,8 +415,10 @@
               {
                 "Type": "FlexButton",
                 "Name": "foudNodeBtn",
-                "Width": 423,
-                "Height": 50,
+                "X": 10,
+                "Y": 14,
+                "Width": 460,
+                "Height": 60,
                 "ButtonTrigger": {
                   "Type": "ClickButtonTrigger"
                 },
@@ -423,31 +443,9 @@
                     }
                   },
                   {
-                    "Type": "BoxWithBorderButtonStyle",
-                    "Width": 423,
-                    "Height": 50,
-                    "LockToFlexButtonSize": true,
-                    "BorderSize": 5,
-                    "ColorReleased": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "ColorPressed": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "ColorBorderReleased": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "ColorBorderPressed": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    }
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7LineMedium.png",
+                    "ImagePressed": "H7LineMedium.png"
                   }
                 ]
               }
@@ -458,12 +456,12 @@
             "Name": "modalWindow1",
             "Width": 480,
             "Height": 272,
-            "FileName": "__generated\\alternate_theme_images_containers_small_wide_outlined_light.png",
+            "FileName": "H7ModalBackgroundSmall.png",
             "ModalX": 133,
             "ModalY": 61,
             "ModalWidth": 214,
             "ModalHeight": 150,
-            "Alpha": 54,
+            "Alpha": 100,
             "Components": [
               {
                 "Type": "CircleProgress",
@@ -473,9 +471,9 @@
                 "Width": 110,
                 "Height": 110,
                 "Color": {
-                  "Red": 52,
-                  "Green": 94,
-                  "Blue": 116
+                  "Red": 61,
+                  "Green": 169,
+                  "Blue": 252
                 },
                 "CenterX": 55.0,
                 "CenterY": 55.0,
@@ -483,7 +481,7 @@
                 "LineWidth": 10.0,
                 "EndAngle": 360.0,
                 "CapPrecision": "Butt",
-                "FileNameBackground": "__generated\\alternate_theme_images_widgets_circleprogress_backgrounds_small.png",
+                "FileNameBackground": "H7SpinnerSmall.png",
                 "ProgressRangeMax": 100
               },
               {
@@ -495,6 +493,11 @@
                 "Height": 17,
                 "TextId": "__SingleUse_M33F",
                 "TextRotation": "0",
+                "Color": {
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
+                },
                 "AutoSize": true
               }
             ]
@@ -515,7 +518,99 @@
         ]
       }
     ],
-    "CustomContainerDefinitions": [],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "DeviceToggle",
+        "X": 10,
+        "Y": 9,
+        "Width": 460,
+        "Height": 60,
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 460,
+            "Height": 60,
+            "FileName": "H7LineMedium.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "deviceNameTxt",
+            "X": 10,
+            "Y": 18,
+            "Width": 86,
+            "Height": 24,
+            "TextId": "__SingleUse_486T",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_99CM",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "deviceConfigBtn",
+            "X": 252,
+            "Y": 5,
+            "Width": 50,
+            "Height": 50,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 1,
+                "IconReleased": "__generated\\icon_theme_images_image_edit_50_50_3DA9FC.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_3DA9FC.svg.png"
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "ImageReleased": "H7ButtonSmall.png",
+                "ImagePressed": "H7ButtonSmall.png"
+              }
+            ]
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "deviceToggleBtn",
+            "X": 312,
+            "Y": 5,
+            "Width": 138,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_dark.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded_text.json"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_DeviceConfig",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "deviceConfigBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_DeviceConfig"
+            }
+          },
+          {
+            "InteractionName": "GUI_DeviceToggleState",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "deviceToggleBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_DeviceToggleState"
+            }
+          }
+        ]
+      }
+    ],
     "Name": "H7MeshProvisioner",
     "Resolution": {
       "Width": 480,

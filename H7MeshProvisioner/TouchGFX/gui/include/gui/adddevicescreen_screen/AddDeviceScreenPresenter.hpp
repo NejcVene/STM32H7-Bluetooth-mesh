@@ -27,6 +27,8 @@ public:
 
     virtual ~AddDeviceScreenPresenter() {}
 
+    virtual void GUI_SendCommand(uint16_t cmdIndex);
+
 private:
     AddDeviceScreenPresenter();
 

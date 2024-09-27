@@ -13,11 +13,12 @@ Screen1ViewBase::Screen1ViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_METEOR_RAIN_ID));
-    add(image1);
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
+    tiledImage1.setPosition(0, 0, 480, 272);
+    tiledImage1.setOffset(0, 0);
+    add(tiledImage1);
 
-    onBtn.setXY(120, 65);
+    onBtn.setXY(283, -105);
     onBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
     onBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6IT6));
     onBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -25,7 +26,7 @@ Screen1ViewBase::Screen1ViewBase() :
     onBtn.setAction(buttonCallback);
     add(onBtn);
 
-    offBtn.setXY(120, 136);
+    offBtn.setXY(283, -50);
     offBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
     offBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_B85K));
     offBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -33,13 +34,21 @@ Screen1ViewBase::Screen1ViewBase() :
     offBtn.setAction(buttonCallback);
     add(offBtn);
 
-    buttonWithLabel1.setXY(120, 202);
+    buttonWithLabel1.setXY(43, -105);
     buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
     buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_BATJ));
     buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel1.setAction(buttonCallback);
     add(buttonWithLabel1);
+
+    scrollableContainer1.setPosition(0, 0, 480, 272);
+    scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    scrollableContainer1.setScrollbarsAlpha(255);
+    add(scrollableContainer1);
+
+    deviceToggle1.setXY(10, 10);
+    add(deviceToggle1);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -49,7 +58,7 @@ Screen1ViewBase::~Screen1ViewBase()
 
 void Screen1ViewBase::setupScreen()
 {
-
+    deviceToggle1.initialize();
 }
 
 void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)

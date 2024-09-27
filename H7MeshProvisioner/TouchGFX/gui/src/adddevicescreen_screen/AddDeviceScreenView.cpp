@@ -1,4 +1,5 @@
 #include <gui/adddevicescreen_screen/AddDeviceScreenView.hpp>
+#include "command.h"
 
 AddDeviceScreenView::AddDeviceScreenView()
 {
@@ -10,6 +11,7 @@ void AddDeviceScreenView::setupScreen()
     AddDeviceScreenViewBase::setupScreen();
     foudNodeBtn.setVisible(false);
     modalWindow1.show();
+    presenter->GUI_SendCommand(CMD_MESH_ATEP_SCAN);
 }
 
 void AddDeviceScreenView::tearDownScreen()

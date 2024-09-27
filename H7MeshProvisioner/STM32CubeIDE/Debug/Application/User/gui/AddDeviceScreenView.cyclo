@@ -5,7 +5,7 @@
 ../../TouchGFX/generated/gui_generated/include/gui_generated/adddevicescreen_screen/AddDeviceScreenViewBase.hpp:29:18:virtual void AddDeviceScreenViewBase::GUI_ProvisionNode()	1
 ../../TouchGFX/gui/include/gui/adddevicescreen_screen/AddDeviceScreenView.hpp:11:13:AddDeviceScreenView::~AddDeviceScreenView()	1
 ../../TouchGFX/gui/include/gui/adddevicescreen_screen/AddDeviceScreenView.hpp:11:13:virtual AddDeviceScreenView::~AddDeviceScreenView()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:3:1:AddDeviceScreenView::AddDeviceScreenView()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:8:6:virtual void AddDeviceScreenView::setupScreen()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:15:6:virtual void AddDeviceScreenView::tearDownScreen()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:20:6:virtual void AddDeviceScreenView::handleTickEvent()	5
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:4:1:AddDeviceScreenView::AddDeviceScreenView()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:9:6:virtual void AddDeviceScreenView::setupScreen()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:17:6:virtual void AddDeviceScreenView::tearDownScreen()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:22:6:virtual void AddDeviceScreenView::handleTickEvent()	5

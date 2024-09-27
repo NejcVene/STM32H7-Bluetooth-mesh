@@ -6,10 +6,16 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_99CM" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Default</Translation>
+      </Text>
+      <Text Id="__SingleUse_486T" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_RUCY" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">Add device</Translation>
       </Text>
-      <Text Id="__SingleUse_2JW3" Alignment="Center" TypographyId="Default">
+      <Text Id="__SingleUse_2JW3" Alignment="Center" TypographyId="Medium">
         <Translation Language="GB">25*C</Translation>
       </Text>
       <Text Id="__SingleUse_JF9F" Alignment="Left" TypographyId="Small">
@@ -18,7 +24,7 @@
       <Text Id="__SingleUse_MVY0" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_M33F" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_M33F" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">Searching ...</Translation>
       </Text>
       <Text Id="__SingleUse_PGKI" Alignment="Center" TypographyId="Large">
@@ -48,5 +54,6 @@
     <Typography Id="Default" Font="verdana.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
     <Typography Id="Small" Font="verdana.ttf" Size="14" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Medium" Font="verdana.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

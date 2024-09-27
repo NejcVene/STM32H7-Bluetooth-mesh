@@ -82,6 +82,7 @@ static int errorCounter;
 extern Queue *eventQueue;
 static FSM_ErrorReport_t error;
 #ifdef _MASTER
+FSM_CommandExecutionResult_t cmdResult;
 extern HT_HashTable_t *cmdHashTable;
 static FSM_TransitionState_t stateTransitionTable[MAIN_FSM_NUM_OF_STATES][MAIN_FSM_NUM_OF_EVENTS] = {
 		[MAIN_FSM_IDLE][MAIN_FSM_EVENT_USER] 					= 	{MAIN_FSM_SETUP, FSM_Setup},
@@ -355,6 +356,8 @@ void FSM_Execute(void *param) {
 	char responseParameters[PAC_MAX_PAYLOAD];
 	sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
 	NC_ReportFoundNodes(responseParameters);
+	cmdResult.result = (void *) NC_GetNodeNetworkAddressArray();
+	// TODO: pass result to queue
 //	if (!strcmp(responseCommand, sentCommand)) {
 //	}
 	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_EXE_COMPLETE, NULL, 0);

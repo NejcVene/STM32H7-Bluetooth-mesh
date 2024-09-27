@@ -65,7 +65,7 @@ HomeScreenViewBase::HomeScreenViewBase() :
     image1.setBitmap(touchgfx::Bitmap(BITMAP_H7MAININFO_ID));
     container1.add(image1);
 
-    textArea1.setXY(68, 179);
+    textArea1.setXY(60, 176);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(9, 64, 103));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2JW3));

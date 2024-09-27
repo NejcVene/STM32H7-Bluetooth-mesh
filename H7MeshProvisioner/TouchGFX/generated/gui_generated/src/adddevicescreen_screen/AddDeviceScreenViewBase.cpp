@@ -16,30 +16,29 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_METEOR_RAIN_ID));
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
     tiledImage1.setPosition(0, 0, 480, 272);
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    scrollableContainer1.setPosition(29, 11, 423, 250);
+    scrollableContainer1.setPosition(0, 0, 480, 272);
     scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     scrollableContainer1.setScrollbarsAlpha(255);
-    foudNodeBtn.setBoxWithBorderPosition(0, 0, 423, 50);
-    foudNodeBtn.setBorderSize(5);
-    foudNodeBtn.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
+    foudNodeBtn.setBitmaps(Bitmap(BITMAP_H7LINEMEDIUM_ID), Bitmap(BITMAP_H7LINEMEDIUM_ID));
+    foudNodeBtn.setBitmapXY(0, 0);
     foudNodeBtn.setWildcardText(TypedText(T___SINGLEUSE_MVY0));
     foudNodeBtn.setWildcardTextBuffer(TypedText(T___SINGLEUSE_JF9F).getText());
-    foudNodeBtn.setWildcardTextPosition(0, 16, 423, 50);
+    foudNodeBtn.setWildcardTextPosition(0, 16, 460, 60);
     foudNodeBtn.setWildcardTextColors(touchgfx::Color::getColorFromRGB(10, 10, 10), touchgfx::Color::getColorFromRGB(10, 10, 10));
     foudNodeBtn.setAction(flexButtonCallback);
-    foudNodeBtn.setPosition(0, 0, 423, 50);
+    foudNodeBtn.setPosition(10, 14, 460, 60);
     scrollableContainer1.add(foudNodeBtn);
 
     add(scrollableContainer1);
 
-    modalWindow1.setBackground(touchgfx::BitmapId(BITMAP_ALTERNATE_THEME_IMAGES_CONTAINERS_SMALL_WIDE_OUTLINED_LIGHT_ID), 133, 61);
+    modalWindow1.setBackground(touchgfx::BitmapId(BITMAP_H7MODALBACKGROUNDSMALL_ID), 133, 61);
     modalWindow1.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    modalWindow1.setShadeAlpha(54);
+    modalWindow1.setShadeAlpha(100);
     circleProgress1.setXY(52, 8);
     circleProgress1.setProgressIndicatorPosition(0, 0, 110, 110);
     circleProgress1.setRange(0, 100);
@@ -48,14 +47,14 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase() :
     circleProgress1.setLineWidth(10);
     circleProgress1.setStartEndAngle(0, 360);
     circleProgress1.setCapPrecision(180);
-    circleProgress1.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_CIRCLEPROGRESS_BACKGROUNDS_SMALL_ID));
-    circleProgress1Painter.setColor(touchgfx::Color::getColorFromRGB(52, 94, 116));
+    circleProgress1.setBackground(touchgfx::Bitmap(BITMAP_H7SPINNERSMALL_ID));
+    circleProgress1Painter.setColor(touchgfx::Color::getColorFromRGB(61, 169, 252));
     circleProgress1.setPainter(circleProgress1Painter);
     circleProgress1.setValue(0);
     modalWindow1.add(circleProgress1);
 
     textArea1.setXY(62, 126);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(9, 64, 103));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M33F));
     modalWindow1.add(textArea1);
