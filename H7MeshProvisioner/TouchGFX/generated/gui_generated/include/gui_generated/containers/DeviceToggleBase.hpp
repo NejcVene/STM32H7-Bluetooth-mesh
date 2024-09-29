@@ -18,18 +18,6 @@ public:
     virtual ~DeviceToggleBase();
     virtual void initialize();
 
-    /*
-     * Virtual Action Handlers
-     */
-    virtual void GUI_DeviceConfig()
-    {
-        // Override and implement this function in DeviceToggle
-    }
-    virtual void GUI_DeviceToggleState()
-    {
-        // Override and implement this function in DeviceToggle
-    }
-
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -50,18 +38,6 @@ protected:
     touchgfx::Unicode::UnicodeChar deviceNameTxtBuffer[DEVICENAMETXT_SIZE];
 
 private:
-
-    /*
-     * Callback Declarations
-     */
-    touchgfx::Callback<DeviceToggleBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
-    touchgfx::Callback<DeviceToggleBase, const touchgfx::AbstractButton&> buttonCallback;
-
-    /*
-     * Callback Handler Declarations
-     */
-    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
-    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

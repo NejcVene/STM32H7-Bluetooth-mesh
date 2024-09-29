@@ -14,7 +14,11 @@ public:
 
     virtual void GUI_OnBtn();
     virtual void GUI_OffBtn();
+
 protected:
+private:
+    touchgfx::Callback<Screen1View, int> buttonClickCallback;
+    void handleButtonClicked(int instanceID);
 };
 
 #endif // SCREEN1VIEW_HPP

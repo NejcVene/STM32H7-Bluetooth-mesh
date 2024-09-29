@@ -46,6 +46,7 @@ protected:
     touchgfx::ButtonWithLabel offBtn;
     touchgfx::ButtonWithLabel buttonWithLabel1;
     touchgfx::ScrollableContainer scrollableContainer1;
+    DeviceToggle deviceToggle2;
     DeviceToggle deviceToggle1;
 
 private:

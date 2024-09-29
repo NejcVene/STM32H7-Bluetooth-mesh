@@ -6,9 +6,7 @@
 #include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/Color.hpp>
 
-DeviceToggleBase::DeviceToggleBase() :
-    flexButtonCallback(this, &DeviceToggleBase::flexButtonCallbackHandler),
-    buttonCallback(this, &DeviceToggleBase::buttonCallbackHandler)
+DeviceToggleBase::DeviceToggleBase()
 {
     setWidth(460);
     setHeight(60);
@@ -30,13 +28,11 @@ DeviceToggleBase::DeviceToggleBase() :
     deviceConfigBtn.setBitmapXY(0, 0);
     deviceConfigBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_IMAGE_EDIT_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_3DA9FC_SVG_ID));
     deviceConfigBtn.setIconXY(1, 0);
-    deviceConfigBtn.setAction(flexButtonCallback);
     deviceConfigBtn.setPosition(252, 5, 50, 50);
     add(deviceConfigBtn);
 
     deviceToggleBtn.setXY(312, 5);
     deviceToggleBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_ON_DARK_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_OFF_NORMAL_ID));
-    deviceToggleBtn.setAction(buttonCallback);
     add(deviceToggleBtn);
 }
 
@@ -48,26 +44,4 @@ DeviceToggleBase::~DeviceToggleBase()
 void DeviceToggleBase::initialize()
 {
 
-}
-
-void DeviceToggleBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
-{
-    if (&src == &deviceConfigBtn)
-    {
-        //GUI_DeviceConfig
-        //When deviceConfigBtn clicked call virtual function
-        //Call GUI_DeviceConfig
-        GUI_DeviceConfig();
-    }
-}
-
-void DeviceToggleBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
-{
-    if (&src == &deviceToggleBtn)
-    {
-        //GUI_DeviceToggleState
-        //When deviceToggleBtn clicked call virtual function
-        //Call GUI_DeviceToggleState
-        GUI_DeviceToggleState();
-    }
 }

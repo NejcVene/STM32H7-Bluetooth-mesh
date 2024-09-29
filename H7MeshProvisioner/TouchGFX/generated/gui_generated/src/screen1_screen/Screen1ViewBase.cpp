@@ -47,7 +47,10 @@ Screen1ViewBase::Screen1ViewBase() :
     scrollableContainer1.setScrollbarsAlpha(255);
     add(scrollableContainer1);
 
-    deviceToggle1.setXY(10, 10);
+    deviceToggle2.setXY(10, 91);
+    add(deviceToggle2);
+
+    deviceToggle1.setXY(10, 16);
     add(deviceToggle1);
 }
 
@@ -58,6 +61,7 @@ Screen1ViewBase::~Screen1ViewBase()
 
 void Screen1ViewBase::setupScreen()
 {
+    deviceToggle2.initialize();
     deviceToggle1.initialize();
 }
 
