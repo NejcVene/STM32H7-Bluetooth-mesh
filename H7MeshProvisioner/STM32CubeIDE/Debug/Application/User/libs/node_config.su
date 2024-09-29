@@ -1,4 +1,0 @@
-../Application/User/libs/node_config.c:20:6:NC_Init	64	static
-../Application/User/libs/node_config.c:28:6:NC_ReportFoundNodes	128	static
-../Application/User/libs/node_config.c:46:24:NC_GetNodeNetworkAddress	16	static
-../Application/User/libs/node_config.c:52:24:NC_GetNodeNetworkAddressArray	4	static
