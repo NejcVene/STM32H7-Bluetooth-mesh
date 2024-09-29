@@ -14,6 +14,9 @@ public:
     {
         model = m;
     }
+
+    virtual void GUI_DevicesFound() {};
+
 protected:
     Model* model;
 };

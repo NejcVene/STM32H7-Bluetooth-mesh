@@ -72,7 +72,7 @@ PROTOCOL_STATUS Comm_LPUART_Send_IT(Comm_Settings_t *setting, uint8_t *buffer, u
 	itResponses.lpUartTxFlag = 0;
 
 #ifdef _MASTER
-	TIM_Start(setting);
+	// TIM_Start(setting);
 	Protocol_WaitForHS();
 	if (timerTrigger) {
 		return PRO_ERROR_TIMEOUT;
@@ -103,7 +103,7 @@ PROTOCOL_STATUS Comm_LPUART_Receive_IT(Comm_Settings_t *setting, uint8_t *buffer
 	itResponses.lpUartRxFlag = 0;
 
 #ifdef _MASTER
-	TIM_Start(setting);
+	// TIM_Start(setting);
 	Protocol_WaitForHS();
 	if (timerTrigger) {
 		return PRO_ERROR_TIMEOUT;

@@ -424,25 +424,6 @@
                 },
                 "ButtonStyles": [
                   {
-                    "Type": "TextButtonStyle",
-                    "Y": 16,
-                    "TextId": "__SingleUse_MVY0",
-                    "TextRotation": "0",
-                    "Wildcard1": {
-                      "TextId": "__SingleUse_JF9F"
-                    },
-                    "ColorReleased": {
-                      "Red": 10,
-                      "Green": 10,
-                      "Blue": 10
-                    },
-                    "ColorPressed": {
-                      "Red": 10,
-                      "Green": 10,
-                      "Blue": 10
-                    }
-                  },
-                  {
                     "Type": "ImageButtonStyle",
                     "ImageReleased": "H7LineMedium.png",
                     "ImagePressed": "H7LineMedium.png"
@@ -501,6 +482,22 @@
                 "AutoSize": true
               }
             ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 24,
+            "Y": 32,
+            "Width": 62,
+            "Height": 29,
+            "TextId": "__SingleUse_91DD",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_9EOJ",
+              "UseBuffer": true,
+              "BufferSize": 40
+            }
           }
         ],
         "Interactions": [

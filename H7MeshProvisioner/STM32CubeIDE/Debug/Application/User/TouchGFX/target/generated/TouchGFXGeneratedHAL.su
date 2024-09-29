@@ -47,6 +47,9 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1162:18:virtual void touchgfx::HAL::performDisplayOrientationChange()	24	static
 ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:106:18:virtual void TouchGFXGeneratedHAL::flushFrameBuffer()	16	static
 ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:119:18:virtual void TouchGFXGeneratedHAL::unlockFrameBuffer()	16	static
+../../Drivers/CMSIS/Include/core_cm7.h:1902:22:void __NVIC_EnableIRQ(IRQn_Type)	16	static,ignoring_inline_asm
+../../Drivers/CMSIS/Include/core_cm7.h:1940:22:void __NVIC_DisableIRQ(IRQn_Type)	16	static,ignoring_inline_asm
+../../Drivers/CMSIS/Include/core_cm7.h:2032:22:void __NVIC_SetPriority(IRQn_Type, uint32_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::~Widget()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:virtual touchgfx::Widget::~Widget()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp:44:5:touchgfx::AbstractPainter::AbstractPainter()	16	static
@@ -85,9 +88,6 @@
 ../../TouchGFX/target/generated/HardwareMJPEGDecoder.hpp:79:10:void HardwareMJPEGDecoder::addDMA(touchgfx::DMA_Interface&)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/VideoWidget.hpp:159:10:void touchgfx::VideoWidget::setVideoBuffer(uint8_t*)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/VideoWidget.hpp:172:10:void touchgfx::VideoWidget::setVideoBufferFormat(touchgfx::Bitmap::BitmapFormat, int16_t, int16_t)	24	static
-../../Drivers/CMSIS/Include/core_cm7.h:1902:22:void __NVIC_EnableIRQ(IRQn_Type)	16	static,ignoring_inline_asm
-../../Drivers/CMSIS/Include/core_cm7.h:1940:22:void __NVIC_DisableIRQ(IRQn_Type)	16	static,ignoring_inline_asm
-../../Drivers/CMSIS/Include/core_cm7.h:2032:22:void __NVIC_SetPriority(IRQn_Type, uint32_t)	16	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:38:18:static touchgfx::VideoController& touchgfx::VideoController::getInstance()	4	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/VectorRenderer.hpp:38:7:constexpr touchgfx::VectorRenderer::VectorRenderer()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp:33:7:touchgfx::CanvasWidget::~CanvasWidget()	16	static

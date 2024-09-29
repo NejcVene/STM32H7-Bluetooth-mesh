@@ -31,6 +31,7 @@
 #include "fsm_queue.h"
 #include "hash_table.h"
 #include "command.h"
+#include "node_config.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -86,7 +87,7 @@ const osThreadAttr_t GUITask_attributes = {
 osThreadId_t FSM_TaskHandle;
 const osThreadAttr_t FSM_Task_attributes = {
   .name = "FSM_Task",
-  .stack_size = 128 * 4,
+  .stack_size = 1024 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for LEDIndicator_Ta */
@@ -102,6 +103,11 @@ const osMessageQueueAttr_t FSM_CommandQueue_attributes = {
   .name = "FSM_CommandQueue"
 };
 /* USER CODE BEGIN PV */
+osMessageQueueId_t FSM_ResultQueueHandle;
+const osMessageQueueAttr_t FSM_ResultQueue_attributes = {
+		.name = "FSM_ResultQueue"
+};
+
 FSM_State_t sm = {.currentState = MAIN_FSM_IDLE};
 HT_HashTable_t *cmdHashTable;
 Queue *eventQueue;
@@ -215,6 +221,7 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+  FSM_ResultQueueHandle = osMessageQueueNew(1, sizeof(FSM_CommandExecutionResult_t *), &FSM_ResultQueue_attributes);
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -936,6 +943,7 @@ void StartDefaultTask(void *argument)
 	eventQueue = createQueue();
 	cmdHashTable = HT_Create(7, 11);
 	commSettings = Comm_Init(&huart1, &htim2);
+	NC_Init();
 
 	// fill hash table with commands
 	HT_Insert(cmdHashTable, CMD_MESH_ATEP_ROOT, &defineRootNetworkNode);

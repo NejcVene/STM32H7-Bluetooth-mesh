@@ -27,6 +27,7 @@
  */
 
 #define MAX_NODE_NAME				10
+#define NODE_DEF_VAL				100
 
 #define GENERIC_ON_OFF_MODEL		(1 << 0)   // bit 0
 #define GENERIC_LEVEL_MODEL			(1 << 1)   // bit 1
@@ -48,6 +49,7 @@ typedef struct {
 	Node_NetworkAddress_t address;
 } Node_Config_t;
 
+void NC_Init(void);
 Node_NetworkAddress_t *NC_GetNodeNetworkAddressArray(void);
 Node_NetworkAddress_t *NC_GetNodeNetworkAddress(int index);
 void NC_ReportFoundNodes(char *param);

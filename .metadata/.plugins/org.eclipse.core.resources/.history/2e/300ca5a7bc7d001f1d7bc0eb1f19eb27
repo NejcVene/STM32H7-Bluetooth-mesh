@@ -1,0 +1,51 @@
+#include <gui/adddevicescreen_screen/AddDeviceScreenView.hpp>
+#include "node_config.h"
+#include "command.h"
+
+AddDeviceScreenView::AddDeviceScreenView()
+{
+
+}
+
+void AddDeviceScreenView::setupScreen()
+{
+    AddDeviceScreenViewBase::setupScreen();
+    foudNodeBtn.setVisible(false);
+    modalWindow1.show();
+    presenter->GUI_SendCommand(CMD_MESH_ATEP_SCAN);
+}
+
+void AddDeviceScreenView::tearDownScreen()
+{
+    AddDeviceScreenViewBase::tearDownScreen();
+}
+
+void AddDeviceScreenView::handleTickEvent() {
+
+	int currentValue = circleProgress1.getValue();
+	int16_t max = 100;
+	int16_t min = 0;
+	// circleProgress1.getRange(min, max);
+
+	if (currentValue == min) {
+		increase = true;
+	} else if (currentValue == max) {
+		increase = false;
+		modalWindow1.hide();
+	} else if (currentValue == 50) {
+		foudNodeBtn.setVisible(true);
+		foudNodeBtn.invalidate();
+	}
+	int nextValue = increase == true ? currentValue + 1 : currentValue - 1;
+	circleProgress1.setValue(nextValue);
+
+}
+
+void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t *foundDevices) {
+
+	uint32_t address;
+	for (int i = 0; i<5; i++) {
+		address = foundDevices->nodeAddress;
+	}
+
+}

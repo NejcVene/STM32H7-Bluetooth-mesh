@@ -3,12 +3,15 @@
 ../../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:52:13:touchgfx::Presenter::~Presenter()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:52:13:virtual touchgfx::Presenter::~Presenter()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:58:5:touchgfx::Presenter::Presenter()	1
+../../TouchGFX/gui/include/gui/model/Model.hpp:22:28:Node_NetworkAddress_t* Model::GUI_GetFoundDevices()	1
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:9:5:ModelListener::ModelListener()	1
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:11:13:ModelListener::~ModelListener()	1
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:11:13:virtual ModelListener::~ModelListener()	1
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:18:18:virtual void ModelListener::GUI_DevicesFound()	1
 ../../TouchGFX/gui/include/gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp:28:13:AddDeviceScreenPresenter::~AddDeviceScreenPresenter()	1
 ../../TouchGFX/gui/include/gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp:28:13:virtual AddDeviceScreenPresenter::~AddDeviceScreenPresenter()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenPresenter.cpp:4:1:AddDeviceScreenPresenter::AddDeviceScreenPresenter(AddDeviceScreenView&)	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenPresenter.cpp:10:6:virtual void AddDeviceScreenPresenter::activate()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenPresenter.cpp:15:6:virtual void AddDeviceScreenPresenter::deactivate()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenPresenter.cpp:20:6:virtual void AddDeviceScreenPresenter::GUI_SendCommand(uint16_t)	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenPresenter.cpp:26:6:virtual void AddDeviceScreenPresenter::GUI_DevicesFound()	1

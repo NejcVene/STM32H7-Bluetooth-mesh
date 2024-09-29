@@ -47,6 +47,9 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1162:18:virtual void touchgfx::HAL::performDisplayOrientationChange()	4
 ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:106:18:virtual void TouchGFXGeneratedHAL::flushFrameBuffer()	1
 ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:119:18:virtual void TouchGFXGeneratedHAL::unlockFrameBuffer()	1
+../../Drivers/CMSIS/Include/core_cm7.h:1902:22:void __NVIC_EnableIRQ(IRQn_Type)	2
+../../Drivers/CMSIS/Include/core_cm7.h:1940:22:void __NVIC_DisableIRQ(IRQn_Type)	2
+../../Drivers/CMSIS/Include/core_cm7.h:2032:22:void __NVIC_SetPriority(IRQn_Type, uint32_t)	2
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::~Widget()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:virtual touchgfx::Widget::~Widget()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp:44:5:touchgfx::AbstractPainter::AbstractPainter()	1
@@ -85,9 +88,6 @@
 ../../TouchGFX/target/generated/HardwareMJPEGDecoder.hpp:79:10:void HardwareMJPEGDecoder::addDMA(touchgfx::DMA_Interface&)	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/VideoWidget.hpp:159:10:void touchgfx::VideoWidget::setVideoBuffer(uint8_t*)	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/VideoWidget.hpp:172:10:void touchgfx::VideoWidget::setVideoBufferFormat(touchgfx::Bitmap::BitmapFormat, int16_t, int16_t)	1
-../../Drivers/CMSIS/Include/core_cm7.h:1902:22:void __NVIC_EnableIRQ(IRQn_Type)	2
-../../Drivers/CMSIS/Include/core_cm7.h:1940:22:void __NVIC_DisableIRQ(IRQn_Type)	2
-../../Drivers/CMSIS/Include/core_cm7.h:2032:22:void __NVIC_SetPriority(IRQn_Type, uint32_t)	2
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:38:18:static touchgfx::VideoController& touchgfx::VideoController::getInstance()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/VectorRenderer.hpp:38:7:constexpr touchgfx::VectorRenderer::VectorRenderer()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp:33:7:touchgfx::CanvasWidget::~CanvasWidget()	1

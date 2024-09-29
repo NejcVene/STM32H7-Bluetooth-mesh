@@ -7,26 +7,38 @@
 
 #include "node_config.h"
 #include <string.h>
-
 #include <inttypes.h>
+
+#define CLEAR_NODE_ADDRESSES(nodeAddressValue) (Node_NetworkAddress_t) 				\
+											   { .nodeAddress = (nodeAddressValue), \
+												 .uuid = ""							\
+											   }
 
 Node_NetworkAddress_t nodeAddresses[5];
 Node_Config_t nodeConfigs[5];
+
+void NC_Init(void) {
+
+	for (int i = 0; i<5; i++) {
+		nodeAddresses[i] = CLEAR_NODE_ADDRESSES(NODE_DEF_VAL);
+	}
+
+}
 
 void NC_ReportFoundNodes(char *param) {
 
 	int i = 0;
 	uint32_t index;
 	char uuid[40];
-	char *token = strtok(param, ";");
+	char *token;
+	char *rest = param;
 	Node_NetworkAddress_t tmp;
 
-	while (token != NULL) {
+	while ((token = strtok_r(rest, ";", &rest))) {
 		sscanf(token, "%" PRIu32 "-%s", &index, uuid);
 		tmp.nodeAddress = index;
 		strcpy(tmp.uuid, uuid);
 		nodeAddresses[i++] = tmp;
-		token = strtok(NULL, ";");
 	}
 
 }

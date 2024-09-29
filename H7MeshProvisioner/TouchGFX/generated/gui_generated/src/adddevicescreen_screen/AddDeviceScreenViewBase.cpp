@@ -26,10 +26,6 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase() :
     scrollableContainer1.setScrollbarsAlpha(255);
     foudNodeBtn.setBitmaps(Bitmap(BITMAP_H7LINEMEDIUM_ID), Bitmap(BITMAP_H7LINEMEDIUM_ID));
     foudNodeBtn.setBitmapXY(0, 0);
-    foudNodeBtn.setWildcardText(TypedText(T___SINGLEUSE_MVY0));
-    foudNodeBtn.setWildcardTextBuffer(TypedText(T___SINGLEUSE_JF9F).getText());
-    foudNodeBtn.setWildcardTextPosition(0, 16, 460, 60);
-    foudNodeBtn.setWildcardTextColors(touchgfx::Color::getColorFromRGB(10, 10, 10), touchgfx::Color::getColorFromRGB(10, 10, 10));
     foudNodeBtn.setAction(flexButtonCallback);
     foudNodeBtn.setPosition(10, 14, 460, 60);
     scrollableContainer1.add(foudNodeBtn);
@@ -60,6 +56,15 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase() :
     modalWindow1.add(textArea1);
 
     add(modalWindow1);
+
+    textArea2.setXY(24, 32);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea2.setLinespacing(0);
+    Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_9EOJ).getText());
+    textArea2.setWildcard(textArea2Buffer);
+    textArea2.resizeToCurrentText();
+    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_91DD));
+    add(textArea2);
 }
 
 AddDeviceScreenViewBase::~AddDeviceScreenViewBase()

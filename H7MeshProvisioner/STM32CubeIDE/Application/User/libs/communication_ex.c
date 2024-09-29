@@ -10,6 +10,7 @@
 
 #define	Toggle_Pin(port, pin, state)			{ HAL_GPIO_WritePin(port, pin, state); }
 #ifdef _MASTER
+#include "cmsis_os2.h"
 #include "command.h"
 #include "hash_table.h"
 #include "node_config.h"
@@ -82,7 +83,8 @@ static int errorCounter;
 extern Queue *eventQueue;
 static FSM_ErrorReport_t error;
 #ifdef _MASTER
-FSM_CommandExecutionResult_t cmdResult;
+//FSM_CommandExecutionResult_t cmdResult;
+extern osMessageQueueId_t FSM_ResultQueueHandle;
 extern HT_HashTable_t *cmdHashTable;
 static FSM_TransitionState_t stateTransitionTable[MAIN_FSM_NUM_OF_STATES][MAIN_FSM_NUM_OF_EVENTS] = {
 		[MAIN_FSM_IDLE][MAIN_FSM_EVENT_USER] 					= 	{MAIN_FSM_SETUP, FSM_Setup},
@@ -345,19 +347,26 @@ void FSM_Receive(void *param) {
 void FSM_Execute(void *param) {
 
 #ifdef _DEBUG
-	debugMessage("EXECUTE State -> RECEIVED: ");
-	debugMessage((char *) CommandString);
-	debugMessage("\r\n");
+//	debugMessage("EXECUTE State -> RECEIVED: ");
+//	debugMessage((char *) CommandString);
+//	debugMessage("\r\n");
 #endif
 #ifdef _MASTER
 	// TODO: master execute command
 	char *sentCommand = (char *) param;
 	char responseCommand[CMD_MESH_COMMAND_LENGHT];
-	char responseParameters[PAC_MAX_PAYLOAD];
-	sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
-	NC_ReportFoundNodes(responseParameters);
-	cmdResult.result = (void *) NC_GetNodeNetworkAddressArray();
-	// TODO: pass result to queue
+	char responseParameters[PAC_MAX_PAYLOAD]; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
+	FSM_CommandExecutionResult_t *cmdResult = (FSM_CommandExecutionResult_t*) pvPortMalloc(sizeof(FSM_CommandExecutionResult_t));
+	if (cmdResult != NULL) {
+		sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
+		NC_ReportFoundNodes(responseParameters);
+		cmdResult->result = (void *) NC_GetNodeNetworkAddressArray();
+		if (osMessageQueueGetSpace(FSM_ResultQueueHandle) > 0) {
+			if (osMessageQueuePut(FSM_ResultQueueHandle, &cmdResult, 0, 0) != osOK) {
+				// raise error
+			}
+		}
+	}
 //	if (!strcmp(responseCommand, sentCommand)) {
 //	}
 	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_EXE_COMPLETE, NULL, 0);

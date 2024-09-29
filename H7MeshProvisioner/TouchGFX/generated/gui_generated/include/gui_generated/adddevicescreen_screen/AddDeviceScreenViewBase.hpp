@@ -15,6 +15,7 @@
 #include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class AddDeviceScreenViewBase : public touchgfx::View<AddDeviceScreenPresenter>
 {
@@ -42,11 +43,18 @@ protected:
     touchgfx::Box __background;
     touchgfx::TiledImage tiledImage1;
     touchgfx::ScrollableContainer scrollableContainer1;
-    touchgfx::WildcardTextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  foudNodeBtn;
+    touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  foudNodeBtn;
     touchgfx::ModalWindow modalWindow1;
     touchgfx::CircleProgress circleProgress1;
     touchgfx::PainterRGB565 circleProgress1Painter;
     touchgfx::TextArea textArea1;
+    touchgfx::TextAreaWithOneWildcard textArea2;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREA2_SIZE = 40;
+    touchgfx::Unicode::UnicodeChar textArea2Buffer[TEXTAREA2_SIZE];
 
 private:
 

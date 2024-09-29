@@ -45,6 +45,7 @@ Application/User/libs/communication_ex.o: \
  ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
  ../Application/User/libs/comm_uart.h \
  ../Application/User/libs/device_settings.h \
+ ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  ../Application/User/libs/command.h ../Application/User/libs/hash_table.h \
  ../Application/User/libs/node_config.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h \
@@ -101,6 +102,7 @@ Application/User/libs/communication_ex.o: \
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
 ../Application/User/libs/comm_uart.h:
 ../Application/User/libs/device_settings.h:
+../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 ../Application/User/libs/command.h:
 ../Application/User/libs/hash_table.h:
 ../Application/User/libs/node_config.h:

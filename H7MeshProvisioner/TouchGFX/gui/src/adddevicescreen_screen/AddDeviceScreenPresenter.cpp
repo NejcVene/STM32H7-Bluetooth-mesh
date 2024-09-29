@@ -22,3 +22,9 @@ void AddDeviceScreenPresenter::GUI_SendCommand(uint16_t cmdIndex) {
 	model->GUI_SendCommand(cmdIndex);
 
 }
+
+void AddDeviceScreenPresenter::GUI_DevicesFound() {
+
+	view.GUI_SetDevicesFound(model->GUI_GetFoundDevices());
+
+}
