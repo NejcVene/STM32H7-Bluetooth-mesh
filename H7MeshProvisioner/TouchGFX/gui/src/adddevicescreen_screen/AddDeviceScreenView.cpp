@@ -69,8 +69,6 @@ void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t *foundDevice
 	for (int i = 0; i<5; i++) {
 		if (foundDevices[i].nodeAddress != NODE_DEF_VAL) {
 			touchgfx::Unicode::strncpy(textArea2Buffer, foundDevices->uuid, TEXTAREA2_SIZE);
-			// Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%s", "F81D4FAE7DEC4B53A154819B27E180C0");
-			textArea2.resizeToCurrentText();
 			deviceFoundBtn[i].setVisible(true);
 		}
 	}

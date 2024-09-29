@@ -1,8 +1,0 @@
-../Application/Core/Libs/comm_uart.c:20:6:Protocol_WaitForTX	4	static
-../Application/Core/Libs/comm_uart.c:26:6:Protocol_WaitForRX	4	static
-../Application/Core/Libs/comm_uart.c:32:6:Protocol_WaitForHS	4	static
-../Application/Core/Libs/comm_uart.c:39:18:Comm_Init	24	static
-../Application/Core/Libs/comm_uart.c:52:13:Comm_CheckParameters	16	static
-../Application/Core/Libs/comm_uart.c:65:17:Comm_LPUART_Send_IT	24	static
-../Application/Core/Libs/comm_uart.c:95:17:Comm_LPUART_Receive_IT	32	static
-../Application/Core/Libs/comm_uart.c:126:6:Comm_Free	16	static

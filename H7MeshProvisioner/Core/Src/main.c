@@ -88,7 +88,7 @@ osThreadId_t FSM_TaskHandle;
 const osThreadAttr_t FSM_Task_attributes = {
   .name = "FSM_Task",
   .stack_size = 1024 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityNormal7,
 };
 /* Definitions for LEDIndicator_Ta */
 osThreadId_t LEDIndicator_TaHandle;

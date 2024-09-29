@@ -246,13 +246,16 @@ static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, char *resultBuffer)
       for(MOBLEINT8 count=0; count < NoOfNeighborPresent; count++)
       {
     	  char tmp[40];
+    	  char cutUuid[5];
     	  sprintf(tmp, "%d-", count);
     	  strcat(resultBuffer, tmp);
     	  for (int j = 0; j<16; j++) {
     		  sprintf(&tmp[j * 2], "%02X", NeighborTable[count].uuid[j]);
     	  }
     	  tmp[32] = '\0';
-    	  strcat(resultBuffer, tmp);
+    	  strncpy(cutUuid, tmp, 4);
+    	  cutUuid[4] = '\0';
+    	  strcat(resultBuffer, cutUuid);
     	  if (count < NoOfNeighborPresent - 1) {
     		  strcat(resultBuffer, "\n");
     	  }

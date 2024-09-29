@@ -28,6 +28,7 @@
 
 #define MAX_NODE_NAME				10
 #define NODE_DEF_VAL				100
+#define UUID_SAVE_LEN				4
 
 #define GENERIC_ON_OFF_MODEL		(1 << 0)   // bit 0
 #define GENERIC_LEVEL_MODEL			(1 << 1)   // bit 1
@@ -40,7 +41,7 @@
 
 typedef struct {
 	uint32_t nodeAddress;
-	char uuid[40];
+	char uuid[UUID_SAVE_LEN + 1];
 } Node_NetworkAddress_t;
 
 typedef struct {

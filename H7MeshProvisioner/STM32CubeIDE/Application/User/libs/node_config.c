@@ -29,7 +29,7 @@ void NC_ReportFoundNodes(char *param) {
 
 	int i = 0;
 	uint32_t index;
-	char uuid[40];
+	char uuid[UUID_SAVE_LEN + 1];
 	char *token;
 	char *rest = param;
 	Node_NetworkAddress_t tmp;
@@ -37,7 +37,8 @@ void NC_ReportFoundNodes(char *param) {
 	while ((token = strtok_r(rest, ";", &rest))) {
 		sscanf(token, "%" PRIu32 "-%s", &index, uuid);
 		tmp.nodeAddress = index;
-		strcpy(tmp.uuid, uuid);
+		strncpy(tmp.uuid, uuid, UUID_SAVE_LEN);
+		tmp.uuid[UUID_SAVE_LEN] = '\0';
 		nodeAddresses[i++] = tmp;
 	}
 
