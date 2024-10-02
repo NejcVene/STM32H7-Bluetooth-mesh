@@ -10,6 +10,10 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 // Remap all strings
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
+    72, // T___SINGLEUSE_RV6K: "None"
+    72, // T___SINGLEUSE_CVA6: "None"
+    44, // T___SINGLEUSE_6JWH: "<>"
+    44, // T___SINGLEUSE_WEPU: "<>"
     72, // T___SINGLEUSE_9EOJ: "None"
     44, // T___SINGLEUSE_91DD: "<>"
     46, // T___SINGLEUSE_99CM: "Default"

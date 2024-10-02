@@ -68,7 +68,9 @@ void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t *foundDevice
 	disable = true;
 	for (int i = 0; i<5; i++) {
 		if (foundDevices[i].nodeAddress != NODE_DEF_VAL) {
-			touchgfx::Unicode::strncpy(textArea2Buffer, foundDevices->uuid, TEXTAREA2_SIZE);
+			touchgfx::Unicode::strncpy(textArea2Buffer, foundDevices[i].uuid, TEXTAREA2_SIZE);
+			touchgfx::Unicode::strncpy(modelsBuffer, foundDevices[i].nodeModels, MODELS_SIZE);
+			touchgfx::Unicode::strncpy(featuresBuffer, foundDevices[i].nodeFeatures, FEATURES_SIZE);
 			deviceFoundBtn[i].setVisible(true);
 		}
 	}

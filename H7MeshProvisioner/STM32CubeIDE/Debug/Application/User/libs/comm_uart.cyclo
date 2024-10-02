@@ -1,0 +1,11 @@
+../Application/User/libs/comm_uart.c:21:6:Protocol_WaitForTX	2
+../Application/User/libs/comm_uart.c:27:6:Protocol_WaitForRX	2
+../Application/User/libs/comm_uart.c:33:6:Protocol_WaitForHS	3
+../Application/User/libs/comm_uart.c:40:18:Comm_Init	4
+../Application/User/libs/comm_uart.c:54:13:Comm_CheckParameters	5
+../Application/User/libs/comm_uart.c:67:17:Comm_LPUART_Send_IT	4
+../Application/User/libs/comm_uart.c:97:17:Comm_LPUART_Receive_IT	4
+../Application/User/libs/comm_uart.c:128:6:Comm_Free	1
+../Application/User/libs/comm_uart.c:135:6:TIM_Start	1
+../Application/User/libs/comm_uart.c:142:6:TIM_Stop	1
+../Application/User/libs/comm_uart.c:148:6:TIM_Reset	1

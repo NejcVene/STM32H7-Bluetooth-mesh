@@ -26,34 +26,31 @@
  * 	is 5.
  */
 
-#define MAX_NODE_NAME				10
-#define NODE_DEF_VAL				100
-#define UUID_SAVE_LEN				4
+#define MAX_NODE_NAME					10
+#define NODE_DEF_VAL					100
+#define UUID_SAVE_LEN					4
 
-#define GENERIC_ON_OFF_MODEL		(1 << 0)   // bit 0
-#define GENERIC_LEVEL_MODEL			(1 << 1)   // bit 1
-#define SENROR_MODEL				(1 << 2)   // bit 2
-#define LIGH_LIGHTNESS_MODEL		(1 << 3)   // bit 3
-#define LIGH_LIGHTNESS_SETUP_MODEL	(1 << 4)   // bit 4
-#define UNDEFINED_MODEL_1			(1 << 5)   // bit 5
-#define UNDEFINED_MODEL_2			(1 << 6)   // bit 6
-#define UNDEFINED_MODEL_3			(1 << 7)   // bit 7
+#define NODE_FEATURE_BYTE				0
+#define NODE_MODELS_BYTE				2
 
 typedef struct {
 	uint32_t nodeAddress;
+	char nodeModels[5];
+	char nodeFeatures[5];
 	char uuid[UUID_SAVE_LEN + 1];
 } Node_NetworkAddress_t;
 
 typedef struct {
+	uint8_t subscriptions;
 	char nodeName[MAX_NODE_NAME];
-	uint8_t models;
 	Node_NetworkAddress_t address;
 } Node_Config_t;
 
 void NC_Init(void);
+void NC_ReportFoundNodes(char *param);
+void NC_CheckEnabledModelsFeatures(void);
 Node_NetworkAddress_t *NC_GetNodeNetworkAddressArray(void);
 Node_NetworkAddress_t *NC_GetNodeNetworkAddress(int index);
-void NC_ReportFoundNodes(char *param);
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 //void NC_ReadNodeFromNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 

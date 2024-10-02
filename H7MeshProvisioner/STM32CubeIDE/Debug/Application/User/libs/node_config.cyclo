@@ -1,0 +1,7 @@
+../Application/User/libs/node_config.c:47:6:NC_Init	2
+../Application/User/libs/node_config.c:55:6:NC_ReportFoundNodes	2
+../Application/User/libs/node_config.c:75:6:NC_CheckEnabledModelsFeatures	3
+../Application/User/libs/node_config.c:86:6:NC_ReportItems	3
+../Application/User/libs/node_config.c:96:9:NC_HexCharToInt	7
+../Application/User/libs/node_config.c:109:24:NC_GetNodeNetworkAddress	1
+../Application/User/libs/node_config.c:115:24:NC_GetNodeNetworkAddressArray	1

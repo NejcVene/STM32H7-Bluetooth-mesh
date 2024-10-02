@@ -442,6 +442,54 @@
             ]
           },
           {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 24,
+            "Y": 32,
+            "Width": 62,
+            "Height": 29,
+            "TextId": "__SingleUse_91DD",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_9EOJ",
+              "UseBuffer": true,
+              "BufferSize": 40
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "models",
+            "X": 185,
+            "Y": 32,
+            "Width": 62,
+            "Height": 29,
+            "TextId": "__SingleUse_WEPU",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_CVA6",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "features",
+            "X": 360,
+            "Y": 32,
+            "Width": 62,
+            "Height": 29,
+            "TextId": "__SingleUse_6JWH",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_RV6K",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
             "Type": "ModalWindow",
             "Name": "modalWindow1",
             "Width": 480,
@@ -491,22 +539,6 @@
                 "AutoSize": true
               }
             ]
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2",
-            "X": 24,
-            "Y": 32,
-            "Width": 62,
-            "Height": 29,
-            "TextId": "__SingleUse_91DD",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_9EOJ",
-              "UseBuffer": true,
-              "BufferSize": 40
-            }
           }
         ],
         "Interactions": [

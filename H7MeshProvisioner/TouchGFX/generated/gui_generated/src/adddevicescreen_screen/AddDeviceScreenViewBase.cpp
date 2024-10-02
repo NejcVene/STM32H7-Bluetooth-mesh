@@ -32,6 +32,33 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase() :
 
     add(scrollableContainer1);
 
+    textArea2.setXY(24, 32);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea2.setLinespacing(0);
+    Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_9EOJ).getText());
+    textArea2.setWildcard(textArea2Buffer);
+    textArea2.resizeToCurrentText();
+    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_91DD));
+    add(textArea2);
+
+    models.setXY(185, 32);
+    models.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    models.setLinespacing(0);
+    Unicode::snprintf(modelsBuffer, MODELS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_CVA6).getText());
+    models.setWildcard(modelsBuffer);
+    models.resizeToCurrentText();
+    models.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WEPU));
+    add(models);
+
+    features.setXY(360, 32);
+    features.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    features.setLinespacing(0);
+    Unicode::snprintf(featuresBuffer, FEATURES_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_RV6K).getText());
+    features.setWildcard(featuresBuffer);
+    features.resizeToCurrentText();
+    features.setTypedText(touchgfx::TypedText(T___SINGLEUSE_6JWH));
+    add(features);
+
     modalWindow1.setBackground(touchgfx::BitmapId(BITMAP_H7MODALBACKGROUNDSMALL_ID), 133, 61);
     modalWindow1.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     modalWindow1.setShadeAlpha(100);
@@ -56,15 +83,6 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase() :
     modalWindow1.add(textArea1);
 
     add(modalWindow1);
-
-    textArea2.setXY(24, 32);
-    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea2.setLinespacing(0);
-    Unicode::snprintf(textArea2Buffer, TEXTAREA2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_9EOJ).getText());
-    textArea2.setWildcard(textArea2Buffer);
-    textArea2.resizeToCurrentText();
-    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_91DD));
-    add(textArea2);
 }
 
 AddDeviceScreenViewBase::~AddDeviceScreenViewBase()

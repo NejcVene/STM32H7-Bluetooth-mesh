@@ -360,6 +360,7 @@ void FSM_Execute(void *param) {
 	if (cmdResult != NULL) {
 		sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
 		NC_ReportFoundNodes(responseParameters);
+		NC_CheckEnabledModelsFeatures();
 		cmdResult->result = (void *) NC_GetNodeNetworkAddressArray();
 		if (osMessageQueueGetSpace(FSM_ResultQueueHandle) > 0) {
 			if (osMessageQueuePut(FSM_ResultQueueHandle, &cmdResult, 0, 0) != osOK) {

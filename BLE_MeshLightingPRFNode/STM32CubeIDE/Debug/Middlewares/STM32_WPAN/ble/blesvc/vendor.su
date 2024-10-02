@@ -1,0 +1,12 @@
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Src/vendor.c:91:14:Vendor_WriteLocalDataCb	48	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Src/vendor.c:205:14:Vendor_ReadLocalDataCb	40	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Src/vendor.c:370:14:Vendor_OnResponseDataCb	40	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Src/vendor.c:521:6:Vendor_Process	8	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Src/vendor.c:537:6:Vendor_Publish	40	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Src/vendor.c:570:6:Vendor_TestRemoteData	40	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Src/vendor.c:597:6:Vendor_TestCounterInc	40	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Src/vendor.c:620:6:Vendor_SendDataFreq	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Src/vendor.c:640:14:VendorModel_PID1_GetOpcodeTableCb	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Src/vendor.c:660:14:VendorModel_PID1_GetStatusRequestCb	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Src/vendor.c:686:14:VendorModel_PID1_ProcessMessageCb	40	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Src/vendor.c:751:21:Packet_ResponseTimeStamp	16	static

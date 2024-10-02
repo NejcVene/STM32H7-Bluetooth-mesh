@@ -41,4 +41,22 @@
 #define COMM_ERR_PIN_SLAVE		GPIO_PIN_0 // CHANGE!
 #endif
 
+#define NC_GENERIC_ON_OFF_MODEL				(1 << 0) // bit 0
+#define NC_GENERIC_LEVEL_MODEL				(1 << 1) // bit 1
+#define NC_SENSOR_MODEL						(1 << 2) // bit 2
+#define NC_LIGH_LIGHTNESS_MODEL				(1 << 3) // bit 3
+#define NC_LIGH_LIGHTNESS_SETUP_MODEL		(1 << 4) // bit 4
+#define NC_UNDEFINED_MODEL_1				(1 << 5) // bit 5
+#define NC_UNDEFINED_MODEL_2				(1 << 6) // bit 6
+#define NC_UNDEFINED_MODEL_3				(1 << 7) // bit 7
+
+#define NC_RELAY_FEATURE					(1 << 0) // bit 0
+#define NC_PROXY_FEATURE					(1 << 1) // bit 1
+#define NC_FRIEND_FEATURE					(1 << 2) // bit 2
+#define NC_EMBEDDED_PROVISIONER_FEATURE		(1 << 3) // bit 3
+#define NC_UNDEFINED_FEATURE_1				(1 << 4) // bit 4
+#define NC_UNDEFINED_FEATURE_2				(1 << 5) // bit 5
+#define NC_UNDEFINED_FEATURE_3				(1 << 6) // bit 6
+#define NC_UNDEFINED_FEATURE_4				(1 << 7) // bit 7
+
 #endif /* INC_DEVICE_SETTINGS_H_ */
