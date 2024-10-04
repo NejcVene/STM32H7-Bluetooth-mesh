@@ -158,6 +158,8 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterColor.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
+ ../../TouchGFX/gui/include/gui/containers/DeviceAdd.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceAddBase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/GPIO.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterLinearGradient.hpp \
@@ -344,6 +346,8 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/STM32CubeIDE/Applicatio
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterColor.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:
+../../TouchGFX/gui/include/gui/containers/DeviceAdd.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceAddBase.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/GPIO.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRVectorRenderer.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterLinearGradient.hpp:

@@ -2372,3 +2372,86 @@ java.lang.Exception: Project 'AnalogSamplerTaskSTM32H7B3I' is not open.
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+!SESSION 2024-10-04 16:53:10.486 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=sl_SI
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-04 16:53:26.441
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-04 16:53:26.444
+!MESSAGE Log4j2 initialized with config file F:\Nejc\Projekti\BLEMeshHomeAutomation\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-04 16:53:41.087
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:06:52.273
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 4 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:06:52.273
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:06:52.274
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 4 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:06:52.274
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:15:22.052
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 8 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:15:22.052
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:15:22.053
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 8 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:15:22.053
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:18:13.041
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 9 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:18:13.041
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:18:13.042
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 9 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:18:13.042
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:27:50.943
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 14 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:27:50.943
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:27:50.944
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 14 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2024-10-05 00:27:50.944
+!MESSAGE Existing sessions are:
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2024-10-05 00:44:19.863
+!MESSAGE Failed to execute MI command:
+-stack-list-frames 0 0
+Error message from debugger back end:
+Thread id: 2 has terminated
+!STACK 0
+java.lang.Exception: Thread id: 2 has terminated
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2024-10-05 00:44:25.088
+!MESSAGE Failed to execute MI command:
+-stack-list-frames 0 0
+Error message from debugger back end:
+Invalid thread id: 8
+!STACK 0
+java.lang.Exception: Invalid thread id: 8
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)

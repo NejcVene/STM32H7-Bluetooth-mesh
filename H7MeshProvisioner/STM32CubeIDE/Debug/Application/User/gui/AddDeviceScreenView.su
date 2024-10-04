@@ -76,14 +76,17 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:33:7:virtual touchgfx::TextAreaWithWildcardBase::~TextAreaWithWildcardBase()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:65:5:touchgfx::TextAreaWithOneWildcard::TextAreaWithOneWildcard()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:84:41:virtual const touchgfx::Unicode::UnicodeChar* touchgfx::TextAreaWithOneWildcard::getWildcard1() const	16	static
-../../TouchGFX/generated/gui_generated/include/gui_generated/adddevicescreen_screen/AddDeviceScreenViewBase.hpp:30:18:virtual void AddDeviceScreenViewBase::GUI_ProvisionNode()	16	static
-../../TouchGFX/gui/include/gui/adddevicescreen_screen/AddDeviceScreenView.hpp:11:13:AddDeviceScreenView::~AddDeviceScreenView()	24	static
-../../TouchGFX/gui/include/gui/adddevicescreen_screen/AddDeviceScreenView.hpp:11:13:virtual AddDeviceScreenView::~AddDeviceScreenView()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:8:1:AddDeviceScreenView::AddDeviceScreenView()	24	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:13:6:virtual void AddDeviceScreenView::setupScreen()	64	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:33:6:virtual void AddDeviceScreenView::tearDownScreen()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:38:6:virtual void AddDeviceScreenView::handleTickEvent()	32	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:65:6:virtual void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t*)	24	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/adddevicescreen_screen/AddDeviceScreenViewBase.hpp:29:18:virtual void AddDeviceScreenViewBase::GUI_ProvisionNode()	16	static
+../../TouchGFX/gui/include/gui/containers/DeviceAdd.hpp:16:10:void DeviceAdd::setButtonAction(int, touchgfx::GenericCallback<const touchgfx::AbstractButtonContainer&>&)	24	static
+../../TouchGFX/gui/include/gui/containers/DeviceAdd.hpp:24:10:void DeviceAdd::setTextUUID(const char*)	16	static
+../../TouchGFX/gui/include/gui/adddevicescreen_screen/AddDeviceScreenView.hpp:12:13:AddDeviceScreenView::~AddDeviceScreenView()	24	static
+../../TouchGFX/gui/include/gui/adddevicescreen_screen/AddDeviceScreenView.hpp:12:13:virtual AddDeviceScreenView::~AddDeviceScreenView()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:10:1:AddDeviceScreenView::AddDeviceScreenView()	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:15:6:virtual void AddDeviceScreenView::setupScreen()	88	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:48:6:virtual void AddDeviceScreenView::tearDownScreen()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:53:6:virtual void AddDeviceScreenView::handleTickEvent()	32	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:80:6:virtual void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t*)	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:96:6:void AddDeviceScreenView::onDeviceAddButtonClicked(const touchgfx::AbstractButtonContainer&)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:touchgfx::ClickButtonTrigger::~ClickButtonTrigger()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:virtual touchgfx::ClickButtonTrigger::~ClickButtonTrigger()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:45:7:touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger>::~ImageButtonStyle()	16	static
@@ -95,11 +98,19 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddev
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:76:10:void touchgfx::ImageButtonStyle<T>::setBitmapXY(uint16_t, uint16_t) [with T = touchgfx::ClickButtonTrigger]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:111:10:void touchgfx::WildcardTextButtonStyle<T>::setWildcardTextPosition(int16_t, int16_t, int16_t, int16_t) [with T = touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger>]	40	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:142:10:void touchgfx::WildcardTextButtonStyle<T>::setWildcardTextColors(touchgfx::colortype, touchgfx::colortype) [with T = touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger>]	24	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:134:7:constexpr touchgfx::GenericCallback<const touchgfx::AbstractButtonContainer&>::GenericCallback()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:373:5:touchgfx::Callback<dest_type, T1, void, void>::Callback(dest_type*, void (dest_type::*)(T1)) [with dest_type = AddDeviceScreenView; T1 = const touchgfx::AbstractButtonContainer&]	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:touchgfx::ClickButtonTrigger::ClickButtonTrigger()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:48:5:touchgfx::ImageButtonStyle<T>::ImageButtonStyle() [with T = touchgfx::ClickButtonTrigger]	32	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:97:18:void touchgfx::ImageButtonStyle<T>::handlePressedUpdated() [with T = touchgfx::ClickButtonTrigger]	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:156:18:void touchgfx::WildcardTextButtonStyle<T>::handlePressedUpdated() [with T = touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger>]	32	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:138:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = const touchgfx::AbstractButtonContainer&]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:138:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = const touchgfx::AbstractButtonContainer&]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<AddDeviceScreenView, const touchgfx::AbstractButtonContainer&>::~Callback()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<AddDeviceScreenView, const touchgfx::AbstractButtonContainer&>::~Callback()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:51:7:touchgfx::WildcardTextButtonStyle<touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger> >::~WildcardTextButtonStyle()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:51:7:virtual touchgfx::WildcardTextButtonStyle<touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger> >::~WildcardTextButtonStyle()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = AddDeviceScreenView; T1 = const touchgfx::AbstractButtonContainer&]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = AddDeviceScreenView; T1 = const touchgfx::AbstractButtonContainer&]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:163:18:void touchgfx::WildcardTextButtonStyle<T>::handleAlphaUpdated() [with T = touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger>]	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:104:18:void touchgfx::ImageButtonStyle<T>::handleAlphaUpdated() [with T = touchgfx::ClickButtonTrigger]	24	static

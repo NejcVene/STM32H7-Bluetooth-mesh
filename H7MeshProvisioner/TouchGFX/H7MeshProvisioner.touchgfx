@@ -414,8 +414,9 @@
           {
             "Type": "ScrollableContainer",
             "Name": "scrollableContainer1",
+            "Y": 10,
             "Width": 480,
-            "Height": 272,
+            "Height": 252,
             "HorizontalScrollEnabled": true,
             "VerticalScrollEnabled": true,
             "ScrollbarsVisibleOnPressed": true,
@@ -440,54 +441,6 @@
                 ]
               }
             ]
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2",
-            "X": 24,
-            "Y": 32,
-            "Width": 62,
-            "Height": 29,
-            "TextId": "__SingleUse_91DD",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_9EOJ",
-              "UseBuffer": true,
-              "BufferSize": 40
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "models",
-            "X": 185,
-            "Y": 32,
-            "Width": 62,
-            "Height": 29,
-            "TextId": "__SingleUse_WEPU",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_CVA6",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "features",
-            "X": 360,
-            "Y": 32,
-            "Width": 62,
-            "Height": 29,
-            "TextId": "__SingleUse_6JWH",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_RV6K",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
           },
           {
             "Type": "ModalWindow",
@@ -621,6 +574,83 @@
             "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.png",
             "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_dark.png",
             "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded_text.json"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "DeviceAdd",
+        "Width": 460,
+        "Height": 60,
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 460,
+            "Height": 60,
+            "FileName": "H7LineMedium.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "nodeUUID",
+            "X": 10,
+            "Y": 16,
+            "Width": 62,
+            "Height": 29,
+            "TextId": "__SingleUse_YBUN",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_9YKB",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "nodeModels",
+            "X": 199,
+            "Y": 16,
+            "Width": 62,
+            "Height": 29,
+            "TextId": "__SingleUse_UH6U",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_Z4S0",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "nodeFeatures",
+            "X": 388,
+            "Y": 16,
+            "Width": 62,
+            "Height": 29,
+            "TextId": "__SingleUse_L7DV",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_T1HH",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "deviceAddListBtn",
+            "Width": 460,
+            "Height": 60,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "ImageButtonStyle"
+              }
+            ]
           }
         ],
         "Interactions": []

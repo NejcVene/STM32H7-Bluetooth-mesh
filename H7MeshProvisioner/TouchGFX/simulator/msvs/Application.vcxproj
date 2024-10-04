@@ -32,6 +32,8 @@
     <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\DeviceToggle.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceToggleBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\DeviceAdd.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceAddBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -193,6 +195,8 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\DeviceToggle.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceToggleBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\DeviceAdd.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceAddBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

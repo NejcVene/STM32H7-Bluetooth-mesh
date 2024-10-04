@@ -285,6 +285,12 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceToggleBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\DeviceAdd.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceAddBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml">
@@ -758,6 +764,12 @@
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceToggleBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\DeviceAdd.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceAddBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,6 +3,7 @@
 
 #include <gui_generated/adddevicescreen_screen/AddDeviceScreenViewBase.hpp>
 #include <gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp>
+#include <gui/containers/DeviceAdd.hpp>
 
 class AddDeviceScreenView : public AddDeviceScreenViewBase
 {
@@ -19,6 +20,10 @@ protected:
     bool disable = false;
     static const int maxButtons = 5;
     touchgfx::WildcardTextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger > > deviceFoundBtn[maxButtons]; // Array of 5 buttons
+    DeviceAdd deviceAdds[maxButtons];
+
+private:
+    void onDeviceAddButtonClicked(const touchgfx::AbstractButtonContainer& button);
 };
 
 #endif // ADDDEVICESCREENVIEW_HPP

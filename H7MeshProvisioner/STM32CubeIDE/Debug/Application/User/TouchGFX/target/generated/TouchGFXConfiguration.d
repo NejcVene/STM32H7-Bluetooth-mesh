@@ -159,6 +159,8 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterColor.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
+ ../../TouchGFX/gui/include/gui/containers/DeviceAdd.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceAddBase.hpp \
  ../../TouchGFX/generated/images/include/BitmapDatabase.hpp \
  ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/VectorFontRendererImpl.hpp \
@@ -326,6 +328,8 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/STM32CubeIDE/Applicatio
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterColor.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:
+../../TouchGFX/gui/include/gui/containers/DeviceAdd.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceAddBase.hpp:
 ../../TouchGFX/generated/images/include/BitmapDatabase.hpp:
 ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/VectorFontRendererImpl.hpp:

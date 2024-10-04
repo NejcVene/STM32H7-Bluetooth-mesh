@@ -11,7 +11,6 @@
 #include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/ModalWindow.hpp>
 #include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
@@ -44,23 +43,10 @@ protected:
     touchgfx::TiledImage tiledImage1;
     touchgfx::ScrollableContainer scrollableContainer1;
     touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  foudNodeBtn;
-    touchgfx::TextAreaWithOneWildcard textArea2;
-    touchgfx::TextAreaWithOneWildcard models;
-    touchgfx::TextAreaWithOneWildcard features;
     touchgfx::ModalWindow modalWindow1;
     touchgfx::CircleProgress circleProgress1;
     touchgfx::PainterRGB565 circleProgress1Painter;
     touchgfx::TextArea textArea1;
-
-    /*
-     * Wildcard Buffers
-     */
-    static const uint16_t TEXTAREA2_SIZE = 40;
-    touchgfx::Unicode::UnicodeChar textArea2Buffer[TEXTAREA2_SIZE];
-    static const uint16_t MODELS_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar modelsBuffer[MODELS_SIZE];
-    static const uint16_t FEATURES_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar featuresBuffer[FEATURES_SIZE];
 
 private:
 
