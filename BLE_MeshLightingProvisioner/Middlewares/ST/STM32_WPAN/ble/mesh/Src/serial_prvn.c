@@ -236,35 +236,34 @@ static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, char *resultBuffer)
   
     result = BLEMesh_GetNeighborState(NeighborTable,&NoOfNeighborPresent);
     /* Check if any unprovisioned device is available */
-    if(!NoOfNeighborPresent)
-    {
-      TRACE_I(TF_PROVISION,"No Unprovisioned Device Nearby\r\n");  
+    strcat(resultBuffer, "ATEP SCAN: ");
+    if(!NoOfNeighborPresent) {
+    	strcat(resultBuffer, "NONE");
+    	TRACE_I(TF_PROVISION,"No Unprovisioned Device Nearby\r\n");
     }
-    else
-    {
-    	strcat(resultBuffer, "ATEP SCAN: ");
-      for(MOBLEINT8 count=0; count < NoOfNeighborPresent; count++)
-      {
-    	  char tmp[40];
-    	  char cutUuid[5];
-    	  sprintf(tmp, "%d-", count);
-    	  strcat(resultBuffer, tmp);
-    	  for (int j = 0; j<16; j++) {
-    		  sprintf(&tmp[j * 2], "%02X", NeighborTable[count].uuid[j]);
-    	  }
-    	  tmp[32] = '\0';
-    	  strncpy(cutUuid, tmp, 4);
-    	  cutUuid[4] = '\0';
-    	  strcat(resultBuffer, cutUuid);
-    	  if (count < NoOfNeighborPresent - 1) {
-    		  strcat(resultBuffer, "\n");
-    	  }
-    	  BLEMesh_PrintStringCb("");
-    	  TRACE_I(TF_PROVISION,"Device-%d -> ", count);
-    	  BLEMesh_PrintDataCb(NeighborTable[count].uuid, 16);
-      }
+    else {
+//    	strcat(resultBuffer, "ATEP SCAN: ");
+    	for(MOBLEINT8 count=0; count < NoOfNeighborPresent; count++) {
+    		char tmp[40];
+    		char cutUuid[5];
+    		sprintf(tmp, "%d-", count);
+    		strcat(resultBuffer, tmp);
+    		for (int j = 0; j<16; j++) {
+    			sprintf(&tmp[j * 2], "%02X", NeighborTable[count].uuid[j]);
+    		}
+    		tmp[32] = '\0';
+    		strncpy(cutUuid, tmp, 4);
+    		cutUuid[4] = '\0';
+    		strcat(resultBuffer, cutUuid);
+    		if (count < NoOfNeighborPresent - 1) {
+    			strcat(resultBuffer, "\n");
+    		}
+    		BLEMesh_PrintStringCb("");
+    		TRACE_I(TF_PROVISION,"Device-%d -> ", count);
+    		BLEMesh_PrintDataCb(NeighborTable[count].uuid, 16);
+    	}
     }
-  return result;
+    return result;
   }
 /**
 * @brief  This funcrion is used to update the status of the provisioning

@@ -8,41 +8,41 @@
 #include "command.h"
 
 CMD_MeshCommand_t defineRootNetworkNode = {
-		.command = "atep root",
+		.command = "ATEP ROOT",
 		.commandType = PRO_MSG_TYPE_UNACK
 };
 
 CMD_MeshCommand_t scanForUnprovisionedNetworkDevices = {
-		.command = "atep scan",
+		.command = "ATEP SCAN",
 		.commandType = PRO_MSG_TYPE_ACK
 };
 
 CMD_MeshCommand_t provisionNetworkDevice = { // currently hard-coded
-		.command = "atep prvn-%d",
+		.command = "ATEP PRVN-%d",
 		.commandType = PRO_MSG_TYPE_UNACK
 };
 
 CMD_MeshCommand_t scanForUnprovisionedNetworkDevicesOutOfRangePvrn = {
-		.command = "atep ndscan",
-		.commandType = PRO_MSG_TYPE_UNACK
+		.command = "ATEP NDSCAN",
+		.commandType = PRO_MSG_TYPE_ACK
 };
 
 CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn = {
-		.command = "atep ndprvn-%d",
+		.command = "ATEP NDPRVN-%d",
 		.commandType = PRO_MSG_TYPE_UNACK
 };
 
 CMD_MeshCommand_t genericOnOffSetAck = { // currently hard-coded
-		.command = "atcl c000 8202 01 00",
+		.command = "ATCL c000 8202 01 00",
 		.commandType = PRO_MSG_TYPE_UNACK
 };
 
 CMD_MeshCommand_t genericOnOffSetAckOff = { // currently hard-coded
-		.command = "atcl c000 8202 00 00", // c000 for group address
+		.command = "ATCL c000 8202 00 00", // c000 for group address
 		.commandType = PRO_MSG_TYPE_UNACK
 };
 
 CMD_MeshCommand_t genericOnOffGet = {
-		.command = "atcl 0002 8201",
+		.command = "ATCL 0002 8201",
 		.commandType = PRO_MSG_TYPE_UNACK
 };

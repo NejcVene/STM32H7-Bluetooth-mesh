@@ -87,16 +87,17 @@ static FSM_ErrorReport_t error;
 extern osMessageQueueId_t FSM_ResultQueueHandle;
 extern HT_HashTable_t *cmdHashTable;
 static FSM_TransitionState_t stateTransitionTable[MAIN_FSM_NUM_OF_STATES][MAIN_FSM_NUM_OF_EVENTS] = {
-		[MAIN_FSM_IDLE][MAIN_FSM_EVENT_USER] 					= 	{MAIN_FSM_SETUP, FSM_Setup},
-		[MAIN_FSM_SETUP][MAIN_FSM_EVENT_SETUP_COMPLETE] 		= 	{MAIN_FSM_TRANSMIT, FSM_Transmit},
-//		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_TRANSMIT_COMPLETE] 	= 	{MAIN_FSM_TRANSMIT_COMPLETE, NULL},
-		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_AKC] 				= 	{MAIN_FSM_RECEIVE, FSM_Receive},
-		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_UNACK] 				= 	{MAIN_FSM_IDLE, FSM_Idle},
-		[MAIN_FSM_RECEIVE][MAIN_FSM_EVENT_RECEIVE_COMPLETE] 	= 	{MAIN_FSM_EXECUTE_COMMAND, FSM_Execute},
-		[MAIN_FSM_EXECUTE_COMMAND][MAIN_FSM_EVENT_EXE_COMPLETE] =	{MAIN_FSM_IDLE, FSM_Idle},
-		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_ERROR]				=	{MAIN_FSM_ERROR, FSM_Error},
-		[MAIN_FSM_RECEIVE][MAIN_FSM_EVENT_ERROR]				=	{MAIN_FSM_ERROR, FSM_Error},
-		[MAIN_FSM_ERROR][MAIN_FSM_EVENT_USER]					=	{MAIN_FSM_SETUP, FSM_Setup}
+		[MAIN_FSM_IDLE][MAIN_FSM_EVENT_USER] 						= 	{MAIN_FSM_SETUP, FSM_Setup},
+		[MAIN_FSM_SETUP][MAIN_FSM_EVENT_SETUP_COMPLETE] 			= 	{MAIN_FSM_TRANSMIT, FSM_Transmit},
+//		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_TRANSMIT_COMPLETE] 		= 	{MAIN_FSM_TRANSMIT_COMPLETE, NULL},
+		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_AKC] 					= 	{MAIN_FSM_RECEIVE, FSM_Receive},
+		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_UNACK] 					= 	{MAIN_FSM_IDLE, FSM_Idle},
+		[MAIN_FSM_RECEIVE][MAIN_FSM_EVENT_RECEIVE_COMPLETE] 		= 	{MAIN_FSM_EXECUTE_COMMAND, FSM_Execute},
+		[MAIN_FSM_EXECUTE_COMMAND][MAIN_FSM_EVENT_EXE_COMPLETE] 	=	{MAIN_FSM_IDLE, FSM_Idle},
+		[MAIN_FSM_EXECUTE_COMMAND][MAIN_FSM_EVENT_EMPTY_RESPONSE]	=	{MAIN_FSM_TRANSMIT, FSM_Transmit},
+		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_ERROR]					=	{MAIN_FSM_ERROR, FSM_Error},
+		[MAIN_FSM_RECEIVE][MAIN_FSM_EVENT_ERROR]					=	{MAIN_FSM_ERROR, FSM_Error},
+		[MAIN_FSM_ERROR][MAIN_FSM_EVENT_USER]						=	{MAIN_FSM_SETUP, FSM_Setup}
 };
 #else
 static FSM_TransitionState_t stateTransitionTable[MAIN_FSM_NUM_OF_STATES][MAIN_FSM_NUM_OF_EVENTS] = {
@@ -322,13 +323,14 @@ void FSM_Transmit(void *param) {
 		sprintf(cmdToSend, meshCommand->command, NC_GetNodeNetworkAddress(0)->nodeAddress);
 		if (Protocol_Send(meshCommand->commandType, (uint8_t *) cmdToSend, strlen(cmdToSend), NULL) == PRO_OK) {
 			if (meshCommand->commandType != PRO_MSG_TYPE_UNACK) {
-				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, meshCommand->command, sizeof(meshCommand->command));
+				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, param, sizeof(param));
+				// don't yet free send command, as it (might) is needed later
 			} else {
 				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_UNACK, NULL, 0);
+				vPortFree(guiCmd); // free send command, as we don't need it anymore
 			}
 		}
 	}
-	vPortFree(guiCmd);
 #else
 	Protocol_Send(PRO_MSG_TYPE_OTHER, "hello", strlen("hello"), NULL);
 	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_TRANSMIT_COMPLETE, NULL, 0);
@@ -355,23 +357,31 @@ void FSM_Execute(void *param) {
 #endif
 #ifdef _MASTER
 	// TODO: master execute command
-	char *sentCommand = (char *) param;
+	FSM_CommandGet_t *guiCmd = *((FSM_CommandGet_t **) param);
 	char responseCommand[CMD_MESH_COMMAND_LENGHT];
 	char responseParameters[PAC_MAX_PAYLOAD]; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
-	FSM_CommandExecutionResult_t *cmdResult = (FSM_CommandExecutionResult_t*) pvPortMalloc(sizeof(FSM_CommandExecutionResult_t));
-	if (cmdResult != NULL) {
+	FSM_CommandExecutionResult_t *cmdResult;
+	if ((cmdResult = (FSM_CommandExecutionResult_t*) pvPortMalloc(sizeof(FSM_CommandExecutionResult_t)))) {
 		sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
-		NC_ReportFoundNodes(responseParameters);
-		NC_CheckEnabledModelsFeatures();
-		cmdResult->result = (void *) NC_GetNodeNetworkAddressArray();
-		if (osMessageQueueGetSpace(FSM_ResultQueueHandle) > 0) {
-			if (osMessageQueuePut(FSM_ResultQueueHandle, &cmdResult, 0, 0) != osOK) {
-				// raise error
+		if (!strcmp(responseCommand, ((CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex))->command)) {
+			if (strcmp(responseParameters, "NONE") != 0) {
+				NC_ReportFoundNodes(responseParameters);
+				NC_CheckEnabledModelsFeatures();
+				cmdResult->result = (void *) NC_GetNodeNetworkAddressArray();
+				if (osMessageQueueGetSpace(FSM_ResultQueueHandle) > 0) {
+					if (osMessageQueuePut(FSM_ResultQueueHandle, &cmdResult, 0, 0) != osOK) {
+						// raise error
+					}
+				}
+			} else {
+				// if no node was found at the vicinity of the provisioner, check for new nodes by using already provisioned nodes
+				guiCmd->commandIndex = CMD_MESH_ATEP_SCAN_RANGE;
+				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_EMPTY_RESPONSE, param, sizeof(param));
 			}
+		} else {
+			// send and executed commands do not match!
 		}
 	}
-//	if (!strcmp(responseCommand, sentCommand)) {
-//	}
 	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_EXE_COMPLETE, NULL, 0);
 #else
 	// set task for serial interface process, which will execute received command

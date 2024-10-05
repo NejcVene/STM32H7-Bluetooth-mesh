@@ -50,9 +50,11 @@ typedef enum {
 	MAIN_FSM_EVENT_RECEIVE_COMPLETE,	// once receive is complete without errors
 	MAIN_FSM_EVENT_AKC,					// message requires an answer
 	MAIN_FSM_EVENT_UNACK,				// message does not require an answer
-	MAIN_FSM_EVENT_ERROR,				// an error occurred during transmission/reception,
-	MAIN_FSM_EVENT_EXE_COMPLETE,		// execution of command/update is complete,
-#ifdef SLAVE
+	MAIN_FSM_EVENT_ERROR,				// an error occurred during transmission/reception
+	MAIN_FSM_EVENT_EXE_COMPLETE,		// execution of command/update is complete
+	MAIN_FSM_EVENT_EMPTY_RESPONSE,		// when in execution, it is possible that slave node sends empty response (ex. no nodes found)
+										// we must then send to the slave to execute another command which might yield correct results.
+#ifdef _SLAVE
 	MAIN_FSM_EVENT_INTERRUPT,
 #endif
 	MAIN_FSM_NUM_OF_EVENTS
