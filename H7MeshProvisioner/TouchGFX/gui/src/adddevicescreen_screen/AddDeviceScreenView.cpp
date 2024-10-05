@@ -18,12 +18,12 @@ void AddDeviceScreenView::setupScreen()
     foudNodeBtn.setVisible(false);
     for (int i = 0; i<maxButtons; i++) {
     	deviceAdds[i].initialize();
-    	deviceAdds[i].setPosition(10, 0 + (70 * i), 460, 60);
+    	deviceAdds[i].setPosition(10, 70 * i, 460, 60);
     	deviceAdds[i].setVisible(false);
     	scrollableContainer1.add(deviceAdds[i]);
     }
     modalWindow1.show();
-   presenter->GUI_SendCommand(CMD_MESH_ATEP_SCAN);
+    presenter->GUI_SendCommand(CMD_MESH_ATEP_SCAN, NULL);
 }
 
 void AddDeviceScreenView::tearDownScreen()
@@ -76,7 +76,8 @@ void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t *foundDevice
 
 void AddDeviceScreenView::handleButtonClicked(int instanceID) {
 
-	nay2 = instanceID;
+	static int cachedInstanceID = instanceID;
+	presenter->GUI_SendCommand(CMD_MESH_ATEP_PRVN, (void *) &cachedInstanceID);
 
 }
 

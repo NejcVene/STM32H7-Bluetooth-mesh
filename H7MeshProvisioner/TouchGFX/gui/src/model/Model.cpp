@@ -33,11 +33,16 @@ void Model::tick() {
 
 }
 
-void Model::GUI_SendCommand(uint16_t cmdIndex) {
+void Model::GUI_SendCommand(uint16_t cmdIndex, void *cmdParam) {
 
-	if (osMessageQueueGetSpace(FSM_CommandQueueHandle) > 0) {
-		if (osMessageQueuePut(FSM_CommandQueueHandle, &cmdIndex, 0, 0) != osOK) {
-			Error_Handler();
+	static FSM_CommandGet_t *sendCommand;
+	if ((sendCommand = (FSM_CommandGet_t *) pvPortMalloc(sizeof(FSM_CommandGet_t)))) {
+		sendCommand->commandIndex = cmdIndex;
+		sendCommand->commandParameters = cmdParam;
+		if (osMessageQueueGetSpace(FSM_CommandQueueHandle) > 0) {
+			if (osMessageQueuePut(FSM_CommandQueueHandle, &sendCommand, 0, 0) != osOK) {
+				Error_Handler();
+			}
 		}
 	}
 

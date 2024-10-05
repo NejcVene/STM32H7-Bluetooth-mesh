@@ -13,5 +13,5 @@
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenPresenter.cpp:4:1:AddDeviceScreenPresenter::AddDeviceScreenPresenter(AddDeviceScreenView&)	16	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenPresenter.cpp:10:6:virtual void AddDeviceScreenPresenter::activate()	16	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenPresenter.cpp:15:6:virtual void AddDeviceScreenPresenter::deactivate()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenPresenter.cpp:20:6:virtual void AddDeviceScreenPresenter::GUI_SendCommand(uint16_t)	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenPresenter.cpp:20:6:virtual void AddDeviceScreenPresenter::GUI_SendCommand(uint16_t, void*)	24	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenPresenter.cpp:26:6:virtual void AddDeviceScreenPresenter::GUI_DevicesFound()	24	static

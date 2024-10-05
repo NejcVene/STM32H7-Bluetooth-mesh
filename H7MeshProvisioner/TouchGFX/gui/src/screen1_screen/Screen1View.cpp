@@ -24,13 +24,13 @@ void Screen1View::tearDownScreen()
 
 void Screen1View::GUI_OnBtn() {
 
-	presenter->GUI_SendCommand(CMD_MESH_ATCL_GENERIC_ON_OFF_ACK);
+	presenter->GUI_SendCommand(CMD_MESH_ATCL_GENERIC_ON_OFF_ACK, NULL);
 
 }
 
 void Screen1View::GUI_OffBtn() {
 
-	presenter->GUI_SendCommand(CMD_MESH_ATCL_GENECI_ON_OFF_ACK_OFF);
+	presenter->GUI_SendCommand(CMD_MESH_ATCL_GENECI_ON_OFF_ACK_OFF, NULL);
 
 }
 

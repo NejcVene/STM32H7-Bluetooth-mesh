@@ -25,7 +25,7 @@ public:
 
     }
 
-    void GUI_SendCommand(uint16_t cmdIndex);
+    void GUI_SendCommand(uint16_t cmdIndex, void *cmdParam);
 protected:
     ModelListener* modelListener;
     Node_NetworkAddress_t *foundDevices;

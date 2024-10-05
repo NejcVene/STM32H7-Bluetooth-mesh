@@ -17,9 +17,9 @@ void AddDeviceScreenPresenter::deactivate()
 
 }
 
-void AddDeviceScreenPresenter::GUI_SendCommand(uint16_t cmdIndex) {
+void AddDeviceScreenPresenter::GUI_SendCommand(uint16_t cmdIndex, void *cmdParam) {
 
-	model->GUI_SendCommand(cmdIndex);
+	model->GUI_SendCommand(cmdIndex, cmdParam);
 
 }
 

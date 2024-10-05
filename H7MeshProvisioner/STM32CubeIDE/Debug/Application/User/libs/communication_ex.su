@@ -14,8 +14,8 @@
 ../Application/User/libs/communication_ex.c:282:6:FSM_Idle	16	static
 ../Application/User/libs/communication_ex.c:290:6:FSM_Setup	16	static
 ../Application/User/libs/communication_ex.c:312:6:FSM_Transmit	64	static
-../Application/User/libs/communication_ex.c:337:6:FSM_Receive	16	static
-../Application/User/libs/communication_ex.c:347:6:FSM_Execute	320	static
-../Application/User/libs/communication_ex.c:389:6:FSM_Error	120	static
-../Application/User/libs/communication_ex.c:421:13:Protocol_Process_Messsage	8	static
-../Application/User/libs/communication_ex.c:481:6:HAL_GPIO_EXTI_Callback	16	static
+../Application/User/libs/communication_ex.c:339:6:FSM_Receive	16	static
+../Application/User/libs/communication_ex.c:349:6:FSM_Execute	320	static
+../Application/User/libs/communication_ex.c:391:6:FSM_Error	120	static
+../Application/User/libs/communication_ex.c:423:13:Protocol_Process_Messsage	8	static
+../Application/User/libs/communication_ex.c:483:6:HAL_GPIO_EXTI_Callback	16	static

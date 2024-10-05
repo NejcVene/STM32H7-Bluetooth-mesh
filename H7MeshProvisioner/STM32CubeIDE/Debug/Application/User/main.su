@@ -14,7 +14,7 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Core/Src/main.c:744:13:
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Core/Src/main.c:864:6:HAL_UART_RxCpltCallback	16	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Core/Src/main.c:897:6:HAL_UART_TxCpltCallback	16	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Core/Src/main.c:938:6:StartDefaultTask	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Core/Src/main.c:971:6:FSM_TaskEntryPoint	72	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Core/Src/main.c:971:6:FSM_TaskEntryPoint	80	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Core/Src/main.c:1006:6:LEDIndicator_TaskEntryPoint	24	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Core/Src/main.c:1021:6:MPU_Config	24	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Core/Src/main.c:1099:6:HAL_TIM_PeriodElapsedCallback	16	static

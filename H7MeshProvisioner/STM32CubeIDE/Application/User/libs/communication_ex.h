@@ -20,6 +20,7 @@ extern "C" {
 #define PAC_SIZE				7
 #define PAC_MAX_PAYLOAD 		256
 #define CMD_INDEX_SIZE			10
+#define CMD_MESH_MAX_PARAMS		10
 #define ERROR_TRESHOLD			3
 
 typedef enum {
@@ -73,7 +74,7 @@ typedef struct {
 
 typedef struct {
 	int commandIndex;
-	char nodeAddress[4];
+	void *commandParameters; // [CMD_MESH_MAX_PARAMS]; could be an array for future use, if a command needs more than one parameter
 } FSM_CommandGet_t;
 
 typedef struct {

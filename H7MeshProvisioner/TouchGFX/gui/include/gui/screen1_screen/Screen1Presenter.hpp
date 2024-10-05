@@ -27,7 +27,7 @@ public:
 
     virtual ~Screen1Presenter() {}
 
-    virtual void GUI_SendCommand(uint16_t cmdIndex);
+    virtual void GUI_SendCommand(uint16_t cmdIndex, void *cmdParams);
 private:
     Screen1Presenter();
 

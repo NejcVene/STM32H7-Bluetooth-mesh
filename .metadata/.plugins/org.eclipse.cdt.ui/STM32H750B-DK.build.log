@@ -1,10 +1,10 @@
-15:23:05 **** Incremental Build of configuration Debug for project STM32H750B-DK ****
+18:48:42 **** Incremental Build of configuration Debug for project STM32H750B-DK ****
 make -j12 all 
 arm-none-eabi-size  STM32H750B-DK.elf 
    text	   data	    bss	    dec	    hex	filename
-1473396	  10012	 942316	2425724	 25037c	STM32H750B-DK.elf
+1473524	  10012	 942324	2425860	 250404	STM32H750B-DK.elf
 Finished building: default.size.stdout
  
 
-15:23:06 Build Finished. 0 errors, 0 warnings. (took 1s.75ms)
+18:48:43 Build Finished. 0 errors, 0 warnings. (took 1s.129ms)
 

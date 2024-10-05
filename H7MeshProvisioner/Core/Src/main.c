@@ -217,7 +217,7 @@ int main(void)
 
   /* Create the queue(s) */
   /* creation of FSM_CommandQueue */
-  FSM_CommandQueueHandle = osMessageQueueNew (1, sizeof(uint16_t), &FSM_CommandQueue_attributes);
+  FSM_CommandQueueHandle = osMessageQueueNew (1, sizeof(FSM_CommandGet_t*), &FSM_CommandQueue_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -973,12 +973,12 @@ void FSM_TaskEntryPoint(void *argument)
   /* USER CODE BEGIN FSM_TaskEntryPoint */
   /* Infinite loop */
 	FSM_QueuedEvent_t *event;
-	uint16_t cmdIndex;
+	FSM_CommandGet_t *cmdIndex;
 	char test[50];
 	for(;;) {
 		if (osMessageQueueGetCount(FSM_CommandQueueHandle) > 0) {
 			if (osMessageQueueGet(FSM_CommandQueueHandle, &cmdIndex, 0, 0) == osOK) {
-				sprintf(test, "CMD: %d\r\n", cmdIndex);
+				sprintf(test, "CMD: %d\r\n", cmdIndex->commandIndex);
 				HAL_UART_Transmit(&huart3, (uint8_t *) test, strlen(test), 6000);
 				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_USER, &cmdIndex, sizeof(cmdIndex));
 				while (!isEmpty(eventQueue)) {

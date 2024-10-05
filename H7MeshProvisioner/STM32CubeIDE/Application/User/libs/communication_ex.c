@@ -292,7 +292,7 @@ void FSM_Setup(void *param) {
 #ifdef _DEBUG
 	debugMessage("SETUP State\r\n");
 #endif
-	error.commandIndex = *((int *) param);
+	// error.commandIndex = *((int *) param);
 	startByteRx = 0;
 	cmdTypeRx = 0;
 	memset(payloadRx, 0, PAC_MAX_PAYLOAD);
@@ -317,7 +317,8 @@ void FSM_Transmit(void *param) {
 #ifdef _MASTER
 	char cmdToSend[CMD_MESH_COMMAND_LENGHT] = {0};
 	CMD_MeshCommand_t *meshCommand;
-	if ((meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, *((int *) param)))) {
+	FSM_CommandGet_t *guiCmd = *((FSM_CommandGet_t **) param);
+	if ((meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex))) {
 		sprintf(cmdToSend, meshCommand->command, NC_GetNodeNetworkAddress(0)->nodeAddress);
 		if (Protocol_Send(meshCommand->commandType, (uint8_t *) cmdToSend, strlen(cmdToSend), NULL) == PRO_OK) {
 			if (meshCommand->commandType != PRO_MSG_TYPE_UNACK) {
@@ -327,6 +328,7 @@ void FSM_Transmit(void *param) {
 			}
 		}
 	}
+	vPortFree(guiCmd);
 #else
 	Protocol_Send(PRO_MSG_TYPE_OTHER, "hello", strlen("hello"), NULL);
 	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_TRANSMIT_COMPLETE, NULL, 0);
