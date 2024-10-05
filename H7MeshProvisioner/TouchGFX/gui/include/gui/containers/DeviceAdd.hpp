@@ -7,19 +7,11 @@
 class DeviceAdd : public DeviceAddBase
 {
 public:
+
     DeviceAdd();
     virtual ~DeviceAdd() {}
 
     virtual void initialize();
-
-    // Set button action
-    void setButtonAction(int id, touchgfx::GenericCallback<const touchgfx::AbstractButtonContainer&>& callback) {
-        instanceID = id;  // Store instance ID
-        buttonClickedCallback = &callback;  // Store the reference to the callback
-    }
-
-    // Event handler for button clicks
-    virtual void onButtonClicked(const touchgfx::AbstractButtonContainer& button);
 
     void setTextUUID(const char* text) {
     	touchgfx::Unicode::strncpy(nodeUUIDBuffer, text, NODEUUID_SIZE);  // Update the first text area
@@ -33,18 +25,28 @@ public:
     	touchgfx::Unicode::strncpy(nodeFeaturesBuffer, text, NODEFEATURES_SIZE);  // Update the first text area
     }
 
-protected:
-    virtual void emitSomethingHappenedCallback(const touchgfx::AbstractButtonContainer& button) {
-        if (buttonClickedCallback && buttonClickedCallback->isValid()) {
-            // Execute the callback and pass the actual button reference
-            buttonClickedCallback->execute(button);
-        }
+    void setButtonAction(touchgfx::GenericCallback<int>& callback, int instanceID) {
+    	buttonClickedCallback = &callback;
+    	this->instanceID = instanceID;
     }
 
+    virtual void onButtonClicked(const touchgfx::AbstractButton& button);
+
+protected:
+
+    virtual void emitSomethingHappenedCallback() {
+
+    	if (buttonClickedCallback && buttonClickedCallback->isValid()) {
+        		buttonClickedCallback->execute(instanceID);
+    	}
+    }
+
+
 private:
-    touchgfx::GenericCallback<const touchgfx::AbstractButtonContainer&>* buttonClickedCallback;  // Pointer to the FlexButton callback
-    int instanceID;  // Unique ID for each instance
-    touchgfx::Callback<DeviceAdd, const touchgfx::AbstractButtonContainer&> buttonCallback; // Member variable for the button action
+
+    touchgfx::GenericCallback<int>* buttonClickedCallback;
+    int instanceID;
+    touchgfx::Callback<DeviceAdd, const touchgfx::AbstractButton&> buttonCallback;
 };
 
 

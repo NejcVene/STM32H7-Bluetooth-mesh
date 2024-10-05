@@ -53,6 +53,8 @@
 "./Application/User/generated/image_H7MainInfo.o"
 "./Application/User/generated/image_H7ModalBackgroundSmall.o"
 "./Application/User/generated/image_H7SpinnerSmall.o"
+"./Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_active.o"
+"./Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_pressed.o"
 "./Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.o"
 "./Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.o"
 "./Application/User/generated/image_alternate_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.o"

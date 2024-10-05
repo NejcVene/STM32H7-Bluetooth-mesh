@@ -137,7 +137,10 @@ Application/User/gui/AddDeviceScreenPresenter.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterColor.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
  ../../TouchGFX/gui/include/gui/containers/DeviceAdd.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceAddBase.hpp
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceAddBase.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp
 ../../TouchGFX/gui/include/gui/adddevicescreen_screen/AddDeviceScreenView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/adddevicescreen_screen/AddDeviceScreenViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -276,3 +279,6 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/STM32CubeIDE/Applicatio
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:
 ../../TouchGFX/gui/include/gui/containers/DeviceAdd.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceAddBase.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:

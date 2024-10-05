@@ -8,7 +8,7 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class DeviceAddBase : public touchgfx::Container
 {
@@ -29,7 +29,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard nodeUUID;
     touchgfx::TextAreaWithOneWildcard nodeModels;
     touchgfx::TextAreaWithOneWildcard nodeFeatures;
-    touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  deviceAddListBtn;
+    touchgfx::ButtonWithLabel provBtn;
 
     /*
      * Wildcard Buffers

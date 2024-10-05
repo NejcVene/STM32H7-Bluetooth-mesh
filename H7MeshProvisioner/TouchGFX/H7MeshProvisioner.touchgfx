@@ -609,7 +609,7 @@
           {
             "Type": "TextArea",
             "Name": "nodeModels",
-            "X": 199,
+            "X": 82,
             "Y": 16,
             "Width": 62,
             "Height": 29,
@@ -625,7 +625,7 @@
           {
             "Type": "TextArea",
             "Name": "nodeFeatures",
-            "X": 388,
+            "X": 154,
             "Y": 16,
             "Width": 62,
             "Height": 29,
@@ -639,18 +639,27 @@
             }
           },
           {
-            "Type": "FlexButton",
-            "Name": "deviceAddListBtn",
-            "Width": 460,
-            "Height": 60,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
+            "Type": "ButtonWithLabel",
+            "Name": "provBtn",
+            "X": 350,
+            "Y": 12,
+            "Width": 100,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_active.png",
+            "TextId": "__SingleUse_TWFN",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
-            "ButtonStyles": [
-              {
-                "Type": "ImageButtonStyle"
-              }
-            ]
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_rounded_active.json"
           }
         ],
         "Interactions": []

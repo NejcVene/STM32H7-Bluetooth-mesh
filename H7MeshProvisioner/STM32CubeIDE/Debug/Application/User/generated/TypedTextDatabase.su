@@ -1,7 +1,7 @@
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:52:43:const touchgfx::TypedText::TypedTextData* TypedTextDatabase::getInstance(touchgfx::LanguageId)	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:57:10:uint16_t TypedTextDatabase::getInstanceSize()	4	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:62:24:const touchgfx::Font** TypedTextDatabase::getFonts()	4	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:67:23:const touchgfx::Font* TypedTextDatabase::setFont(touchgfx::FontId, const touchgfx::Font*)	24	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:74:6:void TypedTextDatabase::resetFont(touchgfx::FontId)	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:92:1:void __static_initialization_and_destruction_0(int, int)	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:92:1:cpp)	8	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:53:43:const touchgfx::TypedText::TypedTextData* TypedTextDatabase::getInstance(touchgfx::LanguageId)	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:58:10:uint16_t TypedTextDatabase::getInstanceSize()	4	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:63:24:const touchgfx::Font** TypedTextDatabase::getFonts()	4	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:68:23:const touchgfx::Font* TypedTextDatabase::setFont(touchgfx::FontId, const touchgfx::Font*)	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:75:6:void TypedTextDatabase::resetFont(touchgfx::FontId)	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:93:1:void __static_initialization_and_destruction_0(int, int)	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:93:1:cpp)	8	static

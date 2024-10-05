@@ -2,7 +2,7 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	16	static
-../../TouchGFX/gui/include/gui/containers/DeviceToggle.hpp:16:10:void DeviceToggle::setButtonAction(touchgfx::GenericCallback<int>&, int)	24	static
+../../TouchGFX/gui/include/gui/containers/DeviceToggle.hpp:17:10:void DeviceToggle::setButtonAction(touchgfx::GenericCallback<int>&, int)	24	static
 ../../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:11:13:Screen1View::~Screen1View()	16	static
 ../../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:11:13:virtual Screen1View::~Screen1View()	16	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:6:1:Screen1View::Screen1View()	24	static

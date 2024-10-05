@@ -9,5 +9,5 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:BLE_MeshLightingPRFNode\ Debug/
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:BLE_MeshLightingPRFNode\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:BLE_MeshLightingProvisioner/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:BLE_MeshLightingProvisioner/activeLaunchTarget=null\:---
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32H750B-DK\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32H750B-DK\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32H750B-DK\ Debug/activeLaunchTarget=null\:---

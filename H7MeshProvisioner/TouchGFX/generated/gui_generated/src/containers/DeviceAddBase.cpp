@@ -24,7 +24,7 @@ DeviceAddBase::DeviceAddBase()
     nodeUUID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YBUN));
     add(nodeUUID);
 
-    nodeModels.setXY(199, 16);
+    nodeModels.setXY(82, 16);
     nodeModels.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     nodeModels.setLinespacing(0);
     Unicode::snprintf(nodeModelsBuffer, NODEMODELS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_Z4S0).getText());
@@ -33,7 +33,7 @@ DeviceAddBase::DeviceAddBase()
     nodeModels.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UH6U));
     add(nodeModels);
 
-    nodeFeatures.setXY(388, 16);
+    nodeFeatures.setXY(154, 16);
     nodeFeatures.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     nodeFeatures.setLinespacing(0);
     Unicode::snprintf(nodeFeaturesBuffer, NODEFEATURES_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_T1HH).getText());
@@ -42,9 +42,12 @@ DeviceAddBase::DeviceAddBase()
     nodeFeatures.setTypedText(touchgfx::TypedText(T___SINGLEUSE_L7DV));
     add(nodeFeatures);
 
-    deviceAddListBtn.setBitmapXY(0, 0);
-    deviceAddListBtn.setPosition(0, 0, 460, 60);
-    add(deviceAddListBtn);
+    provBtn.setXY(350, 12);
+    provBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_PRESSED_ID));
+    provBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_TWFN));
+    provBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    provBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    add(provBtn);
 }
 
 DeviceAddBase::~DeviceAddBase()

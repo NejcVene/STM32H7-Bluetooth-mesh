@@ -8,6 +8,7 @@
 class AddDeviceScreenView : public AddDeviceScreenViewBase
 {
 public:
+
     AddDeviceScreenView();
     virtual ~AddDeviceScreenView() {}
     virtual void setupScreen();
@@ -16,14 +17,17 @@ public:
     virtual void handleTickEvent();
     virtual void GUI_SetDevicesFound(Node_NetworkAddress_t *foundDevices);
 protected:
+
     bool increase = true;
     bool disable = false;
     static const int maxButtons = 5;
-    touchgfx::WildcardTextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger > > deviceFoundBtn[maxButtons]; // Array of 5 buttons
     DeviceAdd deviceAdds[maxButtons];
 
 private:
-    void onDeviceAddButtonClicked(const touchgfx::AbstractButtonContainer& button);
+
+    touchgfx::Callback<AddDeviceScreenView, int> buttonClickCallback;
+    void handleButtonClicked(int instanceID);
+
 };
 
 #endif // ADDDEVICESCREENVIEW_HPP

@@ -56,8 +56,8 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:40:7:virtual touchgfx::Container::~Container()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:29:7:touchgfx::Box::~Box()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:29:7:virtual touchgfx::Box::~Box()	1
-../../TouchGFX/gui/include/gui/containers/DeviceToggle.hpp:11:13:DeviceToggle::~DeviceToggle()	1
-../../TouchGFX/gui/include/gui/containers/DeviceToggle.hpp:11:13:virtual DeviceToggle::~DeviceToggle()	1
+../../TouchGFX/gui/include/gui/containers/DeviceToggle.hpp:12:13:DeviceToggle::~DeviceToggle()	1
+../../TouchGFX/gui/include/gui/containers/DeviceToggle.hpp:12:13:virtual DeviceToggle::~DeviceToggle()	1
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:26:18:virtual void Screen1ViewBase::GUI_OnBtn()	1
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:30:18:virtual void Screen1ViewBase::GUI_OffBtn()	1
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:36:26:FrontendApplication& Screen1ViewBase::application()	1

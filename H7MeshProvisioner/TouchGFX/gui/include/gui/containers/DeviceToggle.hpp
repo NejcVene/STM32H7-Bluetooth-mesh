@@ -7,6 +7,7 @@
 class DeviceToggle : public DeviceToggleBase
 {
 public:
+
     DeviceToggle();
     virtual ~DeviceToggle() {}
 
@@ -31,6 +32,7 @@ protected:
     }
 
 private:
+
     touchgfx::GenericCallback<int>* buttonClickedCallback;
     int instanceID;
     touchgfx::Callback<DeviceToggle, const touchgfx::AbstractButton&> buttonCallback;
