@@ -507,6 +507,101 @@
             }
           }
         ]
+      },
+      {
+        "Name": "ConfigureNodeScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7Background.png"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "cancelBtn",
+            "X": 350,
+            "Y": 141,
+            "Width": 121,
+            "Height": 121,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 36,
+                "Y": 36,
+                "IconReleased": "__generated\\icon_theme_images_navigation_cancel_50_50_3DA9FC.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_navigation_cancel_50_50_3DA9FC.svg.png"
+              },
+              {
+                "Type": "TextButtonStyle",
+                "Y": 97,
+                "TextId": "__SingleUse_0LTB",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
+                },
+                "ColorPressed": {
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
+                }
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "ImageReleased": "H7Button.png",
+                "ImagePressed": "H7Button.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "saveBtn",
+            "X": 350,
+            "Y": 10,
+            "Width": 121,
+            "Height": 121,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 36,
+                "Y": 36,
+                "IconReleased": "__generated\\icon_theme_images_action_done_50_50_3DA9FC.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_3DA9FC.svg.png"
+              },
+              {
+                "Type": "TextButtonStyle",
+                "Y": 97,
+                "TextId": "__SingleUse_EMI2",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
+                },
+                "ColorPressed": {
+                  "Red": 9,
+                  "Green": 64,
+                  "Blue": 103
+                }
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "ImageReleased": "H7Button.png",
+                "ImagePressed": "H7Button.png"
+              }
+            ]
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [

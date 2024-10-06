@@ -320,7 +320,7 @@ void FSM_Transmit(void *param) {
 	CMD_MeshCommand_t *meshCommand;
 	FSM_CommandGet_t *guiCmd = *((FSM_CommandGet_t **) param);
 	if ((meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex))) {
-		sprintf(cmdToSend, meshCommand->command, NC_GetNodeNetworkAddress(0)->nodeAddress);
+		sprintf(cmdToSend, meshCommand->command, guiCmd->commandParameters ? *((int *) guiCmd->commandParameters) : 0);
 		if (Protocol_Send(meshCommand->commandType, (uint8_t *) cmdToSend, strlen(cmdToSend), NULL) == PRO_OK) {
 			if (meshCommand->commandType != PRO_MSG_TYPE_UNACK) {
 				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, param, sizeof(param));
@@ -357,6 +357,8 @@ void FSM_Execute(void *param) {
 #endif
 #ifdef _MASTER
 	// TODO: master execute command
+	// TODO: provision further
+	// TODO: NDSCAN return value to master
 	FSM_CommandGet_t *guiCmd = *((FSM_CommandGet_t **) param);
 	char responseCommand[CMD_MESH_COMMAND_LENGHT];
 	char responseParameters[PAC_MAX_PAYLOAD]; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
@@ -372,6 +374,7 @@ void FSM_Execute(void *param) {
 					if (osMessageQueuePut(FSM_ResultQueueHandle, &cmdResult, 0, 0) != osOK) {
 						// raise error
 					}
+					vPortFree(guiCmd);
 				}
 			} else {
 				// if no node was found at the vicinity of the provisioner, check for new nodes by using already provisioned nodes

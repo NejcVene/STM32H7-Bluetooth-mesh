@@ -615,6 +615,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/ConfigureNodeScreenPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ConfigureNodeScreenView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/DeviceAdd.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/DeviceAdd.cpp</locationURI>
@@ -750,6 +760,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/ConfigureNodeScreenViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/configurenodescreen_screen/ConfigureNodeScreenViewBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/DeviceAddBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/DeviceAddBase.cpp</locationURI>
@@ -838,6 +853,11 @@
 			<name>Application/User/generated/image_icon_theme_images_maps_multiple_stop_50_50_3DA9FC.svg.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_maps_multiple_stop_50_50_3DA9FC.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_navigation_cancel_50_50_3DA9FC.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_navigation_cancel_50_50_3DA9FC.svg.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_H7Background.cpp</name>

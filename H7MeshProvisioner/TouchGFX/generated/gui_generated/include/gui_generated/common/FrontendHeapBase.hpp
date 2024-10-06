@@ -20,6 +20,8 @@
 #include <gui/homescreen_screen/HomeScreenPresenter.hpp>
 #include <gui/adddevicescreen_screen/AddDeviceScreenView.hpp>
 #include <gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp>
+#include <gui/configurenodescreen_screen/ConfigureNodeScreenView.hpp>
+#include <gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp>
 
 
 /**
@@ -45,7 +47,8 @@ public:
     typedef touchgfx::meta::TypeList< Screen1View,
             touchgfx::meta::TypeList< HomeScreenView,
             touchgfx::meta::TypeList< AddDeviceScreenView,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< ConfigureNodeScreenView,
+            touchgfx::meta::Nil > > >
             > GeneratedViewTypes;
 
     /**
@@ -60,7 +63,8 @@ public:
     typedef touchgfx::meta::TypeList< Screen1Presenter,
             touchgfx::meta::TypeList< HomeScreenPresenter,
             touchgfx::meta::TypeList< AddDeviceScreenPresenter,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< ConfigureNodeScreenPresenter,
+            touchgfx::meta::Nil > > >
             > GeneratedPresenterTypes;
 
     /**

@@ -220,6 +220,18 @@
     <Filter Include="Header Files\generated\gui_generated\containers">
       <UniqueIdentifier>3F4FB406-1ECD-B6F9-DEE2-AEF6EE6D3865</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\configurenodescreen_screen">
+      <UniqueIdentifier>E8AFE70F-4835-11A9-FE6E-A47614AD473C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\configurenodescreen_screen">
+      <UniqueIdentifier>2133406A-902E-1F22-5984-C73731BE5927</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\configurenodescreen_screen">
+      <UniqueIdentifier>D55968AA-4D07-AB07-7CB7-26E13892594E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\configurenodescreen_screen">
+      <UniqueIdentifier>74932F49-4272-6636-545E-302E3EF698B9</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -290,6 +302,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceAddBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configurenodescreen_screen\ConfigureNodeScreenPresenter.cpp">
+      <Filter>Source Files\gui\configurenodescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configurenodescreen_screen\ConfigureNodeScreenView.cpp">
+      <Filter>Source Files\gui\configurenodescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\configurenodescreen_screen\ConfigureNodeScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\configurenodescreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -771,6 +792,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceAddBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configurenodescreen_screen\ConfigureNodeScreenPresenter.hpp">
+      <Filter>Header Files\gui\configurenodescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configurenodescreen_screen\ConfigureNodeScreenView.hpp">
+      <Filter>Header Files\gui\configurenodescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configurenodescreen_screen\ConfigureNodeScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\configurenodescreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

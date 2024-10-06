@@ -15,6 +15,8 @@
 #include <gui/homescreen_screen/HomeScreenPresenter.hpp>
 #include <gui/adddevicescreen_screen/AddDeviceScreenView.hpp>
 #include <gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp>
+#include <gui/configurenodescreen_screen/ConfigureNodeScreenView.hpp>
+#include <gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp>
 
 using namespace touchgfx;
 
