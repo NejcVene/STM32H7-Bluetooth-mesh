@@ -31,6 +31,9 @@ public:
     // AddDeviceScreen
     void gotoAddDeviceScreenScreenWipeTransitionEast();
 
+    // ConfigureNodeScreen
+    void gotoConfigureNodeScreenScreenSlideTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -46,6 +49,9 @@ protected:
 
     // AddDeviceScreen
     void gotoAddDeviceScreenScreenWipeTransitionEastImpl();
+
+    // ConfigureNodeScreen
+    void gotoConfigureNodeScreenScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

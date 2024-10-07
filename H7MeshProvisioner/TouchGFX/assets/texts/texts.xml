@@ -6,6 +6,30 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_8ZXX" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_KPYR" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_KAJT" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_FHXT" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_W5ZN" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_B8P1" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_2W0E" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_OPFS" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_0LTB" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">Cancel</Translation>
       </Text>

@@ -397,6 +397,19 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "AddDeviceScreen"
             }
+          },
+          {
+            "InteractionName": "GUI_ToUndefined",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "undefinedBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ConfigureNodeScreen"
+            }
           }
         ]
       },
@@ -599,6 +612,92 @@
                 "ImagePressed": "H7Button.png"
               }
             ]
+          },
+          {
+            "Type": "Container",
+            "Name": "container1",
+            "X": 10,
+            "Y": 10,
+            "Width": 330,
+            "Height": 121,
+            "Components": [
+              {
+                "Type": "TiledImage",
+                "Name": "tiledImage2",
+                "Width": 330,
+                "Height": 121,
+                "FileName": "H7ConfigBox.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "nodeVendor",
+                "X": 10,
+                "Y": 50,
+                "Width": 36,
+                "Height": 17,
+                "TextId": "__SingleUse_FHXT",
+                "TextRotation": "0",
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_KAJT",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "nodeUUID",
+                "X": 10,
+                "Y": 30,
+                "Width": 36,
+                "Height": 17,
+                "TextId": "__SingleUse_B8P1",
+                "TextRotation": "0",
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_W5ZN",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "nodeName",
+                "X": 10,
+                "Y": 10,
+                "Width": 36,
+                "Height": 17,
+                "TextId": "__SingleUse_OPFS",
+                "TextRotation": "0",
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_2W0E",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              }
+            ]
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "allNodeSubsCont",
+            "X": 10,
+            "Y": 141,
+            "Width": 330,
+            "Height": 121,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "TiledImage",
+                "Name": "tiledImage3",
+                "Width": 330,
+                "Height": 121,
+                "FileName": "H7ConfigBox.png"
+              }
+            ]
           }
         ],
         "Interactions": []
@@ -755,6 +854,47 @@
             },
             "TextRotation": "0",
             "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_rounded_active.json"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "DeviceSubs",
+        "Width": 310,
+        "Height": 60,
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 310,
+            "Height": 60,
+            "FileName": "H7LineVerySmall.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "addressLabel",
+            "X": 10,
+            "Y": 16,
+            "Width": 62,
+            "Height": 29,
+            "TextId": "__SingleUse_KPYR",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_8ZXX",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "subscribeBtn",
+            "X": 161,
+            "Y": 5,
+            "Width": 138,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_dark.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_dark.png"
           }
         ],
         "Interactions": []

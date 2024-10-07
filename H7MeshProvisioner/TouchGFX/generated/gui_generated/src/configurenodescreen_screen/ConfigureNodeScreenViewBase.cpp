@@ -36,6 +36,51 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase()
     saveBtn.setIconXY(36, 36);
     saveBtn.setPosition(350, 10, 121, 121);
     add(saveBtn);
+
+    container1.setPosition(10, 10, 330, 121);
+    tiledImage2.setBitmap(touchgfx::Bitmap(BITMAP_H7CONFIGBOX_ID));
+    tiledImage2.setPosition(0, 0, 330, 121);
+    tiledImage2.setOffset(0, 0);
+    container1.add(tiledImage2);
+
+    nodeVendor.setXY(10, 50);
+    nodeVendor.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    nodeVendor.setLinespacing(0);
+    Unicode::snprintf(nodeVendorBuffer, NODEVENDOR_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_KAJT).getText());
+    nodeVendor.setWildcard(nodeVendorBuffer);
+    nodeVendor.resizeToCurrentText();
+    nodeVendor.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FHXT));
+    container1.add(nodeVendor);
+
+    nodeUUID.setXY(10, 30);
+    nodeUUID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    nodeUUID.setLinespacing(0);
+    Unicode::snprintf(nodeUUIDBuffer, NODEUUID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_W5ZN).getText());
+    nodeUUID.setWildcard(nodeUUIDBuffer);
+    nodeUUID.resizeToCurrentText();
+    nodeUUID.setTypedText(touchgfx::TypedText(T___SINGLEUSE_B8P1));
+    container1.add(nodeUUID);
+
+    nodeName.setXY(10, 10);
+    nodeName.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    nodeName.setLinespacing(0);
+    Unicode::snprintf(nodeNameBuffer, NODENAME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_2W0E).getText());
+    nodeName.setWildcard(nodeNameBuffer);
+    nodeName.resizeToCurrentText();
+    nodeName.setTypedText(touchgfx::TypedText(T___SINGLEUSE_OPFS));
+    container1.add(nodeName);
+
+    add(container1);
+
+    allNodeSubsCont.setPosition(10, 141, 330, 121);
+    allNodeSubsCont.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    allNodeSubsCont.setScrollbarsAlpha(255);
+    tiledImage3.setBitmap(touchgfx::Bitmap(BITMAP_H7CONFIGBOX_ID));
+    tiledImage3.setPosition(0, 0, 330, 121);
+    tiledImage3.setOffset(0, 0);
+    allNodeSubsCont.add(tiledImage3);
+
+    add(allNodeSubsCont);
 }
 
 ConfigureNodeScreenViewBase::~ConfigureNodeScreenViewBase()

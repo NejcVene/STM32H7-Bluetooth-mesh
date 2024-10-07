@@ -37,6 +37,8 @@
     <ClCompile Include="..\..\gui\src\configurenodescreen_screen\ConfigureNodeScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\configurenodescreen_screen\ConfigureNodeScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\configurenodescreen_screen\ConfigureNodeScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\DeviceSubs.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceSubsBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -203,6 +205,8 @@
     <ClInclude Include="..\..\gui\include\gui\configurenodescreen_screen\ConfigureNodeScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\configurenodescreen_screen\ConfigureNodeScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configurenodescreen_screen\ConfigureNodeScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\DeviceSubs.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceSubsBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

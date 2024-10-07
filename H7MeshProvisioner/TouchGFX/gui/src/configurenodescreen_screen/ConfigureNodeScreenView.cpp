@@ -1,6 +1,6 @@
 #include <gui/configurenodescreen_screen/ConfigureNodeScreenView.hpp>
 
-ConfigureNodeScreenView::ConfigureNodeScreenView()
+ConfigureNodeScreenView::ConfigureNodeScreenView() : buttonClickCallback(this, &ConfigureNodeScreenView::handleButtonClicked)
 {
 
 }
@@ -8,9 +8,22 @@ ConfigureNodeScreenView::ConfigureNodeScreenView()
 void ConfigureNodeScreenView::setupScreen()
 {
     ConfigureNodeScreenViewBase::setupScreen();
+    for (int i = 0; i<maxSubsPerNode; i++) {
+    	nodeSubscriptions[i].initialize();
+    	nodeSubscriptions[i].setPosition(10, 151 * (i + 1), 310, 60);
+    	nodeSubscriptions[i].setVisible(true);
+    	allNodeSubsCont.add(nodeSubscriptions[i]);
+    }
+    allNodeSubsCont.invalidateContent();
 }
 
 void ConfigureNodeScreenView::tearDownScreen()
 {
     ConfigureNodeScreenViewBase::tearDownScreen();
+}
+
+void ConfigureNodeScreenView::handleButtonClicked(int instanceID) {
+
+	;
+
 }

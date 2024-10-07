@@ -312,6 +312,12 @@
     <ClCompile Include="..\..\generated\gui_generated\src\configurenodescreen_screen\ConfigureNodeScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\configurenodescreen_screen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\DeviceSubs.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceSubsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml">
@@ -801,6 +807,12 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configurenodescreen_screen\ConfigureNodeScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\configurenodescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\DeviceSubs.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceSubsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

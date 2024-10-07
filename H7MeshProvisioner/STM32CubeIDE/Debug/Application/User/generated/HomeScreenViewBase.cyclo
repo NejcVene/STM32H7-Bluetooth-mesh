@@ -92,10 +92,10 @@
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<HomeScreenPresenter>::~View()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<HomeScreenPresenter>::~View()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/homescreen_screen/HomeScreenViewBase.cpp:9:1:HomeScreenViewBase::HomeScreenViewBase()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/homescreen_screen/HomeScreenViewBase.cpp:85:1:HomeScreenViewBase::~HomeScreenViewBase()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/homescreen_screen/HomeScreenViewBase.cpp:85:1:virtual HomeScreenViewBase::~HomeScreenViewBase()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/homescreen_screen/HomeScreenViewBase.cpp:90:6:virtual void HomeScreenViewBase::setupScreen()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/homescreen_screen/HomeScreenViewBase.cpp:95:6:void HomeScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	3
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/homescreen_screen/HomeScreenViewBase.cpp:86:1:HomeScreenViewBase::~HomeScreenViewBase()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/homescreen_screen/HomeScreenViewBase.cpp:86:1:virtual HomeScreenViewBase::~HomeScreenViewBase()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/homescreen_screen/HomeScreenViewBase.cpp:91:6:virtual void HomeScreenViewBase::setupScreen()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/homescreen_screen/HomeScreenViewBase.cpp:96:6:void HomeScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	4
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:39:5:touchgfx::View<T>::View() [with T = HomeScreenPresenter]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:touchgfx::ClickButtonTrigger::~ClickButtonTrigger()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:virtual touchgfx::ClickButtonTrigger::~ClickButtonTrigger()	1

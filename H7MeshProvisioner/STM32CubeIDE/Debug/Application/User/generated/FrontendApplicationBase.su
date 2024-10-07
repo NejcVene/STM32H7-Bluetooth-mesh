@@ -5,8 +5,10 @@ F:\Nejc\Programi\STM32CubeIDE_1.10.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.m
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:62:13:touchgfx::Drawable::~Drawable()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:62:13:virtual touchgfx::Drawable::~Drawable()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:136:15:touchgfx::Drawable* touchgfx::Drawable::getNextSibling()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:147:23:virtual touchgfx::Drawable* touchgfx::Drawable::getFirstChild()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	24	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:273:13:int16_t touchgfx::Drawable::getX() const	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:293:13:int16_t touchgfx::Drawable::getWidth() const	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:315:18:virtual void touchgfx::Drawable::setX(int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:327:18:virtual void touchgfx::Drawable::setY(int16_t)	16	static
@@ -67,17 +69,19 @@ F:\Nejc\Programi\STM32CubeIDE_1.10.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.m
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::Widget()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::~Widget()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:virtual touchgfx::Widget::~Widget()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:21:1:FrontendApplicationBase::FrontendApplicationBase(Model&, FrontendHeap&)	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:23:1:FrontendApplicationBase::FrontendApplicationBase(Model&, FrontendHeap&)	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:175:7:constexpr touchgfx::GenericCallback<void>& touchgfx::GenericCallback<void>::operator=(const touchgfx::GenericCallback<void>&)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:424:8:constexpr touchgfx::Callback<FrontendApplicationBase>& touchgfx::Callback<FrontendApplicationBase>::operator=(touchgfx::Callback<FrontendApplicationBase>&&)	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:39:6:void FrontendApplicationBase::gotoScreen1ScreenWipeTransitionEast()	48	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:45:6:void FrontendApplicationBase::gotoScreen1ScreenWipeTransitionEastImpl()	24	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:52:6:void FrontendApplicationBase::gotoHomeScreenScreenNoTransition()	48	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:58:6:void FrontendApplicationBase::gotoHomeScreenScreenNoTransitionImpl()	24	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:63:6:void FrontendApplicationBase::gotoHomeScreenScreenWipeTransitionEast()	48	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:69:6:void FrontendApplicationBase::gotoHomeScreenScreenWipeTransitionEastImpl()	24	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:76:6:void FrontendApplicationBase::gotoAddDeviceScreenScreenWipeTransitionEast()	48	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:82:6:void FrontendApplicationBase::gotoAddDeviceScreenScreenWipeTransitionEastImpl()	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:41:6:void FrontendApplicationBase::gotoScreen1ScreenWipeTransitionEast()	48	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:47:6:void FrontendApplicationBase::gotoScreen1ScreenWipeTransitionEastImpl()	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:54:6:void FrontendApplicationBase::gotoHomeScreenScreenNoTransition()	48	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:60:6:void FrontendApplicationBase::gotoHomeScreenScreenNoTransitionImpl()	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:65:6:void FrontendApplicationBase::gotoHomeScreenScreenWipeTransitionEast()	48	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:71:6:void FrontendApplicationBase::gotoHomeScreenScreenWipeTransitionEastImpl()	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:78:6:void FrontendApplicationBase::gotoAddDeviceScreenScreenWipeTransitionEast()	48	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:84:6:void FrontendApplicationBase::gotoAddDeviceScreenScreenWipeTransitionEastImpl()	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:91:6:void FrontendApplicationBase::gotoConfigureNodeScreenScreenSlideTransitionEast()	48	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:97:6:void FrontendApplicationBase::gotoConfigureNodeScreenScreenSlideTransitionEastImpl()	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:175:7:constexpr touchgfx::GenericCallback<void>::GenericCallback()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:427:5:touchgfx::Callback<dest_type, void, void, void>::Callback() [with dest_type = FrontendApplicationBase]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:440:5:touchgfx::Callback<dest_type, void, void, void>::Callback(dest_type*, void (dest_type::*)()) [with dest_type = FrontendApplicationBase]	24	static
@@ -86,6 +90,7 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_
 ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:161:16:PresenterType* touchgfx::makeTransition(Screen**, Presenter**, MVPHeap&, Transition**, ModelType*) [with ScreenType = HomeScreenView; PresenterType = HomeScreenPresenter; TransType = NoTransition; ModelType = Model]	72	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:161:16:PresenterType* touchgfx::makeTransition(Screen**, Presenter**, MVPHeap&, Transition**, ModelType*) [with ScreenType = HomeScreenView; PresenterType = HomeScreenPresenter; TransType = WipeTransition<touchgfx::EAST>; ModelType = Model]	72	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:161:16:PresenterType* touchgfx::makeTransition(Screen**, Presenter**, MVPHeap&, Transition**, ModelType*) [with ScreenType = AddDeviceScreenView; PresenterType = AddDeviceScreenPresenter; TransType = WipeTransition<touchgfx::EAST>; ModelType = Model]	72	static
+../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:161:16:PresenterType* touchgfx::makeTransition(Screen**, Presenter**, MVPHeap&, Transition**, ModelType*) [with ScreenType = ConfigureNodeScreenView; PresenterType = ConfigureNodeScreenPresenter; TransType = SlideTransition<touchgfx::EAST>; ModelType = Model]	72	static
 ../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp:135:8:T& touchgfx::AbstractPartition::at(uint16_t) [with T = touchgfx::WipeTransition<touchgfx::EAST>]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:109:11:touchgfx::Transition::FullSolidRect::FullSolidRect()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:109:11:touchgfx::Transition::FullSolidRect::~FullSolidRect()	16	static
@@ -101,12 +106,24 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_
 ../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp:135:8:T& touchgfx::AbstractPartition::at(uint16_t) [with T = AddDeviceScreenView]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp:135:8:T& touchgfx::AbstractPartition::at(uint16_t) [with T = AddDeviceScreenPresenter]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:50:10:void touchgfx::View<T>::bind(T&) [with T = AddDeviceScreenPresenter]	16	static
+../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp:135:8:T& touchgfx::AbstractPartition::at(uint16_t) [with T = touchgfx::SlideTransition<touchgfx::EAST>]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/SnapshotWidget.hpp:33:7:touchgfx::SnapshotWidget::~SnapshotWidget()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/SnapshotWidget.hpp:33:7:virtual touchgfx::SnapshotWidget::~SnapshotWidget()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:47:5:touchgfx::SlideTransition<templateDirection>::SlideTransition(uint8_t) [with touchgfx::Direction templateDirection = touchgfx::EAST]	24	static
+../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp:135:8:T& touchgfx::AbstractPartition::at(uint16_t) [with T = ConfigureNodeScreenView]	16	static
+../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp:135:8:T& touchgfx::AbstractPartition::at(uint16_t) [with T = ConfigureNodeScreenPresenter]	16	static
+../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:50:10:void touchgfx::View<T>::bind(T&) [with T = ConfigureNodeScreenPresenter]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:39:7:touchgfx::SlideTransition<touchgfx::EAST>::~SlideTransition()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:39:7:virtual touchgfx::SlideTransition<touchgfx::EAST>::~SlideTransition()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/WipeTransition.hpp:37:7:touchgfx::WipeTransition<touchgfx::EAST>::~WipeTransition()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/WipeTransition.hpp:37:7:virtual touchgfx::WipeTransition<touchgfx::EAST>::~WipeTransition()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/NoTransition.hpp:31:7:touchgfx::NoTransition::~NoTransition()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/NoTransition.hpp:31:7:virtual touchgfx::NoTransition::~NoTransition()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:424:8:touchgfx::Callback<FrontendApplicationBase>::~Callback()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:424:8:virtual touchgfx::Callback<FrontendApplicationBase>::~Callback()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:87:18:void touchgfx::SlideTransition<templateDirection>::handleTickEvent() [with touchgfx::Direction templateDirection = touchgfx::EAST]	32	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:146:18:void touchgfx::SlideTransition<templateDirection>::tearDown() [with touchgfx::Direction templateDirection = touchgfx::EAST]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:154:18:void touchgfx::SlideTransition<templateDirection>::init() [with touchgfx::Direction templateDirection = touchgfx::EAST]	32	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/WipeTransition.hpp:72:18:void touchgfx::WipeTransition<templateDirection>::handleTickEvent() [with touchgfx::Direction templateDirection = touchgfx::EAST]	64	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/WipeTransition.hpp:162:18:void touchgfx::WipeTransition<templateDirection>::tearDown() [with touchgfx::Direction templateDirection = touchgfx::EAST]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/WipeTransition.hpp:167:18:void touchgfx::WipeTransition<templateDirection>::init() [with touchgfx::Direction templateDirection = touchgfx::EAST]	16	static

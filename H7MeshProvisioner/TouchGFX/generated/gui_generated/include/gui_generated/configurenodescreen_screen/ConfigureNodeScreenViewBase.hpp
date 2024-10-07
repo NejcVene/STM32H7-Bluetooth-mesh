@@ -10,6 +10,9 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
+#include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/containers/ScrollableContainer.hpp>
 
 class ConfigureNodeScreenViewBase : public touchgfx::View<ConfigureNodeScreenPresenter>
 {
@@ -30,6 +33,23 @@ protected:
     touchgfx::TiledImage tiledImage1;
     touchgfx::IconButtonStyle< touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  cancelBtn;
     touchgfx::IconButtonStyle< touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  saveBtn;
+    touchgfx::Container container1;
+    touchgfx::TiledImage tiledImage2;
+    touchgfx::TextAreaWithOneWildcard nodeVendor;
+    touchgfx::TextAreaWithOneWildcard nodeUUID;
+    touchgfx::TextAreaWithOneWildcard nodeName;
+    touchgfx::ScrollableContainer allNodeSubsCont;
+    touchgfx::TiledImage tiledImage3;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t NODEVENDOR_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar nodeVendorBuffer[NODEVENDOR_SIZE];
+    static const uint16_t NODEUUID_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar nodeUUIDBuffer[NODEUUID_SIZE];
+    static const uint16_t NODENAME_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar nodeNameBuffer[NODENAME_SIZE];
 
 private:
 

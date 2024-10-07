@@ -36,6 +36,7 @@ HomeScreenViewBase::HomeScreenViewBase() :
     undefinedBtn.setText(TypedText(T___SINGLEUSE_XGDV));
     undefinedBtn.setTextPosition(0, 97, 121, 121);
     undefinedBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    undefinedBtn.setAction(flexButtonCallback);
     undefinedBtn.setPosition(350, 141, 121, 121);
     add(undefinedBtn);
 
@@ -107,5 +108,12 @@ void HomeScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButto
         //When addDeviceBtn clicked change screen to AddDeviceScreen
         //Go to AddDeviceScreen with screen transition towards East
         application().gotoAddDeviceScreenScreenWipeTransitionEast();
+    }
+    if (&src == &undefinedBtn)
+    {
+        //GUI_ToUndefined
+        //When undefinedBtn clicked change screen to ConfigureNodeScreen
+        //Go to ConfigureNodeScreen with screen transition towards East
+        application().gotoConfigureNodeScreenScreenSlideTransitionEast();
     }
 }

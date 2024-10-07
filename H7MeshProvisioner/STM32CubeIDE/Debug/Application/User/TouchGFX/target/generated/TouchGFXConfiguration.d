@@ -47,6 +47,8 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Atomic.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/FrameBufferAllocator.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Gestures.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/SnapshotWidget.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \
@@ -161,6 +163,11 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
  ../../TouchGFX/gui/include/gui/containers/DeviceAdd.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceAddBase.hpp \
+ ../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/configurenodescreen_screen/ConfigureNodeScreenViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/containers/DeviceSubs.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceSubsBase.hpp \
  ../../TouchGFX/generated/images/include/BitmapDatabase.hpp \
  ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/VectorFontRendererImpl.hpp \
@@ -216,6 +223,8 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Atomic.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/FrameBufferAllocator.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Gestures.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/SnapshotWidget.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:
@@ -330,6 +339,11 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/STM32CubeIDE/Applicatio
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:
 ../../TouchGFX/gui/include/gui/containers/DeviceAdd.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceAddBase.hpp:
+../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/configurenodescreen_screen/ConfigureNodeScreenViewBase.hpp:
+../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp:
+../../TouchGFX/gui/include/gui/containers/DeviceSubs.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceSubsBase.hpp:
 ../../TouchGFX/generated/images/include/BitmapDatabase.hpp:
 ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/VectorFontRendererImpl.hpp:

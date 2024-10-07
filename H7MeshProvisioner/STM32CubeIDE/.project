@@ -630,6 +630,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/DeviceAdd.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/DeviceSubs.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/DeviceSubs.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/DeviceToggle.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/DeviceToggle.cpp</locationURI>
@@ -770,6 +775,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/DeviceAddBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/DeviceSubsBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/DeviceSubsBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/DeviceToggleBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/DeviceToggleBase.cpp</locationURI>
@@ -875,9 +885,19 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_H7ButtonSmall.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_H7ConfigBox.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_H7ConfigBox.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_H7LineMedium.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_H7LineMedium.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_H7LineVerySmall.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_H7LineVerySmall.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_H7MainInfo.cpp</name>

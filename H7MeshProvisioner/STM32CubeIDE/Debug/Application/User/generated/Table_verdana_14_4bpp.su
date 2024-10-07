@@ -4,5 +4,5 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/ConstFont.hpp:35:7:virtual touchgfx::ConstFont::~ConstFont()	16	static
 ../../TouchGFX/generated/fonts/include/fonts/GeneratedFont.hpp:11:7:touchgfx::GeneratedFont::~GeneratedFont()	16	static
 ../../TouchGFX/generated/fonts/include/fonts/GeneratedFont.hpp:11:7:virtual touchgfx::GeneratedFont::~GeneratedFont()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/fonts/src/Table_verdana_14_4bpp.cpp:48:168:void __tcf_0()	8	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/fonts/src/Table_verdana_14_4bpp.cpp:46:26:touchgfx::GeneratedFont& getFont_verdana_14_4bpp()	64	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/fonts/src/Table_verdana_14_4bpp.cpp:51:168:void __tcf_0()	8	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/fonts/src/Table_verdana_14_4bpp.cpp:49:26:touchgfx::GeneratedFont& getFont_verdana_14_4bpp()	64	static
