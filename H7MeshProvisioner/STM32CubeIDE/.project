@@ -640,6 +640,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/DeviceToggle.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/DebugScreenPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/debugscreen_screen/DebugScreenPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/DebugScreenView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/debugscreen_screen/DebugScreenView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/HomeScreenPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/homescreen_screen/HomeScreenPresenter.cpp</locationURI>
@@ -783,6 +793,11 @@
 			<name>Application/User/generated/DeviceToggleBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/DeviceToggleBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/DebugScreenViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/debugscreen_screen/DebugScreenViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/HomeScreenViewBase.cpp</name>

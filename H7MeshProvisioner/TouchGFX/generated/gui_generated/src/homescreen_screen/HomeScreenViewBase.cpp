@@ -112,8 +112,8 @@ void HomeScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButto
     if (&src == &undefinedBtn)
     {
         //GUI_ToUndefined
-        //When undefinedBtn clicked change screen to ConfigureNodeScreen
-        //Go to ConfigureNodeScreen with screen transition towards East
-        application().gotoConfigureNodeScreenScreenSlideTransitionEast();
+        //When undefinedBtn clicked change screen to DebugScreen
+        //Go to DebugScreen with screen transition towards East
+        application().gotoDebugScreenScreenSlideTransitionEast();
     }
 }

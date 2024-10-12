@@ -1,0 +1,10 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	16	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/debugscreen_screen/DebugScreenViewBase.hpp:25:18:virtual void DebugScreenViewBase::GUI_DebugAtepRoot()	16	static
+../../TouchGFX/gui/include/gui/debugscreen_screen/DebugScreenView.hpp:11:13:DebugScreenView::~DebugScreenView()	16	static
+../../TouchGFX/gui/include/gui/debugscreen_screen/DebugScreenView.hpp:11:13:virtual DebugScreenView::~DebugScreenView()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/debugscreen_screen/DebugScreenView.cpp:3:1:DebugScreenView::DebugScreenView()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/debugscreen_screen/DebugScreenView.cpp:8:6:virtual void DebugScreenView::setupScreen()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/debugscreen_screen/DebugScreenView.cpp:13:6:virtual void DebugScreenView::tearDownScreen()	16	static

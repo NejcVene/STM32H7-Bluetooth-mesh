@@ -168,6 +168,9 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp \
  ../../TouchGFX/gui/include/gui/containers/DeviceSubs.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceSubsBase.hpp \
+ ../../TouchGFX/gui/include/gui/debugscreen_screen/DebugScreenView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/debugscreen_screen/DebugScreenViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/debugscreen_screen/DebugScreenPresenter.hpp \
  ../../TouchGFX/generated/images/include/BitmapDatabase.hpp \
  ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/VectorFontRendererImpl.hpp \
@@ -344,6 +347,9 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/STM32CubeIDE/Applicatio
 ../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp:
 ../../TouchGFX/gui/include/gui/containers/DeviceSubs.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/DeviceSubsBase.hpp:
+../../TouchGFX/gui/include/gui/debugscreen_screen/DebugScreenView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/debugscreen_screen/DebugScreenViewBase.hpp:
+../../TouchGFX/gui/include/gui/debugscreen_screen/DebugScreenPresenter.hpp:
 ../../TouchGFX/generated/images/include/BitmapDatabase.hpp:
 ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/VectorFontRendererImpl.hpp:

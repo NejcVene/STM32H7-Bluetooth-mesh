@@ -39,6 +39,9 @@
     <ClCompile Include="..\..\generated\gui_generated\src\configurenodescreen_screen\ConfigureNodeScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\DeviceSubs.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceSubsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\debugscreen_screen\DebugScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\debugscreen_screen\DebugScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\debugscreen_screen\DebugScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -207,6 +210,9 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configurenodescreen_screen\ConfigureNodeScreenViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\DeviceSubs.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceSubsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\debugscreen_screen\DebugScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\debugscreen_screen\DebugScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\debugscreen_screen\DebugScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

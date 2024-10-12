@@ -17,6 +17,8 @@
 #include <gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp>
 #include <gui/configurenodescreen_screen/ConfigureNodeScreenView.hpp>
 #include <gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp>
+#include <gui/debugscreen_screen/DebugScreenView.hpp>
+#include <gui/debugscreen_screen/DebugScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -86,15 +88,15 @@ void FrontendApplicationBase::gotoAddDeviceScreenScreenWipeTransitionEastImpl()
     touchgfx::makeTransition<AddDeviceScreenView, AddDeviceScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// ConfigureNodeScreen
+// DebugScreen
 
-void FrontendApplicationBase::gotoConfigureNodeScreenScreenSlideTransitionEast()
+void FrontendApplicationBase::gotoDebugScreenScreenSlideTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoConfigureNodeScreenScreenSlideTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoDebugScreenScreenSlideTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoConfigureNodeScreenScreenSlideTransitionEastImpl()
+void FrontendApplicationBase::gotoDebugScreenScreenSlideTransitionEastImpl()
 {
-    touchgfx::makeTransition<ConfigureNodeScreenView, ConfigureNodeScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<DebugScreenView, DebugScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

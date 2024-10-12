@@ -35,8 +35,8 @@
 #define ENABLE_RELAY_FEATURE
 #define ENABLE_PROXY_FEATURE
 #define ENABLE_FRIEND_FEATURE
-// #define ENABLE_PROVISIONER_FEATURE
-#define DYNAMIC_PROVISIONER
+#define ENABLE_PROVISIONER_FEATURE
+// #define DYNAMIC_PROVISIONER
       
 /*
 *  Different provision bearer supported by BLE-Mesh. 
