@@ -361,7 +361,23 @@ void FSM_Execute(void *param) {
 	// UTIL_SEQ_SetTask(1 << CFG_TASK_MESH_SPI_REQ_ID, CFG_SCH_PRIO_0);
 	// Serial_InterfaceProcess();
 	// BLEMesh_GetNeighborState(pNeighborTable, pNoOfNeighborPresent); could be called directly for scanning devices
-	UTIL_SEQ_SetTask( 1<<CFG_TASK_MESH_SERIAL_REQ_ID, CFG_SCH_PRIO_0);
+	if (cmdTypeConverted != PRO_MSG_TYPE_OTHER) {
+		UTIL_SEQ_SetTask( 1<<CFG_TASK_MESH_SERIAL_REQ_ID, CFG_SCH_PRIO_0);
+	} else {
+		char resultBuffer[PAC_MAX_PAYLOAD] = {0};
+		char status[2];
+		strcat(resultBuffer, (char *) CommandString);
+		strcat(resultBuffer, ": ");
+		if (!strcmp("BLEMesh_Unprovision", (char *) CommandString)) {
+			status[0] = BLEMesh_Unprovision() ? '1' : '0';
+		} else if (!strcmp("BLEMesh_IsUnprovisioned", (char *) CommandString)) {
+			status[0] = BLEMesh_IsUnprovisioned() ? '1' : '0';
+		}
+		status[1] = '\n';
+		strcat(resultBuffer, status);
+		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, sizeof(resultBuffer));
+		memset(CommandString, 0, payloadLengthRx);
+	}
 #endif
 
 }

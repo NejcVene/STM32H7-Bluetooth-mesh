@@ -25,6 +25,8 @@ typedef enum {
 	CMD_MESH_ATCL_GENERIC_ON_OFF_ACK,
 	CMD_MESH_ATCL_GENECI_ON_OFF_ACK_OFF,
 	CMD_MESH_ATCL_GENERIC_ON_OFF_GET,
+	CMD_FUN_PROV_EM_PROV,
+	CMD_FUN_IS_EM_PROV_PROV,
 	CMD_MESH_NUM_OF_CMD
 } CMD_INDEX;
 
@@ -33,6 +35,7 @@ typedef struct {
 	PROTOCOL_MSG_TYPE commandType;
 } CMD_MeshCommand_t;
 
+// actual mesh commands
 extern CMD_MeshCommand_t defineRootNetworkNode;
 extern CMD_MeshCommand_t scanForUnprovisionedNetworkDevices;
 extern CMD_MeshCommand_t provisionNetworkDevice;
@@ -41,6 +44,11 @@ extern CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn;
 extern CMD_MeshCommand_t genericOnOffSetAck;
 extern CMD_MeshCommand_t genericOnOffGet;
 extern CMD_MeshCommand_t genericOnOffSetAckOff;
+
+// commands which are not part of mesh, but directly call functions
+// on the embedded provisioner
+extern CMD_MeshCommand_t unprovisionEmbeddedProv;
+extern CMD_MeshCommand_t isEmbeddedProvProvisioned;
 
 #ifdef __cplusplus
 }

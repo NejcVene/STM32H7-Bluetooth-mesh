@@ -256,7 +256,7 @@ static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, char *resultBuffer)
     		cutUuid[4] = '\0';
     		strcat(resultBuffer, cutUuid);
     		if (count < NoOfNeighborPresent - 1) {
-    			strcat(resultBuffer, "\n");
+    			strcat(resultBuffer, ";");
     		}
     		BLEMesh_PrintStringCb("");
     		TRACE_I(TF_PROVISION,"Device-%d -> ", count);

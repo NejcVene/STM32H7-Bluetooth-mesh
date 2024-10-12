@@ -30,6 +30,7 @@ typedef enum {
 	PRO_MSG_TYPE_GET,					// to get status of device
 	PRO_MSG_TYPE_STATUS,				// response to get command
 	PRO_MSG_TYPE_ERROR,					// for reporting regular errors
+	PRO_MSH_TYPE_FUN
 } PROTOCOL_MSG_TYPE;
 
 typedef enum {

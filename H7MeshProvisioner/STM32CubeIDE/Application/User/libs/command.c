@@ -46,3 +46,13 @@ CMD_MeshCommand_t genericOnOffGet = {
 		.command = "ATCL 0002 8201",
 		.commandType = PRO_MSG_TYPE_UNACK
 };
+
+CMD_MeshCommand_t unprovisionEmbeddedProv = {
+		.command = "BLEMesh_Unprovision",
+		.commandType = PRO_MSG_TYPE_OTHER
+};
+
+CMD_MeshCommand_t isEmbeddedProvProvisioned = {
+		.command = "BLEMesh_IsUnprovisioned",
+		.commandType = PRO_MSG_TYPE_OTHER
+};
