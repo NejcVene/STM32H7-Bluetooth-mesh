@@ -17,7 +17,7 @@ CMD_MeshCommand_t scanForUnprovisionedNetworkDevices = {
 		.commandType = PRO_MSG_TYPE_ACK
 };
 
-CMD_MeshCommand_t provisionNetworkDevice = { // currently hard-coded
+CMD_MeshCommand_t provisionNetworkDevice = {
 		.command = "ATEP PRVN-%d",
 		.commandType = PRO_MSG_TYPE_UNACK
 };

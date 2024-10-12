@@ -694,7 +694,7 @@
                 "Type": "TiledImage",
                 "Name": "tiledImage3",
                 "Width": 330,
-                "Height": 121,
+                "Height": 350,
                 "FileName": "H7ConfigBox.png"
               }
             ]
@@ -893,8 +893,9 @@
             "Y": 5,
             "Width": 138,
             "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_dark.png",
-            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_dark.png"
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_dark.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded_text.json"
           }
         ],
         "Interactions": []

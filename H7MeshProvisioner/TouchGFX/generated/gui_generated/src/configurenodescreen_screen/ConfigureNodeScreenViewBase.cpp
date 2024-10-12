@@ -76,7 +76,7 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase()
     allNodeSubsCont.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     allNodeSubsCont.setScrollbarsAlpha(255);
     tiledImage3.setBitmap(touchgfx::Bitmap(BITMAP_H7CONFIGBOX_ID));
-    tiledImage3.setPosition(0, 0, 330, 121);
+    tiledImage3.setPosition(0, 0, 330, 350);
     tiledImage3.setOffset(0, 0);
     allNodeSubsCont.add(tiledImage3);
 

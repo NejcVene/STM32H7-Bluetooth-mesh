@@ -10,7 +10,7 @@ void ConfigureNodeScreenView::setupScreen()
     ConfigureNodeScreenViewBase::setupScreen();
     for (int i = 0; i<maxSubsPerNode; i++) {
     	nodeSubscriptions[i].initialize();
-    	nodeSubscriptions[i].setPosition(10, 151 * (i + 1), 310, 60);
+    	nodeSubscriptions[i].setPosition(10, 10 + (i * 70), 310, 60);
     	nodeSubscriptions[i].setVisible(true);
     	allNodeSubsCont.add(nodeSubscriptions[i]);
     }
