@@ -35,7 +35,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="#define DYNAMIC_PROVISIONER"/>
+			<item key="textPattern" value="aNodeElements"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.h"/>
@@ -52,11 +52,11 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="ENABLE_DYNAMIC"/>
+			<item key="textPattern" value="**Node is configured**"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
-				<item value="*.c"/>
 				<item value="*.h"/>
+				<item value="*.c"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -65,7 +65,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="BLEMesh_Unprovision"/>
+			<item key="textPattern" value="BLEMesh_ProvisionRemote"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.c"/>
@@ -78,11 +78,11 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="BLEMesh_IsUnprovisioned"/>
+			<item key="textPattern" value="#define DYNAMIC_PROVISIONER"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
-				<item value="*.c"/>
 				<item value="*.h"/>
+				<item value="*.c"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -91,7 +91,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="Vendor_WriteLocalDataCb"/>
+			<item key="textPattern" value="ENABLE_DYNAMIC"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.c"/>
@@ -104,7 +104,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="BLEMesh_GetSubscriptionAddress"/>
+			<item key="textPattern" value="BLEMesh_Unprovision"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.c"/>
@@ -117,11 +117,11 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="ConfigClient_SubscriptionAdd"/>
+			<item key="textPattern" value="BLEMesh_IsUnprovisioned"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
-				<item value="*.h"/>
 				<item value="*.c"/>
+				<item value="*.h"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -130,7 +130,7 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="config_model_cb"/>
+			<item key="textPattern" value="Vendor_WriteLocalDataCb"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
 				<item value="*.c"/>
@@ -143,11 +143,11 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="Composition"/>
+			<item key="textPattern" value="BLEMesh_GetSubscriptionAddress"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
-				<item value="*.h"/>
 				<item value="*.c"/>
+				<item value="*.h"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -156,11 +156,11 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="Appli_GetAppKeyBindingParamsCb"/>
+			<item key="textPattern" value="ConfigClient_SubscriptionAdd"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
-				<item value="*.c"/>
 				<item value="*.h"/>
+				<item value="*.c"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -169,11 +169,11 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="AppKey binding received for elementIndex"/>
+			<item key="textPattern" value="config_model_cb"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
-				<item value="*.h"/>
 				<item value="*.c"/>
+				<item value="*.h"/>
 			</list>
 			<list key="workingSets">
 			</list>
@@ -182,11 +182,11 @@
 			<item key="ignoreCase" value="true"/>
 			<item key="isRegExSearch" value="false"/>
 			<item key="isWholeWord" value="false"/>
-			<item key="textPattern" value="**Node is configured**"/>
+			<item key="textPattern" value="Composition"/>
 			<item key="scope" value="0"/>
 			<list key="fileNamePatterns">
-				<item value="*.c"/>
 				<item value="*.h"/>
+				<item value="*.c"/>
 			</list>
 			<list key="workingSets">
 			</list>

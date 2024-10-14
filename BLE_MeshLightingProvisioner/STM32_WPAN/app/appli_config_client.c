@@ -877,6 +877,10 @@ MOBLE_RESULT Appli_ConfigClient_ConfigureNode(void)
       eClientSendMsgState = ConfigurationDone_State;  /* Change the send state */
       eServerRespRecdState = NodeIdle_State;
       TRACE_I(TF_CONFIG_CLIENT,"**Node is configured** \r\n");  
+
+      // added
+      // register event to send result as node provision and configuration is complete
+
     }
     else 
     {

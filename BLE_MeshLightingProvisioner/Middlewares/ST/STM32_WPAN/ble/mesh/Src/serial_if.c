@@ -24,6 +24,7 @@
 #include "hal_common.h"
 #include "mesh_cfg.h"
 #include "communication_ex.h"
+#include "serial_fun.h"
 #if ENABLE_SERIAL_CONTROL
 #include "serial_ctrl.h"
 #endif
@@ -269,7 +270,9 @@ void Serial_InterfaceProcess(void)
   {
     TRACE_I(TF_SERIAL_PRINTS,"LONG_PRESS OK\r\n");
     LongPressButton=1;
-  } 
+  } else if (!strncmp((char const *) CommandString, FUN_INDENTIFIER, FUN_INDENTIFIER_LEN)) {
+	  SF_Process((char *) CommandString, indexReceiveChar, resultBuffer);
+  }
   else
   {
     TRACE_I(TF_SERIAL_PRINTS,"Not Entered valid test parameters\r\n");  

@@ -27,6 +27,8 @@ typedef enum {
 	CMD_MESH_ATCL_GENERIC_ON_OFF_GET,
 	CMD_FUN_PROV_EM_PROV,
 	CMD_FUN_IS_EM_PROV_PROV,
+	CMD_FUN_SUBS_ADD,
+	CMD_FUN_PUB_SET,
 	CMD_MESH_NUM_OF_CMD
 } CMD_INDEX;
 
@@ -49,6 +51,8 @@ extern CMD_MeshCommand_t genericOnOffSetAckOff;
 // on the embedded provisioner
 extern CMD_MeshCommand_t unprovisionEmbeddedProv;
 extern CMD_MeshCommand_t isEmbeddedProvProvisioned;
+extern CMD_MeshCommand_t subscriptionAdd;
+extern CMD_MeshCommand_t publicationSet;
 
 #ifdef __cplusplus
 }

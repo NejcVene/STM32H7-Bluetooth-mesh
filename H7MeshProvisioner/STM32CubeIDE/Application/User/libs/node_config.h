@@ -33,6 +33,12 @@
 #define NODE_FEATURE_BYTE				0
 #define NODE_MODELS_BYTE				2
 
+// predefined group addresses for rooms
+#define GROUP_ADDRESS_KITCHEN			0xC001
+#define GROUP_ADDRESS_LIVING_ROOM		0xC002
+#define GROUP_ADDRESS_BEDROOM			0xC003
+#define GROUP_ADDRESS_BATHROOM			0xC004
+
 typedef struct {
 	uint32_t nodeAddress;
 	char nodeModels[5];
@@ -45,6 +51,15 @@ typedef struct {
 	char nodeName[MAX_NODE_NAME];
 	Node_NetworkAddress_t address;
 } Node_Config_t;
+
+typedef struct {
+	char addressName[10];
+	uint16_t address;
+} Node_GroupAddress_t;
+
+typedef struct {
+	;
+} Node_ModelIdentifier_t;
 
 void NC_Init(void);
 void NC_ReportFoundNodes(char *param);

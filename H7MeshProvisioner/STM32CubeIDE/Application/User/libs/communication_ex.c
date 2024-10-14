@@ -357,7 +357,12 @@ void FSM_Execute(void *param) {
 #endif
 #ifdef _MASTER
 	// TODO: master execute command
-	// TODO: provision further
+	// TODO: provision further (work in progress)
+	//			- ModelIdentifier struct
+	//			- Bind to view
+	//			- Switch views from prov. to config
+	//			- Expand struct for view to hw for multiple params
+	//			-
 	// TODO: NDSCAN return value to master
 	FSM_CommandGet_t *guiCmd = *((FSM_CommandGet_t **) param);
 	char responseCommand[CMD_MESH_COMMAND_LENGHT];

@@ -19,7 +19,7 @@ CMD_MeshCommand_t scanForUnprovisionedNetworkDevices = {
 
 CMD_MeshCommand_t provisionNetworkDevice = {
 		.command = "ATEP PRVN-%d",
-		.commandType = PRO_MSG_TYPE_UNACK
+		.commandType = PRO_MSG_TYPE_ACK
 };
 
 CMD_MeshCommand_t scanForUnprovisionedNetworkDevicesOutOfRangePvrn = {
@@ -29,16 +29,16 @@ CMD_MeshCommand_t scanForUnprovisionedNetworkDevicesOutOfRangePvrn = {
 
 CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn = {
 		.command = "ATEP NDPRVN-%d",
-		.commandType = PRO_MSG_TYPE_UNACK
+		.commandType = PRO_MSG_TYPE_ACK
 };
 
 CMD_MeshCommand_t genericOnOffSetAck = { // currently hard-coded
-		.command = "ATCL c000 8202 01 00",
+		.command = "ATCL %d 8202 01 00",
 		.commandType = PRO_MSG_TYPE_UNACK
 };
 
 CMD_MeshCommand_t genericOnOffSetAckOff = { // currently hard-coded
-		.command = "ATCL c000 8202 00 00", // c000 for group address
+		.command = "ATCL %d 8202 00 00", // c000 for group address
 		.commandType = PRO_MSG_TYPE_UNACK
 };
 
@@ -54,5 +54,15 @@ CMD_MeshCommand_t unprovisionEmbeddedProv = {
 
 CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 		.command = "BLEMesh_IsUnprovisioned",
+		.commandType = PRO_MSG_TYPE_OTHER
+};
+
+CMD_MeshCommand_t subscriptionAdd = {
+		.command = "BLEMesh_SubsAdd %d %d %d",
+		.commandType = PRO_MSG_TYPE_OTHER
+};
+
+CMD_MeshCommand_t publicationSet = {
+		.command = "BLEMesh_ModelSet %d %d",
 		.commandType = PRO_MSG_TYPE_OTHER
 };

@@ -956,6 +956,8 @@ void StartDefaultTask(void *argument)
 	HT_Insert(cmdHashTable, CMD_MESH_ATCL_GENECI_ON_OFF_ACK_OFF, &genericOnOffSetAckOff);
 	HT_Insert(cmdHashTable, CMD_FUN_PROV_EM_PROV, &unprovisionEmbeddedProv);
 	HT_Insert(cmdHashTable, CMD_FUN_IS_EM_PROV_PROV, &isEmbeddedProvProvisioned);
+	HT_Insert(cmdHashTable, CMD_FUN_SUBS_ADD, &subscriptionAdd);
+	HT_Insert(cmdHashTable, CMD_FUN_PUB_SET, &publicationSet);
 
 	for(;;) {
 		osDelay(100);
