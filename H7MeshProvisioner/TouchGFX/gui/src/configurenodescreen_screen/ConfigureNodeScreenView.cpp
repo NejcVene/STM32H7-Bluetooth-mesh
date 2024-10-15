@@ -27,3 +27,7 @@ void ConfigureNodeScreenView::handleButtonClicked(int instanceID) {
 	;
 
 }
+
+void ConfigureNodeScreenView::GUI_SetDeviceToConfigure(Node_NetworkAddress_t *configureDevice) {
+
+}

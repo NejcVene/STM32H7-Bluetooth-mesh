@@ -16,6 +16,7 @@ public:
 
     virtual void handleTickEvent();
     virtual void GUI_SetDevicesFound(Node_NetworkAddress_t *foundDevices);
+    virtual void GUI_SwitchScreenAfterProv();
 protected:
 
     bool increase = true;

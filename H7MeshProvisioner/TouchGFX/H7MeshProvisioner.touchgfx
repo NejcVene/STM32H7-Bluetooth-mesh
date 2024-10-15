@@ -518,6 +518,25 @@
               "Type": "ActionCustom",
               "FunctionName": "GUI_ProvisionNode"
             }
+          },
+          {
+            "InteractionName": "GUI_SwitchScreenToDeviceConfig",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call AddDeviceScreen goToDeviceConfigScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ConfigureNodeScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToDeviceConfigScreen",
+            "Description": "Called from user code to change screen"
           }
         ]
       },

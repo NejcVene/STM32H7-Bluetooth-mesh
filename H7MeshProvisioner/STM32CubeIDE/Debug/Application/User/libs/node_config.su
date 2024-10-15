@@ -1,7 +1,8 @@
-../Application/User/libs/node_config.c:47:6:NC_Init	40	static
-../Application/User/libs/node_config.c:55:6:NC_ReportFoundNodes	88	static
-../Application/User/libs/node_config.c:75:6:NC_CheckEnabledModelsFeatures	24	static
-../Application/User/libs/node_config.c:86:6:NC_ReportItems	32	static
-../Application/User/libs/node_config.c:96:9:NC_HexCharToInt	16	static
-../Application/User/libs/node_config.c:109:24:NC_GetNodeNetworkAddress	16	static
-../Application/User/libs/node_config.c:115:24:NC_GetNodeNetworkAddressArray	4	static
+../Application/User/libs/node_config.c:56:6:NC_Init	48	static
+../Application/User/libs/node_config.c:68:6:NC_ReportFoundNodes	88	static
+../Application/User/libs/node_config.c:88:6:NC_CheckEnabledModelsFeatures	24	static
+../Application/User/libs/node_config.c:99:6:NC_ReportItems	32	static
+../Application/User/libs/node_config.c:109:9:NC_HexCharToInt	16	static
+../Application/User/libs/node_config.c:122:24:NC_GetNodeFromAddress	24	static
+../Application/User/libs/node_config.c:134:24:NC_GetNodeNetworkAddress	16	static
+../Application/User/libs/node_config.c:140:24:NC_GetNodeNetworkAddressArray	4	static

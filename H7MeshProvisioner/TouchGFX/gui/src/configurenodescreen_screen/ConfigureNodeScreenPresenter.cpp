@@ -16,3 +16,9 @@ void ConfigureNodeScreenPresenter::deactivate()
 {
 
 }
+
+void ConfigureNodeScreenPresenter::GUI_ConfigureDevice() {
+
+	view.GUI_SetDeviceToConfigure(model->GUI_GetDeviceToConfigure());
+
+}

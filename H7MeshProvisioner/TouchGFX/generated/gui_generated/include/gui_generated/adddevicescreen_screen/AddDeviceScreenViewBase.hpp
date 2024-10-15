@@ -24,6 +24,11 @@ public:
     virtual void setupScreen();
 
     /*
+     * Custom Actions
+     */
+    virtual void goToDeviceConfigScreen();
+
+    /*
      * Virtual Action Handlers
      */
     virtual void GUI_ProvisionNode()

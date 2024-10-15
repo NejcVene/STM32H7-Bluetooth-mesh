@@ -72,6 +72,7 @@ typedef enum {
 } PROCESS_MESSAGE_STATE;
 
 typedef struct {
+	int commandIndex;
 	void *result;
 } FSM_CommandExecutionResult_t;
 

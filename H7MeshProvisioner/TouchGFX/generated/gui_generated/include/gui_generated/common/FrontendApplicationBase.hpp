@@ -31,6 +31,9 @@ public:
     // AddDeviceScreen
     void gotoAddDeviceScreenScreenWipeTransitionEast();
 
+    // ConfigureNodeScreen
+    void gotoConfigureNodeScreenScreenSlideTransitionEast();
+
     // DebugScreen
     void gotoDebugScreenScreenSlideTransitionEast();
 
@@ -49,6 +52,9 @@ protected:
 
     // AddDeviceScreen
     void gotoAddDeviceScreenScreenWipeTransitionEastImpl();
+
+    // ConfigureNodeScreen
+    void gotoConfigureNodeScreenScreenSlideTransitionEastImpl();
 
     // DebugScreen
     void gotoDebugScreenScreenSlideTransitionEastImpl();

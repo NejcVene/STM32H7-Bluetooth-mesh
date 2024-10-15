@@ -53,7 +53,7 @@ typedef struct {
 } Node_Config_t;
 
 typedef struct {
-	char addressName[10];
+	char addressName[20];
 	uint16_t address;
 } Node_GroupAddress_t;
 
@@ -64,6 +64,7 @@ typedef struct {
 void NC_Init(void);
 void NC_ReportFoundNodes(char *param);
 void NC_CheckEnabledModelsFeatures(void);
+Node_NetworkAddress_t *NC_GetNodeFromAddress(uint32_t nodeAddress);
 Node_NetworkAddress_t *NC_GetNodeNetworkAddressArray(void);
 Node_NetworkAddress_t *NC_GetNodeNetworkAddress(int index);
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);

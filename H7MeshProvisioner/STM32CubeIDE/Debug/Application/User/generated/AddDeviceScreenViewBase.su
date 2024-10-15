@@ -90,7 +90,8 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:34:7:virtual touchgfx::AbstractPainterRGB565::~AbstractPainterRGB565()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp:42:5:touchgfx::PainterRGB565::PainterRGB565(touchgfx::colortype)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp:47:18:virtual void touchgfx::PainterRGB565::setColor(touchgfx::colortype)	32	static
-../../TouchGFX/generated/gui_generated/include/gui_generated/adddevicescreen_screen/AddDeviceScreenViewBase.hpp:29:18:virtual void AddDeviceScreenViewBase::GUI_ProvisionNode()	16	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/adddevicescreen_screen/AddDeviceScreenViewBase.hpp:34:18:virtual void AddDeviceScreenViewBase::GUI_ProvisionNode()	16	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/adddevicescreen_screen/AddDeviceScreenViewBase.hpp:40:26:FrontendApplication& AddDeviceScreenViewBase::application()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<AddDeviceScreenPresenter>::~View()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<AddDeviceScreenPresenter>::~View()	16	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/adddevicescreen_screen/AddDeviceScreenViewBase.cpp:10:1:AddDeviceScreenViewBase::AddDeviceScreenViewBase()	144	static
@@ -98,6 +99,7 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/adddevicescreen_screen/AddDeviceScreenViewBase.cpp:61:1:virtual AddDeviceScreenViewBase::~AddDeviceScreenViewBase()	16	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/adddevicescreen_screen/AddDeviceScreenViewBase.cpp:66:6:virtual void AddDeviceScreenViewBase::setupScreen()	16	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/adddevicescreen_screen/AddDeviceScreenViewBase.cpp:71:6:void AddDeviceScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/adddevicescreen_screen/AddDeviceScreenViewBase.cpp:82:6:virtual void AddDeviceScreenViewBase::goToDeviceConfigScreen()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:39:5:touchgfx::View<T>::View() [with T = AddDeviceScreenPresenter]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:touchgfx::ClickButtonTrigger::ClickButtonTrigger()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:touchgfx::ClickButtonTrigger::~ClickButtonTrigger()	16	static

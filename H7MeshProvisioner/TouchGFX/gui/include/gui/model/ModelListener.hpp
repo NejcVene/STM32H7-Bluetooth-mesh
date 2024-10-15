@@ -16,6 +16,8 @@ public:
     }
 
     virtual void GUI_DevicesFound() {};
+    virtual void GUI_ChangeScreen() {};
+    virtual void GUI_ConfigureDevice() {};
 
 protected:
     Model* model;

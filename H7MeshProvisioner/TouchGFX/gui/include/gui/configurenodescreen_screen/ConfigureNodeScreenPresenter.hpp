@@ -27,6 +27,8 @@ public:
 
     virtual ~ConfigureNodeScreenPresenter() {}
 
+    virtual void GUI_ConfigureDevice();
+
 private:
     ConfigureNodeScreenPresenter();
 

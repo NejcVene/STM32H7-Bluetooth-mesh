@@ -81,3 +81,9 @@ void AddDeviceScreenView::handleButtonClicked(int instanceID) {
 
 }
 
+void AddDeviceScreenView::GUI_SwitchScreenAfterProv() {
+
+	goToDeviceConfigScreen();
+
+}
+

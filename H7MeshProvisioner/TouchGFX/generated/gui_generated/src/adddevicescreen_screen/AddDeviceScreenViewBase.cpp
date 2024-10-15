@@ -78,3 +78,11 @@ void AddDeviceScreenViewBase::flexButtonCallbackHandler(const touchgfx::Abstract
         GUI_ProvisionNode();
     }
 }
+
+void AddDeviceScreenViewBase::goToDeviceConfigScreen()
+{
+    //GUI_SwitchScreenToDeviceConfig
+    //When goToDeviceConfigScreen is called change screen to ConfigureNodeScreen
+    //Go to ConfigureNodeScreen with screen transition towards East
+    application().gotoConfigureNodeScreenScreenSlideTransitionEast();
+}

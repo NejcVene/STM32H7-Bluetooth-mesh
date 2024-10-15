@@ -88,6 +88,19 @@ void FrontendApplicationBase::gotoAddDeviceScreenScreenWipeTransitionEastImpl()
     touchgfx::makeTransition<AddDeviceScreenView, AddDeviceScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
+// ConfigureNodeScreen
+
+void FrontendApplicationBase::gotoConfigureNodeScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoConfigureNodeScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoConfigureNodeScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<ConfigureNodeScreenView, ConfigureNodeScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
 // DebugScreen
 
 void FrontendApplicationBase::gotoDebugScreenScreenSlideTransitionEast()

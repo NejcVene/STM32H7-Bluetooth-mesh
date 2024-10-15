@@ -33,7 +33,7 @@ void SF_Process(char *receiveBuffer, uint16_t receiveSize, char *resultBuffer) {
 
 }
 
-int SF_UnprovisionEmbedded(char *resultBuffer) {
+void SF_UnprovisionEmbedded(char *resultBuffer) {
 
 	char tmp[2];
 	strcat(resultBuffer, "Unprovision: ");
@@ -43,7 +43,7 @@ int SF_UnprovisionEmbedded(char *resultBuffer) {
 
 }
 
-int SF_IsEmbeddedProvisioned(char *resultBuffer) {
+void SF_IsEmbeddedProvisioned(char *resultBuffer) {
 
 	char tmp[2];
 	strcat(resultBuffer, "IsUnprovisioned: ");
@@ -53,7 +53,7 @@ int SF_IsEmbeddedProvisioned(char *resultBuffer) {
 
 }
 
-int SF_SubscriptionAdd(char *receiveBuffer, char *resultBuffer) {
+void SF_SubscriptionAdd(char *receiveBuffer, char *resultBuffer) {
 
 	char tmp[2];
 	int elementAddress, address, modelIndentifier;
@@ -65,7 +65,7 @@ int SF_SubscriptionAdd(char *receiveBuffer, char *resultBuffer) {
 
 }
 
-int SF_PublicationSet(char *receiveBuffer, char *resultBuffer) {
+void SF_PublicationSet(char *receiveBuffer, char *resultBuffer) {
 
 	char tmp[2];
 	int elementAddress, address, modelIndentifier;

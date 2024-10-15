@@ -28,3 +28,9 @@ void AddDeviceScreenPresenter::GUI_DevicesFound() {
 	view.GUI_SetDevicesFound(model->GUI_GetFoundDevices());
 
 }
+
+void AddDeviceScreenPresenter::GUI_ChangeScreen() {
+
+	view.GUI_SwitchScreenAfterProv();
+
+}

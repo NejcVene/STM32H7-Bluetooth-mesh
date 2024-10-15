@@ -14,6 +14,8 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    virtual void GUI_SetDeviceToConfigure(Node_NetworkAddress_t *configureDevice);
+
 protected:
 
     static const int maxSubsPerNode = 5;

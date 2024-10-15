@@ -7,6 +7,7 @@
 
 #include "node_config.h"
 #include "device_settings.h"
+#include "hash_table.h"
 #include <string.h>
 #include <inttypes.h>
 
@@ -20,34 +21,46 @@
 typedef struct {
 	const char *name;
 	uint8_t bitmask;
+	uint16_t identifier;
 } NC_MaskedModelFeatures;
 
 void NC_ReportItems(uint8_t uuid, NC_MaskedModelFeatures *items, char *report);
 uint8_t NC_HexCharToInt(char c);
 
 NC_MaskedModelFeatures models[] = {
-		{.name = "O", .bitmask = NC_GENERIC_ON_OFF_MODEL},
-		{.name = "E", .bitmask = NC_GENERIC_LEVEL_MODEL},
-		{.name = "S", .bitmask = NC_SENSOR_MODEL},
-		{.name = "L", .bitmask = NC_LIGH_LIGHTNESS_MODEL},
-		{.name = NULL, .bitmask = 0}
+		{.name = "O", .bitmask = NC_GENERIC_ON_OFF_MODEL, .identifier = 0},
+		{.name = "E", .bitmask = NC_GENERIC_LEVEL_MODEL, .identifier = 0},
+		{.name = "S", .bitmask = NC_SENSOR_MODEL, .identifier = 0},
+		{.name = "L", .bitmask = NC_LIGH_LIGHTNESS_MODEL, .identifier = 0},
+		{.name = NULL, .bitmask = 0, .identifier = 0}
 };
 NC_MaskedModelFeatures features[] = {
-		{.name = "R", .bitmask = NC_RELAY_FEATURE},
-		{.name = "P", .bitmask = NC_PROXY_FEATURE},
-		{.name = "F", .bitmask = NC_FRIEND_FEATURE},
-		{.name = "E", .bitmask = NC_EMBEDDED_PROVISIONER_FEATURE},
-		{.name = NULL, .bitmask = 0}
+		{.name = "R", .bitmask = NC_RELAY_FEATURE, .identifier = 0},
+		{.name = "P", .bitmask = NC_PROXY_FEATURE, .identifier = 0},
+		{.name = "F", .bitmask = NC_FRIEND_FEATURE, .identifier = 0},
+		{.name = "E", .bitmask = NC_EMBEDDED_PROVISIONER_FEATURE, .identifier = 0},
+		{.name = NULL, .bitmask = 0, .identifier = 0}
+};
+Node_GroupAddress_t groupAddress[] = {
+		{.addressName = "Kitchen", .address = GROUP_ADDRESS_KITCHEN},
+		{.addressName = "Living room", .address = GROUP_ADDRESS_LIVING_ROOM},
+		{.addressName = "Bedroom", .address = GROUP_ADDRESS_BEDROOM},
+		{.addressName = "Bathroom", .address = GROUP_ADDRESS_BATHROOM}
 };
 
 
 Node_NetworkAddress_t nodeAddresses[5];
 Node_Config_t nodeConfigs[5];
+HT_HashTable_t *modelsData;
 
 void NC_Init(void) {
 
+	modelsData = HT_Create(7, 11);
 	for (int i = 0; i<5; i++) {
 		nodeAddresses[i] = CLEAR_NODE_ADDRESSES(NODE_DEF_VAL);
+	}
+	for (int i = 0; models[i].name != NULL; i++) {
+		HT_Insert(modelsData, (int) models[i].name, &models[i]);
 	}
 
 }
@@ -104,6 +117,18 @@ uint8_t NC_HexCharToInt(char c) {
     }
 
     return 0;
+}
+
+Node_NetworkAddress_t *NC_GetNodeFromAddress(uint32_t address) {
+
+	for (int i = 0; i<5; i++) {
+		if (nodeAddresses[i].nodeAddress == address) {
+			return &nodeAddresses[i];
+		}
+	}
+
+	return NULL;
+
 }
 
 Node_NetworkAddress_t *NC_GetNodeNetworkAddress(int index) {

@@ -21,12 +21,23 @@ Model::Model() : modelListener(0)
 void Model::tick() {
 
 	static FSM_CommandExecutionResult_t *fsmResult;
-	static Node_NetworkAddress_t *newFoundDevices;
 	if (osMessageQueueGetCount(FSM_ResultQueueHandle) > 0) {
 		if (osMessageQueueGet(FSM_ResultQueueHandle, &fsmResult, 0, 0) == osOK) {
-			newFoundDevices = (Node_NetworkAddress_t *) fsmResult->result;
-			foundDevices = newFoundDevices;
-			modelListener->GUI_DevicesFound();
+			switch (fsmResult->commandIndex) {
+				case CMD_MESH_ATEP_PRVN:
+				case CMD_MESH_ATEP_PRVN_RANGE:
+					deviceToConfigure = (Node_NetworkAddress_t *) fsmResult->result;
+					modelListener->GUI_ChangeScreen();
+					modelListener->GUI_ConfigureDevice();
+					break;
+				case CMD_MESH_ATEP_SCAN:
+				case CMD_MESH_ATEP_SCAN_RANGE:
+					foundDevices = (Node_NetworkAddress_t *) fsmResult->result;
+					modelListener->GUI_DevicesFound();
+					break;
+				default:
+					break;
+			}
 			vPortFree(fsmResult);
 		}
 	}

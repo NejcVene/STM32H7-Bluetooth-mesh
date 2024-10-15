@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include "communication_ex.h"
+#include "command.h"
 #include "node_config.h"
 
 class ModelListener;
@@ -25,10 +26,17 @@ public:
 
     }
 
+    Node_NetworkAddress_t *GUI_GetDeviceToConfigure() {
+
+    	return deviceToConfigure;
+
+    }
+
     void GUI_SendCommand(uint16_t cmdIndex, void *cmdParam);
 protected:
     ModelListener* modelListener;
     Node_NetworkAddress_t *foundDevices;
+    Node_NetworkAddress_t *deviceToConfigure;
 };
 
 #endif // MODEL_HPP

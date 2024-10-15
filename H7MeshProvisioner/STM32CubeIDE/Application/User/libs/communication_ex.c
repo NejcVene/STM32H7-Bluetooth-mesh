@@ -60,6 +60,11 @@ void FSM_Error(void *param);
 
 // timer functions
 
+// execution functions
+void GUI_QueueMessage(osMessageQueueId_t FSM_ResultQueueHandle, FSM_CommandExecutionResult_t *cmdResult);
+int GUI_NofitfyProvision(char *resultBuffer, FSM_CommandExecutionResult_t *cmdResult, FSM_CommandGet_t *guiCmd);
+int GUI_NotifyScan(char *resultBuffer, FSM_CommandExecutionResult_t *cmdResult, FSM_CommandGet_t *guiCmd);
+
 // UART variables
 extern Comm_Settings_t *commSettings;
 void (*LPUART_CallbackTx)(void);
@@ -364,33 +369,33 @@ void FSM_Execute(void *param) {
 	//			- Expand struct for view to hw for multiple params
 	//			-
 	// TODO: NDSCAN return value to master
+	int status;
 	FSM_CommandGet_t *guiCmd = *((FSM_CommandGet_t **) param);
 	char responseCommand[CMD_MESH_COMMAND_LENGHT];
 	char responseParameters[PAC_MAX_PAYLOAD]; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
 	FSM_CommandExecutionResult_t *cmdResult;
-	if ((cmdResult = (FSM_CommandExecutionResult_t*) pvPortMalloc(sizeof(FSM_CommandExecutionResult_t)))) {
+	if ((cmdResult = (FSM_CommandExecutionResult_t *) pvPortMalloc(sizeof(FSM_CommandExecutionResult_t)))) {
 		sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
 		if (!strcmp(responseCommand, ((CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex))->command)) {
-			if (strcmp(responseParameters, "NONE") != 0) {
-				NC_ReportFoundNodes(responseParameters);
-				NC_CheckEnabledModelsFeatures();
-				cmdResult->result = (void *) NC_GetNodeNetworkAddressArray();
-				if (osMessageQueueGetSpace(FSM_ResultQueueHandle) > 0) {
-					if (osMessageQueuePut(FSM_ResultQueueHandle, &cmdResult, 0, 0) != osOK) {
-						// raise error
-					}
-					vPortFree(guiCmd);
-				}
-			} else {
-				// if no node was found at the vicinity of the provisioner, check for new nodes by using already provisioned nodes
-				guiCmd->commandIndex = CMD_MESH_ATEP_SCAN_RANGE;
-				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_EMPTY_RESPONSE, param, sizeof(param));
+			switch (guiCmd->commandIndex) {
+				case CMD_MESH_ATEP_PRVN:
+				case CMD_MESH_ATEP_PRVN_RANGE:
+					status = GUI_NofitfyProvision(responseParameters, cmdResult, guiCmd);
+					break;
+				case CMD_MESH_ATEP_SCAN:
+				case CMD_MESH_ATEP_SCAN_RANGE:
+					status = GUI_NotifyScan(responseParameters, cmdResult, guiCmd);
+					break;
+				default:
+					break;
 			}
-		} else {
-			// send and executed commands do not match!
+			if (!status) {
+				GUI_QueueMessage(FSM_ResultQueueHandle, cmdResult);
+				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_EXE_COMPLETE, NULL, 0);
+				vPortFree(guiCmd);
+			}
 		}
 	}
-	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_EXE_COMPLETE, NULL, 0);
 #else
 	// set task for serial interface process, which will execute received command
 	// UTIL_SEQ_SetTask(1 << CFG_TASK_MESH_SPI_REQ_ID, CFG_SCH_PRIO_0);
@@ -495,6 +500,50 @@ static void Protocol_Process_Messsage(void) {
 		default:
 			break;
 	}
+
+}
+
+void GUI_QueueMessage(osMessageQueueId_t FSM_ResultQueueHandle, FSM_CommandExecutionResult_t *cmdResult) {
+
+	if (osMessageQueueGetSpace(FSM_ResultQueueHandle) > 0) {
+		if (osMessageQueuePut(FSM_ResultQueueHandle, &cmdResult, 0, 0) != osOK) {
+			// raise error
+		}
+	}
+
+}
+
+int GUI_NofitfyProvision(char *resultBuffer, FSM_CommandExecutionResult_t *cmdResult, FSM_CommandGet_t *guiCmd) {
+
+	int status = 0;
+	Node_NetworkAddress_t *tmp;
+	cmdResult->commandIndex = guiCmd->commandIndex;
+	if ((tmp = NC_GetNodeFromAddress(*((int *) guiCmd->commandParameters)))) {
+		cmdResult->result = (void *) tmp;
+	} else {
+		// if this fails, the whole system goes down with it
+		status = 1;
+	}
+
+	return status;
+
+}
+
+int GUI_NotifyScan(char *resultBuffer, FSM_CommandExecutionResult_t *cmdResult, FSM_CommandGet_t *guiCmd) {
+
+	int status = 0;
+	cmdResult->commandIndex = guiCmd->commandIndex;
+	if (!strcmp(resultBuffer, "NONE")) {
+		guiCmd->commandIndex = CMD_MESH_ATEP_SCAN_RANGE;
+		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_EMPTY_RESPONSE, &guiCmd, sizeof(guiCmd));
+		status = 1;
+	} else {
+		NC_ReportFoundNodes(resultBuffer);
+		NC_CheckEnabledModelsFeatures();
+		cmdResult->result = (void *) NC_GetNodeNetworkAddressArray();
+	}
+
+	return status;
 
 }
 

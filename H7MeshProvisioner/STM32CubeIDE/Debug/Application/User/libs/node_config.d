@@ -42,7 +42,8 @@ Application/User/libs/node_config.o: \
  ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
- ../Application/User/libs/device_settings.h
+ ../Application/User/libs/device_settings.h \
+ ../Application/User/libs/hash_table.h
 ../Application/User/libs/node_config.h:
 ../../Core/Inc/main.h:
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
@@ -87,3 +88,4 @@ Application/User/libs/node_config.o: \
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
 ../Application/User/libs/device_settings.h:
+../Application/User/libs/hash_table.h:
