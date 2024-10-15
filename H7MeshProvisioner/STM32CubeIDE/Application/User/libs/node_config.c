@@ -59,9 +59,9 @@ void NC_Init(void) {
 	for (int i = 0; i<5; i++) {
 		nodeAddresses[i] = CLEAR_NODE_ADDRESSES(NODE_DEF_VAL);
 	}
-	for (int i = 0; models[i].name != NULL; i++) {
-		HT_Insert(modelsData, (int) models[i].name, &models[i]);
-	}
+//	for (int i = 0; models[i].name != NULL; i++) {
+//		HT_Insert(modelsData, (int) models[i].name, &models[i]);
+//	}
 
 }
 

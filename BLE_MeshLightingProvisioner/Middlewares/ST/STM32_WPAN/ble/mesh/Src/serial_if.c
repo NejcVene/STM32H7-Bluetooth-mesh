@@ -192,6 +192,7 @@ __weak void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize)
 void Serial_InterfaceProcess(void)
 {
 	char resultBuffer[PAC_MAX_PAYLOAD] = {0};
+	int cmdIsPvrn = 0;
   /* Reset button emulation state */
   button_emulation = 0;
   LongPressButton = 0;
@@ -230,7 +231,7 @@ void Serial_InterfaceProcess(void)
 #if ENABLE_SERIAL_PRVN        
   else if(!strncmp((char const*)CommandString, "ATEP", 4))
   {
-     SerialPrvn_Process((char *)CommandString, indexReceiveChar, resultBuffer);
+     SerialPrvn_Process((char *)CommandString, indexReceiveChar, resultBuffer, &cmdIsPvrn);
   }
 #endif        
 #ifdef ENABLE_SENSOR_MODEL_SERVER_SETUP
@@ -282,10 +283,12 @@ void Serial_InterfaceProcess(void)
   {
     CommandString[--indexReceiveChar] = 0;
   }
-  if (cmdTypeConverted != PRO_MSG_TYPE_UNACK) {
-  		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, sizeof(resultBuffer));
-  } else {
-  		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_UNACK, NULL, 0);
+  if (!cmdIsPvrn) {
+	  if (cmdTypeConverted != PRO_MSG_TYPE_UNACK) {
+			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, sizeof(resultBuffer));
+	  } else {
+			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_UNACK, NULL, 0);
+	  }
   }
   // UTIL_SEQ_SetTask(1 << CFG_TASK_MESH_SPI_TX_REQ_ID, CFG_SCH_PRIO_0); this here might be important
 }

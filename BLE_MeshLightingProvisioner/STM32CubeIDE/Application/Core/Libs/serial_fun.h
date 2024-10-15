@@ -8,6 +8,8 @@
 #ifndef APPLICATION_CORE_LIBS_SERIAL_FUN_H_
 #define APPLICATION_CORE_LIBS_SERIAL_FUN_H_
 
+#include <stdint.h>
+
 #define FUN_INDENTIFIER_LEN								7
 #define FUN_INDENTIFIER									((char *) "BLEMesh")
 

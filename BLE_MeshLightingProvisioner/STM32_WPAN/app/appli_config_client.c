@@ -34,6 +34,8 @@
 #include "light_lc.h"
 #include "vendor.h"
 
+#include "communication_ex.h"
+
 /** @addtogroup ST_BLE_Mesh
 *  @{
 */
@@ -62,6 +64,8 @@
 /******************************************************************************/
 #if defined (ENABLE_PROVISIONER_FEATURE) || defined(DYNAMIC_PROVISIONER)
 /******************************************************************************/
+
+extern Queue *eventQueue;
 
 const MOBLEUINT8 aConfigAppKeyDefault[19]= 
                 { /* NetKeyIndexAndAppKeyIndex : 3B
@@ -880,6 +884,8 @@ MOBLE_RESULT Appli_ConfigClient_ConfigureNode(void)
 
       // added
       // register event to send result as node provision and configuration is complete
+      char resultBuffer[PAC_MAX_PAYLOAD] = "ATEP PRVN-%d: NONE";
+      FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, sizeof(resultBuffer));
 
     }
     else 

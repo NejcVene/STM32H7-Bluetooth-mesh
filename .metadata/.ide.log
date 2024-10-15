@@ -1,1 +1,299 @@
-2024-10-15 02:01:30,002 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2024-10-16 01:24:08,302 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
+2024-10-16 01:24:12,609 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 785376832 Bytes (1073741824)
+2024-10-16 01:24:13,965 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 788824272 Bytes (1073741824)
+2024-10-16 01:24:17,446 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 793992936 Bytes (1073741824)
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: FREERTOS
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: STMicroelectronics.X-CUBE-TOUCHGFX.4.23.2
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: LTDC
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: JPEG
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: MDMA
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: FMC
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: QUADSPI
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8H7
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: CRC
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: DMA2D
+2024-10-16 01:24:17,961 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: CORTEX_M7
+2024-10-16 01:24:17,962 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-10-16 01:24:17,962 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: LIBJPEG
+2024-10-16 01:24:17,975 [INFO] CodeGenerator:807 - code generatio: config db path: C:/Users/Nejc/.stm32cubemx/databases/DB.6.0.110/db/
+2024-10-16 01:24:18,011 [WARN] IP:2120 - BooleanType not found: check if there is a RefParameter without a condition.
+2024-10-16 01:24:18,013 [WARN] IP:2120 - LayerIdx_L1 not found: check if there is a RefParameter without a condition.
+2024-10-16 01:24:18,209 [INFO] IP:3348 - RTE Config file name : RTE_Component
+2024-10-16 01:24:18,209 [INFO] IP:3366 - RTE template : RTE_Components.ftl
+2024-10-16 01:24:18,234 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\license.tmp_save
+2024-10-16 01:24:18,520 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\license.tmp
+2024-10-16 01:24:18,767 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\gpio.tmp_save
+2024-10-16 01:24:18,872 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\gpio.tmp
+2024-10-16 01:24:22,714 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2024-10-16 01:24:22,722 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_inc.tmp_save
+2024-10-16 01:24:22,790 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_inc.tmp
+2024-10-16 01:24:22,795 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_kernelInit.tmp_save
+2024-10-16 01:24:22,852 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_kernelInit.tmp
+2024-10-16 01:24:22,857 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_kernelStart.tmp_save
+2024-10-16 01:24:22,913 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_kernelStart.tmp
+2024-10-16 01:24:22,919 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_typedefs.tmp_save
+2024-10-16 01:24:22,975 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_typedefs.tmp
+2024-10-16 01:24:22,979 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_vars.tmp_save
+2024-10-16 01:24:23,039 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_vars.tmp
+2024-10-16 01:24:23,050 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_pfp.tmp_save
+2024-10-16 01:24:23,104 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_pfp.tmp
+2024-10-16 01:24:23,110 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_obj_creat.tmp_save
+2024-10-16 01:24:23,165 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_obj_creat.tmp
+2024-10-16 01:24:23,173 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_default_thread.tmp_save
+2024-10-16 01:24:23,226 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_default_thread.tmp
+2024-10-16 01:24:23,231 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_threads.tmp_save
+2024-10-16 01:24:23,282 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_threads.tmp
+2024-10-16 01:24:23,285 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2024-10-16 01:24:23,288 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2024-10-16 01:24:23,289 [INFO] IP:3348 - RTE Config file name : RTE_Component
+2024-10-16 01:24:23,289 [INFO] IP:3366 - RTE template : RTE_Components.ftl
+2024-10-16 01:24:23,296 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\SCB_CleanInvalidateDCache.tmp_save
+2024-10-16 01:24:23,354 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\SCB_CleanInvalidateDCache.tmp
+2024-10-16 01:24:23,360 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\SCB_InvalidateDCache.tmp_save
+2024-10-16 01:24:23,409 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\SCB_InvalidateDCache.tmp
+2024-10-16 01:24:23,414 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\touchgfx_license.tmp_save
+2024-10-16 01:24:23,470 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\touchgfx_license.tmp
+2024-10-16 01:24:23,475 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\touchgfx_gen_license.tmp_save
+2024-10-16 01:24:23,525 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\touchgfx_gen_license.tmp
+2024-10-16 01:24:23,532 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\dma_paint_common.tmp_save
+2024-10-16 01:24:23,581 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\dma_paint_common.tmp
+2024-10-16 01:24:23,586 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\dma_16bpp_implementation.tmp_save
+2024-10-16 01:24:23,642 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\dma_16bpp_implementation.tmp
+2024-10-16 01:24:23,649 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\oswrappers_cmsis.tmp_save
+2024-10-16 01:24:23,702 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\oswrappers_cmsis.tmp
+2024-10-16 01:24:23,725 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2024-10-16 01:24:23,731 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_inc.tmp_save
+2024-10-16 01:24:23,786 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_inc.tmp
+2024-10-16 01:24:23,790 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_kernelInit.tmp_save
+2024-10-16 01:24:23,840 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_kernelInit.tmp
+2024-10-16 01:24:23,845 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_kernelStart.tmp_save
+2024-10-16 01:24:23,897 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_kernelStart.tmp
+2024-10-16 01:24:23,902 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_typedefs.tmp_save
+2024-10-16 01:24:23,948 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_typedefs.tmp
+2024-10-16 01:24:23,953 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_vars.tmp_save
+2024-10-16 01:24:24,003 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_vars.tmp
+2024-10-16 01:24:24,008 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_pfp.tmp_save
+2024-10-16 01:24:24,058 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_pfp.tmp
+2024-10-16 01:24:24,063 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_obj_creat.tmp_save
+2024-10-16 01:24:24,113 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_obj_creat.tmp
+2024-10-16 01:24:24,119 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_default_thread.tmp_save
+2024-10-16 01:24:24,167 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_default_thread.tmp
+2024-10-16 01:24:24,172 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_threads.tmp_save
+2024-10-16 01:24:24,225 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\rtos_threads.tmp
+2024-10-16 01:24:24,232 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Inc\FreeRTOSConfig.h_save
+2024-10-16 01:24:24,299 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Inc\FreeRTOSConfig.h
+2024-10-16 01:24:24,307 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Src\freertos.c_save
+2024-10-16 01:24:24,362 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Src\freertos.c
+2024-10-16 01:24:24,372 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\cortex.tmp_save
+2024-10-16 01:24:24,436 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\cortex.tmp
+2024-10-16 01:24:24,447 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mx_fmc_HC.tmp_save
+2024-10-16 01:24:24,510 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mx_fmc_HC.tmp
+2024-10-16 01:24:24,515 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mx_fmc_GV.tmp_save
+2024-10-16 01:24:24,565 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mx_fmc_GV.tmp
+2024-10-16 01:24:24,570 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mx_fmc_MSP.tmp_save
+2024-10-16 01:24:24,631 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mx_fmc_MSP.tmp
+2024-10-16 01:24:24,635 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2024-10-16 01:24:24,644 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\LIBJPEG\App\libjpeg.c_save
+2024-10-16 01:24:24,706 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\LIBJPEG\App\libjpeg.c
+2024-10-16 01:24:24,713 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\LIBJPEG\App\libjpeg.h_save
+2024-10-16 01:24:24,767 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\LIBJPEG\App\libjpeg.h
+2024-10-16 01:24:24,775 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\LIBJPEG\Target\jconfig.h_save
+2024-10-16 01:24:24,830 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\LIBJPEG\Target\jconfig.h
+2024-10-16 01:24:24,840 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\LIBJPEG\Target\jmorecfg.h_save
+2024-10-16 01:24:24,898 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\LIBJPEG\Target\jmorecfg.h
+2024-10-16 01:24:24,906 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\LIBJPEG\Target\jdata_conf.h_save
+2024-10-16 01:24:24,957 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\LIBJPEG\Target\jdata_conf.h
+2024-10-16 01:24:25,103 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mdma.tmp_save
+2024-10-16 01:24:25,165 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mdma.tmp
+2024-10-16 01:24:25,169 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mdma_GV.tmp_save
+2024-10-16 01:24:25,218 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mdma_GV.tmp
+2024-10-16 01:24:25,223 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2024-10-16 01:24:25,223 [INFO] IP:3348 - RTE Config file name : RTE_Component
+2024-10-16 01:24:25,223 [INFO] IP:3366 - RTE template : RTE_Components.ftl
+2024-10-16 01:24:25,232 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\SCB_CleanInvalidateDCache.tmp_save
+2024-10-16 01:24:25,291 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\SCB_CleanInvalidateDCache.tmp
+2024-10-16 01:24:25,296 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\SCB_InvalidateDCache.tmp_save
+2024-10-16 01:24:25,357 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\SCB_InvalidateDCache.tmp
+2024-10-16 01:24:25,362 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\touchgfx_license.tmp_save
+2024-10-16 01:24:25,413 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\touchgfx_license.tmp
+2024-10-16 01:24:25,418 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\touchgfx_gen_license.tmp_save
+2024-10-16 01:24:25,467 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\touchgfx_gen_license.tmp
+2024-10-16 01:24:25,472 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\dma_paint_common.tmp_save
+2024-10-16 01:24:25,520 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\dma_paint_common.tmp
+2024-10-16 01:24:25,524 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\dma_16bpp_implementation.tmp_save
+2024-10-16 01:24:25,578 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\dma_16bpp_implementation.tmp
+2024-10-16 01:24:25,583 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\oswrappers_cmsis.tmp_save
+2024-10-16 01:24:25,634 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\oswrappers_cmsis.tmp
+2024-10-16 01:24:25,640 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\App\app_touchgfx.h_save
+2024-10-16 01:24:25,694 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\App\app_touchgfx.h
+2024-10-16 01:24:25,700 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\ApplicationTemplate.touchgfx.part_save
+2024-10-16 01:24:25,763 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\ApplicationTemplate.touchgfx.part
+2024-10-16 01:24:25,769 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\TouchGFXConfiguration.cpp_save
+2024-10-16 01:24:25,831 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\TouchGFXConfiguration.cpp
+2024-10-16 01:24:25,838 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\TouchGFXGeneratedHAL.hpp_save
+2024-10-16 01:24:25,897 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\TouchGFXGeneratedHAL.hpp
+2024-10-16 01:24:25,904 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\TouchGFXGeneratedHAL.cpp_save
+2024-10-16 01:24:25,962 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\TouchGFXGeneratedHAL.cpp
+2024-10-16 01:24:25,969 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\TouchGFXHAL.hpp_save
+2024-10-16 01:24:26,025 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\TouchGFXHAL.hpp
+2024-10-16 01:24:26,032 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\TouchGFXHAL.cpp_save
+2024-10-16 01:24:26,087 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\TouchGFXHAL.cpp
+2024-10-16 01:24:26,094 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\STM32TouchController.hpp_save
+2024-10-16 01:24:26,151 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\STM32TouchController.hpp
+2024-10-16 01:24:26,158 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\STM32TouchController.cpp_save
+2024-10-16 01:24:26,210 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\STM32TouchController.cpp
+2024-10-16 01:24:26,217 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\STM32DMA.hpp_save
+2024-10-16 01:24:26,270 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\STM32DMA.hpp
+2024-10-16 01:24:26,276 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\STM32DMA.cpp_save
+2024-10-16 01:24:26,334 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\STM32DMA.cpp
+2024-10-16 01:24:26,341 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\OSWrappers.cpp_save
+2024-10-16 01:24:26,393 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\OSWrappers.cpp
+2024-10-16 01:24:26,400 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\TouchGFXGPIO.cpp_save
+2024-10-16 01:24:26,453 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\TouchGFXGPIO.cpp
+2024-10-16 01:24:26,459 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\MJPEGDecoder.hpp_save
+2024-10-16 01:24:26,510 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\MJPEGDecoder.hpp
+2024-10-16 01:24:26,516 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\DirectFrameBufferVideoController.hpp_save
+2024-10-16 01:24:26,569 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\DirectFrameBufferVideoController.hpp
+2024-10-16 01:24:26,577 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\DedicatedBufferVideoController.hpp_save
+2024-10-16 01:24:26,632 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\DedicatedBufferVideoController.hpp
+2024-10-16 01:24:26,638 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\HardwareMJPEGDecoder.hpp_save
+2024-10-16 01:24:26,689 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\HardwareMJPEGDecoder.hpp
+2024-10-16 01:24:26,699 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\HardwareMJPEGDecoder.cpp_save
+2024-10-16 01:24:26,762 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\target\generated\HardwareMJPEGDecoder.cpp
+2024-10-16 01:24:26,769 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\App\app_touchgfx.c_save
+2024-10-16 01:24:26,820 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\TouchGFX\App\app_touchgfx.c
+2024-10-16 01:24:26,849 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Src\stm32h7xx_it.c_save
+2024-10-16 01:24:26,936 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Src\stm32h7xx_it.c
+2024-10-16 01:24:26,943 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Inc\stm32h7xx_it.h_save
+2024-10-16 01:24:26,997 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Inc\stm32h7xx_it.h
+2024-10-16 01:24:27,000 [INFO] IP:3348 - RTE Config file name : RTE_Component
+2024-10-16 01:24:27,000 [INFO] IP:3366 - RTE template : RTE_Components.ftl
+2024-10-16 01:24:27,000 [INFO] CodeGenerator:2119 - Add RTE Code Input 
+2024-10-16 01:24:27,008 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Inc\RTE_Components.h_save
+2024-10-16 01:24:27,065 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Inc\RTE_Components.h
+2024-10-16 01:24:27,076 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mx_fmc_HC.tmp_save
+2024-10-16 01:24:27,142 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mx_fmc_HC.tmp
+2024-10-16 01:24:27,147 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mx_fmc_GV.tmp_save
+2024-10-16 01:24:27,198 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mx_fmc_GV.tmp
+2024-10-16 01:24:27,204 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mx_fmc_MSP.tmp_save
+2024-10-16 01:24:27,264 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\mx_fmc_MSP.tmp
+2024-10-16 01:24:27,741 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Src\stm32h7xx_hal_msp.c_save
+2024-10-16 01:24:27,878 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Src\stm32h7xx_hal_msp.c
+2024-10-16 01:24:27,885 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\system.tmp_save
+2024-10-16 01:24:27,933 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\MXTmpFiles\system.tmp
+2024-10-16 01:24:27,941 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Src\stm32h7xx_hal_timebase_tim.c_save
+2024-10-16 01:24:27,995 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Src\stm32h7xx_hal_timebase_tim.c
+2024-10-16 01:24:28,006 [INFO] CodeEngine:311 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Inc\stm32h7xx_hal_conf.h_save
+2024-10-16 01:24:28,070 [INFO] CodeEngine:335 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Inc\stm32h7xx_hal_conf.h
+2024-10-16 01:24:28,118 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-10-16 01:24:28,119 [WARN] CodeGenerator:3951 - IP not found : null
+2024-10-16 01:24:28,128 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Inc\main.h_save
+2024-10-16 01:24:28,206 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Inc\main.h
+2024-10-16 01:24:28,219 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Src\main.c_save
+2024-10-16 01:24:28,402 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Src\main.c
+2024-10-16 01:24:28,412 [INFO] CodeEngine:255 - oldGeneratedFile, F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Inc\jpeg_utils_conf.h_save
+2024-10-16 01:24:28,488 [INFO] CodeEngine:279 - Generated code: F:\Nejc\Projekti\BLEMeshHomeAutomation\H7MeshProvisioner\Core\Inc\jpeg_utils_conf.h
+2024-10-16 01:24:29,409 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 704mS.
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,410 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,411 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,412 [ERROR] Middleware:2969 - Invalid RefComponent liste
+2024-10-16 01:24:29,426 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-10-16 01:24:29,498 [INFO] ConfigFileManager:1503 - The Die is : DIE450
+2024-10-16 01:24:29,513 [INFO] ApiDbMcu:508 - Load IP Config File for FATFS
+2024-10-16 01:24:29,522 [INFO] ApiDbMcu:508 - Load IP Config File for LWIP
+2024-10-16 01:24:29,529 [INFO] ApiDbMcu:508 - Load IP Config File for MBEDTLS
+2024-10-16 01:24:29,537 [INFO] ApiDbMcu:508 - Load IP Config File for USB_DEVICE
+2024-10-16 01:24:29,540 [INFO] ApiDbMcu:508 - Load IP Config File for USB_HOST
+2024-10-16 01:24:30,101 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2024-10-16 01:24:31,462 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 2036mS.
+2024-10-16 01:24:31,463 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-10-16 01:24:31,507 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-10-16 01:50:55,138 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 

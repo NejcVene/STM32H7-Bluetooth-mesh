@@ -1,10 +1,10 @@
-01:04:43 **** Incremental Build of configuration Debug for project BLE_MeshLightingProvisioner ****
+01:34:02 **** Incremental Build of configuration Debug for project BLE_MeshLightingProvisioner ****
 make -j12 all 
 arm-none-eabi-size  BLE_MeshLightingProvisioner.elf 
    text	   data	    bss	    dec	    hex	filename
- 224504	   1258	  40775	 266537	  41129	BLE_MeshLightingProvisioner.elf
+ 225232	   1258	  40775	 267265	  41401	BLE_MeshLightingProvisioner.elf
 Finished building: default.size.stdout
  
 
-01:04:44 Build Finished. 0 errors, 0 warnings. (took 458ms)
+01:34:02 Build Finished. 0 errors, 0 warnings. (took 463ms)
 

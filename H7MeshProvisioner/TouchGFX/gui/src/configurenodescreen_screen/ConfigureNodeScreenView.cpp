@@ -1,5 +1,7 @@
 #include <gui/configurenodescreen_screen/ConfigureNodeScreenView.hpp>
 
+int nay4 = 0;
+
 ConfigureNodeScreenView::ConfigureNodeScreenView() : buttonClickCallback(this, &ConfigureNodeScreenView::handleButtonClicked)
 {
 
@@ -29,5 +31,7 @@ void ConfigureNodeScreenView::handleButtonClicked(int instanceID) {
 }
 
 void ConfigureNodeScreenView::GUI_SetDeviceToConfigure(Node_NetworkAddress_t *configureDevice) {
+
+	nay4 = 1;
 
 }

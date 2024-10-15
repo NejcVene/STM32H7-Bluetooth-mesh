@@ -1,0 +1,5 @@
+../Application/Core/Libs/serial_fun.c:19:6:SF_Process	5
+../Application/Core/Libs/serial_fun.c:36:6:SF_UnprovisionEmbedded	1
+../Application/Core/Libs/serial_fun.c:46:6:SF_IsEmbeddedProvisioned	1
+../Application/Core/Libs/serial_fun.c:56:6:SF_SubscriptionAdd	1
+../Application/Core/Libs/serial_fun.c:68:6:SF_PublicationSet	1

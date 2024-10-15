@@ -89,7 +89,12 @@ Application/STM32_WPAN/app/appli_config_client.o: \
  F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32_WPAN/app/appli_mesh.h \
  ../../Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Inc/sensors.h \
  ../../Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Inc/light_lc.h \
- ../../Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Inc/vendor.h
+ ../../Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Inc/vendor.h \
+ F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/communication_ex.h \
+ ../../Core/Inc/main.h \
+ F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/queue.h \
+ F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/comm_uart.h \
+ F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/device_settings.h
 F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32_WPAN/app/hal_common.h:
 F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32_WPAN/app/user_if.h:
 ../../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:
@@ -184,3 +189,8 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32_WPAN/ap
 ../../Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Inc/sensors.h:
 ../../Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Inc/light_lc.h:
 ../../Middlewares/ST/STM32_WPAN/ble/mesh/MeshModel/Inc/vendor.h:
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/communication_ex.h:
+../../Core/Inc/main.h:
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/queue.h:
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/comm_uart.h:
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/device_settings.h:

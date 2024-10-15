@@ -365,9 +365,6 @@ void FSM_Execute(void *param) {
 	// TODO: provision further (work in progress)
 	//			- ModelIdentifier struct
 	//			- Bind to view
-	//			- Switch views from prov. to config
-	//			- Expand struct for view to hw for multiple params
-	//			-
 	// TODO: NDSCAN return value to master
 	int status;
 	FSM_CommandGet_t *guiCmd = *((FSM_CommandGet_t **) param);

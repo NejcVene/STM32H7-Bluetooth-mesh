@@ -15,8 +15,8 @@
 ../Application/Core/Libs/communication_ex.c:286:6:FSM_Setup	16	static
 ../Application/Core/Libs/communication_ex.c:308:6:FSM_Transmit	24	static
 ../Application/Core/Libs/communication_ex.c:339:6:FSM_Receive	16	static
-../Application/Core/Libs/communication_ex.c:349:6:FSM_Execute	280	static
-../Application/Core/Libs/communication_ex.c:385:6:FSM_Error	120	static
-../Application/Core/Libs/communication_ex.c:417:13:Protocol_Process_Messsage	8	static
-../Application/Core/Libs/communication_ex.c:477:6:HAL_GPIO_EXTI_Callback	16	static
-../Application/Core/Libs/communication_ex.c:492:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Application/Core/Libs/communication_ex.c:349:6:FSM_Execute	16	static
+../Application/Core/Libs/communication_ex.c:386:6:FSM_Error	120	static
+../Application/Core/Libs/communication_ex.c:418:13:Protocol_Process_Messsage	8	static
+../Application/Core/Libs/communication_ex.c:478:6:HAL_GPIO_EXTI_Callback	16	static
+../Application/Core/Libs/communication_ex.c:493:6:HAL_TIM_PeriodElapsedCallback	16	static

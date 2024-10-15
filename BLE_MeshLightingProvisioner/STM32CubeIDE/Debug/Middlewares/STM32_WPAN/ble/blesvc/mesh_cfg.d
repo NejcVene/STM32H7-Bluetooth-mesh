@@ -100,6 +100,7 @@ Middlewares/STM32_WPAN/ble/blesvc/mesh_cfg.o: \
  F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/queue.h \
  F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/comm_uart.h \
  F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/device_settings.h \
+ F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/serial_fun.h \
  ../../Middlewares/ST/STM32_WPAN/ble/mesh/Inc/serial_ctrl.h \
  ../../Middlewares/ST/STM32_WPAN/ble/mesh/Inc/serial_ut.h \
  ../../Middlewares/ST/STM32_WPAN/utilities/stm_queue.h \
@@ -221,6 +222,7 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/
 F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/queue.h:
 F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/comm_uart.h:
 F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/device_settings.h:
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/STM32CubeIDE/Application/Core/Libs/serial_fun.h:
 ../../Middlewares/ST/STM32_WPAN/ble/mesh/Inc/serial_ctrl.h:
 ../../Middlewares/ST/STM32_WPAN/ble/mesh/Inc/serial_ut.h:
 ../../Middlewares/ST/STM32_WPAN/utilities/stm_queue.h:
