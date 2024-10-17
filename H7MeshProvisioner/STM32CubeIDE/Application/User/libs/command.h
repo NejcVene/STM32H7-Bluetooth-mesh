@@ -35,6 +35,7 @@ typedef enum {
 typedef struct {
 	char command[CMD_MESH_COMMAND_LENGHT];
 	PROTOCOL_MSG_TYPE commandType;
+	int numOfParams;
 } CMD_MeshCommand_t;
 
 // actual mesh commands

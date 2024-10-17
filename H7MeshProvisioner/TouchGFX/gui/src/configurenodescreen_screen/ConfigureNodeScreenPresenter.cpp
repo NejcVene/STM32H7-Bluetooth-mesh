@@ -22,3 +22,9 @@ void ConfigureNodeScreenPresenter::GUI_ConfigureDevice() {
 	view.GUI_SetDeviceToConfigure(model->GUI_GetDeviceToConfigure());
 
 }
+
+void ConfigureNodeScreenPresenter::GUI_SendCommand(uint16_t cmdIndex, void *cmdParam) {
+
+	model->GUI_SendCommand(cmdIndex, cmdParam);
+
+}

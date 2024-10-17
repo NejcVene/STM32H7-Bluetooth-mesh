@@ -1,8 +1,9 @@
-../Application/User/libs/node_config.c:56:6:NC_Init	2
-../Application/User/libs/node_config.c:68:6:NC_ReportFoundNodes	2
-../Application/User/libs/node_config.c:88:6:NC_CheckEnabledModelsFeatures	3
-../Application/User/libs/node_config.c:99:6:NC_ReportItems	3
-../Application/User/libs/node_config.c:109:9:NC_HexCharToInt	7
-../Application/User/libs/node_config.c:122:24:NC_GetNodeFromAddress	3
-../Application/User/libs/node_config.c:134:24:NC_GetNodeNetworkAddress	1
-../Application/User/libs/node_config.c:140:24:NC_GetNodeNetworkAddressArray	1
+../Application/User/libs/node_config.c:67:6:NC_Init	2
+../Application/User/libs/node_config.c:79:6:NC_ReportFoundNodes	2
+../Application/User/libs/node_config.c:99:6:NC_CheckEnabledModelsFeatures	3
+../Application/User/libs/node_config.c:110:6:NC_ReportItems	3
+../Application/User/libs/node_config.c:120:9:NC_HexCharToInt	7
+../Application/User/libs/node_config.c:133:24:NC_GetNodeFromAddress	3
+../Application/User/libs/node_config.c:145:24:NC_GetNodeNetworkAddress	1
+../Application/User/libs/node_config.c:151:24:NC_GetNodeNetworkAddressArray	1
+../Application/User/libs/node_config.c:157:25:NC_GetModelIdentifiers	1

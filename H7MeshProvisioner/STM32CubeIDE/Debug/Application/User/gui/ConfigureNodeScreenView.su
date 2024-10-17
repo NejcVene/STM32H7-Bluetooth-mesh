@@ -7,13 +7,18 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	16	static
+../../TouchGFX/gui/include/gui/model/Model.hpp:29:28:Node_NetworkAddress_t* Model::GUI_GetDeviceToConfigure()	16	static
+../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp:33:28:Node_NetworkAddress_t* ConfigureNodeScreenPresenter::GUI_GetDeviceToConfigureFromModel()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:43:18:virtual void touchgfx::TextAreaWithWildcardBase::invalidateContent() const	16	static
+../../TouchGFX/gui/include/gui/containers/DeviceSubs.hpp:16:10:void DeviceSubs::setButtonAction(touchgfx::GenericCallback<int>&, int)	24	static
+../../TouchGFX/gui/include/gui/containers/DeviceSubs.hpp:21:10:void DeviceSubs::setTextAddressName(const char*)	16	static
 ../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenView.hpp:13:13:ConfigureNodeScreenView::~ConfigureNodeScreenView()	24	static
 ../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenView.hpp:13:13:virtual ConfigureNodeScreenView::~ConfigureNodeScreenView()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:5:1:ConfigureNodeScreenView::ConfigureNodeScreenView()	32	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:10:6:virtual void ConfigureNodeScreenView::setupScreen()	32	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:22:6:virtual void ConfigureNodeScreenView::tearDownScreen()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:27:6:void ConfigureNodeScreenView::handleButtonClicked(int)	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:33:6:virtual void ConfigureNodeScreenView::GUI_SetDeviceToConfigure(Node_NetworkAddress_t*)	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:7:1:ConfigureNodeScreenView::ConfigureNodeScreenView()	32	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:12:6:virtual void ConfigureNodeScreenView::setupScreen()	40	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:33:6:virtual void ConfigureNodeScreenView::tearDownScreen()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:38:6:void ConfigureNodeScreenView::handleButtonClicked(int)	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:45:6:virtual void ConfigureNodeScreenView::GUI_SetDeviceToConfigure(Node_NetworkAddress_t*)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:134:7:constexpr touchgfx::GenericCallback<int>::GenericCallback()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:373:5:touchgfx::Callback<dest_type, T1, void, void>::Callback(dest_type*, void (dest_type::*)(T1)) [with dest_type = ConfigureNodeScreenView; T1 = int]	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:138:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = int]	16	static

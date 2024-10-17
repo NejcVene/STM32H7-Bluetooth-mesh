@@ -53,8 +53,9 @@ typedef enum {
 	MAIN_FSM_EVENT_UNACK,				// message does not require an answer
 	MAIN_FSM_EVENT_ERROR,				// an error occurred during transmission/reception
 	MAIN_FSM_EVENT_EXE_COMPLETE,		// execution of command/update is complete
-	MAIN_FSM_EVENT_EMPTY_RESPONSE,		// when in execution, it is possible that slave node sends empty response (ex. no nodes found)
-										// we must then send to the slave to execute another command which might yield correct results.
+	MAIN_FSM_EVENT_LOOP,				// when in execution, it is possible that slave node sends empty response (ex. no nodes found)
+										// we must then send to the slave to execute another command which might yield correct results or
+										// a command must be sent again with different parameters (ex. subscribe add/publish set)
 #ifdef _SLAVE
 	MAIN_FSM_EVENT_INTERRUPT,
 #endif
@@ -78,6 +79,7 @@ typedef struct {
 
 typedef struct {
 	int commandIndex;
+	int arrayLength;
 	void *commandParameters; // [CMD_MESH_MAX_PARAMS]; could be an array for future use, if a command needs more than one parameter
 } FSM_CommandGet_t;
 

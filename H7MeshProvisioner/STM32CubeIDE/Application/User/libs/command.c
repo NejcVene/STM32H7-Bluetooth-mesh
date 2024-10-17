@@ -58,7 +58,7 @@ CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 };
 
 CMD_MeshCommand_t subscriptionAdd = {
-		.command = "BLEMesh_SubsAdd %d %d %d",
+		.command = "BLEMesh_SubsAdd %d %d",
 		.commandType = PRO_MSG_TYPE_OTHER
 };
 

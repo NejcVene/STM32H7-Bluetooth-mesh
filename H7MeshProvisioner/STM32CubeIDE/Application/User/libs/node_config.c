@@ -21,33 +21,44 @@
 typedef struct {
 	const char *name;
 	uint8_t bitmask;
-	uint16_t identifier;
 } NC_MaskedModelFeatures;
 
 void NC_ReportItems(uint8_t uuid, NC_MaskedModelFeatures *items, char *report);
 uint8_t NC_HexCharToInt(char c);
 
 NC_MaskedModelFeatures models[] = {
-		{.name = "O", .bitmask = NC_GENERIC_ON_OFF_MODEL, .identifier = 0},
-		{.name = "E", .bitmask = NC_GENERIC_LEVEL_MODEL, .identifier = 0},
-		{.name = "S", .bitmask = NC_SENSOR_MODEL, .identifier = 0},
-		{.name = "L", .bitmask = NC_LIGH_LIGHTNESS_MODEL, .identifier = 0},
-		{.name = NULL, .bitmask = 0, .identifier = 0}
+		{.name = "O", .bitmask = NC_GENERIC_ON_OFF_MODEL},
+		{.name = "E", .bitmask = NC_GENERIC_LEVEL_MODEL},
+		{.name = "S", .bitmask = NC_SENSOR_MODEL},
+		{.name = "L", .bitmask = NC_LIGH_LIGHTNESS_MODEL},
+		{.name = "P", .bitmask = NC_GENERIC_POWER_ON_OFF_MODEL},
+		{.name = NULL, .bitmask = 0}
 };
 NC_MaskedModelFeatures features[] = {
-		{.name = "R", .bitmask = NC_RELAY_FEATURE, .identifier = 0},
-		{.name = "P", .bitmask = NC_PROXY_FEATURE, .identifier = 0},
-		{.name = "F", .bitmask = NC_FRIEND_FEATURE, .identifier = 0},
-		{.name = "E", .bitmask = NC_EMBEDDED_PROVISIONER_FEATURE, .identifier = 0},
-		{.name = NULL, .bitmask = 0, .identifier = 0}
+		{.name = "R", .bitmask = NC_RELAY_FEATURE},
+		{.name = "P", .bitmask = NC_PROXY_FEATURE},
+		{.name = "F", .bitmask = NC_FRIEND_FEATURE},
+		{.name = "E", .bitmask = NC_EMBEDDED_PROVISIONER_FEATURE},
+		{.name = NULL, .bitmask = 0}
 };
 Node_GroupAddress_t groupAddress[] = {
-		{.addressName = "Kitchen", .address = GROUP_ADDRESS_KITCHEN},
-		{.addressName = "Living room", .address = GROUP_ADDRESS_LIVING_ROOM},
-		{.addressName = "Bedroom", .address = GROUP_ADDRESS_BEDROOM},
-		{.addressName = "Bathroom", .address = GROUP_ADDRESS_BATHROOM}
+		{.addressName = "Kitchen",		.address = GROUP_ADDRESS_KITCHEN},
+		{.addressName = "Living room",	.address = GROUP_ADDRESS_LIVING_ROOM},
+		{.addressName = "Bedroom",		.address = GROUP_ADDRESS_BEDROOM},
+		{.addressName = "Bathroom",		.address = GROUP_ADDRESS_BATHROOM}
 };
-
+Node_ModelIdentifier_t modelIds[] = {
+		{.identifier = SF_GEN_ON_OFF_SERVER_MODEL_ID},
+		{.identifier = SF_GEN_LEVEL_SERVER_MODEL_ID},
+		{.identifier = SF_GEN_POWER_ON_OFF_SERVER_MODEL_ID},
+		{.identifier = SF_GEN_POWER_ON_OFF_SETUP_SERVER_MODEL_ID},
+		{.identifier = SF_LIGHT_LIGHTNESS_SERVER_MODEL_ID},
+		{.identifier = SF_LIGHT_LIGHTNESS_SETUP_SERVER_MODEL_ID},
+		{.identifier = SF_SENSOR_SERVER_MODEL_ID},
+		{.identifier = SF_SENSOR_SETUP_SERVER_MODEL_ID},
+		{.identifier = SF_MAYBE_VENDOR_MODEL_ID},
+		{.identifier = 0}
+};
 
 Node_NetworkAddress_t nodeAddresses[5];
 Node_Config_t nodeConfigs[5];
@@ -140,6 +151,12 @@ Node_NetworkAddress_t *NC_GetNodeNetworkAddress(int index) {
 Node_NetworkAddress_t *NC_GetNodeNetworkAddressArray(void) {
 
 	return nodeAddresses;
+
+}
+
+Node_ModelIdentifier_t *NC_GetModelIdentifiers(void) {
+
+	return modelIds;
 
 }
 

@@ -28,7 +28,7 @@ void Model::tick() {
 				case CMD_MESH_ATEP_PRVN_RANGE:
 					deviceToConfigure = (Node_NetworkAddress_t *) fsmResult->result;
 					modelListener->GUI_ChangeScreen();
-					modelListener->GUI_ConfigureDevice();
+					// modelListener->GUI_ConfigureDevice();
 					break;
 				case CMD_MESH_ATEP_SCAN:
 				case CMD_MESH_ATEP_SCAN_RANGE:
