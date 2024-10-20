@@ -26,6 +26,7 @@ protected:
 
 private:
 
+    static CMD_CommandGet_t *cmd;
     touchgfx::Callback<AddDeviceScreenView, int> buttonClickCallback;
     void handleButtonClicked(int instanceID);
 

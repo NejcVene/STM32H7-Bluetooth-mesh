@@ -27,7 +27,7 @@ public:
 
     virtual ~AddDeviceScreenPresenter() {}
 
-    virtual void GUI_SendCommand(uint16_t cmdIndex, void *cmdParam);
+    virtual void GUI_SendCommand(CMD_CommandGet_t *cmd);
     virtual void GUI_DevicesFound();
     virtual void GUI_ChangeScreen();
 

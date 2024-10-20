@@ -14,4 +14,4 @@
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:4:1:Screen1Presenter::Screen1Presenter(Screen1View&)	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:10:6:virtual void Screen1Presenter::activate()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:15:6:virtual void Screen1Presenter::deactivate()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:20:6:virtual void Screen1Presenter::GUI_SendCommand(uint16_t, void*)	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp:20:6:virtual void Screen1Presenter::GUI_SendCommand(CMD_CommandGet_t*)	1

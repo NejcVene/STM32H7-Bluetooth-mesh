@@ -23,8 +23,8 @@ void ConfigureNodeScreenPresenter::GUI_ConfigureDevice() {
 
 }
 
-void ConfigureNodeScreenPresenter::GUI_SendCommand(uint16_t cmdIndex, void *cmdParam) {
+void ConfigureNodeScreenPresenter::GUI_SendCommand(CMD_CommandGet_t *cmd) {
 
-	model->GUI_SendCommand(cmdIndex, cmdParam);
+	model->GUI_SendCommand(cmd);
 
 }

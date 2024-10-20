@@ -17,6 +17,13 @@ extern "C" {
 #define CMD_MESH_COMMAND_LENGHT	30
 
 typedef enum {
+	PARAM_INT = 0,
+	PARAM_CHAR,
+	PARAM_INT_ARR,
+	PARAM_VOID
+} PARAMETER_TYPE;
+
+typedef enum {
 	CMD_MESH_ATEP_ROOT = 0,
 	CMD_MESH_ATEP_SCAN,
 	CMD_MESH_ATEP_PRVN,
@@ -33,9 +40,27 @@ typedef enum {
 } CMD_INDEX;
 
 typedef struct {
+	PARAMETER_TYPE type;
+	union {
+		int i;
+		char *str;
+		int *intArr;
+		void *voidPtr;
+	} value;
+	int arrayLength;
+} CMD_Parameter_t;
+
+typedef struct {
+	int commandIndex;
+	int numOfParams;
+	CMD_Parameter_t *param;
+} CMD_CommandGet_t;
+
+typedef struct {
 	char command[CMD_MESH_COMMAND_LENGHT];
 	PROTOCOL_MSG_TYPE commandType;
-	int numOfParams;
+	void (*CMD_Setup)(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);
+	CMD_CommandGet_t *(*CMD_Execute)(char *buffer, CMD_CommandGet_t *guiCmd);
 } CMD_MeshCommand_t;
 
 // actual mesh commands
@@ -54,6 +79,9 @@ extern CMD_MeshCommand_t unprovisionEmbeddedProv;
 extern CMD_MeshCommand_t isEmbeddedProvProvisioned;
 extern CMD_MeshCommand_t subscriptionAdd;
 extern CMD_MeshCommand_t publicationSet;
+
+CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[], void *paramValues[], int numOfParams, int arrayLengths[]);
+void CMD_FreeCommandGet(CMD_CommandGet_t *cmd);
 
 #ifdef __cplusplus
 }

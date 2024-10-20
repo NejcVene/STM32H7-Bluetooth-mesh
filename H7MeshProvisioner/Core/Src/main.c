@@ -217,11 +217,11 @@ int main(void)
 
   /* Create the queue(s) */
   /* creation of FSM_CommandQueue */
-  FSM_CommandQueueHandle = osMessageQueueNew (1, sizeof(FSM_CommandGet_t*), &FSM_CommandQueue_attributes);
+  FSM_CommandQueueHandle = osMessageQueueNew (1, sizeof(CMD_CommandGet_t*), &FSM_CommandQueue_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
-  FSM_ResultQueueHandle = osMessageQueueNew(1, sizeof(FSM_CommandExecutionResult_t *), &FSM_ResultQueue_attributes);
+  FSM_ResultQueueHandle = osMessageQueueNew(1, sizeof(CMD_CommandGet_t*), &FSM_ResultQueue_attributes);
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -977,14 +977,14 @@ void FSM_TaskEntryPoint(void *argument)
   /* USER CODE BEGIN FSM_TaskEntryPoint */
   /* Infinite loop */
 	FSM_QueuedEvent_t *event;
-	FSM_CommandGet_t *cmdIndex;
+	CMD_CommandGet_t *cmd;
 	char test[50];
 	for(;;) {
 		if (osMessageQueueGetCount(FSM_CommandQueueHandle) > 0) {
-			if (osMessageQueueGet(FSM_CommandQueueHandle, &cmdIndex, 0, 0) == osOK) {
-				sprintf(test, "CMD: %d\r\n", cmdIndex->commandIndex);
+			if (osMessageQueueGet(FSM_CommandQueueHandle, &cmd, 0, 0) == osOK) {
+				sprintf(test, "CMD: %d\r\n", cmd->commandIndex);
 				HAL_UART_Transmit(&huart3, (uint8_t *) test, strlen(test), 6000);
-				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_USER, &cmdIndex, sizeof(cmdIndex));
+				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_USER, &cmd, sizeof(cmd));
 				while (!isEmpty(eventQueue)) {
 					if ((event = FSM_GetEvent(eventQueue))) {
 						FSM_HandleEvent(&sm, event);

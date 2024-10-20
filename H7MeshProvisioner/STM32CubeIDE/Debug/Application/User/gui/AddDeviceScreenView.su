@@ -15,11 +15,11 @@
 ../../TouchGFX/gui/include/gui/adddevicescreen_screen/AddDeviceScreenView.hpp:13:13:virtual AddDeviceScreenView::~AddDeviceScreenView()	16	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:10:1:AddDeviceScreenView::AddDeviceScreenView()	32	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:15:6:virtual void AddDeviceScreenView::setupScreen()	32	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:29:6:virtual void AddDeviceScreenView::tearDownScreen()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:34:6:virtual void AddDeviceScreenView::handleTickEvent()	32	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:61:6:virtual void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t*)	24	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:77:6:void AddDeviceScreenView::handleButtonClicked(int)	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:84:6:virtual void AddDeviceScreenView::GUI_SwitchScreenAfterProv()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:34:6:virtual void AddDeviceScreenView::tearDownScreen()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:39:6:virtual void AddDeviceScreenView::handleTickEvent()	32	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:66:6:virtual void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t*)	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:82:6:void AddDeviceScreenView::handleButtonClicked(int)	40	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp:96:6:virtual void AddDeviceScreenView::GUI_SwitchScreenAfterProv()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:134:7:constexpr touchgfx::GenericCallback<int>::GenericCallback()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:373:5:touchgfx::Callback<dest_type, T1, void, void>::Callback(dest_type*, void (dest_type::*)(T1)) [with dest_type = AddDeviceScreenView; T1 = int]	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:138:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = int]	16	static

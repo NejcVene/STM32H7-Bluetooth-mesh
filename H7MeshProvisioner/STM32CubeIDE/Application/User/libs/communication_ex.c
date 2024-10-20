@@ -48,7 +48,6 @@ static inline void Protocol_ConvertMessage(uint8_t *payload, uint16_t payload_le
 #ifdef _MASTER
 static PROTOCOL_STATUS _SendData(uint8_t *toSend, uint16_t sizeToSend, void (*callback)(void));
 static PROTOCOL_STATUS _ReceiveData(uint8_t *toReceive, uint16_t sizeToReceive, void (*callback)(void));
-static PROTOCOL_STATUS Protocol_FormatCommand(char *buffer, const char *command, int numOfCmdParams, void *cmdParams);
 #endif
 
 // state machine functions
@@ -62,10 +61,7 @@ void FSM_Error(void *param);
 // timer functions
 
 // execution functions
-void GUI_QueueMessage(osMessageQueueId_t FSM_ResultQueueHandle, FSM_CommandExecutionResult_t *cmdResult);
-int GUI_NofitfyProvision(char *resultBuffer, FSM_CommandExecutionResult_t *cmdResult, FSM_CommandGet_t *guiCmd);
-int GUI_NotifyScan(char *resultBuffer, FSM_CommandExecutionResult_t *cmdResult, FSM_CommandGet_t *guiCmd);
-int GUI_SubsAdd(char *resultBuffer, FSM_CommandExecutionResult_t *cmdResult, FSM_CommandGet_t *guiCmd);
+void GUI_QueueMessage(osMessageQueueId_t FSM_ResultQueueHandle, CMD_CommandGet_t *exeResult);
 
 // UART variables
 extern Comm_Settings_t *commSettings;
@@ -176,12 +172,6 @@ static PROTOCOL_STATUS _ReceiveData(uint8_t *toReceive, uint16_t sizeToReceive, 
 	Protocol_WaitForRX();
 
 	return PRO_OK;
-
-}
-
-static PROTOCOL_STATUS Protocol_FormatCommand(char *buffer, const char *command, int numOfCmdParams, void *cmdParams) {
-
-
 
 }
 
@@ -331,19 +321,20 @@ void FSM_Transmit(void *param) {
 #ifdef _MASTER
 	char cmdToSend[CMD_MESH_COMMAND_LENGHT] = {0};
 	CMD_MeshCommand_t *meshCommand;
-	FSM_CommandGet_t *guiCmd = *((FSM_CommandGet_t **) param);
-	static int tmp = 0;
+	CMD_CommandGet_t *guiCmd = *((CMD_CommandGet_t **) param);
 	if ((meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex))) {
-		for (; tmp<guiCmd->arrayLength; tmp++) {
-			Protocol_FormatCommand(cmdToSend, meshCommand->command, meshCommand->numOfParams, guiCmd->commandParameters[i]);
-			if (Protocol_Send(meshCommand->commandType, (uint8_t *) cmdToSend, strlen(cmdToSend), NULL) == PRO_OK) {
-				if (meshCommand->commandType != PRO_MSG_TYPE_UNACK) {
-					FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, param, sizeof(param));
-					// don't yet free send command, as it (might) is needed later
-				} else {
-					FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_UNACK, NULL, 0);
-					vPortFree(guiCmd); // free send command, as we don't need it anymore
-				}
+		if (meshCommand->CMD_Setup) {
+			meshCommand->CMD_Setup(cmdToSend, meshCommand->command, guiCmd);
+		} else {
+			memcpy(cmdToSend, meshCommand->command, strlen(meshCommand->command));
+		}
+		if (Protocol_Send(meshCommand->commandType, (uint8_t *) cmdToSend, strlen(cmdToSend), NULL) == PRO_OK) {
+			if (meshCommand->commandType != PRO_MSG_TYPE_UNACK) {
+				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, param, sizeof(param));
+				// don't yet free send command, as it (might) is needed later
+			} else {
+				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_UNACK, NULL, 0);
+				CMD_FreeCommandGet(guiCmd); // free send command, as we don't need it anymore
 			}
 		}
 	}
@@ -377,38 +368,25 @@ void FSM_Execute(void *param) {
 	//			- ModelIdentifier struct
 	//			- Bind to view
 	// TODO: NDSCAN return value to master
-	int status;
-	FSM_CommandGet_t *guiCmd = *((FSM_CommandGet_t **) param);
-	FSM_CommandExecutionResult_t *cmdResult;
+	CMD_CommandGet_t *guiCmd = *((CMD_CommandGet_t **) param);
+	CMD_MeshCommand_t *meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex);
+	CMD_CommandGet_t *exeResult;
 	char responseCommand[CMD_MESH_COMMAND_LENGHT];
 	char responseParameters[PAC_MAX_PAYLOAD]; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
-	char *cmdCompare = ((CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex))->command;
-	Protocol_ConvertMessage((uint8_t *) cmdCompare, strlen(cmdCompare));
-	if ((cmdResult = (FSM_CommandExecutionResult_t *) pvPortMalloc(sizeof(FSM_CommandExecutionResult_t)))) {
-		sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
-		if (!strcmp(responseCommand, cmdCompare)) {
-			switch (guiCmd->commandIndex) {
-				case CMD_MESH_ATEP_PRVN:
-				case CMD_MESH_ATEP_PRVN_RANGE:
-					status = GUI_NofitfyProvision(responseParameters, cmdResult, guiCmd);
-					break;
-				case CMD_MESH_ATEP_SCAN:
-				case CMD_MESH_ATEP_SCAN_RANGE:
-					status = GUI_NotifyScan(responseParameters, cmdResult, guiCmd);
-					break;
-				case CMD_FUN_SUBS_ADD:
-					status = GUI_SubsAdd(responseCommand, cmdResult, guiCmd);
-					break;
-				default:
-					break;
-			}
-			if (!status) {
-				GUI_QueueMessage(FSM_ResultQueueHandle, cmdResult);
+
+	sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
+	if (!strcmp(responseCommand, meshCommand->command)) {
+		if (meshCommand->CMD_Execute) {
+			if ((exeResult = meshCommand->CMD_Execute(responseParameters, guiCmd))) {
+				GUI_QueueMessage(FSM_ResultQueueHandle, exeResult);
+				CMD_FreeCommandGet(guiCmd);
 				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_EXE_COMPLETE, NULL, 0);
-				vPortFree(guiCmd);
+			} else {
+				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_LOOP, &guiCmd, sizeof(guiCmd));
 			}
 		}
 	}
+
 #else
 	// set task for serial interface process, which will execute received command
 	// UTIL_SEQ_SetTask(1 << CFG_TASK_MESH_SPI_REQ_ID, CFG_SCH_PRIO_0);
@@ -516,62 +494,13 @@ static void Protocol_Process_Messsage(void) {
 
 }
 
-void GUI_QueueMessage(osMessageQueueId_t FSM_ResultQueueHandle, FSM_CommandExecutionResult_t *cmdResult) {
+void GUI_QueueMessage(osMessageQueueId_t FSM_ResultQueueHandle, CMD_CommandGet_t *exeResult) {
 
 	if (osMessageQueueGetSpace(FSM_ResultQueueHandle) > 0) {
-		if (osMessageQueuePut(FSM_ResultQueueHandle, &cmdResult, 0, 0) != osOK) {
+		if (osMessageQueuePut(FSM_ResultQueueHandle, &exeResult, 0, 0) != osOK) {
 			// raise error
 		}
 	}
-
-}
-
-int GUI_NofitfyProvision(char *resultBuffer, FSM_CommandExecutionResult_t *cmdResult, FSM_CommandGet_t *guiCmd) {
-
-	int status = 0;
-	Node_NetworkAddress_t *tmp;
-	cmdResult->commandIndex = guiCmd->commandIndex;
-	if ((tmp = NC_GetNodeFromAddress(*((int *) guiCmd->commandParameters)))) {
-		cmdResult->result = (void *) tmp;
-	} else {
-		// if this fails, the whole system goes down with it
-		status = 1;
-	}
-
-	return status;
-
-}
-
-int GUI_NotifyScan(char *resultBuffer, FSM_CommandExecutionResult_t *cmdResult, FSM_CommandGet_t *guiCmd) {
-
-	int status = 0;
-	cmdResult->commandIndex = guiCmd->commandIndex;
-	if (!strcmp(resultBuffer, "NONE")) {
-		guiCmd->commandIndex = CMD_MESH_ATEP_SCAN_RANGE;
-		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_LOOP, &guiCmd, sizeof(guiCmd));
-		status = 1;
-	} else {
-		NC_ReportFoundNodes(resultBuffer);
-		NC_CheckEnabledModelsFeatures();
-		cmdResult->result = (void *) NC_GetNodeNetworkAddressArray();
-	}
-
-	return status;
-
-}
-
-int GUI_SubsAdd(char *resultBuffer, FSM_CommandExecutionResult_t *cmdResult, FSM_CommandGet_t *guiCmd) {
-
-	int status = 0;
-
-	cmdResult->commandIndex = guiCmd->commandIndex;
-	if (!strcmp(resultBuffer, "1")) {
-
-	} else {
-
-	}
-
-	return status;
 
 }
 

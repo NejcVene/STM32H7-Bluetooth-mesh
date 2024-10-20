@@ -44,7 +44,17 @@ Application/User/libs/command.o: ../Application/User/libs/command.c \
  ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
  ../Application/User/libs/comm_uart.h \
- ../Application/User/libs/device_settings.h
+ ../Application/User/libs/device_settings.h \
+ ../Application/User/libs/node_config.h \
+ ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+ ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h \
+ ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ ../../Core/Inc/FreeRTOSConfig.h \
+ ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ ../../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ ../../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ ../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+ ../../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
 ../Application/User/libs/command.h:
 ../Application/User/libs/communication_ex.h:
 ../Application/User/libs/fsm_queue.h:
@@ -92,3 +102,13 @@ Application/User/libs/command.o: ../Application/User/libs/command.c \
 ../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
 ../Application/User/libs/comm_uart.h:
 ../Application/User/libs/device_settings.h:
+../Application/User/libs/node_config.h:
+../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
+../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h:
+../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
+../../Core/Inc/FreeRTOSConfig.h:
+../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+../../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+../../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
+../../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:

@@ -16,4 +16,4 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/config
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenPresenter.cpp:10:6:virtual void ConfigureNodeScreenPresenter::activate()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenPresenter.cpp:15:6:virtual void ConfigureNodeScreenPresenter::deactivate()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenPresenter.cpp:20:6:virtual void ConfigureNodeScreenPresenter::GUI_ConfigureDevice()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenPresenter.cpp:26:6:virtual void ConfigureNodeScreenPresenter::GUI_SendCommand(uint16_t, void*)	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenPresenter.cpp:26:6:virtual void ConfigureNodeScreenPresenter::GUI_SendCommand(CMD_CommandGet_t*)	1

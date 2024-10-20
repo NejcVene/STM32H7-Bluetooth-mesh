@@ -20,38 +20,35 @@ Model::Model() : modelListener(0)
 
 void Model::tick() {
 
-	static FSM_CommandExecutionResult_t *fsmResult;
+	CMD_CommandGet_t *cmdResult;
 	if (osMessageQueueGetCount(FSM_ResultQueueHandle) > 0) {
-		if (osMessageQueueGet(FSM_ResultQueueHandle, &fsmResult, 0, 0) == osOK) {
-			switch (fsmResult->commandIndex) {
+		if (osMessageQueueGet(FSM_ResultQueueHandle, &cmdResult, 0, 0) == osOK) {
+			switch (cmdResult->commandIndex) {
 				case CMD_MESH_ATEP_PRVN:
 				case CMD_MESH_ATEP_PRVN_RANGE:
-					deviceToConfigure = (Node_NetworkAddress_t *) fsmResult->result;
+					deviceToConfigure = (Node_NetworkAddress_t *) cmdResult->param[0].value.voidPtr;
 					modelListener->GUI_ChangeScreen();
 					// modelListener->GUI_ConfigureDevice();
 					break;
 				case CMD_MESH_ATEP_SCAN:
 				case CMD_MESH_ATEP_SCAN_RANGE:
-					foundDevices = (Node_NetworkAddress_t *) fsmResult->result;
+					foundDevices = (Node_NetworkAddress_t *) cmdResult->param[0].value.voidPtr;
 					modelListener->GUI_DevicesFound();
 					break;
 				default:
 					break;
 			}
-			vPortFree(fsmResult);
+			CMD_FreeCommandGet(cmdResult);
 		}
 	}
 
 }
 
-void Model::GUI_SendCommand(uint16_t cmdIndex, void *cmdParam) {
+void Model::GUI_SendCommand(CMD_CommandGet_t *cmd) {
 
-	static FSM_CommandGet_t *sendCommand;
-	if ((sendCommand = (FSM_CommandGet_t *) pvPortMalloc(sizeof(FSM_CommandGet_t)))) {
-		sendCommand->commandIndex = cmdIndex;
-		sendCommand->commandParameters = cmdParam;
+	if (cmd) {
 		if (osMessageQueueGetSpace(FSM_CommandQueueHandle) > 0) {
-			if (osMessageQueuePut(FSM_CommandQueueHandle, &sendCommand, 0, 0) != osOK) {
+			if (osMessageQueuePut(FSM_CommandQueueHandle, &cmd, 0, 0) != osOK) {
 				Error_Handler();
 			}
 		}

@@ -37,8 +37,7 @@ void ConfigureNodeScreenView::tearDownScreen()
 
 void ConfigureNodeScreenView::handleButtonClicked(int instanceID) {
 
-	this->queuedSubscriptions[this->index++] = instanceID;
-//	presenter->GUI_SendCommand(CMD_FUN_SUBS_ADD, (void *) &cachedGroupAddressID);
+
 
 }
 

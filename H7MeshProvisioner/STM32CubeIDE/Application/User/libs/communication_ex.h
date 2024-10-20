@@ -73,17 +73,6 @@ typedef enum {
 } PROCESS_MESSAGE_STATE;
 
 typedef struct {
-	int commandIndex;
-	void *result;
-} FSM_CommandExecutionResult_t;
-
-typedef struct {
-	int commandIndex;
-	int arrayLength;
-	void *commandParameters; // [CMD_MESH_MAX_PARAMS]; could be an array for future use, if a command needs more than one parameter
-} FSM_CommandGet_t;
-
-typedef struct {
 	MAIN_FSM_STATE nextState;
 	void (*stateFunction)(void *param);
 } FSM_TransitionState_t;

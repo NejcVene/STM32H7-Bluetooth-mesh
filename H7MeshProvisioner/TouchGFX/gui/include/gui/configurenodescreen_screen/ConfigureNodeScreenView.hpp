@@ -26,8 +26,6 @@ private:
     touchgfx::Callback<ConfigureNodeScreenView, int> buttonClickCallback;
     void handleButtonClicked(int instanceID);
     Node_NetworkAddress_t *configNode;
-    static int queuedSubscriptions[maxSubsPerNode];
-    int index;
 
 };
 

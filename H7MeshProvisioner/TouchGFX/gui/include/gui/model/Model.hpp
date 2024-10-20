@@ -32,7 +32,7 @@ public:
 
     }
 
-    void GUI_SendCommand(uint16_t cmdIndex, void *cmdParam);
+    void GUI_SendCommand(CMD_CommandGet_t *cmd);
 protected:
     ModelListener* modelListener;
     Node_NetworkAddress_t *foundDevices;

@@ -5,7 +5,7 @@
 #include "node_config.h"
 #include "command.h"
 
-int nay2 = 0;
+CMD_CommandGet_t *AddDeviceScreenView::cmd = nullptr;
 
 AddDeviceScreenView::AddDeviceScreenView() : buttonClickCallback(this, &AddDeviceScreenView::handleButtonClicked)
 {
@@ -23,7 +23,12 @@ void AddDeviceScreenView::setupScreen()
     	scrollableContainer1.add(deviceAdds[i]);
     }
     modalWindow1.show();
-    presenter->GUI_SendCommand(CMD_MESH_ATEP_SCAN, NULL);
+    this->cmd = CMD_CreateCommandGet(CMD_MESH_ATEP_SCAN,
+    								NULL,
+									NULL,
+									0,
+									NULL);
+    presenter->GUI_SendCommand(this->cmd);
 }
 
 void AddDeviceScreenView::tearDownScreen()
@@ -76,8 +81,15 @@ void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t *foundDevice
 
 void AddDeviceScreenView::handleButtonClicked(int instanceID) {
 
-	static int cachedInstanceID = instanceID;
-	presenter->GUI_SendCommand(CMD_MESH_ATEP_PRVN, (void *) &cachedInstanceID);
+	PARAMETER_TYPE type = PARAM_INT;
+	void *values[] = {&instanceID};
+	int arrayLengths[] = {0};
+	this->cmd = CMD_CreateCommandGet(CMD_MESH_ATEP_PRVN,
+									&type,
+									values,
+									1,
+									arrayLengths);
+	presenter->GUI_SendCommand(this->cmd);
 
 }
 
