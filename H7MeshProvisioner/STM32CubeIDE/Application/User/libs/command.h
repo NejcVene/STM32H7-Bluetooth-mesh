@@ -48,6 +48,7 @@ typedef struct {
 		void *voidPtr;
 	} value;
 	int arrayLength;
+	size_t elementSize;
 } CMD_Parameter_t;
 
 typedef struct {
@@ -80,7 +81,7 @@ extern CMD_MeshCommand_t isEmbeddedProvProvisioned;
 extern CMD_MeshCommand_t subscriptionAdd;
 extern CMD_MeshCommand_t publicationSet;
 
-CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[], void *paramValues[], int numOfParams, int arrayLengths[]);
+CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[], void *paramValues[], int numOfParams, int arrayLengths[], size_t *elementSizes);
 void CMD_FreeCommandGet(CMD_CommandGet_t *cmd);
 
 #ifdef __cplusplus

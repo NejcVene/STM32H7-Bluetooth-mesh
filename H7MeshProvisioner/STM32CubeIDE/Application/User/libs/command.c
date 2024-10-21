@@ -100,7 +100,7 @@ CMD_MeshCommand_t publicationSet = {
 		.CMD_Execute = NULL
 };
 
-CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[], void *paramValues[], int numOfParams, int arrayLengths[]) {
+CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[], void *paramValues[], int numOfParams, int arrayLengths[], size_t *elementSizes) {
 
 	CMD_CommandGet_t *cmd = NULL;
 	int len;
@@ -116,6 +116,7 @@ CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[
 	for (int i = 0; i<numOfParams; i++) {
 		cmd->param[i].type = types[i];
 		cmd->param[i].arrayLength = 0;
+		cmd->param[i].elementSize = 0;
 		switch (types[i]) {
 			case PARAM_INT:
 				cmd->param[i].value.i = *((int *) paramValues[i]);
@@ -131,8 +132,9 @@ CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[
 				cmd->param[i].arrayLength = arrayLengths[i];
 				break;
 			case PARAM_VOID:
-				cmd->param[i].value.voidPtr = pvPortMalloc(arrayLengths[i]);
-				memcpy(cmd->param[i].value.voidPtr, paramValues[i], arrayLengths[i]);
+				cmd->param[i].elementSize = elementSizes[i];
+				cmd->param[i].value.voidPtr = pvPortMalloc(arrayLengths[i] * elementSizes[i]);
+				memcpy(cmd->param[i].value.voidPtr, paramValues[i], arrayLengths[i] * elementSizes[i]);
 				break;
 			default:
 				break;
@@ -223,7 +225,8 @@ CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd) {
 	CMD_CommandGet_t *cmdRes = NULL;
 	PARAMETER_TYPE type = PARAM_VOID;
 	void *paramValue[1];
-	int arrayLength[] = {sizeof(Node_NetworkAddress_t)};
+	int arrayLength[] = {5};
+	size_t sizes[] = {sizeof(Node_NetworkAddress_t)};
 
 	if (!strcmp(buffer, "NONE")) {
 		guiCmd->commandIndex = CMD_MESH_ATEP_SCAN_RANGE;
@@ -235,7 +238,8 @@ CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd) {
 									&type,
 									paramValue,
 									1,
-									arrayLength);
+									arrayLength,
+									sizes);
 	}
 
 	return cmdRes;

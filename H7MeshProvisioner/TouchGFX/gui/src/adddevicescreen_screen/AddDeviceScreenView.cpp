@@ -27,6 +27,7 @@ void AddDeviceScreenView::setupScreen()
     								NULL,
 									NULL,
 									0,
+									NULL,
 									NULL);
     presenter->GUI_SendCommand(this->cmd);
 }
@@ -84,11 +85,13 @@ void AddDeviceScreenView::handleButtonClicked(int instanceID) {
 	PARAMETER_TYPE type = PARAM_INT;
 	void *values[] = {&instanceID};
 	int arrayLengths[] = {0};
+	size_t sizes[] = {0};
 	this->cmd = CMD_CreateCommandGet(CMD_MESH_ATEP_PRVN,
 									&type,
 									values,
 									1,
-									arrayLengths);
+									arrayLengths,
+									sizes);
 	presenter->GUI_SendCommand(this->cmd);
 
 }
