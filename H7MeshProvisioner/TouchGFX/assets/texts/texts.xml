@@ -6,6 +6,9 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_M1AF" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">No nodes found</Translation>
+      </Text>
       <Text Id="__SingleUse_J4Q1" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">ATEP ROOT</Translation>
       </Text>

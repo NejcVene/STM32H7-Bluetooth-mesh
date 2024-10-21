@@ -15,7 +15,7 @@ AddDeviceScreenView::AddDeviceScreenView() : buttonClickCallback(this, &AddDevic
 void AddDeviceScreenView::setupScreen()
 {
     AddDeviceScreenViewBase::setupScreen();
-    foudNodeBtn.setVisible(false);
+    noNodesFoundMsg.setVisible(false);
     for (int i = 0; i<maxButtons; i++) {
     	deviceAdds[i].initialize();
     	deviceAdds[i].setPosition(10, 70 * i, 460, 60);
@@ -67,14 +67,19 @@ void AddDeviceScreenView::handleTickEvent() {
 void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t *foundDevices) {
 
 	disable = true;
+	int nodeFound = 0;
 	for (int i = 0; i<5; i++) {
 		if (foundDevices[i].nodeAddress != NODE_DEF_VAL) {
+			nodeFound = 1;
 			deviceAdds[i].setButtonAction(buttonClickCallback, foundDevices->nodeAddress);
 			deviceAdds[i].setTextUUID(foundDevices->uuid);
 			deviceAdds[i].setTextModels(foundDevices->nodeModels);
 			deviceAdds[i].setTextFeatures(foundDevices->nodeFeatures);
 			deviceAdds[i].setVisible(true);
 		}
+	}
+	if (!nodeFound) {
+		noNodesFoundMsg.setVisible(true);
 	}
 	scrollableContainer1.invalidateContent();
 

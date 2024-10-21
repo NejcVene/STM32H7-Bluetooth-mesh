@@ -55,7 +55,7 @@ static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, char *resultBuffer);
 * @param  noOfUnprovDevices: Pointer to take total count of nearby unprovisioned devices
 * @retval MOBLE_RESULT
 */  
-__weak MOBLE_RESULT BLEMesh_ScanDevices(neighbor_params_t *unprovDeviceArray, MOBLEUINT8 *noOfUnprovDevices)
+__weak MOBLE_RESULT BLEMesh_ScanDevices(neighbor_params_t *unprovDeviceArray, MOBLEUINT8 *noOfUnprovDevices, char *resultBuffer)
 {
   return MOBLE_RESULT_NOTIMPL;
 }
@@ -121,7 +121,7 @@ void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *res
   /* Command to scan the unprovisioned devices - Used By node only */
   else if (!strncmp(rcvdStringBuff+COMMAND_OFFSET, "NDSCAN",4))
   {   
-      result = BLEMesh_ScanDevices(NeighborTable, &NoOfNeighborPresent);
+      result = BLEMesh_ScanDevices(NeighborTable, &NoOfNeighborPresent, resultBuffer);
   }
    /* Command to start the unprovisioned devices - Used By node only */
   else if (!strncmp(rcvdStringBuff+COMMAND_OFFSET, "NDPRVN-",4))

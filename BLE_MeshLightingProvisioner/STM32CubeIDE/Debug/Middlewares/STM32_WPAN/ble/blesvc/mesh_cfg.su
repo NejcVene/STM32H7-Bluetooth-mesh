@@ -16,7 +16,7 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/Middlewares/S
 F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/Middlewares/ST/STM32_WPAN/ble/mesh/Src/serial_ut.c:238:20:SerialUt_GetFunctionIndex	24	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/Middlewares/ST/STM32_WPAN/ble/mesh/Src/serial_ut.c:272:13:SerialUt_doubleHexToHex	32	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/Middlewares/ST/STM32_WPAN/ble/mesh/Src/serial_ut.c:295:21:BLEMesh_UpperTesterDataProcess	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/Middlewares/ST/STM32_WPAN/ble/mesh/Src/serial_prvn.c:58:21:BLEMesh_ScanDevices	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/Middlewares/ST/STM32_WPAN/ble/mesh/Src/serial_prvn.c:58:21:BLEMesh_ScanDevices	24	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/Middlewares/ST/STM32_WPAN/ble/mesh/Src/serial_prvn.c:68:21:BLEMesh_ProvisionDevice	16	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/Middlewares/ST/STM32_WPAN/ble/mesh/Src/serial_prvn.c:78:6:SerialPrvn_Process	32	static
 F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingProvisioner/Middlewares/ST/STM32_WPAN/ble/mesh/Src/serial_prvn.c:163:21:SerialPrvn_ProvisionDevice	32	static

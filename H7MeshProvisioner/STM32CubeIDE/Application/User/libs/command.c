@@ -41,7 +41,7 @@ CMD_MeshCommand_t scanForUnprovisionedNetworkDevicesOutOfRangePvrn = {
 		.command = "ATEP NDSCAN",
 		.commandType = PRO_MSG_TYPE_ACK,
 		.CMD_Setup = NULL,
-		.CMD_Execute = NULL
+		.CMD_Execute = CMD_NotifyScan
 };
 
 CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn = {
@@ -228,8 +228,16 @@ CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd) {
 	int arrayLength[] = {5};
 	size_t sizes[] = {sizeof(Node_NetworkAddress_t)};
 
-	if (!strcmp(buffer, "NONE")) {
+	if (!strcmp(buffer, "NONE") && guiCmd->commandIndex == CMD_MESH_ATEP_SCAN) {
 		guiCmd->commandIndex = CMD_MESH_ATEP_SCAN_RANGE;
+	} else if (!strcmp(buffer, "NONE") && guiCmd->commandIndex == CMD_MESH_ATEP_SCAN_RANGE) {
+		paramValue[0] = (void *) NC_GetNodeNetworkAddressArray();
+		cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
+									&type,
+									paramValue,
+									1,
+									arrayLength,
+									sizes);
 	} else {
 		NC_ReportFoundNodes(buffer);
 		NC_CheckEnabledModelsFeatures();

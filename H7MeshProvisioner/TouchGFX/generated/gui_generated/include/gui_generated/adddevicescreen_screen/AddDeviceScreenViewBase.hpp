@@ -8,13 +8,13 @@
 #include <mvp/View.hpp>
 #include <gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/TiledImage.hpp>
-#include <touchgfx/containers/ScrollableContainer.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/containers/ModalWindow.hpp>
 #include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TiledImage.hpp>
+#include <touchgfx/containers/ScrollableContainer.hpp>
+#include <touchgfx/containers/Container.hpp>
 
 class AddDeviceScreenViewBase : public touchgfx::View<AddDeviceScreenPresenter>
 {
@@ -28,14 +28,6 @@ public:
      */
     virtual void goToDeviceConfigScreen();
 
-    /*
-     * Virtual Action Handlers
-     */
-    virtual void GUI_ProvisionNode()
-    {
-        // Override and implement this function in AddDeviceScreen
-    }
-
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -45,13 +37,15 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::TiledImage tiledImage1;
-    touchgfx::ScrollableContainer scrollableContainer1;
-    touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  foudNodeBtn;
     touchgfx::ModalWindow modalWindow1;
     touchgfx::CircleProgress circleProgress1;
     touchgfx::PainterRGB565 circleProgress1Painter;
     touchgfx::TextArea textArea1;
+    touchgfx::TiledImage tiledImage1;
+    touchgfx::ScrollableContainer scrollableContainer1;
+    touchgfx::Container noNodesFoundMsg;
+    touchgfx::TiledImage tiledImage2;
+    touchgfx::TextArea noNodesFoundText;
 
 private:
 
@@ -60,16 +54,6 @@ private:
      */
     static const uint32_t CANVAS_BUFFER_SIZE = 7200;
     uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
-
-    /*
-     * Callback Declarations
-     */
-    touchgfx::Callback<AddDeviceScreenViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
-
-    /*
-     * Callback Handler Declarations
-     */
-    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 

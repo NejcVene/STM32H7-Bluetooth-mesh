@@ -2,5 +2,5 @@
 ../Application/User/libs/command.c:148:6:CMD_FreeCommandGet	6
 ../Application/User/libs/command.c:175:6:CMD_GenericFormatCommand	13
 ../Application/User/libs/command.c:207:19:CMD_NofitfyProvision	1
-../Application/User/libs/command.c:223:19:CMD_NotifyScan	2
-../Application/User/libs/command.c:249:19:CMD_SubsAdd	1
+../Application/User/libs/command.c:223:19:CMD_NotifyScan	5
+../Application/User/libs/command.c:257:19:CMD_SubsAdd	1

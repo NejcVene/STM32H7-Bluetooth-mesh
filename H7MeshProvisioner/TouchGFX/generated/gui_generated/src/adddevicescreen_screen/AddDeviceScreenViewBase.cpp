@@ -7,30 +7,13 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-AddDeviceScreenViewBase::AddDeviceScreenViewBase() :
-    flexButtonCallback(this, &AddDeviceScreenViewBase::flexButtonCallbackHandler)
+AddDeviceScreenViewBase::AddDeviceScreenViewBase()
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
     
     __background.setPosition(0, 0, 480, 272);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
-
-    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
-    tiledImage1.setPosition(0, 0, 480, 272);
-    tiledImage1.setOffset(0, 0);
-    add(tiledImage1);
-
-    scrollableContainer1.setPosition(0, 10, 480, 252);
-    scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    scrollableContainer1.setScrollbarsAlpha(255);
-    foudNodeBtn.setBitmaps(Bitmap(BITMAP_H7LINEMEDIUM_ID), Bitmap(BITMAP_H7LINEMEDIUM_ID));
-    foudNodeBtn.setBitmapXY(0, 0);
-    foudNodeBtn.setAction(flexButtonCallback);
-    foudNodeBtn.setPosition(10, 14, 460, 60);
-    scrollableContainer1.add(foudNodeBtn);
-
-    add(scrollableContainer1);
 
     modalWindow1.setBackground(touchgfx::BitmapId(BITMAP_H7MODALBACKGROUNDSMALL_ID), 133, 61);
     modalWindow1.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -56,6 +39,30 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase() :
     modalWindow1.add(textArea1);
 
     add(modalWindow1);
+
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
+    tiledImage1.setPosition(0, 0, 480, 272);
+    tiledImage1.setOffset(0, 0);
+    add(tiledImage1);
+
+    scrollableContainer1.setPosition(0, 10, 480, 252);
+    scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    scrollableContainer1.setScrollbarsAlpha(255);
+    noNodesFoundMsg.setPosition(10, 10, 460, 60);
+    tiledImage2.setBitmap(touchgfx::Bitmap(BITMAP_H7LINEMEDIUM_ID));
+    tiledImage2.setPosition(0, 0, 460, 60);
+    tiledImage2.setOffset(0, 0);
+    noNodesFoundMsg.add(tiledImage2);
+
+    noNodesFoundText.setXY(136, 16);
+    noNodesFoundText.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    noNodesFoundText.setLinespacing(0);
+    noNodesFoundText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M1AF));
+    noNodesFoundMsg.add(noNodesFoundText);
+
+    scrollableContainer1.add(noNodesFoundMsg);
+
+    add(scrollableContainer1);
 }
 
 AddDeviceScreenViewBase::~AddDeviceScreenViewBase()
@@ -66,17 +73,6 @@ AddDeviceScreenViewBase::~AddDeviceScreenViewBase()
 void AddDeviceScreenViewBase::setupScreen()
 {
 
-}
-
-void AddDeviceScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
-{
-    if (&src == &foudNodeBtn)
-    {
-        //GUI_ProvisionNode
-        //When foudNodeBtn clicked call virtual function
-        //Call GUI_ProvisionNode
-        GUI_ProvisionNode();
-    }
 }
 
 void AddDeviceScreenViewBase::goToDeviceConfigScreen()

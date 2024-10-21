@@ -363,11 +363,9 @@ void FSM_Execute(void *param) {
 //	debugMessage("\r\n");
 #endif
 #ifdef _MASTER
-	// TODO: master execute command
 	// TODO: provision further (work in progress)
 	//			- ModelIdentifier struct
 	//			- Bind to view
-	// TODO: NDSCAN return value to master
 	CMD_CommandGet_t *guiCmd = *((CMD_CommandGet_t **) param);
 	CMD_MeshCommand_t *meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex);
 	CMD_CommandGet_t *exeResult;

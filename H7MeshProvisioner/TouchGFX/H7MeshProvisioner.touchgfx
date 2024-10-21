@@ -418,44 +418,6 @@
         "CanvasBufferSize": 7200,
         "Components": [
           {
-            "Type": "TiledImage",
-            "Name": "tiledImage1",
-            "Width": 480,
-            "Height": 272,
-            "FileName": "H7Background.png"
-          },
-          {
-            "Type": "ScrollableContainer",
-            "Name": "scrollableContainer1",
-            "Y": 10,
-            "Width": 480,
-            "Height": 252,
-            "HorizontalScrollEnabled": true,
-            "VerticalScrollEnabled": true,
-            "ScrollbarsVisibleOnPressed": true,
-            "ScrollbarsAlpha": 255,
-            "Components": [
-              {
-                "Type": "FlexButton",
-                "Name": "foudNodeBtn",
-                "X": 10,
-                "Y": 14,
-                "Width": 460,
-                "Height": 60,
-                "ButtonTrigger": {
-                  "Type": "ClickButtonTrigger"
-                },
-                "ButtonStyles": [
-                  {
-                    "Type": "ImageButtonStyle",
-                    "ImageReleased": "H7LineMedium.png",
-                    "ImagePressed": "H7LineMedium.png"
-                  }
-                ]
-              }
-            ]
-          },
-          {
             "Type": "ModalWindow",
             "Name": "modalWindow1",
             "Width": 480,
@@ -505,20 +467,57 @@
                 "AutoSize": true
               }
             ]
+          },
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7Background.png"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "scrollableContainer1",
+            "Y": 10,
+            "Width": 480,
+            "Height": 252,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "noNodesFoundMsg",
+                "X": 10,
+                "Y": 10,
+                "Width": 460,
+                "Height": 60,
+                "Components": [
+                  {
+                    "Type": "TiledImage",
+                    "Name": "tiledImage2",
+                    "Width": 460,
+                    "Height": 60,
+                    "FileName": "H7LineMedium.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "noNodesFoundText",
+                    "X": 136,
+                    "Y": 16,
+                    "Width": 189,
+                    "Height": 29,
+                    "TextId": "__SingleUse_M1AF",
+                    "TextRotation": "0",
+                    "AutoSize": true
+                  }
+                ]
+              }
+            ]
           }
         ],
         "Interactions": [
-          {
-            "InteractionName": "GUI_ProvisionNode",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "foudNodeBtn"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "GUI_ProvisionNode"
-            }
-          },
           {
             "InteractionName": "GUI_SwitchScreenToDeviceConfig",
             "Trigger": {
