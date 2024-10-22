@@ -43,28 +43,32 @@
 
 /*
  * Each model is defined by exactly one bit:
- * 	- 0 0 0 0 0 0 0 0 -> no models defined
- * 	- 0 0 0 0 0 0 0 1 -> generic on/off model
- * 	- 0 0 0 0 0 0 1 0 -> generic level model
- * 	- 0 0 0 0 0 1 0 0 -> sensor model
- * 	- 0 0 0 0 1 0 0 0 -> light lightness model
- * 	- 0 0 0 1 0 0 0 0 -> light lightness setup model,
- * 	- 0 0 1 0 0 0 0 0 -> undefined
- * 	- 0 1 0 0 0 0 0 0 -> undefined
- * 	- 1 0 0 0 0 0 0 0 -> undefined
+ * 	- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -> no models defined
+ * 	- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 -> generic on/off model
+ * 	- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 -> generic level model
+ * 	- 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 -> sensor model,
+ * 	- 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 -> sensor setup model
+ * 	- 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 -> light lightness model
+ * 	- 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 -> light lightness setup model,
+ * 	- 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 -> generic power on/off model
+ * 	- 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 -> generic power on/off setup model
+ * 	- 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 -> vendor model 1
+ * 	- 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 -> undefined
  * 	As per limitation of the STM BLE Mesh library, the maximum
  * 	number of models on a node, which are active at the same time
- * 	is 5.
+ * 	is 5 (setup models and their counterpart count as ONE WHOLE model).
  */
 
 #define NC_GENERIC_ON_OFF_MODEL				(1 << 0) // bit 0
 #define NC_GENERIC_LEVEL_MODEL				(1 << 1) // bit 1
 #define NC_SENSOR_MODEL						(1 << 2) // bit 2
-#define NC_LIGH_LIGHTNESS_MODEL				(1 << 3) // bit 3
-#define NC_LIGH_LIGHTNESS_SETUP_MODEL		(1 << 4) // bit 4
-#define NC_GENERIC_POWER_ON_OFF_MODEL		(1 << 5) // bit 5
-#define NC_UNDEFINED_MODEL_1				(1 << 6) // bit 6
-#define NC_UNDEFINED_MODEL_2				(1 << 7) // bit 7
+#define NC_SENSOR_SETUP_MODEL				(1 << 3) // bit 2
+#define NC_LIGH_LIGHTNESS_MODEL				(1 << 4) // bit 3
+#define NC_LIGH_LIGHTNESS_SETUP_MODEL		(1 << 5) // bit 4
+#define NC_GENERIC_POWER_ON_OFF_MODEL		(1 << 6) // bit 5
+#define NC_GENERIC_POWER_SETUP_MODEL		(1 << 7) // bit 2
+#define NC_VENDOR_MODEL_1					(1 << 8) // bit 6
+#define NC_UNDEFINED_MODEL_1				(1 << 9) // bit 7
 
 #define NC_RELAY_FEATURE					(1 << 0) // bit 0
 #define NC_PROXY_FEATURE					(1 << 1) // bit 1

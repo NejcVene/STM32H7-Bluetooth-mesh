@@ -26,7 +26,7 @@ public:
 
     }
 
-    Node_NetworkAddress_t *GUI_GetDeviceToConfigure() {
+    Node_Config_t *GUI_GetDeviceToConfigure() {
 
     	return deviceToConfigure;
 
@@ -36,7 +36,7 @@ public:
 protected:
     ModelListener* modelListener;
     Node_NetworkAddress_t *foundDevices;
-    Node_NetworkAddress_t *deviceToConfigure;
+    Node_Config_t *deviceToConfigure;
 };
 
 #endif // MODEL_HPP

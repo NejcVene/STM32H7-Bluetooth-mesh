@@ -21,6 +21,14 @@ public:
     virtual ~ConfigureNodeScreenViewBase();
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void GUI_SaveConfNode()
+    {
+        // Override and implement this function in ConfigureNodeScreen
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -52,6 +60,16 @@ protected:
     touchgfx::Unicode::UnicodeChar nodeNameBuffer[NODENAME_SIZE];
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<ConfigureNodeScreenViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 

@@ -6,7 +6,8 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase()
+ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
+    flexButtonCallback(this, &ConfigureNodeScreenViewBase::flexButtonCallbackHandler)
 {
     __background.setPosition(0, 0, 480, 272);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -34,6 +35,7 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase()
     saveBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
     saveBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_3DA9FC_SVG_ID));
     saveBtn.setIconXY(36, 36);
+    saveBtn.setAction(flexButtonCallback);
     saveBtn.setPosition(350, 10, 121, 121);
     add(saveBtn);
 
@@ -91,4 +93,15 @@ ConfigureNodeScreenViewBase::~ConfigureNodeScreenViewBase()
 void ConfigureNodeScreenViewBase::setupScreen()
 {
 
+}
+
+void ConfigureNodeScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
+{
+    if (&src == &saveBtn)
+    {
+        //GUI_SaveConfNode
+        //When saveBtn clicked call virtual function
+        //Call GUI_SaveConfNode
+        GUI_SaveConfNode();
+    }
 }

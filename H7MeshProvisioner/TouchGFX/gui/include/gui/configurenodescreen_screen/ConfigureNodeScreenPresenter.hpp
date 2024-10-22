@@ -30,7 +30,7 @@ public:
 
     virtual void GUI_ConfigureDevice();
 
-    Node_NetworkAddress_t *GUI_GetDeviceToConfigureFromModel() {
+    Node_Config_t *GUI_GetDeviceToConfigureFromModel() {
 
         	return model->GUI_GetDeviceToConfigure();
 

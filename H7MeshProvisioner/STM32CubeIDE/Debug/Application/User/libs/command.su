@@ -1,6 +1,7 @@
-../Application/User/libs/command.c:103:19:CMD_CreateCommandGet	48	static
-../Application/User/libs/command.c:148:6:CMD_FreeCommandGet	24	static
-../Application/User/libs/command.c:175:6:CMD_GenericFormatCommand	48	static
-../Application/User/libs/command.c:207:19:CMD_NofitfyProvision	16	static
-../Application/User/libs/command.c:223:19:CMD_NotifyScan	48	static
-../Application/User/libs/command.c:257:19:CMD_SubsAdd	16	static
+../Application/User/libs/command.c:104:19:CMD_CreateCommandGet	48	static
+../Application/User/libs/command.c:149:6:CMD_FreeCommandGet	24	static
+../Application/User/libs/command.c:176:6:CMD_GenericFormatCommand	48	static
+../Application/User/libs/command.c:208:6:CMD_SetupSubsAdd	48	static
+../Application/User/libs/command.c:239:19:CMD_NofitfyProvision	64	static
+../Application/User/libs/command.c:266:19:CMD_NotifyScan	48	static
+../Application/User/libs/command.c:300:19:CMD_SubsAdd	24	static

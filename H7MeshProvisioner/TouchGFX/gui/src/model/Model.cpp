@@ -26,7 +26,7 @@ void Model::tick() {
 			switch (cmdResult->commandIndex) {
 				case CMD_MESH_ATEP_PRVN:
 				case CMD_MESH_ATEP_PRVN_RANGE:
-					deviceToConfigure = (Node_NetworkAddress_t *) cmdResult->param[0].value.voidPtr;
+					deviceToConfigure = (Node_Config_t *) cmdResult->param[0].value.voidPtr;
 					modelListener->GUI_ChangeScreen();
 					// modelListener->GUI_ConfigureDevice();
 					break;

@@ -28,6 +28,11 @@ extern "C" {
 #define GROUP_ADDRESS_LIVING_ROOM		0xC002
 #define GROUP_ADDRESS_BEDROOM			0xC003
 #define GROUP_ADDRESS_BATHROOM			0xC004
+#define GROUP_ADDRESS_DEFAULT_BIT			(1 << 0)
+#define GROUP_ADDRESS_KITCHEN_BIT			(1 << 1)
+#define GROUP_ADDRESS_LIVING_ROOM_BIT		(1 << 2)
+#define GROUP_ADDRESS_BEDROOM_BIT			(1 << 3)
+#define GROUP_ADDRESS_BATHROOM_BIT  		(1 << 4)
 
 // Bluetooth SIG model identifiers
 // here are listed only the models which our application
@@ -56,15 +61,16 @@ typedef struct {
 } Node_Config_t;
 
 typedef struct {
-	char addressName[20];
-	uint16_t address;
-} Node_GroupAddress_t;
+	const char *name;
+	uint16_t bitmask;
+	uint32_t value;
+} NC_MaskedFeatures;
 
 typedef struct {
-	uint16_t identifier;
-} Node_ModelIdentifier_t;
-
-extern Node_GroupAddress_t groupAddress[];
+	uint8_t numOfSubs;
+	uint32_t nodeAddress;
+	uint32_t subbedAddresses[5];
+} Node_SubscriptionParam_t;
 
 void NC_Init(void);
 void NC_ReportFoundNodes(char *param);
@@ -72,7 +78,10 @@ void NC_CheckEnabledModelsFeatures(void);
 Node_NetworkAddress_t *NC_GetNodeFromAddress(uint32_t nodeAddress);
 Node_NetworkAddress_t *NC_GetNodeNetworkAddressArray(void);
 Node_NetworkAddress_t *NC_GetNodeNetworkAddress(int index);
-Node_ModelIdentifier_t *NC_GetModelIdentifiers(void);
+Node_Config_t *NC_GetNodeConfigArray(void);
+uint32_t NC_GetNumOfConfModels(void);
+void NC_IncrementNumOfConfModels(void);
+void NC_AddSubscription(Node_Config_t *node, uint32_t address);
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 //void NC_ReadNodeFromNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 

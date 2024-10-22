@@ -718,7 +718,19 @@
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SaveConfNode",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "saveBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_SaveConfNode"
+            }
+          }
+        ]
       },
       {
         "Name": "DebugScreen",

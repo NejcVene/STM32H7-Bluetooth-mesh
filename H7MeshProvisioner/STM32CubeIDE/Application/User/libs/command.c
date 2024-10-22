@@ -12,6 +12,7 @@
 #include <string.h>
 
 void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);
+void CMD_SetupSubsAdd(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd);
@@ -89,8 +90,8 @@ CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 CMD_MeshCommand_t subscriptionAdd = {
 		.command = "BLEMesh_SubsAdd %d %d %d",
 		.commandType = PRO_MSG_TYPE_OTHER,
-		.CMD_Setup = NULL,
-		.CMD_Execute = NULL
+		.CMD_Setup = CMD_SetupSubsAdd,
+		.CMD_Execute = CMD_SubsAdd
 };
 
 CMD_MeshCommand_t publicationSet = {
@@ -204,19 +205,61 @@ void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_Command
 
 }
 
+void CMD_SetupSubsAdd(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd) {
+
+	char *output = buffer;
+	const char *t = cmdTemplate;
+	static int innerIndex = 0;
+	int counter = 0;
+
+	for (int i = 0; i<guiCmd->numOfParams; i++) {
+		while (*t && *t != '%') {
+			*output++ = *t++;
+		}
+		if (*t == '%' && *(t + 1) == 'd' && guiCmd->param[i].type == PARAM_INT_ARR) {
+			int len = guiCmd->param[i].arrayLength;
+			int *arr = guiCmd->param[i].value.intArr;
+			if (innerIndex < len) {
+				for (; counter++<3; innerIndex++) {
+					if (innerIndex > 0) {
+						*output++ = ' ';
+					}
+					output += sprintf(output, "%d", arr[innerIndex]);
+				}
+			} else {
+				innerIndex = 0;
+			}
+			t += 2;
+		}
+	}
+	*output = '\0';
+
+}
+
 CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd) {
 
-//	int status = 0;
-//	Node_NetworkAddress_t *tmp;
-//	cmdRes->commandIndex = guiCmd->commandIndex;
-//	if ((tmp = NC_GetNodeFromAddress(*((int *) guiCmd->commandParameters)))) {
-//		cmdResult->result = (void *) tmp;
-//	} else {
-//		// if this fails, the whole system goes down with it
-//		status = 1;
-//	}
+	int index;
+	PARAMETER_TYPE type = PARAM_VOID;
+	void *paramValue[1];
+	int arrayLength[] = {1};
+	size_t sizes[] = {sizeof(Node_Config_t)};
+	CMD_CommandGet_t *cmdRes = NULL;
+	Node_NetworkAddress_t *prvnNode = NC_GetNodeFromAddress(guiCmd->param[0].value.i);
+	Node_Config_t *configNodes = NC_GetNodeConfigArray();
 
-	return NULL;
+	NC_IncrementNumOfConfModels();
+	index = NC_GetNumOfConfModels() - 1;
+	configNodes[index].address = *prvnNode;
+	NC_AddSubscription(&configNodes[index], GROUP_ADDRESS_DEFAULT);
+	paramValue[0] = (void *) &configNodes[index];
+	cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
+										&type,
+										paramValue,
+										1,
+										arrayLength,
+										sizes);
+
+	return cmdRes;
 
 }
 
@@ -256,15 +299,8 @@ CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd) {
 
 CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd) {
 
-//	int status = 0;
-//
-//	cmdResult->commandIndex = guiCmd->commandIndex;
-//	if (!strcmp(resultBuffer, "1")) {
-//
-//	} else {
-//
-//	}
+	CMD_CommandGet_t *cmdRes = NULL;
 
-	return NULL;
+	return cmdRes;
 
 }

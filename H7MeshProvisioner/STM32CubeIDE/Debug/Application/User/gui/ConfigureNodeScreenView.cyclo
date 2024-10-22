@@ -7,18 +7,17 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-../../TouchGFX/gui/include/gui/model/Model.hpp:29:28:Node_NetworkAddress_t* Model::GUI_GetDeviceToConfigure()	1
-../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp:33:28:Node_NetworkAddress_t* ConfigureNodeScreenPresenter::GUI_GetDeviceToConfigureFromModel()	1
+../../TouchGFX/gui/include/gui/model/Model.hpp:29:20:Node_Config_t* Model::GUI_GetDeviceToConfigure()	1
+../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp:33:20:Node_Config_t* ConfigureNodeScreenPresenter::GUI_GetDeviceToConfigureFromModel()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:43:18:virtual void touchgfx::TextAreaWithWildcardBase::invalidateContent() const	1
-../../TouchGFX/gui/include/gui/containers/DeviceSubs.hpp:16:10:void DeviceSubs::setButtonAction(touchgfx::GenericCallback<int>&, int)	1
-../../TouchGFX/gui/include/gui/containers/DeviceSubs.hpp:21:10:void DeviceSubs::setTextAddressName(const char*)	1
 ../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenView.hpp:13:13:ConfigureNodeScreenView::~ConfigureNodeScreenView()	3
 ../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenView.hpp:13:13:virtual ConfigureNodeScreenView::~ConfigureNodeScreenView()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:7:1:ConfigureNodeScreenView::ConfigureNodeScreenView()	2
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:12:6:virtual void ConfigureNodeScreenView::setupScreen()	2
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:33:6:virtual void ConfigureNodeScreenView::tearDownScreen()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:38:6:void ConfigureNodeScreenView::handleButtonClicked(int)	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:44:6:virtual void ConfigureNodeScreenView::GUI_SetDeviceToConfigure(Node_NetworkAddress_t*)	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:8:1:ConfigureNodeScreenView::ConfigureNodeScreenView()	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:13:6:virtual void ConfigureNodeScreenView::setupScreen()	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:36:6:virtual void ConfigureNodeScreenView::tearDownScreen()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:41:6:void ConfigureNodeScreenView::handleButtonClicked(int)	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:49:6:virtual void ConfigureNodeScreenView::GUI_SaveConfNode()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenView.cpp:64:6:virtual void ConfigureNodeScreenView::GUI_SetDeviceToConfigure(Node_Config_t*)	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:134:7:constexpr touchgfx::GenericCallback<int>::GenericCallback()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:373:5:touchgfx::Callback<dest_type, T1, void, void>::Callback(dest_type*, void (dest_type::*)(T1)) [with dest_type = ConfigureNodeScreenView; T1 = int]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:138:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = int]	1

@@ -14,7 +14,8 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    virtual void GUI_SetDeviceToConfigure(Node_NetworkAddress_t *configureDevice);
+    virtual void GUI_SetDeviceToConfigure(Node_Config_t *configureDevice);
+    virtual void GUI_SaveConfNode();
 
 protected:
 
@@ -25,7 +26,9 @@ private:
 
     touchgfx::Callback<ConfigureNodeScreenView, int> buttonClickCallback;
     void handleButtonClicked(int instanceID);
-    Node_NetworkAddress_t *configNode;
+    Node_Config_t *configNode;
+    static Node_SubscriptionParam_t toSubb;
+    static CMD_CommandGet_t *cmd;
 
 };
 
