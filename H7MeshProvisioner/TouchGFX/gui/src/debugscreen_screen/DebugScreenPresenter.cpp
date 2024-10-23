@@ -16,3 +16,9 @@ void DebugScreenPresenter::deactivate()
 {
 
 }
+
+void DebugScreenPresenter::GUI_SendCommand(CMD_CommandGet_t *cmd) {
+
+	model->GUI_SendCommand(cmd);
+
+}

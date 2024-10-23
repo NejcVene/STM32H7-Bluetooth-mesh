@@ -13,6 +13,9 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
+#include <touchgfx/containers/ModalWindow.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class ConfigureNodeScreenViewBase : public touchgfx::View<ConfigureNodeScreenPresenter>
 {
@@ -22,9 +25,22 @@ public:
     virtual void setupScreen();
 
     /*
+     * Custom Actions
+     */
+    virtual void goToHomeScreen();
+
+    /*
      * Virtual Action Handlers
      */
     virtual void GUI_SaveConfNode()
+    {
+        // Override and implement this function in ConfigureNodeScreen
+    }
+    virtual void GUI_ConfBtnClicked()
+    {
+        // Override and implement this function in ConfigureNodeScreen
+    }
+    virtual void GUI_CancelBtnClicked()
     {
         // Override and implement this function in ConfigureNodeScreen
     }
@@ -48,6 +64,9 @@ protected:
     touchgfx::TextAreaWithOneWildcard nodeName;
     touchgfx::ScrollableContainer allNodeSubsCont;
     touchgfx::TiledImage tiledImage3;
+    touchgfx::ModalWindow GUI_CongPopup;
+    touchgfx::ButtonWithLabel GUI_ConfBtnPopup;
+    touchgfx::TextArea GUI_ConfTextPopup;
 
     /*
      * Wildcard Buffers
@@ -65,11 +84,13 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<ConfigureNodeScreenViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
+    touchgfx::Callback<ConfigureNodeScreenViewBase, const touchgfx::AbstractButton&> buttonCallback;
 
     /*
      * Callback Handler Declarations
      */
     void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

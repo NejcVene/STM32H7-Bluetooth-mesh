@@ -8,13 +8,13 @@
 #include <mvp/View.hpp>
 #include <gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/containers/ModalWindow.hpp>
-#include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
-#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/containers/ModalWindow.hpp>
+#include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 
 class AddDeviceScreenViewBase : public touchgfx::View<AddDeviceScreenPresenter>
 {
@@ -37,15 +37,15 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::ModalWindow modalWindow1;
-    touchgfx::CircleProgress circleProgress1;
-    touchgfx::PainterRGB565 circleProgress1Painter;
-    touchgfx::TextArea textArea1;
     touchgfx::TiledImage tiledImage1;
     touchgfx::ScrollableContainer scrollableContainer1;
     touchgfx::Container noNodesFoundMsg;
     touchgfx::TiledImage tiledImage2;
     touchgfx::TextArea noNodesFoundText;
+    touchgfx::ModalWindow modalWindow1;
+    touchgfx::CircleProgress circleProgress1;
+    touchgfx::PainterRGB565 circleProgress1Painter;
+    touchgfx::TextArea textArea1;
 
 private:
 

@@ -32,11 +32,18 @@ public:
 
     }
 
+    NC_MaskedFeatures *GUI_GetAllModels() {
+
+    	return allModels;
+
+    }
+
     void GUI_SendCommand(CMD_CommandGet_t *cmd);
 protected:
     ModelListener* modelListener;
     Node_NetworkAddress_t *foundDevices;
     Node_Config_t *deviceToConfigure;
+    NC_MaskedFeatures *allModels;
 };
 
 #endif // MODEL_HPP

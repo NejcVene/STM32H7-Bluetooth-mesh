@@ -91,14 +91,27 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:79:10:void touchgfx::TextAreaWithOneWildcard::setWildcard1(const touchgfx::Unicode::UnicodeChar*)	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:84:41:virtual const touchgfx::Unicode::UnicodeChar* touchgfx::TextAreaWithOneWildcard::getWildcard1() const	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:98:10:void touchgfx::TextAreaWithOneWildcard::setWildcard(const touchgfx::Unicode::UnicodeChar*)	1
-../../TouchGFX/generated/gui_generated/include/gui_generated/configurenodescreen_screen/ConfigureNodeScreenViewBase.hpp:27:18:virtual void ConfigureNodeScreenViewBase::GUI_SaveConfNode()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:63:10:void touchgfx::AbstractButton::setAction(touchgfx::GenericCallback<const touchgfx::AbstractButton&>&)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:32:7:touchgfx::AbstractButton::~AbstractButton()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:32:7:virtual touchgfx::AbstractButton::~AbstractButton()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:41:7:constexpr touchgfx::TypedText& touchgfx::TypedText::operator=(const touchgfx::TypedText&)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:50:10:void touchgfx::ButtonWithLabel::setLabelText(touchgfx::TypedText)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:77:10:void touchgfx::ButtonWithLabel::setLabelColor(touchgfx::colortype)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:94:10:void touchgfx::ButtonWithLabel::setLabelColorPressed(touchgfx::colortype)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:132:10:void touchgfx::ButtonWithLabel::updateTextPosition()	2
+../../TouchGFX/generated/gui_generated/include/gui_generated/configurenodescreen_screen/ConfigureNodeScreenViewBase.hpp:35:18:virtual void ConfigureNodeScreenViewBase::GUI_SaveConfNode()	1
+../../TouchGFX/generated/gui_generated/include/gui_generated/configurenodescreen_screen/ConfigureNodeScreenViewBase.hpp:39:18:virtual void ConfigureNodeScreenViewBase::GUI_ConfBtnClicked()	1
+../../TouchGFX/generated/gui_generated/include/gui_generated/configurenodescreen_screen/ConfigureNodeScreenViewBase.hpp:43:18:virtual void ConfigureNodeScreenViewBase::GUI_CancelBtnClicked()	1
+../../TouchGFX/generated/gui_generated/include/gui_generated/configurenodescreen_screen/ConfigureNodeScreenViewBase.hpp:49:26:FrontendApplication& ConfigureNodeScreenViewBase::application()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<ConfigureNodeScreenPresenter>::~View()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<ConfigureNodeScreenPresenter>::~View()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/configurenodescreen_screen/ConfigureNodeScreenViewBase.cpp:9:1:ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/configurenodescreen_screen/ConfigureNodeScreenViewBase.cpp:88:1:ConfigureNodeScreenViewBase::~ConfigureNodeScreenViewBase()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/configurenodescreen_screen/ConfigureNodeScreenViewBase.cpp:88:1:virtual ConfigureNodeScreenViewBase::~ConfigureNodeScreenViewBase()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/configurenodescreen_screen/ConfigureNodeScreenViewBase.cpp:93:6:virtual void ConfigureNodeScreenViewBase::setupScreen()	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/configurenodescreen_screen/ConfigureNodeScreenViewBase.cpp:98:6:void ConfigureNodeScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/configurenodescreen_screen/ConfigureNodeScreenViewBase.cpp:109:1:ConfigureNodeScreenViewBase::~ConfigureNodeScreenViewBase()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/configurenodescreen_screen/ConfigureNodeScreenViewBase.cpp:109:1:virtual ConfigureNodeScreenViewBase::~ConfigureNodeScreenViewBase()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/configurenodescreen_screen/ConfigureNodeScreenViewBase.cpp:114:6:virtual void ConfigureNodeScreenViewBase::setupScreen()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/configurenodescreen_screen/ConfigureNodeScreenViewBase.cpp:119:6:void ConfigureNodeScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	3
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/configurenodescreen_screen/ConfigureNodeScreenViewBase.cpp:137:6:void ConfigureNodeScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/configurenodescreen_screen/ConfigureNodeScreenViewBase.cpp:148:6:virtual void ConfigureNodeScreenViewBase::goToHomeScreen()	1
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:39:5:touchgfx::View<T>::View() [with T = ConfigureNodeScreenPresenter]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:touchgfx::ClickButtonTrigger::~ClickButtonTrigger()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:virtual touchgfx::ClickButtonTrigger::~ClickButtonTrigger()	1
@@ -109,6 +122,8 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp:47:5:touchgfx::IconButtonStyle<T>::IconButtonStyle() [with T = touchgfx::TextButtonStyle<touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger> >]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:134:7:constexpr touchgfx::GenericCallback<const touchgfx::AbstractButtonContainer&>::GenericCallback()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:373:5:touchgfx::Callback<dest_type, T1, void, void>::Callback(dest_type*, void (dest_type::*)(T1)) [with dest_type = ConfigureNodeScreenViewBase; T1 = const touchgfx::AbstractButtonContainer&]	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:134:7:constexpr touchgfx::GenericCallback<const touchgfx::AbstractButton&>::GenericCallback()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:373:5:touchgfx::Callback<dest_type, T1, void, void>::Callback(dest_type*, void (dest_type::*)(T1)) [with dest_type = ConfigureNodeScreenViewBase; T1 = const touchgfx::AbstractButton&]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:61:18:void touchgfx::ImageButtonStyle<T>::setBitmaps(const touchgfx::Bitmap&, const touchgfx::Bitmap&) [with T = touchgfx::ClickButtonTrigger]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:76:10:void touchgfx::ImageButtonStyle<T>::setBitmapXY(uint16_t, uint16_t) [with T = touchgfx::ClickButtonTrigger]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp:57:10:void touchgfx::TextButtonStyle<T>::setText(touchgfx::TypedText) [with T = touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger>]	1
@@ -119,6 +134,8 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp:46:5:touchgfx::TextButtonStyle<T>::TextButtonStyle() [with T = touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger>]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:138:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = const touchgfx::AbstractButtonContainer&]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:138:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = const touchgfx::AbstractButtonContainer&]	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:138:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = const touchgfx::AbstractButton&]	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:138:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = const touchgfx::AbstractButton&]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:97:18:void touchgfx::ImageButtonStyle<T>::handlePressedUpdated() [with T = touchgfx::ClickButtonTrigger]	2
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TextButtonStyle.hpp:138:18:void touchgfx::TextButtonStyle<T>::handlePressedUpdated() [with T = touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger>]	2
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp:137:18:void touchgfx::IconButtonStyle<T>::handlePressedUpdated() [with T = touchgfx::TextButtonStyle<touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger> >]	2
@@ -126,6 +143,8 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp:84:10:void touchgfx::IconButtonStyle<T>::setIconY(int16_t) [with T = touchgfx::TextButtonStyle<touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger> >]	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:touchgfx::ClickButtonTrigger::ClickButtonTrigger()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp:48:5:touchgfx::ImageButtonStyle<T>::ImageButtonStyle() [with T = touchgfx::ClickButtonTrigger]	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<ConfigureNodeScreenViewBase, const touchgfx::AbstractButton&>::~Callback()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<ConfigureNodeScreenViewBase, const touchgfx::AbstractButton&>::~Callback()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<ConfigureNodeScreenViewBase, const touchgfx::AbstractButtonContainer&>::~Callback()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<ConfigureNodeScreenViewBase, const touchgfx::AbstractButtonContainer&>::~Callback()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp:44:7:touchgfx::IconButtonStyle<touchgfx::TextButtonStyle<touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger> > >::~IconButtonStyle()	1
@@ -136,6 +155,14 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:33:7:virtual touchgfx::TiledImage::~TiledImage()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ScrollableContainer.hpp:46:7:touchgfx::ScrollableContainer::~ScrollableContainer()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ScrollableContainer.hpp:46:7:virtual touchgfx::ScrollableContainer::~ScrollableContainer()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ModalWindow.hpp:47:7:touchgfx::ModalWindow::~ModalWindow()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ModalWindow.hpp:47:7:virtual touchgfx::ModalWindow::~ModalWindow()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:31:7:touchgfx::Button::~Button()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:31:7:virtual touchgfx::Button::~Button()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:38:7:touchgfx::ButtonWithLabel::~ButtonWithLabel()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:38:7:virtual touchgfx::ButtonWithLabel::~ButtonWithLabel()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = ConfigureNodeScreenViewBase; T1 = const touchgfx::AbstractButton&]	2
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = ConfigureNodeScreenViewBase; T1 = const touchgfx::AbstractButton&]	5
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = ConfigureNodeScreenViewBase; T1 = const touchgfx::AbstractButtonContainer&]	2
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = ConfigureNodeScreenViewBase; T1 = const touchgfx::AbstractButtonContainer&]	5
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp:144:18:void touchgfx::IconButtonStyle<T>::handleAlphaUpdated() [with T = touchgfx::TextButtonStyle<touchgfx::ImageButtonStyle<touchgfx::ClickButtonTrigger> >]	1

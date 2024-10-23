@@ -21,6 +21,14 @@ DebugScreenViewBase::DebugScreenViewBase() :
     scrollableContainer1.setPosition(115, 0, 250, 272);
     scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     scrollableContainer1.setScrollbarsAlpha(255);
+    unpvrEmNodeBtn.setXY(5, 65);
+    unpvrEmNodeBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
+    unpvrEmNodeBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_4TTE));
+    unpvrEmNodeBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    unpvrEmNodeBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    unpvrEmNodeBtn.setAction(buttonCallback);
+    scrollableContainer1.add(unpvrEmNodeBtn);
+
     atepRootBtn.setXY(5, 0);
     atepRootBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
     atepRootBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_J4Q1));
@@ -50,5 +58,12 @@ void DebugScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
         //When atepRootBtn clicked call virtual function
         //Call GUI_DebugAtepRoot
         GUI_DebugAtepRoot();
+    }
+    if (&src == &unpvrEmNodeBtn)
+    {
+        //GUI_UnprovEm
+        //When unpvrEmNodeBtn clicked call virtual function
+        //Call GUI_UnprovEm
+        GUI_UnprovEm();
     }
 }

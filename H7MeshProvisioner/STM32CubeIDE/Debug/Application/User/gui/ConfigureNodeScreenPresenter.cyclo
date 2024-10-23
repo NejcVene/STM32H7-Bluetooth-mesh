@@ -10,6 +10,7 @@
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:18:18:virtual void ModelListener::GUI_DevicesFound()	1
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:19:18:virtual void ModelListener::GUI_ChangeScreen()	1
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:20:18:virtual void ModelListener::GUI_ConfigureDevice()	1
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:21:18:virtual void ModelListener::GUI_ConfShowPopup()	1
 ../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp:29:13:ConfigureNodeScreenPresenter::~ConfigureNodeScreenPresenter()	1
 ../../TouchGFX/gui/include/gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp:29:13:virtual ConfigureNodeScreenPresenter::~ConfigureNodeScreenPresenter()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenPresenter.cpp:4:1:ConfigureNodeScreenPresenter::ConfigureNodeScreenPresenter(ConfigureNodeScreenView&)	1
@@ -17,3 +18,4 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/config
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenPresenter.cpp:15:6:virtual void ConfigureNodeScreenPresenter::deactivate()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenPresenter.cpp:20:6:virtual void ConfigureNodeScreenPresenter::GUI_ConfigureDevice()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenPresenter.cpp:26:6:virtual void ConfigureNodeScreenPresenter::GUI_SendCommand(CMD_CommandGet_t*)	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/configurenodescreen_screen/ConfigureNodeScreenPresenter.cpp:32:6:virtual void ConfigureNodeScreenPresenter::GUI_ConfShowPopup()	1

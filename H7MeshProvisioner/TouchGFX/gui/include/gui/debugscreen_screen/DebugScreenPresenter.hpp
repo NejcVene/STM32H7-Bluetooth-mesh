@@ -27,6 +27,8 @@ public:
 
     virtual ~DebugScreenPresenter() {}
 
+    virtual void GUI_SendCommand(CMD_CommandGet_t *cmd);
+
 private:
     DebugScreenPresenter();
 

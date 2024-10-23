@@ -56,7 +56,7 @@ void SF_SubscriptionAdd(char *receiveBuffer, char *resultBuffer) {
 	int status;
 	int elementAddress, address, modelIndentifier;
 	sscanf(receiveBuffer, "%*s %d %d %d", &elementAddress, &address, &modelIndentifier);
-	strcat(resultBuffer, "SubsAdd: ");
+	strcat(resultBuffer, "BLEMesh_SubsAdd: ");
 	if (ConfigClient_SubscriptionAdd(elementAddress, address, modelIndentifier) == MOBLE_RESULT_SUCCESS) {
 		// idle
 		if (ConfigClient_PublicationSet(

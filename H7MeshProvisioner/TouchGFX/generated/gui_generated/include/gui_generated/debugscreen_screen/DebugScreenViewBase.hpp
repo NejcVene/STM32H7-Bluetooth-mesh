@@ -26,6 +26,10 @@ public:
     {
         // Override and implement this function in DebugScreen
     }
+    virtual void GUI_UnprovEm()
+    {
+        // Override and implement this function in DebugScreen
+    }
 
 protected:
     FrontendApplication& application() {
@@ -38,6 +42,7 @@ protected:
     touchgfx::Box __background;
     touchgfx::TiledImage tiledImage1;
     touchgfx::ScrollableContainer scrollableContainer1;
+    touchgfx::ButtonWithLabel unpvrEmNodeBtn;
     touchgfx::ButtonWithLabel atepRootBtn;
 
 private:

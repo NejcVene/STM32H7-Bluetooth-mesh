@@ -7,7 +7,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
-    flexButtonCallback(this, &ConfigureNodeScreenViewBase::flexButtonCallbackHandler)
+    flexButtonCallback(this, &ConfigureNodeScreenViewBase::flexButtonCallbackHandler),
+    buttonCallback(this, &ConfigureNodeScreenViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 480, 272);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -25,6 +26,7 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
     cancelBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
     cancelBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_NAVIGATION_CANCEL_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_NAVIGATION_CANCEL_50_50_3DA9FC_SVG_ID));
     cancelBtn.setIconXY(36, 36);
+    cancelBtn.setAction(flexButtonCallback);
     cancelBtn.setPosition(350, 141, 121, 121);
     add(cancelBtn);
 
@@ -83,6 +85,25 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
     allNodeSubsCont.add(tiledImage3);
 
     add(allNodeSubsCont);
+
+    GUI_CongPopup.setBackground(touchgfx::BitmapId(BITMAP_H7MODALBACKGROUNDSMALL_ID), 133, 61);
+    GUI_CongPopup.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    GUI_CongPopup.setShadeAlpha(100);
+    GUI_ConfBtnPopup.setXY(57, 91);
+    GUI_ConfBtnPopup.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_PRESSED_ID));
+    GUI_ConfBtnPopup.setLabelText(touchgfx::TypedText(T___SINGLEUSE_52I8));
+    GUI_ConfBtnPopup.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    GUI_ConfBtnPopup.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    GUI_ConfBtnPopup.setAction(buttonCallback);
+    GUI_CongPopup.add(GUI_ConfBtnPopup);
+
+    GUI_ConfTextPopup.setXY(42, 43);
+    GUI_ConfTextPopup.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    GUI_ConfTextPopup.setLinespacing(0);
+    GUI_ConfTextPopup.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PIBO));
+    GUI_CongPopup.add(GUI_ConfTextPopup);
+
+    add(GUI_CongPopup);
 }
 
 ConfigureNodeScreenViewBase::~ConfigureNodeScreenViewBase()
@@ -104,4 +125,30 @@ void ConfigureNodeScreenViewBase::flexButtonCallbackHandler(const touchgfx::Abst
         //Call GUI_SaveConfNode
         GUI_SaveConfNode();
     }
+    if (&src == &cancelBtn)
+    {
+        //GUI_CancelBtnClicked
+        //When cancelBtn clicked call virtual function
+        //Call GUI_CancelBtnClicked
+        GUI_CancelBtnClicked();
+    }
+}
+
+void ConfigureNodeScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &GUI_ConfBtnPopup)
+    {
+        //GUI_ConfBtnClicked
+        //When GUI_ConfBtnPopup clicked call virtual function
+        //Call GUI_ConfBtnClicked
+        GUI_ConfBtnClicked();
+    }
+}
+
+void ConfigureNodeScreenViewBase::goToHomeScreen()
+{
+    //GUI_SwitchCreenToHome
+    //When goToHomeScreen is called change screen to HomeScreen
+    //Go to HomeScreen with screen transition towards East
+    application().gotoHomeScreenScreenSlideTransitionEast();
 }

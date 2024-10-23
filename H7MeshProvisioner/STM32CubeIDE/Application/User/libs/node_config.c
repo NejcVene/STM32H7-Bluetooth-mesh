@@ -178,6 +178,30 @@ void NC_IncrementNumOfConfModels(void) {
 
 }
 
+int NC_GetNumOfModels(void) {
+
+	int count = 0;
+	while (models[count].name != NULL) {
+		count++;
+	}
+
+	return count;
+
+}
+
+NC_MaskedFeatures *NC_GetAllModels(void) {
+
+	return models;
+
+}
+
+NC_MaskedFeatures *NC_GetAllGroupAddresses(void) {
+
+	return groupAddress;
+
+}
+
+
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address) {
 //
 //	HAL_NOR_Program(hnor, address, (uint16_t *) nodeConfig);

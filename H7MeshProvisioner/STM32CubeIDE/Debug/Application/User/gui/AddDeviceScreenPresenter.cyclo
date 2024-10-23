@@ -10,6 +10,7 @@
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:18:18:virtual void ModelListener::GUI_DevicesFound()	1
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:19:18:virtual void ModelListener::GUI_ChangeScreen()	1
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:20:18:virtual void ModelListener::GUI_ConfigureDevice()	1
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:21:18:virtual void ModelListener::GUI_ConfShowPopup()	1
 ../../TouchGFX/gui/include/gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp:28:13:AddDeviceScreenPresenter::~AddDeviceScreenPresenter()	1
 ../../TouchGFX/gui/include/gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp:28:13:virtual AddDeviceScreenPresenter::~AddDeviceScreenPresenter()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenPresenter.cpp:4:1:AddDeviceScreenPresenter::AddDeviceScreenPresenter(AddDeviceScreenView&)	1

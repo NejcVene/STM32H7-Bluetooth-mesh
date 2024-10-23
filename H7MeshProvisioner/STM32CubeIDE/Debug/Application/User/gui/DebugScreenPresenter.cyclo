@@ -9,8 +9,10 @@
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:18:18:virtual void ModelListener::GUI_DevicesFound()	1
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:19:18:virtual void ModelListener::GUI_ChangeScreen()	1
 ../../TouchGFX/gui/include/gui/model/ModelListener.hpp:20:18:virtual void ModelListener::GUI_ConfigureDevice()	1
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:21:18:virtual void ModelListener::GUI_ConfShowPopup()	1
 ../../TouchGFX/gui/include/gui/debugscreen_screen/DebugScreenPresenter.hpp:28:13:DebugScreenPresenter::~DebugScreenPresenter()	1
 ../../TouchGFX/gui/include/gui/debugscreen_screen/DebugScreenPresenter.hpp:28:13:virtual DebugScreenPresenter::~DebugScreenPresenter()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/debugscreen_screen/DebugScreenPresenter.cpp:4:1:DebugScreenPresenter::DebugScreenPresenter(DebugScreenView&)	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/debugscreen_screen/DebugScreenPresenter.cpp:10:6:virtual void DebugScreenPresenter::activate()	1
 F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/debugscreen_screen/DebugScreenPresenter.cpp:15:6:virtual void DebugScreenPresenter::deactivate()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/debugscreen_screen/DebugScreenPresenter.cpp:20:6:virtual void DebugScreenPresenter::GUI_SendCommand(CMD_CommandGet_t*)	1

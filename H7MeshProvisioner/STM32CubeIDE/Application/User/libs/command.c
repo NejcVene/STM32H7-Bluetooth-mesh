@@ -209,40 +209,34 @@ void CMD_SetupSubsAdd(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *g
 
 	char *output = buffer;
 	const char *t = cmdTemplate;
-	static int innerIndex = 0;
-	int counter = 0;
+	int numOfModels = NC_GetNumOfModels();
+	static int i = 0;
+	static int j = 0;
+	Node_SubscriptionParam_t *toSubb = (Node_SubscriptionParam_t *) guiCmd->param[0].value.voidPtr;
+	NC_MaskedFeatures *allModels = NC_GetAllModels();
 
-	for (int i = 0; i<guiCmd->numOfParams; i++) {
-		while (*t && *t != '%') {
-			*output++ = *t++;
+	memset(output, 0, 100);
+	if (i < toSubb->numOfSubs) {
+		sprintf(output, t, toSubb->nodeAddress, toSubb->subbedAddresses[i], allModels[j].value);
+		j++;
+		if (j >= numOfModels) {
+			i++;
+			j = 0;
 		}
-		if (*t == '%' && *(t + 1) == 'd' && guiCmd->param[i].type == PARAM_INT_ARR) {
-			int len = guiCmd->param[i].arrayLength;
-			int *arr = guiCmd->param[i].value.intArr;
-			if (innerIndex < len) {
-				for (; counter++<3; innerIndex++) {
-					if (innerIndex > 0) {
-						*output++ = ' ';
-					}
-					output += sprintf(output, "%d", arr[innerIndex]);
-				}
-			} else {
-				innerIndex = 0;
-			}
-			t += 2;
-		}
+	} else {
+		i = 0;
+		j = 0;
 	}
-	*output = '\0';
 
 }
 
 CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd) {
 
 	int index;
-	PARAMETER_TYPE type = PARAM_VOID;
-	void *paramValue[1];
-	int arrayLength[] = {1};
-	size_t sizes[] = {sizeof(Node_Config_t)};
+	PARAMETER_TYPE types[] = {PARAM_VOID, PARAM_VOID};
+	void *paramValue[2];
+	int arrayLength[] = {1, 6};
+	size_t sizes[] = {sizeof(Node_Config_t), sizeof(NC_MaskedFeatures)};
 	CMD_CommandGet_t *cmdRes = NULL;
 	Node_NetworkAddress_t *prvnNode = NC_GetNodeFromAddress(guiCmd->param[0].value.i);
 	Node_Config_t *configNodes = NC_GetNodeConfigArray();
@@ -252,10 +246,11 @@ CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd) {
 	configNodes[index].address = *prvnNode;
 	NC_AddSubscription(&configNodes[index], GROUP_ADDRESS_DEFAULT);
 	paramValue[0] = (void *) &configNodes[index];
+	paramValue[1] = (void *) NC_GetAllGroupAddresses();
 	cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
-										&type,
+										types,
 										paramValue,
-										1,
+										2,
 										arrayLength,
 										sizes);
 
@@ -300,6 +295,26 @@ CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd) {
 CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
+	int numOfSubs = ((Node_SubscriptionParam_t *) guiCmd->param[0].value.voidPtr)->numOfSubs;
+	static int runCounter = 0;
+	PARAMETER_TYPE type = PARAM_INT;
+	int ok = 1;
+	void *paramValue = {(void *) &ok};
+
+	if (!strcmp(buffer, "1")) {
+
+	} else if (!strcmp(buffer, "0")) {
+		runCounter++;
+		if (runCounter >= (NC_GetNumOfModels() * numOfSubs) - 1) {
+			runCounter = 0;
+			cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
+										&type,
+										paramValue,
+										1,
+										NULL,
+										NULL);
+		}
+	}
 
 	return cmdRes;
 

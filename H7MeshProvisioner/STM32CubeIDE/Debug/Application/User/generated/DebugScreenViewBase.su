@@ -53,13 +53,14 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:94:10:void touchgfx::ButtonWithLabel::setLabelColorPressed(touchgfx::colortype)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:132:10:void touchgfx::ButtonWithLabel::updateTextPosition()	56	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/debugscreen_screen/DebugScreenViewBase.hpp:25:18:virtual void DebugScreenViewBase::GUI_DebugAtepRoot()	16	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/debugscreen_screen/DebugScreenViewBase.hpp:29:18:virtual void DebugScreenViewBase::GUI_UnprovEm()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<DebugScreenPresenter>::~View()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<DebugScreenPresenter>::~View()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/debugscreen_screen/DebugScreenViewBase.cpp:9:1:DebugScreenViewBase::DebugScreenViewBase()	96	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/debugscreen_screen/DebugScreenViewBase.cpp:35:1:DebugScreenViewBase::~DebugScreenViewBase()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/debugscreen_screen/DebugScreenViewBase.cpp:35:1:virtual DebugScreenViewBase::~DebugScreenViewBase()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/debugscreen_screen/DebugScreenViewBase.cpp:40:6:virtual void DebugScreenViewBase::setupScreen()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/debugscreen_screen/DebugScreenViewBase.cpp:45:6:void DebugScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/debugscreen_screen/DebugScreenViewBase.cpp:9:1:DebugScreenViewBase::DebugScreenViewBase()	128	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/debugscreen_screen/DebugScreenViewBase.cpp:43:1:DebugScreenViewBase::~DebugScreenViewBase()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/debugscreen_screen/DebugScreenViewBase.cpp:43:1:virtual DebugScreenViewBase::~DebugScreenViewBase()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/debugscreen_screen/DebugScreenViewBase.cpp:48:6:virtual void DebugScreenViewBase::setupScreen()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/debugscreen_screen/DebugScreenViewBase.cpp:53:6:void DebugScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:39:5:touchgfx::View<T>::View() [with T = DebugScreenPresenter]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:134:7:constexpr touchgfx::GenericCallback<const touchgfx::AbstractButton&>::GenericCallback()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:373:5:touchgfx::Callback<dest_type, T1, void, void>::Callback(dest_type*, void (dest_type::*)(T1)) [with dest_type = DebugScreenViewBase; T1 = const touchgfx::AbstractButton&]	24	static

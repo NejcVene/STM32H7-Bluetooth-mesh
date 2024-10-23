@@ -15,6 +15,30 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
+    tiledImage1.setPosition(0, 0, 480, 272);
+    tiledImage1.setOffset(0, 0);
+    add(tiledImage1);
+
+    scrollableContainer1.setPosition(0, 10, 480, 252);
+    scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    scrollableContainer1.setScrollbarsAlpha(255);
+    noNodesFoundMsg.setPosition(10, 10, 460, 60);
+    tiledImage2.setBitmap(touchgfx::Bitmap(BITMAP_H7LINEMEDIUM_ID));
+    tiledImage2.setPosition(0, 0, 460, 60);
+    tiledImage2.setOffset(0, 0);
+    noNodesFoundMsg.add(tiledImage2);
+
+    noNodesFoundText.setXY(136, 16);
+    noNodesFoundText.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    noNodesFoundText.setLinespacing(0);
+    noNodesFoundText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M1AF));
+    noNodesFoundMsg.add(noNodesFoundText);
+
+    scrollableContainer1.add(noNodesFoundMsg);
+
+    add(scrollableContainer1);
+
     modalWindow1.setBackground(touchgfx::BitmapId(BITMAP_H7MODALBACKGROUNDSMALL_ID), 133, 61);
     modalWindow1.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     modalWindow1.setShadeAlpha(100);
@@ -39,30 +63,6 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase()
     modalWindow1.add(textArea1);
 
     add(modalWindow1);
-
-    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
-    tiledImage1.setPosition(0, 0, 480, 272);
-    tiledImage1.setOffset(0, 0);
-    add(tiledImage1);
-
-    scrollableContainer1.setPosition(0, 10, 480, 252);
-    scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    scrollableContainer1.setScrollbarsAlpha(255);
-    noNodesFoundMsg.setPosition(10, 10, 460, 60);
-    tiledImage2.setBitmap(touchgfx::Bitmap(BITMAP_H7LINEMEDIUM_ID));
-    tiledImage2.setPosition(0, 0, 460, 60);
-    tiledImage2.setOffset(0, 0);
-    noNodesFoundMsg.add(tiledImage2);
-
-    noNodesFoundText.setXY(136, 16);
-    noNodesFoundText.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    noNodesFoundText.setLinespacing(0);
-    noNodesFoundText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M1AF));
-    noNodesFoundMsg.add(noNodesFoundText);
-
-    scrollableContainer1.add(noNodesFoundMsg);
-
-    add(scrollableContainer1);
 }
 
 AddDeviceScreenViewBase::~AddDeviceScreenViewBase()

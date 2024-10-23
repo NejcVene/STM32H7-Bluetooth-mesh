@@ -11,7 +11,14 @@ public:
     virtual ~DebugScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void GUI_DebugAtepRoot();
+    virtual void GUI_UnprovEm();
+
 protected:
+
+private:
+    static CMD_CommandGet_t *cmd;
 };
 
 #endif // DEBUGSCREENVIEW_HPP

@@ -28,3 +28,9 @@ void ConfigureNodeScreenPresenter::GUI_SendCommand(CMD_CommandGet_t *cmd) {
 	model->GUI_SendCommand(cmd);
 
 }
+
+void ConfigureNodeScreenPresenter::GUI_ConfShowPopup() {
+
+	view.GUI_ShowPopup();
+
+}

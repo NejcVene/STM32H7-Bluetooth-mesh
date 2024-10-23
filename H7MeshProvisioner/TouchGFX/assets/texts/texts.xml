@@ -6,6 +6,15 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_4TTE" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Unprovision em</Translation>
+      </Text>
+      <Text Id="__SingleUse_52I8" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">OK</Translation>
+      </Text>
+      <Text Id="__SingleUse_PIBO" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Device is configured</Translation>
+      </Text>
       <Text Id="__SingleUse_M1AF" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">No nodes found</Translation>
       </Text>
@@ -104,7 +113,7 @@
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
-    <Typography Id="Small" Font="verdana.ttf" Size="14" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="14" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Medium" Font="verdana.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

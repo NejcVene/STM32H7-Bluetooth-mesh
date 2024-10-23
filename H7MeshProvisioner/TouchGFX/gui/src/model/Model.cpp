@@ -27,6 +27,7 @@ void Model::tick() {
 				case CMD_MESH_ATEP_PRVN:
 				case CMD_MESH_ATEP_PRVN_RANGE:
 					deviceToConfigure = (Node_Config_t *) cmdResult->param[0].value.voidPtr;
+					allModels = (NC_MaskedFeatures *) cmdResult->param[1].value.voidPtr;
 					modelListener->GUI_ChangeScreen();
 					// modelListener->GUI_ConfigureDevice();
 					break;
@@ -34,6 +35,11 @@ void Model::tick() {
 				case CMD_MESH_ATEP_SCAN_RANGE:
 					foundDevices = (Node_NetworkAddress_t *) cmdResult->param[0].value.voidPtr;
 					modelListener->GUI_DevicesFound();
+					break;
+				case CMD_FUN_SUBS_ADD:
+					if (cmdResult->param[0].value.i) {
+						modelListener->GUI_ConfShowPopup();
+					}
 					break;
 				default:
 					break;

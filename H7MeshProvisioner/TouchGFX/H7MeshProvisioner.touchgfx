@@ -418,6 +418,54 @@
         "CanvasBufferSize": 7200,
         "Components": [
           {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7Background.png"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "scrollableContainer1",
+            "Y": 10,
+            "Width": 480,
+            "Height": 252,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "noNodesFoundMsg",
+                "X": 10,
+                "Y": 10,
+                "Width": 460,
+                "Height": 60,
+                "Components": [
+                  {
+                    "Type": "TiledImage",
+                    "Name": "tiledImage2",
+                    "Width": 460,
+                    "Height": 60,
+                    "FileName": "H7LineMedium.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "noNodesFoundText",
+                    "X": 136,
+                    "Y": 16,
+                    "Width": 189,
+                    "Height": 29,
+                    "TextId": "__SingleUse_M1AF",
+                    "TextRotation": "0",
+                    "AutoSize": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "Type": "ModalWindow",
             "Name": "modalWindow1",
             "Width": 480,
@@ -465,54 +513,6 @@
                   "Blue": 103
                 },
                 "AutoSize": true
-              }
-            ]
-          },
-          {
-            "Type": "TiledImage",
-            "Name": "tiledImage1",
-            "Width": 480,
-            "Height": 272,
-            "FileName": "H7Background.png"
-          },
-          {
-            "Type": "ScrollableContainer",
-            "Name": "scrollableContainer1",
-            "Y": 10,
-            "Width": 480,
-            "Height": 252,
-            "HorizontalScrollEnabled": true,
-            "VerticalScrollEnabled": true,
-            "ScrollbarsVisibleOnPressed": true,
-            "ScrollbarsAlpha": 255,
-            "Components": [
-              {
-                "Type": "Container",
-                "Name": "noNodesFoundMsg",
-                "X": 10,
-                "Y": 10,
-                "Width": 460,
-                "Height": 60,
-                "Components": [
-                  {
-                    "Type": "TiledImage",
-                    "Name": "tiledImage2",
-                    "Width": 460,
-                    "Height": 60,
-                    "FileName": "H7LineMedium.png"
-                  },
-                  {
-                    "Type": "TextArea",
-                    "Name": "noNodesFoundText",
-                    "X": 136,
-                    "Y": 16,
-                    "Width": 189,
-                    "Height": 29,
-                    "TextId": "__SingleUse_M1AF",
-                    "TextRotation": "0",
-                    "AutoSize": true
-                  }
-                ]
               }
             ]
           }
@@ -716,6 +716,54 @@
                 "FileName": "H7ConfigBox.png"
               }
             ]
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "GUI_CongPopup",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7ModalBackgroundSmall.png",
+            "ModalX": 133,
+            "ModalY": 61,
+            "ModalWidth": 214,
+            "ModalHeight": 150,
+            "Alpha": 100,
+            "Components": [
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "GUI_ConfBtnPopup",
+                "X": 57,
+                "Y": 91,
+                "Width": 100,
+                "Height": 36,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_normal.png",
+                "TextId": "__SingleUse_52I8",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_rounded_normal.json"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "GUI_ConfTextPopup",
+                "X": 42,
+                "Y": 43,
+                "Width": 142,
+                "Height": 17,
+                "TextId": "__SingleUse_PIBO",
+                "TextRotation": "0",
+                "AutoSize": true
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -729,6 +777,47 @@
               "Type": "ActionCustom",
               "FunctionName": "GUI_SaveConfNode"
             }
+          },
+          {
+            "InteractionName": "GUI_SwitchCreenToHome",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call ConfigureNodeScreen goToHomeScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "HomeScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_ConfBtnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "GUI_ConfBtnPopup"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ConfBtnClicked"
+            }
+          },
+          {
+            "InteractionName": "GUI_CancelBtnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cancelBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_CancelBtnClicked"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToHomeScreen",
+            "Description": "Called from user code to change screen"
           }
         ]
       },
@@ -753,6 +842,29 @@
             "ScrollbarsVisibleOnPressed": true,
             "ScrollbarsAlpha": 255,
             "Components": [
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "unpvrEmNodeBtn",
+                "X": 5,
+                "Y": 65,
+                "Width": 240,
+                "Height": 50,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+                "TextId": "__SingleUse_4TTE",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+              },
               {
                 "Type": "ButtonWithLabel",
                 "Name": "atepRootBtn",
@@ -788,6 +900,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "GUI_DebugAtepRoot"
+            }
+          },
+          {
+            "InteractionName": "GUI_UnprovEm",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "unpvrEmNodeBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_UnprovEm"
             }
           }
         ]

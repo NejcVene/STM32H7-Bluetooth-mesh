@@ -97,7 +97,7 @@ static FSM_TransitionState_t stateTransitionTable[MAIN_FSM_NUM_OF_STATES][MAIN_F
 		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_UNACK] 					= 	{MAIN_FSM_IDLE, FSM_Idle},
 		[MAIN_FSM_RECEIVE][MAIN_FSM_EVENT_RECEIVE_COMPLETE] 		= 	{MAIN_FSM_EXECUTE_COMMAND, FSM_Execute},
 		[MAIN_FSM_EXECUTE_COMMAND][MAIN_FSM_EVENT_EXE_COMPLETE] 	=	{MAIN_FSM_IDLE, FSM_Idle},
-		[MAIN_FSM_EXECUTE_COMMAND][MAIN_FSM_EVENT_LOOP]				= {MAIN_FSM_TRANSMIT, FSM_Transmit},
+		[MAIN_FSM_EXECUTE_COMMAND][MAIN_FSM_EVENT_LOOP]				=	{MAIN_FSM_TRANSMIT, FSM_Transmit},
 		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_ERROR]					=	{MAIN_FSM_ERROR, FSM_Error},
 		[MAIN_FSM_RECEIVE][MAIN_FSM_EVENT_ERROR]					=	{MAIN_FSM_ERROR, FSM_Error},
 		[MAIN_FSM_ERROR][MAIN_FSM_EVENT_USER]						=	{MAIN_FSM_SETUP, FSM_Setup}
@@ -358,9 +358,9 @@ void FSM_Receive(void *param) {
 void FSM_Execute(void *param) {
 
 #ifdef _DEBUG
-//	debugMessage("EXECUTE State -> RECEIVED: ");
-//	debugMessage((char *) CommandString);
-//	debugMessage("\r\n");
+	debugMessage("EXECUTE State -> RECEIVED: ");
+	debugMessage((char *) CommandString);
+	debugMessage("\r\n");
 #endif
 #ifdef _MASTER
 	// TODO: provision further (work in progress)
@@ -371,9 +371,12 @@ void FSM_Execute(void *param) {
 	CMD_CommandGet_t *exeResult;
 	char responseCommand[CMD_MESH_COMMAND_LENGHT];
 	char responseParameters[PAC_MAX_PAYLOAD]; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
+	char upperCaseCmd[CMD_MESH_COMMAND_LENGHT];
+	strcpy(upperCaseCmd, meshCommand->command);
+	Protocol_ConvertMessage((uint8_t *) upperCaseCmd, strlen(upperCaseCmd));
 
 	sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
-	if (!strcmp(responseCommand, meshCommand->command)) {
+	if (!strcmp(responseCommand, upperCaseCmd)) {
 		if (meshCommand->CMD_Execute) {
 			if ((exeResult = meshCommand->CMD_Execute(responseParameters, guiCmd))) {
 				GUI_QueueMessage(FSM_ResultQueueHandle, exeResult);

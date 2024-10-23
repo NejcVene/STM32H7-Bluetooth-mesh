@@ -36,7 +36,14 @@ public:
 
     }
 
+    NC_MaskedFeatures *GUI_GetAllMaskedModels() {
+
+    	return model->GUI_GetAllModels();
+
+    }
+
     virtual void GUI_SendCommand(CMD_CommandGet_t *cmd);
+    virtual void GUI_ConfShowPopup();
 
 private:
     ConfigureNodeScreenPresenter();

@@ -82,6 +82,9 @@ Node_Config_t *NC_GetNodeConfigArray(void);
 uint32_t NC_GetNumOfConfModels(void);
 void NC_IncrementNumOfConfModels(void);
 void NC_AddSubscription(Node_Config_t *node, uint32_t address);
+int NC_GetNumOfModels(void);
+NC_MaskedFeatures *NC_GetAllModels(void);
+NC_MaskedFeatures *NC_GetAllGroupAddresses(void);
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 //void NC_ReadNodeFromNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 

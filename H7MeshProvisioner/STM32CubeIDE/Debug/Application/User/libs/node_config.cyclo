@@ -10,3 +10,6 @@
 ../Application/User/libs/node_config.c:163:16:NC_GetNodeConfigArray	1
 ../Application/User/libs/node_config.c:169:10:NC_GetNumOfConfModels	1
 ../Application/User/libs/node_config.c:175:6:NC_IncrementNumOfConfModels	1
+../Application/User/libs/node_config.c:181:5:NC_GetNumOfModels	2
+../Application/User/libs/node_config.c:192:20:NC_GetAllModels	1
+../Application/User/libs/node_config.c:198:20:NC_GetAllGroupAddresses	1

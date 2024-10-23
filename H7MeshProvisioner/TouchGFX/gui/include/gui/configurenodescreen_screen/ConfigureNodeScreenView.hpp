@@ -16,6 +16,9 @@ public:
 
     virtual void GUI_SetDeviceToConfigure(Node_Config_t *configureDevice);
     virtual void GUI_SaveConfNode();
+    virtual void GUI_ConfBtnClicked();
+    virtual void GUI_CancelBtnClicked();
+    virtual void GUI_ShowPopup();
 
 protected:
 
@@ -29,6 +32,7 @@ private:
     Node_Config_t *configNode;
     static Node_SubscriptionParam_t toSubb;
     static CMD_CommandGet_t *cmd;
+    NC_MaskedFeatures *allGroupAddress;
 
 };
 
