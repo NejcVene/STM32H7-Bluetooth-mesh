@@ -1,7 +1,0 @@
-../Application/Core/Libs/queue.c:10:8:createQueue	1
-../Application/Core/Libs/queue.c:24:6:enqueue	2
-../Application/Core/Libs/queue.c:45:7:dequeue	3
-../Application/Core/Libs/queue.c:63:7:peek	2
-../Application/Core/Libs/queue.c:73:7:rear	2
-../Application/Core/Libs/queue.c:83:5:isEmpty	1
-../Application/Core/Libs/queue.c:89:6:deleteQueue	2

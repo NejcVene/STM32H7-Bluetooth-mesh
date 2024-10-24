@@ -1,7 +1,0 @@
-../Application/Core/Libs/queue.c:10:8:createQueue	16	static
-../Application/Core/Libs/queue.c:24:6:enqueue	32	static
-../Application/Core/Libs/queue.c:45:7:dequeue	24	static
-../Application/Core/Libs/queue.c:63:7:peek	16	static
-../Application/Core/Libs/queue.c:73:7:rear	16	static
-../Application/Core/Libs/queue.c:83:5:isEmpty	16	static
-../Application/Core/Libs/queue.c:89:6:deleteQueue	16	static
