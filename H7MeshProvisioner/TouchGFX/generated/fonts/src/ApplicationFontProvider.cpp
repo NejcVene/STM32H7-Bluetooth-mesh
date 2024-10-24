@@ -16,11 +16,14 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
         // verdana_40_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[1]);
     case Typography::SMALL:
-        // verdana_14_4bpp
+        // verdana_16_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[2]);
     case Typography::MEDIUM:
         // verdana_30_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[3]);
+    case Typography::TEXT16PX:
+        // verdana_16_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[2]);
     default:
         return 0;
     }

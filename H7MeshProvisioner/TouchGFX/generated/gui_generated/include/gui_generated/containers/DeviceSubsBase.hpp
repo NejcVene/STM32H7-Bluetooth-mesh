@@ -9,6 +9,7 @@
 #include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/widgets/Box.hpp>
 
 class DeviceSubsBase : public touchgfx::Container
 {
@@ -28,11 +29,12 @@ protected:
     touchgfx::TiledImage tiledImage1;
     touchgfx::TextAreaWithOneWildcard addressLabel;
     touchgfx::ToggleButton subscribeBtn;
+    touchgfx::Box grayBox;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t ADDRESSLABEL_SIZE = 10;
+    static const uint16_t ADDRESSLABEL_SIZE = 30;
     touchgfx::Unicode::UnicodeChar addressLabelBuffer[ADDRESSLABEL_SIZE];
 
 private:

@@ -71,11 +71,11 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t NODEVENDOR_SIZE = 10;
+    static const uint16_t NODEVENDOR_SIZE = 20;
     touchgfx::Unicode::UnicodeChar nodeVendorBuffer[NODEVENDOR_SIZE];
-    static const uint16_t NODEUUID_SIZE = 10;
+    static const uint16_t NODEUUID_SIZE = 20;
     touchgfx::Unicode::UnicodeChar nodeUUIDBuffer[NODEUUID_SIZE];
-    static const uint16_t NODENAME_SIZE = 10;
+    static const uint16_t NODENAME_SIZE = 20;
     touchgfx::Unicode::UnicodeChar nodeNameBuffer[NODENAME_SIZE];
 
 private:

@@ -64,18 +64,23 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:32:7:virtual touchgfx::AbstractButton::~AbstractButton()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:34:5:touchgfx::Button::Button()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:35:18:virtual void touchgfx::ToggleButton::setBitmaps(const touchgfx::Bitmap&, const touchgfx::Bitmap&)	24	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:33:5:touchgfx::Box::Box()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:62:10:void touchgfx::Box::setColor(touchgfx::colortype)	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:82:10:void touchgfx::Box::setAlpha(uint8_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:40:7:touchgfx::Container::~Container()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:40:7:virtual touchgfx::Container::~Container()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:31:7:touchgfx::Button::~Button()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:31:7:virtual touchgfx::Button::~Button()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:32:7:touchgfx::ToggleButton::ToggleButton()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/containers/DeviceSubsBase.cpp:9:1:DeviceSubsBase::DeviceSubsBase()	112	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/containers/DeviceSubsBase.cpp:32:1:DeviceSubsBase::~DeviceSubsBase()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/containers/DeviceSubsBase.cpp:32:1:virtual DeviceSubsBase::~DeviceSubsBase()	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/containers/DeviceSubsBase.cpp:37:6:virtual void DeviceSubsBase::initialize()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/containers/DeviceSubsBase.cpp:9:1:DeviceSubsBase::DeviceSubsBase()	120	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/containers/DeviceSubsBase.cpp:37:1:DeviceSubsBase::~DeviceSubsBase()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/containers/DeviceSubsBase.cpp:37:1:virtual DeviceSubsBase::~DeviceSubsBase()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/gui_generated/src/containers/DeviceSubsBase.cpp:42:6:virtual void DeviceSubsBase::initialize()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:virtual touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:33:7:touchgfx::TiledImage::~TiledImage()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:33:7:virtual touchgfx::TiledImage::~TiledImage()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:32:7:touchgfx::ToggleButton::~ToggleButton()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:32:7:virtual touchgfx::ToggleButton::~ToggleButton()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:29:7:touchgfx::Box::~Box()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:29:7:virtual touchgfx::Box::~Box()	16	static

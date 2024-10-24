@@ -47,7 +47,7 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
     tiledImage2.setOffset(0, 0);
     container1.add(tiledImage2);
 
-    nodeVendor.setXY(10, 50);
+    nodeVendor.setXY(10, 82);
     nodeVendor.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     nodeVendor.setLinespacing(0);
     Unicode::snprintf(nodeVendorBuffer, NODEVENDOR_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_KAJT).getText());
@@ -56,7 +56,7 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
     nodeVendor.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FHXT));
     container1.add(nodeVendor);
 
-    nodeUUID.setXY(10, 30);
+    nodeUUID.setXY(10, 46);
     nodeUUID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     nodeUUID.setLinespacing(0);
     Unicode::snprintf(nodeUUIDBuffer, NODEUUID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_W5ZN).getText());
@@ -79,7 +79,7 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
     allNodeSubsCont.setPosition(10, 141, 330, 121);
     allNodeSubsCont.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     allNodeSubsCont.setScrollbarsAlpha(255);
-    tiledImage3.setBitmap(touchgfx::Bitmap(BITMAP_H7CONFIGBOX_ID));
+    tiledImage3.setBitmap(touchgfx::Bitmap(BITMAP_H7CONFIGSCROLL_ID));
     tiledImage3.setPosition(0, 0, 330, 350);
     tiledImage3.setOffset(0, 0);
     allNodeSubsCont.add(tiledImage3);
@@ -97,7 +97,7 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
     GUI_ConfBtnPopup.setAction(buttonCallback);
     GUI_CongPopup.add(GUI_ConfBtnPopup);
 
-    GUI_ConfTextPopup.setXY(42, 43);
+    GUI_ConfTextPopup.setXY(26, 41);
     GUI_ConfTextPopup.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     GUI_ConfTextPopup.setLinespacing(0);
     GUI_ConfTextPopup.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PIBO));

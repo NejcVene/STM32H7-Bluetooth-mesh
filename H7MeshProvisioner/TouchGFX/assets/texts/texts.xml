@@ -21,28 +21,28 @@
       <Text Id="__SingleUse_J4Q1" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">ATEP ROOT</Translation>
       </Text>
-      <Text Id="__SingleUse_8ZXX" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_8ZXX" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">None</Translation>
       </Text>
-      <Text Id="__SingleUse_KPYR" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_KPYR" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_KAJT" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_KAJT" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">None</Translation>
       </Text>
-      <Text Id="__SingleUse_FHXT" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_FHXT" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_W5ZN" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_W5ZN" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">None</Translation>
       </Text>
-      <Text Id="__SingleUse_B8P1" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_B8P1" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_2W0E" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_2W0E" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">None</Translation>
       </Text>
-      <Text Id="__SingleUse_OPFS" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_OPFS" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_0LTB" Alignment="Center" TypographyId="Small">
@@ -113,7 +113,8 @@
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
-    <Typography Id="Small" Font="verdana.ttf" Size="14" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="Small" Font="verdana.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Medium" Font="verdana.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Text16px" Font="verdana.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
   </Typographies>
 </TextDatabase>

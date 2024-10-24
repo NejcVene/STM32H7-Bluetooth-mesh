@@ -650,32 +650,32 @@
                 "Type": "TextArea",
                 "Name": "nodeVendor",
                 "X": 10,
-                "Y": 50,
-                "Width": 36,
-                "Height": 17,
+                "Y": 82,
+                "Width": 62,
+                "Height": 29,
                 "TextId": "__SingleUse_FHXT",
                 "TextRotation": "0",
                 "AutoSize": true,
                 "Wildcard1": {
                   "TextId": "__SingleUse_KAJT",
                   "UseBuffer": true,
-                  "BufferSize": 10
+                  "BufferSize": 20
                 }
               },
               {
                 "Type": "TextArea",
                 "Name": "nodeUUID",
                 "X": 10,
-                "Y": 30,
-                "Width": 36,
-                "Height": 17,
+                "Y": 46,
+                "Width": 62,
+                "Height": 29,
                 "TextId": "__SingleUse_B8P1",
                 "TextRotation": "0",
                 "AutoSize": true,
                 "Wildcard1": {
                   "TextId": "__SingleUse_W5ZN",
                   "UseBuffer": true,
-                  "BufferSize": 10
+                  "BufferSize": 20
                 }
               },
               {
@@ -683,15 +683,15 @@
                 "Name": "nodeName",
                 "X": 10,
                 "Y": 10,
-                "Width": 36,
-                "Height": 17,
+                "Width": 62,
+                "Height": 29,
                 "TextId": "__SingleUse_OPFS",
                 "TextRotation": "0",
                 "AutoSize": true,
                 "Wildcard1": {
                   "TextId": "__SingleUse_2W0E",
                   "UseBuffer": true,
-                  "BufferSize": 10
+                  "BufferSize": 20
                 }
               }
             ]
@@ -713,7 +713,7 @@
                 "Name": "tiledImage3",
                 "Width": 330,
                 "Height": 350,
-                "FileName": "H7ConfigBox.png"
+                "FileName": "H7ConfigScroll.png"
               }
             ]
           },
@@ -755,10 +755,10 @@
               {
                 "Type": "TextArea",
                 "Name": "GUI_ConfTextPopup",
-                "X": 42,
-                "Y": 43,
-                "Width": 142,
-                "Height": 17,
+                "X": 26,
+                "Y": 41,
+                "Width": 162,
+                "Height": 19,
                 "TextId": "__SingleUse_PIBO",
                 "TextRotation": "0",
                 "AutoSize": true
@@ -1087,16 +1087,16 @@
             "Type": "TextArea",
             "Name": "addressLabel",
             "X": 10,
-            "Y": 16,
-            "Width": 62,
-            "Height": 29,
+            "Y": 21,
+            "Width": 42,
+            "Height": 19,
             "TextId": "__SingleUse_KPYR",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_8ZXX",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 30
             }
           },
           {
@@ -1109,6 +1109,18 @@
             "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.png",
             "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_dark.png",
             "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded_text.json"
+          },
+          {
+            "Type": "Box",
+            "Name": "grayBox",
+            "Width": 310,
+            "Height": 60,
+            "Color": {
+              "Red": 95,
+              "Green": 108,
+              "Blue": 123
+            },
+            "Alpha": 100
           }
         ],
         "Interactions": []

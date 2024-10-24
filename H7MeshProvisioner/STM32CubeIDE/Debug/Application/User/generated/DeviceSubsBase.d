@@ -100,6 +100,7 @@ Application/User/generated/DeviceSubsBase.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
  ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
  ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp
@@ -203,6 +204,7 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/STM32CubeIDE/Applicatio
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
 ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
 ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:

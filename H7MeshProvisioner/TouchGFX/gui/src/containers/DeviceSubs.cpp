@@ -10,6 +10,7 @@ buttonCallback(this, &DeviceSubs::onButtonClicked)
 void DeviceSubs::initialize()
 {
     DeviceSubsBase::initialize();
+    subscribeBtn.setAction(buttonCallback);
 }
 
 void DeviceSubs::onButtonClicked(const touchgfx::AbstractButton& button){

@@ -20,6 +20,24 @@ public:
     virtual void GUI_CancelBtnClicked();
     virtual void GUI_ShowPopup();
 
+    void setTextNodeUUID(const char *text) {
+    	touchgfx::Unicode::strncpy(nodeUUIDBuffer, text, NODEUUID_SIZE);
+    	nodeUUID.resizeToCurrentText();
+    	nodeUUID.invalidate();
+    }
+
+    void setTextNodeName(const char *text) {
+    	touchgfx::Unicode::strncpy(nodeNameBuffer, text, NODENAME_SIZE);
+    	nodeName.resizeToCurrentText();
+    	nodeName.invalidate();
+    }
+
+    void setTextVendor(const char *text) {
+    	touchgfx::Unicode::strncpy(nodeVendorBuffer, text, NODEVENDOR_SIZE);
+    	nodeVendor.resizeToCurrentText();
+    	nodeVendor.invalidate();
+    }
+
 protected:
 
     static const int maxSubsPerNode = 5;

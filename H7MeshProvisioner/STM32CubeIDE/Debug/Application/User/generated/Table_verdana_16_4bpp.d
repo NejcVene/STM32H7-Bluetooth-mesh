@@ -1,5 +1,5 @@
-Application/User/generated/Table_verdana_14_4bpp.o: \
- F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/fonts/src/Table_verdana_14_4bpp.cpp \
+Application/User/generated/Table_verdana_16_4bpp.o: \
+ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/fonts/src/Table_verdana_16_4bpp.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/GeneratedFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/ConstFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

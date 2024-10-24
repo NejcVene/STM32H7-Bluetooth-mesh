@@ -78,8 +78,8 @@ F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/target/generat
 ../../Middlewares/ST/touchgfx/framework/include/common/Partition.hpp:42:7:virtual touchgfx::Partition<touchgfx::meta::TypeList<DebugScreenPresenter, touchgfx::meta::TypeList<touchgfx::meta::Nil, touchgfx::meta::Nil> >, 1>::~Partition()	16	static
 ../../TouchGFX/target/TouchGFXHAL.hpp:35:7:TouchGFXHAL::~TouchGFXHAL()	16	static
 ../../TouchGFX/target/TouchGFXHAL.hpp:35:7:virtual TouchGFXHAL::~TouchGFXHAL()	16	static
-../../TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp:31:7:ApplicationFontProvider::~ApplicationFontProvider()	16	static
-../../TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp:31:7:virtual ApplicationFontProvider::~ApplicationFontProvider()	16	static
+../../TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp:33:7:ApplicationFontProvider::~ApplicationFontProvider()	16	static
+../../TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp:33:7:virtual ApplicationFontProvider::~ApplicationFontProvider()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/VectorFontRendererImpl.hpp:29:7:touchgfx::VectorFontRendererImpl::~VectorFontRendererImpl()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/VectorFontRendererImpl.hpp:29:7:virtual touchgfx::VectorFontRendererImpl::~VectorFontRendererImpl()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp:39:7:touchgfx::LCD16bpp::~LCD16bpp()	16	static

@@ -15,7 +15,7 @@ DeviceSubsBase::DeviceSubsBase()
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    addressLabel.setXY(10, 16);
+    addressLabel.setXY(10, 21);
     addressLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     addressLabel.setLinespacing(0);
     Unicode::snprintf(addressLabelBuffer, ADDRESSLABEL_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_8ZXX).getText());
@@ -27,6 +27,11 @@ DeviceSubsBase::DeviceSubsBase()
     subscribeBtn.setXY(161, 5);
     subscribeBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_ON_DARK_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_OFF_NORMAL_ID));
     add(subscribeBtn);
+
+    grayBox.setPosition(0, 0, 310, 60);
+    grayBox.setColor(touchgfx::Color::getColorFromRGB(95, 108, 123));
+    grayBox.setAlpha(100);
+    add(grayBox);
 }
 
 DeviceSubsBase::~DeviceSubsBase()

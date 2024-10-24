@@ -20,6 +20,27 @@ public:
 
     void setTextAddressName(const char *text) {
     	touchgfx::Unicode::strncpy(addressLabelBuffer, text, ADDRESSLABEL_SIZE);
+    	addressLabel.resizeToCurrentText();
+    	addressLabel.invalidate();
+    }
+
+    void setButtonEnable(bool state) {
+    	subscribeBtn.forceState(state);
+    	subscribeBtn.setTouchable(state);
+    	grayBox.setVisible(!state);
+    	subscribeBtn.invalidate();
+    }
+
+    int getInstanceID(void) {
+
+    	return this->instanceID;
+
+    }
+
+    bool isButtonOn(void) {
+
+    	return subscribeBtn.getPressedState();
+
     }
 
     virtual void onButtonClicked(const touchgfx::AbstractButton& button);
