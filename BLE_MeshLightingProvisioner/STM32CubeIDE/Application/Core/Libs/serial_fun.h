@@ -11,7 +11,7 @@
 #include <stdint.h>
 
 #define FUN_INDENTIFIER_LEN								7
-#define FUN_INDENTIFIER									((char *) "BLEMesh")
+#define FUN_INDENTIFIER									((char *) "BLEMESH")
 
 #define SF_DEFAULT_GROUP_ADDR							0xC000
 #define SF_DEFAULT_PUBLISH_ADDR							0xC000

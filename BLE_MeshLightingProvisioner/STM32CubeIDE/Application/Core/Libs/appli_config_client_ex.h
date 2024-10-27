@@ -1,0 +1,28 @@
+/*
+ * appli_config_client_ex.h
+ *
+ *  Created on: Oct 26, 2024
+ *      Author: Nejc
+ */
+
+#ifndef APPLICATION_CORE_LIBS_APPLI_CONFIG_CLIENT_EX_H_
+#define APPLICATION_CORE_LIBS_APPLI_CONFIG_CLIENT_EX_H_
+
+typedef enum {
+	SF_CALLBACK_SUBSCRIBE_OK = 0,
+	SF_CALLBACK_PUBLISH_OK,
+	SF_CALLBACK_IN_PROGRESS,
+	SF_CALLBACK_IDLE
+} SF_OPERATION_STATUS;
+
+typedef enum {
+	SF_ENABLE_ACCESS = 0,
+	SF_DISABLE_ACCESS
+} SF_VAR_ACCESS;
+
+SF_OPERATION_STATUS Appli_SFGetOpStatus(void);
+void Appli_SFResetStatus(void);
+void Appli_SFSetStatus(SF_OPERATION_STATUS state);
+void Appli_SFSetAccess(SF_VAR_ACCESS setting);
+
+#endif /* APPLICATION_CORE_LIBS_APPLI_CONFIG_CLIENT_EX_H_ */

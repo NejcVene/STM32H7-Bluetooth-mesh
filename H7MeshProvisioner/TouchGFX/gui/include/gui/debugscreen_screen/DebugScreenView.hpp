@@ -14,6 +14,8 @@ public:
 
     virtual void GUI_DebugAtepRoot();
     virtual void GUI_UnprovEm();
+    virtual void GUI_DebugKitGrpAddr();
+    virtual void GUI_DebugLivRoomGrpAddr();
 
 protected:
 

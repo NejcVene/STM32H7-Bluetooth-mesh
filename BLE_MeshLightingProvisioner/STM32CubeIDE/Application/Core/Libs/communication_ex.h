@@ -50,6 +50,7 @@ typedef enum {
 	MAIN_FSM_EVENT_EXE_COMPLETE,		// execution of command/update is complete,
 #ifdef SLAVE
 	MAIN_FSM_EVENT_INTERRUPT,
+	MAIN_FSM_EVENT_LOOP,
 #endif
 	MAIN_FSM_NUM_OF_EVENTS
 } MAIN_FSM_EVENT;

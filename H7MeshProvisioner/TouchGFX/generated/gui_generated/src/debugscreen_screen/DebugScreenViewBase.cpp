@@ -21,6 +21,22 @@ DebugScreenViewBase::DebugScreenViewBase() :
     scrollableContainer1.setPosition(115, 0, 250, 272);
     scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     scrollableContainer1.setScrollbarsAlpha(255);
+    livingroomGrpAddrBtn.setXY(5, 194);
+    livingroomGrpAddrBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
+    livingroomGrpAddrBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_ZQHI));
+    livingroomGrpAddrBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    livingroomGrpAddrBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    livingroomGrpAddrBtn.setAction(buttonCallback);
+    scrollableContainer1.add(livingroomGrpAddrBtn);
+
+    kitchenGrpAddrBtn.setXY(5, 130);
+    kitchenGrpAddrBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
+    kitchenGrpAddrBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_GVRS));
+    kitchenGrpAddrBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    kitchenGrpAddrBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    kitchenGrpAddrBtn.setAction(buttonCallback);
+    scrollableContainer1.add(kitchenGrpAddrBtn);
+
     unpvrEmNodeBtn.setXY(5, 65);
     unpvrEmNodeBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
     unpvrEmNodeBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_4TTE));
@@ -65,5 +81,19 @@ void DebugScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
         //When unpvrEmNodeBtn clicked call virtual function
         //Call GUI_UnprovEm
         GUI_UnprovEm();
+    }
+    if (&src == &kitchenGrpAddrBtn)
+    {
+        //GUI_DebugKitGrpAddr
+        //When kitchenGrpAddrBtn clicked call virtual function
+        //Call GUI_DebugKitGrpAddr
+        GUI_DebugKitGrpAddr();
+    }
+    if (&src == &livingroomGrpAddrBtn)
+    {
+        //GUI_DebugLivRoomGrpAddr
+        //When livingroomGrpAddrBtn clicked call virtual function
+        //Call GUI_DebugLivRoomGrpAddr
+        GUI_DebugLivRoomGrpAddr();
     }
 }

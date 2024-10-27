@@ -35,6 +35,7 @@
 #include "vendor.h"
 
 #include "communication_ex.h"
+#include "appli_config_client_ex.h"
 
 /** @addtogroup ST_BLE_Mesh
 *  @{
@@ -66,6 +67,10 @@
 /******************************************************************************/
 
 extern Queue *eventQueue;
+
+SF_OPERATION_STATUS sfStatus = SF_CALLBACK_IDLE;
+SF_VAR_ACCESS access = SF_DISABLE_ACCESS;
+
 
 const MOBLEUINT8 aConfigAppKeyDefault[19]= 
                 { /* NetKeyIndexAndAppKeyIndex : 3B
@@ -1830,6 +1835,9 @@ void Appli_SubscriptionAddStatusCb(MOBLEUINT8 status)
 {
    /* Change the received state for application  */
    eServerRespRecdState = SubscriptionAck_State;
+   if (access == SF_ENABLE_ACCESS) {
+	   sfStatus = SF_CALLBACK_SUBSCRIBE_OK;
+   }
 }
 
 
@@ -1843,6 +1851,9 @@ void Appli_PublicationStatusCb(MOBLEUINT8 status)
 {
    /* Change the received state for application  */
    eServerRespRecdState = PublicationStatus_State;
+   if (access == SF_ENABLE_ACCESS) {
+	   sfStatus = SF_CALLBACK_PUBLISH_OK;
+   }
 }
 
 
@@ -2047,6 +2058,30 @@ MOBLEUINT8 GetCountVendorModelToSubscribe(MOBLEUINT8 elementIndex)
 MOBLEUINT8 AppliConfigClient_SendMessageDefault(MOBLEUINT8 elementIdx)
 {
   return NUM_VENDOR_MODELS_TO_SUBSCRIBE; 
+}
+
+SF_OPERATION_STATUS Appli_SFGetOpStatus(void) {
+
+	return sfStatus;
+
+}
+
+void Appli_SFResetStatus(void) {
+
+	sfStatus = SF_CALLBACK_IDLE;
+
+}
+
+void Appli_SFSetStatus(SF_OPERATION_STATUS state) {
+
+	sfStatus = state;
+
+}
+
+void Appli_SFSetAccess(SF_VAR_ACCESS setting) {
+
+	access = setting;
+
 }
 
 /******************************************************************************/

@@ -75,7 +75,7 @@ __weak MOBLE_RESULT BLEMesh_ProvisionDevice(neighbor_params_t *unprovDeviceArray
 * @param  rcvdStringSize: length of the input string 
 * @retval void
 */ 
-void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *resultBuffer, int *cmdIsPvrn)
+void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *resultBuffer, int *cmdResposneElsewhere)
 {
   MOBLE_RESULT result = MOBLE_RESULT_INVALIDARG;
 
@@ -95,7 +95,7 @@ void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *res
   }
    /* Command to start the unprovisioned devices */
   else if (!strncmp(rcvdStringBuff+COMMAND_OFFSET, "PRVN-",4))
-  {   *cmdIsPvrn = 1;
+  {   *cmdResposneElsewhere = 1;
       if(!PrvningInProcess)
       {
           result = SerialPrvn_ProvisionDevice(rcvdStringBuff+COMMAND_OFFSET);

@@ -39,7 +39,7 @@ public:
 
     bool isButtonOn(void) {
 
-    	return subscribeBtn.getPressedState();
+    	return subscribeBtn.getState();
 
     }
 

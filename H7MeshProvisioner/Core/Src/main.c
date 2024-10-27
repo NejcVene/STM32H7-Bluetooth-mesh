@@ -73,7 +73,7 @@ SDRAM_HandleTypeDef hsdram2;
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
-  .stack_size = 256 * 4,
+  .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for GUITask */
@@ -87,7 +87,7 @@ const osThreadAttr_t GUITask_attributes = {
 osThreadId_t FSM_TaskHandle;
 const osThreadAttr_t FSM_Task_attributes = {
   .name = "FSM_Task",
-  .stack_size = 1024 * 4,
+  .stack_size = 2048 * 4,
   .priority = (osPriority_t) osPriorityNormal7,
 };
 /* Definitions for LEDIndicator_Ta */
@@ -958,6 +958,7 @@ void StartDefaultTask(void *argument)
 	HT_Insert(cmdHashTable, CMD_FUN_IS_EM_PROV_PROV, &isEmbeddedProvProvisioned);
 	HT_Insert(cmdHashTable, CMD_FUN_SUBS_ADD, &subscriptionAdd);
 	HT_Insert(cmdHashTable, CMD_FUN_PUB_SET, &publicationSet);
+	HT_Insert(cmdHashTable, CMD_FUN_PUB_SET_SUB_ADD, &pubSetSubAdd);
 
 	for(;;) {
 		osDelay(100);

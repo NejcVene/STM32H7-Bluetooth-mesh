@@ -12,7 +12,7 @@
 #include <string.h>
 
 void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);
-void CMD_SetupSubsAdd(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);
+void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd);
@@ -53,16 +53,16 @@ CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn = {
 };
 
 CMD_MeshCommand_t genericOnOffSetAck = { // currently hard-coded
-		.command = "ATCL %d 8202 01 00",
+		.command = "ATCL c001 8202 01 00",
 		.commandType = PRO_MSG_TYPE_UNACK,
-		.CMD_Setup = CMD_GenericFormatCommand,
+		.CMD_Setup = NULL,
 		.CMD_Execute = NULL
 };
 
 CMD_MeshCommand_t genericOnOffSetAckOff = { // currently hard-coded
-		.command = "ATCL %d 8202 00 00", // c000 for group address
+		.command = "ATCL c001 8202 00 00", // c000 for group address
 		.commandType = PRO_MSG_TYPE_UNACK,
-		.CMD_Setup = CMD_GenericFormatCommand,
+		.CMD_Setup = NULL,
 		.CMD_Execute = NULL
 };
 
@@ -90,15 +90,22 @@ CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 CMD_MeshCommand_t subscriptionAdd = {
 		.command = "BLEMesh_SubsAdd %d %d %d",
 		.commandType = PRO_MSG_TYPE_OTHER,
-		.CMD_Setup = CMD_SetupSubsAdd,
+		.CMD_Setup = CMD_SetupConfig,
 		.CMD_Execute = CMD_SubsAdd
 };
 
 CMD_MeshCommand_t publicationSet = {
 		.command = "BLEMesh_ModelSet %d %d %d",
 		.commandType = PRO_MSG_TYPE_OTHER,
-		.CMD_Setup = NULL,
+		.CMD_Setup = CMD_SetupConfig,
 		.CMD_Execute = NULL
+};
+
+CMD_MeshCommand_t pubSetSubAdd = {
+		.command = "BLEMesh_PubSub %d %d %d",
+		.commandType = PRO_MSG_TYPE_OTHER,
+		.CMD_Setup = CMD_SetupConfig,
+		.CMD_Execute = CMD_SubsAdd
 };
 
 CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[], void *paramValues[], int numOfParams, int arrayLengths[], size_t *elementSizes) {
@@ -205,7 +212,7 @@ void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_Command
 
 }
 
-void CMD_SetupSubsAdd(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd) {
+void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd) {
 
 	char *output = buffer;
 	const char *t = cmdTemplate;
@@ -215,9 +222,10 @@ void CMD_SetupSubsAdd(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *g
 	Node_SubscriptionParam_t *toSubb = (Node_SubscriptionParam_t *) guiCmd->param[0].value.voidPtr;
 	NC_MaskedFeatures *allModels = NC_GetAllModels();
 
-	memset(output, 0, 100);
+	memset(output, 0, CMD_MESH_COMMAND_LENGHT);
 	if (i < toSubb->numOfSubs) {
 		sprintf(output, t, toSubb->nodeAddress, toSubb->subbedAddresses[i], allModels[j].value);
+//		sprintf(output, t, toSubb->subbedAddresses[i], allModels[j].value);
 		j++;
 		if (j >= numOfModels) {
 			i++;

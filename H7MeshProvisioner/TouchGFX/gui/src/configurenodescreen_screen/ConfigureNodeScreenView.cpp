@@ -51,7 +51,7 @@ void ConfigureNodeScreenView::handleButtonClicked(int instanceID) {
 	for (int i = 0; i<maxSubsPerNode; i++) {
 		if (nodeSubscriptions[i].getInstanceID() == instanceID) {
 			// check if button is pressed or not
-			if (nodeSubscriptions[i].isButtonOn()) {
+			if (!nodeSubscriptions[i].isButtonOn()) {
 				// if the button is now on, the user wishes to subscribe
 				if (this->toSubb.numOfSubs < 5) {
 					this->toSubb.numOfSubs++;
@@ -85,12 +85,13 @@ void ConfigureNodeScreenView::GUI_SaveConfNode() {
 	void *paramValue[] = {(void *) &this->toSubb};
 	int arrayLength[] = {1};
 	size_t elementSize[] = {sizeof(Node_SubscriptionParam_t)};
-	this->cmd = CMD_CreateCommandGet(CMD_FUN_SUBS_ADD,
+	this->cmd = CMD_CreateCommandGet(CMD_FUN_PUB_SET_SUB_ADD,
 									&type,
 									paramValue,
 									1,
 									arrayLength,
 									elementSize);
+	presenter->GUI_SendCommand(this->cmd);
 
 }
 
