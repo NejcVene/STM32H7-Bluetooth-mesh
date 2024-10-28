@@ -5,8 +5,6 @@
 Node_SubscriptionParam_t ConfigureNodeScreenView::toSubb;
 CMD_CommandGet_t *ConfigureNodeScreenView::cmd = nullptr;
 
-int nay66;
-
 // NC_MaskedFeatures *ConfigureNodeScreenView::allGroupAddress = nullptr;
 
 ConfigureNodeScreenView::ConfigureNodeScreenView() : buttonClickCallback(this, &ConfigureNodeScreenView::handleButtonClicked)
@@ -81,14 +79,14 @@ void ConfigureNodeScreenView::handleButtonClicked(int instanceID) {
 
 void ConfigureNodeScreenView::GUI_SaveConfNode() {
 
-	PARAMETER_TYPE type = PARAM_VOID;
-	void *paramValue[] = {(void *) &this->toSubb};
-	int arrayLength[] = {1};
-	size_t elementSize[] = {sizeof(Node_SubscriptionParam_t)};
+	PARAMETER_TYPE types[] = {PARAM_VOID, PARAM_VOID};
+	void *paramValue[] = {(void *) &this->toSubb, (void *) this->configNode};
+	int arrayLength[] = {1, 1};
+	size_t elementSize[] = {sizeof(Node_SubscriptionParam_t), sizeof(Node_Config_t)};
 	this->cmd = CMD_CreateCommandGet(CMD_FUN_PUB_SET_SUB_ADD,
-									&type,
+									types,
 									paramValue,
-									1,
+									2,
 									arrayLength,
 									elementSize);
 	presenter->GUI_SendCommand(this->cmd);

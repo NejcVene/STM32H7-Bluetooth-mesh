@@ -49,8 +49,8 @@ extern "C" {
 
 typedef struct {
 	uint32_t nodeAddress;
-	char nodeModels[6];
-	char nodeFeatures[5];
+	uint16_t nodeModels;
+	uint16_t nodeFeatures;
 	char uuid[UUID_SAVE_LEN + 1];
 } Node_NetworkAddress_t;
 
@@ -84,7 +84,12 @@ void NC_IncrementNumOfConfModels(void);
 void NC_AddSubscription(Node_Config_t *node, uint32_t address);
 int NC_GetNumOfModels(void);
 NC_MaskedFeatures *NC_GetAllModels(void);
+NC_MaskedFeatures *NC_GetAllFeatures(void);
 NC_MaskedFeatures *NC_GetAllGroupAddresses(void);
+NC_MaskedFeatures *NC_GetNodeFeature(NC_MaskedFeatures *maskedFeatures, uint16_t featureBitmask);
+int NC_GetPopCount(uint16_t bitmask);
+char *NC_GetNodeModelString(uint16_t nodeModels);
+char *NC_GetNodeFeatureString(uint16_t nodeFeatures);
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 //void NC_ReadNodeFromNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 

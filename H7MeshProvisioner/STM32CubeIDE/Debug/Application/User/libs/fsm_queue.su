@@ -1,0 +1,7 @@
+../Application/User/libs/fsm_queue.c:11:8:createQueue	8	static
+../Application/User/libs/fsm_queue.c:25:6:enqueue	24	static
+../Application/User/libs/fsm_queue.c:84:5:isEmpty	0	static
+../Application/User/libs/fsm_queue.c:46:7:dequeue	16	static
+../Application/User/libs/fsm_queue.c:64:7:peek	8	static
+../Application/User/libs/fsm_queue.c:74:7:rear	8	static
+../Application/User/libs/fsm_queue.c:90:6:deleteQueue	8	static

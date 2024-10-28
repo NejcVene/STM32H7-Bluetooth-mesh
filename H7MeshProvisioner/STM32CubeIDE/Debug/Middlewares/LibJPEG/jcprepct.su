@@ -1,0 +1,6 @@
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jcprepct.c:78:1:start_pass_prep	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jcprepct.c:106:1:expand_bottom_edge	32	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jcprepct.c:128:1:pre_process_data	56	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jcprepct.c:197:1:pre_process_context	56	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jcprepct.c:269:1:create_context_buffer	48	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jcprepct.c:318:1:jinit_c_prep_controller	24	static

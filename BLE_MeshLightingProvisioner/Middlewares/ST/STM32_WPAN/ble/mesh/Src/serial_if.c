@@ -273,7 +273,7 @@ void Serial_InterfaceProcess(void)
     LongPressButton=1;
   } else if (!strncmp((char const *) CommandString, FUN_INDENTIFIER, FUN_INDENTIFIER_LEN)) {
 	  cmdResposneElsewhere = 1;
-	  SF_Process((char *) CommandString, indexReceiveChar, resultBuffer);
+	  SF_Process((char *) CommandString, indexReceiveChar);
   }
   else
   {
@@ -286,7 +286,7 @@ void Serial_InterfaceProcess(void)
 		CommandString[--indexReceiveChar] = 0;
 	  }
 	  if (cmdTypeConverted != PRO_MSG_TYPE_UNACK) {
-			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, sizeof(resultBuffer));
+			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, strlen(resultBuffer));
 	  } else {
 			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_UNACK, NULL, 0);
 	  }

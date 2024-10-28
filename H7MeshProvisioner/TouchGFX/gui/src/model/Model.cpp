@@ -36,7 +36,7 @@ void Model::tick() {
 					foundDevices = (Node_NetworkAddress_t *) cmdResult->param[0].value.voidPtr;
 					modelListener->GUI_DevicesFound();
 					break;
-				case CMD_FUN_SUBS_ADD:
+				case CMD_FUN_PUB_SET_SUB_ADD:
 					if (cmdResult->param[0].value.i) {
 						modelListener->GUI_ConfShowPopup();
 					}

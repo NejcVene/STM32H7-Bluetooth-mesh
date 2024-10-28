@@ -24,6 +24,11 @@ public:
     	addressLabel.invalidate();
     }
 
+    void setButtonState(bool state) {
+    	subscribeBtn.forceState(state);
+    	subscribeBtn.invalidate();
+    }
+
     void setButtonEnable(bool state) {
     	subscribeBtn.forceState(state);
     	subscribeBtn.setTouchable(state);

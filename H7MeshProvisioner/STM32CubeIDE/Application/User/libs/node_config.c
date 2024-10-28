@@ -8,14 +8,16 @@
 #include "node_config.h"
 #include "device_settings.h"
 #include "hash_table.h"
+#include "cmsis_os2.h"
+#include "freertos_os2.h"
 #include <string.h>
 #include <inttypes.h>
 
 #define CLEAR_NODE_ADDRESSES(nodeAddressValue) (Node_NetworkAddress_t) 				\
 											   { .nodeAddress = (nodeAddressValue), \
 												 .uuid = "",						\
-												 .nodeModels = "",					\
-												 .nodeFeatures = ""					\
+												 .nodeModels = 0,					\
+												 .nodeFeatures = 0					\
 											   }
 #define CLEAR_NODE_CONFIG() (Node_Config_t) 								\
 							{.subscriptions = 0, 							\
@@ -23,7 +25,7 @@
 							.address = CLEAR_NODE_ADDRESSES(NODE_DEF_VAL)	\
 							}
 
-void NC_ReportItems(uint8_t uuid, NC_MaskedFeatures *items, char *report);
+void NC_ReportItems(uint8_t uuid, NC_MaskedFeatures *items, uint16_t *report);
 uint8_t NC_HexCharToInt(char c);
 
 NC_MaskedFeatures models[] = {
@@ -58,6 +60,8 @@ Node_NetworkAddress_t nodeAddresses[5];
 Node_Config_t nodeConfigs[5];
 HT_HashTable_t *modelsData;
 static uint32_t numOfConfiguredNodes;
+char nodeModelsStr[10];
+char nodeFeaturesStr[5];
 
 void NC_Init(void) {
 
@@ -96,18 +100,18 @@ void NC_CheckEnabledModelsFeatures() {
 
 	for (int i = 0; i<5; i++) {
 		if (nodeAddresses[i].nodeAddress != NODE_DEF_VAL) {
-			NC_ReportItems((NC_HexCharToInt(nodeAddresses[i].uuid[NODE_FEATURE_BYTE]) << 4) | NC_HexCharToInt(nodeAddresses[i].uuid[NODE_FEATURE_BYTE + 1]), features, nodeAddresses[i].nodeFeatures);
-			NC_ReportItems((NC_HexCharToInt(nodeAddresses[i].uuid[NODE_MODELS_BYTE]) << 4) | NC_HexCharToInt(nodeAddresses[i].uuid[NODE_MODELS_BYTE + 1]), models, nodeAddresses[i].nodeModels);
+			NC_ReportItems((NC_HexCharToInt(nodeAddresses[i].uuid[NODE_FEATURE_BYTE]) << 4) | NC_HexCharToInt(nodeAddresses[i].uuid[NODE_FEATURE_BYTE + 1]), features, &nodeAddresses[i].nodeFeatures);
+			NC_ReportItems((NC_HexCharToInt(nodeAddresses[i].uuid[NODE_MODELS_BYTE]) << 4) | NC_HexCharToInt(nodeAddresses[i].uuid[NODE_MODELS_BYTE + 1]), models, &nodeAddresses[i].nodeModels);
 		}
 	}
 
 }
 
-void NC_ReportItems(uint8_t uuid, NC_MaskedFeatures *items, char *report) {
+void NC_ReportItems(uint8_t uuid, NC_MaskedFeatures *items, uint16_t *report) {
 
 	for (int i = 0; items[i].name != NULL; i++) {
 		if (uuid & (items[i].bitmask)) {
-			strcat(report, items[i].name);
+			*report |= items[i].bitmask;
 		}
 	}
 
@@ -118,6 +122,7 @@ void NC_AddSubscription(Node_Config_t *node, uint32_t address) {
 	for (int i = 0; groupAddress[i].name != NULL; i++) {
 		if (groupAddress[i].value == address) {
 			node->subscriptions |= groupAddress[i].bitmask;
+			return;
 		}
 	}
 
@@ -195,12 +200,72 @@ NC_MaskedFeatures *NC_GetAllModels(void) {
 
 }
 
+NC_MaskedFeatures *NC_GetAllFeatures(void) {
+
+	return features;
+
+}
+
 NC_MaskedFeatures *NC_GetAllGroupAddresses(void) {
 
 	return groupAddress;
 
 }
 
+int NC_GetPopCount(uint16_t bitmask) {
+
+	return __builtin_popcount(bitmask);
+
+}
+
+NC_MaskedFeatures *NC_GetNodeFeature(NC_MaskedFeatures *maskedFeatures, uint16_t featureBitmask) {
+
+	NC_MaskedFeatures *tmp = NULL;
+	uint16_t count = 0;
+	int numOfModels;
+	int index = 0;
+
+	count = NC_GetPopCount(featureBitmask);
+	if (count > 0) {
+		if (!(tmp = (NC_MaskedFeatures *) pvPortMalloc(count * sizeof(NC_MaskedFeatures)))) {
+			// raise error
+		}
+		numOfModels = NC_GetNumOfModels();
+		for (int i = 0; i<numOfModels; i++) {
+			if (maskedFeatures[i].bitmask & featureBitmask) {
+				memcpy(&tmp[index], &maskedFeatures[i], sizeof(NC_MaskedFeatures));
+				index++;
+			}
+		}
+	}
+
+	return tmp;
+
+}
+
+char *NC_GetNodeModelString(uint16_t nodeModels) {
+
+	for (int i = 0; models[i].name != NULL; i++) {
+		if (models[i].bitmask & nodeModels) {
+			strcat(nodeModelsStr, models[i].name);
+		}
+	}
+
+	return nodeModelsStr;
+
+}
+
+char *NC_GetNodeFeatureString(uint16_t nodeFeatures) {
+
+	for (int i = 0; features[i].name != NULL; i++) {
+		if (features[i].bitmask & nodeFeatures) {
+			strcat(nodeFeaturesStr, features[i].name);
+		}
+	}
+
+	return nodeFeaturesStr;
+
+}
 
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address) {
 //

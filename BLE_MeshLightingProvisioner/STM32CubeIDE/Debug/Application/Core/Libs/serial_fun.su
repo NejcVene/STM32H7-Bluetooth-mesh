@@ -1,0 +1,8 @@
+../Application/Core/Libs/serial_fun.c:32:14:_SubscriptionAdd	24	static
+../Application/Core/Libs/serial_fun.c:42:14:_PublicationSet	48	static
+../Application/Core/Libs/serial_fun.c:61:6:SF_Process	272	static
+../Application/Core/Libs/serial_fun.c:81:6:SF_UnprovisionEmbedded	32	static
+../Application/Core/Libs/serial_fun.c:90:6:SF_IsEmbeddedProvisioned	32	static
+../Application/Core/Libs/serial_fun.c:99:6:SF_SubscriptionAdd	40	static
+../Application/Core/Libs/serial_fun.c:110:6:SF_PublicationSet	40	static
+../Application/Core/Libs/serial_fun.c:121:6:SF_PublishSubscribe	32	static

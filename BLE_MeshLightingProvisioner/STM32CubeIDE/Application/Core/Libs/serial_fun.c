@@ -58,8 +58,9 @@ MOBLE_RESULT _PublicationSet(uint16_t elementAddress, uint16_t publisAddress, ui
 
 }
 
-void SF_Process(char *receiveBuffer, uint16_t receiveSize, char *resultBuffer) {
+void SF_Process(char *receiveBuffer, uint16_t receiveSize) {
 
+	char resultBuffer[PAC_MAX_PAYLOAD] = {0};
 	if (!strncmp(receiveBuffer + FUN_INDENTIFIER_LEN + 1, "Unprovision", strlen("Unprovision"))) {
 		SF_UnprovisionEmbedded(resultBuffer);
 	} else if (!strncmp(receiveBuffer + FUN_INDENTIFIER_LEN + 1, "IsUnprovisioned", strlen("IsUnprovisioned"))) {
@@ -124,10 +125,10 @@ void SF_PublishSubscribe(char *receiveBuffer, char *resultBuffer) {
 	static int modelIndentifier;
 	static MOBLE_RESULT status;
 
-	Appli_SFSetAccess(SF_ENABLE_ACCESS);
 	switch (Appli_SFGetOpStatus()) {
 		case SF_CALLBACK_IDLE:
 			Appli_SFSetStatus(SF_CALLBACK_IN_PROGRESS);
+			Appli_SFSetAccess(SF_ENABLE_ACCESS);
 			sscanf(receiveBuffer, "%*s %d %d %d", &elementAddress, &address, &modelIndentifier);
 			if ((status = _SubscriptionAdd(elementAddress, address, modelIndentifier)) == MOBLE_RESULT_SUCCESS) {
 				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_LOOP, receiveBuffer, sizeof(receiveBuffer));
@@ -143,10 +144,10 @@ void SF_PublishSubscribe(char *receiveBuffer, char *resultBuffer) {
 			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_LOOP, receiveBuffer, sizeof(receiveBuffer));
 			break;
 		case SF_CALLBACK_PUBLISH_OK:
-			Appli_SFSetAccess(SF_DISABLE_ACCESS);
 			Appli_SFSetStatus(SF_CALLBACK_IDLE);
+			Appli_SFSetAccess(SF_DISABLE_ACCESS); // BLEMesh_PubSub %d %d %d
 			sprintf(resultBuffer, "BLEMesh_PubSub: %d", status);
-			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_EXE_COMPLETE, resultBuffer, sizeof(resultBuffer));
+			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, strlen(resultBuffer) + 1);
 			break;
 		default:
 			break;

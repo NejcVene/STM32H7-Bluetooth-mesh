@@ -108,6 +108,8 @@ CMD_MeshCommand_t pubSetSubAdd = {
 		.CMD_Execute = CMD_SubsAdd
 };
 
+static NC_MaskedFeatures *allModels;
+
 CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[], void *paramValues[], int numOfParams, int arrayLengths[], size_t *elementSizes) {
 
 	CMD_CommandGet_t *cmd = NULL;
@@ -214,18 +216,21 @@ void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_Command
 
 void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd) {
 
+	static int isAllocated = 0;
+	Node_SubscriptionParam_t *toSubb = (Node_SubscriptionParam_t *) guiCmd->param[0].value.voidPtr;
+	Node_Config_t *node = (Node_Config_t *) guiCmd->param[1].value.voidPtr;
 	char *output = buffer;
 	const char *t = cmdTemplate;
-	int numOfModels = NC_GetNumOfModels();
+	int numOfModels = NC_GetPopCount(node->address.nodeModels);
 	static int i = 0;
 	static int j = 0;
-	Node_SubscriptionParam_t *toSubb = (Node_SubscriptionParam_t *) guiCmd->param[0].value.voidPtr;
-	NC_MaskedFeatures *allModels = NC_GetAllModels();
 
-	memset(output, 0, CMD_MESH_COMMAND_LENGHT);
+	if (!isAllocated) {
+		allModels = NC_GetNodeFeature(NC_GetAllModels(), node->address.nodeModels);
+		isAllocated = 1;
+	}
 	if (i < toSubb->numOfSubs) {
 		sprintf(output, t, toSubb->nodeAddress, toSubb->subbedAddresses[i], allModels[j].value);
-//		sprintf(output, t, toSubb->subbedAddresses[i], allModels[j].value);
 		j++;
 		if (j >= numOfModels) {
 			i++;
@@ -234,6 +239,9 @@ void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *gu
 	} else {
 		i = 0;
 		j = 0;
+		if (isAllocated) {
+			vPortFree(allModels);
+		}
 	}
 
 }
@@ -303,7 +311,8 @@ CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd) {
 CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
-	int numOfSubs = ((Node_SubscriptionParam_t *) guiCmd->param[0].value.voidPtr)->numOfSubs;
+	Node_SubscriptionParam_t *toSubb = (Node_SubscriptionParam_t *) guiCmd->param[0].value.voidPtr;
+	Node_Config_t *node = (Node_Config_t *) guiCmd->param[1].value.voidPtr;
 	static int runCounter = 0;
 	PARAMETER_TYPE type = PARAM_INT;
 	int ok = 1;
@@ -313,7 +322,10 @@ CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd) {
 
 	} else if (!strcmp(buffer, "0")) {
 		runCounter++;
-		if (runCounter >= (NC_GetNumOfModels() * numOfSubs) - 1) {
+		if (runCounter >= (NC_GetPopCount(node->address.nodeModels) * toSubb->numOfSubs)) {
+			for (int i = 0; i<toSubb->numOfSubs; i++) {
+				NC_AddSubscription(node, toSubb->subbedAddresses[i]);
+			}
 			runCounter = 0;
 			cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
 										&type,

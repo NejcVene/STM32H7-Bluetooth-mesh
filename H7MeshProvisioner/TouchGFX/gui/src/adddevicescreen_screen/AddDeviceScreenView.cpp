@@ -73,8 +73,8 @@ void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t *foundDevice
 			nodeFound = 1;
 			deviceAdds[i].setButtonAction(buttonClickCallback, foundDevices->nodeAddress);
 			deviceAdds[i].setTextUUID(foundDevices->uuid);
-			deviceAdds[i].setTextModels(foundDevices->nodeModels);
-			deviceAdds[i].setTextFeatures(foundDevices->nodeFeatures);
+			deviceAdds[i].setTextModels(NC_GetNodeModelString(foundDevices->nodeModels));
+			deviceAdds[i].setTextFeatures(NC_GetNodeFeatureString(foundDevices->nodeFeatures));
 			deviceAdds[i].setVisible(true);
 		}
 	}

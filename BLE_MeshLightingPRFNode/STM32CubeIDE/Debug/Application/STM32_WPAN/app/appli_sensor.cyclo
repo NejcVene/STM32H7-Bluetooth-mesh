@@ -1,0 +1,7 @@
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensor.c:461:14:Appli_Sensor_ReadColumn	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensor.c:505:14:Appli_Sensor_ReadSeries	5
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensor.c:559:12:Appli_Sensor_IsFastCadence	7
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensor.c:601:12:Appli_Sensor_IsStatusTrigger	9
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensor.c:670:14:Appli_Sensor_Init	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensor.c:731:14:Appli_Sensor_Update	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensor.c:764:6:Appli_Sensor_SerialCmd	9

@@ -1,0 +1,3 @@
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/model/Model.cpp:16:1:Model::Model()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/model/Model.cpp:21:6:void Model::tick()	7
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/model/Model.cpp:53:6:void Model::GUI_SendCommand(CMD_CommandGet_t*)	4

@@ -364,19 +364,17 @@ void FSM_Execute(void *param) {
 #endif
 #ifdef _MASTER
 	// TODO: provision further (work in progress)
-	//			- ModelIdentifier struct
-	//			- Bind to view
 	CMD_CommandGet_t *guiCmd = *((CMD_CommandGet_t **) param);
 	CMD_MeshCommand_t *meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex);
 	CMD_CommandGet_t *exeResult;
 	char responseCommand[CMD_MESH_COMMAND_LENGHT];
 	char responseParameters[PAC_MAX_PAYLOAD]; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
-	char upperCaseCmd[CMD_MESH_COMMAND_LENGHT];
-	strcpy(upperCaseCmd, meshCommand->command);
-	Protocol_ConvertMessage((uint8_t *) upperCaseCmd, strlen(upperCaseCmd));
+	char cutOriginal[CMD_MESH_COMMAND_LENGHT];
 
+	sscanf(meshCommand->command, "%[^\n]", cutOriginal);
 	sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
-	if (!strcmp(responseCommand, upperCaseCmd)) {
+	Protocol_ConvertMessage((uint8_t *) cutOriginal, strlen(cutOriginal));
+	if (!strcmp(responseCommand, cutOriginal)) {
 		if (meshCommand->CMD_Execute) {
 			if ((exeResult = meshCommand->CMD_Execute(responseParameters, guiCmd))) {
 				GUI_QueueMessage(FSM_ResultQueueHandle, exeResult);

@@ -889,7 +889,7 @@ MOBLE_RESULT Appli_ConfigClient_ConfigureNode(void)
 
       // added
       // register event to send result as node provision and configuration is complete
-      char resultBuffer[PAC_MAX_PAYLOAD] = "ATEP PRVN-%d: NONE";
+      char resultBuffer[PAC_MAX_PAYLOAD] = "ATEP PRVN: NONE";
       FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, sizeof(resultBuffer));
 
     }
@@ -1833,10 +1833,11 @@ void Appli_AppBindModelStatusCb(MOBLEUINT8 status)
 */ 
 void Appli_SubscriptionAddStatusCb(MOBLEUINT8 status)
 {
-   /* Change the received state for application  */
-   eServerRespRecdState = SubscriptionAck_State;
    if (access == SF_ENABLE_ACCESS) {
 	   sfStatus = SF_CALLBACK_SUBSCRIBE_OK;
+   } else {
+	   /* Change the received state for application  */
+	   eServerRespRecdState = SubscriptionAck_State;
    }
 }
 
@@ -1849,10 +1850,11 @@ void Appli_SubscriptionAddStatusCb(MOBLEUINT8 status)
 */ 
 void Appli_PublicationStatusCb(MOBLEUINT8 status)
 {
-   /* Change the received state for application  */
-   eServerRespRecdState = PublicationStatus_State;
    if (access == SF_ENABLE_ACCESS) {
 	   sfStatus = SF_CALLBACK_PUBLISH_OK;
+   } else {
+	   /* Change the received state for application  */
+	   eServerRespRecdState = PublicationStatus_State;
    }
 }
 
