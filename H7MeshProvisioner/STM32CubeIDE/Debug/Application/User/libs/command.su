@@ -1,7 +1,0 @@
-../Application/User/libs/command.c:185:6:CMD_GenericFormatCommand	32	static
-../Application/User/libs/command.c:217:6:CMD_SetupConfig	32	static
-../Application/User/libs/command.c:113:19:CMD_CreateCommandGet	48	static
-../Application/User/libs/command.c:249:19:CMD_NofitfyProvision	64	static
-../Application/User/libs/command.c:277:19:CMD_NotifyScan	40	static
-../Application/User/libs/command.c:311:19:CMD_SubsAdd	40	static
-../Application/User/libs/command.c:158:6:CMD_FreeCommandGet	16	static

@@ -1,4 +1,0 @@
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/lp_timer.c:50:6:LpTimerInit	8	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/lp_timer.c:63:6:LpTimerStart	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/lp_timer.c:96:10:LpGetElapsedTime	24	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/lp_timer.c:126:13:LpTimerCb	4	static

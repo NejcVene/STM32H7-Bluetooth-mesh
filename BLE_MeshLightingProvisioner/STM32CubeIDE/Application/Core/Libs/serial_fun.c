@@ -135,10 +135,14 @@ void SF_PublishSubscribe(char *receiveBuffer, char *resultBuffer) {
 			}
 			break;
 		case SF_CALLBACK_SUBSCRIBE_OK:
-			Appli_SFSetStatus(SF_CALLBACK_IN_PROGRESS);
+			Appli_SFSetStatus(SF_CALLBACK_PUBLISH_OK);
+			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_LOOP, receiveBuffer, sizeof(receiveBuffer));
+//			Appli_SFSetStatus(SF_CALLBACK_IN_PROGRESS);
+			/*
 			if ((status = _PublicationSet(elementAddress, address, modelIndentifier)) == MOBLE_RESULT_SUCCESS) {
 				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_LOOP, receiveBuffer, sizeof(receiveBuffer));
 			}
+			*/
 			break;
 		case SF_CALLBACK_IN_PROGRESS:
 			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_LOOP, receiveBuffer, sizeof(receiveBuffer));

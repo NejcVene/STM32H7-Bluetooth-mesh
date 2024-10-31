@@ -90,6 +90,8 @@ NC_MaskedFeatures *NC_GetNodeFeature(NC_MaskedFeatures *maskedFeatures, uint16_t
 int NC_GetPopCount(uint16_t bitmask);
 char *NC_GetNodeModelString(uint16_t nodeModels);
 char *NC_GetNodeFeatureString(uint16_t nodeFeatures);
+void NC_FillMissingNodeModels(Node_NetworkAddress_t *node);
+void NC_AddModel(Node_NetworkAddress_t *node, uint32_t modelBitmask);
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 //void NC_ReadNodeFromNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 

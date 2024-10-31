@@ -1,7 +1,0 @@
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jctrans.c:221:1:start_iMCU_row	0	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jctrans.c:249:1:start_pass_coef	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jctrans.c:272:1:compress_output	112	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jctrans.c:357:1:transencode_coef_controller	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jctrans.c:163:1:transencode_master_selection	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jctrans.c:39:1:jpeg_write_coefficients	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jctrans.c:64:1:jpeg_copy_critical_parameters	48	static

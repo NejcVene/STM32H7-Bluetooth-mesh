@@ -363,7 +363,7 @@ void FSM_Execute(void *param) {
 	debugMessage("\r\n");
 #endif
 #ifdef _MASTER
-	// TODO: provision further (work in progress)
+	int len = 0;
 	CMD_CommandGet_t *guiCmd = *((CMD_CommandGet_t **) param);
 	CMD_MeshCommand_t *meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex);
 	CMD_CommandGet_t *exeResult;
@@ -371,9 +371,13 @@ void FSM_Execute(void *param) {
 	char responseParameters[PAC_MAX_PAYLOAD]; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
 	char cutOriginal[CMD_MESH_COMMAND_LENGHT];
 
-	sscanf(meshCommand->command, "%[^\n]", cutOriginal);
+	sscanf(meshCommand->command, "%[^%]", cutOriginal);
 	sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
 	Protocol_ConvertMessage((uint8_t *) cutOriginal, strlen(cutOriginal));
+	len = strlen(cutOriginal);
+	while (len > 0 && (cutOriginal[len - 1] == ' ' || cutOriginal[len - 1] == '-')) {
+		cutOriginal[--len] = '\0';
+	}
 	if (!strcmp(responseCommand, cutOriginal)) {
 		if (meshCommand->CMD_Execute) {
 			if ((exeResult = meshCommand->CMD_Execute(responseParameters, guiCmd))) {

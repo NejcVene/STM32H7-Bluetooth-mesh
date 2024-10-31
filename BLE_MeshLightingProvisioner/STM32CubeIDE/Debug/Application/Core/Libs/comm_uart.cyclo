@@ -1,8 +1,0 @@
-../Application/Core/Libs/comm_uart.c:20:6:Protocol_WaitForTX	2
-../Application/Core/Libs/comm_uart.c:26:6:Protocol_WaitForRX	2
-../Application/Core/Libs/comm_uart.c:32:6:Protocol_WaitForHS	3
-../Application/Core/Libs/comm_uart.c:39:18:Comm_Init	2
-../Application/Core/Libs/comm_uart.c:52:13:Comm_CheckParameters	5
-../Application/Core/Libs/comm_uart.c:65:17:Comm_LPUART_Send_IT	3
-../Application/Core/Libs/comm_uart.c:95:17:Comm_LPUART_Receive_IT	3
-../Application/Core/Libs/comm_uart.c:126:6:Comm_Free	1

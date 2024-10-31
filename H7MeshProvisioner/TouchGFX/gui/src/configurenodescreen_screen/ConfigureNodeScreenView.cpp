@@ -95,7 +95,7 @@ void ConfigureNodeScreenView::GUI_SaveConfNode() {
 
 void ConfigureNodeScreenView::GUI_ConfBtnClicked() {
 
-	GUI_CongPopup.setVisible(false);
+	GUI_CongPopup.hide();
 	goToHomeScreen();
 
 }
@@ -108,7 +108,7 @@ void ConfigureNodeScreenView::GUI_CancelBtnClicked() {
 
 void ConfigureNodeScreenView::GUI_ShowPopup() {
 
-	GUI_CongPopup.setVisible(true);
+	GUI_CongPopup.show();
 
 }
 

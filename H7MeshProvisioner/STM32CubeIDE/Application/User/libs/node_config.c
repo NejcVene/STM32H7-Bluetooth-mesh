@@ -267,6 +267,34 @@ char *NC_GetNodeFeatureString(uint16_t nodeFeatures) {
 
 }
 
+void NC_AddModel(Node_NetworkAddress_t *node, uint32_t modelBitmask) {
+
+	node->nodeModels |= modelBitmask;
+
+}
+
+void NC_FillMissingNodeModels(Node_NetworkAddress_t *node) {
+
+	for (int i = 0; models[i].name != NULL; i++) {
+		if (models[i].bitmask & node->nodeModels) {
+			switch (models[i].bitmask) {
+				case NC_SENSOR_MODEL:
+					NC_AddModel(node, NC_SENSOR_SETUP_MODEL);
+					break;
+				case NC_LIGH_LIGHTNESS_MODEL:
+					NC_AddModel(node, NC_LIGH_LIGHTNESS_SETUP_MODEL);
+					break;
+				case NC_GENERIC_POWER_ON_OFF_MODEL:
+					NC_AddModel(node, NC_GENERIC_POWER_SETUP_MODEL);
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
+}
+
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address) {
 //
 //	HAL_NOR_Program(hnor, address, (uint16_t *) nodeConfig);

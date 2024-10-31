@@ -230,13 +230,16 @@ void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *gu
 		isAllocated = 1;
 	}
 	if (i < toSubb->numOfSubs) {
-		sprintf(output, t, toSubb->nodeAddress, toSubb->subbedAddresses[i], allModels[j].value);
-		j++;
-		if (j >= numOfModels) {
-			i++;
-			j = 0;
+		if (j < numOfModels) {
+			sprintf(output, t, node->address.nodeAddress, toSubb->subbedAddresses[i], allModels[j].value);
+			j++;
 		}
-	} else {
+		if (j == numOfModels) {
+			j = 0;
+			i++;
+		}
+	}
+	if (i == toSubb->numOfSubs) {
 		i = 0;
 		j = 0;
 		if (isAllocated) {
@@ -256,11 +259,15 @@ CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd) {
 	CMD_CommandGet_t *cmdRes = NULL;
 	Node_NetworkAddress_t *prvnNode = NC_GetNodeFromAddress(guiCmd->param[0].value.i);
 	Node_Config_t *configNodes = NC_GetNodeConfigArray();
+	uint32_t assignedNodeAddress = 0;
 
+	sscanf(buffer, "%ld", &assignedNodeAddress);
 	NC_IncrementNumOfConfModels();
 	index = NC_GetNumOfConfModels() - 1;
 	configNodes[index].address = *prvnNode;
+	configNodes[index].address.nodeAddress = assignedNodeAddress;
 	NC_AddSubscription(&configNodes[index], GROUP_ADDRESS_DEFAULT);
+	NC_FillMissingNodeModels(&configNodes[index].address);
 	paramValue[0] = (void *) &configNodes[index];
 	paramValue[1] = (void *) NC_GetAllGroupAddresses();
 	cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
@@ -316,7 +323,7 @@ CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd) {
 	static int runCounter = 0;
 	PARAMETER_TYPE type = PARAM_INT;
 	int ok = 1;
-	void *paramValue = {(void *) &ok};
+	void *paramValue[] = {(void *) &ok};
 
 	if (!strcmp(buffer, "1")) {
 

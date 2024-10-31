@@ -1,2 +1,0 @@
-../Application/Core/Libs/hw_spi.c:8:6:CommEx_Protocol_Init	8	static
-../Application/Core/Libs/hw_spi.c:17:6:CommEx_Protocol_Task	16	static
