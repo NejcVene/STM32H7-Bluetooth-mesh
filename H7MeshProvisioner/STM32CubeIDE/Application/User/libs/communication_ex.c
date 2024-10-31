@@ -328,6 +328,7 @@ void FSM_Transmit(void *param) {
 		} else {
 			memcpy(cmdToSend, meshCommand->command, strlen(meshCommand->command));
 		}
+		HAL_Delay(1000);
 		if (Protocol_Send(meshCommand->commandType, (uint8_t *) cmdToSend, strlen(cmdToSend), NULL) == PRO_OK) {
 			if (meshCommand->commandType != PRO_MSG_TYPE_UNACK) {
 				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, param, sizeof(param));
