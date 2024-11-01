@@ -20,9 +20,8 @@ typedef struct {
 
 void SF_UnprovisionEmbedded(char *resultBuffer);
 void SF_IsEmbeddedProvisioned(char *resultBuffer);
-void SF_SubscriptionAdd(char *receiveBuffer, char *resultBuffer);
-void SF_PublicationSet(char *receiveBuffer, char *resultBuffer);
 void SF_PublishSubscribe(char *receiveBuffer, char *resultBuffer);
+void SF_SubscriptionRemove(char *receiveBuffer, char *resultBuffer);
 SF_OPERATION_STATUS SF_CheckTimeout(SF_MessageInfo *msgInfo);
 MOBLE_RESULT _SubscriptionAdd(uint16_t elementAddress, uint16_t address, uint32_t modelIndentifier);
 MOBLE_RESULT _PublicationSet(uint16_t elementAddress, uint16_t publisAddress, uint32_t modelIndentifier);
@@ -81,10 +80,6 @@ void SF_Process(char *receiveBuffer, uint16_t receiveSize) {
 		SF_UnprovisionEmbedded(resultBuffer);
 	} else if (!strncmp(receiveBuffer + FUN_INDENTIFIER_LEN + 1, "IsUnprovisioned", strlen("IsUnprovisioned"))) {
 		SF_IsEmbeddedProvisioned(resultBuffer);
-	} else if (!strncmp(receiveBuffer + FUN_INDENTIFIER_LEN + 1, "SubsAdd", strlen("SubsAdd"))) {
-		SF_SubscriptionAdd(receiveBuffer, resultBuffer);
-	} else if (!strncmp(receiveBuffer + FUN_INDENTIFIER_LEN + 1, "ModelSet", strlen("ModelSet"))) {
-		SF_PublicationSet(receiveBuffer, resultBuffer);
 	} else if (!strncmp(receiveBuffer + FUN_INDENTIFIER_LEN + 1, "PUBSUB", strlen("PUBSUB"))) {
 		SF_PublishSubscribe(receiveBuffer, resultBuffer);
 	} else {
@@ -109,28 +104,6 @@ void SF_IsEmbeddedProvisioned(char *resultBuffer) {
 	strcat(resultBuffer, "IsUnprovisioned: ");
 	tmp[0] = BLEMesh_IsUnprovisioned() + '0';
 	strcat(resultBuffer, tmp);
-
-}
-
-void SF_SubscriptionAdd(char *receiveBuffer, char *resultBuffer) {
-
-	int elementAddress, address, modelIndentifier;
-	MOBLE_RESULT status;
-
-	sscanf(receiveBuffer, "%*s %d %d %d", &elementAddress, &address, &modelIndentifier);
-	status = _SubscriptionAdd(elementAddress, address, modelIndentifier);
-	sprintf(resultBuffer, "BLEMesh_SubsAdd: %d", status);
-
-}
-
-void SF_PublicationSet(char *receiveBuffer, char *resultBuffer) {
-
-	int elementAddress, address, modelIndentifier;
-	MOBLE_RESULT status;
-
-	sscanf(receiveBuffer, "%*s %d %d %d", &elementAddress, &address, &modelIndentifier);
-	status = _PublicationSet(elementAddress, address, modelIndentifier);
-	sprintf(resultBuffer, "BLEMesh_ModelSet: %d", status);
 
 }
 
@@ -184,6 +157,15 @@ void SF_PublishSubscribe(char *receiveBuffer, char *resultBuffer) {
 		default:
 			break;
 	}
+
+}
+
+void SF_SubscriptionRemove(char *receiveBuffer, char *resultBuffer) {
+
+	// this will pose a bit of a problem because, at the time of
+	// writing this, the mesh API for the embedded provisioner does
+	// not support said feature - for the time being this will be
+	// spoofed by H7 in the gui
 
 }
 

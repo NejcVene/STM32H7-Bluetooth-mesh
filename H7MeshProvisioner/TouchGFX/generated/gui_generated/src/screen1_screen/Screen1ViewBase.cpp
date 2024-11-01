@@ -7,7 +7,7 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 Screen1ViewBase::Screen1ViewBase() :
-    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
+    flexButtonCallback(this, &Screen1ViewBase::flexButtonCallbackHandler)
 {
     __background.setPosition(0, 0, 480, 272);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -18,40 +18,75 @@ Screen1ViewBase::Screen1ViewBase() :
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    onBtn.setXY(283, -105);
-    onBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
-    onBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6IT6));
-    onBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    onBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    onBtn.setAction(buttonCallback);
-    add(onBtn);
-
-    offBtn.setXY(283, -50);
-    offBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
-    offBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_B85K));
-    offBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    offBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    offBtn.setAction(buttonCallback);
-    add(offBtn);
-
-    buttonWithLabel1.setXY(43, -105);
-    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
-    buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_BATJ));
-    buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1.setAction(buttonCallback);
-    add(buttonWithLabel1);
-
     scrollableContainer1.setPosition(0, 0, 480, 272);
     scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     scrollableContainer1.setScrollbarsAlpha(255);
+    undefinedBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    undefinedBtn.setBitmapXY(0, 0);
+    undefinedBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_MAPS_MULTIPLE_STOP_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
+    undefinedBtn.setIconXY(36, 36);
+    undefinedBtn.setText(TypedText(T___SINGLEUSE_6EAE));
+    undefinedBtn.setTextPosition(0, 97, 121, 121);
+    undefinedBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    undefinedBtn.setPosition(349, 141, 121, 121);
+    scrollableContainer1.add(undefinedBtn);
+
+    bathroomBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    bathroomBtn.setBitmapXY(0, 0);
+    bathroomBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_PLACES_BATHTUB_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
+    bathroomBtn.setIconXY(36, 36);
+    bathroomBtn.setText(TypedText(T___SINGLEUSE_8BFE));
+    bathroomBtn.setTextPosition(0, 97, 121, 121);
+    bathroomBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    bathroomBtn.setAction(flexButtonCallback);
+    bathroomBtn.setPosition(180, 141, 121, 121);
+    scrollableContainer1.add(bathroomBtn);
+
+    bedroomBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    bedroomBtn.setBitmapXY(0, 0);
+    bedroomBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_SOCIAL_KING_BED_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
+    bedroomBtn.setIconXY(36, 36);
+    bedroomBtn.setText(TypedText(T___SINGLEUSE_VUUL));
+    bedroomBtn.setTextPosition(0, 97, 121, 121);
+    bedroomBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    bedroomBtn.setAction(flexButtonCallback);
+    bedroomBtn.setPosition(10, 141, 121, 121);
+    scrollableContainer1.add(bedroomBtn);
+
+    livingRoomBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    livingRoomBtn.setBitmapXY(0, 0);
+    livingRoomBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_TV_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
+    livingRoomBtn.setIconXY(36, 36);
+    livingRoomBtn.setText(TypedText(T___SINGLEUSE_Q9I6));
+    livingRoomBtn.setTextPosition(0, 97, 121, 121);
+    livingRoomBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    livingRoomBtn.setAction(flexButtonCallback);
+    livingRoomBtn.setPosition(349, 10, 121, 121);
+    scrollableContainer1.add(livingRoomBtn);
+
+    kitchenBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    kitchenBtn.setBitmapXY(0, 0);
+    kitchenBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_PLACES_KITCHEN_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
+    kitchenBtn.setIconXY(36, 36);
+    kitchenBtn.setText(TypedText(T___SINGLEUSE_ZFQ3));
+    kitchenBtn.setTextPosition(0, 97, 121, 121);
+    kitchenBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    kitchenBtn.setAction(flexButtonCallback);
+    kitchenBtn.setPosition(180, 10, 121, 121);
+    scrollableContainer1.add(kitchenBtn);
+
+    allDevicesBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    allDevicesBtn.setBitmapXY(0, 0);
+    allDevicesBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
+    allDevicesBtn.setIconXY(36, 36);
+    allDevicesBtn.setText(TypedText(T___SINGLEUSE_0BAK));
+    allDevicesBtn.setTextPosition(0, 97, 121, 121);
+    allDevicesBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    allDevicesBtn.setAction(flexButtonCallback);
+    allDevicesBtn.setPosition(10, 10, 121, 121);
+    scrollableContainer1.add(allDevicesBtn);
+
     add(scrollableContainer1);
-
-    deviceToggle2.setXY(10, 91);
-    add(deviceToggle2);
-
-    deviceToggle1.setXY(10, 16);
-    add(deviceToggle1);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -61,31 +96,44 @@ Screen1ViewBase::~Screen1ViewBase()
 
 void Screen1ViewBase::setupScreen()
 {
-    deviceToggle2.initialize();
-    deviceToggle1.initialize();
+
 }
 
-void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
 {
-    if (&src == &onBtn)
+    if (&src == &allDevicesBtn)
     {
-        //GUI_OnBtn
-        //When onBtn clicked call virtual function
-        //Call GUI_OnBtn
-        GUI_OnBtn();
+        //GUI_ShowAllDevices
+        //When allDevicesBtn clicked call virtual function
+        //Call GUI_ShowAllDevices
+        GUI_ShowAllDevices();
     }
-    if (&src == &offBtn)
+    if (&src == &kitchenBtn)
     {
-        //GUI_OffBtn
-        //When offBtn clicked call virtual function
-        //Call GUI_OffBtn
-        GUI_OffBtn();
+        //GUI_ShowKitchenDevices
+        //When kitchenBtn clicked call virtual function
+        //Call GUI_ShowKitchenDevices
+        GUI_ShowKitchenDevices();
     }
-    if (&src == &buttonWithLabel1)
+    if (&src == &livingRoomBtn)
     {
-        //Interaction1
-        //When buttonWithLabel1 clicked change screen to HomeScreen
-        //Go to HomeScreen with screen transition towards East
-        application().gotoHomeScreenScreenWipeTransitionEast();
+        //GUI_ShowLivingRoomDevices
+        //When livingRoomBtn clicked call virtual function
+        //Call GUI_ShowLivingRoomDevices
+        GUI_ShowLivingRoomDevices();
+    }
+    if (&src == &bedroomBtn)
+    {
+        //GUI_ShowBedroomDevices
+        //When bedroomBtn clicked call virtual function
+        //Call GUI_ShowBedroomDevices
+        GUI_ShowBedroomDevices();
+    }
+    if (&src == &bathroomBtn)
+    {
+        //GUI_ShowBathroomDevices
+        //When bathroomBtn clicked call virtual function
+        //Call GUI_ShowBathroomDevices
+        GUI_ShowBathroomDevices();
     }
 }

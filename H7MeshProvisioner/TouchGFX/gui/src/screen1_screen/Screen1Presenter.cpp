@@ -22,3 +22,9 @@ void Screen1Presenter::GUI_SendCommand(CMD_CommandGet_t *cmd) {
 	model->GUI_SendCommand(cmd);
 
 }
+
+void Screen1Presenter::GUI_SaveRoomBitmask(uint8_t bitmask) {
+
+	model->GUI_SetRoomBitmask(bitmask);
+
+}

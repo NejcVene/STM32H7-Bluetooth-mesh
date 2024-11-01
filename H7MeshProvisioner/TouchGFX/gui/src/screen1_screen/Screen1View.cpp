@@ -1,8 +1,6 @@
 #include <gui/screen1_screen/Screen1View.hpp>
 #include "command.h"
 
-int nay = 0;
-
 Screen1View::Screen1View() : buttonClickCallback(this, &Screen1View::handleButtonClicked)
 {
 
@@ -11,10 +9,39 @@ Screen1View::Screen1View() : buttonClickCallback(this, &Screen1View::handleButto
 void Screen1View::setupScreen()
 {
     Screen1ViewBase::setupScreen();
-    deviceToggle1.setButtonAction(buttonClickCallback, 1);
-    deviceToggle2.setButtonAction(buttonClickCallback, 2);
-    deviceToggle1.initialize();
-    deviceToggle2.initialize();
+    this->nodes = NC_GetNodeConfigArray();
+//    deviceToggle1.setButtonAction(buttonClickCallback, 1);
+//    deviceToggle2.setButtonAction(buttonClickCallback, 2);
+//    deviceToggle1.initialize();
+//    deviceToggle2.initialize();
+}
+
+void Screen1View::GUI_ShowAllDevices() {
+
+}
+
+void Screen1View::GUI_ShowKitchenDevices() {
+
+	presenter->GUI_SaveRoomBitmask(GROUP_ADDRESS_KITCHEN_BIT);
+
+}
+
+void Screen1View::GUI_ShowLivingRoomDevices() {
+
+	presenter->GUI_SaveRoomBitmask(0);
+
+}
+
+void Screen1View::GUI_ShowBedroomDevices() {
+
+	presenter->GUI_SaveRoomBitmask(0);
+
+}
+
+void Screen1View::GUI_ShowBathroomDevices() {
+
+	presenter->GUI_SaveRoomBitmask(0);
+
 }
 
 void Screen1View::tearDownScreen()
@@ -22,21 +49,8 @@ void Screen1View::tearDownScreen()
     Screen1ViewBase::tearDownScreen();
 }
 
-void Screen1View::GUI_OnBtn() {
-
-//	presenter->GUI_SendCommand(CMD_MESH_ATCL_GENERIC_ON_OFF_ACK, NULL);
-
-}
-
-void Screen1View::GUI_OffBtn() {
-
-//	presenter->GUI_SendCommand(CMD_MESH_ATCL_GENECI_ON_OFF_ACK_OFF, NULL);
-
-}
 
 void Screen1View::handleButtonClicked(int instanceID) {
-
-	nay = instanceID;
 
 }
 

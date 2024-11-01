@@ -25,6 +25,8 @@
 #include <gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp>
 #include <gui/debugscreen_screen/DebugScreenView.hpp>
 #include <gui/debugscreen_screen/DebugScreenPresenter.hpp>
+#include <gui/nodesscreen_screen/NodesScreenView.hpp>
+#include <gui/nodesscreen_screen/NodesScreenPresenter.hpp>
 
 
 /**
@@ -52,7 +54,8 @@ public:
             touchgfx::meta::TypeList< AddDeviceScreenView,
             touchgfx::meta::TypeList< ConfigureNodeScreenView,
             touchgfx::meta::TypeList< DebugScreenView,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::TypeList< NodesScreenView,
+            touchgfx::meta::Nil > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -69,7 +72,8 @@ public:
             touchgfx::meta::TypeList< AddDeviceScreenPresenter,
             touchgfx::meta::TypeList< ConfigureNodeScreenPresenter,
             touchgfx::meta::TypeList< DebugScreenPresenter,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::TypeList< NodesScreenPresenter,
+            touchgfx::meta::Nil > > > > >
             > GeneratedPresenterTypes;
 
     /**

@@ -19,6 +19,8 @@
 #include <gui/configurenodescreen_screen/ConfigureNodeScreenPresenter.hpp>
 #include <gui/debugscreen_screen/DebugScreenView.hpp>
 #include <gui/debugscreen_screen/DebugScreenPresenter.hpp>
+#include <gui/nodesscreen_screen/NodesScreenView.hpp>
+#include <gui/nodesscreen_screen/NodesScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -62,17 +64,6 @@ void FrontendApplicationBase::gotoHomeScreenScreenNoTransition()
 void FrontendApplicationBase::gotoHomeScreenScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<HomeScreenView, HomeScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-void FrontendApplicationBase::gotoHomeScreenScreenWipeTransitionEast()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoHomeScreenScreenWipeTransitionEastImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoHomeScreenScreenWipeTransitionEastImpl()
-{
-    touchgfx::makeTransition<HomeScreenView, HomeScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 void FrontendApplicationBase::gotoHomeScreenScreenSlideTransitionEast()

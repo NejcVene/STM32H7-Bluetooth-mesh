@@ -6,6 +6,30 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_GT6L" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_PGOV" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Room: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_6EAE" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Undefined</Translation>
+      </Text>
+      <Text Id="__SingleUse_8BFE" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Bathroom</Translation>
+      </Text>
+      <Text Id="__SingleUse_VUUL" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Bedroom</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q9I6" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Living room</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZFQ3" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Kitchen</Translation>
+      </Text>
+      <Text Id="__SingleUse_0BAK" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">All devices</Translation>
+      </Text>
       <Text Id="__SingleUse_ZQHI" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Liv room grp addr</Translation>
       </Text>
@@ -96,9 +120,6 @@
       <Text Id="__SingleUse_PGKI" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_BATJ" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Home</Translation>
-      </Text>
       <Text Id="__SingleUse_XGDV" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">Undefined</Translation>
       </Text>
@@ -107,12 +128,6 @@
       </Text>
       <Text Id="__SingleUse_7Z3U" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">Devices</Translation>
-      </Text>
-      <Text Id="__SingleUse_B85K" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">OFF</Translation>
-      </Text>
-      <Text Id="__SingleUse_6IT6" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">ON</Translation>
       </Text>
     </TextGroup>
   </Texts>

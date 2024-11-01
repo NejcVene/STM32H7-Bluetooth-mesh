@@ -665,6 +665,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/Model.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/NodesScreenPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/nodesscreen_screen/NodesScreenPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/NodesScreenView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/nodesscreen_screen/NodesScreenView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/Screen1Presenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp</locationURI>
@@ -805,6 +815,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/homescreen_screen/HomeScreenViewBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/NodesScreenViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/nodesscreen_screen/NodesScreenViewBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/Screen1ViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp</locationURI>
@@ -875,6 +890,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_icon_theme_images_hardware_tv_50_50_3DA9FC.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_hardware_tv_50_50_3DA9FC.svg.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_icon_theme_images_image_edit_50_50_3DA9FC.svg.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_image_edit_50_50_3DA9FC.svg.cpp</locationURI>
@@ -888,6 +908,21 @@
 			<name>Application/User/generated/image_icon_theme_images_navigation_cancel_50_50_3DA9FC.svg.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_navigation_cancel_50_50_3DA9FC.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_places_bathtub_50_50_3DA9FC.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_places_bathtub_50_50_3DA9FC.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_places_kitchen_50_50_3DA9FC.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_places_kitchen_50_50_3DA9FC.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_social_king_bed_50_50_3DA9FC.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_social_king_bed_50_50_3DA9FC.svg.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_H7Background.cpp</name>

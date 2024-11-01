@@ -26,8 +26,6 @@ public:
     // HomeScreen
     void gotoHomeScreenScreenNoTransition();
 
-    void gotoHomeScreenScreenWipeTransitionEast();
-
     void gotoHomeScreenScreenSlideTransitionEast();
 
     // AddDeviceScreen
@@ -49,8 +47,6 @@ protected:
 
     // HomeScreen
     void gotoHomeScreenScreenNoTransitionImpl();
-
-    void gotoHomeScreenScreenWipeTransitionEastImpl();
 
     void gotoHomeScreenScreenSlideTransitionEastImpl();
 

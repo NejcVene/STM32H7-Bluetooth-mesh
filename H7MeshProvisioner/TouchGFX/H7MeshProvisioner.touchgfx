@@ -12,75 +12,6 @@
             "FileName": "H7Background.png"
           },
           {
-            "Type": "ButtonWithLabel",
-            "Name": "onBtn",
-            "X": 283,
-            "Y": -105,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "TextId": "__SingleUse_6IT6",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "offBtn",
-            "X": 283,
-            "Y": -50,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "TextId": "__SingleUse_B85K",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "X": 43,
-            "Y": -105,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "TextId": "__SingleUse_BATJ",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
-          },
-          {
             "Type": "ScrollableContainer",
             "Name": "scrollableContainer1",
             "Width": 480,
@@ -89,61 +20,310 @@
             "VerticalScrollEnabled": true,
             "ScrollbarsVisibleOnPressed": true,
             "ScrollbarsAlpha": 255,
-            "Components": []
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "deviceToggle2",
-            "X": 10,
-            "Y": 91,
-            "Width": 460,
-            "Height": 60,
-            "CustomContainerDefinitionName": "DeviceToggle"
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "deviceToggle1",
-            "X": 10,
-            "Y": 16,
-            "Width": 460,
-            "Height": 60,
-            "CustomContainerDefinitionName": "DeviceToggle"
+            "Components": [
+              {
+                "Type": "FlexButton",
+                "Name": "undefinedBtn",
+                "X": 349,
+                "Y": 141,
+                "Width": 121,
+                "Height": 121,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 97,
+                    "TextId": "__SingleUse_6EAE",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    },
+                    "ColorPressed": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 36,
+                    "Y": 36,
+                    "IconReleased": "__generated\\icon_theme_images_maps_multiple_stop_50_50_3DA9FC.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7Button.png",
+                    "ImagePressed": "H7Button.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "bathroomBtn",
+                "X": 180,
+                "Y": 141,
+                "Width": 121,
+                "Height": 121,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 97,
+                    "TextId": "__SingleUse_8BFE",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    },
+                    "ColorPressed": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 36,
+                    "Y": 36,
+                    "IconReleased": "__generated\\icon_theme_images_places_bathtub_50_50_3DA9FC.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7Button.png",
+                    "ImagePressed": "H7Button.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "bedroomBtn",
+                "X": 10,
+                "Y": 141,
+                "Width": 121,
+                "Height": 121,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 97,
+                    "TextId": "__SingleUse_VUUL",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    },
+                    "ColorPressed": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 36,
+                    "Y": 36,
+                    "IconReleased": "__generated\\icon_theme_images_social_king_bed_50_50_3DA9FC.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7Button.png",
+                    "ImagePressed": "H7Button.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "livingRoomBtn",
+                "X": 349,
+                "Y": 10,
+                "Width": 121,
+                "Height": 121,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 97,
+                    "TextId": "__SingleUse_Q9I6",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    },
+                    "ColorPressed": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 36,
+                    "Y": 36,
+                    "IconReleased": "__generated\\icon_theme_images_hardware_tv_50_50_3DA9FC.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7Button.png",
+                    "ImagePressed": "H7Button.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "kitchenBtn",
+                "X": 180,
+                "Y": 10,
+                "Width": 121,
+                "Height": 121,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 97,
+                    "TextId": "__SingleUse_ZFQ3",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    },
+                    "ColorPressed": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 36,
+                    "Y": 36,
+                    "IconReleased": "__generated\\icon_theme_images_places_kitchen_50_50_3DA9FC.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7Button.png",
+                    "ImagePressed": "H7Button.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "allDevicesBtn",
+                "X": 10,
+                "Y": 10,
+                "Width": 121,
+                "Height": 121,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 97,
+                    "TextId": "__SingleUse_0BAK",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    },
+                    "ColorPressed": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 36,
+                    "Y": 36,
+                    "IconReleased": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7Button.png",
+                    "ImagePressed": "H7Button.png"
+                  }
+                ]
+              }
+            ]
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "GUI_OnBtn",
+            "InteractionName": "GUI_ShowAllDevices",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "onBtn"
+              "TriggerComponent": "allDevicesBtn"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "GUI_OnBtn"
+              "FunctionName": "GUI_ShowAllDevices"
             }
           },
           {
-            "InteractionName": "GUI_OffBtn",
+            "InteractionName": "GUI_ShowKitchenDevices",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "offBtn"
+              "TriggerComponent": "kitchenBtn"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "GUI_OffBtn"
+              "FunctionName": "GUI_ShowKitchenDevices"
             }
           },
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "GUI_ShowLivingRoomDevices",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonWithLabel1"
+              "TriggerComponent": "livingRoomBtn"
             },
             "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionWipe",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "HomeScreen"
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ShowLivingRoomDevices"
+            }
+          },
+          {
+            "InteractionName": "GUI_ShowBedroomDevices",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bedroomBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ShowBedroomDevices"
+            }
+          },
+          {
+            "InteractionName": "GUI_ShowBathroomDevices",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bathroomBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ShowBathroomDevices"
             }
           }
         ]
@@ -503,8 +683,8 @@
                 "Name": "textArea1",
                 "X": 62,
                 "Y": 126,
-                "Width": 90,
-                "Height": 17,
+                "Width": 104,
+                "Height": 19,
                 "TextId": "__SingleUse_M33F",
                 "TextRotation": "0",
                 "Color": {
@@ -982,6 +1162,63 @@
             }
           }
         ]
+      },
+      {
+        "Name": "NodesScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7Background.png"
+          },
+          {
+            "Type": "Container",
+            "Name": "roomTitle",
+            "X": 10,
+            "Y": 10,
+            "Width": 460,
+            "Height": 60,
+            "Components": [
+              {
+                "Type": "TiledImage",
+                "Name": "tiledImage2",
+                "Width": 460,
+                "Height": 60,
+                "FileName": "H7LineMedium.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "roomTitleText",
+                "X": 10,
+                "Y": 16,
+                "Width": 150,
+                "Height": 29,
+                "TextId": "__SingleUse_PGOV",
+                "TextRotation": "0",
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_GT6L"
+                }
+              }
+            ]
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "roomNodesContainer",
+            "X": 10,
+            "Y": 80,
+            "Width": 460,
+            "Height": 182,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": []
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [

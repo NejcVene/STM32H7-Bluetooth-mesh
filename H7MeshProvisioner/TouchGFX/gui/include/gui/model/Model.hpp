@@ -38,12 +38,27 @@ public:
 
     }
 
+    uint8_t GUI_GetRoomBitmask() {
+
+    	return roomBitmask;
+
+    }
+
+    void GUI_SetRoomBitmask(uint8_t bitmask) {
+
+    	roomBitmask = bitmask;
+
+    }
+
+
+
     void GUI_SendCommand(CMD_CommandGet_t *cmd);
 protected:
     ModelListener* modelListener;
     Node_NetworkAddress_t *foundDevices;
     Node_Config_t *deviceToConfigure;
     NC_MaskedFeatures *allModels;
+    uint8_t roomBitmask;
 };
 
 #endif // MODEL_HPP
