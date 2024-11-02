@@ -10,6 +10,7 @@
 
 #define MASTER
 #define _DEBUG
+#define _SIMULATE_CONFIG_NODE
 
 #if defined(MASTER) && !defined(SLAVE)
 #define _MASTER

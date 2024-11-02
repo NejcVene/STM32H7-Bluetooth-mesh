@@ -12,6 +12,7 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class NodesScreenViewBase : public touchgfx::View<NodesScreenPresenter>
 {
@@ -19,6 +20,11 @@ public:
     NodesScreenViewBase();
     virtual ~NodesScreenViewBase();
     virtual void setupScreen();
+
+    /*
+     * Custom Actions
+     */
+    virtual void goToNodeProperScreen();
 
 protected:
     FrontendApplication& application() {
@@ -34,6 +40,15 @@ protected:
     touchgfx::TiledImage tiledImage2;
     touchgfx::TextAreaWithOneWildcard roomTitleText;
     touchgfx::ScrollableContainer roomNodesContainer;
+    touchgfx::Container noNodesInRoom;
+    touchgfx::TiledImage tiledImage3;
+    touchgfx::TextArea textArea1;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t ROOMTITLETEXT_SIZE = 30;
+    touchgfx::Unicode::UnicodeChar roomTitleTextBuffer[ROOMTITLETEXT_SIZE];
 
 private:
 

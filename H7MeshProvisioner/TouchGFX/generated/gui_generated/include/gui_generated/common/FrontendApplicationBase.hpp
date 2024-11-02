@@ -37,6 +37,12 @@ public:
     // DebugScreen
     void gotoDebugScreenScreenSlideTransitionEast();
 
+    // NodesScreen
+    void gotoNodesScreenScreenSlideTransitionEast();
+
+    // NodeProperScreen
+    void gotoNodeProperScreenScreenSlideTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -58,6 +64,12 @@ protected:
 
     // DebugScreen
     void gotoDebugScreenScreenSlideTransitionEastImpl();
+
+    // NodesScreen
+    void gotoNodesScreenScreenSlideTransitionEastImpl();
+
+    // NodeProperScreen
+    void gotoNodeProperScreenScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

@@ -13,7 +13,12 @@ public:
 
     virtual void initialize();
 
-    // Set the button click callback
+    void GUI_SetTextDeviceName(const char *text) {
+    	touchgfx::Unicode::strncpy(deviceNameTextBuffer, text, DEVICENAMETEXT_SIZE);
+    	deviceNameText.resizeToCurrentText();
+    	deviceNameText.invalidate();
+    }
+
     void setButtonAction(touchgfx::GenericCallback<int>& callback, int instanceID) {
     	buttonClickedCallback = &callback;
     	this->instanceID = instanceID;
@@ -24,11 +29,9 @@ public:
 protected:
 
     virtual void emitSomethingHappenedCallback() {
-
     	if (buttonClickedCallback && buttonClickedCallback->isValid()) {
     		buttonClickedCallback->execute(instanceID);
     	}
-
     }
 
 private:
@@ -36,6 +39,7 @@ private:
     touchgfx::GenericCallback<int>* buttonClickedCallback;
     int instanceID;
     touchgfx::Callback<DeviceToggle, const touchgfx::AbstractButton&> buttonCallback;
+
 };
 
 #endif // DEVICETOGGLE_HPP

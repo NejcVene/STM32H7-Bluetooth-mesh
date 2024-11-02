@@ -26,7 +26,8 @@ NodesScreenViewBase::NodesScreenViewBase()
     roomTitleText.setXY(10, 16);
     roomTitleText.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     roomTitleText.setLinespacing(0);
-    roomTitleText.setWildcard(touchgfx::TypedText(T___SINGLEUSE_GT6L).getText());
+    Unicode::snprintf(roomTitleTextBuffer, ROOMTITLETEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_GT6L).getText());
+    roomTitleText.setWildcard(roomTitleTextBuffer);
     roomTitleText.resizeToCurrentText();
     roomTitleText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PGOV));
     roomTitle.add(roomTitleText);
@@ -37,6 +38,21 @@ NodesScreenViewBase::NodesScreenViewBase()
     roomNodesContainer.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     roomNodesContainer.setScrollbarsAlpha(255);
     add(roomNodesContainer);
+
+    noNodesInRoom.setPosition(10, 80, 460, 60);
+    noNodesInRoom.setVisible(false);
+    tiledImage3.setBitmap(touchgfx::Bitmap(BITMAP_H7LINEMEDIUM_ID));
+    tiledImage3.setPosition(0, 0, 460, 60);
+    tiledImage3.setOffset(0, 0);
+    noNodesInRoom.add(tiledImage3);
+
+    textArea1.setXY(88, 16);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_319A));
+    noNodesInRoom.add(textArea1);
+
+    add(noNodesInRoom);
 }
 
 NodesScreenViewBase::~NodesScreenViewBase()
@@ -47,4 +63,12 @@ NodesScreenViewBase::~NodesScreenViewBase()
 void NodesScreenViewBase::setupScreen()
 {
 
+}
+
+void NodesScreenViewBase::goToNodeProperScreen()
+{
+    //GUI_SwitchScreenToNodeProper
+    //When goToNodeProperScreen is called change screen to NodeProperScreen
+    //Go to NodeProperScreen with screen transition towards East
+    application().gotoNodeProperScreenScreenSlideTransitionEast();
 }

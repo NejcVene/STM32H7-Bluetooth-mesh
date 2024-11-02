@@ -45,6 +45,9 @@
     <ClCompile Include="..\..\gui\src\nodesscreen_screen\NodesScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\nodesscreen_screen\NodesScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\nodesscreen_screen\NodesScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\nodeproperscreen_screen\NodeProperScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\nodeproperscreen_screen\NodeProperScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\nodeproperscreen_screen\NodeProperScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -219,6 +222,9 @@
     <ClInclude Include="..\..\gui\include\gui\nodesscreen_screen\NodesScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\nodesscreen_screen\NodesScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodesscreen_screen\NodesScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\nodeproperscreen_screen\NodeProperScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\nodeproperscreen_screen\NodeProperScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodeproperscreen_screen\NodeProperScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

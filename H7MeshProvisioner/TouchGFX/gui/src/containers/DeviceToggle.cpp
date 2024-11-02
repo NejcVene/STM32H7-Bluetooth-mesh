@@ -10,7 +10,7 @@ buttonCallback(this, &DeviceToggle::onButtonClicked)
 void DeviceToggle::initialize()
 {
     DeviceToggleBase::initialize();
-    deviceToggleBtn.setAction(buttonCallback);
+    useNodeBtn.setAction(buttonCallback);
 }
 
 void DeviceToggle::onButtonClicked(const touchgfx::AbstractButton& button){

@@ -22,7 +22,7 @@ protected:
 private:
     touchgfx::Callback<Screen1View, int> buttonClickCallback;
     void handleButtonClicked(int instanceID);
-    Node_Config_t *nodes;
+//    Node_Config_t *nodes;
 };
 
 #endif // SCREEN1VIEW_HPP

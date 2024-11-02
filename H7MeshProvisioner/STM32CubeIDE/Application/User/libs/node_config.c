@@ -70,6 +70,18 @@ void NC_Init(void) {
 		nodeAddresses[i] = CLEAR_NODE_ADDRESSES(NODE_DEF_VAL);
 		nodeConfigs[i] = CLEAR_NODE_CONFIG();
 	}
+#ifdef _SIMULATE_CONFIG_NODE
+	nodeConfigs[0] = (Node_Config_t) {
+		.subscriptions = 3,
+		.nodeName = "My node",
+		.address = {
+			.nodeAddress = 43,
+			.nodeModels = 0,
+			.nodeFeatures = 0,
+			.uuid =  "0753"
+		}
+};
+#endif
 //	for (int i = 0; models[i].name != NULL; i++) {
 //		HT_Insert(modelsData, (int) models[i].name, &models[i]);
 //	}

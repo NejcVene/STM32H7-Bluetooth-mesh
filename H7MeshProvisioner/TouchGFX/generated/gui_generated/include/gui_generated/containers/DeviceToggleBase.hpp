@@ -8,8 +8,7 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
-#include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class DeviceToggleBase : public touchgfx::Container
 {
@@ -27,15 +26,14 @@ protected:
      * Member Declarations
      */
     touchgfx::TiledImage tiledImage1;
-    touchgfx::TextAreaWithOneWildcard deviceNameTxt;
-    touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  deviceConfigBtn;
-    touchgfx::ToggleButton deviceToggleBtn;
+    touchgfx::TextAreaWithOneWildcard deviceNameText;
+    touchgfx::ButtonWithLabel useNodeBtn;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t DEVICENAMETXT_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar deviceNameTxtBuffer[DEVICENAMETXT_SIZE];
+    static const uint16_t DEVICENAMETEXT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar deviceNameTextBuffer[DEVICENAMETEXT_SIZE];
 
 private:
 

@@ -9,8 +9,8 @@
 #include <mvp/MVPHeap.hpp>
 
 #include <touchgfx/transitions/NoTransition.hpp>
-#include <touchgfx/transitions/WipeTransition.hpp>
 #include <touchgfx/transitions/SlideTransition.hpp>
+#include <touchgfx/transitions/WipeTransition.hpp>
 
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
@@ -27,6 +27,8 @@
 #include <gui/debugscreen_screen/DebugScreenPresenter.hpp>
 #include <gui/nodesscreen_screen/NodesScreenView.hpp>
 #include <gui/nodesscreen_screen/NodesScreenPresenter.hpp>
+#include <gui/nodeproperscreen_screen/NodeProperScreenView.hpp>
+#include <gui/nodeproperscreen_screen/NodeProperScreenPresenter.hpp>
 
 
 /**
@@ -55,7 +57,8 @@ public:
             touchgfx::meta::TypeList< ConfigureNodeScreenView,
             touchgfx::meta::TypeList< DebugScreenView,
             touchgfx::meta::TypeList< NodesScreenView,
-            touchgfx::meta::Nil > > > > >
+            touchgfx::meta::TypeList< NodeProperScreenView,
+            touchgfx::meta::Nil > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -73,7 +76,8 @@ public:
             touchgfx::meta::TypeList< ConfigureNodeScreenPresenter,
             touchgfx::meta::TypeList< DebugScreenPresenter,
             touchgfx::meta::TypeList< NodesScreenPresenter,
-            touchgfx::meta::Nil > > > > >
+            touchgfx::meta::TypeList< NodeProperScreenPresenter,
+            touchgfx::meta::Nil > > > > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -86,8 +90,8 @@ public:
      * @note All transition types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
-            touchgfx::meta::TypeList< WipeTransition<EAST>,
             touchgfx::meta::TypeList< SlideTransition<EAST>,
+            touchgfx::meta::TypeList< WipeTransition<EAST>,
             touchgfx::meta::Nil > >
             > GeneratedTransitionTypes;
 

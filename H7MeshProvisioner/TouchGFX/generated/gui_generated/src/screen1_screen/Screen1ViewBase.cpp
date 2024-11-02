@@ -137,3 +137,11 @@ void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonCo
         GUI_ShowBathroomDevices();
     }
 }
+
+void Screen1ViewBase::goToNodeScreen()
+{
+    //GUI_SwitchScreenToNode
+    //When goToNodeScreen is called change screen to NodesScreen
+    //Go to NodesScreen with screen transition towards East
+    application().gotoNodesScreenScreenSlideTransitionEast();
+}

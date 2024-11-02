@@ -50,6 +50,18 @@ public:
 
     }
 
+    const char *GUI_GetRoomName(void) {
+
+    	return roomName;
+
+    }
+
+    void GUI_SetRoomName(const char *roomName) {
+
+    	strcpy(this->roomName, roomName);
+
+    }
+
 
 
     void GUI_SendCommand(CMD_CommandGet_t *cmd);
@@ -59,6 +71,7 @@ protected:
     Node_Config_t *deviceToConfigure;
     NC_MaskedFeatures *allModels;
     uint8_t roomBitmask;
+    char roomName[30];
 };
 
 #endif // MODEL_HPP

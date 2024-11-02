@@ -256,6 +256,18 @@
     <Filter Include="Source Files\generated\gui_generated\nodesscreen_screen">
       <UniqueIdentifier>7ACA1378-975A-4025-4E39-02BC9E1D36BF</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\nodeproperscreen_screen">
+      <UniqueIdentifier>26727907-1CE3-DFF4-7E7E-0AC4FF784991</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\nodeproperscreen_screen">
+      <UniqueIdentifier>BAEF8EDD-C413-A498-79C0-7ACD9775F976</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\nodeproperscreen_screen">
+      <UniqueIdentifier>8A086812-7475-70D1-6820-4610FD590A18</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\nodeproperscreen_screen">
+      <UniqueIdentifier>2D86034D-1C18-1D4C-8FA9-D0F0494B353B</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -359,6 +371,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\nodesscreen_screen\NodesScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\nodesscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodeproperscreen_screen\NodeProperScreenPresenter.cpp">
+      <Filter>Source Files\gui\nodeproperscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodeproperscreen_screen\NodeProperScreenView.cpp">
+      <Filter>Source Files\gui\nodeproperscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\nodeproperscreen_screen\NodeProperScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\nodeproperscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -873,6 +894,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodesscreen_screen\NodesScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\nodesscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodeproperscreen_screen\NodeProperScreenPresenter.hpp">
+      <Filter>Header Files\gui\nodeproperscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodeproperscreen_screen\NodeProperScreenView.hpp">
+      <Filter>Header Files\gui\nodeproperscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodeproperscreen_screen\NodeProperScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\nodeproperscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -20,6 +20,11 @@ public:
     virtual void setupScreen();
 
     /*
+     * Custom Actions
+     */
+    virtual void goToNodeScreen();
+
+    /*
      * Virtual Action Handlers
      */
     virtual void GUI_ShowAllDevices()

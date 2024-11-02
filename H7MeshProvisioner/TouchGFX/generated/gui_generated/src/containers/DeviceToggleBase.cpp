@@ -15,25 +15,21 @@ DeviceToggleBase::DeviceToggleBase()
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    deviceNameTxt.setXY(10, 18);
-    deviceNameTxt.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    deviceNameTxt.setLinespacing(0);
-    Unicode::snprintf(deviceNameTxtBuffer, DEVICENAMETXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_99CM).getText());
-    deviceNameTxt.setWildcard(deviceNameTxtBuffer);
-    deviceNameTxt.resizeToCurrentText();
-    deviceNameTxt.setTypedText(touchgfx::TypedText(T___SINGLEUSE_486T));
-    add(deviceNameTxt);
+    deviceNameText.setXY(10, 16);
+    deviceNameText.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    deviceNameText.setLinespacing(0);
+    Unicode::snprintf(deviceNameTextBuffer, DEVICENAMETEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_99CM).getText());
+    deviceNameText.setWildcard(deviceNameTextBuffer);
+    deviceNameText.resizeToCurrentText();
+    deviceNameText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_486T));
+    add(deviceNameText);
 
-    deviceConfigBtn.setBitmaps(Bitmap(BITMAP_H7BUTTONSMALL_ID), Bitmap(BITMAP_H7BUTTONSMALL_ID));
-    deviceConfigBtn.setBitmapXY(0, 0);
-    deviceConfigBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_IMAGE_EDIT_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_3DA9FC_SVG_ID));
-    deviceConfigBtn.setIconXY(1, 0);
-    deviceConfigBtn.setPosition(252, 5, 50, 50);
-    add(deviceConfigBtn);
-
-    deviceToggleBtn.setXY(312, 5);
-    deviceToggleBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_ON_DARK_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_OFF_NORMAL_ID));
-    add(deviceToggleBtn);
+    useNodeBtn.setXY(337, 5);
+    useNodeBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUNDED_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUNDED_PRESSED_ID));
+    useNodeBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_3FEL));
+    useNodeBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    useNodeBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    add(useNodeBtn);
 }
 
 DeviceToggleBase::~DeviceToggleBase()

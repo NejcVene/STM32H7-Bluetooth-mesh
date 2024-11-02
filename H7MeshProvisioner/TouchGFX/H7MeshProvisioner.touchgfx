@@ -325,6 +325,25 @@
               "Type": "ActionCustom",
               "FunctionName": "GUI_ShowBathroomDevices"
             }
+          },
+          {
+            "InteractionName": "GUI_SwitchScreenToNode",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Screen1 goToNodeScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "NodesScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToNodeScreen",
+            "Description": "Called from user code to change screen"
           }
         ]
       },
@@ -1199,7 +1218,9 @@
                 "TextRotation": "0",
                 "AutoSize": true,
                 "Wildcard1": {
-                  "TextId": "__SingleUse_GT6L"
+                  "TextId": "__SingleUse_GT6L",
+                  "UseBuffer": true,
+                  "BufferSize": 30
                 }
               }
             ]
@@ -1216,6 +1237,356 @@
             "ScrollbarsVisibleOnPressed": true,
             "ScrollbarsAlpha": 255,
             "Components": []
+          },
+          {
+            "Type": "Container",
+            "Name": "noNodesInRoom",
+            "X": 10,
+            "Y": 80,
+            "Width": 460,
+            "Height": 60,
+            "Visible": false,
+            "Components": [
+              {
+                "Type": "TiledImage",
+                "Name": "tiledImage3",
+                "Width": 460,
+                "Height": 60,
+                "FileName": "H7LineMedium.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1",
+                "X": 88,
+                "Y": 16,
+                "Width": 284,
+                "Height": 29,
+                "TextId": "__SingleUse_319A",
+                "TextRotation": "0",
+                "AutoSize": true
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SwitchScreenToNodeProper",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodesScreen goToNodeProperScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "NodeProperScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToNodeProperScreen",
+            "Description": "Called from user code to change screen"
+          }
+        ]
+      },
+      {
+        "Name": "NodeProperScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7Background.png"
+          },
+          {
+            "Type": "Container",
+            "Name": "nodeTitle",
+            "X": 10,
+            "Y": 10,
+            "Width": 460,
+            "Height": 60,
+            "Components": [
+              {
+                "Type": "TiledImage",
+                "Name": "tiledImage2",
+                "Width": 460,
+                "Height": 60,
+                "FileName": "H7LineMedium.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "nodeName",
+                "X": 10,
+                "Y": 16,
+                "Width": 162,
+                "Height": 29,
+                "TextId": "__SingleUse_VNO6",
+                "TextRotation": "0",
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_K2Q0",
+                  "UseBuffer": true,
+                  "BufferSize": 30
+                }
+              }
+            ]
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "nodeOptions",
+            "X": 10,
+            "Y": 80,
+            "Width": 460,
+            "Height": 182,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "FlexButton",
+                "Name": "nodeDeleteBtn",
+                "X": 339,
+                "Y": 131,
+                "Width": 121,
+                "Height": 121,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 97,
+                    "TextId": "__SingleUse_EEF1",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    },
+                    "ColorPressed": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 36,
+                    "Y": 36,
+                    "IconReleased": "__generated\\icon_theme_images_action_delete_forever_50_50_3DA9FC.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7Button.png",
+                    "ImagePressed": "H7Button.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "nodeConfigBtn",
+                "X": 170,
+                "Y": 131,
+                "Width": 121,
+                "Height": 121,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 97,
+                    "TextId": "__SingleUse_AAB9",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    },
+                    "ColorPressed": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 36,
+                    "Y": 36,
+                    "IconReleased": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7Button.png",
+                    "ImagePressed": "H7Button.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "nodeLightModelBtn",
+                "Y": 131,
+                "Width": 121,
+                "Height": 121,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 97,
+                    "TextId": "__SingleUse_FS1T",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    },
+                    "ColorPressed": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 36,
+                    "Y": 36,
+                    "IconReleased": "__generated\\icon_theme_images_action_lightbulb_outline_50_50_3DA9FC.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7Button.png",
+                    "ImagePressed": "H7Button.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "nodeSensorModelBtn",
+                "X": 339,
+                "Width": 121,
+                "Height": 121,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 97,
+                    "TextId": "__SingleUse_HABD",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    },
+                    "ColorPressed": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 36,
+                    "Y": 36,
+                    "IconReleased": "__generated\\icon_theme_images_action_dns_50_50_3DA9FC.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7Button.png",
+                    "ImagePressed": "H7Button.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "nodeGenLevelModelBtn",
+                "X": 170,
+                "Width": 121,
+                "Height": 121,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 97,
+                    "TextId": "__SingleUse_SJLQ",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    },
+                    "ColorPressed": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 36,
+                    "Y": 36,
+                    "IconReleased": "__generated\\icon_theme_images_action_swipe_50_50_3DA9FC.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7Button.png",
+                    "ImagePressed": "H7Button.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "nodeGenOnOffModelBtn",
+                "Width": 121,
+                "Height": 121,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 97,
+                    "TextId": "__SingleUse_N5NA",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    },
+                    "ColorPressed": {
+                      "Red": 9,
+                      "Green": 64,
+                      "Blue": 103
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 36,
+                    "Y": 36,
+                    "IconReleased": "__generated\\icon_theme_images_toggle_toggle_off_50_50_3DA9FC.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "H7Button.png",
+                    "ImagePressed": "H7Button.png"
+                  }
+                ]
+              }
+            ]
           }
         ],
         "Interactions": []
@@ -1238,9 +1609,9 @@
           },
           {
             "Type": "TextArea",
-            "Name": "deviceNameTxt",
+            "Name": "deviceNameText",
             "X": 10,
-            "Y": 18,
+            "Y": 16,
             "Width": 86,
             "Height": 29,
             "TextId": "__SingleUse_486T",
@@ -1253,39 +1624,27 @@
             }
           },
           {
-            "Type": "FlexButton",
-            "Name": "deviceConfigBtn",
-            "X": 252,
+            "Type": "ButtonWithLabel",
+            "Name": "useNodeBtn",
+            "X": 337,
             "Y": 5,
-            "Width": 50,
+            "Width": 110,
             "Height": 50,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_rounded_active.png",
+            "TextId": "__SingleUse_3FEL",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
-            "ButtonStyles": [
-              {
-                "Type": "IconButtonStyle",
-                "X": 1,
-                "IconReleased": "__generated\\icon_theme_images_image_edit_50_50_3DA9FC.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_3DA9FC.svg.png"
-              },
-              {
-                "Type": "ImageButtonStyle",
-                "ImageReleased": "H7ButtonSmall.png",
-                "ImagePressed": "H7ButtonSmall.png"
-              }
-            ]
-          },
-          {
-            "Type": "ToggleButton",
-            "Name": "deviceToggleBtn",
-            "X": 312,
-            "Y": 5,
-            "Width": 138,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.png",
-            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_dark.png",
-            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded_text.json"
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\tiny_rounded_active.json"
           }
         ],
         "Interactions": []

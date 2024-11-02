@@ -21,6 +21,8 @@
 #include <gui/debugscreen_screen/DebugScreenPresenter.hpp>
 #include <gui/nodesscreen_screen/NodesScreenView.hpp>
 #include <gui/nodesscreen_screen/NodesScreenPresenter.hpp>
+#include <gui/nodeproperscreen_screen/NodeProperScreenView.hpp>
+#include <gui/nodeproperscreen_screen/NodeProperScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -114,4 +116,30 @@ void FrontendApplicationBase::gotoDebugScreenScreenSlideTransitionEast()
 void FrontendApplicationBase::gotoDebugScreenScreenSlideTransitionEastImpl()
 {
     touchgfx::makeTransition<DebugScreenView, DebugScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// NodesScreen
+
+void FrontendApplicationBase::gotoNodesScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoNodesScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoNodesScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<NodesScreenView, NodesScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// NodeProperScreen
+
+void FrontendApplicationBase::gotoNodeProperScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoNodeProperScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoNodeProperScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<NodeProperScreenView, NodeProperScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

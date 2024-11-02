@@ -28,7 +28,18 @@ public:
     virtual ~Screen1Presenter() {}
 
     virtual void GUI_SendCommand(CMD_CommandGet_t *cmd);
-    virtual void GUI_SaveRoomBitmask(uint8_t bitmask);
+
+    void GUI_SaveRoomBitmask(uint8_t bitmask) {
+
+    	model->GUI_SetRoomBitmask(bitmask);
+
+    }
+
+    void GUI_SaveRoomName(const char *roomName) {
+
+    	model->GUI_SetRoomName(roomName);
+
+    }
 
 private:
     Screen1Presenter();

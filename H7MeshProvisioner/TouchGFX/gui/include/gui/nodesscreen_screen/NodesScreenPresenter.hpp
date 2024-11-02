@@ -27,6 +27,18 @@ public:
 
     virtual ~NodesScreenPresenter() {}
 
+    const char *GUI_GetRoomName() {
+
+    	return model->GUI_GetRoomName();
+
+    }
+
+    uint8_t GUI_GetRoomBitmask() {
+
+    	return model->GUI_GetRoomBitmask();
+
+    }
+
 private:
     NodesScreenPresenter();
 

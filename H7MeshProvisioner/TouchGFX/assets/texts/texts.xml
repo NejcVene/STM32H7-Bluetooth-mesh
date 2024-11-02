@@ -6,6 +6,36 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_EEF1" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Remove node</Translation>
+      </Text>
+      <Text Id="__SingleUse_AAB9" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Node settngs</Translation>
+      </Text>
+      <Text Id="__SingleUse_FS1T" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Light</Translation>
+      </Text>
+      <Text Id="__SingleUse_SJLQ" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Level</Translation>
+      </Text>
+      <Text Id="__SingleUse_HABD" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Sensor</Translation>
+      </Text>
+      <Text Id="__SingleUse_N5NA" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Switch</Translation>
+      </Text>
+      <Text Id="__SingleUse_K2Q0" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_VNO6" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Device: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_319A" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">No devices in this room</Translation>
+      </Text>
+      <Text Id="__SingleUse_3FEL" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Use</Translation>
+      </Text>
       <Text Id="__SingleUse_GT6L" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">None</Translation>
       </Text>
