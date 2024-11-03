@@ -92,6 +92,7 @@ char *NC_GetNodeModelString(uint16_t nodeModels);
 char *NC_GetNodeFeatureString(uint16_t nodeFeatures);
 void NC_FillMissingNodeModels(Node_NetworkAddress_t *node);
 void NC_AddModel(Node_NetworkAddress_t *node, uint32_t modelBitmask);
+Node_Config_t *NC_GetConfigNodeFromAddress(uint32_t nodeAddress);
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 //void NC_ReadNodeFromNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 

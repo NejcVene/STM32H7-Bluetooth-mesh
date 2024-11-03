@@ -48,6 +48,12 @@
     <ClCompile Include="..\..\gui\src\nodeproperscreen_screen\NodeProperScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\nodeproperscreen_screen\NodeProperScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\nodeproperscreen_screen\NodeProperScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\DeviceButton.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceButtonBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\BottomMenu.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\BottomMenuBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\AllIcons.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AllIconsBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -225,6 +231,12 @@
     <ClInclude Include="..\..\gui\include\gui\nodeproperscreen_screen\NodeProperScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\nodeproperscreen_screen\NodeProperScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodeproperscreen_screen\NodeProperScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\DeviceButton.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceButtonBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\BottomMenu.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BottomMenuBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\AllIcons.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AllIconsBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

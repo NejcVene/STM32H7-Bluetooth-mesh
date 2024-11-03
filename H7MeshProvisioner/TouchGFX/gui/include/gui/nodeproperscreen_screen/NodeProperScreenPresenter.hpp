@@ -27,6 +27,12 @@ public:
 
     virtual ~NodeProperScreenPresenter() {}
 
+    uint32_t GUI_GetNodeAddress() {
+
+    	return model->GUI_GetNodeAddress();
+
+    }
+
 private:
     NodeProperScreenPresenter();
 

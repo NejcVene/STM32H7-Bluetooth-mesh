@@ -23,6 +23,8 @@ public:
     // Screen1
     void gotoScreen1ScreenWipeTransitionEast();
 
+    void gotoScreen1ScreenSlideTransitionEast();
+
     // HomeScreen
     void gotoHomeScreenScreenNoTransition();
 
@@ -30,6 +32,8 @@ public:
 
     // AddDeviceScreen
     void gotoAddDeviceScreenScreenWipeTransitionEast();
+
+    void gotoAddDeviceScreenScreenSlideTransitionEast();
 
     // ConfigureNodeScreen
     void gotoConfigureNodeScreenScreenSlideTransitionEast();
@@ -51,6 +55,8 @@ protected:
     // Screen1
     void gotoScreen1ScreenWipeTransitionEastImpl();
 
+    void gotoScreen1ScreenSlideTransitionEastImpl();
+
     // HomeScreen
     void gotoHomeScreenScreenNoTransitionImpl();
 
@@ -58,6 +64,8 @@ protected:
 
     // AddDeviceScreen
     void gotoAddDeviceScreenScreenWipeTransitionEastImpl();
+
+    void gotoAddDeviceScreenScreenSlideTransitionEastImpl();
 
     // ConfigureNodeScreen
     void gotoConfigureNodeScreenScreenSlideTransitionEastImpl();

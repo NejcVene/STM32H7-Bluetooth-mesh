@@ -39,6 +39,12 @@ public:
 
     }
 
+    void GUI_SaveNodeAddress(int nodeAddress) {
+
+    	model->GUI_SetNodeAddress(nodeAddress);
+
+    }
+
 private:
     NodesScreenPresenter();
 

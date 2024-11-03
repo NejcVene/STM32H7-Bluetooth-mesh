@@ -13,7 +13,7 @@ void DeviceAdd::initialize()
 
 }
 
-void DeviceAdd::onButtonClicked(const touchgfx::AbstractButton& button){
+void DeviceAdd::onButtonClicked(const touchgfx::AbstractButton& button) {
 
 	DeviceAdd::emitSomethingHappenedCallback();
 

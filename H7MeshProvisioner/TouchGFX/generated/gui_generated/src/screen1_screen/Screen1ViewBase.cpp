@@ -13,80 +13,89 @@ Screen1ViewBase::Screen1ViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_RAYS_ID));
     tiledImage1.setPosition(0, 0, 480, 272);
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    scrollableContainer1.setPosition(0, 0, 480, 272);
+    scrollableContainer1.setPosition(0, 30, 480, 182);
     scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     scrollableContainer1.setScrollbarsAlpha(255);
-    undefinedBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
-    undefinedBtn.setBitmapXY(0, 0);
-    undefinedBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_MAPS_MULTIPLE_STOP_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
-    undefinedBtn.setIconXY(36, 36);
-    undefinedBtn.setText(TypedText(T___SINGLEUSE_6EAE));
-    undefinedBtn.setTextPosition(0, 97, 121, 121);
-    undefinedBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    undefinedBtn.setPosition(349, 141, 121, 121);
-    scrollableContainer1.add(undefinedBtn);
-
-    bathroomBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    bathroomBtn.setBitmaps(Bitmap(BITMAP_BUTTONBACKGROUND_ID), Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID));
     bathroomBtn.setBitmapXY(0, 0);
-    bathroomBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_PLACES_BATHTUB_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
-    bathroomBtn.setIconXY(36, 36);
-    bathroomBtn.setText(TypedText(T___SINGLEUSE_8BFE));
-    bathroomBtn.setTextPosition(0, 97, 121, 121);
-    bathroomBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    bathroomBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_PLACES_BATHTUB_50_50_FFFFFE_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_PLACES_BATHTUB_50_50_D6D6D5_SVG_ID));
+    bathroomBtn.setIconXY(33, 27);
+    bathroomBtn.setText(TypedText(T___SINGLEUSE_8EB0));
+    bathroomBtn.setTextPosition(0, 78, 112, 112);
+    bathroomBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 254), touchgfx::Color::getColorFromRGB(214, 214, 213));
     bathroomBtn.setAction(flexButtonCallback);
-    bathroomBtn.setPosition(180, 141, 121, 121);
+    bathroomBtn.setPosition(184, 122, 112, 112);
     scrollableContainer1.add(bathroomBtn);
 
-    bedroomBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    bedroomBtn.setBitmaps(Bitmap(BITMAP_BUTTONBACKGROUND_ID), Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID));
     bedroomBtn.setBitmapXY(0, 0);
-    bedroomBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_SOCIAL_KING_BED_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
-    bedroomBtn.setIconXY(36, 36);
-    bedroomBtn.setText(TypedText(T___SINGLEUSE_VUUL));
-    bedroomBtn.setTextPosition(0, 97, 121, 121);
-    bedroomBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    bedroomBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_SOCIAL_KING_BED_50_50_FFFFFE_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_SOCIAL_KING_BED_50_50_D6D6D5_SVG_ID));
+    bedroomBtn.setIconXY(33, 27);
+    bedroomBtn.setText(TypedText(T___SINGLEUSE_XYN8));
+    bedroomBtn.setTextPosition(0, 78, 112, 112);
+    bedroomBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 254), touchgfx::Color::getColorFromRGB(214, 214, 213));
     bedroomBtn.setAction(flexButtonCallback);
-    bedroomBtn.setPosition(10, 141, 121, 121);
+    bedroomBtn.setPosition(10, 122, 112, 112);
     scrollableContainer1.add(bedroomBtn);
 
-    livingRoomBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    livingRoomBtn.setBitmaps(Bitmap(BITMAP_BUTTONBACKGROUND_ID), Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID));
     livingRoomBtn.setBitmapXY(0, 0);
-    livingRoomBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_TV_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
-    livingRoomBtn.setIconXY(36, 36);
-    livingRoomBtn.setText(TypedText(T___SINGLEUSE_Q9I6));
-    livingRoomBtn.setTextPosition(0, 97, 121, 121);
-    livingRoomBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    livingRoomBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_TV_50_50_FFFFFE_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_TV_50_50_D6D6D5_SVG_ID));
+    livingRoomBtn.setIconXY(33, 27);
+    livingRoomBtn.setText(TypedText(T___SINGLEUSE_GV96));
+    livingRoomBtn.setTextPosition(0, 78, 112, 112);
+    livingRoomBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 254), touchgfx::Color::getColorFromRGB(214, 214, 213));
     livingRoomBtn.setAction(flexButtonCallback);
-    livingRoomBtn.setPosition(349, 10, 121, 121);
+    livingRoomBtn.setPosition(358, 0, 112, 112);
     scrollableContainer1.add(livingRoomBtn);
 
-    kitchenBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    kitchenBtn.setBitmaps(Bitmap(BITMAP_BUTTONBACKGROUND_ID), Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID));
     kitchenBtn.setBitmapXY(0, 0);
-    kitchenBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_PLACES_KITCHEN_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
-    kitchenBtn.setIconXY(36, 36);
-    kitchenBtn.setText(TypedText(T___SINGLEUSE_ZFQ3));
-    kitchenBtn.setTextPosition(0, 97, 121, 121);
-    kitchenBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    kitchenBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_PLACES_KITCHEN_50_50_FFFFFE_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_PLACES_KITCHEN_50_50_D6D6D5_SVG_ID));
+    kitchenBtn.setIconXY(33, 27);
+    kitchenBtn.setText(TypedText(T___SINGLEUSE_V9M3));
+    kitchenBtn.setTextPosition(0, 78, 112, 112);
+    kitchenBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 254), touchgfx::Color::getColorFromRGB(214, 214, 213));
     kitchenBtn.setAction(flexButtonCallback);
-    kitchenBtn.setPosition(180, 10, 121, 121);
+    kitchenBtn.setPosition(184, 0, 112, 112);
     scrollableContainer1.add(kitchenBtn);
 
-    allDevicesBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    allDevicesBtn.setBitmaps(Bitmap(BITMAP_BUTTONBACKGROUND_ID), Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID));
     allDevicesBtn.setBitmapXY(0, 0);
-    allDevicesBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
-    allDevicesBtn.setIconXY(36, 36);
-    allDevicesBtn.setText(TypedText(T___SINGLEUSE_0BAK));
-    allDevicesBtn.setTextPosition(0, 97, 121, 121);
-    allDevicesBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
+    allDevicesBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICES_OTHER_50_50_FFFFFE_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICES_OTHER_50_50_D6D6D5_SVG_ID));
+    allDevicesBtn.setIconXY(33, 27);
+    allDevicesBtn.setText(TypedText(T___SINGLEUSE_EMB5));
+    allDevicesBtn.setTextPosition(0, 78, 112, 112);
+    allDevicesBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 254), touchgfx::Color::getColorFromRGB(214, 214, 213));
     allDevicesBtn.setAction(flexButtonCallback);
-    allDevicesBtn.setPosition(10, 10, 121, 121);
+    allDevicesBtn.setPosition(10, 0, 112, 112);
     scrollableContainer1.add(allDevicesBtn);
 
     add(scrollableContainer1);
+
+    bottomMenu1.setXY(0, 222);
+    add(bottomMenu1);
+
+    nodeTitle.setPosition(0, 0, 480, 20);
+    box1.setPosition(0, 0, 480, 20);
+    box1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
+    nodeTitle.add(box1);
+
+    menuName.setXY(10, 0);
+    menuName.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
+    menuName.setLinespacing(0);
+    Unicode::snprintf(menuNameBuffer, MENUNAME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_2NDV).getText());
+    menuName.setWildcard(menuNameBuffer);
+    menuName.resizeToCurrentText();
+    menuName.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KOGS));
+    nodeTitle.add(menuName);
+
+    add(nodeTitle);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -96,7 +105,7 @@ Screen1ViewBase::~Screen1ViewBase()
 
 void Screen1ViewBase::setupScreen()
 {
-
+    bottomMenu1.initialize();
 }
 
 void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
@@ -140,7 +149,7 @@ void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonCo
 
 void Screen1ViewBase::goToNodeScreen()
 {
-    //GUI_SwitchScreenToNode
+    //GUI_SwitchToNodeScreen
     //When goToNodeScreen is called change screen to NodesScreen
     //Go to NodesScreen with screen transition towards East
     application().gotoNodesScreenScreenSlideTransitionEast();

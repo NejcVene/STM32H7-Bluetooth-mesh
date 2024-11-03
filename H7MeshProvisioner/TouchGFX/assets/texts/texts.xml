@@ -6,28 +6,55 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_EEF1" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Remove node</Translation>
+      <Text Id="__SingleUse_8EB0" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">Bathroom</Translation>
       </Text>
-      <Text Id="__SingleUse_AAB9" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Node settngs</Translation>
+      <Text Id="__SingleUse_XYN8" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">Bedroom</Translation>
       </Text>
-      <Text Id="__SingleUse_FS1T" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Light</Translation>
+      <Text Id="__SingleUse_GV96" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">Living room</Translation>
       </Text>
-      <Text Id="__SingleUse_SJLQ" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Level</Translation>
+      <Text Id="__SingleUse_V9M3" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">Kitchen</Translation>
       </Text>
-      <Text Id="__SingleUse_HABD" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Sensor</Translation>
+      <Text Id="__SingleUse_EMB5" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">All devices</Translation>
       </Text>
-      <Text Id="__SingleUse_N5NA" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Switch</Translation>
-      </Text>
-      <Text Id="__SingleUse_K2Q0" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_2NDV" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">None</Translation>
       </Text>
-      <Text Id="__SingleUse_VNO6" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_KOGS" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Menu: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_CUTS" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_6FPD" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_1X0H" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Settings</Translation>
+      </Text>
+      <Text Id="__SingleUse_VTO1" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Add device</Translation>
+      </Text>
+      <Text Id="__SingleUse_NZUG" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Rooms</Translation>
+      </Text>
+      <Text Id="__SingleUse_YTJT" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Home</Translation>
+      </Text>
+      <Text Id="__SingleUse_KOKE" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_N2HL" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_K2Q0" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_VNO6" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Device: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_319A" Alignment="Center" TypographyId="Default">
@@ -41,24 +68,6 @@
       </Text>
       <Text Id="__SingleUse_PGOV" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Room: &lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_6EAE" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Undefined</Translation>
-      </Text>
-      <Text Id="__SingleUse_8BFE" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Bathroom</Translation>
-      </Text>
-      <Text Id="__SingleUse_VUUL" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Bedroom</Translation>
-      </Text>
-      <Text Id="__SingleUse_Q9I6" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Living room</Translation>
-      </Text>
-      <Text Id="__SingleUse_ZFQ3" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Kitchen</Translation>
-      </Text>
-      <Text Id="__SingleUse_0BAK" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">All devices</Translation>
       </Text>
       <Text Id="__SingleUse_ZQHI" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Liv room grp addr</Translation>
@@ -166,6 +175,6 @@
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
     <Typography Id="Small" Font="verdana.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Medium" Font="verdana.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Text16px" Font="verdana.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="Text16px" Font="verdanab.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z,0x20" />
   </Typographies>
 </TextDatabase>

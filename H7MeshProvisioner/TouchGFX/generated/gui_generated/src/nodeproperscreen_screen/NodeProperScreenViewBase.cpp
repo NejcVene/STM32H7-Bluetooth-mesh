@@ -12,19 +12,18 @@ NodeProperScreenViewBase::NodeProperScreenViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_RAYS_ID));
     tiledImage1.setPosition(0, 0, 480, 272);
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    nodeTitle.setPosition(10, 10, 460, 60);
-    tiledImage2.setBitmap(touchgfx::Bitmap(BITMAP_H7LINEMEDIUM_ID));
-    tiledImage2.setPosition(0, 0, 460, 60);
-    tiledImage2.setOffset(0, 0);
-    nodeTitle.add(tiledImage2);
+    nodeTitle.setPosition(0, 0, 480, 20);
+    box1.setPosition(0, 0, 480, 20);
+    box1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
+    nodeTitle.add(box1);
 
-    nodeName.setXY(10, 16);
-    nodeName.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    nodeName.setXY(10, 0);
+    nodeName.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
     nodeName.setLinespacing(0);
     Unicode::snprintf(nodeNameBuffer, NODENAME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_K2Q0).getText());
     nodeName.setWildcard(nodeNameBuffer);
@@ -34,70 +33,13 @@ NodeProperScreenViewBase::NodeProperScreenViewBase()
 
     add(nodeTitle);
 
-    nodeOptions.setPosition(10, 80, 460, 182);
+    nodeOptions.setPosition(0, 20, 480, 202);
     nodeOptions.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     nodeOptions.setScrollbarsAlpha(255);
-    nodeDeleteBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
-    nodeDeleteBtn.setBitmapXY(0, 0);
-    nodeDeleteBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DELETE_FOREVER_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_3DA9FC_SVG_ID));
-    nodeDeleteBtn.setIconXY(36, 36);
-    nodeDeleteBtn.setText(TypedText(T___SINGLEUSE_EEF1));
-    nodeDeleteBtn.setTextPosition(0, 97, 121, 121);
-    nodeDeleteBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    nodeDeleteBtn.setPosition(339, 131, 121, 121);
-    nodeOptions.add(nodeDeleteBtn);
-
-    nodeConfigBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
-    nodeConfigBtn.setBitmapXY(0, 0);
-    nodeConfigBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_3DA9FC_SVG_ID));
-    nodeConfigBtn.setIconXY(36, 36);
-    nodeConfigBtn.setText(TypedText(T___SINGLEUSE_AAB9));
-    nodeConfigBtn.setTextPosition(0, 97, 121, 121);
-    nodeConfigBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    nodeConfigBtn.setPosition(170, 131, 121, 121);
-    nodeOptions.add(nodeConfigBtn);
-
-    nodeLightModelBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
-    nodeLightModelBtn.setBitmapXY(0, 0);
-    nodeLightModelBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_LIGHTBULB_OUTLINE_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_3DA9FC_SVG_ID));
-    nodeLightModelBtn.setIconXY(36, 36);
-    nodeLightModelBtn.setText(TypedText(T___SINGLEUSE_FS1T));
-    nodeLightModelBtn.setTextPosition(0, 97, 121, 121);
-    nodeLightModelBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    nodeLightModelBtn.setPosition(0, 131, 121, 121);
-    nodeOptions.add(nodeLightModelBtn);
-
-    nodeSensorModelBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
-    nodeSensorModelBtn.setBitmapXY(0, 0);
-    nodeSensorModelBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DNS_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_3DA9FC_SVG_ID));
-    nodeSensorModelBtn.setIconXY(36, 36);
-    nodeSensorModelBtn.setText(TypedText(T___SINGLEUSE_HABD));
-    nodeSensorModelBtn.setTextPosition(0, 97, 121, 121);
-    nodeSensorModelBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    nodeSensorModelBtn.setPosition(339, 0, 121, 121);
-    nodeOptions.add(nodeSensorModelBtn);
-
-    nodeGenLevelModelBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
-    nodeGenLevelModelBtn.setBitmapXY(0, 0);
-    nodeGenLevelModelBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SWIPE_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_3DA9FC_SVG_ID));
-    nodeGenLevelModelBtn.setIconXY(36, 36);
-    nodeGenLevelModelBtn.setText(TypedText(T___SINGLEUSE_SJLQ));
-    nodeGenLevelModelBtn.setTextPosition(0, 97, 121, 121);
-    nodeGenLevelModelBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    nodeGenLevelModelBtn.setPosition(170, 0, 121, 121);
-    nodeOptions.add(nodeGenLevelModelBtn);
-
-    nodeGenOnOffModelBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
-    nodeGenOnOffModelBtn.setBitmapXY(0, 0);
-    nodeGenOnOffModelBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_TOGGLE_TOGGLE_OFF_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_3DA9FC_SVG_ID));
-    nodeGenOnOffModelBtn.setIconXY(36, 36);
-    nodeGenOnOffModelBtn.setText(TypedText(T___SINGLEUSE_N5NA));
-    nodeGenOnOffModelBtn.setTextPosition(0, 97, 121, 121);
-    nodeGenOnOffModelBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    nodeGenOnOffModelBtn.setPosition(0, 0, 121, 121);
-    nodeOptions.add(nodeGenOnOffModelBtn);
-
     add(nodeOptions);
+
+    bottomMenu1.setXY(0, 222);
+    add(bottomMenu1);
 }
 
 NodeProperScreenViewBase::~NodeProperScreenViewBase()
@@ -107,5 +49,5 @@ NodeProperScreenViewBase::~NodeProperScreenViewBase()
 
 void NodeProperScreenViewBase::setupScreen()
 {
-
+    bottomMenu1.initialize();
 }

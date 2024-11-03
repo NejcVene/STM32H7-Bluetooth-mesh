@@ -76,7 +76,7 @@ void NC_Init(void) {
 		.nodeName = "My node",
 		.address = {
 			.nodeAddress = 43,
-			.nodeModels = 0,
+			.nodeModels = 1,
 			.nodeFeatures = 0,
 			.uuid =  "0753"
 		}
@@ -158,6 +158,18 @@ Node_NetworkAddress_t *NC_GetNodeFromAddress(uint32_t address) {
 	for (int i = 0; i<5; i++) {
 		if (nodeAddresses[i].nodeAddress == address) {
 			return &nodeAddresses[i];
+		}
+	}
+
+	return NULL;
+
+}
+
+Node_Config_t *NC_GetConfigNodeFromAddress(uint32_t nodeAddress) {
+
+	for (int i = 0; i<5; i++) {
+		if (nodeConfigs[i].address.nodeAddress == nodeAddress) {
+			return &nodeConfigs[i];
 		}
 	}
 

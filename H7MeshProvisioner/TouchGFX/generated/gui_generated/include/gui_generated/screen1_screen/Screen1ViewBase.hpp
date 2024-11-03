@@ -11,6 +11,9 @@
 #include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
+#include <gui/containers/BottomMenu.hpp>
+#include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -59,12 +62,21 @@ protected:
     touchgfx::Box __background;
     touchgfx::TiledImage tiledImage1;
     touchgfx::ScrollableContainer scrollableContainer1;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  undefinedBtn;
     touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  bathroomBtn;
     touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  bedroomBtn;
     touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  livingRoomBtn;
     touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  kitchenBtn;
     touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  allDevicesBtn;
+    BottomMenu bottomMenu1;
+    touchgfx::Container nodeTitle;
+    touchgfx::Box box1;
+    touchgfx::TextAreaWithOneWildcard menuName;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t MENUNAME_SIZE = 30;
+    touchgfx::Unicode::UnicodeChar menuNameBuffer[MENUNAME_SIZE];
 
 private:
 

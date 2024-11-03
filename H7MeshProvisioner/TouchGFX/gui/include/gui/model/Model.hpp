@@ -62,6 +62,18 @@ public:
 
     }
 
+    void GUI_SetNodeAddress(int nodeAddress) {
+
+    	this->nodeAddress = nodeAddress;
+
+    }
+
+    uint32_t GUI_GetNodeAddress() {
+
+    	return this->nodeAddress;
+
+    }
+
 
 
     void GUI_SendCommand(CMD_CommandGet_t *cmd);
@@ -71,6 +83,7 @@ protected:
     Node_Config_t *deviceToConfigure;
     NC_MaskedFeatures *allModels;
     uint8_t roomBitmask;
+    uint32_t nodeAddress;
     char roomName[30];
 };
 

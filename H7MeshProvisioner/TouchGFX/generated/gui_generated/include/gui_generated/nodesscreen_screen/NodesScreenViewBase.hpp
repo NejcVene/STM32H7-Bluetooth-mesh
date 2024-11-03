@@ -13,6 +13,7 @@
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <gui/containers/BottomMenu.hpp>
 
 class NodesScreenViewBase : public touchgfx::View<NodesScreenPresenter>
 {
@@ -43,6 +44,7 @@ protected:
     touchgfx::Container noNodesInRoom;
     touchgfx::TiledImage tiledImage3;
     touchgfx::TextArea textArea1;
+    BottomMenu bottomMenu1;
 
     /*
      * Wildcard Buffers

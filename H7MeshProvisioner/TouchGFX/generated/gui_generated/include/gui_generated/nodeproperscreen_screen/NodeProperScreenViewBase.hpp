@@ -12,7 +12,7 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
+#include <gui/containers/BottomMenu.hpp>
 
 class NodeProperScreenViewBase : public touchgfx::View<NodeProperScreenPresenter>
 {
@@ -32,15 +32,10 @@ protected:
     touchgfx::Box __background;
     touchgfx::TiledImage tiledImage1;
     touchgfx::Container nodeTitle;
-    touchgfx::TiledImage tiledImage2;
+    touchgfx::Box box1;
     touchgfx::TextAreaWithOneWildcard nodeName;
     touchgfx::ScrollableContainer nodeOptions;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  nodeDeleteBtn;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  nodeConfigBtn;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  nodeLightModelBtn;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  nodeSensorModelBtn;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  nodeGenLevelModelBtn;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  nodeGenOnOffModelBtn;
+    BottomMenu bottomMenu1;
 
     /*
      * Wildcard Buffers

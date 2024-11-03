@@ -39,7 +39,7 @@ void NodesScreenView::tearDownScreen()
 
 void NodesScreenView::handleButtonClicked(int instanceID) {
 
-	int a = instanceID;
+	presenter->GUI_SaveNodeAddress(instanceID);
 	goToNodeProperScreen();
 
 }
