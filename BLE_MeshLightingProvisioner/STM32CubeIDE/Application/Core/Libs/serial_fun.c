@@ -75,13 +75,19 @@ MOBLE_RESULT _PublicationSet(uint16_t elementAddress, uint16_t publisAddress, ui
 
 void SF_Process(char *receiveBuffer, uint16_t receiveSize) {
 
+	int flag;
 	char resultBuffer[PAC_MAX_PAYLOAD] = {0};
 	if (!strncmp(receiveBuffer + FUN_INDENTIFIER_LEN + 1, "Unprovision", strlen("Unprovision"))) {
 		SF_UnprovisionEmbedded(resultBuffer);
 	} else if (!strncmp(receiveBuffer + FUN_INDENTIFIER_LEN + 1, "IsUnprovisioned", strlen("IsUnprovisioned"))) {
 		SF_IsEmbeddedProvisioned(resultBuffer);
 	} else if (!strncmp(receiveBuffer + FUN_INDENTIFIER_LEN + 1, "PUBSUB", strlen("PUBSUB"))) {
-		SF_PublishSubscribe(receiveBuffer, resultBuffer);
+		sscanf(receiveBuffer, "%*s %d", &flag);
+		if (flag) {
+			SF_PublishSubscribe(receiveBuffer, resultBuffer);
+		} else {
+			SF_SubscriptionRemove(receiveBuffer, resultBuffer);
+		}
 	} else {
 		strncat(resultBuffer, receiveBuffer, receiveSize);
 		strcat(resultBuffer, ": NONE");
@@ -109,6 +115,7 @@ void SF_IsEmbeddedProvisioned(char *resultBuffer) {
 
 void SF_PublishSubscribe(char *receiveBuffer, char *resultBuffer) {
 
+	int flag;
 	static int elementAddress;
 	static int address;
 	static int modelIndentifier;
@@ -123,7 +130,7 @@ void SF_PublishSubscribe(char *receiveBuffer, char *resultBuffer) {
 		case SF_SUBSCRIBE_ADD:
 			Appli_SFSetStatus(SF_CALLBACK_IN_PROGRESS);
 			Appli_SFSetAccess(SF_ENABLE_ACCESS);
-			sscanf(receiveBuffer, "%*s %d %d %d", &elementAddress, &address, &modelIndentifier);
+			sscanf(receiveBuffer, "%*s %d %d %d %d", &flag, &elementAddress, &address, &modelIndentifier);
 			if ((status = _SubscriptionAdd(elementAddress, address, modelIndentifier)) == MOBLE_RESULT_SUCCESS) {
 				msgInfo.numOfTx = 0;
 				msgInfo.messageSentTime = HAL_GetTick();
@@ -166,6 +173,11 @@ void SF_SubscriptionRemove(char *receiveBuffer, char *resultBuffer) {
 	// writing this, the mesh API for the embedded provisioner does
 	// not support said feature - for the time being this will be
 	// spoofed by H7 in the gui
+
+	MOBLE_RESULT status = MOBLE_RESULT_SUCCESS;
+
+	sprintf(resultBuffer, "BLEMesh_PubSub: %d", status);
+	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, strlen(resultBuffer) + 1);
 
 }
 

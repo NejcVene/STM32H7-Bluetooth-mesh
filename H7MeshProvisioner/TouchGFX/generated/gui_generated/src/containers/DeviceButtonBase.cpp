@@ -11,7 +11,7 @@ DeviceButtonBase::DeviceButtonBase()
     setWidth(112);
     setHeight(112);
     interactBtn.setXY(0, 0);
-    interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID));
+    interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID));
     add(interactBtn);
 
     icon.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_LIGHTBULB_OUTLINE_50_50_FFFFFE_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_FFFFFE_SVG_ID));

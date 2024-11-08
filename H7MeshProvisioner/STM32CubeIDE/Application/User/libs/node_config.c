@@ -63,9 +63,18 @@ static uint32_t numOfConfiguredNodes;
 char nodeModelsStr[10];
 char nodeFeaturesStr[5];
 
+#ifdef _DEBUG
+extern UART_HandleTypeDef huart3;
+static inline void debugMessage(char *message) {
+
+	HAL_UART_Transmit(&huart3, (uint8_t *) message, strlen(message), 3000);
+
+}
+#endif
+
 void NC_Init(void) {
 
-	modelsData = HT_Create(7, 11);
+//	modelsData = HT_Create(7, 11);
 	for (int i = 0; i<5; i++) {
 		nodeAddresses[i] = CLEAR_NODE_ADDRESSES(NODE_DEF_VAL);
 		nodeConfigs[i] = CLEAR_NODE_CONFIG();
@@ -76,11 +85,21 @@ void NC_Init(void) {
 		.nodeName = "My node",
 		.address = {
 			.nodeAddress = 43,
-			.nodeModels = 1,
+			.nodeModels = 87,
 			.nodeFeatures = 0,
 			.uuid =  "0753"
 		}
-};
+	};
+	nodeConfigs[1] = (Node_Config_t) {
+			.subscriptions = 5,
+			.nodeName = "My node2",
+			.address = {
+				.nodeAddress = 44,
+				.nodeModels = 87,
+				.nodeFeatures = 0,
+				.uuid =  "0753"
+			}
+	};
 #endif
 //	for (int i = 0; models[i].name != NULL; i++) {
 //		HT_Insert(modelsData, (int) models[i].name, &models[i]);
@@ -129,11 +148,32 @@ void NC_ReportItems(uint8_t uuid, NC_MaskedFeatures *items, uint16_t *report) {
 
 }
 
-void NC_AddSubscription(Node_Config_t *node, uint32_t address) {
+void NC_AddSubscription(Node_Config_t *node, uint16_t bitmask) {
 
+#ifdef _DEBUG
+	char buffer[100];
+	sprintf(buffer, "Sub add: %d\r\n", bitmask);
+	debugMessage(buffer);
+#endif
 	for (int i = 0; groupAddress[i].name != NULL; i++) {
-		if (groupAddress[i].value == address) {
+		if (groupAddress[i].bitmask == bitmask) {
 			node->subscriptions |= groupAddress[i].bitmask;
+			return;
+		}
+	}
+
+}
+
+void NC_RemoveSubscription(Node_Config_t *node, uint16_t bitmask) {
+
+#ifdef _DEBUG
+	char buffer[100];
+	sprintf(buffer, "Sub remove: %d\r\n", bitmask);
+	debugMessage(buffer);
+#endif
+	for (int i = 0; groupAddress[i].name != NULL; i++) {
+		if (groupAddress[i].bitmask == bitmask) {
+			node->subscriptions &= ~groupAddress[i].bitmask;
 			return;
 		}
 	}
@@ -195,15 +235,21 @@ Node_Config_t *NC_GetNodeConfigArray(void) {
 
 }
 
-uint32_t NC_GetNumOfConfModels(void) {
+uint32_t NC_GetNumOfConfNodes(void) {
 
 	return numOfConfiguredNodes;
 
 }
 
-void NC_IncrementNumOfConfModels(void) {
+void NC_IncrementNumOfConfNodes(void) {
 
 	numOfConfiguredNodes++;
+
+}
+
+void NC_DecrementNumOfConfNodes(void) {
+
+	numOfConfiguredNodes--;
 
 }
 
@@ -299,23 +345,63 @@ void NC_AddModel(Node_NetworkAddress_t *node, uint32_t modelBitmask) {
 
 void NC_FillMissingNodeModels(Node_NetworkAddress_t *node) {
 
-	for (int i = 0; models[i].name != NULL; i++) {
-		if (models[i].bitmask & node->nodeModels) {
-			switch (models[i].bitmask) {
-				case NC_SENSOR_MODEL:
-					NC_AddModel(node, NC_SENSOR_SETUP_MODEL);
-					break;
-				case NC_LIGH_LIGHTNESS_MODEL:
-					NC_AddModel(node, NC_LIGH_LIGHTNESS_SETUP_MODEL);
-					break;
-				case NC_GENERIC_POWER_ON_OFF_MODEL:
-					NC_AddModel(node, NC_GENERIC_POWER_SETUP_MODEL);
-					break;
-				default:
-					break;
+	if (node->nodeModels & NC_SENSOR_MODEL) {
+		NC_AddModel(node, NC_SENSOR_SETUP_MODEL);
+	}
+	if (node->nodeModels & NC_LIGH_LIGHTNESS_MODEL) {
+		NC_AddModel(node, NC_LIGH_LIGHTNESS_SETUP_MODEL);
+	}
+	if (node->nodeModels & NC_GENERIC_POWER_ON_OFF_MODEL) {
+		NC_AddModel(node, NC_GENERIC_POWER_SETUP_MODEL);
+	}
+
+
+}
+
+void NC_DeleteConfiguredNode(uint32_t nodeAddress) {
+
+	if (NC_GetNumOfConfNodes() > 0) {
+		for (int i = 0; i<5; i++) {
+			if (nodeConfigs[i].address.nodeAddress == nodeAddress) {
+				nodeConfigs[i] = CLEAR_NODE_CONFIG();
+				NC_DecrementNumOfConfNodes();
+				return;
 			}
 		}
 	}
+
+}
+
+int NC_ProvisionNode(uint32_t nodeAddress, uint32_t assignedNodeAddress) {
+
+	Node_NetworkAddress_t *prvnNode = NC_GetNodeFromAddress(nodeAddress);
+
+	if (NC_GetNumOfConfNodes() < 5) {
+		for (int i = 0; i<5; i++) {
+			if (nodeConfigs[i].address.nodeAddress == NODE_DEF_VAL) {
+				nodeConfigs[i].address = *prvnNode;
+				nodeConfigs[i].address.nodeAddress = assignedNodeAddress;
+				NC_AddSubscription(&nodeConfigs[i], GROUP_ADDRESS_DEFAULT_BIT);
+				NC_FillMissingNodeModels(&nodeConfigs[i].address);
+				NC_IncrementNumOfConfNodes();
+				return i;
+			}
+		}
+	}
+
+	return -1;
+
+}
+
+uint32_t NC_GetValueFromBitmask(NC_MaskedFeatures *maskedFeatures, uint16_t bitmask) {
+
+	for (int i = 0; maskedFeatures[i].name != NULL; i++) {
+		if (maskedFeatures[i].bitmask == bitmask) {
+			return maskedFeatures[i].value;
+		}
+	}
+
+	return 0;
 
 }
 

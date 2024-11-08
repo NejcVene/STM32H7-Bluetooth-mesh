@@ -9,11 +9,11 @@
 #include <gui/nodesscreen_screen/NodesScreenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
-#include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
+#include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <gui/containers/BottomMenu.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class NodesScreenViewBase : public touchgfx::View<NodesScreenPresenter>
 {
@@ -37,20 +37,20 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::TiledImage tiledImage1;
-    touchgfx::Container roomTitle;
-    touchgfx::TiledImage tiledImage2;
-    touchgfx::TextAreaWithOneWildcard roomTitleText;
     touchgfx::ScrollableContainer roomNodesContainer;
     touchgfx::Container noNodesInRoom;
-    touchgfx::TiledImage tiledImage3;
+    touchgfx::Box box1;
     touchgfx::TextArea textArea1;
     BottomMenu bottomMenu1;
+    touchgfx::Container nodeTitle;
+    touchgfx::Box box1_1;
+    touchgfx::TextAreaWithOneWildcard menuName;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t ROOMTITLETEXT_SIZE = 30;
-    touchgfx::Unicode::UnicodeChar roomTitleTextBuffer[ROOMTITLETEXT_SIZE];
+    static const uint16_t MENUNAME_SIZE = 30;
+    touchgfx::Unicode::UnicodeChar menuNameBuffer[MENUNAME_SIZE];
 
 private:
 

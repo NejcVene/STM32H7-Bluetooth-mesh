@@ -41,6 +41,11 @@ void Model::tick() {
 						modelListener->GUI_ConfShowPopup();
 					}
 					break;
+				case CMD_MESH_ATCL_UNPROV:
+					if (cmdResult->param[0].value.i) {
+						modelListener->GUI_ChangeScreenAfterUnprov();
+					}
+					break;
 				default:
 					break;
 			}

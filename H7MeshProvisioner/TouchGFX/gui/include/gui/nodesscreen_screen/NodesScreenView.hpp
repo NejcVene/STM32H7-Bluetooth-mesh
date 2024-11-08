@@ -15,9 +15,9 @@ public:
 
     void GUI_SetTextRoomTitle(const char *text) {
 
-    	touchgfx::Unicode::strncpy(roomTitleTextBuffer, text, ROOMTITLETEXT_SIZE);
-    	roomTitleText.resizeToCurrentText();
-    	roomTitleText.invalidate();
+    	touchgfx::Unicode::strncpy(menuNameBuffer, text, MENUNAME_SIZE);
+    	menuName.resizeToCurrentText();
+    	menuName.invalidate();
 
     }
 

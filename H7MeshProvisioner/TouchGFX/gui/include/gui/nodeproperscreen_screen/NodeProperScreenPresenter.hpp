@@ -33,6 +33,26 @@ public:
 
     }
 
+    void GUI_SendCommand(CMD_CommandGet_t *cmd) {
+
+    	model->GUI_SendCommand(cmd);
+
+    }
+
+    void GUI_SetDeviceToConfigure(Node_Config_t *node) {
+
+    	model->GUI_SetDeviceToConfigure(node);
+
+    }
+
+    void GUI_SetAllGroupAddress(NC_MaskedFeatures *allGroupAddress) {
+
+    	model->GUI_SetAllGroupAddress(allGroupAddress);
+
+    }
+
+    virtual void GUI_ChangeScreenAfterUnprov();
+
 private:
     NodeProperScreenPresenter();
 

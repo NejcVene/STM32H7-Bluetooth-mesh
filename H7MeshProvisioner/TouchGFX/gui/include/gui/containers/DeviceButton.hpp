@@ -18,7 +18,9 @@ public:
 		GENERIC_LEVEL,
 		SENSOR,
 		LIGHT_LIGHTNESS,
-		GENERIC_POWER
+		GENERIC_POWER,
+		CONFIGURE,
+		UNPROVISION
     };
 
     enum STATE {
@@ -79,6 +81,16 @@ public:
     					Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_LIGHTBULB_OUTLINE_50_50_FFFFFE_SVG_ID),
 						Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_LIGHTBULB_OUTLINE_50_50_FFFFFE_SVG_ID));
     			break;
+    		case CONFIGURE: // BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_APPLICATIONS_50_50_FFFFFE_SVG_ID
+    			icon.setIconBitmaps(
+    					Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_APPLICATIONS_50_50_FFFFFE_SVG_ID),
+						Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_APPLICATIONS_50_50_FFFFFE_SVG_ID));
+    			break;
+    		case UNPROVISION: // BITMAP_ICON_THEME_IMAGES_ACTION_DELETE_OUTLINE_50_50_FFFFFE_SVG_ID
+    			icon.setIconBitmaps(
+    					Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DELETE_OUTLINE_50_50_FFFFFE_SVG_ID),
+						Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DELETE_OUTLINE_50_50_FFFFFE_SVG_ID));
+    			break;
     		default:
     			break;
     	}
@@ -91,6 +103,7 @@ public:
     	this->state = state;
     	switch (type) {
     		case GENERIC_ON_OFF:
+			case GENERIC_POWER:
     			if (state) {
 					GUI_SetTextStatus("On");
 					interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID));
@@ -98,6 +111,26 @@ public:
 					GUI_SetTextStatus("Off");
 					interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID));
     			}
+    			break;
+    		case GENERIC_LEVEL:
+    			if (state) {
+    				interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID));
+    			} else {
+    				interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID));
+    			}
+    			break;
+    		case SENSOR:
+    			interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID));
+    			break;
+    		case LIGHT_LIGHTNESS:
+    			if (state) {
+    				interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID));
+    			} else {
+    				interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID));
+    			}
+    		case CONFIGURE:
+    			break;
+    		case UNPROVISION:
     			break;
     		default:
     			break;
@@ -109,6 +142,12 @@ public:
     STATE GUI_GetButtonState() {
 
     	return this->state;
+
+    }
+
+    int GUI_GetInstanceID() {
+
+    	return this->instanceID;
 
     }
 

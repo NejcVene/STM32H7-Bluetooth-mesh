@@ -48,9 +48,10 @@ private:
     touchgfx::Callback<ConfigureNodeScreenView, int> buttonClickCallback;
     void handleButtonClicked(int instanceID);
     Node_Config_t *configNode;
-    static Node_SubscriptionParam_t toSubb;
+    Node_SubscriptionParam_t toSubb = {0};
     static CMD_CommandGet_t *cmd;
     NC_MaskedFeatures *allGroupAddress;
+    int setupEnd;
 
 };
 

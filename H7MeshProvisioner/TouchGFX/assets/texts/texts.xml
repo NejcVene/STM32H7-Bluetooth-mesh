@@ -6,6 +6,12 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_P3DX" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_VM6J" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Room: &lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_8EB0" Alignment="Center" TypographyId="Text16px">
         <Translation Language="GB">Bathroom</Translation>
       </Text>
@@ -60,14 +66,8 @@
       <Text Id="__SingleUse_319A" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">No devices in this room</Translation>
       </Text>
-      <Text Id="__SingleUse_3FEL" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Use</Translation>
-      </Text>
-      <Text Id="__SingleUse_GT6L" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">None</Translation>
-      </Text>
-      <Text Id="__SingleUse_PGOV" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Room: &lt;value&gt;</Translation>
+      <Text Id="__SingleUse_3FEL" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">Options</Translation>
       </Text>
       <Text Id="__SingleUse_ZQHI" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Liv room grp addr</Translation>

@@ -33,7 +33,7 @@ NodeProperScreenViewBase::NodeProperScreenViewBase()
 
     add(nodeTitle);
 
-    nodeOptions.setPosition(0, 20, 480, 202);
+    nodeOptions.setPosition(0, 30, 480, 182);
     nodeOptions.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     nodeOptions.setScrollbarsAlpha(255);
     add(nodeOptions);
@@ -50,4 +50,20 @@ NodeProperScreenViewBase::~NodeProperScreenViewBase()
 void NodeProperScreenViewBase::setupScreen()
 {
     bottomMenu1.initialize();
+}
+
+void NodeProperScreenViewBase::goToConfigureScreen()
+{
+    //GUI_SwitchToNodeConfigScreen
+    //When goToConfigureScreen is called change screen to ConfigureNodeScreen
+    //Go to ConfigureNodeScreen with screen transition towards East
+    application().gotoConfigureNodeScreenScreenSlideTransitionEast();
+}
+
+void NodeProperScreenViewBase::goToScreen1()
+{
+    //GUI_SwitchToScreen1
+    //When goToScreen1 is called change screen to Screen1
+    //Go to Screen1 with screen transition towards East
+    application().gotoScreen1ScreenSlideTransitionEast();
 }

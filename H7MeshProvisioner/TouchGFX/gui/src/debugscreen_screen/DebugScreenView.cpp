@@ -48,13 +48,13 @@ void DebugScreenView::GUI_DebugKitGrpAddr() {
 
 void DebugScreenView::GUI_DebugLivRoomGrpAddr() {
 
-	this->cmd = CMD_CreateCommandGet(CMD_MESH_ATCL_GENECI_ON_OFF_ACK_OFF,
-			    					NULL,
-									NULL,
-									0,
-									NULL,
-									NULL);
-	presenter->GUI_SendCommand(this->cmd);
+//	this->cmd = CMD_CreateCommandGet(CMD_MESH_ATCL_GENECI_ON_OFF_ACK_OFF,
+//			    					NULL,
+//									NULL,
+//									0,
+//									NULL,
+//									NULL);
+//	presenter->GUI_SendCommand(this->cmd);
 
 }
 

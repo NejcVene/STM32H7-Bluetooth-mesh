@@ -17,37 +17,19 @@ NodesScreenViewBase::NodesScreenViewBase()
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    roomTitle.setPosition(10, 10, 460, 60);
-    tiledImage2.setBitmap(touchgfx::Bitmap(BITMAP_H7LINEMEDIUM_ID));
-    tiledImage2.setPosition(0, 0, 460, 60);
-    tiledImage2.setOffset(0, 0);
-    roomTitle.add(tiledImage2);
-
-    roomTitleText.setXY(10, 16);
-    roomTitleText.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    roomTitleText.setLinespacing(0);
-    Unicode::snprintf(roomTitleTextBuffer, ROOMTITLETEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_GT6L).getText());
-    roomTitleText.setWildcard(roomTitleTextBuffer);
-    roomTitleText.resizeToCurrentText();
-    roomTitleText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PGOV));
-    roomTitle.add(roomTitleText);
-
-    add(roomTitle);
-
-    roomNodesContainer.setPosition(10, 80, 460, 182);
+    roomNodesContainer.setPosition(10, 30, 460, 182);
     roomNodesContainer.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     roomNodesContainer.setScrollbarsAlpha(255);
     add(roomNodesContainer);
 
     noNodesInRoom.setPosition(10, 80, 460, 60);
     noNodesInRoom.setVisible(false);
-    tiledImage3.setBitmap(touchgfx::Bitmap(BITMAP_H7LINEMEDIUM_ID));
-    tiledImage3.setPosition(0, 0, 460, 60);
-    tiledImage3.setOffset(0, 0);
-    noNodesInRoom.add(tiledImage3);
+    box1.setPosition(0, 0, 460, 60);
+    box1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
+    noNodesInRoom.add(box1);
 
     textArea1.setXY(88, 16);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_319A));
     noNodesInRoom.add(textArea1);
@@ -56,6 +38,22 @@ NodesScreenViewBase::NodesScreenViewBase()
 
     bottomMenu1.setXY(0, 222);
     add(bottomMenu1);
+
+    nodeTitle.setPosition(0, 0, 480, 20);
+    box1_1.setPosition(0, 0, 480, 20);
+    box1_1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
+    nodeTitle.add(box1_1);
+
+    menuName.setXY(10, 0);
+    menuName.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
+    menuName.setLinespacing(0);
+    Unicode::snprintf(menuNameBuffer, MENUNAME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_P3DX).getText());
+    menuName.setWildcard(menuNameBuffer);
+    menuName.resizeToCurrentText();
+    menuName.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VM6J));
+    nodeTitle.add(menuName);
+
+    add(nodeTitle);
 }
 
 NodesScreenViewBase::~NodesScreenViewBase()

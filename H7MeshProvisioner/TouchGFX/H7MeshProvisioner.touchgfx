@@ -1197,43 +1197,10 @@
             "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
           },
           {
-            "Type": "Container",
-            "Name": "roomTitle",
-            "X": 10,
-            "Y": 10,
-            "Width": 460,
-            "Height": 60,
-            "Components": [
-              {
-                "Type": "TiledImage",
-                "Name": "tiledImage2",
-                "Width": 460,
-                "Height": 60,
-                "FileName": "H7LineMedium.png"
-              },
-              {
-                "Type": "TextArea",
-                "Name": "roomTitleText",
-                "X": 10,
-                "Y": 16,
-                "Width": 150,
-                "Height": 29,
-                "TextId": "__SingleUse_PGOV",
-                "TextRotation": "0",
-                "AutoSize": true,
-                "Wildcard1": {
-                  "TextId": "__SingleUse_GT6L",
-                  "UseBuffer": true,
-                  "BufferSize": 30
-                }
-              }
-            ]
-          },
-          {
             "Type": "ScrollableContainer",
             "Name": "roomNodesContainer",
             "X": 10,
-            "Y": 80,
+            "Y": 30,
             "Width": 460,
             "Height": 182,
             "HorizontalScrollEnabled": true,
@@ -1252,11 +1219,15 @@
             "Visible": false,
             "Components": [
               {
-                "Type": "TiledImage",
-                "Name": "tiledImage3",
+                "Type": "Box",
+                "Name": "box1",
                 "Width": 460,
                 "Height": 60,
-                "FileName": "H7LineMedium.png"
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                }
               },
               {
                 "Type": "TextArea",
@@ -1267,6 +1238,11 @@
                 "Height": 29,
                 "TextId": "__SingleUse_319A",
                 "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
                 "AutoSize": true
               }
             ]
@@ -1278,6 +1254,45 @@
             "Width": 480,
             "Height": 50,
             "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "Container",
+            "Name": "nodeTitle",
+            "Width": 480,
+            "Height": 20,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box1_1",
+                "Width": 480,
+                "Height": 20,
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "menuName",
+                "X": 10,
+                "Width": 102,
+                "Height": 19,
+                "TextId": "__SingleUse_VM6J",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_P3DX",
+                  "UseBuffer": true,
+                  "BufferSize": 30
+                }
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -1354,9 +1369,9 @@
           {
             "Type": "ScrollableContainer",
             "Name": "nodeOptions",
-            "Y": 20,
+            "Y": 30,
             "Width": 480,
-            "Height": 202,
+            "Height": 182,
             "HorizontalScrollEnabled": true,
             "VerticalScrollEnabled": true,
             "ScrollbarsVisibleOnPressed": true,
@@ -1372,7 +1387,44 @@
             "CustomContainerDefinitionName": "BottomMenu"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SwitchToNodeConfigScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeProperScreen goToConfigureScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ConfigureNodeScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToScreen1",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeProperScreen goToScreen1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen1"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToConfigureScreen",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToScreen1",
+            "Description": "Called from user code to change screen"
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [
@@ -1384,11 +1436,15 @@
         "Height": 60,
         "Components": [
           {
-            "Type": "TiledImage",
-            "Name": "tiledImage1",
+            "Type": "Box",
+            "Name": "box1",
             "Width": 460,
             "Height": 60,
-            "FileName": "H7LineMedium.png"
+            "Color": {
+              "Red": 73,
+              "Green": 86,
+              "Blue": 101
+            }
           },
           {
             "Type": "TextArea",
@@ -1399,6 +1455,11 @@
             "Height": 29,
             "TextId": "__SingleUse_486T",
             "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_99CM",
@@ -1409,12 +1470,12 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "useNodeBtn",
-            "X": 337,
+            "X": 350,
             "Y": 5,
-            "Width": 110,
+            "Width": 100,
             "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_tiny_rounded_active.png",
+            "Pressed": "ButtonBackgroundPressedTiny.png",
+            "Released": "ButtonBackgroundTiny.png",
             "TextId": "__SingleUse_3FEL",
             "ReleasedColor": {
               "Red": 255,
@@ -1426,8 +1487,7 @@
               "Green": 255,
               "Blue": 255
             },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\tiny_rounded_active.json"
+            "TextRotation": "0"
           }
         ],
         "Interactions": []
@@ -1584,8 +1644,8 @@
             "Name": "interactBtn",
             "Width": 112,
             "Height": 112,
-            "Pressed": "ButtonBackgroundPressed.png",
-            "Released": "ButtonBackground.png"
+            "Pressed": "ButtonBackground.png",
+            "Released": "ButtonBackgroundPressed.png"
           },
           {
             "Type": "FlexButton",
@@ -1857,7 +1917,7 @@
       {
         "Name": "AllIcons",
         "Width": 480,
-        "Height": 128,
+        "Height": 156,
         "Components": [
           {
             "Type": "ButtonWithIcon",
@@ -1898,6 +1958,37 @@
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
             "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
             "IconReleased": "__generated\\icon_theme_images_toggle_toggle_off_50_50_FFFFFE.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon4",
+            "X": 240,
+            "Y": 50,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_settings_applications_50_50_FFFFFE.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon5",
+            "Y": 100,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_delete_outline_50_50_FFFFFE.svg.png",
             "IconX": 97,
             "IconHeight": 50,
             "IconWidth": 50,

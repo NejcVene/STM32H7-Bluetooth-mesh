@@ -46,7 +46,7 @@ static MOBLEUINT16 PrvndNodeAddress = 0;
 extern MOBLEUINT16 nodeAddressOffset;
 /* Private function prototypes -----------------------------------------------*/
 static MOBLE_RESULT SerialPrvn_ProvisionDevice(char *text);
-static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text);
+static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text, char *resultBuffer);
 static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, char *resultBuffer);
 /* Private functions ---------------------------------------------------------*/ 
 /**
@@ -109,7 +109,7 @@ void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *res
   else if (!strncmp(rcvdStringBuff+COMMAND_OFFSET, "UNPV",4))
   {
       
-    result = SerialPrvn_UnProvisionDevice(rcvdStringBuff+COMMAND_OFFSET);
+    result = SerialPrvn_UnProvisionDevice(rcvdStringBuff+COMMAND_OFFSET, resultBuffer);
       
   }
      /* Command to start the unprovisioned devices */
@@ -195,18 +195,20 @@ static MOBLE_RESULT SerialPrvn_ProvisionDevice(char *text)
 * @param  text: received array
 * @retval MOBLE_RESULT
 */  
-static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text)
+static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text, char *resultBuffer)
 {
   MOBLEINT16 na = 0;
   MOBLE_RESULT result = MOBLE_RESULT_SUCCESS;
   
   sscanf(text, "UNPV %hd", &na);  
+  strcat(resultBuffer, "ATEP UNPV: ");
   if(na>1)
   {
     result = ConfigClient_NodeReset(na);
   }
   else if(na == 1)
   {
+	  strcat(resultBuffer, "0");
     if(!BLEMesh_IsUnprovisioned())
     {
       BLEMesh_PrintStringCb("Provisioner unprovisioning ...\r\n");
@@ -220,6 +222,7 @@ static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text)
   else 
   {
     result = MOBLE_RESULT_INVALIDARG;
+    strcat(resultBuffer, "1");
   }
 
   return result;

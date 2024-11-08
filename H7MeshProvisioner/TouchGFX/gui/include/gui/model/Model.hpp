@@ -32,9 +32,21 @@ public:
 
     }
 
+    void GUI_SetDeviceToConfigure(Node_Config_t *node) {
+
+    	this->deviceToConfigure = node;
+
+    }
+
     NC_MaskedFeatures *GUI_GetAllModels() {
 
     	return allModels;
+
+    }
+
+    void GUI_SetAllGroupAddress(NC_MaskedFeatures *allGroupAddress) {
+
+    	this->allModels = allGroupAddress;
 
     }
 

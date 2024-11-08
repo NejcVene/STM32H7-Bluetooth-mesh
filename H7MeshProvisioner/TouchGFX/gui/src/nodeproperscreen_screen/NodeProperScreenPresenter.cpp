@@ -16,3 +16,9 @@ void NodeProperScreenPresenter::deactivate()
 {
 
 }
+
+void NodeProperScreenPresenter::GUI_ChangeScreenAfterUnprov() {
+
+	view.changeScreenAfterUnprov();
+
+}

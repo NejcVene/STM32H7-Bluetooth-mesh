@@ -19,6 +19,7 @@ public:
     virtual void GUI_ChangeScreen() {};
     virtual void GUI_ConfigureDevice() {};
     virtual void GUI_ConfShowPopup() {};
+    virtual void GUI_ChangeScreenAfterUnprov() {};
 
 protected:
     Model* model;

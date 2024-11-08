@@ -67,9 +67,14 @@ typedef struct {
 } NC_MaskedFeatures;
 
 typedef struct {
+	uint8_t subbTo; // flag to tell if the address is to be subsribed (1) or unsubscribed (0)
+	uint32_t groupAddress;
+} Node_SubbedAddress_t;
+
+typedef struct {
 	uint8_t numOfSubs;
 	uint32_t nodeAddress;
-	uint32_t subbedAddresses[5];
+	Node_SubbedAddress_t subbedAddresses[5];
 } Node_SubscriptionParam_t;
 
 void NC_Init(void);
@@ -79,9 +84,11 @@ Node_NetworkAddress_t *NC_GetNodeFromAddress(uint32_t nodeAddress);
 Node_NetworkAddress_t *NC_GetNodeNetworkAddressArray(void);
 Node_NetworkAddress_t *NC_GetNodeNetworkAddress(int index);
 Node_Config_t *NC_GetNodeConfigArray(void);
-uint32_t NC_GetNumOfConfModels(void);
-void NC_IncrementNumOfConfModels(void);
-void NC_AddSubscription(Node_Config_t *node, uint32_t address);
+uint32_t NC_GetNumOfConfNodes(void);
+void NC_IncrementNumOfConfNodes(void);
+void NC_DecrementNumOfConfNodes(void);
+void NC_AddSubscription(Node_Config_t *node, uint16_t bitmask);
+void NC_RemoveSubscription(Node_Config_t *node, uint16_t bitmask);
 int NC_GetNumOfModels(void);
 NC_MaskedFeatures *NC_GetAllModels(void);
 NC_MaskedFeatures *NC_GetAllFeatures(void);
@@ -93,6 +100,9 @@ char *NC_GetNodeFeatureString(uint16_t nodeFeatures);
 void NC_FillMissingNodeModels(Node_NetworkAddress_t *node);
 void NC_AddModel(Node_NetworkAddress_t *node, uint32_t modelBitmask);
 Node_Config_t *NC_GetConfigNodeFromAddress(uint32_t nodeAddress);
+void NC_DeleteConfiguredNode(uint32_t nodeAddress);
+int NC_ProvisionNode(uint32_t nodeAddress, uint32_t assignedNodeAddress);
+uint32_t NC_GetValueFromBitmask(NC_MaskedFeatures *maskedFeatures, uint16_t bitmask);
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 //void NC_ReadNodeFromNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 

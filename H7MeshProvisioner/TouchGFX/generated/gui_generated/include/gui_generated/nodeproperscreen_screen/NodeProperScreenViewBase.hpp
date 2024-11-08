@@ -21,6 +21,12 @@ public:
     virtual ~NodeProperScreenViewBase();
     virtual void setupScreen();
 
+    /*
+     * Custom Actions
+     */
+    virtual void goToConfigureScreen();
+    virtual void goToScreen1();
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());

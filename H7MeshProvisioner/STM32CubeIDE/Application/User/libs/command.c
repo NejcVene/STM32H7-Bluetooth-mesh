@@ -16,6 +16,8 @@ void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *gu
 CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_GenericOnOff(char *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_NotifyUnprovision(char *buffer, CMD_CommandGet_t *guiCmd);
 
 CMD_MeshCommand_t defineRootNetworkNode = {
 		.command = "ATEP ROOT",
@@ -52,22 +54,22 @@ CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn = {
 		.CMD_Execute = NULL
 };
 
-CMD_MeshCommand_t genericOnOffSetAck = { // currently hard-coded
-		.command = "ATCL c001 8202 01 00",
-		.commandType = PRO_MSG_TYPE_UNACK,
-		.CMD_Setup = NULL,
-		.CMD_Execute = NULL
+CMD_MeshCommand_t unprovisionNetworkDevice = {
+		.command = "ATEP UNPV %d",
+		.commandType = PRO_MSG_TYPE_ACK,
+		.CMD_Setup = CMD_GenericFormatCommand,
+		.CMD_Execute = CMD_NotifyUnprovision
 };
 
-CMD_MeshCommand_t genericOnOffSetAckOff = { // currently hard-coded
-		.command = "ATCL c001 8202 00 00", // c000 for group address
+CMD_MeshCommand_t genericOnOffSetAck = { // currently hard-coded
+		.command = "ATCL %s 8202 %s 00",
 		.commandType = PRO_MSG_TYPE_UNACK,
-		.CMD_Setup = NULL,
+		.CMD_Setup = CMD_GenericFormatCommand,
 		.CMD_Execute = NULL
 };
 
 CMD_MeshCommand_t genericOnOffGet = {
-		.command = "ATCL 0002 8201",
+		.command = "ATCL %s 8201",
 		.commandType = PRO_MSG_TYPE_UNACK,
 		.CMD_Setup = NULL,
 		.CMD_Execute = NULL
@@ -87,22 +89,8 @@ CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 		.CMD_Execute = NULL
 };
 
-CMD_MeshCommand_t subscriptionAdd = {
-		.command = "BLEMesh_SubsAdd %d %d %d",
-		.commandType = PRO_MSG_TYPE_OTHER,
-		.CMD_Setup = CMD_SetupConfig,
-		.CMD_Execute = CMD_SubsAdd
-};
-
-CMD_MeshCommand_t publicationSet = {
-		.command = "BLEMesh_ModelSet %d %d %d",
-		.commandType = PRO_MSG_TYPE_OTHER,
-		.CMD_Setup = CMD_SetupConfig,
-		.CMD_Execute = NULL
-};
-
 CMD_MeshCommand_t pubSetSubAdd = {
-		.command = "BLEMesh_PubSub %d %d %d",
+		.command = "BLEMesh_PubSub %d %d %d %d",
 		.commandType = PRO_MSG_TYPE_OTHER,
 		.CMD_Setup = CMD_SetupConfig,
 		.CMD_Execute = CMD_SubsAdd
@@ -210,6 +198,10 @@ void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_Command
 			t += 2;
 		}
 	}
+	// copy remaining characters (if there are any)
+	while (*t) {
+		*output++ = *t++;
+	}
 	*output = '\0';
 
 }
@@ -218,7 +210,8 @@ void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *gu
 
 	static int isAllocated = 0;
 	Node_SubscriptionParam_t *toSubb = (Node_SubscriptionParam_t *) guiCmd->param[0].value.voidPtr;
-	Node_Config_t *node = (Node_Config_t *) guiCmd->param[1].value.voidPtr;
+	Node_Config_t *node = NC_GetConfigNodeFromAddress(guiCmd->param[1].value.i);
+	NC_MaskedFeatures *groupAddress = NC_GetAllGroupAddresses();
 	char *output = buffer;
 	const char *t = cmdTemplate;
 	int numOfModels = NC_GetPopCount(node->address.nodeModels);
@@ -231,7 +224,10 @@ void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *gu
 	}
 	if (i < toSubb->numOfSubs) {
 		if (j < numOfModels) {
-			sprintf(output, t, node->address.nodeAddress, toSubb->subbedAddresses[i], allModels[j].value);
+			sprintf(output, t, toSubb->subbedAddresses[i].subbTo,
+							   node->address.nodeAddress,
+							   NC_GetValueFromBitmask(groupAddress, toSubb->subbedAddresses[i].groupAddress),
+							   allModels[j].value);
 			j++;
 		}
 		if (j == numOfModels) {
@@ -244,6 +240,7 @@ void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *gu
 		j = 0;
 		if (isAllocated) {
 			vPortFree(allModels);
+			isAllocated = 0;
 		}
 	}
 
@@ -257,25 +254,21 @@ CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd) {
 	int arrayLength[] = {1, 6};
 	size_t sizes[] = {sizeof(Node_Config_t), sizeof(NC_MaskedFeatures)};
 	CMD_CommandGet_t *cmdRes = NULL;
-	Node_NetworkAddress_t *prvnNode = NC_GetNodeFromAddress(guiCmd->param[0].value.i);
 	Node_Config_t *configNodes = NC_GetNodeConfigArray();
 	uint32_t assignedNodeAddress = 0;
 
 	sscanf(buffer, "%ld", &assignedNodeAddress);
-	NC_IncrementNumOfConfModels();
-	index = NC_GetNumOfConfModels() - 1;
-	configNodes[index].address = *prvnNode;
-	configNodes[index].address.nodeAddress = assignedNodeAddress;
-	NC_AddSubscription(&configNodes[index], GROUP_ADDRESS_DEFAULT);
-	NC_FillMissingNodeModels(&configNodes[index].address);
-	paramValue[0] = (void *) &configNodes[index];
-	paramValue[1] = (void *) NC_GetAllGroupAddresses();
-	cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
-										types,
-										paramValue,
-										2,
-										arrayLength,
-										sizes);
+	if ((index = NC_ProvisionNode(guiCmd->param[0].value.i, assignedNodeAddress)) >= 0) {
+		paramValue[0] = (void *) &configNodes[index];
+		paramValue[1] = (void *) NC_GetAllGroupAddresses();
+		cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
+											types,
+											paramValue,
+											2,
+											arrayLength,
+											sizes);
+	}
+
 
 	return cmdRes;
 
@@ -319,19 +312,29 @@ CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
 	Node_SubscriptionParam_t *toSubb = (Node_SubscriptionParam_t *) guiCmd->param[0].value.voidPtr;
-	Node_Config_t *node = (Node_Config_t *) guiCmd->param[1].value.voidPtr;
+	Node_Config_t *node = NC_GetConfigNodeFromAddress(guiCmd->param[1].value.i);
 	static int runCounter = 0;
 	PARAMETER_TYPE type = PARAM_INT;
 	int ok = 1;
 	void *paramValue[] = {(void *) &ok};
+	uint8_t i = 0;
 
 	if (!strcmp(buffer, "1")) {
 
 	} else if (!strcmp(buffer, "0")) {
 		runCounter++;
 		if (runCounter >= (NC_GetPopCount(node->address.nodeModels) * toSubb->numOfSubs)) {
-			for (int i = 0; i<toSubb->numOfSubs; i++) {
-				NC_AddSubscription(node, toSubb->subbedAddresses[i]);
+			// for some reason, the compiler here puts add instruction before cmp
+			// making the for loop run less then it should (ex. upper bound is 1
+			// the loop doesn't even run).
+			// Now using a while loop where I can dictate where to increment
+			while (i<toSubb->numOfSubs) {
+				if (toSubb->subbedAddresses[i].subbTo) {
+					NC_AddSubscription(node, toSubb->subbedAddresses[i].groupAddress);
+				} else {
+					NC_RemoveSubscription(node, toSubb->subbedAddresses[i].groupAddress);
+				}
+				i++;
 			}
 			runCounter = 0;
 			cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
@@ -341,6 +344,39 @@ CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd) {
 										NULL,
 										NULL);
 		}
+	}
+
+	return cmdRes;
+
+}
+
+CMD_CommandGet_t *CMD_GenericOnOff(char *buffer, CMD_CommandGet_t *guiCmd) {
+
+	return NULL;
+
+}
+
+CMD_CommandGet_t *CMD_NotifyUnprovision(char *buffer, CMD_CommandGet_t *guiCmd) {
+
+	CMD_CommandGet_t *cmdRes = NULL;
+	int nodeAddress = guiCmd->param[0].value.i;
+	PARAMETER_TYPE type = PARAM_INT;
+	int ok = 1;
+	void *paramValue[] = {(void *) &ok};
+
+	if (!strcmp(buffer, "1")) {
+
+	} else if (!strcmp(buffer, "0")) {
+		// clear node config array at said index
+		// decrement the number of configured devices
+		// change ui screen
+		NC_DeleteConfiguredNode(nodeAddress);
+		cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
+									&type,
+									paramValue,
+									1,
+									NULL,
+									NULL);
 	}
 
 	return cmdRes;

@@ -6,7 +6,7 @@
 
 #include <gui/common/FrontendApplication.hpp>
 #include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/TiledImage.hpp>
+#include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 
@@ -25,7 +25,7 @@ protected:
     /*
      * Member Declarations
      */
-    touchgfx::TiledImage tiledImage1;
+    touchgfx::Box box1;
     touchgfx::TextAreaWithOneWildcard deviceNameText;
     touchgfx::ButtonWithLabel useNodeBtn;
 

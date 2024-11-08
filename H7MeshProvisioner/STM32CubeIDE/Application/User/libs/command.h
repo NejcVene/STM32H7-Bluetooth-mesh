@@ -30,12 +30,10 @@ typedef enum {
 	CMD_MESH_ATEP_SCAN_RANGE,
 	CMD_MESH_ATEP_PRVN_RANGE,
 	CMD_MESH_ATCL_GENERIC_ON_OFF_ACK,
-	CMD_MESH_ATCL_GENECI_ON_OFF_ACK_OFF,
 	CMD_MESH_ATCL_GENERIC_ON_OFF_GET,
+	CMD_MESH_ATCL_UNPROV,
 	CMD_FUN_PROV_EM_PROV,
 	CMD_FUN_IS_EM_PROV_PROV,
-	CMD_FUN_SUBS_ADD,
-	CMD_FUN_PUB_SET,
 	CMD_FUN_PUB_SET_SUB_ADD,
 	CMD_MESH_NUM_OF_CMD
 } CMD_INDEX;
@@ -73,14 +71,12 @@ extern CMD_MeshCommand_t scanForUnprovisionedNetworkDevicesOutOfRangePvrn;
 extern CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn;
 extern CMD_MeshCommand_t genericOnOffSetAck;
 extern CMD_MeshCommand_t genericOnOffGet;
-extern CMD_MeshCommand_t genericOnOffSetAckOff;
+extern CMD_MeshCommand_t unprovisionNetworkDevice;
 
 // commands which are not part of mesh, but directly call functions
 // on the embedded provisioner
 extern CMD_MeshCommand_t unprovisionEmbeddedProv;
 extern CMD_MeshCommand_t isEmbeddedProvProvisioned;
-extern CMD_MeshCommand_t subscriptionAdd;
-extern CMD_MeshCommand_t publicationSet;
 extern CMD_MeshCommand_t pubSetSubAdd;
 
 CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[], void *paramValues[], int numOfParams, int arrayLengths[], size_t *elementSizes);
