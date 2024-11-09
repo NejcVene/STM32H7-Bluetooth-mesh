@@ -14,41 +14,40 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_RAYS_ID));
     tiledImage1.setPosition(0, 0, 480, 272);
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    cancelBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    cancelBtn.setBitmaps(Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID), Bitmap(BITMAP_BUTTONBACKGROUND_ID));
     cancelBtn.setBitmapXY(0, 0);
     cancelBtn.setText(TypedText(T___SINGLEUSE_0LTB));
-    cancelBtn.setTextPosition(0, 97, 121, 121);
-    cancelBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    cancelBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_NAVIGATION_CANCEL_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_NAVIGATION_CANCEL_50_50_3DA9FC_SVG_ID));
-    cancelBtn.setIconXY(36, 36);
+    cancelBtn.setTextPosition(1, 83, 112, 112);
+    cancelBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 254), touchgfx::Color::getColorFromRGB(255, 255, 254));
+    cancelBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_NAVIGATION_CANCEL_50_50_FFFFFE_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_NAVIGATION_CANCEL_50_50_FFFFFE_SVG_ID));
+    cancelBtn.setIconXY(34, 30);
     cancelBtn.setAction(flexButtonCallback);
-    cancelBtn.setPosition(350, 141, 121, 121);
+    cancelBtn.setPosition(358, 151, 112, 112);
     add(cancelBtn);
 
-    saveBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
+    saveBtn.setBitmaps(Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID), Bitmap(BITMAP_BUTTONBACKGROUND_ID));
     saveBtn.setBitmapXY(0, 0);
     saveBtn.setText(TypedText(T___SINGLEUSE_EMI2));
-    saveBtn.setTextPosition(0, 97, 121, 121);
-    saveBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    saveBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_3DA9FC_SVG_ID));
-    saveBtn.setIconXY(36, 36);
+    saveBtn.setTextPosition(1, 83, 112, 112);
+    saveBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 254), touchgfx::Color::getColorFromRGB(255, 255, 254));
+    saveBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_FFFFFE_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_FFFFFE_SVG_ID));
+    saveBtn.setIconXY(34, 30);
     saveBtn.setAction(flexButtonCallback);
-    saveBtn.setPosition(350, 10, 121, 121);
+    saveBtn.setPosition(358, 30, 112, 112);
     add(saveBtn);
 
-    container1.setPosition(10, 10, 330, 121);
-    tiledImage2.setBitmap(touchgfx::Bitmap(BITMAP_H7CONFIGBOX_ID));
-    tiledImage2.setPosition(0, 0, 330, 121);
-    tiledImage2.setOffset(0, 0);
-    container1.add(tiledImage2);
+    container1.setPosition(10, 30, 330, 112);
+    box1.setPosition(0, 0, 330, 111);
+    box1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
+    container1.add(box1);
 
-    nodeVendor.setXY(10, 82);
-    nodeVendor.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    nodeVendor.setXY(10, 73);
+    nodeVendor.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
     nodeVendor.setLinespacing(0);
     Unicode::snprintf(nodeVendorBuffer, NODEVENDOR_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_KAJT).getText());
     nodeVendor.setWildcard(nodeVendorBuffer);
@@ -56,8 +55,8 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
     nodeVendor.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FHXT));
     container1.add(nodeVendor);
 
-    nodeUUID.setXY(10, 46);
-    nodeUUID.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    nodeUUID.setXY(10, 42);
+    nodeUUID.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
     nodeUUID.setLinespacing(0);
     Unicode::snprintf(nodeUUIDBuffer, NODEUUID_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_W5ZN).getText());
     nodeUUID.setWildcard(nodeUUIDBuffer);
@@ -66,7 +65,7 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
     container1.add(nodeUUID);
 
     nodeName.setXY(10, 10);
-    nodeName.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    nodeName.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
     nodeName.setLinespacing(0);
     Unicode::snprintf(nodeNameBuffer, NODENAME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_2W0E).getText());
     nodeName.setWildcard(nodeNameBuffer);
@@ -76,13 +75,15 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
 
     add(container1);
 
-    allNodeSubsCont.setPosition(10, 141, 330, 121);
+    screenTitleBar1.setXY(0, 0);
+    add(screenTitleBar1);
+
+    allNodeSubsCont.setPosition(10, 151, 330, 112);
     allNodeSubsCont.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     allNodeSubsCont.setScrollbarsAlpha(255);
-    tiledImage3.setBitmap(touchgfx::Bitmap(BITMAP_H7CONFIGSCROLL_ID));
-    tiledImage3.setPosition(0, 0, 330, 350);
-    tiledImage3.setOffset(0, 0);
-    allNodeSubsCont.add(tiledImage3);
+    box2.setPosition(0, 0, 330, 350);
+    box2.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
+    allNodeSubsCont.add(box2);
 
     add(allNodeSubsCont);
 
@@ -90,15 +91,15 @@ ConfigureNodeScreenViewBase::ConfigureNodeScreenViewBase() :
     GUI_CongPopup.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     GUI_CongPopup.setShadeAlpha(100);
     GUI_ConfBtnPopup.setXY(57, 91);
-    GUI_ConfBtnPopup.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_PRESSED_ID));
+    GUI_ConfBtnPopup.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSEDTINY_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDTINY_ID));
     GUI_ConfBtnPopup.setLabelText(touchgfx::TypedText(T___SINGLEUSE_52I8));
-    GUI_ConfBtnPopup.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    GUI_ConfBtnPopup.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    GUI_ConfBtnPopup.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
+    GUI_ConfBtnPopup.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 254));
     GUI_ConfBtnPopup.setAction(buttonCallback);
     GUI_CongPopup.add(GUI_ConfBtnPopup);
 
     GUI_ConfTextPopup.setXY(26, 41);
-    GUI_ConfTextPopup.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    GUI_ConfTextPopup.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
     GUI_ConfTextPopup.setLinespacing(0);
     GUI_ConfTextPopup.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PIBO));
     GUI_CongPopup.add(GUI_ConfTextPopup);
@@ -113,7 +114,7 @@ ConfigureNodeScreenViewBase::~ConfigureNodeScreenViewBase()
 
 void ConfigureNodeScreenViewBase::setupScreen()
 {
-
+    screenTitleBar1.initialize();
 }
 
 void ConfigureNodeScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)

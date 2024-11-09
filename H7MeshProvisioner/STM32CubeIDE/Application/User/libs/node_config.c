@@ -94,12 +94,14 @@ void NC_Init(void) {
 			.subscriptions = 5,
 			.nodeName = "My node2",
 			.address = {
-				.nodeAddress = 44,
+				.nodeAddress = 73,
 				.nodeModels = 87,
 				.nodeFeatures = 0,
 				.uuid =  "0753"
 			}
 	};
+	NC_IncrementNumOfConfNodes();
+	NC_IncrementNumOfConfNodes();
 #endif
 //	for (int i = 0; models[i].name != NULL; i++) {
 //		HT_Insert(modelsData, (int) models[i].name, &models[i]);
@@ -116,6 +118,7 @@ void NC_ReportFoundNodes(char *param) {
 	char *rest = param;
 	Node_NetworkAddress_t tmp;
 
+	NC_ClearNodeNetworkAddressArray();
 	while ((token = strtok_r(rest, ";", &rest))) {
 		tmp = CLEAR_NODE_ADDRESSES(NODE_DEF_VAL);
 		sscanf(token, "%" PRIu32 "-%s", &index, uuid);
@@ -382,8 +385,10 @@ int NC_ProvisionNode(uint32_t nodeAddress, uint32_t assignedNodeAddress) {
 				nodeConfigs[i].address = *prvnNode;
 				nodeConfigs[i].address.nodeAddress = assignedNodeAddress;
 				NC_AddSubscription(&nodeConfigs[i], GROUP_ADDRESS_DEFAULT_BIT);
+				NC_ChangeNodeName(&nodeConfigs[i], DEF_NODE_NAME);
 				NC_FillMissingNodeModels(&nodeConfigs[i].address);
 				NC_IncrementNumOfConfNodes();
+				NC_ClearNodeNetworkAddressArray();
 				return i;
 			}
 		}
@@ -402,6 +407,26 @@ uint32_t NC_GetValueFromBitmask(NC_MaskedFeatures *maskedFeatures, uint16_t bitm
 	}
 
 	return 0;
+
+}
+
+void NC_ChangeNodeName(Node_Config_t *node, const char *newNodeName) {
+
+	if (!node || !newNodeName) {
+		return;
+	}
+
+	memset(node->nodeName, 0, MAX_NODE_NAME);
+	strncpy(node->nodeName, newNodeName, MAX_NODE_NAME - 1);
+	node->nodeName[MAX_NODE_NAME - 1] = '\0';
+
+}
+
+void NC_ClearNodeNetworkAddressArray(void) {
+
+	for (int i = 0; i<5; i++) {
+		nodeAddresses[i] = CLEAR_NODE_ADDRESSES(NODE_DEF_VAL);
+	}
 
 }
 

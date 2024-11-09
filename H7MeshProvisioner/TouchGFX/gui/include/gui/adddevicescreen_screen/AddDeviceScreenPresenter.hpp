@@ -31,6 +31,12 @@ public:
     virtual void GUI_DevicesFound();
     virtual void GUI_ChangeScreen();
 
+    int GUI_GetUsedCommandIndex() {
+
+    	return model->GUI_GetUsedCommandIndex();
+
+    }
+
 private:
     AddDeviceScreenPresenter();
 

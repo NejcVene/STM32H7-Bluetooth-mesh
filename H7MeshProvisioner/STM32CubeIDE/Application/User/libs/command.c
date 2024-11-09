@@ -51,7 +51,7 @@ CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn = {
 		.command = "ATEP NDPRVN-%d",
 		.commandType = PRO_MSG_TYPE_ACK,
 		.CMD_Setup = CMD_GenericFormatCommand,
-		.CMD_Execute = NULL
+		.CMD_Execute = CMD_NofitfyProvision
 };
 
 CMD_MeshCommand_t unprovisionNetworkDevice = {

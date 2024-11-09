@@ -15,6 +15,7 @@
 #include "hash_table.h"
 #include "node_config.h"
 #include "freertos_os2.h"
+#include "task.h"
 #define CS_LOW									{ Toggle_Pin(COMM_CS_PORT_MASTER, COMM_CS_PIN_MASTER, GPIO_PIN_RESET) }
 #define CS_HIGH									{ Toggle_Pin(COMM_CS_PORT_MASTER, COMM_CS_PIN_MASTER, GPIO_PIN_SET) }
 #define C_SIZE_CMD_STRING						256U
@@ -152,11 +153,13 @@ static int Protocol_CheckChecksum(PROTOCOL_MSG_TYPE type, uint8_t *payload, uint
 static PROTOCOL_STATUS _SendData(uint8_t *toSend, uint16_t sizeToSend, void (*callback)(void)) {
 
 	LPUART_CallbackTx = callback;
+	vTaskSuspendAll();
 	if ((error.status = Comm_LPUART_Send_IT(commSettings, toSend, sizeToSend, sizeToSend)) != PRO_OK) {
 		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_ERROR, &error, sizeof(FSM_ErrorReport_t));
 		return error.status;
 	}
 	Protocol_WaitForTX();
+	xTaskResumeAll();
 
 	return PRO_OK;
 
@@ -165,11 +168,13 @@ static PROTOCOL_STATUS _SendData(uint8_t *toSend, uint16_t sizeToSend, void (*ca
 static PROTOCOL_STATUS _ReceiveData(uint8_t *toReceive, uint16_t sizeToReceive, void (*callback)(void)) {
 
 	LPUART_CallbackRx = callback;
+	vTaskSuspendAll();
 	if ((error.status = Comm_LPUART_Receive_IT(commSettings, toReceive, sizeToReceive, sizeToReceive)) != PRO_OK) {
 		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_ERROR, &error, sizeof(FSM_ErrorReport_t));
 		return error.status;
 	}
 	Protocol_WaitForRX();
+	xTaskResumeAll();
 
 	return PRO_OK;
 
@@ -368,9 +373,9 @@ void FSM_Execute(void *param) {
 	CMD_CommandGet_t *guiCmd = *((CMD_CommandGet_t **) param);
 	CMD_MeshCommand_t *meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex);
 	CMD_CommandGet_t *exeResult;
-	char responseCommand[CMD_MESH_COMMAND_LENGHT];
-	char responseParameters[PAC_MAX_PAYLOAD]; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
-	char cutOriginal[CMD_MESH_COMMAND_LENGHT];
+	char responseCommand[CMD_MESH_COMMAND_LENGHT] = {0};
+	char responseParameters[PAC_MAX_PAYLOAD] = {0}; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
+	char cutOriginal[CMD_MESH_COMMAND_LENGHT] = {0};
 
 	sscanf(meshCommand->command, "%[^%]", cutOriginal);
 	sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);

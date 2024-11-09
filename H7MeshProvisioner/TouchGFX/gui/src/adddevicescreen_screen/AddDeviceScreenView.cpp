@@ -15,6 +15,7 @@ AddDeviceScreenView::AddDeviceScreenView() : buttonClickCallback(this, &AddDevic
 void AddDeviceScreenView::setupScreen()
 {
     AddDeviceScreenViewBase::setupScreen();
+    screenTitleBar1.GUI_SetTextTitleBar("Menu", "add device");
     noNodesFoundMsg.setVisible(false);
     for (int i = 0; i<maxButtons; i++) {
     	deviceAdds[i].initialize();
@@ -91,7 +92,15 @@ void AddDeviceScreenView::handleButtonClicked(int instanceID) {
 	void *values[] = {&instanceID};
 	int arrayLengths[] = {0};
 	size_t sizes[] = {0};
-	this->cmd = CMD_CreateCommandGet(CMD_MESH_ATEP_PRVN,
+	this->usedCommandIndex = presenter->GUI_GetUsedCommandIndex();
+	CMD_INDEX cmdToPrvn;
+
+	if ((CMD_INDEX) this->usedCommandIndex == CMD_MESH_ATEP_SCAN) {
+		cmdToPrvn = CMD_MESH_ATEP_PRVN;
+	} else if ((CMD_INDEX) this->usedCommandIndex == CMD_MESH_ATEP_SCAN_RANGE) {
+		cmdToPrvn = CMD_MESH_ATEP_PRVN_RANGE;
+	}
+	this->cmd = CMD_CreateCommandGet(cmdToPrvn,
 									&type,
 									values,
 									1,

@@ -6,11 +6,23 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_P3DX" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_64IT" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">Device information</Translation>
+      </Text>
+      <Text Id="__SingleUse_7MZW" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">Developer options</Translation>
+      </Text>
+      <Text Id="__SingleUse_G6K4" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">Set clock</Translation>
+      </Text>
+      <Text Id="__SingleUse_KVUU" Alignment="Left" TypographyId="Text16px">
         <Translation Language="GB">None</Translation>
       </Text>
-      <Text Id="__SingleUse_VM6J" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">Room: &lt;value&gt;</Translation>
+      <Text Id="__SingleUse_W7F3" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_RZFU" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">&lt;value&gt;: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_8EB0" Alignment="Center" TypographyId="Text16px">
         <Translation Language="GB">Bathroom</Translation>
@@ -26,12 +38,6 @@
       </Text>
       <Text Id="__SingleUse_EMB5" Alignment="Center" TypographyId="Text16px">
         <Translation Language="GB">All devices</Translation>
-      </Text>
-      <Text Id="__SingleUse_2NDV" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">None</Translation>
-      </Text>
-      <Text Id="__SingleUse_KOGS" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">Menu: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_CUTS" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">None</Translation>
@@ -56,12 +62,6 @@
       </Text>
       <Text Id="__SingleUse_N2HL" Alignment="Left" TypographyId="Text16px">
         <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_K2Q0" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">None</Translation>
-      </Text>
-      <Text Id="__SingleUse_VNO6" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">Device: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_319A" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">No devices in this room</Translation>
@@ -90,10 +90,10 @@
       <Text Id="__SingleUse_J4Q1" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">ATEP ROOT</Translation>
       </Text>
-      <Text Id="__SingleUse_8ZXX" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_8ZXX" Alignment="Left" TypographyId="Text16px">
         <Translation Language="GB">None</Translation>
       </Text>
-      <Text Id="__SingleUse_KPYR" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_KPYR" Alignment="Left" TypographyId="Text16px">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_KAJT" Alignment="Left" TypographyId="Default">
@@ -117,10 +117,10 @@
       <Text Id="__SingleUse_0LTB" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">Cancel</Translation>
       </Text>
-      <Text Id="__SingleUse_EMI2" Alignment="Center" TypographyId="Small">
+      <Text Id="__SingleUse_EMI2" Alignment="Center" TypographyId="Text16px">
         <Translation Language="GB">Save</Translation>
       </Text>
-      <Text Id="__SingleUse_TWFN" Alignment="Center" TypographyId="Small">
+      <Text Id="__SingleUse_TWFN" Alignment="Center" TypographyId="Text16px">
         <Translation Language="GB">Provision</Translation>
       </Text>
       <Text Id="__SingleUse_T1HH" Alignment="Left" TypographyId="Default">
@@ -147,9 +147,6 @@
       <Text Id="__SingleUse_486T" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_RUCY" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Add device</Translation>
-      </Text>
       <Text Id="__SingleUse_2JW3" Alignment="Center" TypographyId="Medium">
         <Translation Language="GB">25*C</Translation>
       </Text>
@@ -158,15 +155,6 @@
       </Text>
       <Text Id="__SingleUse_PGKI" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_XGDV" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Undefined</Translation>
-      </Text>
-      <Text Id="__SingleUse_RE6P" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Settings</Translation>
-      </Text>
-      <Text Id="__SingleUse_7Z3U" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Devices</Translation>
       </Text>
     </TextGroup>
   </Texts>

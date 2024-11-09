@@ -59,6 +59,9 @@ void FSM_Error(void *param);
 
 // timer functions
 
+// appli_config_client used variables
+static int useNdprvn;
+
 // UART variables
 extern Comm_Settings_t *commSettings;
 void (*LPUART_CallbackTx)(void);
@@ -473,6 +476,24 @@ static void Protocol_Process_Messsage(void) {
 		default:
 			break;
 	}
+
+}
+
+void FSM_SetNdpvrn(void) {
+
+	useNdprvn = 1;
+
+}
+
+void FSM_UnsetNdpvrn(void) {
+
+	useNdprvn = 0;
+
+}
+
+int FSM_GetNdprn(void) {
+
+	return useNdprvn;
 
 }
 

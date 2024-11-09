@@ -11,6 +11,8 @@
 #include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <gui/containers/BottomMenu.hpp>
+#include <gui/containers/ScreenTitleBar.hpp>
 
 class DebugScreenViewBase : public touchgfx::View<DebugScreenPresenter>
 {
@@ -54,6 +56,8 @@ protected:
     touchgfx::ButtonWithLabel kitchenGrpAddrBtn;
     touchgfx::ButtonWithLabel unpvrEmNodeBtn;
     touchgfx::ButtonWithLabel atepRootBtn;
+    BottomMenu bottomMenu1;
+    ScreenTitleBar screenTitleBar1;
 
 private:
 

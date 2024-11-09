@@ -26,7 +26,8 @@ void NodeProperScreenView::setupScreen()
 //    };
 
 
-    GUI_SetTextNodeName(node->nodeName);
+//    GUI_SetTextNodeName(node->nodeName);
+    screenTitleBar1.GUI_SetTextTitleBar("Device", node->nodeName);
     for (int i = 0; i<maxDeviceFunctions; i++) {
     	deviceFunctions[i].initialize();
     	deviceFunctions[i].setPosition(xPos, yPos, 112, 112);

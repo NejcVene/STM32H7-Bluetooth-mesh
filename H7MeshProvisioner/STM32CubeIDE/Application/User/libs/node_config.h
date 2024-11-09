@@ -18,6 +18,7 @@ extern "C" {
 #define MAX_NODE_NAME					10
 #define NODE_DEF_VAL					100
 #define UUID_SAVE_LEN					4
+#define DEF_NODE_NAME					"New node"
 
 #define NODE_FEATURE_BYTE				0
 #define NODE_MODELS_BYTE				2
@@ -103,6 +104,8 @@ Node_Config_t *NC_GetConfigNodeFromAddress(uint32_t nodeAddress);
 void NC_DeleteConfiguredNode(uint32_t nodeAddress);
 int NC_ProvisionNode(uint32_t nodeAddress, uint32_t assignedNodeAddress);
 uint32_t NC_GetValueFromBitmask(NC_MaskedFeatures *maskedFeatures, uint16_t bitmask);
+void NC_ChangeNodeName(Node_Config_t *node, const char *newNodeName);
+void NC_ClearNodeNetworkAddressArray(void);
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 //void NC_ReadNodeFromNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 

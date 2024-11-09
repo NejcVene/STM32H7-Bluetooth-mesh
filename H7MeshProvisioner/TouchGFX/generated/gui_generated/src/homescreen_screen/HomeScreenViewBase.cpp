@@ -6,74 +6,30 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-HomeScreenViewBase::HomeScreenViewBase() :
-    flexButtonCallback(this, &HomeScreenViewBase::flexButtonCallbackHandler)
+HomeScreenViewBase::HomeScreenViewBase()
 {
     __background.setPosition(0, 0, 480, 272);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_RAYS_ID));
     tiledImage1.setPosition(0, 0, 480, 272);
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    deviceBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
-    deviceBtn.setBitmapXY(0, 0);
-    deviceBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_DEVICE_HUB_50_50_3DA9FC_SVG_ID));
-    deviceBtn.setIconXY(36, 36);
-    deviceBtn.setText(TypedText(T___SINGLEUSE_7Z3U));
-    deviceBtn.setTextPosition(0, 97, 121, 121);
-    deviceBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    deviceBtn.setAction(flexButtonCallback);
-    deviceBtn.setPosition(219, 10, 121, 121);
-    add(deviceBtn);
+    container1.setPosition(141, 30, 199, 182);
+    box1.setPosition(0, 0, 199, 182);
+    box1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
+    container1.add(box1);
 
-    undefinedBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
-    undefinedBtn.setBitmapXY(0, 0);
-    undefinedBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_MAPS_MULTIPLE_STOP_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_MAPS_MULTIPLE_STOP_50_50_3DA9FC_SVG_ID));
-    undefinedBtn.setIconXY(36, 36);
-    undefinedBtn.setText(TypedText(T___SINGLEUSE_XGDV));
-    undefinedBtn.setTextPosition(0, 97, 121, 121);
-    undefinedBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    undefinedBtn.setAction(flexButtonCallback);
-    undefinedBtn.setPosition(350, 141, 121, 121);
-    add(undefinedBtn);
-
-    settingsBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
-    settingsBtn.setBitmapXY(0, 0);
-    settingsBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_50_50_3DA9FC_SVG_ID));
-    settingsBtn.setIconXY(36, 36);
-    settingsBtn.setText(TypedText(T___SINGLEUSE_RE6P));
-    settingsBtn.setTextPosition(0, 97, 121, 121);
-    settingsBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    settingsBtn.setPosition(219, 141, 121, 121);
-    add(settingsBtn);
-
-    addDeviceBtn.setBitmaps(Bitmap(BITMAP_H7BUTTON_ID), Bitmap(BITMAP_H7BUTTON_ID));
-    addDeviceBtn.setBitmapXY(0, 0);
-    addDeviceBtn.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_DEVICE_BLUETOOTH_SEARCHING_50_50_3DA9FC_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_DEVICE_BLUETOOTH_SEARCHING_50_50_3DA9FC_SVG_ID));
-    addDeviceBtn.setIconXY(36, 36);
-    addDeviceBtn.setText(TypedText(T___SINGLEUSE_RUCY));
-    addDeviceBtn.setTextPosition(0, 97, 121, 121);
-    addDeviceBtn.setTextColors(touchgfx::Color::getColorFromRGB(9, 64, 103), touchgfx::Color::getColorFromRGB(9, 64, 103));
-    addDeviceBtn.setAction(flexButtonCallback);
-    addDeviceBtn.setPosition(350, 10, 121, 121);
-    add(addDeviceBtn);
-
-    container1.setPosition(10, 10, 199, 252);
-    image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_H7MAININFO_ID));
-    container1.add(image1);
-
-    textArea1.setXY(60, 176);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(9, 64, 103));
+    textArea1.setXY(60, 131);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2JW3));
     container1.add(textArea1);
 
-    mainDigitalClock.setPosition(0, 35, 199, 51);
-    mainDigitalClock.setColor(touchgfx::Color::getColorFromRGB(9, 64, 103));
+    mainDigitalClock.setPosition(0, 30, 199, 51);
+    mainDigitalClock.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
     mainDigitalClock.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PGKI));
     mainDigitalClock.displayLeadingZeroForHourIndicator(true);
     mainDigitalClock.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR);
@@ -81,6 +37,12 @@ HomeScreenViewBase::HomeScreenViewBase() :
     container1.add(mainDigitalClock);
 
     add(container1);
+
+    bottomMenu1.setXY(0, 222);
+    add(bottomMenu1);
+
+    screenTitleBar1.setXY(0, 0);
+    add(screenTitleBar1);
 }
 
 HomeScreenViewBase::~HomeScreenViewBase()
@@ -90,30 +52,6 @@ HomeScreenViewBase::~HomeScreenViewBase()
 
 void HomeScreenViewBase::setupScreen()
 {
-
-}
-
-void HomeScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
-{
-    if (&src == &deviceBtn)
-    {
-        //a
-        //When deviceBtn clicked change screen to Screen1
-        //Go to Screen1 with screen transition towards East
-        application().gotoScreen1ScreenWipeTransitionEast();
-    }
-    if (&src == &addDeviceBtn)
-    {
-        //b
-        //When addDeviceBtn clicked change screen to AddDeviceScreen
-        //Go to AddDeviceScreen with screen transition towards East
-        application().gotoAddDeviceScreenScreenWipeTransitionEast();
-    }
-    if (&src == &undefinedBtn)
-    {
-        //GUI_ToUndefined
-        //When undefinedBtn clicked change screen to DebugScreen
-        //Go to DebugScreen with screen transition towards East
-        application().gotoDebugScreenScreenSlideTransitionEast();
-    }
+    bottomMenu1.initialize();
+    screenTitleBar1.initialize();
 }

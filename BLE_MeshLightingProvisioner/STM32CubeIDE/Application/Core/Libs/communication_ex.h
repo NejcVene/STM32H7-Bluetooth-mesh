@@ -99,4 +99,8 @@ FSM_QueuedEvent_t *FSM_GetEvent(Queue *queue);
 void FSM_FreeEvent(FSM_QueuedEvent_t *event);
 void FSM_FreeEventsDeleteQueue(Queue *queue);
 
+void FSM_SetNdpvrn(void);
+void FSM_UnsetNdpvrn(void);
+int FSM_GetNdprn(void);
+
 #endif /* APPLICATION_CORE_LIBS_COMMUNICATION_EX_H_ */

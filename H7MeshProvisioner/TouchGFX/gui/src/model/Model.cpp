@@ -34,6 +34,7 @@ void Model::tick() {
 				case CMD_MESH_ATEP_SCAN:
 				case CMD_MESH_ATEP_SCAN_RANGE:
 					foundDevices = (Node_NetworkAddress_t *) cmdResult->param[0].value.voidPtr;
+					usedCommandIndex = cmdResult->commandIndex;
 					modelListener->GUI_DevicesFound();
 					break;
 				case CMD_FUN_PUB_SET_SUB_ADD:

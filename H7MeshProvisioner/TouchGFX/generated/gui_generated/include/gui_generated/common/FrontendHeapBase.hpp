@@ -10,7 +10,6 @@
 
 #include <touchgfx/transitions/NoTransition.hpp>
 #include <touchgfx/transitions/SlideTransition.hpp>
-#include <touchgfx/transitions/WipeTransition.hpp>
 
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
@@ -29,6 +28,8 @@
 #include <gui/nodesscreen_screen/NodesScreenPresenter.hpp>
 #include <gui/nodeproperscreen_screen/NodeProperScreenView.hpp>
 #include <gui/nodeproperscreen_screen/NodeProperScreenPresenter.hpp>
+#include <gui/settingsscreen_screen/SettingsScreenView.hpp>
+#include <gui/settingsscreen_screen/SettingsScreenPresenter.hpp>
 
 
 /**
@@ -58,7 +59,8 @@ public:
             touchgfx::meta::TypeList< DebugScreenView,
             touchgfx::meta::TypeList< NodesScreenView,
             touchgfx::meta::TypeList< NodeProperScreenView,
-            touchgfx::meta::Nil > > > > > >
+            touchgfx::meta::TypeList< SettingsScreenView,
+            touchgfx::meta::Nil > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -77,7 +79,8 @@ public:
             touchgfx::meta::TypeList< DebugScreenPresenter,
             touchgfx::meta::TypeList< NodesScreenPresenter,
             touchgfx::meta::TypeList< NodeProperScreenPresenter,
-            touchgfx::meta::Nil > > > > > >
+            touchgfx::meta::TypeList< SettingsScreenPresenter,
+            touchgfx::meta::Nil > > > > > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -91,8 +94,7 @@ public:
      */
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
             touchgfx::meta::TypeList< SlideTransition<EAST>,
-            touchgfx::meta::TypeList< WipeTransition<EAST>,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::Nil >
             > GeneratedTransitionTypes;
 
     /**

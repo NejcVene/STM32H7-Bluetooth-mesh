@@ -11,6 +11,7 @@ DebugScreenView::DebugScreenView()
 void DebugScreenView::setupScreen()
 {
     DebugScreenViewBase::setupScreen();
+    screenTitleBar1.GUI_SetTextTitleBar("Menu", "debug");
 }
 
 void DebugScreenView::tearDownScreen()

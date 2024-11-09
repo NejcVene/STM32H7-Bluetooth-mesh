@@ -39,21 +39,8 @@ NodesScreenViewBase::NodesScreenViewBase()
     bottomMenu1.setXY(0, 222);
     add(bottomMenu1);
 
-    nodeTitle.setPosition(0, 0, 480, 20);
-    box1_1.setPosition(0, 0, 480, 20);
-    box1_1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
-    nodeTitle.add(box1_1);
-
-    menuName.setXY(10, 0);
-    menuName.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
-    menuName.setLinespacing(0);
-    Unicode::snprintf(menuNameBuffer, MENUNAME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_P3DX).getText());
-    menuName.setWildcard(menuNameBuffer);
-    menuName.resizeToCurrentText();
-    menuName.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VM6J));
-    nodeTitle.add(menuName);
-
-    add(nodeTitle);
+    screenTitleBar1.setXY(0, 0);
+    add(screenTitleBar1);
 }
 
 NodesScreenViewBase::~NodesScreenViewBase()
@@ -64,6 +51,7 @@ NodesScreenViewBase::~NodesScreenViewBase()
 void NodesScreenViewBase::setupScreen()
 {
     bottomMenu1.initialize();
+    screenTitleBar1.initialize();
 }
 
 void NodesScreenViewBase::goToNodeProperScreen()

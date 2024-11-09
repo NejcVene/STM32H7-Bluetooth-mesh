@@ -33,13 +33,13 @@ public:
 
     virtual void changeScreenAfterUnprov();
 
-    void GUI_SetTextNodeName(const char *text) {
-
-    	touchgfx::Unicode::strncpy(nodeNameBuffer, text, NODENAME_SIZE);
-    	nodeName.resizeToCurrentText();
-    	nodeName.invalidate();
-
-    }
+//    void GUI_SetTextNodeName(const char *text) {
+//
+//    	touchgfx::Unicode::strncpy(nodeNameBuffer, text, NODENAME_SIZE);
+//    	nodeName.resizeToCurrentText();
+//    	nodeName.invalidate();
+//
+//    }
 
 protected:
     touchgfx::Callback<NodeProperScreenView, int> buttonClickCallback;
@@ -51,6 +51,7 @@ protected:
     DeviceButton deviceFunctions[maxDeviceFunctions];
     CMD_CommandGet_t *cmd;
     NC_MaskedFeatures *allModels;
+
 };
 
 #endif // NODEPROPERSCREENVIEW_HPP

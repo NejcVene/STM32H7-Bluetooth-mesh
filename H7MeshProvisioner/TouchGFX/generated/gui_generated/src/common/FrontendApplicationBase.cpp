@@ -23,6 +23,8 @@
 #include <gui/nodesscreen_screen/NodesScreenPresenter.hpp>
 #include <gui/nodeproperscreen_screen/NodeProperScreenView.hpp>
 #include <gui/nodeproperscreen_screen/NodeProperScreenPresenter.hpp>
+#include <gui/settingsscreen_screen/SettingsScreenView.hpp>
+#include <gui/settingsscreen_screen/SettingsScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -43,17 +45,6 @@ FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
  */
 
 // Screen1
-
-void FrontendApplicationBase::gotoScreen1ScreenWipeTransitionEast()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoScreen1ScreenWipeTransitionEastImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoScreen1ScreenWipeTransitionEastImpl()
-{
-    touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
 
 void FrontendApplicationBase::gotoScreen1ScreenSlideTransitionEast()
 {
@@ -91,17 +82,6 @@ void FrontendApplicationBase::gotoHomeScreenScreenSlideTransitionEastImpl()
 }
 
 // AddDeviceScreen
-
-void FrontendApplicationBase::gotoAddDeviceScreenScreenWipeTransitionEast()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoAddDeviceScreenScreenWipeTransitionEastImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoAddDeviceScreenScreenWipeTransitionEastImpl()
-{
-    touchgfx::makeTransition<AddDeviceScreenView, AddDeviceScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
 
 void FrontendApplicationBase::gotoAddDeviceScreenScreenSlideTransitionEast()
 {
@@ -164,4 +144,17 @@ void FrontendApplicationBase::gotoNodeProperScreenScreenSlideTransitionEast()
 void FrontendApplicationBase::gotoNodeProperScreenScreenSlideTransitionEastImpl()
 {
     touchgfx::makeTransition<NodeProperScreenView, NodeProperScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// SettingsScreen
+
+void FrontendApplicationBase::gotoSettingsScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoSettingsScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoSettingsScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<SettingsScreenView, SettingsScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

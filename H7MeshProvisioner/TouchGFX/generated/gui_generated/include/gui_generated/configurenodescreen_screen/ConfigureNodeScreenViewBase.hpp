@@ -12,6 +12,7 @@
 #include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <gui/containers/ScreenTitleBar.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
 #include <touchgfx/containers/ModalWindow.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
@@ -58,12 +59,13 @@ protected:
     touchgfx::IconButtonStyle< touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  cancelBtn;
     touchgfx::IconButtonStyle< touchgfx::TextButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  saveBtn;
     touchgfx::Container container1;
-    touchgfx::TiledImage tiledImage2;
+    touchgfx::Box box1;
     touchgfx::TextAreaWithOneWildcard nodeVendor;
     touchgfx::TextAreaWithOneWildcard nodeUUID;
     touchgfx::TextAreaWithOneWildcard nodeName;
+    ScreenTitleBar screenTitleBar1;
     touchgfx::ScrollableContainer allNodeSubsCont;
-    touchgfx::TiledImage tiledImage3;
+    touchgfx::Box box2;
     touchgfx::ModalWindow GUI_CongPopup;
     touchgfx::ButtonWithLabel GUI_ConfBtnPopup;
     touchgfx::TextArea GUI_ConfTextPopup;

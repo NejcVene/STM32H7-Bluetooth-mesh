@@ -13,12 +13,12 @@ DebugScreenViewBase::DebugScreenViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_RAYS_ID));
     tiledImage1.setPosition(0, 0, 480, 272);
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    scrollableContainer1.setPosition(115, 0, 250, 272);
+    scrollableContainer1.setPosition(115, 30, 250, 182);
     scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     scrollableContainer1.setScrollbarsAlpha(255);
     livingroomGrpAddrBtn.setXY(5, 194);
@@ -54,6 +54,12 @@ DebugScreenViewBase::DebugScreenViewBase() :
     scrollableContainer1.add(atepRootBtn);
 
     add(scrollableContainer1);
+
+    bottomMenu1.setXY(0, 222);
+    add(bottomMenu1);
+
+    screenTitleBar1.setXY(0, 0);
+    add(screenTitleBar1);
 }
 
 DebugScreenViewBase::~DebugScreenViewBase()
@@ -63,7 +69,8 @@ DebugScreenViewBase::~DebugScreenViewBase()
 
 void DebugScreenViewBase::setupScreen()
 {
-
+    bottomMenu1.initialize();
+    screenTitleBar1.initialize();
 }
 
 void DebugScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)

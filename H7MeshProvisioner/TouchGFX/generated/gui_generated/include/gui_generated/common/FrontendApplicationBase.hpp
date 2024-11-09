@@ -21,8 +21,6 @@ public:
     }
 
     // Screen1
-    void gotoScreen1ScreenWipeTransitionEast();
-
     void gotoScreen1ScreenSlideTransitionEast();
 
     // HomeScreen
@@ -31,8 +29,6 @@ public:
     void gotoHomeScreenScreenSlideTransitionEast();
 
     // AddDeviceScreen
-    void gotoAddDeviceScreenScreenWipeTransitionEast();
-
     void gotoAddDeviceScreenScreenSlideTransitionEast();
 
     // ConfigureNodeScreen
@@ -47,14 +43,15 @@ public:
     // NodeProperScreen
     void gotoNodeProperScreenScreenSlideTransitionEast();
 
+    // SettingsScreen
+    void gotoSettingsScreenScreenSlideTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
     Model& model;
 
     // Screen1
-    void gotoScreen1ScreenWipeTransitionEastImpl();
-
     void gotoScreen1ScreenSlideTransitionEastImpl();
 
     // HomeScreen
@@ -63,8 +60,6 @@ protected:
     void gotoHomeScreenScreenSlideTransitionEastImpl();
 
     // AddDeviceScreen
-    void gotoAddDeviceScreenScreenWipeTransitionEastImpl();
-
     void gotoAddDeviceScreenScreenSlideTransitionEastImpl();
 
     // ConfigureNodeScreen
@@ -78,6 +73,9 @@ protected:
 
     // NodeProperScreen
     void gotoNodeProperScreenScreenSlideTransitionEastImpl();
+
+    // SettingsScreen
+    void gotoSettingsScreenScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

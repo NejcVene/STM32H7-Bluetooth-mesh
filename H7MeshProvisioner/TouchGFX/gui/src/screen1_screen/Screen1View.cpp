@@ -9,6 +9,7 @@ Screen1View::Screen1View() : buttonClickCallback(this, &Screen1View::handleButto
 void Screen1View::setupScreen()
 {
     Screen1ViewBase::setupScreen();
+    screenTitleBar1.GUI_SetTextTitleBar("Menu", "rooms");
 //    this->nodes = NC_GetNodeConfigArray();
 //    deviceToggle1.setButtonAction(buttonClickCallback, 1);
 //    deviceToggle2.setButtonAction(buttonClickCallback, 2);

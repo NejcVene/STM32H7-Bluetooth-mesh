@@ -89,8 +89,8 @@ void BottomMenuBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonCon
     if (&src == &settingsBtn)
     {
         //GUI_ToSettingsScreen
-        //When settingsBtn clicked change screen to DebugScreen
-        //Go to DebugScreen with screen transition towards East
-        application().gotoDebugScreenScreenSlideTransitionEast();
+        //When settingsBtn clicked change screen to SettingsScreen
+        //Go to SettingsScreen with screen transition towards East
+        application().gotoSettingsScreenScreenSlideTransitionEast();
     }
 }

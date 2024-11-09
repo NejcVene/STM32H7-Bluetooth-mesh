@@ -7,6 +7,7 @@
 
 #include "comm_uart.h"
 #include "freertos_os2.h"
+#include "task.h"
 
 #ifdef _SLAVE
 #define	Toggle_Pin(port, pin, state)			{ HAL_GPIO_WritePin(port, pin, state); }

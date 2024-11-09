@@ -81,21 +81,8 @@ Screen1ViewBase::Screen1ViewBase() :
     bottomMenu1.setXY(0, 222);
     add(bottomMenu1);
 
-    nodeTitle.setPosition(0, 0, 480, 20);
-    box1.setPosition(0, 0, 480, 20);
-    box1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
-    nodeTitle.add(box1);
-
-    menuName.setXY(10, 0);
-    menuName.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
-    menuName.setLinespacing(0);
-    Unicode::snprintf(menuNameBuffer, MENUNAME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_2NDV).getText());
-    menuName.setWildcard(menuNameBuffer);
-    menuName.resizeToCurrentText();
-    menuName.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KOGS));
-    nodeTitle.add(menuName);
-
-    add(nodeTitle);
+    screenTitleBar1.setXY(0, 0);
+    add(screenTitleBar1);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -106,6 +93,7 @@ Screen1ViewBase::~Screen1ViewBase()
 void Screen1ViewBase::setupScreen()
 {
     bottomMenu1.initialize();
+    screenTitleBar1.initialize();
 }
 
 void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)

@@ -15,22 +15,24 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7BACKGROUND_ID));
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_RAYS_ID));
     tiledImage1.setPosition(0, 0, 480, 272);
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    scrollableContainer1.setPosition(0, 10, 480, 252);
+    bottomMenu1.setXY(0, 222);
+    add(bottomMenu1);
+
+    scrollableContainer1.setPosition(0, 30, 480, 182);
     scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     scrollableContainer1.setScrollbarsAlpha(255);
     noNodesFoundMsg.setPosition(10, 10, 460, 60);
-    tiledImage2.setBitmap(touchgfx::Bitmap(BITMAP_H7LINEMEDIUM_ID));
-    tiledImage2.setPosition(0, 0, 460, 60);
-    tiledImage2.setOffset(0, 0);
-    noNodesFoundMsg.add(tiledImage2);
+    box1.setPosition(0, 0, 460, 60);
+    box1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
+    noNodesFoundMsg.add(box1);
 
     noNodesFoundText.setXY(136, 16);
-    noNodesFoundText.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    noNodesFoundText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
     noNodesFoundText.setLinespacing(0);
     noNodesFoundText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M1AF));
     noNodesFoundMsg.add(noNodesFoundText);
@@ -38,6 +40,9 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase()
     scrollableContainer1.add(noNodesFoundMsg);
 
     add(scrollableContainer1);
+
+    screenTitleBar1.setXY(0, 0);
+    add(screenTitleBar1);
 
     modalWindow1.setBackground(touchgfx::BitmapId(BITMAP_H7MODALBACKGROUNDSMALL_ID), 133, 61);
     modalWindow1.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -57,7 +62,7 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase()
     modalWindow1.add(circleProgress1);
 
     textArea1.setXY(62, 126);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(9, 64, 103));
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M33F));
     modalWindow1.add(textArea1);
@@ -72,7 +77,8 @@ AddDeviceScreenViewBase::~AddDeviceScreenViewBase()
 
 void AddDeviceScreenViewBase::setupScreen()
 {
-
+    bottomMenu1.initialize();
+    screenTitleBar1.initialize();
 }
 
 void AddDeviceScreenViewBase::goToDeviceConfigScreen()

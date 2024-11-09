@@ -8,6 +8,7 @@ HomeScreenView::HomeScreenView()
 void HomeScreenView::setupScreen()
 {
     HomeScreenViewBase::setupScreen();
+    screenTitleBar1.GUI_SetTextTitleBar("Menu", "home");
     // mainDigitalClock
     digitalHours = mainDigitalClock.getCurrentHour();
     digitalMinutes = mainDigitalClock.getCurrentMinute();

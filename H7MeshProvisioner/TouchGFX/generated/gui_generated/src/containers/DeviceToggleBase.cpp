@@ -24,7 +24,7 @@ DeviceToggleBase::DeviceToggleBase()
     add(deviceNameText);
 
     useNodeBtn.setXY(350, 5);
-    useNodeBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDTINY_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSEDTINY_ID));
+    useNodeBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSEDTINY_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDTINY_ID));
     useNodeBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_3FEL));
     useNodeBtn.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     useNodeBtn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));

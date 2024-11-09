@@ -9,10 +9,9 @@
 #include <gui/nodeproperscreen_screen/NodeProperScreenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
-#include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
 #include <gui/containers/BottomMenu.hpp>
+#include <gui/containers/ScreenTitleBar.hpp>
 
 class NodeProperScreenViewBase : public touchgfx::View<NodeProperScreenPresenter>
 {
@@ -37,17 +36,9 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::TiledImage tiledImage1;
-    touchgfx::Container nodeTitle;
-    touchgfx::Box box1;
-    touchgfx::TextAreaWithOneWildcard nodeName;
     touchgfx::ScrollableContainer nodeOptions;
     BottomMenu bottomMenu1;
-
-    /*
-     * Wildcard Buffers
-     */
-    static const uint16_t NODENAME_SIZE = 30;
-    touchgfx::Unicode::UnicodeChar nodeNameBuffer[NODENAME_SIZE];
+    ScreenTitleBar screenTitleBar1;
 
 private:
 

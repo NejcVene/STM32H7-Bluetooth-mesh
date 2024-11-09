@@ -13,13 +13,13 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    void GUI_SetTextRoomTitle(const char *text) {
-
-    	touchgfx::Unicode::strncpy(menuNameBuffer, text, MENUNAME_SIZE);
-    	menuName.resizeToCurrentText();
-    	menuName.invalidate();
-
-    }
+//    void GUI_SetTextRoomTitle(const char *text) {
+//
+//    	touchgfx::Unicode::strncpy(menuNameBuffer, text, MENUNAME_SIZE);
+//    	menuName.resizeToCurrentText();
+//    	menuName.invalidate();
+//
+//    }
 
 protected:
     const char *roomName;

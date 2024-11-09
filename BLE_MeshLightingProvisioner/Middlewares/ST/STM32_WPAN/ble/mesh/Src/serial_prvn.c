@@ -27,6 +27,7 @@
 #include "appli_config_client.h"
 #include "serial_prvn.h"
 #include "appli_mesh.h"
+#include "communication_ex.h"
 
 /** @addtogroup BlueNRG_Mesh
 *  @{
@@ -96,6 +97,7 @@ void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *res
    /* Command to start the unprovisioned devices */
   else if (!strncmp(rcvdStringBuff+COMMAND_OFFSET, "PRVN-",4))
   {   *cmdResposneElsewhere = 1;
+  	  FSM_UnsetNdpvrn();
       if(!PrvningInProcess)
       {
           result = SerialPrvn_ProvisionDevice(rcvdStringBuff+COMMAND_OFFSET);
@@ -127,6 +129,8 @@ void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *res
   else if (!strncmp(rcvdStringBuff+COMMAND_OFFSET, "NDPRVN-",4))
   {   
       MOBLEINT16 index = 0;  
+      *cmdResposneElsewhere = 1;
+      FSM_SetNdpvrn();
       sscanf(rcvdStringBuff, "PRVN-%hd", &index);
       result = BLEMesh_ProvisionDevice(NeighborTable, index);
   }
@@ -205,10 +209,10 @@ static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text, char *resultBuffer)
   if(na>1)
   {
     result = ConfigClient_NodeReset(na);
+    sprintf(resultBuffer, "ATEP UNPV: %d", (int) result);
   }
   else if(na == 1)
   {
-	  strcat(resultBuffer, "0");
     if(!BLEMesh_IsUnprovisioned())
     {
       BLEMesh_PrintStringCb("Provisioner unprovisioning ...\r\n");
@@ -222,7 +226,6 @@ static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text, char *resultBuffer)
   else 
   {
     result = MOBLE_RESULT_INVALIDARG;
-    strcat(resultBuffer, "1");
   }
 
   return result;

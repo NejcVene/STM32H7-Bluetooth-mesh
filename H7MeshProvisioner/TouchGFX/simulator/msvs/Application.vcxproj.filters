@@ -268,6 +268,18 @@
     <Filter Include="Header Files\generated\gui_generated\nodeproperscreen_screen">
       <UniqueIdentifier>2D86034D-1C18-1D4C-8FA9-D0F0494B353B</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\settingsscreen_screen">
+      <UniqueIdentifier>FF70B07D-42BA-4EC3-E021-427600916CEA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\settingsscreen_screen">
+      <UniqueIdentifier>D9AF30D8-F4D1-F5DB-9C60-778D2AA5C63C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\settingsscreen_screen">
+      <UniqueIdentifier>843184E1-E953-C9F8-6458-78C3EDC2837E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\settingsscreen_screen">
+      <UniqueIdentifier>6CE59251-39C1-1724-EC5A-42D6B938C9BB</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -398,6 +410,21 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\AllIconsBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\ScreenTitleBar.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ScreenTitleBarBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp">
+      <Filter>Source Files\gui\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp">
+      <Filter>Source Files\gui\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\settingsscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -939,6 +966,21 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AllIconsBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\ScreenTitleBar.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ScreenTitleBarBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenPresenter.hpp">
+      <Filter>Header Files\gui\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenView.hpp">
+      <Filter>Header Files\gui\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\settingsscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -10,13 +10,13 @@ DeviceSubsBase::DeviceSubsBase()
 {
     setWidth(310);
     setHeight(60);
-    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_H7LINEVERYSMALL_ID));
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDMEDIUMPRESSED_ID));
     tiledImage1.setPosition(0, 0, 310, 60);
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
     addressLabel.setXY(10, 21);
-    addressLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    addressLabel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
     addressLabel.setLinespacing(0);
     Unicode::snprintf(addressLabelBuffer, ADDRESSLABEL_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_8ZXX).getText());
     addressLabel.setWildcard(addressLabelBuffer);
@@ -24,13 +24,14 @@ DeviceSubsBase::DeviceSubsBase()
     addressLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KPYR));
     add(addressLabel);
 
-    subscribeBtn.setXY(161, 5);
-    subscribeBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_ON_DARK_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_OFF_NORMAL_ID));
+    subscribeBtn.setXY(164, 8);
+    subscribeBtn.setBitmaps(touchgfx::Bitmap(BITMAP_TOGGLEBUTTONPRESSED_ID), touchgfx::Bitmap(BITMAP_TOGGLEBUTTON_ID));
     add(subscribeBtn);
 
     grayBox.setPosition(0, 0, 310, 60);
     grayBox.setColor(touchgfx::Color::getColorFromRGB(95, 108, 123));
     grayBox.setAlpha(100);
+    grayBox.setVisible(false);
     add(grayBox);
 }
 

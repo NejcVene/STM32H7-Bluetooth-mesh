@@ -13,7 +13,7 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <gui/containers/BottomMenu.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <gui/containers/ScreenTitleBar.hpp>
 
 class NodesScreenViewBase : public touchgfx::View<NodesScreenPresenter>
 {
@@ -42,15 +42,7 @@ protected:
     touchgfx::Box box1;
     touchgfx::TextArea textArea1;
     BottomMenu bottomMenu1;
-    touchgfx::Container nodeTitle;
-    touchgfx::Box box1_1;
-    touchgfx::TextAreaWithOneWildcard menuName;
-
-    /*
-     * Wildcard Buffers
-     */
-    static const uint16_t MENUNAME_SIZE = 30;
-    touchgfx::Unicode::UnicodeChar menuNameBuffer[MENUNAME_SIZE];
+    ScreenTitleBar screenTitleBar1;
 
 private:
 

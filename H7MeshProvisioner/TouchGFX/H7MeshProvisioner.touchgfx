@@ -235,43 +235,11 @@
             "CustomContainerDefinitionName": "BottomMenu"
           },
           {
-            "Type": "Container",
-            "Name": "nodeTitle",
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
             "Width": 480,
             "Height": 20,
-            "Components": [
-              {
-                "Type": "Box",
-                "Name": "box1",
-                "Width": 480,
-                "Height": 20,
-                "Color": {
-                  "Red": 73,
-                  "Green": 86,
-                  "Blue": 101
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "menuName",
-                "X": 10,
-                "Width": 98,
-                "Height": 19,
-                "TextId": "__SingleUse_KOGS",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 254
-                },
-                "AutoSize": true,
-                "Wildcard1": {
-                  "TextId": "__SingleUse_2NDV",
-                  "UseBuffer": true,
-                  "BufferSize": 30
-                }
-              }
-            ]
+            "CustomContainerDefinitionName": "ScreenTitleBar"
           }
         ],
         "Interactions": [
@@ -359,262 +327,77 @@
             "Name": "tiledImage1",
             "Width": 480,
             "Height": 272,
-            "FileName": "H7Background.png"
-          },
-          {
-            "Type": "FlexButton",
-            "Name": "deviceBtn",
-            "X": 219,
-            "Y": 10,
-            "Width": 121,
-            "Height": 121,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "TextButtonStyle",
-                "Y": 97,
-                "TextId": "__SingleUse_7Z3U",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                },
-                "ColorPressed": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                }
-              },
-              {
-                "Type": "IconButtonStyle",
-                "X": 36,
-                "Y": 36,
-                "IconReleased": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png"
-              },
-              {
-                "Type": "ImageButtonStyle",
-                "ImageReleased": "H7Button.png",
-                "ImagePressed": "H7Button.png"
-              }
-            ]
-          },
-          {
-            "Type": "FlexButton",
-            "Name": "undefinedBtn",
-            "X": 350,
-            "Y": 141,
-            "Width": 121,
-            "Height": 121,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "TextButtonStyle",
-                "Y": 97,
-                "TextId": "__SingleUse_XGDV",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                },
-                "ColorPressed": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                }
-              },
-              {
-                "Type": "IconButtonStyle",
-                "X": 36,
-                "Y": 36,
-                "IconReleased": "__generated\\icon_theme_images_maps_multiple_stop_50_50_3DA9FC.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_maps_multiple_stop_50_50_3DA9FC.svg.png"
-              },
-              {
-                "Type": "ImageButtonStyle",
-                "ImageReleased": "H7Button.png",
-                "ImagePressed": "H7Button.png"
-              }
-            ]
-          },
-          {
-            "Type": "FlexButton",
-            "Name": "settingsBtn",
-            "X": 219,
-            "Y": 141,
-            "Width": 121,
-            "Height": 121,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "TextButtonStyle",
-                "Y": 97,
-                "TextId": "__SingleUse_RE6P",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                },
-                "ColorPressed": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                }
-              },
-              {
-                "Type": "IconButtonStyle",
-                "X": 36,
-                "Y": 36,
-                "IconReleased": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png"
-              },
-              {
-                "Type": "ImageButtonStyle",
-                "ImageReleased": "H7Button.png",
-                "ImagePressed": "H7Button.png"
-              }
-            ]
-          },
-          {
-            "Type": "FlexButton",
-            "Name": "addDeviceBtn",
-            "X": 350,
-            "Y": 10,
-            "Width": 121,
-            "Height": 121,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "TextButtonStyle",
-                "Y": 97,
-                "TextId": "__SingleUse_RUCY",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                },
-                "ColorPressed": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                }
-              },
-              {
-                "Type": "IconButtonStyle",
-                "X": 36,
-                "Y": 36,
-                "IconReleased": "__generated\\icon_theme_images_device_bluetooth_searching_50_50_3DA9FC.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_device_bluetooth_searching_50_50_3DA9FC.svg.png"
-              },
-              {
-                "Type": "ImageButtonStyle",
-                "ImageReleased": "H7Button.png",
-                "ImagePressed": "H7Button.png"
-              }
-            ]
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
           },
           {
             "Type": "Container",
             "Name": "container1",
-            "X": 10,
-            "Y": 10,
+            "X": 141,
+            "Y": 30,
             "Width": 199,
-            "Height": 252,
+            "Height": 182,
             "Components": [
               {
-                "Type": "Image",
-                "Name": "image1",
+                "Type": "Box",
+                "Name": "box1",
                 "Width": 199,
-                "Height": 252,
-                "RelativeFilename": "H7MainInfo.png"
+                "Height": 182,
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                }
               },
               {
                 "Type": "TextArea",
                 "Name": "textArea1",
                 "X": 60,
-                "Y": 176,
+                "Y": 131,
                 "Width": 78,
                 "Height": 30,
                 "TextId": "__SingleUse_2JW3",
                 "TextRotation": "0",
                 "Color": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
                 },
                 "AutoSize": true
               },
               {
                 "Type": "DigitalClock",
                 "Name": "mainDigitalClock",
-                "Y": 35,
+                "Y": 30,
                 "Width": 199,
                 "Height": 51,
                 "TextColor": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
                 },
                 "TextId": "__SingleUse_PGKI",
                 "DisplaySeconds": true,
                 "DisplayLeadingZeroForHourIndicator": true
               }
             ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "a",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "deviceBtn"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionWipe",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "Screen1"
-            }
-          },
-          {
-            "InteractionName": "b",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "addDeviceBtn"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionWipe",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "AddDeviceScreen"
-            }
-          },
-          {
-            "InteractionName": "GUI_ToUndefined",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "undefinedBtn"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "DebugScreen"
-            }
-          }
-        ]
+        "Interactions": []
       },
       {
         "Name": "AddDeviceScreen",
@@ -625,14 +408,22 @@
             "Name": "tiledImage1",
             "Width": 480,
             "Height": 272,
-            "FileName": "H7Background.png"
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
           },
           {
             "Type": "ScrollableContainer",
             "Name": "scrollableContainer1",
-            "Y": 10,
+            "Y": 30,
             "Width": 480,
-            "Height": 252,
+            "Height": 182,
             "HorizontalScrollEnabled": true,
             "VerticalScrollEnabled": true,
             "ScrollbarsVisibleOnPressed": true,
@@ -647,11 +438,15 @@
                 "Height": 60,
                 "Components": [
                   {
-                    "Type": "TiledImage",
-                    "Name": "tiledImage2",
+                    "Type": "Box",
+                    "Name": "box1",
                     "Width": 460,
                     "Height": 60,
-                    "FileName": "H7LineMedium.png"
+                    "Color": {
+                      "Red": 73,
+                      "Green": 86,
+                      "Blue": 101
+                    }
                   },
                   {
                     "Type": "TextArea",
@@ -662,11 +457,23 @@
                     "Height": 29,
                     "TextId": "__SingleUse_M1AF",
                     "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
                     "AutoSize": true
                   }
                 ]
               }
             ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
           },
           {
             "Type": "ModalWindow",
@@ -711,9 +518,9 @@
                 "TextId": "__SingleUse_M33F",
                 "TextRotation": "0",
                 "Color": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
                 },
                 "AutoSize": true
               }
@@ -750,87 +557,89 @@
             "Name": "tiledImage1",
             "Width": 480,
             "Height": 272,
-            "FileName": "H7Background.png"
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
           },
           {
             "Type": "FlexButton",
             "Name": "cancelBtn",
-            "X": 350,
-            "Y": 141,
-            "Width": 121,
-            "Height": 121,
+            "X": 358,
+            "Y": 151,
+            "Width": 112,
+            "Height": 112,
             "ButtonTrigger": {
               "Type": "ClickButtonTrigger"
             },
             "ButtonStyles": [
               {
                 "Type": "IconButtonStyle",
-                "X": 36,
-                "Y": 36,
-                "IconReleased": "__generated\\icon_theme_images_navigation_cancel_50_50_3DA9FC.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_navigation_cancel_50_50_3DA9FC.svg.png"
+                "X": 34,
+                "Y": 30,
+                "IconReleased": "__generated\\icon_theme_images_navigation_cancel_50_50_FFFFFE.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_navigation_cancel_50_50_FFFFFE.svg.png"
               },
               {
                 "Type": "TextButtonStyle",
-                "Y": 97,
+                "X": 1,
+                "Y": 83,
                 "TextId": "__SingleUse_0LTB",
                 "TextRotation": "0",
                 "ColorReleased": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
                 },
                 "ColorPressed": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
                 }
               },
               {
                 "Type": "ImageButtonStyle",
-                "ImageReleased": "H7Button.png",
-                "ImagePressed": "H7Button.png"
+                "ImageReleased": "ButtonBackgroundPressed.png",
+                "ImagePressed": "ButtonBackground.png"
               }
             ]
           },
           {
             "Type": "FlexButton",
             "Name": "saveBtn",
-            "X": 350,
-            "Y": 10,
-            "Width": 121,
-            "Height": 121,
+            "X": 358,
+            "Y": 30,
+            "Width": 112,
+            "Height": 112,
             "ButtonTrigger": {
               "Type": "ClickButtonTrigger"
             },
             "ButtonStyles": [
               {
                 "Type": "IconButtonStyle",
-                "X": 36,
-                "Y": 36,
-                "IconReleased": "__generated\\icon_theme_images_action_done_50_50_3DA9FC.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_3DA9FC.svg.png"
+                "X": 34,
+                "Y": 30,
+                "IconReleased": "__generated\\icon_theme_images_action_done_50_50_FFFFFE.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_FFFFFE.svg.png"
               },
               {
                 "Type": "TextButtonStyle",
-                "Y": 97,
+                "X": 1,
+                "Y": 83,
                 "TextId": "__SingleUse_EMI2",
                 "TextRotation": "0",
                 "ColorReleased": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
                 },
                 "ColorPressed": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
                 }
               },
               {
                 "Type": "ImageButtonStyle",
-                "ImageReleased": "H7Button.png",
-                "ImagePressed": "H7Button.png"
+                "ImageReleased": "ButtonBackgroundPressed.png",
+                "ImagePressed": "ButtonBackground.png"
               }
             ]
           },
@@ -838,26 +647,35 @@
             "Type": "Container",
             "Name": "container1",
             "X": 10,
-            "Y": 10,
+            "Y": 30,
             "Width": 330,
-            "Height": 121,
+            "Height": 112,
             "Components": [
               {
-                "Type": "TiledImage",
-                "Name": "tiledImage2",
+                "Type": "Box",
+                "Name": "box1",
                 "Width": 330,
-                "Height": 121,
-                "FileName": "H7ConfigBox.png"
+                "Height": 111,
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                }
               },
               {
                 "Type": "TextArea",
                 "Name": "nodeVendor",
                 "X": 10,
-                "Y": 82,
+                "Y": 73,
                 "Width": 62,
                 "Height": 29,
                 "TextId": "__SingleUse_FHXT",
                 "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
                 "AutoSize": true,
                 "Wildcard1": {
                   "TextId": "__SingleUse_KAJT",
@@ -869,11 +687,16 @@
                 "Type": "TextArea",
                 "Name": "nodeUUID",
                 "X": 10,
-                "Y": 46,
+                "Y": 42,
                 "Width": 62,
                 "Height": 29,
                 "TextId": "__SingleUse_B8P1",
                 "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
                 "AutoSize": true,
                 "Wildcard1": {
                   "TextId": "__SingleUse_W5ZN",
@@ -890,6 +713,11 @@
                 "Height": 29,
                 "TextId": "__SingleUse_OPFS",
                 "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
                 "AutoSize": true,
                 "Wildcard1": {
                   "TextId": "__SingleUse_2W0E",
@@ -900,23 +728,34 @@
             ]
           },
           {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
             "Type": "ScrollableContainer",
             "Name": "allNodeSubsCont",
             "X": 10,
-            "Y": 141,
+            "Y": 151,
             "Width": 330,
-            "Height": 121,
+            "Height": 112,
             "HorizontalScrollEnabled": true,
             "VerticalScrollEnabled": true,
             "ScrollbarsVisibleOnPressed": true,
             "ScrollbarsAlpha": 255,
             "Components": [
               {
-                "Type": "TiledImage",
-                "Name": "tiledImage3",
+                "Type": "Box",
+                "Name": "box2",
                 "Width": 330,
                 "Height": 350,
-                "FileName": "H7ConfigScroll.png"
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                }
               }
             ]
           },
@@ -938,22 +777,21 @@
                 "X": 57,
                 "Y": 91,
                 "Width": 100,
-                "Height": 36,
-                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_pressed.png",
-                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_normal.png",
+                "Height": 50,
+                "Pressed": "ButtonBackgroundTiny.png",
+                "Released": "ButtonBackgroundPressedTiny.png",
                 "TextId": "__SingleUse_52I8",
                 "ReleasedColor": {
                   "Red": 255,
                   "Green": 255,
-                  "Blue": 255
+                  "Blue": 254
                 },
                 "PressedColor": {
                   "Red": 255,
                   "Green": 255,
-                  "Blue": 255
+                  "Blue": 254
                 },
-                "TextRotation": "0",
-                "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_rounded_normal.json"
+                "TextRotation": "0"
               },
               {
                 "Type": "TextArea",
@@ -964,6 +802,11 @@
                 "Height": 19,
                 "TextId": "__SingleUse_PIBO",
                 "TextRotation": "0",
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                },
                 "AutoSize": true
               }
             ]
@@ -1032,14 +875,15 @@
             "Name": "tiledImage1",
             "Width": 480,
             "Height": 272,
-            "FileName": "H7Background.png"
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
           },
           {
             "Type": "ScrollableContainer",
             "Name": "scrollableContainer1",
             "X": 115,
+            "Y": 30,
             "Width": 250,
-            "Height": 272,
+            "Height": 182,
             "HorizontalScrollEnabled": true,
             "VerticalScrollEnabled": true,
             "ScrollbarsVisibleOnPressed": true,
@@ -1137,6 +981,21 @@
                 "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
               }
             ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
           }
         ],
         "Interactions": [
@@ -1256,43 +1115,11 @@
             "CustomContainerDefinitionName": "BottomMenu"
           },
           {
-            "Type": "Container",
-            "Name": "nodeTitle",
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
             "Width": 480,
             "Height": 20,
-            "Components": [
-              {
-                "Type": "Box",
-                "Name": "box1_1",
-                "Width": 480,
-                "Height": 20,
-                "Color": {
-                  "Red": 73,
-                  "Green": 86,
-                  "Blue": 101
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "menuName",
-                "X": 10,
-                "Width": 102,
-                "Height": 19,
-                "TextId": "__SingleUse_VM6J",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 254
-                },
-                "AutoSize": true,
-                "Wildcard1": {
-                  "TextId": "__SingleUse_P3DX",
-                  "UseBuffer": true,
-                  "BufferSize": 30
-                }
-              }
-            ]
+            "CustomContainerDefinitionName": "ScreenTitleBar"
           }
         ],
         "Interactions": [
@@ -1328,45 +1155,6 @@
             "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
           },
           {
-            "Type": "Container",
-            "Name": "nodeTitle",
-            "Width": 480,
-            "Height": 20,
-            "Components": [
-              {
-                "Type": "Box",
-                "Name": "box1",
-                "Width": 480,
-                "Height": 20,
-                "Color": {
-                  "Red": 73,
-                  "Green": 86,
-                  "Blue": 101
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "nodeName",
-                "X": 10,
-                "Width": 108,
-                "Height": 19,
-                "TextId": "__SingleUse_VNO6",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 254
-                },
-                "AutoSize": true,
-                "Wildcard1": {
-                  "TextId": "__SingleUse_K2Q0",
-                  "UseBuffer": true,
-                  "BufferSize": 30
-                }
-              }
-            ]
-          },
-          {
             "Type": "ScrollableContainer",
             "Name": "nodeOptions",
             "Y": 30,
@@ -1385,6 +1173,13 @@
             "Width": 480,
             "Height": 50,
             "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
           }
         ],
         "Interactions": [
@@ -1423,6 +1218,165 @@
           {
             "Name": "goToScreen1",
             "Description": "Called from user code to change screen"
+          }
+        ]
+      },
+      {
+        "Name": "SettingsScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "settingsContainer",
+            "Y": 30,
+            "Width": 480,
+            "Height": 182,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "FlexButton",
+                "Name": "deviceInfoBtn",
+                "X": 10,
+                "Y": 140,
+                "Width": 460,
+                "Height": 60,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "X": 10,
+                    "Y": 20,
+                    "TextId": "__SingleUse_64IT",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    }
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "SettingBtnPressed.png",
+                    "ImagePressed": "SettingBtn.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "debugBtn",
+                "X": 10,
+                "Y": 70,
+                "Width": 460,
+                "Height": 60,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "X": 10,
+                    "Y": 20,
+                    "TextId": "__SingleUse_7MZW",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    }
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "SettingBtnPressed.png",
+                    "ImagePressed": "SettingBtn.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "setClockBtn",
+                "X": 10,
+                "Width": 460,
+                "Height": 60,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "X": 10,
+                    "Y": 20,
+                    "TextId": "__SingleUse_G6K4",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    }
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "SettingBtnPressed.png",
+                    "ImagePressed": "SettingBtn.png"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SwitchToDebugScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "debugBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "DebugScreen"
+            }
           }
         ]
       }
@@ -1474,8 +1428,8 @@
             "Y": 5,
             "Width": 100,
             "Height": 50,
-            "Pressed": "ButtonBackgroundPressedTiny.png",
-            "Released": "ButtonBackgroundTiny.png",
+            "Pressed": "ButtonBackgroundTiny.png",
+            "Released": "ButtonBackgroundPressedTiny.png",
             "TextId": "__SingleUse_3FEL",
             "ReleasedColor": {
               "Red": 255,
@@ -1498,11 +1452,15 @@
         "Height": 60,
         "Components": [
           {
-            "Type": "TiledImage",
-            "Name": "tiledImage1",
+            "Type": "Box",
+            "Name": "box1",
             "Width": 460,
             "Height": 60,
-            "FileName": "H7LineMedium.png"
+            "Color": {
+              "Red": 73,
+              "Green": 86,
+              "Blue": 101
+            }
           },
           {
             "Type": "TextArea",
@@ -1513,6 +1471,11 @@
             "Height": 29,
             "TextId": "__SingleUse_YBUN",
             "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_9YKB",
@@ -1529,6 +1492,11 @@
             "Height": 29,
             "TextId": "__SingleUse_UH6U",
             "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_Z4S0",
@@ -1545,6 +1513,11 @@
             "Height": 29,
             "TextId": "__SingleUse_L7DV",
             "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_T1HH",
@@ -1556,11 +1529,11 @@
             "Type": "ButtonWithLabel",
             "Name": "provBtn",
             "X": 350,
-            "Y": 12,
+            "Y": 5,
             "Width": 100,
-            "Height": 36,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_active.png",
+            "Height": 50,
+            "Pressed": "ButtonBackgroundTiny.png",
+            "Released": "ButtonBackgroundPressedTiny.png",
             "TextId": "__SingleUse_TWFN",
             "ReleasedColor": {
               "Red": 255,
@@ -1572,8 +1545,7 @@
               "Green": 255,
               "Blue": 255
             },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_rounded_active.json"
+            "TextRotation": "0"
           }
         ],
         "Interactions": []
@@ -1588,17 +1560,22 @@
             "Name": "tiledImage1",
             "Width": 310,
             "Height": 60,
-            "FileName": "H7LineVerySmall.png"
+            "FileName": "ButtonBackgroundMediumPressed.png"
           },
           {
             "Type": "TextArea",
             "Name": "addressLabel",
             "X": 10,
             "Y": 21,
-            "Width": 42,
+            "Width": 47,
             "Height": 19,
             "TextId": "__SingleUse_KPYR",
             "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_8ZXX",
@@ -1609,19 +1586,19 @@
           {
             "Type": "ToggleButton",
             "Name": "subscribeBtn",
-            "X": 161,
-            "Y": 5,
-            "Width": 138,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.png",
-            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_dark.png",
-            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded_text.json"
+            "X": 164,
+            "Y": 8,
+            "Width": 132,
+            "Height": 45,
+            "Pressed": "ToggleButton.png",
+            "Released": "ToggleButtonPressed.png"
           },
           {
             "Type": "Box",
             "Name": "grayBox",
             "Width": 310,
             "Height": 60,
+            "Visible": false,
             "Color": {
               "Red": 95,
               "Green": 108,
@@ -1909,7 +1886,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "DebugScreen"
+              "ActionComponent": "SettingsScreen"
             }
           }
         ]
@@ -1993,6 +1970,50 @@
             "IconHeight": 50,
             "IconWidth": 50,
             "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "ScreenTitleBar",
+        "Width": 480,
+        "Height": 20,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 20,
+            "Color": {
+              "Red": 73,
+              "Green": 86,
+              "Blue": 101
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "titleBarTxt",
+            "X": 10,
+            "Width": 105,
+            "Height": 19,
+            "TextId": "__SingleUse_RZFU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_W7F3",
+              "UseBuffer": true,
+              "BufferSize": 30
+            },
+            "Wildcard2": {
+              "TextId": "__SingleUse_KVUU",
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
           }
         ],
         "Interactions": []

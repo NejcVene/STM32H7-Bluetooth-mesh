@@ -12,7 +12,7 @@ void NodesScreenView::setupScreen()
     this->roomName = presenter->GUI_GetRoomName();
     this->roomBitmask = presenter->GUI_GetRoomBitmask();
     this->nodes = NC_GetNodeConfigArray();
-    GUI_SetTextRoomTitle(this->roomName);
+    screenTitleBar1.GUI_SetTextTitleBar("Room", this->roomName);
     for (int i = 0; i<this->maxDevices; i++) {
     	if (roomBitmask & this->nodes[i].subscriptions) {
     		// roomNodesContainer

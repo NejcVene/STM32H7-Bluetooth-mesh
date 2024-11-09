@@ -4,7 +4,6 @@
 #include <gui_generated/nodeproperscreen_screen/NodeProperScreenViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 
 NodeProperScreenViewBase::NodeProperScreenViewBase()
 {
@@ -17,22 +16,6 @@ NodeProperScreenViewBase::NodeProperScreenViewBase()
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    nodeTitle.setPosition(0, 0, 480, 20);
-    box1.setPosition(0, 0, 480, 20);
-    box1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
-    nodeTitle.add(box1);
-
-    nodeName.setXY(10, 0);
-    nodeName.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
-    nodeName.setLinespacing(0);
-    Unicode::snprintf(nodeNameBuffer, NODENAME_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_K2Q0).getText());
-    nodeName.setWildcard(nodeNameBuffer);
-    nodeName.resizeToCurrentText();
-    nodeName.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VNO6));
-    nodeTitle.add(nodeName);
-
-    add(nodeTitle);
-
     nodeOptions.setPosition(0, 30, 480, 182);
     nodeOptions.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     nodeOptions.setScrollbarsAlpha(255);
@@ -40,6 +23,9 @@ NodeProperScreenViewBase::NodeProperScreenViewBase()
 
     bottomMenu1.setXY(0, 222);
     add(bottomMenu1);
+
+    screenTitleBar1.setXY(0, 0);
+    add(screenTitleBar1);
 }
 
 NodeProperScreenViewBase::~NodeProperScreenViewBase()
@@ -50,6 +36,7 @@ NodeProperScreenViewBase::~NodeProperScreenViewBase()
 void NodeProperScreenViewBase::setupScreen()
 {
     bottomMenu1.initialize();
+    screenTitleBar1.initialize();
 }
 
 void NodeProperScreenViewBase::goToConfigureScreen()

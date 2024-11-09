@@ -890,7 +890,7 @@ MOBLE_RESULT Appli_ConfigClient_ConfigureNode(void)
       // added
       // register event to send result as node provision and configuration is complete
       char resultBuffer[PAC_MAX_PAYLOAD];
-      sprintf(resultBuffer, "ATEP PRVN: %d", GetAddressToConfigure());
+      sprintf(resultBuffer, "ATEP %s: %d", FSM_GetNdprn() ? "NDPRVN" : "PRVN", GetAddressToConfigure());
       FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, sizeof(resultBuffer));
 
     }

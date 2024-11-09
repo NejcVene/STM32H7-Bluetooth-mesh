@@ -86,6 +86,18 @@ public:
 
     }
 
+    int GUI_GetUsedCommandIndex() {
+
+    	return this->usedCommandIndex;
+
+    }
+
+    void GUI_SetUsedCommandIndex(int usedCommandIndex) {
+
+    	this->usedCommandIndex = usedCommandIndex;
+
+    }
+
 
 
     void GUI_SendCommand(CMD_CommandGet_t *cmd);
@@ -96,6 +108,7 @@ protected:
     NC_MaskedFeatures *allModels;
     uint8_t roomBitmask;
     uint32_t nodeAddress;
+    int usedCommandIndex;
     char roomName[30];
 };
 

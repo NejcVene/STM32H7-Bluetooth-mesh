@@ -286,7 +286,7 @@ void Serial_InterfaceProcess(void)
 		CommandString[--indexReceiveChar] = 0;
 	  }
 	  if (cmdTypeConverted != PRO_MSG_TYPE_UNACK) {
-			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, strlen(resultBuffer));
+			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, strlen(resultBuffer) + 1);
 	  } else {
 			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_UNACK, NULL, 0);
 	  }

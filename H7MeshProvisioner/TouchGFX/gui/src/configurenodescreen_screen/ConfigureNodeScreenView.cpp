@@ -22,6 +22,7 @@ void ConfigureNodeScreenView::setupScreen()
     setTextNodeUUID(this->configNode->address.uuid);
     setTextNodeName(this->configNode->nodeName);
     setTextVendor("ST micro");
+    screenTitleBar1.GUI_SetTextTitleBar("Device", this->configNode->nodeName);
     for (int i = 0; this->allGroupAddress[i].bitmask != 0; i++) {
     	nodeSubscriptions[i].initialize();
     	nodeSubscriptions[i].setPosition(10, 10 + (i * 70), 310, 60);
@@ -118,13 +119,19 @@ void ConfigureNodeScreenView::GUI_SaveConfNode() {
 	void *paramValue[] = {(void *) &this->toSubb, (void *) &this->configNode->address.nodeAddress};
 	int arrayLength[] = {1};
 	size_t elementSize[] = {sizeof(Node_SubscriptionParam_t)};
-	this->cmd = CMD_CreateCommandGet(CMD_FUN_PUB_SET_SUB_ADD,
-									types,
-									paramValue,
-									2,
-									arrayLength,
-									elementSize);
-	presenter->GUI_SendCommand(this->cmd);
+
+	if (this->toSubb.numOfSubs <= 0) {
+		GUI_ShowPopup();
+	} else {
+		this->cmd = CMD_CreateCommandGet(CMD_FUN_PUB_SET_SUB_ADD,
+										types,
+										paramValue,
+										2,
+										arrayLength,
+										elementSize);
+		presenter->GUI_SendCommand(this->cmd);
+	}
+
 
 }
 

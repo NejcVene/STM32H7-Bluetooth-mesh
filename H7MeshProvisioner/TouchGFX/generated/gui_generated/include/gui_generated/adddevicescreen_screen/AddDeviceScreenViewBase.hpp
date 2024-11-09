@@ -9,9 +9,11 @@
 #include <gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
+#include <gui/containers/BottomMenu.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <gui/containers/ScreenTitleBar.hpp>
 #include <touchgfx/containers/ModalWindow.hpp>
 #include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
@@ -38,10 +40,12 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::TiledImage tiledImage1;
+    BottomMenu bottomMenu1;
     touchgfx::ScrollableContainer scrollableContainer1;
     touchgfx::Container noNodesFoundMsg;
-    touchgfx::TiledImage tiledImage2;
+    touchgfx::Box box1;
     touchgfx::TextArea noNodesFoundText;
+    ScreenTitleBar screenTitleBar1;
     touchgfx::ModalWindow modalWindow1;
     touchgfx::CircleProgress circleProgress1;
     touchgfx::PainterRGB565 circleProgress1Painter;

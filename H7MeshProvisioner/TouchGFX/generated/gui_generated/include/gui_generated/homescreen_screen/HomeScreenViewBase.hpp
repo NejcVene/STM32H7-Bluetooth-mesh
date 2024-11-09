@@ -9,11 +9,11 @@
 #include <gui/homescreen_screen/HomeScreenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
+#include <gui/containers/BottomMenu.hpp>
+#include <gui/containers/ScreenTitleBar.hpp>
 
 class HomeScreenViewBase : public touchgfx::View<HomeScreenPresenter>
 {
@@ -32,26 +32,14 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::TiledImage tiledImage1;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  deviceBtn;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  undefinedBtn;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  settingsBtn;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  addDeviceBtn;
     touchgfx::Container container1;
-    touchgfx::Image image1;
+    touchgfx::Box box1;
     touchgfx::TextArea textArea1;
     touchgfx::DigitalClock mainDigitalClock;
+    BottomMenu bottomMenu1;
+    ScreenTitleBar screenTitleBar1;
 
 private:
-
-    /*
-     * Callback Declarations
-     */
-    touchgfx::Callback<HomeScreenViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
-
-    /*
-     * Callback Handler Declarations
-     */
-    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 
