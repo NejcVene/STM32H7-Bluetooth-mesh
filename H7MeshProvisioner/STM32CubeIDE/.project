@@ -195,6 +195,16 @@
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c</locationURI>
 		</link>
 		<link>
+			<name>Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rtc.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rtc.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_rtc_ex.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rtc_ex.c</locationURI>
+		</link>
+		<link>
 			<name>Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal_sdram.c</name>
 			<type>1</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sdram.c</locationURI>
@@ -610,6 +620,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/adddevicescreen_screen/AddDeviceScreenView.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/ClockSettingsScreenPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/clocksettingsscreen_screen/ClockSettingsScreenPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ClockSettingsScreenView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/clocksettingsscreen_screen/ClockSettingsScreenView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/FrontendApplication.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
@@ -653,6 +673,11 @@
 			<name>Application/User/gui/DeviceToggle.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/DeviceToggle.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Loader.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Loader.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/ScreenTitleBar.cpp</name>
@@ -765,6 +790,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_verdanab_16_4bpp_0.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Font_verdanab_24_4bpp_0.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_verdanab_24_4bpp_0.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/GeneratedFont.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/GeneratedFont.cpp</locationURI>
@@ -795,6 +825,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_verdanab_16_4bpp.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Kerning_verdanab_24_4bpp.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_verdanab_24_4bpp.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/Table_verdana_16_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_verdana_16_4bpp.cpp</locationURI>
@@ -820,6 +855,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_verdanab_16_4bpp.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/Table_verdanab_24_4bpp.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_verdanab_24_4bpp.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/UnmappedDataFont.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/UnmappedDataFont.cpp</locationURI>
@@ -833,6 +873,11 @@
 			<name>Application/User/generated/AddDeviceScreenViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/adddevicescreen_screen/AddDeviceScreenViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/ClockSettingsScreenViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/clocksettingsscreen_screen/ClockSettingsScreenViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/FrontendApplicationBase.cpp</name>
@@ -873,6 +918,11 @@
 			<name>Application/User/generated/DeviceToggleBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/DeviceToggleBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/LoaderBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/LoaderBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/ScreenTitleBarBase.cpp</name>
@@ -1008,6 +1058,16 @@
 			<name>Application/User/generated/image_icon_theme_images_hardware_devices_other_50_50_FFFFFE.svg.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_hardware_devices_other_50_50_FFFFFE.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_hardware_keyboard_arrow_down_50_50_FFFFFE.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_hardware_keyboard_arrow_down_50_50_FFFFFE.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_hardware_keyboard_arrow_up_50_50_FFFFFE.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_hardware_keyboard_arrow_up_50_50_FFFFFE.svg.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_icon_theme_images_hardware_tv_50_50_D6D6D5.svg.cpp</name>

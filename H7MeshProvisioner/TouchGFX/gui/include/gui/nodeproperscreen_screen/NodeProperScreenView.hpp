@@ -12,6 +12,7 @@ public:
     virtual ~NodeProperScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void handleTickEvent();
 
     virtual int getBtnIndexFromInstaceID(int instanceID);
 

@@ -488,41 +488,12 @@
             "Alpha": 100,
             "Components": [
               {
-                "Type": "CircleProgress",
-                "Name": "circleProgress1",
-                "X": 52,
-                "Y": 8,
-                "Width": 110,
-                "Height": 110,
-                "Color": {
-                  "Red": 61,
-                  "Green": 169,
-                  "Blue": 252
-                },
-                "CenterX": 55.0,
-                "CenterY": 55.0,
-                "Radius": 50.0,
-                "LineWidth": 10.0,
-                "EndAngle": 360.0,
-                "CapPrecision": "Butt",
-                "FileNameBackground": "H7SpinnerSmall.png",
-                "ProgressRangeMax": 100
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textArea1",
-                "X": 62,
-                "Y": 126,
-                "Width": 104,
-                "Height": 19,
-                "TextId": "__SingleUse_M33F",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 73,
-                  "Green": 86,
-                  "Blue": 101
-                },
-                "AutoSize": true
+                "Type": "CustomContainerInstance",
+                "Name": "loader1",
+                "X": 7,
+                "Width": 200,
+                "Height": 150,
+                "CustomContainerDefinitionName": "Loader"
               }
             ]
           }
@@ -551,6 +522,7 @@
       },
       {
         "Name": "ConfigureNodeScreen",
+        "CanvasBufferSize": 7200,
         "Components": [
           {
             "Type": "TiledImage",
@@ -808,6 +780,28 @@
                   "Blue": 101
                 },
                 "AutoSize": true
+              }
+            ]
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "GUI_ConfLoaderPopup",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7ModalBackgroundSmall.png",
+            "ModalX": 133,
+            "ModalY": 61,
+            "ModalWidth": 214,
+            "ModalHeight": 150,
+            "Alpha": 100,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "loader1",
+                "X": 7,
+                "Width": 200,
+                "Height": 150,
+                "CustomContainerDefinitionName": "Loader"
               }
             ]
           }
@@ -1146,6 +1140,7 @@
       },
       {
         "Name": "NodeProperScreen",
+        "CanvasBufferSize": 7200,
         "Components": [
           {
             "Type": "TiledImage",
@@ -1180,6 +1175,28 @@
             "Width": 480,
             "Height": 20,
             "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "loaderModal",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7ModalBackgroundSmall.png",
+            "ModalX": 133,
+            "ModalY": 61,
+            "ModalWidth": 214,
+            "ModalHeight": 150,
+            "Alpha": 100,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "loader1",
+                "X": 7,
+                "Width": 200,
+                "Height": 150,
+                "CustomContainerDefinitionName": "Loader"
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -1376,6 +1393,317 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "DebugScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToClockSettingsScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "setClockBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ClockSettingsScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "ClockSettingsScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "Container",
+            "Name": "elements",
+            "X": 10,
+            "Y": 30,
+            "Width": 460,
+            "Height": 182,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "timeContainerHour",
+                "Width": 189,
+                "Height": 110,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "hourBackground",
+                    "Width": 79,
+                    "Height": 110,
+                    "Color": {
+                      "Red": 73,
+                      "Green": 86,
+                      "Blue": 101
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "hourSetText",
+                    "X": 14,
+                    "Y": 45,
+                    "Width": 50,
+                    "Height": 41,
+                    "TextId": "__SingleUse_VZDO",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_O4YG",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "hourText",
+                    "X": 18,
+                    "Width": 43,
+                    "Height": 19,
+                    "TextId": "__SingleUse_2QJM",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "hourUpBtn",
+                    "X": 89,
+                    "Width": 100,
+                    "Height": 50,
+                    "Pressed": "ButtonBackgroundTiny.png",
+                    "Released": "ButtonBackgroundPressedTiny.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_up_50_50_FFFFFE.svg.png",
+                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_up_50_50_FFFFFE.svg.png",
+                    "IconX": 26,
+                    "IconHeight": 50,
+                    "IconWidth": 50
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "hourDownBtn",
+                    "X": 89,
+                    "Y": 60,
+                    "Width": 100,
+                    "Height": 50,
+                    "Pressed": "ButtonBackgroundTiny.png",
+                    "Released": "ButtonBackgroundPressedTiny.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_down_50_50_FFFFFE.svg.png",
+                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_down_50_50_FFFFFE.svg.png",
+                    "IconX": 26,
+                    "IconHeight": 50,
+                    "IconWidth": 50
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "timeContainerMinute",
+                "X": 271,
+                "Width": 189,
+                "Height": 110,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "minuteBackground",
+                    "X": 110,
+                    "Width": 79,
+                    "Height": 110,
+                    "Color": {
+                      "Red": 73,
+                      "Green": 86,
+                      "Blue": 101
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "minuteSetText",
+                    "X": 124,
+                    "Y": 45,
+                    "Width": 50,
+                    "Height": 41,
+                    "TextId": "__SingleUse_OGC8",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_HZRE",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "minuteText",
+                    "X": 119,
+                    "Width": 60,
+                    "Height": 19,
+                    "TextId": "__SingleUse_VUYR",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "minuteUpBtn",
+                    "Width": 100,
+                    "Height": 50,
+                    "Pressed": "ButtonBackgroundTiny.png",
+                    "Released": "ButtonBackgroundPressedTiny.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_up_50_50_FFFFFE.svg.png",
+                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_up_50_50_FFFFFE.svg.png",
+                    "IconX": 26,
+                    "IconHeight": 50,
+                    "IconWidth": 50
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "minuteDownBtn",
+                    "Y": 60,
+                    "Width": 100,
+                    "Height": 50,
+                    "Pressed": "ButtonBackgroundTiny.png",
+                    "Released": "ButtonBackgroundPressedTiny.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_down_50_50_FFFFFE.svg.png",
+                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_down_50_50_FFFFFE.svg.png",
+                    "IconX": 26,
+                    "IconHeight": 50,
+                    "IconWidth": 50
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "saveClockBtn",
+            "X": 190,
+            "Y": 162,
+            "Width": 100,
+            "Height": 50,
+            "Pressed": "ButtonBackgroundTiny.png",
+            "Released": "ButtonBackgroundPressedTiny.png",
+            "TextId": "__SingleUse_AVYH",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SaveClock",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "saveClockBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_SaveClock"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToSettingsScreenAfterInteraction",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "GUI_SaveClock"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "SettingsScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_HourUpBtnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "hourUpBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_HourUpBtnClicked"
+            }
+          },
+          {
+            "InteractionName": "GUI_HourDownBtnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "hourDownBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_HourDownBtnClicked"
+            }
+          },
+          {
+            "InteractionName": "GUI_MinuteUpBtnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "minuteUpBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_MinuteUpBtnClicked"
+            }
+          },
+          {
+            "InteractionName": "GUI_MinuteDownBtnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "minuteDownBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_MinuteDownBtnClicked"
             }
           }
         ]
@@ -2011,6 +2339,56 @@
             },
             "Wildcard2": {
               "TextId": "__SingleUse_KVUU",
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Loader",
+        "X": 140,
+        "Y": 61,
+        "Width": 200,
+        "Height": 150,
+        "Components": [
+          {
+            "Type": "CircleProgress",
+            "Name": "loaderProgress",
+            "X": 45,
+            "Y": 10,
+            "Width": 110,
+            "Height": 110,
+            "Color": {
+              "Red": 61,
+              "Green": 169,
+              "Blue": 252
+            },
+            "CenterX": 55.0,
+            "CenterY": 55.0,
+            "Radius": 50.0,
+            "LineWidth": 10.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "H7SpinnerSmall.png",
+            "ProgressRangeMax": 100
+          },
+          {
+            "Type": "TextArea",
+            "Name": "loaderText",
+            "Y": 125,
+            "Width": 200,
+            "Height": 19,
+            "TextId": "__SingleUse_ZXED",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 73,
+              "Green": 86,
+              "Blue": 101
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_4F49",
               "UseBuffer": true,
               "BufferSize": 30
             }

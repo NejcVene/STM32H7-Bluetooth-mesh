@@ -16,6 +16,8 @@ void ConfigureNodeScreenView::setupScreen()
 {
     ConfigureNodeScreenViewBase::setupScreen();
     GUI_CongPopup.hide();
+    GUI_ConfLoaderPopup.hide();
+    loader1.GUI_SetDisable(true);
     this->setupEnd = 0;
     this->configNode = presenter->GUI_GetDeviceToConfigureFromModel();
     this->allGroupAddress = presenter->GUI_GetAllMaskedModels();
@@ -48,6 +50,12 @@ void ConfigureNodeScreenView::setupScreen()
 void ConfigureNodeScreenView::tearDownScreen()
 {
     ConfigureNodeScreenViewBase::tearDownScreen();
+}
+
+void ConfigureNodeScreenView::handleTickEvent() {
+
+	loader1.GUI_ProgressLoader();
+
 }
 
 /*
@@ -123,6 +131,9 @@ void ConfigureNodeScreenView::GUI_SaveConfNode() {
 	if (this->toSubb.numOfSubs <= 0) {
 		GUI_ShowPopup();
 	} else {
+		GUI_ConfLoaderPopup.show();
+		loader1.GUI_SetLoaderText("Configuring node");
+		loader1.GUI_SetDisable(false);
 		this->cmd = CMD_CreateCommandGet(CMD_FUN_PUB_SET_SUB_ADD,
 										types,
 										paramValue,
@@ -150,6 +161,9 @@ void ConfigureNodeScreenView::GUI_CancelBtnClicked() {
 
 void ConfigureNodeScreenView::GUI_ShowPopup() {
 
+	loader1.GUI_SetDisable(true);
+	loader1.GUI_ResetProgressValue();
+	GUI_ConfLoaderPopup.hide();
 	GUI_CongPopup.show();
 
 }

@@ -9,6 +9,8 @@ NodeProperScreenView::NodeProperScreenView() : buttonClickCallback(this, &NodePr
 void NodeProperScreenView::setupScreen()
 {
     NodeProperScreenViewBase::setupScreen();
+    loaderModal.hide();
+    loader1.GUI_SetDisable(true);
     this->node = NC_GetConfigNodeFromAddress(presenter->GUI_GetNodeAddress());
     this->nodeModel = node->address.nodeModels;
     this->allModels = NC_GetAllModels();
@@ -70,6 +72,12 @@ void NodeProperScreenView::setupScreen()
 void NodeProperScreenView::tearDownScreen()
 {
     NodeProperScreenViewBase::tearDownScreen();
+}
+
+void NodeProperScreenView::handleTickEvent() {
+
+	loader1.GUI_ProgressLoader();
+
 }
 
 void NodeProperScreenView::setupGenericOnOff(int guiIndex) {
@@ -231,6 +239,9 @@ void NodeProperScreenView::handleDeleteClicked(int instanceID) {
 									1,
 									NULL,
 									NULL);
+	loaderModal.show();
+	loader1.GUI_SetLoaderText("Deleting node");
+	loader1.GUI_SetDisable(false);
 	presenter->GUI_SendCommand(this->cmd);
 
 }
@@ -249,6 +260,9 @@ int NodeProperScreenView::getBtnIndexFromInstaceID(int instanceID) {
 
 void NodeProperScreenView::changeScreenAfterUnprov() {
 
+	loaderModal.hide();
+	loader1.GUI_SetDisable(true);
+	loader1.GUI_ResetProgressValue();
 	goToScreen1();
 
 }

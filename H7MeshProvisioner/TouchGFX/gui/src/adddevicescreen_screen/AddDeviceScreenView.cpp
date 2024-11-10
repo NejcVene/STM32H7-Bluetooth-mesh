@@ -24,6 +24,8 @@ void AddDeviceScreenView::setupScreen()
     	scrollableContainer1.add(deviceAdds[i]);
     }
     modalWindow1.show();
+    loader1.GUI_SetLoaderText("Searching");
+    loader1.GUI_SetDisable(false);
     this->cmd = CMD_CreateCommandGet(CMD_MESH_ATEP_SCAN,
     								NULL,
 									NULL,
@@ -40,34 +42,16 @@ void AddDeviceScreenView::tearDownScreen()
 
 void AddDeviceScreenView::handleTickEvent() {
 
-	if (disable) {
-		modalWindow1.hide();
-		return;
-	}
-
-	int nextValue;
-	int currentValue = circleProgress1.getValue();
-	int16_t max = 100;
-	int16_t min = 0;
-
-	if (increase) {
-		nextValue = currentValue + 1;
-		if (nextValue == max) {
-			increase = false;
-		}
-	} else if (!increase) {
-		nextValue = currentValue - 1;
-		if (nextValue == min) {
-			increase = true;
-		}
-	}
-	circleProgress1.setValue(nextValue);
+	loader1.GUI_ProgressLoader();
 
 }
 
 void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t *foundDevices) {
 
-	disable = true;
+//	disable = true;
+	modalWindow1.hide();
+	loader1.GUI_SetDisable(true);
+	loader1.GUI_ResetProgressValue();
 	int nodeFound = 0;
 	for (int i = 0; i<5; i++) {
 		if (foundDevices[i].nodeAddress != NODE_DEF_VAL) {
@@ -100,6 +84,9 @@ void AddDeviceScreenView::handleButtonClicked(int instanceID) {
 	} else if ((CMD_INDEX) this->usedCommandIndex == CMD_MESH_ATEP_SCAN_RANGE) {
 		cmdToPrvn = CMD_MESH_ATEP_PRVN_RANGE;
 	}
+	modalWindow1.show();
+	loader1.GUI_SetLoaderText("Provisioning node");
+	loader1.GUI_SetDisable(false);
 	this->cmd = CMD_CreateCommandGet(cmdToPrvn,
 									&type,
 									values,
@@ -112,6 +99,9 @@ void AddDeviceScreenView::handleButtonClicked(int instanceID) {
 
 void AddDeviceScreenView::GUI_SwitchScreenAfterProv() {
 
+	modalWindow1.hide();
+	loader1.GUI_SetDisable(true);
+	loader1.GUI_ResetProgressValue();
 	goToDeviceConfigScreen();
 
 }

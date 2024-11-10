@@ -59,6 +59,11 @@
     <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\clocksettingsscreen_screen\ClockSettingsScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\clocksettingsscreen_screen\ClockSettingsScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\clocksettingsscreen_screen\ClockSettingsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\Loader.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\LoaderBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -247,6 +252,11 @@
     <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\clocksettingsscreen_screen\ClockSettingsScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\clocksettingsscreen_screen\ClockSettingsScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\clocksettingsscreen_screen\ClockSettingsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\Loader.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LoaderBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

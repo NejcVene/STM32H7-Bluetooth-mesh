@@ -15,8 +15,7 @@
 #include <touchgfx/widgets/TextArea.hpp>
 #include <gui/containers/ScreenTitleBar.hpp>
 #include <touchgfx/containers/ModalWindow.hpp>
-#include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
-#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <gui/containers/Loader.hpp>
 
 class AddDeviceScreenViewBase : public touchgfx::View<AddDeviceScreenPresenter>
 {
@@ -47,9 +46,7 @@ protected:
     touchgfx::TextArea noNodesFoundText;
     ScreenTitleBar screenTitleBar1;
     touchgfx::ModalWindow modalWindow1;
-    touchgfx::CircleProgress circleProgress1;
-    touchgfx::PainterRGB565 circleProgress1Painter;
-    touchgfx::TextArea textArea1;
+    Loader loader1;
 
 private:
 

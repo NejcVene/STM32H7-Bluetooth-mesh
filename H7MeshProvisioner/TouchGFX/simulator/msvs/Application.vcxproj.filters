@@ -280,6 +280,18 @@
     <Filter Include="Header Files\generated\gui_generated\settingsscreen_screen">
       <UniqueIdentifier>6CE59251-39C1-1724-EC5A-42D6B938C9BB</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\clocksettingsscreen_screen">
+      <UniqueIdentifier>6A24B61D-115B-340B-7A2C-195F93BB8CAC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\clocksettingsscreen_screen">
+      <UniqueIdentifier>66092168-6295-E263-475C-718305408C63</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\clocksettingsscreen_screen">
+      <UniqueIdentifier>E240E837-B883-EEE2-5A0D-0893F1358D4F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\clocksettingsscreen_screen">
+      <UniqueIdentifier>FE1D51AB-034D-F00F-9F9C-606DDC63AF67</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -425,6 +437,21 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\clocksettingsscreen_screen\ClockSettingsScreenPresenter.cpp">
+      <Filter>Source Files\gui\clocksettingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\clocksettingsscreen_screen\ClockSettingsScreenView.cpp">
+      <Filter>Source Files\gui\clocksettingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\clocksettingsscreen_screen\ClockSettingsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\clocksettingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\Loader.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\LoaderBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -981,6 +1008,21 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\clocksettingsscreen_screen\ClockSettingsScreenPresenter.hpp">
+      <Filter>Header Files\gui\clocksettingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\clocksettingsscreen_screen\ClockSettingsScreenView.hpp">
+      <Filter>Header Files\gui\clocksettingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\clocksettingsscreen_screen\ClockSettingsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\clocksettingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\Loader.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LoaderBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

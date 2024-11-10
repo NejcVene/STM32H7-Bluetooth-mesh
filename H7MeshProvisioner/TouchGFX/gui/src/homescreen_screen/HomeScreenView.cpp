@@ -9,10 +9,11 @@ void HomeScreenView::setupScreen()
 {
     HomeScreenViewBase::setupScreen();
     screenTitleBar1.GUI_SetTextTitleBar("Menu", "home");
+    GUI_UpdateDigitalClock();
     // mainDigitalClock
-    digitalHours = mainDigitalClock.getCurrentHour();
-    digitalMinutes = mainDigitalClock.getCurrentMinute();
-    digitalSeconds = mainDigitalClock.getCurrentSecond();
+//    digitalHours = mainDigitalClock.getCurrentHour();
+//    digitalMinutes = mainDigitalClock.getCurrentMinute();
+//    digitalSeconds = mainDigitalClock.getCurrentSecond();
 }
 
 void HomeScreenView::tearDownScreen()
@@ -22,20 +23,15 @@ void HomeScreenView::tearDownScreen()
 
 void HomeScreenView::handleTickEvent() {
 
-	tickCounter++;
+	GUI_UpdateDigitalClock();
 
-	if (tickCounter % 60 == 0) {
-		if (++digitalSeconds >= 60) {
-			digitalSeconds = 0;
-			if (++digitalMinutes >= 60) {
-				digitalMinutes = 0;
-				if (++digitalHours >= 24) {
-					digitalHours = 0;
-				}
-			}
-		}
-		// update the clock
-		mainDigitalClock.setTime24Hour(digitalHours, digitalMinutes, digitalSeconds);
-	}
+}
+
+void HomeScreenView::GUI_UpdateDigitalClock() {
+
+	presenter->GUI_DigitalClock();
+	mainDigitalClock.setTime24Hour(presenter->GUI_GetHours(),
+								   presenter->GUI_GetMinutes(),
+								   presenter->GUI_GetSeconds());
 
 }

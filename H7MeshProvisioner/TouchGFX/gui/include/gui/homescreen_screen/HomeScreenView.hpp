@@ -13,6 +13,7 @@ public:
     virtual void tearDownScreen();
 
     virtual void handleTickEvent();
+    void GUI_UpdateDigitalClock();
 protected:
     int tickCounter;
     int digitalHours;

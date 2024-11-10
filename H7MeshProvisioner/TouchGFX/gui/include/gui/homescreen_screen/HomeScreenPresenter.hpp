@@ -27,6 +27,30 @@ public:
 
     virtual ~HomeScreenPresenter() {}
 
+    uint8_t GUI_GetSeconds() {
+
+    	return model->GUI_GetSeconds();
+
+    }
+
+    uint8_t GUI_GetMinutes() {
+
+    	return model->GUI_GetMinutes();
+
+    }
+
+    uint8_t GUI_GetHours() {
+
+    	return model->GUI_GetHours();
+
+    }
+
+    void GUI_DigitalClock() {
+
+    	model->DigitalClock();
+
+    }
+
 private:
     HomeScreenPresenter();
 

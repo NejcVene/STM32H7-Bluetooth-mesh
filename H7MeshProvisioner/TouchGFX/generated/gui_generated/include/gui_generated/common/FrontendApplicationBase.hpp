@@ -46,6 +46,9 @@ public:
     // SettingsScreen
     void gotoSettingsScreenScreenSlideTransitionEast();
 
+    // ClockSettingsScreen
+    void gotoClockSettingsScreenScreenSlideTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -76,6 +79,9 @@ protected:
 
     // SettingsScreen
     void gotoSettingsScreenScreenSlideTransitionEastImpl();
+
+    // ClockSettingsScreen
+    void gotoClockSettingsScreenScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

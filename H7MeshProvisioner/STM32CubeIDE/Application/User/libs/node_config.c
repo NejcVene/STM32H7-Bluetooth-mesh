@@ -94,7 +94,7 @@ void NC_Init(void) {
 			.subscriptions = 5,
 			.nodeName = "My node2",
 			.address = {
-				.nodeAddress = 73,
+				.nodeAddress = 74,
 				.nodeModels = 87,
 				.nodeFeatures = 0,
 				.uuid =  "0753"

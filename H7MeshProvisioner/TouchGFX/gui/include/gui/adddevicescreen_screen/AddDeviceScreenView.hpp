@@ -19,8 +19,6 @@ public:
     virtual void GUI_SwitchScreenAfterProv();
 protected:
 
-    bool increase = true;
-    bool disable = false;
     static const int maxButtons = 5;
     DeviceAdd deviceAdds[maxButtons];
 

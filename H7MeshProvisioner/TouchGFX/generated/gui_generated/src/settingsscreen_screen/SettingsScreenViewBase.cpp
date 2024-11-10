@@ -49,6 +49,7 @@ SettingsScreenViewBase::SettingsScreenViewBase() :
     setClockBtn.setText(TypedText(T___SINGLEUSE_G6K4));
     setClockBtn.setTextPosition(10, 20, 460, 60);
     setClockBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 254), touchgfx::Color::getColorFromRGB(255, 255, 254));
+    setClockBtn.setAction(flexButtonCallback);
     setClockBtn.setPosition(10, 0, 460, 60);
     settingsContainer.add(setClockBtn);
 
@@ -74,5 +75,12 @@ void SettingsScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractB
         //When debugBtn clicked change screen to DebugScreen
         //Go to DebugScreen with screen transition towards East
         application().gotoDebugScreenScreenSlideTransitionEast();
+    }
+    if (&src == &setClockBtn)
+    {
+        //GUI_SwitchToClockSettingsScreen
+        //When setClockBtn clicked change screen to ClockSettingsScreen
+        //Go to ClockSettingsScreen with screen transition towards East
+        application().gotoClockSettingsScreenScreenSlideTransitionEast();
     }
 }

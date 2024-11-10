@@ -10,13 +10,15 @@ extern touchgfx::GeneratedFont& getFont_verdana_40_4bpp();
 extern touchgfx::GeneratedFont& getFont_verdana_16_4bpp();
 extern touchgfx::GeneratedFont& getFont_verdana_30_4bpp();
 extern touchgfx::GeneratedFont& getFont_verdanab_16_4bpp();
+extern touchgfx::GeneratedFont& getFont_verdanab_24_4bpp();
 
 const touchgfx::Font* touchgfx_fonts[] = {
     &(getFont_verdana_24_4bpp()),
     &(getFont_verdana_40_4bpp()),
     &(getFont_verdana_16_4bpp()),
     &(getFont_verdana_30_4bpp()),
-    &(getFont_verdanab_16_4bpp())
+    &(getFont_verdanab_16_4bpp()),
+    &(getFont_verdanab_24_4bpp())
 };
 
 extern const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[];
@@ -24,6 +26,15 @@ extern const touchgfx::TypedText::TypedTextData* const typedTextDatabaseArray[];
 
 TEXT_LOCATION_FLASH_PRAGMA
 const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
+    { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 4, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 1, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 1, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 1, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 1, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 5, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
@@ -72,7 +83,6 @@ const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[] TEXT_LOCAT
     { 0, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 0, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 3, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
-    { 2, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 1, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR }
 };
 
@@ -123,6 +133,9 @@ void resetFont(touchgfx::FontId fontId)
         break;
     case 4:
         touchgfx_fonts[4] = &(getFont_verdanab_16_4bpp());
+        break;
+    case 5:
+        touchgfx_fonts[5] = &(getFont_verdanab_24_4bpp());
         break;
     }
 }

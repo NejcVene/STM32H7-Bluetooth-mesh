@@ -17,6 +17,7 @@
 #include <touchgfx/containers/ModalWindow.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <gui/containers/Loader.hpp>
 
 class ConfigureNodeScreenViewBase : public touchgfx::View<ConfigureNodeScreenPresenter>
 {
@@ -69,6 +70,8 @@ protected:
     touchgfx::ModalWindow GUI_CongPopup;
     touchgfx::ButtonWithLabel GUI_ConfBtnPopup;
     touchgfx::TextArea GUI_ConfTextPopup;
+    touchgfx::ModalWindow GUI_ConfLoaderPopup;
+    Loader loader1;
 
     /*
      * Wildcard Buffers
@@ -81,6 +84,12 @@ protected:
     touchgfx::Unicode::UnicodeChar nodeNameBuffer[NODENAME_SIZE];
 
 private:
+
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint32_t CANVAS_BUFFER_SIZE = 7200;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 
     /*
      * Callback Declarations

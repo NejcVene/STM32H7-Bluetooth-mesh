@@ -9,6 +9,9 @@ extern "C" {
 
 	extern osMessageQueueId_t FSM_CommandQueueHandle;
 	extern osMessageQueueId_t FSM_ResultQueueHandle;
+	extern RTC_HandleTypeDef hrtc;
+	extern RTC_TimeTypeDef sTime;
+	extern RTC_DateTypeDef sDate;
 	extern void Error_Handler();
 
 }
@@ -65,5 +68,24 @@ void Model::GUI_SendCommand(CMD_CommandGet_t *cmd) {
 			}
 		}
 	}
+
+}
+
+void Model::DigitalClock() {
+
+	HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+	HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN); // this is needed to unlock the values in the higher-order calendar shadow registers
+	seconds = sTime.Seconds;
+	minutes = sTime.Minutes;
+	hours = sTime.Hours;
+
+}
+
+void Model::GUI_SetDigialClock(uint8_t hours, uint8_t minutes) {
+
+	sTime.Hours = hours;
+	sTime.Minutes = minutes;
+	sTime.Seconds = 0;
+	HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
 
 }

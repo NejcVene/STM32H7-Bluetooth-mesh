@@ -12,6 +12,8 @@
 #include <touchgfx/containers/ScrollableContainer.hpp>
 #include <gui/containers/BottomMenu.hpp>
 #include <gui/containers/ScreenTitleBar.hpp>
+#include <touchgfx/containers/ModalWindow.hpp>
+#include <gui/containers/Loader.hpp>
 
 class NodeProperScreenViewBase : public touchgfx::View<NodeProperScreenPresenter>
 {
@@ -39,8 +41,16 @@ protected:
     touchgfx::ScrollableContainer nodeOptions;
     BottomMenu bottomMenu1;
     ScreenTitleBar screenTitleBar1;
+    touchgfx::ModalWindow loaderModal;
+    Loader loader1;
 
 private:
+
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint32_t CANVAS_BUFFER_SIZE = 7200;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 
 };
 

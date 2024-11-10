@@ -6,6 +6,33 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_4F49" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZXED" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_VUYR" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">Minute</Translation>
+      </Text>
+      <Text Id="__SingleUse_HZRE" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_OGC8" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_2QJM" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">Hour</Translation>
+      </Text>
+      <Text Id="__SingleUse_O4YG" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_VZDO" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_AVYH" Alignment="Center" TypographyId="DefaultBold">
+        <Translation Language="GB">Save</Translation>
+      </Text>
       <Text Id="__SingleUse_64IT" Alignment="Left" TypographyId="Text16px">
         <Translation Language="GB">Device information</Translation>
       </Text>
@@ -150,9 +177,6 @@
       <Text Id="__SingleUse_2JW3" Alignment="Center" TypographyId="Medium">
         <Translation Language="GB">25*C</Translation>
       </Text>
-      <Text Id="__SingleUse_M33F" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Searching ...</Translation>
-      </Text>
       <Text Id="__SingleUse_PGKI" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
@@ -164,5 +188,6 @@
     <Typography Id="Small" Font="verdana.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Medium" Font="verdana.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Text16px" Font="verdanab.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z,0x20" />
+    <Typography Id="DefaultBold" Font="verdanab.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z,0x20" />
   </Typographies>
 </TextDatabase>

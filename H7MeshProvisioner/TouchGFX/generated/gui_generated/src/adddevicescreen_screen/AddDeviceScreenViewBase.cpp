@@ -47,25 +47,8 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase()
     modalWindow1.setBackground(touchgfx::BitmapId(BITMAP_H7MODALBACKGROUNDSMALL_ID), 133, 61);
     modalWindow1.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     modalWindow1.setShadeAlpha(100);
-    circleProgress1.setXY(52, 8);
-    circleProgress1.setProgressIndicatorPosition(0, 0, 110, 110);
-    circleProgress1.setRange(0, 100);
-    circleProgress1.setCenter(55, 55);
-    circleProgress1.setRadius(50);
-    circleProgress1.setLineWidth(10);
-    circleProgress1.setStartEndAngle(0, 360);
-    circleProgress1.setCapPrecision(180);
-    circleProgress1.setBackground(touchgfx::Bitmap(BITMAP_H7SPINNERSMALL_ID));
-    circleProgress1Painter.setColor(touchgfx::Color::getColorFromRGB(61, 169, 252));
-    circleProgress1.setPainter(circleProgress1Painter);
-    circleProgress1.setValue(0);
-    modalWindow1.add(circleProgress1);
-
-    textArea1.setXY(62, 126);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M33F));
-    modalWindow1.add(textArea1);
+    loader1.setXY(7, 0);
+    modalWindow1.add(loader1);
 
     add(modalWindow1);
 }
@@ -79,6 +62,7 @@ void AddDeviceScreenViewBase::setupScreen()
 {
     bottomMenu1.initialize();
     screenTitleBar1.initialize();
+    loader1.initialize();
 }
 
 void AddDeviceScreenViewBase::goToDeviceConfigScreen()

@@ -9,6 +9,7 @@ void NodesScreenView::setupScreen()
 {
     NodesScreenViewBase::setupScreen();
     int hasDevices = 0;
+    int yPos = 0;
     this->roomName = presenter->GUI_GetRoomName();
     this->roomBitmask = presenter->GUI_GetRoomBitmask();
     this->nodes = NC_GetNodeConfigArray();
@@ -18,11 +19,12 @@ void NodesScreenView::setupScreen()
     		// roomNodesContainer
     		hasDevices = 1;
     		this->devices[i].initialize();
-    		this->devices[i].setPosition(0, 70 * i, 460, 60);
+    		this->devices[i].setPosition(0, yPos, 460, 60);
     		this->devices[i].setButtonAction(buttonClickCallback, this->nodes[i].address.nodeAddress);
     		this->devices[i].GUI_SetTextDeviceName(this->nodes[i].nodeName);
     		this->devices[i].setVisible(true);
     		roomNodesContainer.add(this->devices[i]);
+    		yPos += 70;
     	}
     }
     if (!hasDevices) {

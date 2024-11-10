@@ -13,6 +13,7 @@ public:
     virtual ~ConfigureNodeScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void handleTickEvent();
 
     virtual void GUI_SetDeviceToConfigure(Node_Config_t *configureDevice);
     virtual void GUI_SaveConfNode();

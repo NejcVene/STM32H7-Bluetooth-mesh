@@ -98,9 +98,31 @@ public:
 
     }
 
+    uint8_t GUI_GetSeconds() {
+
+    	return this->seconds;
+
+    }
+
+    uint8_t GUI_GetMinutes() {
+
+
+    	return this->minutes;
+
+    }
+
+    uint8_t GUI_GetHours() {
+
+    	return this->hours;
+
+    }
+
 
 
     void GUI_SendCommand(CMD_CommandGet_t *cmd);
+    void DigitalClock();
+    void GUI_SetDigialClock(uint8_t hours, uint8_t minutes);
+
 protected:
     ModelListener* modelListener;
     Node_NetworkAddress_t *foundDevices;
@@ -110,6 +132,9 @@ protected:
     uint32_t nodeAddress;
     int usedCommandIndex;
     char roomName[30];
+    uint8_t seconds;
+    uint8_t minutes;
+    uint8_t hours;
 };
 
 #endif // MODEL_HPP
