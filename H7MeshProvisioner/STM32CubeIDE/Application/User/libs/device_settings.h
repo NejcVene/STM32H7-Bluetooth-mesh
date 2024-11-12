@@ -42,6 +42,8 @@
 #define COMM_ERR_PIN_SLAVE		GPIO_PIN_0 // CHANGE!
 #endif
 
+#define COMM_EX_VER	"1.0"
+
 /*
  * Each model is defined by exactly one bit:
  * 	- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -> no models defined

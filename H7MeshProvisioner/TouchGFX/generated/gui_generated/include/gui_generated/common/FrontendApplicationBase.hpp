@@ -49,6 +49,9 @@ public:
     // ClockSettingsScreen
     void gotoClockSettingsScreenScreenSlideTransitionEast();
 
+    // DeviceInfoScreen
+    void gotoDeviceInfoScreenScreenSlideTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -82,6 +85,9 @@ protected:
 
     // ClockSettingsScreen
     void gotoClockSettingsScreenScreenSlideTransitionEastImpl();
+
+    // DeviceInfoScreen
+    void gotoDeviceInfoScreenScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

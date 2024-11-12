@@ -24,7 +24,7 @@ public:
     };
 
     enum STATE {
-		BUTTON_OFF,
+		BUTTON_OFF = 0,
     	BUTTON_ON
     };
 

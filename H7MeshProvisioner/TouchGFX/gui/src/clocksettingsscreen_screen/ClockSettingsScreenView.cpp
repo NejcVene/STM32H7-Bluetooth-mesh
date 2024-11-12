@@ -10,6 +10,7 @@ void ClockSettingsScreenView::setupScreen()
     ClockSettingsScreenViewBase::setupScreen();
     // call digital clock once to get the current time
     // which will be used to update the textfields
+    screenTitleBar1.GUI_SetTextTitleBar("Menu", "set clock");
     presenter->GUI_DigitalClock();
     GUI_SetHourCounter(presenter->GUI_GetHours());
     GUI_SetMinuteCounter(presenter->GUI_GetMinutes());

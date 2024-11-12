@@ -22,6 +22,7 @@ void SF_UnprovisionEmbedded(char *resultBuffer);
 void SF_IsEmbeddedProvisioned(char *resultBuffer);
 void SF_PublishSubscribe(char *receiveBuffer, char *resultBuffer);
 void SF_SubscriptionRemove(char *receiveBuffer, char *resultBuffer);
+void SF_GetLibVersion(char *receiveBuffer, char *resultBuffer);
 SF_OPERATION_STATUS SF_CheckTimeout(SF_MessageInfo *msgInfo);
 MOBLE_RESULT _SubscriptionAdd(uint16_t elementAddress, uint16_t address, uint32_t modelIndentifier);
 MOBLE_RESULT _PublicationSet(uint16_t elementAddress, uint16_t publisAddress, uint32_t modelIndentifier);
@@ -88,6 +89,8 @@ void SF_Process(char *receiveBuffer, uint16_t receiveSize) {
 		} else {
 			SF_SubscriptionRemove(receiveBuffer, resultBuffer);
 		}
+	} else if (!strncmp(receiveBuffer + FUN_INDENTIFIER_LEN + 1, "LIBVER", strlen("LIBVER"))) {
+		SF_GetLibVersion(receiveBuffer, resultBuffer);
 	} else {
 		strncat(resultBuffer, receiveBuffer, receiveSize);
 		strcat(resultBuffer, ": NONE");
@@ -177,6 +180,16 @@ void SF_SubscriptionRemove(char *receiveBuffer, char *resultBuffer) {
 	MOBLE_RESULT status = MOBLE_RESULT_SUCCESS;
 
 	sprintf(resultBuffer, "BLEMesh_PubSub: %d", status);
+	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, strlen(resultBuffer) + 1);
+
+}
+
+void SF_GetLibVersion(char *receiveBuffer, char *resultBuffer) {
+
+	char *libVersion = BLEMesh_GetLibraryVersion();
+	char *libSubVersion = BLEMesh_GetLibrarySubVersion();
+
+	sprintf(resultBuffer, "BLEMesh_LibVer: %s;%s", libVersion, libSubVersion);
 	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, strlen(resultBuffer) + 1);
 
 }

@@ -302,7 +302,7 @@ or by Vendor Model.
 @ Undefine or comment Macro for Generic On Off Publishing
 */
 //#define VENDOR_CLIENT_MODEL_PUBLISH
-//#define GENERIC_CLIENT_MODEL_PUBLISH  
+//#define GENERIC_CLIENT_MODEL_PUBLISH
 //#define LIGHT_CLIENT_MODEL_PUBLISH
 
 

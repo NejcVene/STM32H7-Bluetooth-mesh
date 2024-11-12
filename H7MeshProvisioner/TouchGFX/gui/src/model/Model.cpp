@@ -50,6 +50,12 @@ void Model::tick() {
 						modelListener->GUI_ChangeScreenAfterUnprov();
 					}
 					break;
+				case CMD_FUN_GET_LIB_VER:
+					strcpy(libVer, cmdResult->param[0].value.str);
+					strcpy(libSubVer, cmdResult->param[1].value.str);
+					strcpy(commExVer, cmdResult->param[2].value.str);
+					modelListener->GUI_ChangeScreenDevInfo();
+					break;
 				default:
 					break;
 			}

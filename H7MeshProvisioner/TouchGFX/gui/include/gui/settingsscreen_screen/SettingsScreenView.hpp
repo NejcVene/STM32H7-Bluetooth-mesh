@@ -11,7 +11,13 @@ public:
     virtual ~SettingsScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void GUI_GetDevInfo();
+    virtual void GUI_ChangeScreen();
+
 protected:
+private:
+    CMD_CommandGet_t *cmd;
 };
 
 #endif // SETTINGSSCREENVIEW_HPP

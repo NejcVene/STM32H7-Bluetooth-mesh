@@ -32,6 +32,8 @@
 #include <gui/settingsscreen_screen/SettingsScreenPresenter.hpp>
 #include <gui/clocksettingsscreen_screen/ClockSettingsScreenView.hpp>
 #include <gui/clocksettingsscreen_screen/ClockSettingsScreenPresenter.hpp>
+#include <gui/deviceinfoscreen_screen/DeviceInfoScreenView.hpp>
+#include <gui/deviceinfoscreen_screen/DeviceInfoScreenPresenter.hpp>
 
 
 /**
@@ -63,7 +65,8 @@ public:
             touchgfx::meta::TypeList< NodeProperScreenView,
             touchgfx::meta::TypeList< SettingsScreenView,
             touchgfx::meta::TypeList< ClockSettingsScreenView,
-            touchgfx::meta::Nil > > > > > > > >
+            touchgfx::meta::TypeList< DeviceInfoScreenView,
+            touchgfx::meta::Nil > > > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -84,7 +87,8 @@ public:
             touchgfx::meta::TypeList< NodeProperScreenPresenter,
             touchgfx::meta::TypeList< SettingsScreenPresenter,
             touchgfx::meta::TypeList< ClockSettingsScreenPresenter,
-            touchgfx::meta::Nil > > > > > > > >
+            touchgfx::meta::TypeList< DeviceInfoScreenPresenter,
+            touchgfx::meta::Nil > > > > > > > > >
             > GeneratedPresenterTypes;
 
     /**

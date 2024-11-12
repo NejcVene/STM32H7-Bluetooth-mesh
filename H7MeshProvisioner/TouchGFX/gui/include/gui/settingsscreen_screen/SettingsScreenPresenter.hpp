@@ -27,6 +27,15 @@ public:
 
     virtual ~SettingsScreenPresenter() {}
 
+    virtual void GUI_ChangeScreenDevInfo();
+
+    void GUI_SendCommand(CMD_CommandGet_t *cmd) {
+
+    	model->GUI_SendCommand(cmd);
+
+    }
+
+
 private:
     SettingsScreenPresenter();
 

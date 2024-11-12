@@ -20,6 +20,7 @@ public:
     virtual void GUI_ConfigureDevice() {};
     virtual void GUI_ConfShowPopup() {};
     virtual void GUI_ChangeScreenAfterUnprov() {};
+    virtual void GUI_ChangeScreenDevInfo() {};
 
 protected:
     Model* model;

@@ -19,10 +19,15 @@
 												 .nodeModels = 0,					\
 												 .nodeFeatures = 0					\
 											   }
+#define CLEAR_NODE_STATES() (Node_ModelState_t)				\
+							{.genericOnOffStatus = 0,		\
+							 .genericPowerOnOffStatus = 0	\
+							}
 #define CLEAR_NODE_CONFIG() (Node_Config_t) 								\
 							{.subscriptions = 0, 							\
 							.nodeName = "",									\
-							.address = CLEAR_NODE_ADDRESSES(NODE_DEF_VAL)	\
+							.address = CLEAR_NODE_ADDRESSES(NODE_DEF_VAL),	\
+							.states = CLEAR_NODE_STATES()					\
 							}
 
 void NC_ReportItems(uint8_t uuid, NC_MaskedFeatures *items, uint16_t *report);
@@ -88,6 +93,10 @@ void NC_Init(void) {
 			.nodeModels = 87,
 			.nodeFeatures = 0,
 			.uuid =  "0753"
+		},
+		.states = {
+			.genericOnOffStatus = 0,
+			.genericPowerOnOffStatus = 0
 		}
 	};
 	nodeConfigs[1] = (Node_Config_t) {
@@ -98,6 +107,10 @@ void NC_Init(void) {
 				.nodeModels = 87,
 				.nodeFeatures = 0,
 				.uuid =  "0753"
+			},
+			.states = {
+				.genericOnOffStatus = 0,
+				.genericPowerOnOffStatus = 0
 			}
 	};
 	NC_IncrementNumOfConfNodes();

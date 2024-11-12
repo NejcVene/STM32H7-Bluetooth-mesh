@@ -21,6 +21,19 @@ public:
     virtual ~SettingsScreenViewBase();
     virtual void setupScreen();
 
+    /*
+     * Custom Actions
+     */
+    virtual void goToDevInfo();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void GUI_GetDevInfo()
+    {
+        // Override and implement this function in SettingsScreen
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());

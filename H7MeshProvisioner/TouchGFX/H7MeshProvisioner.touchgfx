@@ -1407,6 +1407,36 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "ClockSettingsScreen"
             }
+          },
+          {
+            "InteractionName": "GUI_GetDevInfo",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "deviceInfoBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_GetDevInfo"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToDevInfoScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call SettingsScreen goToDevInfo"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "DeviceInfoScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToDevInfo",
+            "Description": "Called from user code to change screen"
           }
         ]
       },
@@ -1707,6 +1737,170 @@
             }
           }
         ]
+      },
+      {
+        "Name": "DeviceInfoScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "elements",
+            "X": 10,
+            "Y": 30,
+            "Width": 460,
+            "Height": 182,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "container1_2",
+                "Y": 100,
+                "Width": 460,
+                "Height": 40,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box1_2",
+                    "Width": 460,
+                    "Height": 40,
+                    "Color": {
+                      "Red": 73,
+                      "Green": 86,
+                      "Blue": 101
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "commExVerTxt",
+                    "X": 10,
+                    "Y": 11,
+                    "Width": 201,
+                    "Height": 19,
+                    "TextId": "__SingleUse_4AS9",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_MFFZ",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container1_1",
+                "Y": 50,
+                "Width": 460,
+                "Height": 40,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box1_1",
+                    "Width": 460,
+                    "Height": 40,
+                    "Color": {
+                      "Red": 73,
+                      "Green": 86,
+                      "Blue": 101
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "libSubVerTxt",
+                    "X": 10,
+                    "Y": 11,
+                    "Width": 251,
+                    "Height": 19,
+                    "TextId": "__SingleUse_RZQR",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_3GFH",
+                      "UseBuffer": true,
+                      "BufferSize": 20
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container1",
+                "Width": 460,
+                "Height": 40,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box1",
+                    "Width": 460,
+                    "Height": 40,
+                    "Color": {
+                      "Red": 73,
+                      "Green": 86,
+                      "Blue": 101
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "libVerTxt",
+                    "X": 10,
+                    "Y": 11,
+                    "Width": 217,
+                    "Height": 19,
+                    "TextId": "__SingleUse_J0YL",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_0RUS",
+                      "UseBuffer": true,
+                      "BufferSize": 20
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [

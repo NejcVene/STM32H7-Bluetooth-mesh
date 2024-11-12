@@ -695,6 +695,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/debugscreen_screen/DebugScreenView.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/DeviceInfoScreenPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/deviceinfoscreen_screen/DeviceInfoScreenPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/DeviceInfoScreenView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/deviceinfoscreen_screen/DeviceInfoScreenView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/HomeScreenPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/homescreen_screen/HomeScreenPresenter.cpp</locationURI>
@@ -933,6 +943,11 @@
 			<name>Application/User/generated/DebugScreenViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/debugscreen_screen/DebugScreenViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/DeviceInfoScreenViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/deviceinfoscreen_screen/DeviceInfoScreenViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/HomeScreenViewBase.cpp</name>

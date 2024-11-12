@@ -64,6 +64,9 @@
     <ClCompile Include="..\..\generated\gui_generated\src\clocksettingsscreen_screen\ClockSettingsScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\Loader.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\LoaderBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\deviceinfoscreen_screen\DeviceInfoScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\deviceinfoscreen_screen\DeviceInfoScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\deviceinfoscreen_screen\DeviceInfoScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -257,6 +260,9 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\clocksettingsscreen_screen\ClockSettingsScreenViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\Loader.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LoaderBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\deviceinfoscreen_screen\DeviceInfoScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\deviceinfoscreen_screen\DeviceInfoScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\deviceinfoscreen_screen\DeviceInfoScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

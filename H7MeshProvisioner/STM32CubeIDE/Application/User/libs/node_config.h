@@ -56,9 +56,15 @@ typedef struct {
 } Node_NetworkAddress_t;
 
 typedef struct {
+	uint8_t genericOnOffStatus : 1,
+			genericPowerOnOffStatus : 1;
+} Node_ModelState_t;
+
+typedef struct {
 	uint8_t subscriptions;
 	char nodeName[MAX_NODE_NAME];
 	Node_NetworkAddress_t address;
+	Node_ModelState_t states;
 } Node_Config_t;
 
 typedef struct {

@@ -6,6 +6,24 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_MFFZ" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_4AS9" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Comm_ex version: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_3GFH" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_RZQR" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Mesh library sub version: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_0RUS" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_J0YL" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Mesh library version: &lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_4F49" Alignment="Left" TypographyId="Text16px">
         <Translation Language="GB">None</Translation>
       </Text>
@@ -185,7 +203,7 @@
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
-    <Typography Id="Small" Font="verdana.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="Small" Font="verdana.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z,0x2E" />
     <Typography Id="Medium" Font="verdana.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Text16px" Font="verdanab.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z,0x20" />
     <Typography Id="DefaultBold" Font="verdanab.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z,0x20" />

@@ -15,3 +15,21 @@ void SettingsScreenView::tearDownScreen()
 {
     SettingsScreenViewBase::tearDownScreen();
 }
+
+void SettingsScreenView::GUI_GetDevInfo() {
+
+	this->cmd = CMD_CreateCommandGet(CMD_FUN_GET_LIB_VER,
+									 NULL,
+									 NULL,
+									 0,
+									 NULL,
+									 NULL);
+	presenter->GUI_SendCommand(this->cmd);
+
+}
+
+void SettingsScreenView::GUI_ChangeScreen() {
+
+	goToDevInfo();
+
+}

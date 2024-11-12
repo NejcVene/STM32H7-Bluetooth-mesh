@@ -16,3 +16,9 @@ void SettingsScreenPresenter::deactivate()
 {
 
 }
+
+void SettingsScreenPresenter::GUI_ChangeScreenDevInfo() {
+
+	view.GUI_ChangeScreen();
+
+}

@@ -9,6 +9,7 @@
 #include "node_config.h"
 #include "cmsis_os2.h"
 #include "freertos_os2.h"
+#include "device_settings.h"
 #include <string.h>
 
 void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);
@@ -16,8 +17,9 @@ void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *gu
 CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd);
-CMD_CommandGet_t *CMD_GenericOnOff(char *buffer, CMD_CommandGet_t *guiCmd);
+//CMD_CommandGet_t *CMD_GenericOnOff(char *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_NotifyUnprovision(char *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_NotifyLibVersion(char *buffer, CMD_CommandGet_t *guiCmd);
 
 CMD_MeshCommand_t defineRootNetworkNode = {
 		.command = "ATEP ROOT",
@@ -68,13 +70,15 @@ CMD_MeshCommand_t genericOnOffSetAck = { // currently hard-coded
 		.CMD_Execute = NULL
 };
 
+// broken ???
 CMD_MeshCommand_t genericOnOffGet = {
 		.command = "ATCL %s 8201",
 		.commandType = PRO_MSG_TYPE_UNACK,
-		.CMD_Setup = NULL,
+		.CMD_Setup = CMD_GenericFormatCommand,
 		.CMD_Execute = NULL
 };
 
+// not used
 CMD_MeshCommand_t unprovisionEmbeddedProv = {
 		.command = "BLEMesh_Unprovision",
 		.commandType = PRO_MSG_TYPE_OTHER,
@@ -82,6 +86,7 @@ CMD_MeshCommand_t unprovisionEmbeddedProv = {
 		.CMD_Execute = NULL
 };
 
+// not used
 CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 		.command = "BLEMesh_IsUnprovisioned",
 		.commandType = PRO_MSG_TYPE_OTHER,
@@ -94,6 +99,13 @@ CMD_MeshCommand_t pubSetSubAdd = {
 		.commandType = PRO_MSG_TYPE_OTHER,
 		.CMD_Setup = CMD_SetupConfig,
 		.CMD_Execute = CMD_SubsAdd
+};
+
+CMD_MeshCommand_t getLibInfo = {
+		.command = "BLEMesh_LibVer",
+		.commandType = PRO_MSG_TYPE_OTHER,
+		.CMD_Setup = CMD_GenericFormatCommand,
+		.CMD_Execute = CMD_NotifyLibVersion
 };
 
 static NC_MaskedFeatures *allModels;
@@ -350,11 +362,11 @@ CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd) {
 
 }
 
-CMD_CommandGet_t *CMD_GenericOnOff(char *buffer, CMD_CommandGet_t *guiCmd) {
-
-	return NULL;
-
-}
+//CMD_CommandGet_t *CMD_GenericOnOff(char *buffer, CMD_CommandGet_t *guiCmd) {
+//
+//	return NULL;
+//
+//}
 
 CMD_CommandGet_t *CMD_NotifyUnprovision(char *buffer, CMD_CommandGet_t *guiCmd) {
 
@@ -378,6 +390,35 @@ CMD_CommandGet_t *CMD_NotifyUnprovision(char *buffer, CMD_CommandGet_t *guiCmd) 
 									NULL,
 									NULL);
 	}
+
+	return cmdRes;
+
+}
+
+CMD_CommandGet_t *CMD_NotifyLibVersion(char *buffer, CMD_CommandGet_t *guiCmd) {
+
+	CMD_CommandGet_t *cmdRes = NULL;
+	void *paramValues[3];
+	char libVer[20] = {0};
+	char libSubVer[20] = {0};
+	char commExVer[10] = COMM_EX_VER;
+	PARAMETER_TYPE types[] = {PARAM_CHAR, PARAM_CHAR, PARAM_CHAR};
+
+	if (!strcmp(buffer, "NONE")) {
+
+	} else {
+		sscanf(buffer, "%[^;];%s", libVer, libSubVer);
+		paramValues[0] = (void *) libVer;
+		paramValues[1] = (void *) libSubVer;
+		paramValues[2] = (void *) commExVer;
+		cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
+									types,
+									paramValues,
+									3,
+									NULL,
+									NULL);
+	}
+
 
 	return cmdRes;
 

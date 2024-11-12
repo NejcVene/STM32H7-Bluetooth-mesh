@@ -117,6 +117,24 @@ public:
 
     }
 
+    const char *GUI_GetLibVer() {
+
+    	return libVer;
+
+    }
+
+    const char *GUI_GetLibSubVer() {
+
+    	return libSubVer;
+
+    }
+
+    const char *GUI_GetCommExVer() {
+
+    	return commExVer;
+
+    }
+
 
 
     void GUI_SendCommand(CMD_CommandGet_t *cmd);
@@ -131,10 +149,13 @@ protected:
     uint8_t roomBitmask;
     uint32_t nodeAddress;
     int usedCommandIndex;
-    char roomName[30];
+    char roomName[30] = {0};
     uint8_t seconds;
     uint8_t minutes;
     uint8_t hours;
+    char libVer[20] = {0};
+    char libSubVer[20] = {0};
+    char commExVer[10] = {0};
 };
 
 #endif // MODEL_HPP

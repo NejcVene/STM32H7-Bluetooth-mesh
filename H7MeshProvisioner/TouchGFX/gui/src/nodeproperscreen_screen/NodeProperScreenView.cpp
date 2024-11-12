@@ -85,7 +85,7 @@ void NodeProperScreenView::setupGenericOnOff(int guiIndex) {
 	deviceFunctions[guiIndex].setVisible(true);
 	deviceFunctions[guiIndex].GUI_SetTextType("Switch");
 	deviceFunctions[guiIndex].GUI_SetIcon(DeviceButton::GENERIC_ON_OFF);
-	deviceFunctions[guiIndex].GUI_ButtonSetOffState(DeviceButton::BUTTON_OFF, DeviceButton::GENERIC_ON_OFF);
+	deviceFunctions[guiIndex].GUI_ButtonSetOffState((DeviceButton::STATE) this->node->states.genericOnOffStatus, DeviceButton::GENERIC_ON_OFF);
 	deviceFunctions[guiIndex].setButtonAction(buttonClickCallback, (int) DeviceButton::GENERIC_ON_OFF);
 
 }
@@ -192,11 +192,8 @@ void NodeProperScreenView::handleGenericOnOffClicked(int instanceID) {
 	int guiIndex = getBtnIndexFromInstaceID(instanceID);
 
 	DeviceButton::STATE newState = deviceFunctions[guiIndex].GUI_GetButtonState();
-	if (newState) {
-		newState = DeviceButton::BUTTON_OFF;
-	} else {
-		newState = DeviceButton::BUTTON_ON;
-	}
+	newState = (newState == DeviceButton::STATE::BUTTON_OFF) ? DeviceButton::STATE::BUTTON_ON : DeviceButton::STATE::BUTTON_OFF;
+	this->node->states.genericOnOffStatus = (int) newState;
 	deviceFunctions[guiIndex].GUI_ButtonSetOffState(newState, DeviceButton::GENERIC_ON_OFF);
 	sprintf(stringNodeAddress, "%04X", (unsigned int) this->node->address.nodeAddress);
 	sprintf(stringState, "%02d", (int) newState);

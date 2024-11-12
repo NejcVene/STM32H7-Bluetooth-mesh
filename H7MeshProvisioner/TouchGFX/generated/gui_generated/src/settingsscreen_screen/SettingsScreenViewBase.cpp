@@ -32,6 +32,7 @@ SettingsScreenViewBase::SettingsScreenViewBase() :
     deviceInfoBtn.setText(TypedText(T___SINGLEUSE_64IT));
     deviceInfoBtn.setTextPosition(10, 20, 460, 60);
     deviceInfoBtn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 254), touchgfx::Color::getColorFromRGB(255, 255, 254));
+    deviceInfoBtn.setAction(flexButtonCallback);
     deviceInfoBtn.setPosition(10, 140, 460, 60);
     settingsContainer.add(deviceInfoBtn);
 
@@ -83,4 +84,19 @@ void SettingsScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractB
         //Go to ClockSettingsScreen with screen transition towards East
         application().gotoClockSettingsScreenScreenSlideTransitionEast();
     }
+    if (&src == &deviceInfoBtn)
+    {
+        //GUI_GetDevInfo
+        //When deviceInfoBtn clicked call virtual function
+        //Call GUI_GetDevInfo
+        GUI_GetDevInfo();
+    }
+}
+
+void SettingsScreenViewBase::goToDevInfo()
+{
+    //GUI_SwitchToDevInfoScreen
+    //When goToDevInfo is called change screen to DeviceInfoScreen
+    //Go to DeviceInfoScreen with screen transition towards East
+    application().gotoDeviceInfoScreenScreenSlideTransitionEast();
 }
