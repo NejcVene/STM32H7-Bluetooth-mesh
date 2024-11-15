@@ -24,6 +24,7 @@ C_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Application/Core \
+Application/Core/libs \
 Application/STM32_WPAN/app \
 Application/STM32_WPAN/target \
 Application/Startup \

@@ -30,6 +30,8 @@
 //#include "LPS25HB.h"
 #include "string.h"
 #include "common.h"
+#include "mesh_cfg_usr.h"
+#include "apc1.h"
 //#include "math.h"
 
 /** @addtogroup ST_BLE_Mesh
@@ -361,94 +363,115 @@ MOBLE_RESULT Appli_Sensor_ReadDescriptor(MOBLEUINT8 sensorOffset,
   * @retval Fail if sensor doesn't exist
   *         else Success
   */
-MOBLE_RESULT Appli_Sensor_ReadValue(MOBLEUINT8 sensorOffset,
-                                    sensor_ValueCbParams_t* pValueParams)
-{
-  MOBLE_RESULT result = MOBLE_RESULT_SUCCESS;
-//  PRESSURE_StatusTypeDef tempStatus = PRESSURE_OK;
-  MOBLEINT16 temp = 0;
-  MOBLEINT8 temperature8 = 0;
-  float pressure = 0;
+//MOBLE_RESULT Appli_Sensor_ReadValue(MOBLEUINT8 sensorOffset,
+//                                    sensor_ValueCbParams_t* pValueParams)
+//{
+//  MOBLE_RESULT result = MOBLE_RESULT_SUCCESS;
+////  PRESSURE_StatusTypeDef tempStatus = PRESSURE_OK;
+//  MOBLEINT16 temp = 0;
+//  MOBLEINT8 temperature8 = 0;
+//  float pressure = 0;
+//
+//  /* sensor offset exist */
+//  if (sensorOffset < SensorServerInitParams.sensorsCount)
+//  {
+//    if (sensorOffset == 0) /* Present Ambient Temperature */
+//    {
+//      if(AppliSensorReadFromSensor == 0) /* Normal mode */
+//      {
+//        /* Temperature, Temperature8 format, M=1, d=0, b=-1 */
+////        tempStatus = LPS25HB_I2C_ReadRawTemperature(&temp);
+////        if (tempStatus == PRESSURE_OK)
+//        {
+//          TRACE_M(TF_SENSOR, "Temperature sensor raw value %d\r\n" , temp);
+//
+//          /* Convert temperature raw value to Temperature8 format */
+//          temp = (temp/240) + 85;
+//
+//          if (temp < -64*2)
+//          {
+//            temp = -64*2;
+//          }
+//          else if (temp > 63.5*2)
+//          {
+//            temp = 63.5*2;
+//          }
+//
+//          temperature8 = temp;
+//
+//          pValueParams->data[0] = (MOBLEUINT8)temperature8;
+//
+//          if (pValueParams->data[0] == 0xFF)
+//          {
+//            /* 0xFF is unknown but here it is -1
+//            -1 is approximated to 0 */
+//            pValueParams->data[0] = 0x00;
+//          }
+//
+//          TRACE_M(TF_SENSOR, "Temperature8 raw value %d, actual value %f\r\n",
+//                              temperature8, (float)temperature8/2);
+//        }
+//#if 0
+//        else /* error */
+//        {
+//          pValueParams->data[0] = 0xFF;
+//        }
+//#endif
+//      }
+//      else /* Value not to be read from sensor */
+//      {
+//        pValueParams->data[0] = PresentTemperatureValue;
+//      }
+//    }
+//    else if (sensorOffset == 1) /* Pressure */
+//    {
+////      tempStatus = LPS25HB_GetPressure(&pressure);
+////      if (tempStatus == PRESSURE_OK)
+//      {
+//        TRACE_M(TF_SENSOR, "Pressure sensor value %f mbar\r\n" , pressure);
+//
+//        memcpy(pValueParams->data, (void*)&pressure, 4);
+//      }
+//#if 0
+//      else /* error */
+//      {
+//        memset(pValueParams->data, 0, 4);
+//      }
+//#endif
+//    }
+//  }
+//  else
+//  {
+//    result = MOBLE_RESULT_FAIL;
+//  }
+//
+//  return result;
+//}
   
-  /* sensor offset exist */
-  if (sensorOffset < SensorServerInitParams.sensorsCount)
-  {
-    if (sensorOffset == 0) /* Present Ambient Temperature */
-    {
-      if(AppliSensorReadFromSensor == 0) /* Normal mode */
-      {
-        /* Temperature, Temperature8 format, M=1, d=0, b=-1 */
-//        tempStatus = LPS25HB_I2C_ReadRawTemperature(&temp);
-//        if (tempStatus == PRESSURE_OK)
-        {
-          TRACE_M(TF_SENSOR, "Temperature sensor raw value %d\r\n" , temp);
-        
-          /* Convert temperature raw value to Temperature8 format */
-          temp = (temp/240) + 85;
-        
-          if (temp < -64*2)
-          {
-            temp = -64*2;
-          }
-          else if (temp > 63.5*2)
-          {
-            temp = 63.5*2;
-          }
-        
-          temperature8 = temp;
-        
-          pValueParams->data[0] = (MOBLEUINT8)temperature8;
+#endif
 
-          if (pValueParams->data[0] == 0xFF)
-          {
-            /* 0xFF is unknown but here it is -1
-            -1 is approximated to 0 */
-            pValueParams->data[0] = 0x00;
-          }
-        
-          TRACE_M(TF_SENSOR, "Temperature8 raw value %d, actual value %f\r\n", 
-                              temperature8, (float)temperature8/2);
-        }
-#if 0
-        else /* error */
-        {
-          pValueParams->data[0] = 0xFF;
-        }
-#endif
-      }
-      else /* Value not to be read from sensor */
-      {
-        pValueParams->data[0] = PresentTemperatureValue;
-      }
-    }
-    else if (sensorOffset == 1) /* Pressure */
-    {
-//      tempStatus = LPS25HB_GetPressure(&pressure);
-//      if (tempStatus == PRESSURE_OK)
-      {
-        TRACE_M(TF_SENSOR, "Pressure sensor value %f mbar\r\n" , pressure);
-      
-        memcpy(pValueParams->data, (void*)&pressure, 4);
-      }
-#if 0
-      else /* error */
-      {
-        memset(pValueParams->data, 0, 4);
-      }
-#endif
-    }
-  }
-  else
-  {
-    result = MOBLE_RESULT_FAIL;
-  }
-  
-  return result;
+MOBLE_RESULT Appli_Sensor_ReadValue(MOBLEUINT8 sensorOffset,
+                                    sensor_ValueCbParams_t* pValueParams) {
+
+	MOBLE_RESULT result = MOBLE_RESULT_SUCCESS;
+	double tmp = 69;
+
+	switch (SensorServerInitParams.sensorInitParams[sensorOffset].propertyId) {
+		case PRESENT_AMBIENT_TEMPERATURE_PID:
+			if (APC1_Read_Mea_Data() == APC1_OK) {
+				tmp = APC1_Get_T_Comp();
+			}
+			TRACE_M(TF_SENSOR, "APC1 Temp: %f °C\r\n", tmp);
+			memcpy(pValueParams->data, (void *) &tmp, sizeof(double));
+			break;
+		default:
+			break;
+	}
+
+	return result;
+
 }
-  
-#endif
-  
-      
+
 /**
   * @brief  Callback corresponding to Sensor_ReadColumn_cb
   *         Fill column width and raw valye Y in data buffer

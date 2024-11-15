@@ -20,6 +20,7 @@ RM := rm -rf
 -include Application/Startup/subdir.mk
 -include Application/STM32_WPAN/target/subdir.mk
 -include Application/STM32_WPAN/app/subdir.mk
+-include Application/Core/libs/subdir.mk
 -include Application/Core/subdir.mk
 -include objects.mk
 

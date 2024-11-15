@@ -253,6 +253,7 @@ void Appli_Sensor_Status(const MOBLEUINT8 *pStatus,
                          MOBLEUINT8 elementIndex)
 {
   MOBLEUINT8 i;
+  double apc1T;
   
   TRACE_M(TF_SENSOR,"Appli_Sensor_Status callback received \r\n");
   
@@ -263,6 +264,8 @@ void Appli_Sensor_Status(const MOBLEUINT8 *pStatus,
   {
     TRACE_M(TF_SERIAL_CTRL,"Status value: %d\n\r", pStatus[i]);
   }
+  memcpy((void *) &apc1T, pStatus + 2, sizeof(double));
+  TRACE_M(TF_SERIAL_CTRL, "APC1 Temp: %f °C\r\n", apc1T);
 #ifdef ENABLE_LIGHT_MODEL_SERVER_LC   
   Appli_Light_LC_SensorPropertyUpdate(elementIndex,
                                       PRESENCE_DETECTED_PID,

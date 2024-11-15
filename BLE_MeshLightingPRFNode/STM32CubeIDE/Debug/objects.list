@@ -10,6 +10,7 @@
 "./Application/Core/stm32wbxx_it.o"
 "./Application/Core/syscalls.o"
 "./Application/Core/sysmem.o"
+"./Application/Core/libs/apc1.o"
 "./Application/STM32_WPAN/app/app_ble.o"
 "./Application/STM32_WPAN/app/appli_config.o"
 "./Application/STM32_WPAN/app/appli_config_client.o"

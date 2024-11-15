@@ -21,12 +21,14 @@
 /* Includes ------------------------------------------------------------------*/
 #include "app_common.h"
 #include "hw_conf.h"
+#include "apc1.h"
 #if (CFG_HW_LPUART1_ENABLED == 1)
 extern UART_HandleTypeDef hlpuart1;
 #endif
 #if (CFG_HW_USART1_ENABLED == 1)
 extern UART_HandleTypeDef huart1;
 #endif
+extern UART_HandleTypeDef hlpuart1;
 
 /* Macros --------------------------------------------------------------------*/
 #define HW_UART_RX_IT(__HANDLE__, __USART_BASE__)                                                   \
@@ -65,6 +67,8 @@ extern UART_HandleTypeDef huart1;
     void (*HW_hlpuart1RxCb)(void);
     void (*HW_hlpuart1TxCb)(void);
 #endif
+
+volatile struct APC1_Device_Settings *devSettings;
 
 void HW_UART_Init(hw_uart_id_t hw_uart_id)
 {
@@ -282,6 +286,7 @@ void HW_UART_DMA_Interrupt_Handler(hw_uart_id_t hw_uart_id)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
+	devSettings = APC1_Get_Device_Settings();
     switch ((uint32_t)huart->Instance)
     {
 #if (CFG_HW_USART1_ENABLED == 1)
@@ -293,14 +298,17 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
             break;
 #endif
 
-#if (CFG_HW_LPUART1_ENABLED == 1)
+// #if (CFG_HW_LPUART1_ENABLED == 1)
         case (uint32_t)LPUART1:
-            if(HW_hlpuart1RxCb)
-            {
-                HW_hlpuart1RxCb();
-            }
+        	if (huart == devSettings->sensor_uart) {
+        		devSettings->received_response = 1;
+        	}
+//            if(HW_hlpuart1RxCb)
+//            {
+//                HW_hlpuart1RxCb();
+//            }
             break;
-#endif
+// #endif
 
         default:
             break;

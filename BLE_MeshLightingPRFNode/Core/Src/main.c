@@ -42,7 +42,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "apc1.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -134,6 +134,7 @@ int main(void)
   MX_RF_Init();
   MX_RTC_Init();
   MX_RNG_Init();
+  MX_LPUART1_UART_Init();
   /* USER CODE BEGIN 2 */
   /* Enable CRC clock */
   __HAL_RCC_CRC_CLK_ENABLE();
@@ -141,6 +142,9 @@ int main(void)
 
   /* Init code for STM32_WPAN */
   MX_APPE_Init();
+  if (APC1_Init_Sensor(&hlpuart1) != APC1_OK) {
+	  Error_Handler();
+  }
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -278,7 +282,7 @@ void MX_LPUART1_UART_Init(void)
 
   /* USER CODE END LPUART1_Init 1 */
   hlpuart1.Instance = LPUART1;
-  hlpuart1.Init.BaudRate = 115200;
+  hlpuart1.Init.BaudRate = 9600;
   hlpuart1.Init.WordLength = UART_WORDLENGTH_8B;
   hlpuart1.Init.StopBits = UART_STOPBITS_1;
   hlpuart1.Init.Parity = UART_PARITY_NONE;

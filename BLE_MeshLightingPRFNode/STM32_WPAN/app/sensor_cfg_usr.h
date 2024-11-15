@@ -49,13 +49,13 @@
 * It is sum of sensors count on all elements
 * Sensor init fails in case of mismatch with sensor server initialization parameters
 */
-#define TOTAL_SENSORS_COUNT                                                 2
+#define TOTAL_SENSORS_COUNT                                                 1
 
 /** 
 * Sum of sensor settings on all sensors on all elements
 * Sensor init fails in case of mismatch with sensor server initialization parameters
 */
-#define TOTAL_SENSOR_SETTINGS_COUNT                                         4
+#define TOTAL_SENSOR_SETTINGS_COUNT                                         0
 
 /** 
 * Sum of sensor series columns on all sensors on all elements
@@ -133,6 +133,42 @@ typedef struct
 * Element index 1 -> SENSOR5(PID2), SENSOR6(PID4), SENSOR7(PID5), and SENSOR8(PID6)
 * Element index 2 -> SENSOR9(PID1), and SENSOR10(PID5)
 */
+
+// Initialization parameters for APC1 sensor
+#define APC1_SENSOR_ELEMENT_IDX			0
+#define APC1_SENSOR_PROPERTY_ID			PRESENT_AMBIENT_TEMPERATURE_PID
+#define APC1_SENSOR_POSITIVE_TOLERANCE	SENSOR_POSITIVE_TOLERANCE_UNSPECIFIED
+#define APC1_SENSOR_NEGATIVE_TOLERANCE	SENSOR_NEGATIVE_TOLERANCE_UNSPECIFIED
+#define APC1_SENSOR_SAMPLING_FUNCTION	SENSOR_SAMPLING_FUNC_UNSPECIFIED
+#define APC1_SENSOR_MEASUREMENT_PERIOD	SENSOR_MEASUREMENT_PERIOD_NA
+#define APC1_SENSOR_UPDATE_INTERVAL		SENSOR_UPDATE_INTERVAL_NA
+#define APC1_SENSOR_DATA_LENGTH			sizeof(double)
+#define APC1_SENSOR_CADENCE_STATE		SENSOR_CADENCE_NOT_SUPPORTED
+#define APC1_SENSOR_VALUES_RANGE		0
+#define APC1_SENSOR_SETTINGS_COUNT		0
+#define APC1_SENSOR_SERIES_COUNT		0
+
+#define APC1_SENSOR_INIT_PARAMS \
+{\
+	APC1_SENSOR_ELEMENT_IDX,\
+	APC1_SENSOR_PROPERTY_ID,\
+	APC1_SENSOR_POSITIVE_TOLERANCE,\
+	APC1_SENSOR_NEGATIVE_TOLERANCE,\
+	APC1_SENSOR_SAMPLING_FUNCTION,\
+	APC1_SENSOR_MEASUREMENT_PERIOD,\
+	APC1_SENSOR_UPDATE_INTERVAL,\
+	APC1_SENSOR_DATA_LENGTH,\
+	APC1_SENSOR_CADENCE_STATE,\
+	APC1_SENSOR_VALUES_RANGE,\
+	APC1_SENSOR_SETTINGS_COUNT,\
+	{\
+		{0}\
+	},\
+	APC1_SENSOR_SERIES_COUNT,\
+	{\
+		{0}\
+	}\
+}
 
 /* Sensor 1 initialization */
 
@@ -270,8 +306,7 @@ typedef struct
 {\
   TOTAL_SENSORS_COUNT,\
   {\
-    SENSOR1_INIT_PARAMS,\
-    SENSOR2_INIT_PARAMS,\
+	APC1_SENSOR_INIT_PARAMS\
   }\
 }
 #endif /* SENSOR_USR_CFG_H */
