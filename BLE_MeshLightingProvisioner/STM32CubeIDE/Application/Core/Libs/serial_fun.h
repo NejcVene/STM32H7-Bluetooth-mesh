@@ -23,6 +23,6 @@
 #define SF_DEFAULT_PUBLISH_RETRANSMIT_COUNT				0x00
 #define SF_DEFAULT_PUBLISH_RETRANSMIT_INTERVAL_STEPS	0x00
 
-void SF_Process(char *receiveBuffer, uint16_t receiveSize);
+void SF_Process(uint8_t *receiveBuffer, uint16_t receiveSize);
 
 #endif /* APPLICATION_CORE_LIBS_SERIAL_FUN_H_ */

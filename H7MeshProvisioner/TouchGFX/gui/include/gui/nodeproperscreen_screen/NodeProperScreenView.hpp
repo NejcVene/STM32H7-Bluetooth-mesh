@@ -52,6 +52,8 @@ protected:
     DeviceButton deviceFunctions[maxDeviceFunctions];
     CMD_CommandGet_t *cmd;
     NC_MaskedFeatures *allModels;
+    int sensorTickCounter;
+    int sensorDigitalSeconds;
 
 };
 

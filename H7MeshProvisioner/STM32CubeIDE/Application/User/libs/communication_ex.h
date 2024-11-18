@@ -34,6 +34,19 @@ typedef enum {
 } PROTOCOL_MSG_TYPE;
 
 typedef enum {
+	PRO_DATATYPE_8T = 0,
+	PRO_DATATYPE_U8T,
+	PRO_DATATYPE_16T,
+	PRO_DATATYPE_U16T,
+	PRO_DATATYPE_32T,
+	PRO_DATATYPE_U32T,
+	PRO_DATATYPE_DOUBLE,
+	PRO_DATATYPE_STRING,
+	PRO_DATATYPE_STRUCT_APC1,
+	PRO_DATATYPE_STRUCT_TEST
+} PROTOCOL_DATATYPE;
+
+typedef enum {
 	MAIN_FSM_IDLE = 0,					// FSM is waiting for an user event
 	MAIN_FSM_SETUP,						// FSM sets up required variables
 	MAIN_FSM_RECEIVE,					// FSM start receiving data
@@ -91,6 +104,11 @@ typedef struct {
 	int commandIndex;
 } FSM_ErrorReport_t;
 
+typedef struct {
+	char command[30];
+	void *data;
+} FSM_DecodedPayload_t;
+
 extern Comm_IT_Responses_t itResponses;
 extern void (*LPUART_CallbackTx)(void);
 extern void (*LPUART_CallbackRx)(void);
@@ -101,6 +119,10 @@ FSM_QueuedEvent_t *FSM_GetEvent(Queue *queue);
 void FSM_FreeEvent(FSM_QueuedEvent_t *event);
 void FSM_FreeEventsDeleteQueue(Queue *queue);
 
+
+void FSM_EncodePayload(char *buffer, const char *command, void *data, size_t dataSize, PROTOCOL_DATATYPE type);
+FSM_DecodedPayload_t *FSM_DecodePayload(uint8_t *buffer, PROTOCOL_DATATYPE type);
+void FSM_FreeDecodedPayload(FSM_DecodedPayload_t *payload);
 #ifdef __cplusplus
 }
 #endif

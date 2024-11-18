@@ -84,6 +84,18 @@ typedef struct {
 	Node_SubbedAddress_t subbedAddresses[5];
 } Node_SubscriptionParam_t;
 
+typedef struct __attribute__((packed)) {
+	uint16_t pm1_0;
+	double tComp;
+} APC1_SelectedData_t;
+
+typedef struct __attribute__((packed)) {
+	uint16_t val1;
+	uint8_t val2;
+	double val3;
+	int val4;
+} SF_TestProtocol_t;
+
 void NC_Init(void);
 void NC_ReportFoundNodes(char *param);
 void NC_CheckEnabledModelsFeatures(void);

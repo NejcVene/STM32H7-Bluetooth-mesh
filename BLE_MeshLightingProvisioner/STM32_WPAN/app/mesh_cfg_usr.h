@@ -161,8 +161,8 @@ Either use 0 to disable or 1 to enable
 #define TF_COMMON                                                              0
 #define TF_GENERIC_M                                                           0
 #define TF_GENERIC_CLIENT_M                                                    0
-#define TF_SENSOR_M                                                            0
-#define TF_SENSOR_CLIENT_M                                                     0
+#define TF_SENSOR_M                                                            1
+#define TF_SENSOR_CLIENT_M                                                     1
 #define TF_LIGHT_M                                                             0
 #define TF_LIGHT_CLIENT_M                                                      0
 #define TF_LIGHT_LC_M                                                          0
@@ -263,7 +263,7 @@ Either use 0 to disable or 1 to enable
 
 //#define ENABLE_SENSOR_MODEL_SERVER                                           (1)
 
-//#define ENABLE_SENSOR_MODEL_CLIENT                                           (1)
+// #define ENABLE_SENSOR_MODEL_CLIENT                                           (1)
 
 /******************************************************************************/
 /* Define the following Macros to enable the usage of the time and            */

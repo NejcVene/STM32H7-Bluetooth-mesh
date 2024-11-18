@@ -21,6 +21,14 @@ DebugScreenViewBase::DebugScreenViewBase() :
     scrollableContainer1.setPosition(115, 30, 250, 182);
     scrollableContainer1.setScrollbarsColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     scrollableContainer1.setScrollbarsAlpha(255);
+    testProtocolStruct.setXY(5, 254);
+    testProtocolStruct.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
+    testProtocolStruct.setLabelText(touchgfx::TypedText(T___SINGLEUSE_S5PQ));
+    testProtocolStruct.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    testProtocolStruct.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    testProtocolStruct.setAction(buttonCallback);
+    scrollableContainer1.add(testProtocolStruct);
+
     livingroomGrpAddrBtn.setXY(5, 194);
     livingroomGrpAddrBtn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_MEDIUM_ROUNDED_PRESSED_ID));
     livingroomGrpAddrBtn.setLabelText(touchgfx::TypedText(T___SINGLEUSE_ZQHI));
@@ -102,5 +110,12 @@ void DebugScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
         //When livingroomGrpAddrBtn clicked call virtual function
         //Call GUI_DebugLivRoomGrpAddr
         GUI_DebugLivRoomGrpAddr();
+    }
+    if (&src == &testProtocolStruct)
+    {
+        //GUI_DebugTestProStruct
+        //When testProtocolStruct clicked call virtual function
+        //Call GUI_DebugTestProStruct
+        GUI_DebugTestProStruct();
     }
 }

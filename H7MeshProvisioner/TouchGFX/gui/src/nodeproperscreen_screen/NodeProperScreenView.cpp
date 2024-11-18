@@ -76,7 +76,30 @@ void NodeProperScreenView::tearDownScreen()
 
 void NodeProperScreenView::handleTickEvent() {
 
+	PARAMETER_TYPE types[] = {PARAM_CHAR, PARAM_CHAR};
+	void *paramValues[2];
+	char stringPID[5];
+	char stringNodeAddress[10];
+
+	this->sensorTickCounter++;
 	loader1.GUI_ProgressLoader();
+	if (this->sensorTickCounter % 60 == 0) {
+		if (++this->sensorDigitalSeconds >= 60) {
+			// a minute has passed; refresh sensor data
+			this->sensorDigitalSeconds = 0;
+			sprintf(stringNodeAddress, "%04X", (unsigned int) this->node->address.nodeAddress);
+			sprintf(stringPID, "%s", "004F");
+			paramValues[0] = (void *) stringNodeAddress;
+			paramValues[1] = (void *) stringPID;
+//			this->cmd = CMD_CreateCommandGet(CMD_MESH_ATCL_SENSOR_GET,
+//											types,
+//											paramValues,
+//											2,
+//											NULL,
+//											NULL);
+//			presenter->GUI_SendCommand(this->cmd);
+		}
+	}
 
 }
 

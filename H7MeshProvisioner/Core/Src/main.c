@@ -1036,6 +1036,8 @@ void StartDefaultTask(void *argument)
 	HT_Insert(cmdHashTable, CMD_FUN_IS_EM_PROV_PROV, &isEmbeddedProvProvisioned);
 	HT_Insert(cmdHashTable, CMD_FUN_PUB_SET_SUB_ADD, &pubSetSubAdd);
 	HT_Insert(cmdHashTable, CMD_FUN_GET_LIB_VER, &getLibInfo);
+	HT_Insert(cmdHashTable, CMD_MESH_ATCL_SENSOR_GET, &sensorGet);
+	HT_Insert(cmdHashTable, CMD_FUN_PRO_TEST, &protocolStructTest);
 
 	for(;;) {
 		osDelay(100);

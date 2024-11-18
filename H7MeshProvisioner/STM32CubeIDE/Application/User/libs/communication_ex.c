@@ -369,30 +369,34 @@ void FSM_Execute(void *param) {
 	debugMessage("\r\n");
 #endif
 #ifdef _MASTER
-	int len = 0;
+	size_t len = 0;
 	CMD_CommandGet_t *guiCmd = *((CMD_CommandGet_t **) param);
 	CMD_MeshCommand_t *meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex);
 	CMD_CommandGet_t *exeResult;
-	char responseCommand[CMD_MESH_COMMAND_LENGHT] = {0};
-	char responseParameters[PAC_MAX_PAYLOAD] = {0}; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
+	FSM_DecodedPayload_t *payload;
+//	char responseCommand[CMD_MESH_COMMAND_LENGHT] = {0};
+//	char responseParameters[PAC_MAX_PAYLOAD] = {0}; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
 	char cutOriginal[CMD_MESH_COMMAND_LENGHT] = {0};
 
+	payload = FSM_DecodePayload(CommandString, meshCommand->dataType);
 	sscanf(meshCommand->command, "%[^%]", cutOriginal);
-	sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
 	Protocol_ConvertMessage((uint8_t *) cutOriginal, strlen(cutOriginal));
+
+//	sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
 	len = strlen(cutOriginal);
 	while (len > 0 && (cutOriginal[len - 1] == ' ' || cutOriginal[len - 1] == '-')) {
 		cutOriginal[--len] = '\0';
 	}
-	if (!strcmp(responseCommand, cutOriginal)) {
+	if (!strcmp(payload->command, cutOriginal)) {
 		if (meshCommand->CMD_Execute) {
-			if ((exeResult = meshCommand->CMD_Execute(responseParameters, guiCmd))) {
+			if ((exeResult = meshCommand->CMD_Execute(payload->data, guiCmd))) {
 				GUI_QueueMessage(FSM_ResultQueueHandle, exeResult);
 				CMD_FreeCommandGet(guiCmd);
 				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_EXE_COMPLETE, NULL, 0);
 			} else {
 				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_LOOP, &guiCmd, sizeof(guiCmd));
 			}
+			FSM_FreeDecodedPayload(payload);
 		}
 	}
 
@@ -469,7 +473,7 @@ static void Protocol_Process_Messsage(void) {
 			procState = CHECK_BYTE;
 			break;
 		case CHECK_BYTE:
-			strncpy((char *) CommandString, (char *) payloadRx, payloadLengthRx);
+			memcpy((void *) CommandString, (void *) payloadRx, payloadLengthRx);
 			procState = CHECK_CHECKSUM;
 			break;
 		case CHECK_CHECKSUM:
@@ -525,6 +529,78 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_INTERRUPT, NULL, 0);
 	}
 #endif
+
+}
+
+void FSM_EncodePayload(char *buffer, const char *command, void *data, size_t dataSize, PROTOCOL_DATATYPE type) {
+
+	size_t commandLength = strlen(command);
+
+	strncpy(buffer, command, commandLength);
+	buffer[commandLength] = ':';
+	if (type == PRO_DATATYPE_STRING) {
+		strncpy(&buffer[commandLength + 1], (char *) data, PAC_MAX_PAYLOAD - commandLength - 1);
+	} else {
+		memcpy(&buffer[commandLength + 1], data, dataSize);
+	}
+
+}
+
+FSM_DecodedPayload_t *FSM_DecodePayload(uint8_t *buffer, PROTOCOL_DATATYPE type) {
+
+	char *delimiter;
+	void *data;
+	FSM_DecodedPayload_t *outputData = NULL;
+	size_t commandLenght = 0;
+	size_t len = 0;
+
+	if (!(outputData = (FSM_DecodedPayload_t *) pvPortMalloc(sizeof(FSM_DecodedPayload_t)))) {
+		return NULL;
+	}
+	if (!(delimiter = strchr((char *) buffer, ':'))) {
+		return NULL;
+	}
+	commandLenght = delimiter - (char *) buffer;
+	strncpy(outputData->command, (char *) buffer, commandLenght);
+	outputData->command[commandLenght] = '\0';
+	data = delimiter + 1;
+	switch (type) {
+		case PRO_DATATYPE_STRUCT_APC1:
+			if ((outputData->data = pvPortMalloc(sizeof(APC1_SelectedData_t)))) {
+				memcpy(outputData->data, data, sizeof(APC1_SelectedData_t));
+			}
+			break;
+		case PRO_DATATYPE_STRING:
+			len = strlen((char *) data) + 1;
+			if ((outputData->data = pvPortMalloc(len * sizeof(char)))) {
+				strncpy((char *) outputData->data, data, len);
+			}
+			break;
+		case PRO_DATATYPE_U16T:
+			if ((outputData->data = pvPortMalloc(sizeof(uint16_t)))) {
+				memcpy(outputData->data, data, sizeof(uint16_t));
+			}
+			break;
+		case PRO_DATATYPE_STRUCT_TEST:
+			if ((outputData->data = pvPortMalloc(sizeof(SF_TestProtocol_t)))) {
+				memcpy(outputData->data, data, sizeof(SF_TestProtocol_t));
+			}
+			break;
+		default:
+			break;
+	}
+
+	return outputData;
+
+}
+
+void FSM_FreeDecodedPayload(FSM_DecodedPayload_t *payload) {
+
+	if (!payload) {
+		return;
+	}
+	vPortFree(payload->data);
+	vPortFree(payload);
 
 }
 

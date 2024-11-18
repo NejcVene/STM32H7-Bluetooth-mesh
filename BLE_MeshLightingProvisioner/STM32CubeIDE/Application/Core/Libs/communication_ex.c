@@ -333,8 +333,8 @@ void FSM_Transmit(void *param) {
 //	for (int i = 0; i<uuidSize; i++) {
 //		sprintf(&sendString[i * 2], "%02X", neighborTable->uuid[i]);  // 2 hex digits per byte
 //	}
-	char *toSend = (char *) param;
-	Protocol_Send(PRO_MSG_TYPE_ACK, (uint8_t *) toSend, strlen(toSend), NULL);
+	uint8_t *toSend = (uint8_t *) param;
+	Protocol_Send(PRO_MSG_TYPE_ACK, toSend, PAC_MAX_PAYLOAD, NULL);
 	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_TRANSMIT_COMPLETE, NULL, 0);
 #endif
 
@@ -496,6 +496,74 @@ int FSM_GetNdprn(void) {
 	return useNdprvn;
 
 }
+
+void FSM_EncodePayload(uint8_t *buffer, const char *command, void *data, size_t dataSize, PROTOCOL_DATATYPE type) {
+
+	size_t payloadSize = 0;
+	size_t maxDataLength = 0;
+	size_t stringLength = 0;
+	size_t commandLength = strlen(command);
+
+	if (commandLength + 1 > PAC_MAX_PAYLOAD) {
+		return;
+	}
+	strncpy((char *) buffer, command, commandLength);
+	buffer[commandLength] = ':';
+	payloadSize = commandLength + 1;
+
+	if (type == PRO_DATATYPE_STRING) {
+		maxDataLength = PAC_MAX_PAYLOAD - payloadSize;
+		stringLength = strlen((char *) data);
+		if (stringLength + 1 > maxDataLength) {
+			return;
+		}
+		strncpy((char *) &buffer[payloadSize], (char *) data, maxDataLength);
+		buffer[payloadSize + stringLength] = '\0';
+	} else {
+		if (dataSize > PAC_MAX_PAYLOAD - payloadSize) {
+			return;
+		}
+		memcpy((void *) &buffer[payloadSize], data, dataSize);
+	}
+
+}
+
+//FSM_DecodedPayload_t *FSM_DecodePayload(char *buffer, PROTOCOL_DATATYPE type) {
+//
+//	char *delimiter;
+//	void *data;
+//	FSM_DecodedPayload_t *outputData = NULL;
+//	size_t commandLenght = 0;
+//	size_t len = 0;
+//
+//	if (!(outputData = (FSM_DecodedPayload_t *) malloc(sizeof(FSM_DecodedPayload_t)))) {
+//		return NULL;
+//	}
+//	if (!(delimiter = strchr(buffer, ':'))) {
+//		return NULL;
+//	}
+//	commandLenght = delimiter - buffer;
+//	strncpy(outputData->command, buffer, commandLenght);
+//	data = delimiter + 1;
+//	switch (type) {
+//		case PRO_DATATYPE_STRUCT:
+//			if ((outputData->data = malloc(sizeof(APC1_SelectedData_t)))) {
+//				memcpy(outputData->data, data, sizeof(APC1_SelectedData_t));
+//			}
+//			break;
+//		case PRO_DATATYPE_STRING:
+//			len = strlen((char *) data) + 1;
+//			if ((outputData->data = malloc(len * sizeof(char)))) {
+//				strncpy((char *) outputData->data, data, len);
+//			}
+//			break;
+//		default:
+//			break;
+//	}
+//
+//	return outputData;
+//
+//}
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 

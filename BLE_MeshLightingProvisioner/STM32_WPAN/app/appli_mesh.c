@@ -1421,17 +1421,17 @@ void Appli_SelfConfigurationProcess(void)
 * @param  noOfUnprovDevices: Pointer to take total count of nearby unprovisioned devices
 * @retval MOBLE_RESULT
 */  
-MOBLE_RESULT BLEMesh_ScanDevices(neighbor_params_t *unprovDeviceArray, MOBLEUINT8 *noOfUnprovDevices, char *resultBuffer)
+MOBLE_RESULT BLEMesh_ScanDevices(neighbor_params_t *unprovDeviceArray, MOBLEUINT8 *noOfUnprovDevices, uint8_t *resultBuffer)
 {
   MOBLE_RESULT result;
+  char buffer[PAC_MAX_PAYLOAD] = {0};
   
     result = BLEMesh_GetNeighborState(unprovDeviceArray,noOfUnprovDevices);
     /* Array print for testing */
     /* Check if any unprovisioned device is available */
-    strcat(resultBuffer, "ATEP NDSCAN: ");
     if(!(*noOfUnprovDevices))
     {
-    	strcat(resultBuffer, "NONE");
+    	strcat(buffer, "NONE");
         TRACE_I(TF_PROVISION,"No Unprovisioned Device Nearby\r\n");  
     }
     else
@@ -1440,16 +1440,16 @@ MOBLE_RESULT BLEMesh_ScanDevices(neighbor_params_t *unprovDeviceArray, MOBLEUINT
         	char tmp[40];
         	char cutUuid[5];
         	sprintf(tmp, "%d-", count);
-        	strcat(resultBuffer, tmp);
+        	strcat(buffer, tmp);
         	for (int j = 0; j<16; j++) {
         		sprintf(&tmp[j * 2], "%02X", unprovDeviceArray[count].uuid[j]);
         	}
         	tmp[32] = '\0';
         	strncpy(cutUuid, tmp, 4);
         	cutUuid[4] = '\0';
-        	strcat(resultBuffer, cutUuid);
+        	strcat(buffer, cutUuid);
         	if (count < *noOfUnprovDevices - 1) {
-        		strcat(resultBuffer, ";");
+        		strcat(buffer, ";");
 
         	}
         	BLEMesh_PrintStringCb("");
@@ -1457,6 +1457,7 @@ MOBLE_RESULT BLEMesh_ScanDevices(neighbor_params_t *unprovDeviceArray, MOBLEUINT
         	BLEMesh_PrintDataCb(unprovDeviceArray[count].uuid, 16);
         }
     }
+    FSM_EncodePayload(resultBuffer, "ATEP NDSCAN", (void *) buffer, 0, PRO_DATATYPE_STRING);
   return result;
 }
 /**

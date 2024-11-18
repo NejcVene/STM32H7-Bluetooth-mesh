@@ -59,5 +59,17 @@ void DebugScreenView::GUI_DebugLivRoomGrpAddr() {
 
 }
 
+void DebugScreenView::GUI_DebugTestProStruct() {
+
+	this->cmd = CMD_CreateCommandGet(CMD_FUN_PRO_TEST,
+									NULL,
+									NULL,
+									0,
+									NULL,
+									NULL);
+	presenter->GUI_SendCommand(this->cmd);
+
+}
+
 
 

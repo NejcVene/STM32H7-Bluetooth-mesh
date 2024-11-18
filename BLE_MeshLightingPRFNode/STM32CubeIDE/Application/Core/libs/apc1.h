@@ -12,7 +12,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#define	API_VERSION	1.0
+#define	API_VERSION	1.2
 
 #define APC1_Convert(low, high)			(((uint16_t) low << 8) | high)
 #define APC1_Error_Buffer_Append(buffer, index)	strcat(buffer, APC1_Status_Strings[index])

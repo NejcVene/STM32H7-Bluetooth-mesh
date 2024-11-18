@@ -47,8 +47,8 @@ static MOBLEUINT16 PrvndNodeAddress = 0;
 extern MOBLEUINT16 nodeAddressOffset;
 /* Private function prototypes -----------------------------------------------*/
 static MOBLE_RESULT SerialPrvn_ProvisionDevice(char *text);
-static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text, char *resultBuffer);
-static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, char *resultBuffer);
+static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text, uint8_t *resultBuffer);
+static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, uint8_t *resultBuffer);
 /* Private functions ---------------------------------------------------------*/ 
 /**
 * @brief  This function scans and prints unprovisioned devices  
@@ -56,7 +56,7 @@ static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, char *resultBuffer);
 * @param  noOfUnprovDevices: Pointer to take total count of nearby unprovisioned devices
 * @retval MOBLE_RESULT
 */  
-__weak MOBLE_RESULT BLEMesh_ScanDevices(neighbor_params_t *unprovDeviceArray, MOBLEUINT8 *noOfUnprovDevices, char *resultBuffer)
+__weak MOBLE_RESULT BLEMesh_ScanDevices(neighbor_params_t *unprovDeviceArray, MOBLEUINT8 *noOfUnprovDevices, uint8_t *resultBuffer)
 {
   return MOBLE_RESULT_NOTIMPL;
 }
@@ -76,7 +76,7 @@ __weak MOBLE_RESULT BLEMesh_ProvisionDevice(neighbor_params_t *unprovDeviceArray
 * @param  rcvdStringSize: length of the input string 
 * @retval void
 */ 
-void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *resultBuffer, int *cmdResposneElsewhere)
+void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, uint8_t *resultBuffer, int *cmdResposneElsewhere)
 {
   MOBLE_RESULT result = MOBLE_RESULT_INVALIDARG;
 
@@ -199,17 +199,16 @@ static MOBLE_RESULT SerialPrvn_ProvisionDevice(char *text)
 * @param  text: received array
 * @retval MOBLE_RESULT
 */  
-static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text, char *resultBuffer)
+static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text, uint8_t *resultBuffer)
 {
   MOBLEINT16 na = 0;
   MOBLE_RESULT result = MOBLE_RESULT_SUCCESS;
+  uint16_t convertedResult = 0;
   
   sscanf(text, "UNPV %hd", &na);  
-  strcat(resultBuffer, "ATEP UNPV: ");
   if(na>1)
   {
     result = ConfigClient_NodeReset(na);
-    sprintf(resultBuffer, "ATEP UNPV: %d", (int) result);
   }
   else if(na == 1)
   {
@@ -227,7 +226,8 @@ static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text, char *resultBuffer)
   {
     result = MOBLE_RESULT_INVALIDARG;
   }
-
+  convertedResult = (uint16_t) result;
+  FSM_EncodePayload(resultBuffer, "ATEP UNPV", (void *) &convertedResult, sizeof(uint16_t), PRO_DATATYPE_U16T);
   return result;
 }
 
@@ -236,15 +236,15 @@ static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text, char *resultBuffer)
 * @param  text: received array
 * @retval MOBLE_RESULT
 */  
-static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, char *resultBuffer)
+static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, uint8_t *resultBuffer)
 {
   MOBLE_RESULT result;
+  char buffer[PAC_MAX_PAYLOAD] = {0};
   
     result = BLEMesh_GetNeighborState(NeighborTable,&NoOfNeighborPresent);
     /* Check if any unprovisioned device is available */
-    strcat(resultBuffer, "ATEP SCAN: ");
     if(!NoOfNeighborPresent) {
-    	strcat(resultBuffer, "NONE");
+    	strcat(buffer, "NONE");
     	TRACE_I(TF_PROVISION,"No Unprovisioned Device Nearby\r\n");
     }
     else {
@@ -253,22 +253,23 @@ static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, char *resultBuffer)
     		char tmp[40];
     		char cutUuid[5];
     		sprintf(tmp, "%d-", count);
-    		strcat(resultBuffer, tmp);
+    		strcat(buffer, tmp);
     		for (int j = 0; j<16; j++) {
     			sprintf(&tmp[j * 2], "%02X", NeighborTable[count].uuid[j]);
     		}
     		tmp[32] = '\0';
     		strncpy(cutUuid, tmp, 4);
     		cutUuid[4] = '\0';
-    		strcat(resultBuffer, cutUuid);
+    		strcat(buffer, cutUuid);
     		if (count < NoOfNeighborPresent - 1) {
-    			strcat(resultBuffer, ";");
+    			strcat(buffer, ";");
     		}
     		BLEMesh_PrintStringCb("");
     		TRACE_I(TF_PROVISION,"Device-%d -> ", count);
     		BLEMesh_PrintDataCb(NeighborTable[count].uuid, 16);
     	}
     }
+    FSM_EncodePayload(resultBuffer, "ATEP SCAN", (void *) buffer, 0, PRO_DATATYPE_STRING);
     return result;
   }
 /**

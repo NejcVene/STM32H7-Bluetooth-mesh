@@ -454,15 +454,17 @@ MOBLE_RESULT Appli_Sensor_ReadValue(MOBLEUINT8 sensorOffset,
                                     sensor_ValueCbParams_t* pValueParams) {
 
 	MOBLE_RESULT result = MOBLE_RESULT_SUCCESS;
-	double tmp = 69;
+	APC1_SelectedData_t sensorData = {.pm1_0 = 69, .tComp = 420};
 
 	switch (SensorServerInitParams.sensorInitParams[sensorOffset].propertyId) {
 		case PRESENT_AMBIENT_TEMPERATURE_PID:
 			if (APC1_Read_Mea_Data() == APC1_OK) {
-				tmp = APC1_Get_T_Comp();
+				sensorData.pm1_0 = APC1_Get_PM1_0();
+				sensorData.tComp = APC1_Get_T_Comp();
 			}
-			TRACE_M(TF_SENSOR, "APC1 Temp: %f °C\r\n", tmp);
-			memcpy(pValueParams->data, (void *) &tmp, sizeof(double));
+			TRACE_M(TF_SENSOR, "APC1 PM1.0: %d\r\n", sensorData.pm1_0);
+			TRACE_M(TF_SENSOR, "APC1 Temp: %f °C\r\n", sensorData.tComp);
+			memcpy(pValueParams->data, (void *) &sensorData, sizeof(APC1_SelectedData_t));
 			break;
 		default:
 			break;

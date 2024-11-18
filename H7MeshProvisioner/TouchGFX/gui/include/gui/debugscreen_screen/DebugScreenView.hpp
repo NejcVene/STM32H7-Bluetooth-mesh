@@ -16,6 +16,7 @@ public:
     virtual void GUI_UnprovEm();
     virtual void GUI_DebugKitGrpAddr();
     virtual void GUI_DebugLivRoomGrpAddr();
+    virtual void GUI_DebugTestProStruct();
 
 protected:
 

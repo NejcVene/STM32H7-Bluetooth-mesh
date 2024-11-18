@@ -30,6 +30,7 @@
 #include "sensors_client.h"
 #include "appli_sensors_client.h"
 #include "appli_light_lc.h"
+#include "communication_ex.h"
 
 /** @addtogroup ST_BLE_Mesh
 *  @{
@@ -40,9 +41,14 @@
 */
 
 /* Private typedef -----------------------------------------------------------*/
+typedef struct __attribute__((packed)) {
+	uint16_t pm1_0;
+	double tComp;
+} APC1_SelectedData_t;
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+extern Queue *eventQueue;
 /* Private function prototypes -----------------------------------------------*/
 
 
@@ -250,24 +256,52 @@ void Appli_Sensor_Descriptor_Status(const MOBLEUINT8 *pDescriptor,
 void Appli_Sensor_Status(const MOBLEUINT8 *pStatus,
                          MOBLEUINT32 length,
                          MOBLE_ADDRESS dstPeer,
-                         MOBLEUINT8 elementIndex)
-{
-  MOBLEUINT8 i;
-  
-  TRACE_M(TF_SENSOR,"Appli_Sensor_Status callback received \r\n");
-  
-  TRACE_M(TF_SERIAL_CTRL,"#%d! for element %d \r\n", 
-          SENSOR_STATUS,
-          elementIndex);
-  for(i = 0; i < length; i++)
-  {
-    TRACE_M(TF_SERIAL_CTRL,"Status value: %d\n\r", pStatus[i]);
-  }
+                         MOBLEUINT8 elementIndex) {
+
+	MOBLEUINT8 i;
+	MOBLEUINT8 sensorStatusFormat = 0xFF;
+	MOBLEUINT32 receivedLenght = 0;
+	MOBLEUINT16 receivedPID = 0;
+	MOBLEUINT32 offset = 2;
+	uint8_t sendingBuffer[PAC_MAX_PAYLOAD] = {0};
+	APC1_SelectedData_t sensorData;
+
+	TRACE_M(TF_SENSOR,"Appli_Sensor_Status callback received \r\n");
+	TRACE_M(TF_SERIAL_CTRL,"#%d! for element %d \r\n", SENSOR_STATUS, elementIndex);
+	for(i = 0; i < length; i++) {
+		TRACE_M(TF_SERIAL_CTRL,"Status value: %d\n\r", pStatus[i]);
+	}
+	// decode data marshalling buffer
+	if((pStatus[0] & 0x01) == 0x01){
+		sensorStatusFormat = 0x01;
+		receivedLenght = (MOBLEUINT32) (((pStatus[0] & 0xFE)>>1) + 1);
+	    receivedPID = (MOBLEUINT16) ((pStatus[2] << 8) | (pStatus[1]));
+	} else{
+		sensorStatusFormat = 0x00;
+	    receivedLenght = (MOBLEUINT32) (((pStatus[0] & 0x1E) >> 1) + 1);
+	    receivedPID = (MOBLEUINT16) (((pStatus[0] & 0xE0) >> 5) | (pStatus[1] << 3));
+	}
+	offset = length - receivedLenght;
+	TRACE_M(TF_SENSOR,"Offset: %ld\r\n", offset);
+	switch (receivedPID) {
+		case PRESENT_AMBIENT_TEMPERATURE_PID:
+			memcpy((void *) &sensorData, pStatus + offset, sizeof(APC1_SelectedData_t));
+			TRACE_M(TF_SENSOR, "APC1 PM1.0: %d\r\n", sensorData.pm1_0);
+			TRACE_M(TF_SENSOR, "APC1 Temp: %f °C\r\n", sensorData.tComp);
+			break;
+	}
+	FSM_EncodePayload(sendingBuffer,
+					"ATCL",
+					(void *) &sensorData,
+					sizeof(APC1_SelectedData_t),
+					PRO_DATATYPE_STRUCT_APC1);
+	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, sendingBuffer, sizeof(sendingBuffer));
 #ifdef ENABLE_LIGHT_MODEL_SERVER_LC   
-  Appli_Light_LC_SensorPropertyUpdate(elementIndex,
+	Appli_Light_LC_SensorPropertyUpdate(elementIndex,
                                       PRESENCE_DETECTED_PID,
                                       (MOBLEUINT32) pStatus[length-1]);
-#endif        
+#endif
+
 }
       
       

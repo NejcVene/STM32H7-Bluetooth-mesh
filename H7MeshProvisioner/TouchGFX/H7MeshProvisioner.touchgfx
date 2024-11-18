@@ -885,6 +885,29 @@
             "Components": [
               {
                 "Type": "ButtonWithLabel",
+                "Name": "testProtocolStruct",
+                "X": 5,
+                "Y": 254,
+                "Width": 240,
+                "Height": 50,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+                "TextId": "__SingleUse_S5PQ",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
                 "Name": "livingroomGrpAddrBtn",
                 "X": 5,
                 "Y": 194,
@@ -1035,6 +1058,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "GUI_DebugLivRoomGrpAddr"
+            }
+          },
+          {
+            "InteractionName": "GUI_DebugTestProStruct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "testProtocolStruct"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_DebugTestProStruct"
             }
           }
         ]

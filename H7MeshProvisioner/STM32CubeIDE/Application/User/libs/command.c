@@ -14,16 +14,19 @@
 
 void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);
 void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);
-CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd);
-CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd);
-CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_NofitfyProvision(void *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_NotifyScan(void *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_SubsAdd(void *buffer, CMD_CommandGet_t *guiCmd);
 //CMD_CommandGet_t *CMD_GenericOnOff(char *buffer, CMD_CommandGet_t *guiCmd);
-CMD_CommandGet_t *CMD_NotifyUnprovision(char *buffer, CMD_CommandGet_t *guiCmd);
-CMD_CommandGet_t *CMD_NotifyLibVersion(char *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_NotifyUnprovision(void *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_NotifyLibVersion(void *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_NotifySensorUpdate(void *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_ProtocolStructTest(void *buffer, CMD_CommandGet_t *guiCmd);
 
 CMD_MeshCommand_t defineRootNetworkNode = {
 		.command = "ATEP ROOT",
 		.commandType = PRO_MSG_TYPE_UNACK,
+		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = NULL,
 		.CMD_Execute = NULL
 };
@@ -31,6 +34,7 @@ CMD_MeshCommand_t defineRootNetworkNode = {
 CMD_MeshCommand_t scanForUnprovisionedNetworkDevices = {
 		.command = "ATEP SCAN",
 		.commandType = PRO_MSG_TYPE_ACK,
+		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = NULL,
 		.CMD_Execute = CMD_NotifyScan
 };
@@ -38,6 +42,7 @@ CMD_MeshCommand_t scanForUnprovisionedNetworkDevices = {
 CMD_MeshCommand_t provisionNetworkDevice = {
 		.command = "ATEP PRVN-%d",
 		.commandType = PRO_MSG_TYPE_ACK,
+		.dataType = PRO_DATATYPE_U16T,
 		.CMD_Setup = CMD_GenericFormatCommand,
 		.CMD_Execute = CMD_NofitfyProvision
 };
@@ -45,6 +50,7 @@ CMD_MeshCommand_t provisionNetworkDevice = {
 CMD_MeshCommand_t scanForUnprovisionedNetworkDevicesOutOfRangePvrn = {
 		.command = "ATEP NDSCAN",
 		.commandType = PRO_MSG_TYPE_ACK,
+		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = NULL,
 		.CMD_Execute = CMD_NotifyScan
 };
@@ -52,6 +58,7 @@ CMD_MeshCommand_t scanForUnprovisionedNetworkDevicesOutOfRangePvrn = {
 CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn = {
 		.command = "ATEP NDPRVN-%d",
 		.commandType = PRO_MSG_TYPE_ACK,
+		.dataType = PRO_DATATYPE_U16T,
 		.CMD_Setup = CMD_GenericFormatCommand,
 		.CMD_Execute = CMD_NofitfyProvision
 };
@@ -59,6 +66,7 @@ CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn = {
 CMD_MeshCommand_t unprovisionNetworkDevice = {
 		.command = "ATEP UNPV %d",
 		.commandType = PRO_MSG_TYPE_ACK,
+		.dataType = PRO_DATATYPE_U16T,
 		.CMD_Setup = CMD_GenericFormatCommand,
 		.CMD_Execute = CMD_NotifyUnprovision
 };
@@ -66,6 +74,7 @@ CMD_MeshCommand_t unprovisionNetworkDevice = {
 CMD_MeshCommand_t genericOnOffSetAck = { // currently hard-coded
 		.command = "ATCL %s 8202 %s 00",
 		.commandType = PRO_MSG_TYPE_UNACK,
+		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = CMD_GenericFormatCommand,
 		.CMD_Execute = NULL
 };
@@ -74,6 +83,7 @@ CMD_MeshCommand_t genericOnOffSetAck = { // currently hard-coded
 CMD_MeshCommand_t genericOnOffGet = {
 		.command = "ATCL %s 8201",
 		.commandType = PRO_MSG_TYPE_UNACK,
+		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = CMD_GenericFormatCommand,
 		.CMD_Execute = NULL
 };
@@ -82,6 +92,7 @@ CMD_MeshCommand_t genericOnOffGet = {
 CMD_MeshCommand_t unprovisionEmbeddedProv = {
 		.command = "BLEMesh_Unprovision",
 		.commandType = PRO_MSG_TYPE_OTHER,
+		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = NULL,
 		.CMD_Execute = NULL
 };
@@ -90,6 +101,7 @@ CMD_MeshCommand_t unprovisionEmbeddedProv = {
 CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 		.command = "BLEMesh_IsUnprovisioned",
 		.commandType = PRO_MSG_TYPE_OTHER,
+		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = NULL,
 		.CMD_Execute = NULL
 };
@@ -97,6 +109,7 @@ CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 CMD_MeshCommand_t pubSetSubAdd = {
 		.command = "BLEMesh_PubSub %d %d %d %d",
 		.commandType = PRO_MSG_TYPE_OTHER,
+		.dataType = PRO_DATATYPE_U16T,
 		.CMD_Setup = CMD_SetupConfig,
 		.CMD_Execute = CMD_SubsAdd
 };
@@ -104,11 +117,38 @@ CMD_MeshCommand_t pubSetSubAdd = {
 CMD_MeshCommand_t getLibInfo = {
 		.command = "BLEMesh_LibVer",
 		.commandType = PRO_MSG_TYPE_OTHER,
+		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = CMD_GenericFormatCommand,
 		.CMD_Execute = CMD_NotifyLibVersion
 };
 
+CMD_MeshCommand_t sensorGet = {
+		.command = "ATCL %s 8231 %s",
+		.commandType = PRO_MSG_TYPE_OTHER,
+		.dataType = PRO_DATATYPE_STRUCT_APC1,
+		.CMD_Setup = CMD_GenericFormatCommand,
+		.CMD_Execute = CMD_NotifySensorUpdate
+};
+
+CMD_MeshCommand_t protocolStructTest = {
+		.command = "BLEMesh_Protest",
+		.commandType = PRO_MSG_TYPE_OTHER,
+		.dataType = PRO_DATATYPE_STRUCT_TEST,
+		.CMD_Setup = NULL,
+		.CMD_Execute = CMD_ProtocolStructTest
+};
+
 static NC_MaskedFeatures *allModels;
+
+extern UART_HandleTypeDef huart3;
+
+#ifdef _DEBUG
+static inline void debugMessage(char *message) {
+
+	HAL_UART_Transmit(&huart3, (uint8_t *) message, strlen(message), 6000);
+
+}
+#endif
 
 CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[], void *paramValues[], int numOfParams, int arrayLengths[], size_t *elementSizes) {
 
@@ -258,7 +298,7 @@ void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *gu
 
 }
 
-CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd) {
+CMD_CommandGet_t *CMD_NofitfyProvision(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	int index;
 	PARAMETER_TYPE types[] = {PARAM_VOID, PARAM_VOID};
@@ -267,9 +307,8 @@ CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd) {
 	size_t sizes[] = {sizeof(Node_Config_t), sizeof(NC_MaskedFeatures)};
 	CMD_CommandGet_t *cmdRes = NULL;
 	Node_Config_t *configNodes = NC_GetNodeConfigArray();
-	uint32_t assignedNodeAddress = 0;
+	uint32_t assignedNodeAddress = (uint32_t) *((uint16_t *) buffer);
 
-	sscanf(buffer, "%ld", &assignedNodeAddress);
 	if ((index = NC_ProvisionNode(guiCmd->param[0].value.i, assignedNodeAddress)) >= 0) {
 		paramValue[0] = (void *) &configNodes[index];
 		paramValue[1] = (void *) NC_GetAllGroupAddresses();
@@ -286,17 +325,18 @@ CMD_CommandGet_t *CMD_NofitfyProvision(char *buffer, CMD_CommandGet_t *guiCmd) {
 
 }
 
-CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd) {
+CMD_CommandGet_t *CMD_NotifyScan(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
 	PARAMETER_TYPE type = PARAM_VOID;
 	void *paramValue[1];
 	int arrayLength[] = {5};
 	size_t sizes[] = {sizeof(Node_NetworkAddress_t)};
+	char *inputBuffer = (char *) buffer;
 
-	if (!strcmp(buffer, "NONE") && guiCmd->commandIndex == CMD_MESH_ATEP_SCAN) {
+	if (!strcmp(inputBuffer, "NONE") && guiCmd->commandIndex == CMD_MESH_ATEP_SCAN) {
 		guiCmd->commandIndex = CMD_MESH_ATEP_SCAN_RANGE;
-	} else if (!strcmp(buffer, "NONE") && guiCmd->commandIndex == CMD_MESH_ATEP_SCAN_RANGE) {
+	} else if (!strcmp(inputBuffer, "NONE") && guiCmd->commandIndex == CMD_MESH_ATEP_SCAN_RANGE) {
 		paramValue[0] = (void *) NC_GetNodeNetworkAddressArray();
 		cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
 									&type,
@@ -305,7 +345,7 @@ CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd) {
 									arrayLength,
 									sizes);
 	} else {
-		NC_ReportFoundNodes(buffer);
+		NC_ReportFoundNodes(inputBuffer);
 		NC_CheckEnabledModelsFeatures();
 		paramValue[0] = (void *) NC_GetNodeNetworkAddressArray();
 		cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
@@ -320,7 +360,7 @@ CMD_CommandGet_t *CMD_NotifyScan(char *buffer, CMD_CommandGet_t *guiCmd) {
 
 }
 
-CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd) {
+CMD_CommandGet_t *CMD_SubsAdd(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
 	Node_SubscriptionParam_t *toSubb = (Node_SubscriptionParam_t *) guiCmd->param[0].value.voidPtr;
@@ -330,10 +370,11 @@ CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd) {
 	int ok = 1;
 	void *paramValue[] = {(void *) &ok};
 	uint8_t i = 0;
+	uint16_t inputBuffer = *((uint16_t *) buffer);
 
-	if (!strcmp(buffer, "1")) {
+	if (inputBuffer) {
 
-	} else if (!strcmp(buffer, "0")) {
+	} else if (!inputBuffer) {
 		runCounter++;
 		if (runCounter >= (NC_GetPopCount(node->address.nodeModels) * toSubb->numOfSubs)) {
 			// for some reason, the compiler here puts add instruction before cmp
@@ -368,17 +409,18 @@ CMD_CommandGet_t *CMD_SubsAdd(char *buffer, CMD_CommandGet_t *guiCmd) {
 //
 //}
 
-CMD_CommandGet_t *CMD_NotifyUnprovision(char *buffer, CMD_CommandGet_t *guiCmd) {
+CMD_CommandGet_t *CMD_NotifyUnprovision(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
 	int nodeAddress = guiCmd->param[0].value.i;
 	PARAMETER_TYPE type = PARAM_INT;
 	int ok = 1;
 	void *paramValue[] = {(void *) &ok};
+	uint16_t inputBuffer = *((uint16_t *) buffer);
 
-	if (!strcmp(buffer, "1")) {
+	if (inputBuffer) {
 
-	} else if (!strcmp(buffer, "0")) {
+	} else if (!inputBuffer) {
 		// clear node config array at said index
 		// decrement the number of configured devices
 		// change ui screen
@@ -395,7 +437,7 @@ CMD_CommandGet_t *CMD_NotifyUnprovision(char *buffer, CMD_CommandGet_t *guiCmd) 
 
 }
 
-CMD_CommandGet_t *CMD_NotifyLibVersion(char *buffer, CMD_CommandGet_t *guiCmd) {
+CMD_CommandGet_t *CMD_NotifyLibVersion(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
 	void *paramValues[3];
@@ -403,11 +445,12 @@ CMD_CommandGet_t *CMD_NotifyLibVersion(char *buffer, CMD_CommandGet_t *guiCmd) {
 	char libSubVer[20] = {0};
 	char commExVer[10] = COMM_EX_VER;
 	PARAMETER_TYPE types[] = {PARAM_CHAR, PARAM_CHAR, PARAM_CHAR};
+	char *inputBuffer = (char *) buffer;
 
-	if (!strcmp(buffer, "NONE")) {
+	if (!strcmp(inputBuffer, "NONE")) {
 
 	} else {
-		sscanf(buffer, "%[^;];%s", libVer, libSubVer);
+		sscanf(inputBuffer, "%[^;];%s", libVer, libSubVer);
 		paramValues[0] = (void *) libVer;
 		paramValues[1] = (void *) libSubVer;
 		paramValues[2] = (void *) commExVer;
@@ -419,6 +462,42 @@ CMD_CommandGet_t *CMD_NotifyLibVersion(char *buffer, CMD_CommandGet_t *guiCmd) {
 									NULL);
 	}
 
+
+	return cmdRes;
+
+}
+
+CMD_CommandGet_t *CMD_NotifySensorUpdate(void *buffer, CMD_CommandGet_t *guiCmd) {
+
+	return NULL;
+
+}
+
+CMD_CommandGet_t *CMD_ProtocolStructTest(void *buffer, CMD_CommandGet_t *guiCmd) {
+
+	CMD_CommandGet_t *cmdRes = NULL;
+	PARAMETER_TYPE type = PARAM_INT;
+	int ok = 1;
+	void *paramValue[] = {(void *) &ok};
+	char message[256];
+	SF_TestProtocol_t *inputBuffer = (SF_TestProtocol_t *) buffer;
+
+	// note: it does not like printing float variables, as sprintf crashes
+	// even with the correct flags to the linker
+	sprintf(message, "uint16_t: %d\r\nuint8_t: %d\r\nint: %d\r\n",
+				inputBuffer->val1,
+				inputBuffer->val2,
+				inputBuffer->val4);
+	debugMessage(message);
+
+	// something has to be returned to avoid looping
+	// the returned value is ignored
+	cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
+								&type,
+								paramValue,
+								1,
+								NULL,
+								NULL);
 
 	return cmdRes;
 

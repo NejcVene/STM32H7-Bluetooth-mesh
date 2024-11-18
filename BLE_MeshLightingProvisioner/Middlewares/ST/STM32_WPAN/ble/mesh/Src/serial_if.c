@@ -191,14 +191,14 @@ __weak void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize)
 */
 void Serial_InterfaceProcess(void)
 {
-	char resultBuffer[PAC_MAX_PAYLOAD] = {0};
+	uint8_t resultBuffer[PAC_MAX_PAYLOAD] = {0};
 	int cmdResposneElsewhere = 0;
   /* Reset button emulation state */
   button_emulation = 0;
   LongPressButton = 0;
 #ifdef ENABLE_SERIAL_CONTROL
   if (!strncmp((char const*)CommandString, "ATCL", 4))
-  {            
+  {
     SerialCtrl_Process((char *)CommandString, indexReceiveChar);
   }
   else if (!strncmp((char const*)CommandString, "ATVR", 4))
@@ -273,7 +273,7 @@ void Serial_InterfaceProcess(void)
     LongPressButton=1;
   } else if (!strncmp((char const *) CommandString, FUN_INDENTIFIER, FUN_INDENTIFIER_LEN)) {
 	  cmdResposneElsewhere = 1;
-	  SF_Process((char *) CommandString, indexReceiveChar);
+	  SF_Process(CommandString, indexReceiveChar);
   }
   else
   {
@@ -286,7 +286,7 @@ void Serial_InterfaceProcess(void)
 		CommandString[--indexReceiveChar] = 0;
 	  }
 	  if (cmdTypeConverted != PRO_MSG_TYPE_UNACK) {
-			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, strlen(resultBuffer) + 1);
+			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, PAC_MAX_PAYLOAD);
 	  } else {
 			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_UNACK, NULL, 0);
 	  }
