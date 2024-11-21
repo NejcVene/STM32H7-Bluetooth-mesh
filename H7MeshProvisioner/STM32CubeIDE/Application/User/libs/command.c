@@ -10,6 +10,7 @@
 #include "cmsis_os2.h"
 #include "freertos_os2.h"
 #include "device_settings.h"
+#include "sensors.h"
 #include <string.h>
 
 void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);
@@ -22,6 +23,7 @@ CMD_CommandGet_t *CMD_NotifyUnprovision(void *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_NotifyLibVersion(void *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_NotifySensorUpdate(void *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_ProtocolStructTest(void *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_SensorDescriptorGet(void *buffer, CMD_CommandGet_t *guiCmd);
 
 CMD_MeshCommand_t defineRootNetworkNode = {
 		.command = "ATEP ROOT",
@@ -124,10 +126,18 @@ CMD_MeshCommand_t getLibInfo = {
 
 CMD_MeshCommand_t sensorGet = {
 		.command = "ATCL %s 8231 %s",
-		.commandType = PRO_MSG_TYPE_OTHER,
+		.commandType = PRO_MSG_TYPE_ACK,
 		.dataType = PRO_DATATYPE_STRUCT_APC1,
 		.CMD_Setup = CMD_GenericFormatCommand,
 		.CMD_Execute = CMD_NotifySensorUpdate
+};
+
+CMD_MeshCommand_t sensorDescriptorGet = {
+		.command = "ATCL %s 8230",
+		.commandType = PRO_MSG_TYPE_ACK,
+		.dataType = PRO_DATATYPE_STRUCT_DESC_GET,
+		.CMD_Setup = CMD_GenericFormatCommand,
+		.CMD_Execute = CMD_SensorDescriptorGet
 };
 
 CMD_MeshCommand_t protocolStructTest = {
@@ -313,13 +323,12 @@ CMD_CommandGet_t *CMD_NofitfyProvision(void *buffer, CMD_CommandGet_t *guiCmd) {
 		paramValue[0] = (void *) &configNodes[index];
 		paramValue[1] = (void *) NC_GetAllGroupAddresses();
 		cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
-											types,
-											paramValue,
-											2,
-											arrayLength,
-											sizes);
+									types,
+									paramValue,
+									2,
+									arrayLength,
+									sizes);
 	}
-
 
 	return cmdRes;
 
@@ -469,7 +478,51 @@ CMD_CommandGet_t *CMD_NotifyLibVersion(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 CMD_CommandGet_t *CMD_NotifySensorUpdate(void *buffer, CMD_CommandGet_t *guiCmd) {
 
-	return NULL;
+	CMD_CommandGet_t *cmdRes = NULL;
+	PARAMETER_TYPE type = PARAM_VOID;
+	int arrayLength[] = {1};
+	size_t sizes[] = {sizeof(Sensor_MeasuredData_t)};
+	void *paramValues[1];
+	unsigned int inputPID;
+//	APC1_SelectedData_t *inputBuffer = (APC1_SelectedData_t *) buffer;
+//	char message[256];
+
+//	sprintf(message, "APC1 PM1.0: %d\r\n", inputBuffer->pm1_0);
+//	debugMessage(message);
+	sscanf(guiCmd->param[1].value.str, "%X", &inputPID);
+	paramValues[0] = (void *) SN_GetMeasuredSensorData((SENSOR_PID ) inputPID, buffer);
+	cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
+								&type,
+								paramValues,
+								1,
+								arrayLength,
+								sizes);
+
+	return cmdRes;
+
+}
+
+CMD_CommandGet_t *CMD_SensorDescriptorGet(void *buffer, CMD_CommandGet_t *guiCmd) {
+
+	CMD_CommandGet_t *cmdRes = NULL;
+	Node_Config_t *node;
+	PARAMETER_TYPE type = PARAM_INT;
+	int ok = 1;
+	void *paramValue[] = {(void *) &ok};
+	unsigned int nodeAddress;
+
+	sscanf(guiCmd->param[0].value.str, "%X", &nodeAddress);
+	node = NC_GetConfigNodeFromAddress(nodeAddress);
+	node->sensors = SN_RegisterSensor((SN_SensorDescriptorGet_t *) buffer);
+
+	cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
+								&type,
+								paramValue,
+								1,
+								NULL,
+								NULL);
+
+	return cmdRes;
 
 }
 

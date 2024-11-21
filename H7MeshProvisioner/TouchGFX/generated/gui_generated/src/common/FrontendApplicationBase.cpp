@@ -29,6 +29,8 @@
 #include <gui/clocksettingsscreen_screen/ClockSettingsScreenPresenter.hpp>
 #include <gui/deviceinfoscreen_screen/DeviceInfoScreenView.hpp>
 #include <gui/deviceinfoscreen_screen/DeviceInfoScreenPresenter.hpp>
+#include <gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.hpp>
+#include <gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -187,4 +189,17 @@ void FrontendApplicationBase::gotoDeviceInfoScreenScreenSlideTransitionEast()
 void FrontendApplicationBase::gotoDeviceInfoScreenScreenSlideTransitionEastImpl()
 {
     touchgfx::makeTransition<DeviceInfoScreenView, DeviceInfoScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// NodeSesnsorsScreen
+
+void FrontendApplicationBase::gotoNodeSesnsorsScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoNodeSesnsorsScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoNodeSesnsorsScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<NodeSesnsorsScreenView, NodeSesnsorsScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

@@ -45,6 +45,11 @@ typedef struct __attribute__((packed)) {
 	uint16_t pm1_0;
 	double tComp;
 } APC1_SelectedData_t;
+
+typedef struct __attribute__((packed)) {
+	uint16_t descCount;
+	uint16_t descriptors[3]; // a node can only have three sensors
+} SN_SensorDescriptorGet_t;
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
@@ -231,19 +236,31 @@ void Appli_Sensor_Setting_Status(const MOBLEUINT8 *pSetting,
 void Appli_Sensor_Descriptor_Status(const MOBLEUINT8 *pDescriptor,
                                     MOBLEUINT32 length,
                                     MOBLE_ADDRESS dstPeer,
-                                    MOBLEUINT8 elementIndex)
-{
-  MOBLEUINT8 i;
-  
-  TRACE_M(TF_SENSOR,"Appli_Sensor_Descriptor_Status callback received \r\n");
-  
-  TRACE_M(TF_SERIAL_CTRL,"#%d! for element %d \r\n", 
-          SENSOR_DESCRIPTOR_STATUS,
-          elementIndex);
-  for(i = 0; i < length; i++)
-  {
-    TRACE_M(TF_SERIAL_CTRL,"Descriptor value: %d\n\r", pDescriptor[i]);
-  }
+                                    MOBLEUINT8 elementIndex) {
+
+	MOBLEUINT8 i;
+	int index = 0;
+	SN_SensorDescriptorGet_t sensorsDesc;
+	uint8_t sendingBuffer[PAC_MAX_PAYLOAD] = {0};
+
+	TRACE_M(TF_SENSOR,"Appli_Sensor_Descriptor_Status callback received \r\n");
+	TRACE_M(TF_SERIAL_CTRL,"#%d! for element %d \r\n", SENSOR_DESCRIPTOR_STATUS, elementIndex);
+
+	for(i = 0; i < length; i++) {
+		TRACE_M(TF_SERIAL_CTRL,"Descriptor value: %d\n\r", pDescriptor[i]);
+		if (pDescriptor[i] != 0) {
+			sensorsDesc.descriptors[index++] = pDescriptor[i];
+		}
+	}
+	sensorsDesc.descCount = index;
+	FSM_EncodePayload(sendingBuffer,
+					"ATCL",
+					(void *) &sensorsDesc,
+					sizeof(SN_SensorDescriptorGet_t),
+					PRO_DATATYPE_STRUCT_DESC_GET);
+	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, sendingBuffer, sizeof(sendingBuffer));
+
+
 }
       
       

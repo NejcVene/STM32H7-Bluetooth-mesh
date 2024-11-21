@@ -22,3 +22,9 @@ void NodeProperScreenPresenter::GUI_ChangeScreenAfterUnprov() {
 	view.changeScreenAfterUnprov();
 
 }
+
+void NodeProperScreenPresenter::GUI_ConfirmDescGet() {
+
+	view.GUI_ConfirmDescGet();
+
+}

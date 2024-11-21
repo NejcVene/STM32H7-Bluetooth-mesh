@@ -52,6 +52,9 @@ public:
     // DeviceInfoScreen
     void gotoDeviceInfoScreenScreenSlideTransitionEast();
 
+    // NodeSesnsorsScreen
+    void gotoNodeSesnsorsScreenScreenSlideTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -88,6 +91,9 @@ protected:
 
     // DeviceInfoScreen
     void gotoDeviceInfoScreenScreenSlideTransitionEastImpl();
+
+    // NodeSesnsorsScreen
+    void gotoNodeSesnsorsScreenScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

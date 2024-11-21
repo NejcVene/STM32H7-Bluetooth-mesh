@@ -216,7 +216,7 @@ void SerialCtrlVendorWrite_Process(char *rcvdStringBuff, uint16_t rcvdStringSize
 }
   
 
-void SerialCtrl_Process(char *rcvdStringBuff, uint16_t rcvdStringSize)
+void SerialCtrl_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, int *cmdResposneElsewhere)
 {
   MOBLE_ADDRESS peer = 0;                               /*node adderess of the destination node*/
   MOBLEUINT16 command = 0;                              /*Opcode command to be executed by the destination node*/
@@ -294,6 +294,9 @@ void SerialCtrl_Process(char *rcvdStringBuff, uint16_t rcvdStringSize)
                                         SERIAL_MODEL_DATA_OFFSET, 
                                         data);
 
+    if (command == 0x8231 || command == 0x8230) {
+    	*cmdResposneElsewhere = 1;
+    }
     result = BLEMesh_SetRemoteData(peer,
                                    elementIndex,
                                    command, 

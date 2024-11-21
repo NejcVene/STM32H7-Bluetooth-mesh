@@ -21,6 +21,8 @@ public:
     virtual void GUI_ConfShowPopup() {};
     virtual void GUI_ChangeScreenAfterUnprov() {};
     virtual void GUI_ChangeScreenDevInfo() {};
+    virtual void GUI_ConfirmDescGet() {};
+    virtual void GUI_UpdateSensorValues() {};
 
 protected:
     Model* model;

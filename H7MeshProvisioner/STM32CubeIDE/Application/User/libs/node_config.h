@@ -9,6 +9,7 @@
 #define INC_NODE_CONFIG_H_
 
 #include "main.h"
+#include "sensors.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -65,6 +66,7 @@ typedef struct {
 	char nodeName[MAX_NODE_NAME];
 	Node_NetworkAddress_t address;
 	Node_ModelState_t states;
+	Node_Sensor_t sensors;
 } Node_Config_t;
 
 typedef struct {
@@ -83,11 +85,6 @@ typedef struct {
 	uint32_t nodeAddress;
 	Node_SubbedAddress_t subbedAddresses[5];
 } Node_SubscriptionParam_t;
-
-typedef struct __attribute__((packed)) {
-	uint16_t pm1_0;
-	double tComp;
-} APC1_SelectedData_t;
 
 typedef struct __attribute__((packed)) {
 	uint16_t val1;

@@ -5,6 +5,7 @@
 #include "communication_ex.h"
 #include "command.h"
 #include "node_config.h"
+#include "sensors.h"
 
 class ModelListener;
 
@@ -135,7 +136,23 @@ public:
 
     }
 
+    void GUI_SetSensorIndex(int sensorIndex) {
 
+    	this->sensorIndex = sensorIndex;
+
+    }
+
+    int GUI_GetSensorIndex() {
+
+    	return sensorIndex;
+
+    }
+
+    Sensor_MeasuredData_t *GUI_GetSensorMeasuredData() {
+
+    	return this->sensor;
+
+    }
 
     void GUI_SendCommand(CMD_CommandGet_t *cmd);
     void DigitalClock();
@@ -156,6 +173,8 @@ protected:
     char libVer[20] = {0};
     char libSubVer[20] = {0};
     char commExVer[10] = {0};
+    int sensorIndex;
+    Sensor_MeasuredData_t *sensor;
 };
 
 #endif // MODEL_HPP

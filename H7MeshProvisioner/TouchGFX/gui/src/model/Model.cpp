@@ -56,6 +56,13 @@ void Model::tick() {
 					strcpy(commExVer, cmdResult->param[2].value.str);
 					modelListener->GUI_ChangeScreenDevInfo();
 					break;
+				case CMD_MESH_ATCL_SENSOR_GET:
+					sensor = (Sensor_MeasuredData_t *) cmdResult->param[0].value.voidPtr;
+					modelListener->GUI_UpdateSensorValues();
+					break;
+				case CMD_MESH_ATCL_SENSOR_DESC_GET:
+					modelListener->GUI_ConfirmDescGet();
+					break;
 				default:
 					break;
 			}

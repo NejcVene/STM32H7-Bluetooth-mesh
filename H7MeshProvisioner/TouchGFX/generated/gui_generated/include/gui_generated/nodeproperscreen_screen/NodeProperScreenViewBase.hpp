@@ -27,6 +27,7 @@ public:
      */
     virtual void goToConfigureScreen();
     virtual void goToScreen1();
+    virtual void goToNodeSensorsScreen();
 
 protected:
     FrontendApplication& application() {

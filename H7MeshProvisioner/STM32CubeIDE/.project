@@ -730,6 +730,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/nodeproperscreen_screen/NodeProperScreenView.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/NodeSesnsorsScreenPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/nodesesnsorsscreen_screen/NodeSesnsorsScreenPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/NodeSesnsorsScreenView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/NodesScreenPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/nodesscreen_screen/NodesScreenPresenter.cpp</locationURI>
@@ -958,6 +968,11 @@
 			<name>Application/User/generated/NodeProperScreenViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/nodeproperscreen_screen/NodeProperScreenViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/NodeSesnsorsScreenViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/nodesesnsorsscreen_screen/NodeSesnsorsScreenViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/NodesScreenViewBase.cpp</name>

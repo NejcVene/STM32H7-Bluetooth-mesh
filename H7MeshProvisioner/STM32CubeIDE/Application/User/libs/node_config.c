@@ -23,11 +23,16 @@
 							{.genericOnOffStatus = 0,		\
 							 .genericPowerOnOffStatus = 0	\
 							}
+#define CLEAR_NODE_SENSORS() (Node_Sensor_t)			\
+							{.numOfSensors = 0,			\
+							 .sensorArray = NULL		\
+							}
 #define CLEAR_NODE_CONFIG() (Node_Config_t) 								\
 							{.subscriptions = 0, 							\
 							.nodeName = "",									\
 							.address = CLEAR_NODE_ADDRESSES(NODE_DEF_VAL),	\
-							.states = CLEAR_NODE_STATES()					\
+							.states = CLEAR_NODE_STATES(),					\
+							.sensors = CLEAR_NODE_SENSORS()					\
 							}
 
 void NC_ReportItems(uint8_t uuid, NC_MaskedFeatures *items, uint16_t *report);
@@ -379,6 +384,7 @@ void NC_DeleteConfiguredNode(uint32_t nodeAddress) {
 	if (NC_GetNumOfConfNodes() > 0) {
 		for (int i = 0; i<5; i++) {
 			if (nodeConfigs[i].address.nodeAddress == nodeAddress) {
+				SN_FreeSensorInfo(&nodeConfigs[i].sensors);
 				nodeConfigs[i] = CLEAR_NODE_CONFIG();
 				NC_DecrementNumOfConfNodes();
 				return;

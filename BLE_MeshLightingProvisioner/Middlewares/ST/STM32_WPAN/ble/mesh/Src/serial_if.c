@@ -199,7 +199,7 @@ void Serial_InterfaceProcess(void)
 #ifdef ENABLE_SERIAL_CONTROL
   if (!strncmp((char const*)CommandString, "ATCL", 4))
   {
-    SerialCtrl_Process((char *)CommandString, indexReceiveChar);
+    SerialCtrl_Process((char *)CommandString, indexReceiveChar, &cmdResposneElsewhere);
   }
   else if (!strncmp((char const*)CommandString, "ATVR", 4))
   {            

@@ -26,7 +26,7 @@
 /* Exported macro ------------------------------------------------------------*/
 /* Exported variables  ------------------------------------------------------- */
 /* Exported Functions Prototypes ---------------------------------------------*/
-void SerialCtrl_Process(char *rcvdStringBuff, uint16_t rcvdStringSize);
+void SerialCtrl_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, int *cmdResposneElsewhere);
 void SerialCtrlVendorRead_Process(char *rcvdStringBuff, uint16_t rcvdStringSize);
 void SerialCtrlVendorWrite_Process(char *rcvdStringBuff, uint16_t rcvdStringSize);
 #endif /* __SERIAL_CTRL_H */

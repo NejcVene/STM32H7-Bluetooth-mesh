@@ -1038,6 +1038,7 @@ void StartDefaultTask(void *argument)
 	HT_Insert(cmdHashTable, CMD_FUN_GET_LIB_VER, &getLibInfo);
 	HT_Insert(cmdHashTable, CMD_MESH_ATCL_SENSOR_GET, &sensorGet);
 	HT_Insert(cmdHashTable, CMD_FUN_PRO_TEST, &protocolStructTest);
+	HT_Insert(cmdHashTable, CMD_MESH_ATCL_SENSOR_DESC_GET, &sensorDescriptorGet);
 
 	for(;;) {
 		osDelay(100);

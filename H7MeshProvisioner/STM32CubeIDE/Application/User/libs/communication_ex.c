@@ -16,6 +16,7 @@
 #include "node_config.h"
 #include "freertos_os2.h"
 #include "task.h"
+#include "sensors.h"
 #define CS_LOW									{ Toggle_Pin(COMM_CS_PORT_MASTER, COMM_CS_PIN_MASTER, GPIO_PIN_RESET) }
 #define CS_HIGH									{ Toggle_Pin(COMM_CS_PORT_MASTER, COMM_CS_PIN_MASTER, GPIO_PIN_SET) }
 #define C_SIZE_CMD_STRING						256U
@@ -586,6 +587,10 @@ FSM_DecodedPayload_t *FSM_DecodePayload(uint8_t *buffer, PROTOCOL_DATATYPE type)
 				memcpy(outputData->data, data, sizeof(SF_TestProtocol_t));
 			}
 			break;
+		case PRO_DATATYPE_STRUCT_DESC_GET:
+			if ((outputData->data = pvPortMalloc(sizeof(SN_SensorDescriptorGet_t)))) {
+				memcpy(outputData->data, data, sizeof(SN_SensorDescriptorGet_t));
+			}
 		default:
 			break;
 	}

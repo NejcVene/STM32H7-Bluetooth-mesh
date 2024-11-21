@@ -21,6 +21,10 @@
 #include "serial_if.h"
 #include "serial_prvn.h"
 #include "mesh_cfg.h"
+#define UTILS_ENTER_CRITICAL_SECTION( )   uint32_t primask_bit = __get_PRIMASK( );\
+                                          __disable_irq( )
+
+#define UTILS_EXIT_CRITICAL_SECTION( )          __set_PRIMASK( primask_bit )
 #endif
 
 // debug function

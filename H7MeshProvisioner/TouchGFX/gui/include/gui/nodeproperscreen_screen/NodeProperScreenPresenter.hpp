@@ -51,7 +51,14 @@ public:
 
     }
 
+    void GUI_SetSensorIndex(int sensorIndex) {
+
+    	model->GUI_SetSensorIndex(sensorIndex);
+
+    }
+
     virtual void GUI_ChangeScreenAfterUnprov();
+    virtual void GUI_ConfirmDescGet();
 
 private:
     NodeProperScreenPresenter();

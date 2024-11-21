@@ -1259,6 +1259,19 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "Screen1"
             }
+          },
+          {
+            "InteractionName": "GUI_SwitchToNodeSensorsScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeProperScreen goToNodeSensorsScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "NodeSesnsorsScreen"
+            }
           }
         ],
         "CustomActions": [
@@ -1268,6 +1281,10 @@
           },
           {
             "Name": "goToScreen1",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToNodeSensorsScreen",
             "Description": "Called from user code to change screen"
           }
         ]
@@ -1930,6 +1947,69 @@
                     }
                   }
                 ]
+              }
+            ]
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "NodeSesnsorsScreen",
+        "CanvasBufferSize": 7200,
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "allNodeSensors",
+            "Y": 30,
+            "Width": 480,
+            "Height": 182,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": []
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "loaderModal",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7ModalBackgroundSmall.png",
+            "ModalX": 133,
+            "ModalY": 61,
+            "ModalWidth": 214,
+            "ModalHeight": 150,
+            "Alpha": 100,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "loader1",
+                "X": 7,
+                "Width": 200,
+                "Height": 150,
+                "CustomContainerDefinitionName": "Loader"
               }
             ]
           }

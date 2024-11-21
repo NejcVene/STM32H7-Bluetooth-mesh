@@ -33,6 +33,7 @@ typedef enum {
 	CMD_MESH_ATCL_GENERIC_ON_OFF_GET,
 	CMD_MESH_ATCL_UNPROV,
 	CMD_MESH_ATCL_SENSOR_GET,
+	CMD_MESH_ATCL_SENSOR_DESC_GET,
 	CMD_FUN_PROV_EM_PROV,
 	CMD_FUN_IS_EM_PROV_PROV,
 	CMD_FUN_PUB_SET_SUB_ADD,
@@ -77,6 +78,7 @@ extern CMD_MeshCommand_t genericOnOffSetAck;
 extern CMD_MeshCommand_t genericOnOffGet;
 extern CMD_MeshCommand_t unprovisionNetworkDevice;
 extern CMD_MeshCommand_t sensorGet;
+extern CMD_MeshCommand_t sensorDescriptorGet;
 
 // commands which are not part of mesh, but directly call functions
 // on the embedded provisioner

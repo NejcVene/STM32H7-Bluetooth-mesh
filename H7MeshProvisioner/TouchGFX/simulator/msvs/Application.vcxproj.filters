@@ -304,6 +304,18 @@
     <Filter Include="Source Files\generated\gui_generated\deviceinfoscreen_screen">
       <UniqueIdentifier>C7EE3F35-F5F3-EDF6-4B4D-35363560F130</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\nodesesnsorsscreen_screen">
+      <UniqueIdentifier>F810069C-0ACB-692B-4FAE-B2EBBEB2D1DB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\nodesesnsorsscreen_screen">
+      <UniqueIdentifier>D75A6639-87B2-A1E5-A3E4-0BD88A786513</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\nodesesnsorsscreen_screen">
+      <UniqueIdentifier>5C82D99B-3B31-566C-161F-7FB8618B2C48</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\nodesesnsorsscreen_screen">
+      <UniqueIdentifier>F45CE568-5D6A-78FD-2725-B256C8920F58</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -473,6 +485,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\deviceinfoscreen_screen\DeviceInfoScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\deviceinfoscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodesesnsorsscreen_screen\NodeSesnsorsScreenPresenter.cpp">
+      <Filter>Source Files\gui\nodesesnsorsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodesesnsorsscreen_screen\NodeSesnsorsScreenView.cpp">
+      <Filter>Source Files\gui\nodesesnsorsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\nodesesnsorsscreen_screen\NodeSesnsorsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\nodesesnsorsscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1053,6 +1074,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\deviceinfoscreen_screen\DeviceInfoScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\deviceinfoscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodesesnsorsscreen_screen\NodeSesnsorsScreenPresenter.hpp">
+      <Filter>Header Files\gui\nodesesnsorsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodesesnsorsscreen_screen\NodeSesnsorsScreenView.hpp">
+      <Filter>Header Files\gui\nodesesnsorsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodesesnsorsscreen_screen\NodeSesnsorsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\nodesesnsorsscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

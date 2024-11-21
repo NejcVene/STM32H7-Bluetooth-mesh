@@ -231,8 +231,8 @@ Either use 0 to disable or 1 to enable
 /* Example: 6 means Model enabled in element 2 and 3                          */
 /******************************************************************************/
 
-#define ENABLE_LIGHT_MODEL_SERVER_LIGHTNESS                                  (1)
-#define ENABLE_LIGHT_MODEL_SERVER_LIGHTNESS_SETUP                            (1)
+// #define ENABLE_LIGHT_MODEL_SERVER_LIGHTNESS                                  (1) currently disabled because of sensor client
+// #define ENABLE_LIGHT_MODEL_SERVER_LIGHTNESS_SETUP                            (1) currently disabled because of sensor client
 //#define ENABLE_LIGHT_MODEL_SERVER_CTL                                        (1)
 //#define ENABLE_LIGHT_MODEL_SERVER_CTL_SETUP                                  (1)
 //#define ENABLE_LIGHT_MODEL_SERVER_CTL_TEMPERATURE                            (1)
@@ -263,7 +263,7 @@ Either use 0 to disable or 1 to enable
 
 //#define ENABLE_SENSOR_MODEL_SERVER                                           (1)
 
-// #define ENABLE_SENSOR_MODEL_CLIENT                                           (1)
+#define ENABLE_SENSOR_MODEL_CLIENT                                           (1)
 
 /******************************************************************************/
 /* Define the following Macros to enable the usage of the time and            */

@@ -10,7 +10,8 @@ C_SRCS += \
 ../Application/User/libs/communication_ex.c \
 ../Application/User/libs/fsm_queue.c \
 ../Application/User/libs/hash_table.c \
-../Application/User/libs/node_config.c 
+../Application/User/libs/node_config.c \
+../Application/User/libs/sensors.c 
 
 C_DEPS += \
 ./Application/User/libs/comm_uart.d \
@@ -18,7 +19,8 @@ C_DEPS += \
 ./Application/User/libs/communication_ex.d \
 ./Application/User/libs/fsm_queue.d \
 ./Application/User/libs/hash_table.d \
-./Application/User/libs/node_config.d 
+./Application/User/libs/node_config.d \
+./Application/User/libs/sensors.d 
 
 OBJS += \
 ./Application/User/libs/comm_uart.o \
@@ -26,7 +28,8 @@ OBJS += \
 ./Application/User/libs/communication_ex.o \
 ./Application/User/libs/fsm_queue.o \
 ./Application/User/libs/hash_table.o \
-./Application/User/libs/node_config.o 
+./Application/User/libs/node_config.o \
+./Application/User/libs/sensors.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -36,7 +39,7 @@ Application/User/libs/%.o Application/User/libs/%.su Application/User/libs/%.cyc
 clean: clean-Application-2f-User-2f-libs
 
 clean-Application-2f-User-2f-libs:
-	-$(RM) ./Application/User/libs/comm_uart.cyclo ./Application/User/libs/comm_uart.d ./Application/User/libs/comm_uart.o ./Application/User/libs/comm_uart.su ./Application/User/libs/command.cyclo ./Application/User/libs/command.d ./Application/User/libs/command.o ./Application/User/libs/command.su ./Application/User/libs/communication_ex.cyclo ./Application/User/libs/communication_ex.d ./Application/User/libs/communication_ex.o ./Application/User/libs/communication_ex.su ./Application/User/libs/fsm_queue.cyclo ./Application/User/libs/fsm_queue.d ./Application/User/libs/fsm_queue.o ./Application/User/libs/fsm_queue.su ./Application/User/libs/hash_table.cyclo ./Application/User/libs/hash_table.d ./Application/User/libs/hash_table.o ./Application/User/libs/hash_table.su ./Application/User/libs/node_config.cyclo ./Application/User/libs/node_config.d ./Application/User/libs/node_config.o ./Application/User/libs/node_config.su
+	-$(RM) ./Application/User/libs/comm_uart.cyclo ./Application/User/libs/comm_uart.d ./Application/User/libs/comm_uart.o ./Application/User/libs/comm_uart.su ./Application/User/libs/command.cyclo ./Application/User/libs/command.d ./Application/User/libs/command.o ./Application/User/libs/command.su ./Application/User/libs/communication_ex.cyclo ./Application/User/libs/communication_ex.d ./Application/User/libs/communication_ex.o ./Application/User/libs/communication_ex.su ./Application/User/libs/fsm_queue.cyclo ./Application/User/libs/fsm_queue.d ./Application/User/libs/fsm_queue.o ./Application/User/libs/fsm_queue.su ./Application/User/libs/hash_table.cyclo ./Application/User/libs/hash_table.d ./Application/User/libs/hash_table.o ./Application/User/libs/hash_table.su ./Application/User/libs/node_config.cyclo ./Application/User/libs/node_config.d ./Application/User/libs/node_config.o ./Application/User/libs/node_config.su ./Application/User/libs/sensors.cyclo ./Application/User/libs/sensors.d ./Application/User/libs/sensors.o ./Application/User/libs/sensors.su
 
 .PHONY: clean-Application-2f-User-2f-libs
 

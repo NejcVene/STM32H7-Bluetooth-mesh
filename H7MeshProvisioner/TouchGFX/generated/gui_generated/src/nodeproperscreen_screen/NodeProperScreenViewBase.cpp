@@ -66,3 +66,11 @@ void NodeProperScreenViewBase::goToScreen1()
     //Go to Screen1 with screen transition towards East
     application().gotoScreen1ScreenSlideTransitionEast();
 }
+
+void NodeProperScreenViewBase::goToNodeSensorsScreen()
+{
+    //GUI_SwitchToNodeSensorsScreen
+    //When goToNodeSensorsScreen is called change screen to NodeSesnsorsScreen
+    //Go to NodeSesnsorsScreen with screen transition towards East
+    application().gotoNodeSesnsorsScreenScreenSlideTransitionEast();
+}

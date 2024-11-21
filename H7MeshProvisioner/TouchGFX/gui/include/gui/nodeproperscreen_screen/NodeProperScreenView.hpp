@@ -14,25 +14,31 @@ public:
     virtual void tearDownScreen();
     virtual void handleTickEvent();
 
-    virtual int getBtnIndexFromInstaceID(int instanceID);
+    virtual void GUI_ConfirmDescGet();
 
-    virtual void setupGenericOnOff(int guiIndex);
-    virtual void setupGenericLevel(int guiIndex);
-    virtual void setupSensor(int guiIndex);
-    virtual void setupLightLightness(int guiIndex);
-    virtual void setupGenericPower(int guiIndex);
-    virtual void setupConfig(int guiIndex);
-    virtual void setupUnprov(int guiIndex);
+    int getBtnIndexFromInstaceID(int instanceID);
+    int generateInstanceID(int guiIndex, DeviceButton::ICON_TYPE type);
 
-    virtual void handleGenericOnOffClicked(int instanceID);
-    virtual void handleGenericLevelClicked(int instanceID);
-    virtual void handleSensor(int instanceID);
-    virtual void handleLightClicked(int instanceID);
-    virtual void handleGenericPowerClicked(int instanceID);
-    virtual void handleConfigureClicked(int instanceID);
-    virtual void handleDeleteClicked(int instanceID);
+    void setupGenericOnOff(int *guiIndex, int numToCreate);
+    void setupGenericLevel(int *guiIndex, int numToCreate);
+    void setupSensor(int *guiIndex, int numToCreate);
+    void setupLightLightness(int *guiIndex, int numToCreate);
+    void setupGenericPower(int *guiIndex, int numToCreate);
+    void setupConfig(int *guiIndex);
+    void setupUnprov(int *guiIndex);
 
-    virtual void changeScreenAfterUnprov();
+    void handleGenericOnOffClicked(int instanceID);
+    void handleGenericLevelClicked(int instanceID);
+    void handleSensor(int instanceID);
+    void handleLightClicked(int instanceID);
+    void handleGenericPowerClicked(int instanceID);
+    void handleConfigureClicked(int instanceID);
+    void handleDeleteClicked(int instanceID);
+
+    void checkForSensors();
+    void setupDeviceButtons();
+
+    void changeScreenAfterUnprov();
 
 //    void GUI_SetTextNodeName(const char *text) {
 //
@@ -48,12 +54,11 @@ protected:
     Node_Config_t *node;
     uint16_t nodeModel;
     DeviceButton genOnOffBtn;
-    static const int maxDeviceFunctions = 7;
+    static const int maxDeviceFunctions = 9;
+    static const int MULTIPLIER = 1000;
     DeviceButton deviceFunctions[maxDeviceFunctions];
     CMD_CommandGet_t *cmd;
     NC_MaskedFeatures *allModels;
-    int sensorTickCounter;
-    int sensorDigitalSeconds;
 
 };
 

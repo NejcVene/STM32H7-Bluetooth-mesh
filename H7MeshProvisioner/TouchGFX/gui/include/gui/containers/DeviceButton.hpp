@@ -38,14 +38,14 @@ public:
 
     void GUI_SetIntigerStatus(int number) {
 
-    	touchgfx::Unicode::snprintf(statusTextBuffer, STATUSTEXT_SIZE, "%i", number);
+    	touchgfx::Unicode::snprintf(statusTextBuffer, STATUSTEXT_SIZE, "%d", number);
     	statusText.invalidate();
 
     }
 
     void GUI_SetDoubleStatus(double number) {
 
-    	touchgfx::Unicode::snprintf(statusTextBuffer, STATUSTEXT_SIZE, "%i", number);
+    	touchgfx::Unicode::snprintfFloat(statusTextBuffer, STATUSTEXT_SIZE, "%.1f", number);
     	statusText.invalidate();
 
     }
