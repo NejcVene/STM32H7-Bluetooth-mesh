@@ -39,10 +39,14 @@
 *  @{
 */
 
-typedef struct __attribute__((packed)) {
-	uint16_t pm1_0;
-	double tComp;
-} APC1_SelectedData_t;
+//typedef struct __attribute__((packed)) {
+//	uint16_t pm1_0, pm2_5, pm10,
+//			 pm1_0_air, pm2_5_air, pm10_air,
+//			 particles_0_3, particles_0_5, particles_1_0,
+//			 particles_2_5, particles_5_0, particles_10,
+//			 TVOC, eCO2, t_comp,
+//			 rh_comp, t_raw, rh_raw;
+//} APC1_SelectedData_t;
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -262,7 +266,7 @@ void Appli_Sensor_Status(const MOBLEUINT8 *pStatus,
 	MOBLEUINT8 sensorStatusFormat = 0xFF;
 	MOBLEUINT32 receivedLenght = 0;
 	MOBLEUINT16 receivedPID = 0;
-	APC1_SelectedData_t sensorData;
+	// APC1_SelectedData_t sensorData;
 	uint32_t offset = 2;
 
 	TRACE_M(TF_SENSOR,"Appli_Sensor_Status callback received \r\n");
@@ -284,9 +288,9 @@ void Appli_Sensor_Status(const MOBLEUINT8 *pStatus,
 	    receivedPID = (MOBLEUINT16) (((pStatus[0] & 0xE0) >> 5) | (pStatus[1] << 3));
 	}
 	offset = length - receivedLenght;
-	memcpy((void *) &sensorData, pStatus + offset, sizeof(APC1_SelectedData_t));
-	TRACE_M(TF_SENSOR, "APC1 PM1.0: %d\r\n", sensorData.pm1_0);
-	TRACE_M(TF_SENSOR, "APC1 Temp: %f °C\r\n", sensorData.tComp);
+	// memcpy((void *) &sensorData, pStatus + offset, sizeof(APC1_SelectedData_t));
+	// TRACE_M(TF_SENSOR, "APC1 PM1.0: %d\r\n", sensorData.pm1_0);
+	// TRACE_M(TF_SENSOR, "APC1 Temp: %f °C\r\n", sensorData.tComp);
 #ifdef ENABLE_LIGHT_MODEL_SERVER_LC   
 	Appli_Light_LC_SensorPropertyUpdate(elementIndex,
                                       PRESENCE_DETECTED_PID,

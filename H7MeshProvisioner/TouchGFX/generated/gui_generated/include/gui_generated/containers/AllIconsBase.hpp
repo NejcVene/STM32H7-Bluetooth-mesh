@@ -28,6 +28,9 @@ protected:
     touchgfx::ButtonWithIcon buttonWithIcon3;
     touchgfx::ButtonWithIcon buttonWithIcon4;
     touchgfx::ButtonWithIcon buttonWithIcon5;
+    touchgfx::ButtonWithIcon buttonWithIcon6;
+    touchgfx::ButtonWithIcon buttonWithIcon7;
+    touchgfx::ButtonWithIcon buttonWithIcon8;
 
 private:
 

@@ -454,14 +454,29 @@ MOBLE_RESULT Appli_Sensor_ReadValue(MOBLEUINT8 sensorOffset,
                                     sensor_ValueCbParams_t* pValueParams) {
 
 	MOBLE_RESULT result = MOBLE_RESULT_SUCCESS;
-	APC1_SelectedData_t sensorData = {.pm1_0 = 69, .tComp = 420};
+	APC1_SelectedData_t sensorData;
 
 	switch (SensorServerInitParams.sensorInitParams[sensorOffset].propertyId) {
 		case PRESENT_AMBIENT_TEMPERATURE_PID:
 			if (APC1_Read_Mea_Data() == APC1_OK) {
 				sensorData.pm1_0 = APC1_Get_PM1_0();
+				sensorData.pm2_5 = APC1_Get_PM2_5();
+				sensorData.pm10 = APC1_Get_PM10();
+				sensorData.pm1_0_air = APC1_Get_PM1_0_air();
+				sensorData.pm2_5_air = APC1_Get_PM2_5_air();
+				sensorData.pm10_air = APC1_Get_PM10_air();
+				sensorData.particles_0_3 = APC1_Get_Particles_GT_0_3();
+				sensorData.particles_0_5 = APC1_Get_Particles_GT_0_5();
+				sensorData.particles_1_0 = APC1_Get_Particles_GT_1_0();
+				sensorData.particles_2_5 = APC1_Get_Particles_GT_2_5();
+				sensorData.particles_5_0 = APC1_Get_Particles_GT_5_0();
+				sensorData.particles_10 = APC1_Get_Particles_GT_10();
+				sensorData.TVOC = APC1_Get_TVOC();
+				sensorData.eCO2 = APC1_Get_eCO2();
 				sensorData.tComp = APC1_Get_T_Comp();
+				sensorData.rh_comp = APC1_Get_RH_Comp();
 			}
+			TRACE_M(TF_SENSOR, "APC1 size: %d\r\n", sizeof(APC1_SelectedData_t));
 			TRACE_M(TF_SENSOR, "APC1 PM1.0: %d\r\n", sensorData.pm1_0);
 			TRACE_M(TF_SENSOR, "APC1 Temp: %f °C\r\n", sensorData.tComp);
 			memcpy(pValueParams->data, (void *) &sensorData, sizeof(APC1_SelectedData_t));

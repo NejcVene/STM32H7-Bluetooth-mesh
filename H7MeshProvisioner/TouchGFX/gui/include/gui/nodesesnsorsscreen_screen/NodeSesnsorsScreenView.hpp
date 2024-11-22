@@ -20,6 +20,7 @@ public:
 
     void GUI_SetupSensorButtons();
     void GUI_UpdateDeviceButtonValues();
+    void GUI_RequestNewMeasurement();
 
 protected:
 
@@ -27,12 +28,13 @@ protected:
     Node_Config_t *node;
     Node_SensorInfo_t *sensor;
     Sensor_MeasuredData_t *mea;
-    static const int maxButtons = 10;
+    static const int maxButtons = 20;
     int buttonCount = 0;
     DeviceButton sensorButtons[maxButtons];
     int sensorTickCounter = 0;
     int sensorDigitalSeconds;
     int sensorIndex;
+    int isTakingMeasurement = 0;
 
 };
 

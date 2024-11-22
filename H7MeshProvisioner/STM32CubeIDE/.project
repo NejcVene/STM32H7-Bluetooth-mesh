@@ -1125,6 +1125,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_navigation_cancel_50_50_FFFFFE.svg.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_icon_theme_images_notification_power_50_50_FFFFFE.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_notification_power_50_50_FFFFFE.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_notification_power_off_50_50_FFFFFE.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_notification_power_off_50_50_FFFFFE.svg.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_icon_theme_images_places_bathtub_50_50_D6D6D5.svg.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_places_bathtub_50_50_D6D6D5.svg.cpp</locationURI>
@@ -1158,6 +1168,11 @@
 			<name>Application/User/generated/image_icon_theme_images_toggle_toggle_off_50_50_FFFFFE.svg.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_toggle_toggle_off_50_50_FFFFFE.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_toggle_toggle_on_50_50_FFFFFE.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_toggle_toggle_on_50_50_FFFFFE.svg.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_Background.cpp</name>

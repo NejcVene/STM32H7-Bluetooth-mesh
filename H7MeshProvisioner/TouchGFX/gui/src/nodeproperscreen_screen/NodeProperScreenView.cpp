@@ -94,7 +94,7 @@ void NodeProperScreenView::setupGenericPower(int *guiIndex, int numToCreate) {
 		deviceFunctions[*guiIndex].setVisible(true);
 		deviceFunctions[*guiIndex].GUI_SetTextType("Power");
 		deviceFunctions[*guiIndex].GUI_SetIcon(DeviceButton::GENERIC_POWER);
-		deviceFunctions[*guiIndex].GUI_ButtonSetOffState(DeviceButton::BUTTON_OFF, DeviceButton::GENERIC_POWER);
+		deviceFunctions[*guiIndex].GUI_ButtonSetOffState((DeviceButton::STATE) this->node->states.genericPowerOnOffStatus, DeviceButton::GENERIC_POWER);
 		deviceFunctions[*guiIndex].setButtonAction(buttonClickCallback, generateInstanceID(i, DeviceButton::GENERIC_POWER));
 		(*guiIndex)++;
 	}
@@ -108,7 +108,7 @@ void NodeProperScreenView::setupConfig(int *guiIndex) {
 	deviceFunctions[*guiIndex].GUI_SetTextStatus(node->nodeName);
 	deviceFunctions[*guiIndex].GUI_SetIcon(DeviceButton::CONFIGURE);
 	deviceFunctions[*guiIndex].GUI_ButtonSetOffState(DeviceButton::BUTTON_OFF, DeviceButton::CONFIGURE);
-	deviceFunctions[*guiIndex].setButtonAction(buttonClickCallback, generateInstanceID(*guiIndex, DeviceButton::CONFIGURE));
+	deviceFunctions[*guiIndex].setButtonAction(buttonClickCallback, generateInstanceID(0, DeviceButton::CONFIGURE));
 	(*guiIndex)++;
 
 }
@@ -120,7 +120,7 @@ void NodeProperScreenView::setupUnprov(int *guiIndex) {
 	deviceFunctions[*guiIndex].GUI_SetTextStatus(node->nodeName);
 	deviceFunctions[*guiIndex].GUI_SetIcon(DeviceButton::UNPROVISION);
 	deviceFunctions[*guiIndex].GUI_ButtonSetOffState(DeviceButton::BUTTON_OFF, DeviceButton::UNPROVISION);
-	deviceFunctions[*guiIndex].setButtonAction(buttonClickCallback, generateInstanceID(*guiIndex, DeviceButton::UNPROVISION));
+	deviceFunctions[*guiIndex].setButtonAction(buttonClickCallback, generateInstanceID(0, DeviceButton::UNPROVISION));
 	(*guiIndex)++;
 
 }
@@ -196,7 +196,16 @@ void NodeProperScreenView::handleSensor(int instanceID) {
 
 void NodeProperScreenView::handleLightClicked(int instanceID) {}
 
-void NodeProperScreenView::handleGenericPowerClicked(int instanceID) {}
+void NodeProperScreenView::handleGenericPowerClicked(int instanceID) {
+
+	int guiIndex = getBtnIndexFromInstaceID(instanceID);
+
+	DeviceButton::STATE newState = deviceFunctions[guiIndex].GUI_GetButtonState();
+	newState = (newState == DeviceButton::STATE::BUTTON_OFF) ? DeviceButton::STATE::BUTTON_ON : DeviceButton::STATE::BUTTON_OFF;
+	this->node->states.genericPowerOnOffStatus = (int) newState;
+	deviceFunctions[guiIndex].GUI_ButtonSetOffState(newState, DeviceButton::GENERIC_POWER);
+
+}
 
 void NodeProperScreenView::handleConfigureClicked(int instanceID) {
 

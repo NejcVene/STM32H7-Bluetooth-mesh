@@ -17,6 +17,7 @@ void NodeSesnsorsScreenView::setupScreen()
     screenTitleBar1.GUI_SetTextTitleBar("Sensor", this->sensor->name);
 
     GUI_SetupSensorButtons();
+    GUI_RequestNewMeasurement();
 
 }
 
@@ -25,33 +26,44 @@ void NodeSesnsorsScreenView::tearDownScreen()
     NodeSesnsorsScreenViewBase::tearDownScreen();
 }
 
-void NodeSesnsorsScreenView::handleTickEvent() {
+void NodeSesnsorsScreenView::GUI_RequestNewMeasurement() {
 
 	PARAMETER_TYPE types[] = {PARAM_CHAR, PARAM_CHAR};
 	void *paramValues[2];
 	char stringPID[5];
 	char stringNodeAddress[10];
 
+	if (this->isTakingMeasurement) {
+		return;
+	}
+
+	this->isTakingMeasurement = 1;
+	loaderModal.show();
+	loader1.GUI_SetDisable(false);
+	loader1.GUI_SetLoaderText("Taking measurement");
+	this->sensorDigitalSeconds = 0;
+	sprintf(stringNodeAddress, "%04X", (unsigned int) this->node->address.nodeAddress);
+	sprintf(stringPID, "%04X", this->sensor->PID);
+	paramValues[0] = (void *) stringNodeAddress;
+	paramValues[1] = (void *) stringPID;
+	this->cmd = CMD_CreateCommandGet(CMD_MESH_ATCL_SENSOR_GET,
+									types,
+									paramValues,
+									2,
+									NULL,
+									NULL);
+	presenter->GUI_SendCommand(this->cmd);
+
+}
+
+void NodeSesnsorsScreenView::handleTickEvent() {
+
 	this->sensorTickCounter++;
 	loader1.GUI_ProgressLoader();
 	if (this->sensorTickCounter % 60 == 0) {
 		if (++this->sensorDigitalSeconds >= 60) {
 			// a minute has passed; refresh sensor data
-			loaderModal.show();
-			loader1.GUI_SetDisable(false);
-			loader1.GUI_SetLoaderText("Taking measurement");
-			this->sensorDigitalSeconds = 0;
-			sprintf(stringNodeAddress, "%04X", (unsigned int) this->node->address.nodeAddress);
-			sprintf(stringPID, "%04X", this->sensor->PID);
-			paramValues[0] = (void *) stringNodeAddress;
-			paramValues[1] = (void *) stringPID;
-			this->cmd = CMD_CreateCommandGet(CMD_MESH_ATCL_SENSOR_GET,
-											types,
-											paramValues,
-											2,
-											NULL,
-											NULL);
-			presenter->GUI_SendCommand(this->cmd);
+			GUI_RequestNewMeasurement();
 		}
 	}
 
@@ -89,6 +101,20 @@ void NodeSesnsorsScreenView::GUI_UpdateDeviceButtonValues() {
 			{
 				APC1_SelectedData_t *apcData = (APC1_SelectedData_t *) this->mea->measuredData;
 				sensorButtons[APC1_BUTTON_PM1_0_INDEX].GUI_SetIntigerStatus(apcData->pm1_0);
+				sensorButtons[APC1_BUTTON_PM2_5_INDEX].GUI_SetIntigerStatus(apcData->pm2_5);
+				sensorButtons[APC1_BUTTON_PM10_INDEX].GUI_SetIntigerStatus(apcData->pm10);
+				sensorButtons[APC1_BUTTON_PM_1_0_AIR_INDEX].GUI_SetIntigerStatus(apcData->pm1_0_air);
+				sensorButtons[APC1_BUTTON_PM_2_5_AIR_INDEX].GUI_SetIntigerStatus(apcData->pm2_5_air);
+				sensorButtons[APC1_BUTTON_PM_10_AIR_INDEX].GUI_SetIntigerStatus(apcData->pm10_air);
+				sensorButtons[APC1_BUTTON_PARTICLES_0_3_INDEX].GUI_SetIntigerStatus(apcData->particles_0_3);
+				sensorButtons[APC1_BUTTON_PARTICLES_0_5_INDEX].GUI_SetIntigerStatus(apcData->particles_0_5);
+				sensorButtons[APC1_BUTTON_PARTICLES_1_0_INDEX].GUI_SetIntigerStatus(apcData->particles_1_0);
+				sensorButtons[APC1_BUTTON_PARTICLES_2_5_INDEX].GUI_SetIntigerStatus(apcData->particles_2_5);
+				sensorButtons[APC1_BUTTON_PARTICLES_5_0_INDEX].GUI_SetIntigerStatus(apcData->particles_5_0);
+				sensorButtons[APC1_BUTTON_PARTICLES_10_INDEX].GUI_SetIntigerStatus(apcData->particles_10);
+				sensorButtons[APC1_BUTTON_TVOC_INDEX].GUI_SetIntigerStatus(apcData->TVOC);
+				sensorButtons[APC1_BUTTON_EC02_INDEX].GUI_SetIntigerStatus(apcData->eCO2);
+				sensorButtons[APC1_BUTTON_RH_COMP_INDEX].GUI_SetDoubleStatus(apcData->rh_comp);
 				sensorButtons[APC1_BUTTON_TEMPERATURE_INDEX].GUI_SetDoubleStatus(apcData->tComp);
 			}
 			break;
@@ -104,6 +130,7 @@ void NodeSesnsorsScreenView::GUI_UpdateSensorValues() {
 	loader1.GUI_SetDisable(true);
 	loader1.GUI_ResetProgressValue();
 
+	this->isTakingMeasurement = 0;
 	this->mea = presenter->GUI_GetSensorMeasuredData();
 	GUI_UpdateDeviceButtonValues();
 

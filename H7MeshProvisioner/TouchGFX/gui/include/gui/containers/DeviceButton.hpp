@@ -39,6 +39,7 @@ public:
     void GUI_SetIntigerStatus(int number) {
 
     	touchgfx::Unicode::snprintf(statusTextBuffer, STATUSTEXT_SIZE, "%d", number);
+    	statusText.resizeToCurrentText();
     	statusText.invalidate();
 
     }
@@ -46,6 +47,7 @@ public:
     void GUI_SetDoubleStatus(double number) {
 
     	touchgfx::Unicode::snprintfFloat(statusTextBuffer, STATUSTEXT_SIZE, "%.1f", number);
+    	statusText.resizeToCurrentText();
     	statusText.invalidate();
 
     }
@@ -78,8 +80,8 @@ public:
     			break;
     		case GENERIC_POWER:
     			icon.setIconBitmaps(
-    					Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_LIGHTBULB_OUTLINE_50_50_FFFFFE_SVG_ID),
-						Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_LIGHTBULB_OUTLINE_50_50_FFFFFE_SVG_ID));
+    					Bitmap(BITMAP_ICON_THEME_IMAGES_NOTIFICATION_POWER_OFF_50_50_FFFFFE_SVG_ID),
+						Bitmap(BITMAP_ICON_THEME_IMAGES_NOTIFICATION_POWER_OFF_50_50_FFFFFE_SVG_ID));
     			break;
     		case CONFIGURE: // BITMAP_ICON_THEME_IMAGES_ACTION_SETTINGS_APPLICATIONS_50_50_FFFFFE_SVG_ID
     			icon.setIconBitmaps(
@@ -103,24 +105,42 @@ public:
     	this->state = state;
     	switch (type) {
     		case GENERIC_ON_OFF:
-			case GENERIC_POWER:
     			if (state) {
 					GUI_SetTextStatus("On");
+					icon.setIconBitmaps(
+							Bitmap(BITMAP_ICON_THEME_IMAGES_TOGGLE_TOGGLE_ON_50_50_FFFFFE_SVG_ID),
+							Bitmap(BITMAP_ICON_THEME_IMAGES_TOGGLE_TOGGLE_ON_50_50_FFFFFE_SVG_ID));
 					interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID));
     			} else {
 					GUI_SetTextStatus("Off");
+					icon.setIconBitmaps(
+							Bitmap(BITMAP_ICON_THEME_IMAGES_TOGGLE_TOGGLE_OFF_50_50_FFFFFE_SVG_ID),
+							Bitmap(BITMAP_ICON_THEME_IMAGES_TOGGLE_TOGGLE_OFF_50_50_FFFFFE_SVG_ID));
 					interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID));
     			}
     			break;
+			case GENERIC_POWER:
+				if (state) {
+					GUI_SetTextStatus("On");
+					icon.setIconBitmaps(
+							Bitmap(BITMAP_ICON_THEME_IMAGES_NOTIFICATION_POWER_50_50_FFFFFE_SVG_ID),
+							Bitmap(BITMAP_ICON_THEME_IMAGES_NOTIFICATION_POWER_50_50_FFFFFE_SVG_ID));
+					interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID));
+				} else {
+					GUI_SetTextStatus("Off");
+					icon.setIconBitmaps(
+							Bitmap(BITMAP_ICON_THEME_IMAGES_NOTIFICATION_POWER_OFF_50_50_FFFFFE_SVG_ID),
+							Bitmap(BITMAP_ICON_THEME_IMAGES_NOTIFICATION_POWER_OFF_50_50_FFFFFE_SVG_ID));
+					interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID));
+				}
+    			break;
     		case GENERIC_LEVEL:
+    		case SENSOR:
     			if (state) {
     				interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID));
     			} else {
     				interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUNDPRESSED_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID));
     			}
-    			break;
-    		case SENSOR:
-    			interactBtn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID), touchgfx::Bitmap(BITMAP_BUTTONBACKGROUND_ID));
     			break;
     		case LIGHT_LIGHTNESS:
     			if (state) {

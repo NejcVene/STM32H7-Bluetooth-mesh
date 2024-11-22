@@ -42,8 +42,12 @@
 
 /* Private typedef -----------------------------------------------------------*/
 typedef struct __attribute__((packed)) {
-	uint16_t pm1_0;
-	double tComp;
+	uint16_t pm1_0, pm2_5, pm10,
+			 pm1_0_air, pm2_5_air, pm10_air,
+			 particles_0_3, particles_0_5, particles_1_0,
+			 particles_2_5, particles_5_0, particles_10,
+			 TVOC, eCO2;
+	double rh_comp, tComp;
 } APC1_SelectedData_t;
 
 typedef struct __attribute__((packed)) {
@@ -302,7 +306,8 @@ void Appli_Sensor_Status(const MOBLEUINT8 *pStatus,
 	TRACE_M(TF_SENSOR,"Offset: %ld\r\n", offset);
 	switch (receivedPID) {
 		case PRESENT_AMBIENT_TEMPERATURE_PID:
-			memcpy((void *) &sensorData, pStatus + offset, sizeof(APC1_SelectedData_t));
+			memcpy((void *) &sensorData, pStatus + 2, sizeof(APC1_SelectedData_t));
+			TRACE_M(TF_SENSOR, "APC1 size: %d\r\n", sizeof(APC1_SelectedData_t));
 			TRACE_M(TF_SENSOR, "APC1 PM1.0: %d\r\n", sensorData.pm1_0);
 			TRACE_M(TF_SENSOR, "APC1 Temp: %f °C\r\n", sensorData.tComp);
 			break;
