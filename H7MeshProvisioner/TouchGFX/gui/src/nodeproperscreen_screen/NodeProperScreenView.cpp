@@ -101,6 +101,18 @@ void NodeProperScreenView::setupGenericPower(int *guiIndex, int numToCreate) {
 
 }
 
+void NodeProperScreenView::setupRename(int *guiIndex) {
+
+	deviceFunctions[*guiIndex].setVisible(true);
+	deviceFunctions[*guiIndex].GUI_SetTextType("Rename");
+	deviceFunctions[*guiIndex].GUI_SetTextStatus(node->nodeName);
+	deviceFunctions[*guiIndex].GUI_SetIcon(DeviceButton::RENAME);
+	deviceFunctions[*guiIndex].GUI_ButtonSetOffState(DeviceButton::BUTTON_OFF, DeviceButton::RENAME);
+	deviceFunctions[*guiIndex].setButtonAction(buttonClickCallback, generateInstanceID(0, DeviceButton::RENAME));
+	(*guiIndex)++;
+
+}
+
 void NodeProperScreenView::setupConfig(int *guiIndex) {
 
 	deviceFunctions[*guiIndex].setVisible(true);
@@ -144,6 +156,9 @@ void NodeProperScreenView::handleButtonClicked(int instanceID) {
 			break;
 		case DeviceButton::SENSOR:
 			handleSensor(instanceID);
+			break;
+		case DeviceButton::RENAME:
+			handleRenameClicked(instanceID);
 			break;
 		case DeviceButton::CONFIGURE:
 			handleConfigureClicked(instanceID);
@@ -204,6 +219,13 @@ void NodeProperScreenView::handleGenericPowerClicked(int instanceID) {
 	newState = (newState == DeviceButton::STATE::BUTTON_OFF) ? DeviceButton::STATE::BUTTON_ON : DeviceButton::STATE::BUTTON_OFF;
 	this->node->states.genericPowerOnOffStatus = (int) newState;
 	deviceFunctions[guiIndex].GUI_ButtonSetOffState(newState, DeviceButton::GENERIC_POWER);
+
+}
+
+void NodeProperScreenView::handleRenameClicked(int instanceID) {
+
+	presenter->GUI_SetDeviceToConfigure(NC_GetConfigNodeFromAddress(this->node->address.nodeAddress));
+	goToRenameScreen();
 
 }
 
@@ -314,6 +336,7 @@ void NodeProperScreenView::setupDeviceButtons() {
 	if (this->nodeModel & NC_GENERIC_POWER_ON_OFF_MODEL) {
 		setupGenericPower(&guiIndex, 1);
 	}
+	setupRename(&guiIndex);
 	setupConfig(&guiIndex);
 	setupUnprov(&guiIndex);
 

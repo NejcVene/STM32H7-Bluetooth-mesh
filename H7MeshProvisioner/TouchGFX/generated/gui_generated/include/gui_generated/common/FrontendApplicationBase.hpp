@@ -55,6 +55,9 @@ public:
     // NodeSesnsorsScreen
     void gotoNodeSesnsorsScreenScreenSlideTransitionEast();
 
+    // RenameScreen
+    void gotoRenameScreenScreenSlideTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -94,6 +97,9 @@ protected:
 
     // NodeSesnsorsScreen
     void gotoNodeSesnsorsScreenScreenSlideTransitionEastImpl();
+
+    // RenameScreen
+    void gotoRenameScreenScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

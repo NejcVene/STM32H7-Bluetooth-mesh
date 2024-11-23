@@ -31,6 +31,8 @@
 #include <gui/deviceinfoscreen_screen/DeviceInfoScreenPresenter.hpp>
 #include <gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.hpp>
 #include <gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenPresenter.hpp>
+#include <gui/renamescreen_screen/RenameScreenView.hpp>
+#include <gui/renamescreen_screen/RenameScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -202,4 +204,17 @@ void FrontendApplicationBase::gotoNodeSesnsorsScreenScreenSlideTransitionEast()
 void FrontendApplicationBase::gotoNodeSesnsorsScreenScreenSlideTransitionEastImpl()
 {
     touchgfx::makeTransition<NodeSesnsorsScreenView, NodeSesnsorsScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// RenameScreen
+
+void FrontendApplicationBase::gotoRenameScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoRenameScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoRenameScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<RenameScreenView, RenameScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

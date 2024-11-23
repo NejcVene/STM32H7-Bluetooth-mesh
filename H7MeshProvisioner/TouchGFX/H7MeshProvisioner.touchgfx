@@ -1272,6 +1272,19 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "NodeSesnsorsScreen"
             }
+          },
+          {
+            "InteractionName": "GUI_SwitchToRenameScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeProperScreen goToRenameScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "RenameScreen"
+            }
           }
         ],
         "CustomActions": [
@@ -1285,6 +1298,10 @@
           },
           {
             "Name": "goToNodeSensorsScreen",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToRenameScreen",
             "Description": "Called from user code to change screen"
           }
         ]
@@ -2015,6 +2032,114 @@
           }
         ],
         "Interactions": []
+      },
+      {
+        "Name": "RenameScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "cancelRenameBtn",
+            "X": 370,
+            "Y": 146,
+            "Width": 100,
+            "Height": 50,
+            "Pressed": "ButtonBackgroundTiny.png",
+            "Released": "ButtonBackgroundPressedTiny.png",
+            "TextId": "__SingleUse_WP2P",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "saveRenameBtn",
+            "X": 370,
+            "Y": 86,
+            "Width": 100,
+            "Height": 50,
+            "Pressed": "ButtonBackgroundTiny.png",
+            "Released": "ButtonBackgroundPressedTiny.png",
+            "TextId": "__SingleUse_DAI8",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SwitchToScreen1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cancelRenameBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "GUI_SaveRename",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "saveRenameBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_SaveRename"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToScreen12",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call RenameScreen goToScreen1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen1"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToScreen1",
+            "Description": "Called from user code to change screen"
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [
@@ -2649,6 +2774,21 @@
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
             "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
             "IconReleased": "__generated\\icon_theme_images_notification_power_off_50_50_FFFFFE.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon9",
+            "Y": 200,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_file_drive_file_rename_outline_50_50_FFFFFE.svg.png",
             "IconX": 97,
             "IconHeight": 50,
             "IconWidth": 50,

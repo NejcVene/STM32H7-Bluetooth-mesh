@@ -10,6 +10,11 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 // Remap all strings
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
+    26,  // T_ENTEREDTEXT: "<>"
+    401, // T_NUMMODE: "ABC"
+    397, // T_ALPHAMODE: "123"
+    392, // T___SINGLEUSE_DAI8: "Save"
+    352, // T___SINGLEUSE_WP2P: "Cancel"
     223, // T___SINGLEUSE_S5PQ: "Protocol test"
     387, // T___SINGLEUSE_MFFZ: "None"
     52,  // T___SINGLEUSE_4AS9: "Comm_ex version: <>"
@@ -20,10 +25,10 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     387, // T___SINGLEUSE_4F49: "None"
     26,  // T___SINGLEUSE_ZXED: "<>"
     359, // T___SINGLEUSE_VUYR: "Minute"
-    397, // T___SINGLEUSE_HZRE: "00"
+    405, // T___SINGLEUSE_HZRE: "00"
     26,  // T___SINGLEUSE_OGC8: "<>"
     382, // T___SINGLEUSE_2QJM: "Hour"
-    397, // T___SINGLEUSE_O4YG: "00"
+    405, // T___SINGLEUSE_O4YG: "00"
     26,  // T___SINGLEUSE_VZDO: "<>"
     392, // T___SINGLEUSE_AVYH: "Save"
     116, // T___SINGLEUSE_64IT: "Device information"
@@ -50,7 +55,7 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     153, // T___SINGLEUSE_ZQHI: "Liv room grp addr"
     176, // T___SINGLEUSE_GVRS: "Kitchen grp addr"
     208, // T___SINGLEUSE_4TTE: "Unprovision em"
-    400, // T___SINGLEUSE_52I8: "OK"
+    408, // T___SINGLEUSE_52I8: "OK"
     95,  // T___SINGLEUSE_PIBO: "Device is configured"
     193, // T___SINGLEUSE_M1AF: "No nodes found"
     272, // T___SINGLEUSE_J4Q1: "ATEP ROOT"

@@ -31,6 +31,7 @@ protected:
     touchgfx::ButtonWithIcon buttonWithIcon6;
     touchgfx::ButtonWithIcon buttonWithIcon7;
     touchgfx::ButtonWithIcon buttonWithIcon8;
+    touchgfx::ButtonWithIcon buttonWithIcon9;
 
 private:
 

@@ -28,6 +28,7 @@ public:
     virtual void goToConfigureScreen();
     virtual void goToScreen1();
     virtual void goToNodeSensorsScreen();
+    virtual void goToRenameScreen();
 
 protected:
     FrontendApplication& application() {

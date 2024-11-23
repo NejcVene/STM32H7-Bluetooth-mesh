@@ -19,6 +19,7 @@ public:
 		SENSOR,
 		LIGHT_LIGHTNESS,
 		GENERIC_POWER,
+		RENAME,
 		CONFIGURE,
 		UNPROVISION
     };
@@ -93,6 +94,11 @@ public:
     					Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DELETE_OUTLINE_50_50_FFFFFE_SVG_ID),
 						Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DELETE_OUTLINE_50_50_FFFFFE_SVG_ID));
     			break;
+    		case RENAME:
+    			icon.setIconBitmaps(
+    					Bitmap(BITMAP_ICON_THEME_IMAGES_FILE_DRIVE_FILE_RENAME_OUTLINE_50_50_FFFFFE_SVG_ID),
+						Bitmap(BITMAP_ICON_THEME_IMAGES_FILE_DRIVE_FILE_RENAME_OUTLINE_50_50_FFFFFE_SVG_ID));
+    			break;
     		default:
     			break;
     	}
@@ -151,6 +157,8 @@ public:
     		case CONFIGURE:
     			break;
     		case UNPROVISION:
+    			break;
+    		case RENAME:
     			break;
     		default:
     			break;

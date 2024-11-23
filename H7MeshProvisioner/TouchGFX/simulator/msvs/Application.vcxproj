@@ -70,6 +70,10 @@
     <ClCompile Include="..\..\gui\src\nodesesnsorsscreen_screen\NodeSesnsorsScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\nodesesnsorsscreen_screen\NodeSesnsorsScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\nodesesnsorsscreen_screen\NodeSesnsorsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\common\CustomKeyboard.cpp"/>
+    <ClCompile Include="..\..\gui\src\renamescreen_screen\RenameScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\renamescreen_screen\RenameScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\renamescreen_screen\RenameScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -269,6 +273,12 @@
     <ClInclude Include="..\..\gui\include\gui\nodesesnsorsscreen_screen\NodeSesnsorsScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\nodesesnsorsscreen_screen\NodeSesnsorsScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodesesnsorsscreen_screen\NodeSesnsorsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\common\CustomKeyboard.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardKeyMapping.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardLayout.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\renamescreen_screen\RenameScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\renamescreen_screen\RenameScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\renamescreen_screen\RenameScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

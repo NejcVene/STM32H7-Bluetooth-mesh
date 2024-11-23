@@ -74,3 +74,11 @@ void NodeProperScreenViewBase::goToNodeSensorsScreen()
     //Go to NodeSesnsorsScreen with screen transition towards East
     application().gotoNodeSesnsorsScreenScreenSlideTransitionEast();
 }
+
+void NodeProperScreenViewBase::goToRenameScreen()
+{
+    //GUI_SwitchToRenameScreen
+    //When goToRenameScreen is called change screen to RenameScreen
+    //Go to RenameScreen with screen transition towards East
+    application().gotoRenameScreenScreenSlideTransitionEast();
+}

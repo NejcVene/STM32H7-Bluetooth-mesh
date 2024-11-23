@@ -24,6 +24,7 @@ public:
     void setupSensor(int *guiIndex, int numToCreate);
     void setupLightLightness(int *guiIndex, int numToCreate);
     void setupGenericPower(int *guiIndex, int numToCreate);
+    void setupRename(int *guiIndex);
     void setupConfig(int *guiIndex);
     void setupUnprov(int *guiIndex);
 
@@ -32,6 +33,7 @@ public:
     void handleSensor(int instanceID);
     void handleLightClicked(int instanceID);
     void handleGenericPowerClicked(int instanceID);
+    void handleRenameClicked(int instanceID);
     void handleConfigureClicked(int instanceID);
     void handleDeleteClicked(int instanceID);
 
@@ -54,7 +56,7 @@ protected:
     Node_Config_t *node;
     uint16_t nodeModel;
     DeviceButton genOnOffBtn;
-    static const int maxDeviceFunctions = 9;
+    static const int maxDeviceFunctions = 10;
     static const int MULTIPLIER = 1000;
     DeviceButton deviceFunctions[maxDeviceFunctions];
     CMD_CommandGet_t *cmd;

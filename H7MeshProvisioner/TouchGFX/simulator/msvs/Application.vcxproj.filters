@@ -316,6 +316,18 @@
     <Filter Include="Source Files\generated\gui_generated\nodesesnsorsscreen_screen">
       <UniqueIdentifier>F45CE568-5D6A-78FD-2725-B256C8920F58</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\renamescreen_screen">
+      <UniqueIdentifier>3CE5B54D-0234-4AA4-F607-B1A2960DB1CF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\renamescreen_screen">
+      <UniqueIdentifier>1A6C1301-C8F5-5178-032E-410CFACF7FB4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\renamescreen_screen">
+      <UniqueIdentifier>7273056D-3355-59B7-8060-1704B1618B67</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\renamescreen_screen">
+      <UniqueIdentifier>AF056F7D-770F-5C8B-AEA8-F7A14764230D</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -494,6 +506,18 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\nodesesnsorsscreen_screen\NodeSesnsorsScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\nodesesnsorsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\CustomKeyboard.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\renamescreen_screen\RenameScreenPresenter.cpp">
+      <Filter>Source Files\gui\renamescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\renamescreen_screen\RenameScreenView.cpp">
+      <Filter>Source Files\gui\renamescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\renamescreen_screen\RenameScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\renamescreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1083,6 +1107,24 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodesesnsorsscreen_screen\NodeSesnsorsScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\nodesesnsorsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\CustomKeyboard.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardKeyMapping.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardLayout.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\renamescreen_screen\RenameScreenPresenter.hpp">
+      <Filter>Header Files\gui\renamescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\renamescreen_screen\RenameScreenView.hpp">
+      <Filter>Header Files\gui\renamescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\renamescreen_screen\RenameScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\renamescreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

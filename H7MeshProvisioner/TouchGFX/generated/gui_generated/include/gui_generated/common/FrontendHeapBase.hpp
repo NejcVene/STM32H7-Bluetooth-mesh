@@ -36,6 +36,8 @@
 #include <gui/deviceinfoscreen_screen/DeviceInfoScreenPresenter.hpp>
 #include <gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.hpp>
 #include <gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenPresenter.hpp>
+#include <gui/renamescreen_screen/RenameScreenView.hpp>
+#include <gui/renamescreen_screen/RenameScreenPresenter.hpp>
 
 
 /**
@@ -69,7 +71,8 @@ public:
             touchgfx::meta::TypeList< ClockSettingsScreenView,
             touchgfx::meta::TypeList< DeviceInfoScreenView,
             touchgfx::meta::TypeList< NodeSesnsorsScreenView,
-            touchgfx::meta::Nil > > > > > > > > > >
+            touchgfx::meta::TypeList< RenameScreenView,
+            touchgfx::meta::Nil > > > > > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -92,7 +95,8 @@ public:
             touchgfx::meta::TypeList< ClockSettingsScreenPresenter,
             touchgfx::meta::TypeList< DeviceInfoScreenPresenter,
             touchgfx::meta::TypeList< NodeSesnsorsScreenPresenter,
-            touchgfx::meta::Nil > > > > > > > > > >
+            touchgfx::meta::TypeList< RenameScreenPresenter,
+            touchgfx::meta::Nil > > > > > > > > > > >
             > GeneratedPresenterTypes;
 
     /**

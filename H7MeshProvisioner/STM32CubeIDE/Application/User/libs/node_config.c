@@ -95,7 +95,7 @@ void NC_Init(void) {
 		.nodeName = "My node",
 		.address = {
 			.nodeAddress = 43,
-			.nodeModels = 87,
+			.nodeModels = 83,
 			.nodeFeatures = 0,
 			.uuid =  "0753"
 		},
@@ -109,9 +109,9 @@ void NC_Init(void) {
 			.nodeName = "My node2",
 			.address = {
 				.nodeAddress = 74,
-				.nodeModels = 87,
+				.nodeModels = 1,
 				.nodeFeatures = 0,
-				.uuid =  "0753"
+				.uuid =  "0756"
 			},
 			.states = {
 				.genericOnOffStatus = 0,
