@@ -23,6 +23,7 @@ public:
     virtual void GUI_ChangeScreenDevInfo() {};
     virtual void GUI_ConfirmDescGet() {};
     virtual void GUI_UpdateSensorValues() {};
+    virtual void GUI_NotifyError() {};
 
 protected:
     Model* model;

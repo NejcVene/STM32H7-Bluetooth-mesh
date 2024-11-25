@@ -28,6 +28,7 @@ public:
      * Custom Actions
      */
     virtual void goToDeviceConfigScreen();
+    virtual void goToErrorScreen();
 
 protected:
     FrontendApplication& application() {

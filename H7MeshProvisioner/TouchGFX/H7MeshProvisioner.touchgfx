@@ -511,11 +511,28 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "ConfigureNodeScreen"
             }
+          },
+          {
+            "InteractionName": "GUI_SwitchToErrorScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call AddDeviceScreen goToErrorScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ErrorScreen"
+            }
           }
         ],
         "CustomActions": [
           {
             "Name": "goToDeviceConfigScreen",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToErrorScreen",
             "Description": "Called from user code to change screen"
           }
         ]
@@ -852,11 +869,28 @@
               "Type": "ActionCustom",
               "FunctionName": "GUI_CancelBtnClicked"
             }
+          },
+          {
+            "InteractionName": "GUI_SwitchToErrorScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call ConfigureNodeScreen goToErrorScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ErrorScreen"
+            }
           }
         ],
         "CustomActions": [
           {
             "Name": "goToHomeScreen",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToErrorScreen",
             "Description": "Called from user code to change screen"
           }
         ]
@@ -1285,6 +1319,19 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "RenameScreen"
             }
+          },
+          {
+            "InteractionName": "GUI_SwitchToErrorScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeProperScreen goToErrorScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ErrorScreen"
+            }
           }
         ],
         "CustomActions": [
@@ -1302,6 +1349,10 @@
           },
           {
             "Name": "goToRenameScreen",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToErrorScreen",
             "Description": "Called from user code to change screen"
           }
         ]
@@ -1584,7 +1635,7 @@
                     "Name": "hourText",
                     "X": 18,
                     "Width": 43,
-                    "Height": 19,
+                    "Height": 20,
                     "TextId": "__SingleUse_2QJM",
                     "TextRotation": "0",
                     "Color": {
@@ -1670,7 +1721,7 @@
                     "Name": "minuteText",
                     "X": 119,
                     "Width": 60,
-                    "Height": 19,
+                    "Height": 20,
                     "TextId": "__SingleUse_VUYR",
                     "TextRotation": "0",
                     "Color": {
@@ -2031,7 +2082,27 @@
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SwitchToErrorScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeSesnsorsScreen goToErrorScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ErrorScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToErrorScreen",
+            "Description": "Called from user code to change screen"
+          }
+        ]
       },
       {
         "Name": "RenameScreen",
@@ -2138,6 +2209,99 @@
           {
             "Name": "goToScreen1",
             "Description": "Called from user code to change screen"
+          }
+        ]
+      },
+      {
+        "Name": "ErrorScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "Container",
+            "Name": "container1",
+            "X": 11,
+            "Y": 30,
+            "Width": 460,
+            "Height": 232,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box1",
+                "Width": 460,
+                "Height": 116,
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                }
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "resetBtn",
+                "X": 180,
+                "Y": 146,
+                "Width": 100,
+                "Height": 50,
+                "Pressed": "ButtonBackgroundTiny.png",
+                "Released": "ButtonBackgroundPressedTiny.png",
+                "TextId": "__SingleUse_8ZWP",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "errorDesc",
+                "Width": 460,
+                "Height": 116,
+                "TextId": "__SingleUse_XY6N",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "Wildcard1": {
+                  "TextId": "__SingleUse_X80R",
+                  "UseBuffer": true,
+                  "BufferSize": 100
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_ResetDevice",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "resetBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ResetDevice"
+            }
           }
         ]
       }

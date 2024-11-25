@@ -154,6 +154,12 @@ public:
 
     }
 
+    const char *GUI_GetErrorString() {
+
+    	return this->errorString;
+
+    }
+
     void GUI_SendCommand(CMD_CommandGet_t *cmd);
     void DigitalClock();
     void GUI_SetDigialClock(uint8_t hours, uint8_t minutes);
@@ -175,6 +181,7 @@ protected:
     char commExVer[10] = {0};
     int sensorIndex;
     Sensor_MeasuredData_t *sensor;
+    char errorString[40] = {0};
 };
 
 #endif // MODEL_HPP

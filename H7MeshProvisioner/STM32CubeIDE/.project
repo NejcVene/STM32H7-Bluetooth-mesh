@@ -710,6 +710,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/deviceinfoscreen_screen/DeviceInfoScreenView.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/ErrorScreenPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/errorscreen_screen/ErrorScreenPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ErrorScreenView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/errorscreen_screen/ErrorScreenView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/HomeScreenPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/homescreen_screen/HomeScreenPresenter.cpp</locationURI>
@@ -1033,6 +1043,11 @@
 			<name>Application/User/generated/DeviceInfoScreenViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/deviceinfoscreen_screen/DeviceInfoScreenViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/ErrorScreenViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/errorscreen_screen/ErrorScreenViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/HomeScreenViewBase.cpp</name>

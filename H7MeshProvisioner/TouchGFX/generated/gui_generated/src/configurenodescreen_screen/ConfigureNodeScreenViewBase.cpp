@@ -165,3 +165,11 @@ void ConfigureNodeScreenViewBase::goToHomeScreen()
     //Go to HomeScreen with screen transition towards East
     application().gotoHomeScreenScreenSlideTransitionEast();
 }
+
+void ConfigureNodeScreenViewBase::goToErrorScreen()
+{
+    //GUI_SwitchToErrorScreen
+    //When goToErrorScreen is called change screen to ErrorScreen
+    //Go to ErrorScreen with screen transition towards East
+    application().gotoErrorScreenScreenSlideTransitionEast();
+}

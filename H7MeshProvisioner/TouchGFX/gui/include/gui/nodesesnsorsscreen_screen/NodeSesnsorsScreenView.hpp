@@ -21,6 +21,7 @@ public:
     void GUI_SetupSensorButtons();
     void GUI_UpdateDeviceButtonValues();
     void GUI_RequestNewMeasurement();
+    void GUI_ErrorOccured();
 
 protected:
 

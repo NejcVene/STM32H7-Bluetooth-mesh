@@ -28,6 +28,7 @@ public:
     virtual ~NodeSesnsorsScreenPresenter() {}
 
     virtual void GUI_UpdateSensorValues();
+    virtual void GUI_NotifyError();
 
     void GUI_SendCommand(CMD_CommandGet_t *cmd) {
 

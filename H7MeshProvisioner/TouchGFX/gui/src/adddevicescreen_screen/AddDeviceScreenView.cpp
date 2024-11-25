@@ -106,3 +106,9 @@ void AddDeviceScreenView::GUI_SwitchScreenAfterProv() {
 
 }
 
+void AddDeviceScreenView::GUI_ErrorOccured() {
+
+	goToErrorScreen();
+
+}
+

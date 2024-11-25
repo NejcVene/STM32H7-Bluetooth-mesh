@@ -30,6 +30,7 @@ public:
      * Custom Actions
      */
     virtual void goToHomeScreen();
+    virtual void goToErrorScreen();
 
     /*
      * Virtual Action Handlers

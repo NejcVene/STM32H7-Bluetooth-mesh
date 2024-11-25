@@ -58,6 +58,9 @@ public:
     // RenameScreen
     void gotoRenameScreenScreenSlideTransitionEast();
 
+    // ErrorScreen
+    void gotoErrorScreenScreenSlideTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -100,6 +103,9 @@ protected:
 
     // RenameScreen
     void gotoRenameScreenScreenSlideTransitionEastImpl();
+
+    // ErrorScreen
+    void gotoErrorScreenScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

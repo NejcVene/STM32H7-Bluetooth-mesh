@@ -27,6 +27,7 @@ CMD_CommandGet_t *CMD_SensorDescriptorGet(void *buffer, CMD_CommandGet_t *guiCmd
 
 CMD_MeshCommand_t defineRootNetworkNode = {
 		.command = "ATEP ROOT",
+		.rxTimeout = CMD_MESH_RX_UACK,
 		.commandType = PRO_MSG_TYPE_UNACK,
 		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = NULL,
@@ -35,6 +36,7 @@ CMD_MeshCommand_t defineRootNetworkNode = {
 
 CMD_MeshCommand_t scanForUnprovisionedNetworkDevices = {
 		.command = "ATEP SCAN",
+		.rxTimeout = 60,
 		.commandType = PRO_MSG_TYPE_ACK,
 		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = NULL,
@@ -43,6 +45,7 @@ CMD_MeshCommand_t scanForUnprovisionedNetworkDevices = {
 
 CMD_MeshCommand_t provisionNetworkDevice = {
 		.command = "ATEP PRVN-%d",
+		.rxTimeout = 120,
 		.commandType = PRO_MSG_TYPE_ACK,
 		.dataType = PRO_DATATYPE_U16T,
 		.CMD_Setup = CMD_GenericFormatCommand,
@@ -51,6 +54,7 @@ CMD_MeshCommand_t provisionNetworkDevice = {
 
 CMD_MeshCommand_t scanForUnprovisionedNetworkDevicesOutOfRangePvrn = {
 		.command = "ATEP NDSCAN",
+		.rxTimeout = 60,
 		.commandType = PRO_MSG_TYPE_ACK,
 		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = NULL,
@@ -59,6 +63,7 @@ CMD_MeshCommand_t scanForUnprovisionedNetworkDevicesOutOfRangePvrn = {
 
 CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn = {
 		.command = "ATEP NDPRVN-%d",
+		.rxTimeout = 120,
 		.commandType = PRO_MSG_TYPE_ACK,
 		.dataType = PRO_DATATYPE_U16T,
 		.CMD_Setup = CMD_GenericFormatCommand,
@@ -67,6 +72,7 @@ CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn = {
 
 CMD_MeshCommand_t unprovisionNetworkDevice = {
 		.command = "ATEP UNPV %d",
+		.rxTimeout = 60,
 		.commandType = PRO_MSG_TYPE_ACK,
 		.dataType = PRO_DATATYPE_U16T,
 		.CMD_Setup = CMD_GenericFormatCommand,
@@ -75,6 +81,7 @@ CMD_MeshCommand_t unprovisionNetworkDevice = {
 
 CMD_MeshCommand_t genericOnOffSetAck = { // currently hard-coded
 		.command = "ATCL %s 8202 %s 00",
+		.rxTimeout = CMD_MESH_RX_UACK,
 		.commandType = PRO_MSG_TYPE_UNACK,
 		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = CMD_GenericFormatCommand,
@@ -84,6 +91,7 @@ CMD_MeshCommand_t genericOnOffSetAck = { // currently hard-coded
 // broken ???
 CMD_MeshCommand_t genericOnOffGet = {
 		.command = "ATCL %s 8201",
+		.rxTimeout = CMD_MESH_RX_UACK,
 		.commandType = PRO_MSG_TYPE_UNACK,
 		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = CMD_GenericFormatCommand,
@@ -93,6 +101,7 @@ CMD_MeshCommand_t genericOnOffGet = {
 // not used
 CMD_MeshCommand_t unprovisionEmbeddedProv = {
 		.command = "BLEMesh_Unprovision",
+		.rxTimeout = 60,
 		.commandType = PRO_MSG_TYPE_OTHER,
 		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = NULL,
@@ -102,6 +111,7 @@ CMD_MeshCommand_t unprovisionEmbeddedProv = {
 // not used
 CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 		.command = "BLEMesh_IsUnprovisioned",
+		.rxTimeout = 60,
 		.commandType = PRO_MSG_TYPE_OTHER,
 		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = NULL,
@@ -110,6 +120,7 @@ CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 
 CMD_MeshCommand_t pubSetSubAdd = {
 		.command = "BLEMesh_PubSub %d %d %d %d",
+		.rxTimeout = 120,
 		.commandType = PRO_MSG_TYPE_OTHER,
 		.dataType = PRO_DATATYPE_U16T,
 		.CMD_Setup = CMD_SetupConfig,
@@ -118,6 +129,7 @@ CMD_MeshCommand_t pubSetSubAdd = {
 
 CMD_MeshCommand_t getLibInfo = {
 		.command = "BLEMesh_LibVer",
+		.rxTimeout = 60,
 		.commandType = PRO_MSG_TYPE_OTHER,
 		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = CMD_GenericFormatCommand,
@@ -126,6 +138,7 @@ CMD_MeshCommand_t getLibInfo = {
 
 CMD_MeshCommand_t sensorGet = {
 		.command = "ATCL %s 8231 %s",
+		.rxTimeout = 60,
 		.commandType = PRO_MSG_TYPE_ACK,
 		.dataType = PRO_DATATYPE_STRUCT_APC1,
 		.CMD_Setup = CMD_GenericFormatCommand,
@@ -134,6 +147,7 @@ CMD_MeshCommand_t sensorGet = {
 
 CMD_MeshCommand_t sensorDescriptorGet = {
 		.command = "ATCL %s 8230",
+		.rxTimeout = 60,
 		.commandType = PRO_MSG_TYPE_ACK,
 		.dataType = PRO_DATATYPE_STRUCT_DESC_GET,
 		.CMD_Setup = CMD_GenericFormatCommand,
@@ -142,6 +156,7 @@ CMD_MeshCommand_t sensorDescriptorGet = {
 
 CMD_MeshCommand_t protocolStructTest = {
 		.command = "BLEMesh_Protest",
+		.rxTimeout = 60,
 		.commandType = PRO_MSG_TYPE_OTHER,
 		.dataType = PRO_DATATYPE_STRUCT_TEST,
 		.CMD_Setup = NULL,

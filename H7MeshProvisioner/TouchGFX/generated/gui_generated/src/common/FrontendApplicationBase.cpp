@@ -33,6 +33,8 @@
 #include <gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenPresenter.hpp>
 #include <gui/renamescreen_screen/RenameScreenView.hpp>
 #include <gui/renamescreen_screen/RenameScreenPresenter.hpp>
+#include <gui/errorscreen_screen/ErrorScreenView.hpp>
+#include <gui/errorscreen_screen/ErrorScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -217,4 +219,17 @@ void FrontendApplicationBase::gotoRenameScreenScreenSlideTransitionEast()
 void FrontendApplicationBase::gotoRenameScreenScreenSlideTransitionEastImpl()
 {
     touchgfx::makeTransition<RenameScreenView, RenameScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// ErrorScreen
+
+void FrontendApplicationBase::gotoErrorScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoErrorScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoErrorScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<ErrorScreenView, ErrorScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

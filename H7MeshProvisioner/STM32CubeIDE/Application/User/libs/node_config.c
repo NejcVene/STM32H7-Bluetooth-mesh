@@ -449,6 +449,16 @@ void NC_ClearNodeNetworkAddressArray(void) {
 
 }
 
+void NC_ResetDevice(void) {
+
+	HAL_GPIO_WritePin(COMM_NRST_PORT_MASTER, COMM_NRST_PIN_MASTER, GPIO_PIN_RESET);
+	HAL_Delay(300);
+	HAL_GPIO_WritePin(COMM_NRST_PORT_MASTER, COMM_NRST_PIN_MASTER, GPIO_PIN_SET);
+	HAL_Delay(100);
+	NVIC_SystemReset();
+
+}
+
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address) {
 //
 //	HAL_NOR_Program(hnor, address, (uint16_t *) nodeConfig);

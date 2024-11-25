@@ -72,3 +72,11 @@ void AddDeviceScreenViewBase::goToDeviceConfigScreen()
     //Go to ConfigureNodeScreen with screen transition towards East
     application().gotoConfigureNodeScreenScreenSlideTransitionEast();
 }
+
+void AddDeviceScreenViewBase::goToErrorScreen()
+{
+    //GUI_SwitchToErrorScreen
+    //When goToErrorScreen is called change screen to ErrorScreen
+    //Go to ErrorScreen with screen transition towards East
+    application().gotoErrorScreenScreenSlideTransitionEast();
+}

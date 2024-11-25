@@ -38,6 +38,8 @@
 #include <gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenPresenter.hpp>
 #include <gui/renamescreen_screen/RenameScreenView.hpp>
 #include <gui/renamescreen_screen/RenameScreenPresenter.hpp>
+#include <gui/errorscreen_screen/ErrorScreenView.hpp>
+#include <gui/errorscreen_screen/ErrorScreenPresenter.hpp>
 
 
 /**
@@ -72,7 +74,8 @@ public:
             touchgfx::meta::TypeList< DeviceInfoScreenView,
             touchgfx::meta::TypeList< NodeSesnsorsScreenView,
             touchgfx::meta::TypeList< RenameScreenView,
-            touchgfx::meta::Nil > > > > > > > > > > >
+            touchgfx::meta::TypeList< ErrorScreenView,
+            touchgfx::meta::Nil > > > > > > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -96,7 +99,8 @@ public:
             touchgfx::meta::TypeList< DeviceInfoScreenPresenter,
             touchgfx::meta::TypeList< NodeSesnsorsScreenPresenter,
             touchgfx::meta::TypeList< RenameScreenPresenter,
-            touchgfx::meta::Nil > > > > > > > > > > >
+            touchgfx::meta::TypeList< ErrorScreenPresenter,
+            touchgfx::meta::Nil > > > > > > > > > > > >
             > GeneratedPresenterTypes;
 
     /**

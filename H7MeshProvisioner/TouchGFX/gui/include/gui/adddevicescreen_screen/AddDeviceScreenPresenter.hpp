@@ -30,6 +30,7 @@ public:
     virtual void GUI_SendCommand(CMD_CommandGet_t *cmd);
     virtual void GUI_DevicesFound();
     virtual void GUI_ChangeScreen();
+    virtual void GUI_NotifyError();
 
     int GUI_GetUsedCommandIndex() {
 

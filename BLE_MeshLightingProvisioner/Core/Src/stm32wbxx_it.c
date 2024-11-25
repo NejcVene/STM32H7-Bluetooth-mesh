@@ -387,6 +387,14 @@ void EXTI9_5_IRQHandler(void)
   /* USER CODE END EXTI9_5_IRQn 1 */
 }
 
+void EXTI15_10_IRQHandler(void) {
+
+	// Call the HAL EXTI handler to process the interrupt
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_15);
+
+}
+
+
 #ifdef SAVE_MODEL_STATE_POWER_FAILURE_DETECTION       
 /**
  * @brief  This function handles External line

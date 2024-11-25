@@ -42,6 +42,7 @@ static inline void debugMessage(char *message);
 // UART functions
 extern int hsTrigger;
 extern volatile int timerTrigger;
+volatile int errorTrigger;
 
 // protocol functions
 static void Protocol_Process_Messsage(void);
@@ -88,7 +89,7 @@ static int errorCounter;
 
 // state machine variables
 extern Queue *eventQueue;
-static FSM_ErrorReport_t error;
+//static FSM_ErrorReport_t error;
 #ifdef _MASTER
 extern HT_HashTable_t *cmdHashTable;
 static FSM_TransitionState_t stateTransitionTable[MAIN_FSM_NUM_OF_STATES][MAIN_FSM_NUM_OF_EVENTS] = {
@@ -112,7 +113,9 @@ static FSM_TransitionState_t stateTransitionTable[MAIN_FSM_NUM_OF_STATES][MAIN_F
 		[MAIN_FSM_EXECUTE_COMMAND][MAIN_FSM_EVENT_UNACK] 		= {MAIN_FSM_IDLE, FSM_Idle},
 		[MAIN_FSM_EXECUTE_COMMAND][MAIN_FSM_EVENT_LOOP]			= {MAIN_FSM_EXECUTE_COMMAND, FSM_Execute},
 		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_TRANSMIT_COMPLETE] 	= {MAIN_FSM_IDLE, FSM_Idle},
-		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_ERROR] 				= {MAIN_FSM_ERROR, FSM_Error}
+		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_ERROR] 				= {MAIN_FSM_ERROR, FSM_Error},
+		[MAIN_FSM_RECEIVE][MAIN_FSM_EVENT_ERROR]				= {MAIN_FSM_ERROR, FSM_Error},
+		[MAIN_FSM_ERROR][MAIN_FSM_EVENT_RESET]					= {MAIN_FSM_IDLE, FSM_Idle}
 };
 #endif
 
@@ -153,27 +156,34 @@ static int Protocol_CheckChecksum(PROTOCOL_MSG_TYPE type, uint8_t *payload, uint
 
 static PROTOCOL_STATUS _SendData(uint8_t *toSend, uint16_t sizeToSend, void (*callback)(void)) {
 
+	PROTOCOL_STATUS status;
 	LPUART_CallbackTx = callback;
-	if ((error.status = Comm_LPUART_Send_IT(commSettings, toSend, sizeToSend, sizeToSend)) != PRO_OK) {
-		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_ERROR, &error, sizeof(FSM_ErrorReport_t));
-		return error.status;
-	}
-	Protocol_WaitForTX();
 
-	return PRO_OK;
+	if ((status = Comm_LPUART_Send_IT(commSettings, toSend, sizeToSend, sizeToSend)) == PRO_OK) {
+//		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_ERROR, &error, sizeof(FSM_ErrorReport_t));
+		Protocol_WaitForTX();
+		if (PROTOCOL_GetErrorTrigger()) {
+			status = PRO_ERROR_TIMEOUT;
+		}
+	}
+
+	return status;
 
 }
 
 static PROTOCOL_STATUS _ReceiveData(uint8_t *toReceive, uint16_t sizeToReceive, void (*callback)(void)) {
 
+	PROTOCOL_STATUS status;
 	LPUART_CallbackRx = callback;
-	if ((error.status = Comm_LPUART_Receive_IT(commSettings, toReceive, sizeToReceive, sizeToReceive)) != PRO_OK) {
-		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_ERROR, &error, sizeof(FSM_ErrorReport_t));
-		return error.status;
-	}
-	Protocol_WaitForRX();
 
-	return PRO_OK;
+	if ((status = Comm_LPUART_Receive_IT(commSettings, toReceive, sizeToReceive, sizeToReceive)) == PRO_OK) {
+		Protocol_WaitForRX();
+		if (PROTOCOL_GetErrorTrigger()) {
+			status = PRO_ERROR_TIMEOUT;
+		}
+	}
+
+	return status;
 
 }
 
@@ -296,7 +306,8 @@ void FSM_Setup(void *param) {
 #ifdef _DEBUG
 	debugMessage("SETUP State\r\n");
 #endif
-	error.commandIndex = *((int *) param);
+//	error.commandIndex = *((int *) param);
+	PROTOCOL_SetErrorTrigger(0);
 	startByteRx = 0;
 	cmdTypeRx = 0;
 	memset(payloadRx, 0, PAC_MAX_PAYLOAD);
@@ -337,9 +348,17 @@ void FSM_Transmit(void *param) {
 //	for (int i = 0; i<uuidSize; i++) {
 //		sprintf(&sendString[i * 2], "%02X", neighborTable->uuid[i]);  // 2 hex digits per byte
 //	}
+	PROTOCOL_STATUS status;
+	FSM_ErrorReport_t error;
 	uint8_t *toSend = (uint8_t *) param;
-	Protocol_Send(PRO_MSG_TYPE_ACK, toSend, PAC_MAX_PAYLOAD, NULL);
-	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_TRANSMIT_COMPLETE, NULL, 0);
+
+	if ((status = Protocol_Send(PRO_MSG_TYPE_ACK, toSend, PAC_MAX_PAYLOAD, NULL)) == PRO_OK) {
+		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_TRANSMIT_COMPLETE, NULL, 0);
+	} else {
+		error.status = status;
+		error.param = param;
+		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_ERROR, (void *) &error, sizeof(FSM_ErrorReport_t));
+	}
 #endif
 
 }
@@ -349,8 +368,16 @@ void FSM_Receive(void *param) {
 #ifdef _DEBUG
 	debugMessage("RECEIVE State\r\n");
 #endif
-	Protocol_Receive(Protocol_Process_Messsage);
-	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_RECEIVE_COMPLETE, NULL, 0);
+	PROTOCOL_STATUS status;
+	FSM_ErrorReport_t error;
+
+	if ((status = Protocol_Receive(Protocol_Process_Messsage)) == PRO_OK) {
+		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_RECEIVE_COMPLETE, NULL, 0);
+	} else {
+		error.status = status;
+		error.param = param;
+		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_ERROR, (void *) &error, sizeof(FSM_ErrorReport_t));
+	}
 
 }
 
@@ -393,33 +420,29 @@ void FSM_Execute(void *param) {
 
 void FSM_Error(void *param) {
 
-	FSM_ErrorReport_t *e = (FSM_ErrorReport_t *) param;
+	FSM_ErrorReport_t *error = (FSM_ErrorReport_t *) param;
 #ifdef _DEBUG
-	char errString[100];
-	sprintf(errString, "ERROR State [%d]\r\n", e->status);
+	char errString[40];
+	sprintf(errString, "ERROR State [%d](%d)\r\n", error->status, errorCounter);
 	debugMessage(errString);
 #endif
-	if (errorCounter == ERROR_TRESHOLD) {
-		// if we get here, then we have a critical error
-		// which we have to report to the user;
-		// the boards will probably have to be reset
-	} else {
-		errorCounter++;
-		switch (e->status) {
-			case PRO_ERROR:
+//	if (errorCounter++ >= ERROR_THRESHOLD
+//		|| error->status == PRO_ERROR_UN_CMD
+//		|| error->status == PRO_ERROR_PARAM) {
+//		GUI_ReportError(error);
+//	} else {
+		switch (error->status) {
 			case PRO_ERROR_START_BYTE:
 			case PRO_ERROR_END_BYTE:
 			case PRO_ERROR_CHECKSUM:
-			case PRO_ERROR_UN_CMD:
-			case PRO_ERROR_PARAM:
 			case PRO_ERROR_HAL:
 			case PRO_ERROR_TIMEOUT:
-				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_USER, &e->commandIndex, sizeof(e->commandIndex));
+				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_RESET, NULL, 0);
 				break;
 			default:
 				break;
 		}
-	}
+//	}
 
 }
 
@@ -579,6 +602,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 #else
 	if (GPIO_Pin == COMM_CS_PIN_SLAVE) {
 		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_INTERRUPT, NULL, 0);
+	}
+	if (GPIO_Pin == COMM_ERROR_PIN_SLAVE) {
+		PROTOCOL_SetErrorTrigger(1);
 	}
 #endif
 

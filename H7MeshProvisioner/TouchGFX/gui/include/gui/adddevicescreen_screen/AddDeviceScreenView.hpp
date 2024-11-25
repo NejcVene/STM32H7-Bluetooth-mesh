@@ -17,6 +17,8 @@ public:
     virtual void handleTickEvent();
     virtual void GUI_SetDevicesFound(Node_NetworkAddress_t *foundDevices);
     virtual void GUI_SwitchScreenAfterProv();
+    void GUI_ErrorOccured();
+
 protected:
 
     static const int maxButtons = 5;

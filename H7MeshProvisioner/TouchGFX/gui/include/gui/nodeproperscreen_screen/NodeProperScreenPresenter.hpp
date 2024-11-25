@@ -59,6 +59,7 @@ public:
 
     virtual void GUI_ChangeScreenAfterUnprov();
     virtual void GUI_ConfirmDescGet();
+    virtual void GUI_NotifyError();
 
 private:
     NodeProperScreenPresenter();

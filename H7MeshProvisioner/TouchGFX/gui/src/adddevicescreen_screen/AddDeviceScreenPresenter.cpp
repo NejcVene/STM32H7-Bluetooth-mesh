@@ -34,3 +34,9 @@ void AddDeviceScreenPresenter::GUI_ChangeScreen() {
 	view.GUI_SwitchScreenAfterProv();
 
 }
+
+void AddDeviceScreenPresenter::GUI_NotifyError() {
+
+	view.GUI_ErrorOccured();
+
+}

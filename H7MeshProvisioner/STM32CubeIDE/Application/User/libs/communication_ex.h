@@ -21,7 +21,7 @@ extern "C" {
 #define PAC_MAX_PAYLOAD 		256
 #define CMD_INDEX_SIZE			10
 #define CMD_MESH_MAX_PARAMS		10
-#define ERROR_TRESHOLD			3
+#define ERROR_THRESHOLD			3
 
 typedef enum {
 	PRO_MSG_TYPE_OTHER = 0,				// for custom messages
@@ -102,7 +102,7 @@ typedef struct {
 
 typedef struct {
 	PROTOCOL_STATUS status;
-	int commandIndex;
+	void *param;
 } FSM_ErrorReport_t;
 
 typedef struct {

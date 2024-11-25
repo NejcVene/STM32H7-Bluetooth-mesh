@@ -16,7 +16,7 @@
 #define PAC_SIZE				7
 #define PAC_MAX_PAYLOAD 		256
 #define CMD_INDEX_SIZE			10
-#define ERROR_TRESHOLD			3
+#define ERROR_THRESHOLD			3
 
 typedef enum {
 	PRO_MSG_TYPE_OTHER = 0,				// for custom messages
@@ -65,6 +65,7 @@ typedef enum {
 #ifdef SLAVE
 	MAIN_FSM_EVENT_INTERRUPT,
 	MAIN_FSM_EVENT_LOOP,
+	MAIN_FSM_EVENT_RESET,
 #endif
 	MAIN_FSM_NUM_OF_EVENTS
 } MAIN_FSM_EVENT;
@@ -99,7 +100,7 @@ typedef struct {
 
 typedef struct {
 	PROTOCOL_STATUS status;
-	int commandIndex;
+	void *param;
 } FSM_ErrorReport_t;
 
 typedef struct {

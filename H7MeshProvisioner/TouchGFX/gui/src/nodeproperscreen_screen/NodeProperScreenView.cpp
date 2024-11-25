@@ -350,3 +350,9 @@ void NodeProperScreenView::GUI_ConfirmDescGet() {
 	setupDeviceButtons();
 
 }
+
+void NodeProperScreenView::GUI_ErrorOccured() {
+
+	goToErrorScreen();
+
+}

@@ -22,3 +22,9 @@ void NodeSesnsorsScreenPresenter::GUI_UpdateSensorValues() {
 	view.GUI_UpdateSensorValues();
 
 }
+
+void NodeSesnsorsScreenPresenter::GUI_NotifyError() {
+
+	view.GUI_ErrorOccured();
+
+}

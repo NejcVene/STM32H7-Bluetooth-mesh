@@ -15,6 +15,8 @@ extern "C" {
 #endif
 
 #define CMD_MESH_COMMAND_LENGHT	30
+#define CMD_MESH_TX_TIMEOUT		10	// defined in seconds
+#define CMD_MESH_RX_UACK		0
 
 typedef enum {
 	PARAM_INT = 0,
@@ -39,6 +41,7 @@ typedef enum {
 	CMD_FUN_PUB_SET_SUB_ADD,
 	CMD_FUN_GET_LIB_VER,
 	CMD_FUN_PRO_TEST,
+	CMD_ERROR,
 	CMD_MESH_NUM_OF_CMD
 } CMD_INDEX;
 
@@ -62,6 +65,7 @@ typedef struct {
 
 typedef struct {
 	char command[CMD_MESH_COMMAND_LENGHT];
+	uint32_t rxTimeout; // defined in seconds
 	PROTOCOL_MSG_TYPE commandType;
 	PROTOCOL_DATATYPE dataType;
 	void (*CMD_Setup)(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);

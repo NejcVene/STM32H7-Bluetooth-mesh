@@ -137,3 +137,9 @@ void NodeSesnsorsScreenView::GUI_UpdateSensorValues() {
 	SN_FreeMeasuredSensorData(this->mea);
 
 }
+
+void NodeSesnsorsScreenView::GUI_ErrorOccured() {
+
+	goToErrorScreen();
+
+}

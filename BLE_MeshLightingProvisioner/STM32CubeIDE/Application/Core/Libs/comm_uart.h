@@ -45,6 +45,8 @@ PROTOCOL_STATUS Comm_LPUART_Receive_IT(Comm_Settings_t *setting, uint8_t *buffer
 void Comm_Free(Comm_Settings_t *setting);
 void Protocol_WaitForTX(void);
 void Protocol_WaitForRX(void);
+int PROTOCOL_GetErrorTrigger(void);
+void PROTOCOL_SetErrorTrigger(int val);
 #ifdef _MASTER
 void Protocol_WaitForHS(void);
 void TIM_Start(Comm_Settings_t *setting);

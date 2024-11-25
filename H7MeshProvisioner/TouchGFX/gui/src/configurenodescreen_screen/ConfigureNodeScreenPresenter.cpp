@@ -34,3 +34,9 @@ void ConfigureNodeScreenPresenter::GUI_ConfShowPopup() {
 	view.GUI_ShowPopup();
 
 }
+
+void ConfigureNodeScreenPresenter::GUI_NotifyError() {
+
+	view.GUI_ErrorOccured();
+
+}

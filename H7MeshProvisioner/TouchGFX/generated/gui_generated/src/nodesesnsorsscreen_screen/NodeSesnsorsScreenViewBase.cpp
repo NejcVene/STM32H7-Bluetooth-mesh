@@ -50,3 +50,11 @@ void NodeSesnsorsScreenViewBase::setupScreen()
     bottomMenu1.initialize();
     loader1.initialize();
 }
+
+void NodeSesnsorsScreenViewBase::goToErrorScreen()
+{
+    //GUI_SwitchToErrorScreen
+    //When goToErrorScreen is called change screen to ErrorScreen
+    //Go to ErrorScreen with screen transition towards East
+    application().gotoErrorScreenScreenSlideTransitionEast();
+}

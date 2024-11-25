@@ -173,3 +173,9 @@ void ConfigureNodeScreenView::GUI_SetDeviceToConfigure(Node_Config_t *configureD
 	;
 
 }
+
+void ConfigureNodeScreenView::GUI_ErrorOccured() {
+
+	goToErrorScreen();
+
+}

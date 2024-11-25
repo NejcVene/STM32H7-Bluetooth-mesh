@@ -63,6 +63,10 @@ void Model::tick() {
 				case CMD_MESH_ATCL_SENSOR_DESC_GET:
 					modelListener->GUI_ConfirmDescGet();
 					break;
+				case CMD_ERROR:
+					strcpy(errorString, cmdResult->param[0].value.str);
+					modelListener->GUI_NotifyError();
+					break;
 				default:
 					break;
 			}

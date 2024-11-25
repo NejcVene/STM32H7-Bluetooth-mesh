@@ -44,6 +44,7 @@ public:
 
     virtual void GUI_SendCommand(CMD_CommandGet_t *cmd);
     virtual void GUI_ConfShowPopup();
+    virtual void GUI_NotifyError();
 
 private:
     ConfigureNodeScreenPresenter();

@@ -28,3 +28,9 @@ void NodeProperScreenPresenter::GUI_ConfirmDescGet() {
 	view.GUI_ConfirmDescGet();
 
 }
+
+void NodeProperScreenPresenter::GUI_NotifyError() {
+
+	view.GUI_ErrorOccured();
+
+}

@@ -121,6 +121,7 @@ int NC_ProvisionNode(uint32_t nodeAddress, uint32_t assignedNodeAddress);
 uint32_t NC_GetValueFromBitmask(NC_MaskedFeatures *maskedFeatures, uint16_t bitmask);
 void NC_ChangeNodeName(Node_Config_t *node, const char *newNodeName);
 void NC_ClearNodeNetworkAddressArray(void);
+void NC_ResetDevice(void);
 //void NC_SaveNodeToNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 //void NC_ReadNodeFromNOR(NOR_HandleTypeDef *hnor, Node_Config_t *nodeConfig, uint32_t address);
 

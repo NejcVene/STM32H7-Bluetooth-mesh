@@ -74,6 +74,9 @@
     <ClCompile Include="..\..\gui\src\renamescreen_screen\RenameScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\renamescreen_screen\RenameScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\renamescreen_screen\RenameScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\errorscreen_screen\ErrorScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\errorscreen_screen\ErrorScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\errorscreen_screen\ErrorScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -279,6 +282,9 @@
     <ClInclude Include="..\..\gui\include\gui\renamescreen_screen\RenameScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\renamescreen_screen\RenameScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\renamescreen_screen\RenameScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\errorscreen_screen\ErrorScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\errorscreen_screen\ErrorScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\errorscreen_screen\ErrorScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

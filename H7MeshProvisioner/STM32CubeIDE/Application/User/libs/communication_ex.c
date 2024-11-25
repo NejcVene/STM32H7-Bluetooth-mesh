@@ -48,8 +48,8 @@ static int Protocol_CheckChecksum(PROTOCOL_MSG_TYPE type, uint8_t *payload, uint
 static uint16_t Protocol_CalcChecksum(PROTOCOL_MSG_TYPE type, uint8_t *payload, uint16_t payload_length);
 static inline void Protocol_ConvertMessage(uint8_t *payload, uint16_t payload_length);
 #ifdef _MASTER
-static PROTOCOL_STATUS _SendData(uint8_t *toSend, uint16_t sizeToSend, void (*callback)(void));
-static PROTOCOL_STATUS _ReceiveData(uint8_t *toReceive, uint16_t sizeToReceive, void (*callback)(void));
+static PROTOCOL_STATUS _SendData(uint8_t *toSend, uint16_t sizeToSend, uint32_t timeout, void (*callback)(void));
+static PROTOCOL_STATUS _ReceiveData(uint8_t *toReceive, uint16_t sizeToReceive, uint32_t timeout, void (*callback)(void));
 #endif
 
 // state machine functions
@@ -64,6 +64,7 @@ void FSM_Error(void *param);
 
 // execution functions
 void GUI_QueueMessage(osMessageQueueId_t FSM_ResultQueueHandle, CMD_CommandGet_t *exeResult);
+void GUI_ReportError(FSM_ErrorReport_t *reportedError);
 
 // UART variables
 extern Comm_Settings_t *commSettings;
@@ -86,7 +87,7 @@ static int errorCounter;
 
 // state machine variables
 extern Queue *eventQueue;
-static FSM_ErrorReport_t error;
+//static FSM_ErrorReport_t error;
 #ifdef _MASTER
 //FSM_CommandExecutionResult_t cmdResult;
 extern osMessageQueueId_t FSM_ResultQueueHandle;
@@ -151,37 +152,37 @@ static int Protocol_CheckChecksum(PROTOCOL_MSG_TYPE type, uint8_t *payload, uint
 
 }
 
-static PROTOCOL_STATUS _SendData(uint8_t *toSend, uint16_t sizeToSend, void (*callback)(void)) {
+static PROTOCOL_STATUS _SendData(uint8_t *toSend, uint16_t sizeToSend, uint32_t timeout, void (*callback)(void)) {
 
+	PROTOCOL_STATUS status;
 	LPUART_CallbackTx = callback;
+
 	vTaskSuspendAll();
-	if ((error.status = Comm_LPUART_Send_IT(commSettings, toSend, sizeToSend, sizeToSend)) != PRO_OK) {
-		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_ERROR, &error, sizeof(FSM_ErrorReport_t));
-		return error.status;
+	if ((status = Comm_LPUART_Send_IT(commSettings, toSend, sizeToSend, sizeToSend, timeout)) == PRO_OK) {
+		Protocol_WaitForTX();
 	}
-	Protocol_WaitForTX();
 	xTaskResumeAll();
 
-	return PRO_OK;
+	return status;
 
 }
 
-static PROTOCOL_STATUS _ReceiveData(uint8_t *toReceive, uint16_t sizeToReceive, void (*callback)(void)) {
+static PROTOCOL_STATUS _ReceiveData(uint8_t *toReceive, uint16_t sizeToReceive, uint32_t timeout, void (*callback)(void)) {
 
+	PROTOCOL_STATUS status;
 	LPUART_CallbackRx = callback;
+
 	vTaskSuspendAll();
-	if ((error.status = Comm_LPUART_Receive_IT(commSettings, toReceive, sizeToReceive, sizeToReceive)) != PRO_OK) {
-		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_ERROR, &error, sizeof(FSM_ErrorReport_t));
-		return error.status;
+	if ((status = Comm_LPUART_Receive_IT(commSettings, toReceive, sizeToReceive, sizeToReceive, timeout)) == PRO_OK) {
+		Protocol_WaitForRX();
 	}
-	Protocol_WaitForRX();
 	xTaskResumeAll();
 
-	return PRO_OK;
+	return status;
 
 }
 
-PROTOCOL_STATUS Protocol_Send(PROTOCOL_MSG_TYPE type, uint8_t *payload, uint16_t payload_length, void (*callback)(void)) {
+PROTOCOL_STATUS Protocol_Send(PROTOCOL_MSG_TYPE type, uint8_t *payload, uint16_t payload_length, uint32_t timeout, void (*callback)(void)) {
 
 	PROTOCOL_STATUS status;
 	uint16_t packetLength = payload_length + PAC_SIZE;
@@ -193,27 +194,27 @@ PROTOCOL_STATUS Protocol_Send(PROTOCOL_MSG_TYPE type, uint8_t *payload, uint16_t
 	HAL_Delay(100);
 	CS_HIGH
 #endif
-	if ((status = _SendData(&PAC_START_BYTE, 1, callback)) != PRO_OK) return status;
-	if ((status = _SendData((uint8_t *) &type, 1, callback)) != PRO_OK) return status;
-	if ((status = _SendData((uint8_t *) &packetLength, 2, callback)) != PRO_OK) return status;
-	if ((status = _SendData(payload, payload_length, callback)) != PRO_OK) return status;
-	if ((status = _SendData((uint8_t *) &checksum, 2, callback)) != PRO_OK) return status;
-	if ((status = _SendData(&PAC_END_BYTE, 1, callback)) != PRO_OK) return status;
+	if ((status = _SendData(&PAC_START_BYTE, 1, timeout, callback)) != PRO_OK) return status;
+	if ((status = _SendData((uint8_t *) &type, 1, timeout, callback)) != PRO_OK) return status;
+	if ((status = _SendData((uint8_t *) &packetLength, 2, timeout, callback)) != PRO_OK) return status;
+	if ((status = _SendData(payload, payload_length, timeout, callback)) != PRO_OK) return status;
+	if ((status = _SendData((uint8_t *) &checksum, 2, timeout, callback)) != PRO_OK) return status;
+	if ((status = _SendData(&PAC_END_BYTE, 1, timeout, callback)) != PRO_OK) return status;
 
 	return PRO_OK;
 
 }
 
-PROTOCOL_STATUS Protocol_Receive(void (*callback)(void)) {
+PROTOCOL_STATUS Protocol_Receive(uint32_t timeout, void (*callback)(void)) {
 
 	PROTOCOL_STATUS status;
 
-	if ((status = _ReceiveData(&startByteRx, 1, callback)) != PRO_OK) return status;
-	if ((status = _ReceiveData(&cmdTypeRx, 1, callback)) != PRO_OK) return status;
-	if ((status = _ReceiveData((uint8_t *) &lengthRx, 2, callback)) != PRO_OK) return status;
-	if ((status = _ReceiveData(payloadRx, payloadLengthRx, callback)) != PRO_OK) return status;
-	if ((status = _ReceiveData((uint8_t *) &checksumRx, 2, callback)) != PRO_OK) return status;
-	if ((status = _ReceiveData(&endByteRx, 1, callback)) != PRO_OK) return status;
+	if ((status = _ReceiveData(&startByteRx, 1, timeout, callback)) != PRO_OK) return status;
+	if ((status = _ReceiveData(&cmdTypeRx, 1, timeout, callback)) != PRO_OK) return status;
+	if ((status = _ReceiveData((uint8_t *) &lengthRx, 2, timeout, callback)) != PRO_OK) return status;
+	if ((status = _ReceiveData(payloadRx, payloadLengthRx, timeout, callback)) != PRO_OK) return status;
+	if ((status = _ReceiveData((uint8_t *) &checksumRx, 2, timeout, callback)) != PRO_OK) return status;
+	if ((status = _ReceiveData(&endByteRx, 1, timeout, callback)) != PRO_OK) return status;
 
 	if (callback) callback();
 
@@ -326,8 +327,11 @@ void FSM_Transmit(void *param) {
 #endif
 #ifdef _MASTER
 	char cmdToSend[CMD_MESH_COMMAND_LENGHT] = {0};
+	PROTOCOL_STATUS status;
+	FSM_ErrorReport_t error;
 	CMD_MeshCommand_t *meshCommand;
 	CMD_CommandGet_t *guiCmd = *((CMD_CommandGet_t **) param);
+
 	if ((meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex))) {
 		if (meshCommand->CMD_Setup) {
 			meshCommand->CMD_Setup(cmdToSend, meshCommand->command, guiCmd);
@@ -335,7 +339,7 @@ void FSM_Transmit(void *param) {
 			memcpy(cmdToSend, meshCommand->command, strlen(meshCommand->command));
 		}
 		HAL_Delay(1000);
-		if (Protocol_Send(meshCommand->commandType, (uint8_t *) cmdToSend, strlen(cmdToSend), NULL) == PRO_OK) {
+		if ((status = Protocol_Send(meshCommand->commandType, (uint8_t *) cmdToSend, strlen(cmdToSend), DEFAULT_TX_TIMEOUT, NULL)) == PRO_OK) {
 			if (meshCommand->commandType != PRO_MSG_TYPE_UNACK) {
 				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, param, sizeof(param));
 				// don't yet free send command, as it (might) is needed later
@@ -343,6 +347,10 @@ void FSM_Transmit(void *param) {
 				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_UNACK, NULL, 0);
 				CMD_FreeCommandGet(guiCmd); // free send command, as we don't need it anymore
 			}
+		} else {
+			error.status = status;
+			error.param = param;
+			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_ERROR, (void *) &error, sizeof(FSM_ErrorReport_t));
 		}
 	}
 #else
@@ -357,8 +365,20 @@ void FSM_Receive(void *param) {
 #ifdef _DEBUG
 	debugMessage("RECEIVE State\r\n");
 #endif
-	Protocol_Receive(Protocol_Process_Messsage);
-	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_RECEIVE_COMPLETE, param, sizeof(param));
+	PROTOCOL_STATUS status;
+	FSM_ErrorReport_t error;
+	CMD_MeshCommand_t *meshCommand;
+	CMD_CommandGet_t *guiCmd = *((CMD_CommandGet_t **) param);
+
+	if ((meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex))) {
+		if ((status = Protocol_Receive(meshCommand->rxTimeout, Protocol_Process_Messsage)) == PRO_OK) {
+			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_RECEIVE_COMPLETE, param, sizeof(param));
+		} else {
+			error.status = status;
+			error.param = param;
+			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_ERROR, (void *) &error, sizeof(FSM_ErrorReport_t));
+		}
+	}
 
 }
 
@@ -375,15 +395,12 @@ void FSM_Execute(void *param) {
 	CMD_MeshCommand_t *meshCommand = (CMD_MeshCommand_t *) HT_Search(cmdHashTable, guiCmd->commandIndex);
 	CMD_CommandGet_t *exeResult;
 	FSM_DecodedPayload_t *payload;
-//	char responseCommand[CMD_MESH_COMMAND_LENGHT] = {0};
-//	char responseParameters[PAC_MAX_PAYLOAD] = {0}; // = "0-F81D4FAE7DEC4B53A154819B27E180C0";
 	char cutOriginal[CMD_MESH_COMMAND_LENGHT] = {0};
 
 	payload = FSM_DecodePayload(CommandString, meshCommand->dataType);
 	sscanf(meshCommand->command, "%[^%]", cutOriginal);
 	Protocol_ConvertMessage((uint8_t *) cutOriginal, strlen(cutOriginal));
 
-//	sscanf((char *) CommandString, "%[^:]: %s", responseCommand, responseParameters);
 	len = strlen(cutOriginal);
 	while (len > 0 && (cutOriginal[len - 1] == ' ' || cutOriginal[len - 1] == '-')) {
 		cutOriginal[--len] = '\0';
@@ -416,35 +433,67 @@ void FSM_Execute(void *param) {
 
 }
 
+/*
+ * What to do when different errors are encountered:
+ * 	- PRO_ERROR_HAL, PRO_ERROR_TIMEOUT, PRO_ERROR_CHECKSUM
+ * 	  PRO_ERROR_START_BYTE, PRO_ERROR_END_BYTE:
+ * 	  	These errors should be mitigated by sending the command
+ * 	  	again and executing it from the beginning.
+ * 	  	If any of the above errors occur more than the defined
+ * 	  	error threshold reset both systems.
+ * 	- PRO_ERROR_PARAM, PRO_ERROR_UN_CMD:
+ * 		These two are critical errors; basically they should never
+ * 		happen, as commands and their parameters are defined in advance.
+ * 		If they do occur though, reset both systems.
+ */
 void FSM_Error(void *param) {
 
-	FSM_ErrorReport_t *e = (FSM_ErrorReport_t *) param;
+	FSM_ErrorReport_t *error = (FSM_ErrorReport_t *) param;
 #ifdef _DEBUG
-	char errString[100];
-	sprintf(errString, "ERROR State [%d]\r\n", e->status);
+	char errString[40];
+	sprintf(errString, "ERROR State [%d](%d)\r\n", error->status, errorCounter);
 	debugMessage(errString);
 #endif
-	if (errorCounter == ERROR_TRESHOLD) {
-		// if we get here, then we have a critical error
-		// which we have to report to the user;
-		// the boards will probably have to be reset
+	if (errorCounter++ >= ERROR_THRESHOLD
+		|| error->status == PRO_ERROR_UN_CMD
+		|| error->status == PRO_ERROR_PARAM) {
+		GUI_ReportError(error);
 	} else {
-		errorCounter++;
-		switch (e->status) {
-			case PRO_ERROR:
+		switch (error->status) {
 			case PRO_ERROR_START_BYTE:
 			case PRO_ERROR_END_BYTE:
 			case PRO_ERROR_CHECKSUM:
-			case PRO_ERROR_UN_CMD:
-			case PRO_ERROR_PARAM:
 			case PRO_ERROR_HAL:
 			case PRO_ERROR_TIMEOUT:
-				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_USER, &e->commandIndex, sizeof(e->commandIndex));
+				HAL_GPIO_WritePin(COMM_ERROR_PORT_MASTER, COMM_ERROR_PIN_MASTER, GPIO_PIN_RESET);
+				HAL_Delay(500);
+				HAL_GPIO_WritePin(COMM_ERROR_PORT_MASTER, COMM_ERROR_PIN_MASTER, GPIO_PIN_SET);
+				FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_USER, error->param, sizeof(error->param));
 				break;
 			default:
 				break;
 		}
 	}
+
+}
+
+void GUI_ReportError(FSM_ErrorReport_t *reportedError) {
+
+	CMD_CommandGet_t *cmdError;
+	PARAMETER_TYPE type = PARAM_CHAR;
+	void *paramValues[1];
+	char errorDesc[40];
+
+	sprintf(errorDesc, "CRITICAL ERROR: %d - RESET DEVICE", reportedError->status);
+	paramValues[0] = (void *) errorDesc;
+	cmdError = CMD_CreateCommandGet(CMD_ERROR,
+									&type,
+									paramValues,
+									1,
+									NULL,
+									NULL);
+	GUI_QueueMessage(FSM_ResultQueueHandle, cmdError);
+//	CMD_FreeCommandGet((CMD_CommandGet_t *) reportedError->param);
 
 }
 

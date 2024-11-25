@@ -328,6 +328,18 @@
     <Filter Include="Source Files\generated\gui_generated\renamescreen_screen">
       <UniqueIdentifier>AF056F7D-770F-5C8B-AEA8-F7A14764230D</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\errorscreen_screen">
+      <UniqueIdentifier>112491CB-6E03-C69F-CB39-119EA7C800DD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\errorscreen_screen">
+      <UniqueIdentifier>957FA847-685A-18EE-C646-DA74DCD36166</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\errorscreen_screen">
+      <UniqueIdentifier>6DD7F79C-0BE4-51DC-0B6C-B494B951427C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\errorscreen_screen">
+      <UniqueIdentifier>DA0C33FD-3468-FA65-E5E9-00B3ED490ED8</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -518,6 +530,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\renamescreen_screen\RenameScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\renamescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\errorscreen_screen\ErrorScreenPresenter.cpp">
+      <Filter>Source Files\gui\errorscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\errorscreen_screen\ErrorScreenView.cpp">
+      <Filter>Source Files\gui\errorscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\errorscreen_screen\ErrorScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\errorscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1125,6 +1146,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\renamescreen_screen\RenameScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\renamescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\errorscreen_screen\ErrorScreenPresenter.hpp">
+      <Filter>Header Files\gui\errorscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\errorscreen_screen\ErrorScreenView.hpp">
+      <Filter>Header Files\gui\errorscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\errorscreen_screen\ErrorScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\errorscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -16,16 +16,17 @@
 volatile int timerTrigger;
 Comm_IT_Responses_t itResponses;
 volatile int hsTrigger;
+static volatile int errorTrigger;
 
 void Protocol_WaitForTX(void) {
 
-	while (!itResponses.lpUartTxFlag);
+	while (!itResponses.lpUartTxFlag && !errorTrigger);
 
 }
 
 void Protocol_WaitForRX(void) {
 
-	while (!itResponses.lpUartRxFlag);
+	while (!itResponses.lpUartRxFlag && !errorTrigger);
 
 }
 
@@ -126,6 +127,17 @@ PROTOCOL_STATUS Comm_LPUART_Receive_IT(Comm_Settings_t *setting, uint8_t *buffer
 void Comm_Free(Comm_Settings_t *setting) {
 
 	free(setting);
+
+}
+
+int PROTOCOL_GetErrorTrigger() {
+
+	return errorTrigger;
+
+}
+void PROTOCOL_SetErrorTrigger(int val) {
+
+	errorTrigger = val;
 
 }
 

@@ -82,3 +82,11 @@ void NodeProperScreenViewBase::goToRenameScreen()
     //Go to RenameScreen with screen transition towards East
     application().gotoRenameScreenScreenSlideTransitionEast();
 }
+
+void NodeProperScreenViewBase::goToErrorScreen()
+{
+    //GUI_SwitchToErrorScreen
+    //When goToErrorScreen is called change screen to ErrorScreen
+    //Go to ErrorScreen with screen transition towards East
+    application().gotoErrorScreenScreenSlideTransitionEast();
+}

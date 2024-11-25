@@ -21,6 +21,8 @@ public:
     virtual void GUI_CancelBtnClicked();
     virtual void GUI_ShowPopup();
 
+    void GUI_ErrorOccured();
+
     void setTextNodeUUID(const char *text) {
     	touchgfx::Unicode::strncpy(nodeUUIDBuffer, text, NODEUUID_SIZE);
     	nodeUUID.resizeToCurrentText();

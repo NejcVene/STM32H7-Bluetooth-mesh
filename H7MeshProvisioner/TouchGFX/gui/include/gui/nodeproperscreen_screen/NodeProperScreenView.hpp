@@ -41,6 +41,7 @@ public:
     void setupDeviceButtons();
 
     void changeScreenAfterUnprov();
+    void GUI_ErrorOccured();
 
 //    void GUI_SetTextNodeName(const char *text) {
 //
