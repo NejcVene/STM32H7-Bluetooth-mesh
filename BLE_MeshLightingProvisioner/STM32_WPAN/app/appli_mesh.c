@@ -130,6 +130,7 @@ MOBLEUINT8 ProvisionFlag = 0;
 MOBLEUINT8 UnprovisionInProgress = 0;
 
 int powerup = 0;
+extern Queue *eventQueue;
 
 #ifdef ENABLE_AUTH_TYPE_OUTPUT_OOB
 static MOBLEUINT8 PrvngInProcess = 0;
@@ -1400,6 +1401,10 @@ void Appli_SelfConfigurationProcess(void)
           self_config_state = SELF_CONFIG_IDLE_STATE;
           TRACE_I(TF_PROVISION,"Set Default Publication\r\n");   
           TRACE_I(TF_PROVISION,"**Provisioner Node configured**\r\n");
+          uint8_t resultBuffer[PAC_MAX_PAYLOAD];
+          uint16_t ok = 0;
+          FSM_EncodePayload(resultBuffer, "ATEP ROOT", (void *) &ok, sizeof(uint16_t), PRO_DATATYPE_U16T);
+          FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, PAC_MAX_PAYLOAD);
         }
       }
       break;

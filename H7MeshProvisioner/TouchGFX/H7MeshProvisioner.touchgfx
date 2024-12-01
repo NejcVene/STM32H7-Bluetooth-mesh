@@ -321,6 +321,7 @@
       },
       {
         "Name": "HomeScreen",
+        "CanvasBufferSize": 7200,
         "Components": [
           {
             "Type": "TiledImage",
@@ -395,6 +396,28 @@
             "Width": 480,
             "Height": 20,
             "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "loaderModal",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7ModalBackgroundSmall.png",
+            "ModalX": 133,
+            "ModalY": 61,
+            "ModalWidth": 214,
+            "ModalHeight": 150,
+            "Alpha": 100,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "loader1",
+                "X": 7,
+                "Width": 200,
+                "Height": 150,
+                "CustomContainerDefinitionName": "Loader"
+              }
+            ]
           }
         ],
         "Interactions": []

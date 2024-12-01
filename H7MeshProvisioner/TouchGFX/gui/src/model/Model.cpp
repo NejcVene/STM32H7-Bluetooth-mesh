@@ -67,6 +67,10 @@ void Model::tick() {
 					strcpy(errorString, cmdResult->param[0].value.str);
 					modelListener->GUI_NotifyError();
 					break;
+				case CMD_MESH_ATEP_ROOT:
+				case CMD_FUN_IS_EM_PROV_PROV:
+					modelListener->GUI_NodeIsConfigured();
+					break;
 				default:
 					break;
 			}

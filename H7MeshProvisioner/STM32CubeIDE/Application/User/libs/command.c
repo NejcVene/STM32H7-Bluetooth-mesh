@@ -24,14 +24,17 @@ CMD_CommandGet_t *CMD_NotifyLibVersion(void *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_NotifySensorUpdate(void *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_ProtocolStructTest(void *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_SensorDescriptorGet(void *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_IsEmbeddedProvisioned(void *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_UnprovEmProvisioner(void *buffer, CMD_CommandGet_t *guiCmd);
+CMD_CommandGet_t *CMD_NotifyAtepRoot(void *buffer, CMD_CommandGet_t *guiCmd);
 
 CMD_MeshCommand_t defineRootNetworkNode = {
 		.command = "ATEP ROOT",
-		.rxTimeout = CMD_MESH_RX_UACK,
-		.commandType = PRO_MSG_TYPE_UNACK,
+		.rxTimeout = 60,
+		.commandType = PRO_MSG_TYPE_ACK,
 		.dataType = PRO_DATATYPE_STRING,
 		.CMD_Setup = NULL,
-		.CMD_Execute = NULL
+		.CMD_Execute = CMD_NotifyAtepRoot
 };
 
 CMD_MeshCommand_t scanForUnprovisionedNetworkDevices = {
@@ -103,19 +106,18 @@ CMD_MeshCommand_t unprovisionEmbeddedProv = {
 		.command = "BLEMesh_Unprovision",
 		.rxTimeout = 60,
 		.commandType = PRO_MSG_TYPE_OTHER,
-		.dataType = PRO_DATATYPE_STRING,
+		.dataType = PRO_DATATYPE_U16T,
 		.CMD_Setup = NULL,
-		.CMD_Execute = NULL
+		.CMD_Execute = CMD_UnprovEmProvisioner
 };
 
-// not used
 CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 		.command = "BLEMesh_IsUnprovisioned",
 		.rxTimeout = 60,
 		.commandType = PRO_MSG_TYPE_OTHER,
-		.dataType = PRO_DATATYPE_STRING,
+		.dataType = PRO_DATATYPE_U16T,
 		.CMD_Setup = NULL,
-		.CMD_Execute = NULL
+		.CMD_Execute = CMD_IsEmbeddedProvisioned
 };
 
 CMD_MeshCommand_t pubSetSubAdd = {
@@ -566,6 +568,85 @@ CMD_CommandGet_t *CMD_ProtocolStructTest(void *buffer, CMD_CommandGet_t *guiCmd)
 								1,
 								NULL,
 								NULL);
+
+	return cmdRes;
+
+}
+
+/** \brief Check if node configures as Unprovisioned node.
+* \return MOBLE_TRUE if node configured as Unprovisioned node. MOBLE_FALSE otherwise.
+*/
+CMD_CommandGet_t *CMD_IsEmbeddedProvisioned(void *buffer, CMD_CommandGet_t *guiCmd) {
+
+	CMD_CommandGet_t *cmdRes = NULL;
+	PARAMETER_TYPE type = PARAM_INT;
+	void *paramValue[1];
+	int inputBuffer = (int) *((uint16_t *) buffer);
+
+	if (inputBuffer) {
+		// em. prov. is unprovisioned
+		guiCmd->commandIndex = CMD_MESH_ATEP_ROOT;
+	} else {
+		// em. prov. is provisioned
+		NC_SetDeviceConfiguredFlag(1);
+		paramValue[0] = (void *) &inputBuffer;
+		cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
+									&type,
+									paramValue,
+									1,
+									NULL,
+									NULL);
+	}
+
+
+	return cmdRes;
+
+
+}
+
+CMD_CommandGet_t *CMD_NotifyAtepRoot(void *buffer, CMD_CommandGet_t *guiCmd) {
+
+	CMD_CommandGet_t *cmdRes = NULL;
+	PARAMETER_TYPE type = PARAM_INT;
+	void *paramValue[1];
+	uint16_t inputBuffer = *((uint16_t *) buffer);
+
+	if (inputBuffer) {
+
+	} else if (!inputBuffer) {
+		NC_SetDeviceConfiguredFlag(1);
+		paramValue[0] = (void *) &inputBuffer;
+		cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
+									&type,
+									paramValue,
+									1,
+									NULL,
+									NULL);
+	}
+
+	return cmdRes;
+
+}
+
+/** \brief Unprovisions the node if it is provisioned.
+* \return MOBLE_RESULT_SUCCESS on success, MOBLE_RESULT_FALSE if node us already
+*                               unprovisioned, and failure code in other cases.
+*/
+CMD_CommandGet_t *CMD_UnprovEmProvisioner(void *buffer, CMD_CommandGet_t *guiCmd) {
+
+	CMD_CommandGet_t *cmdRes = NULL;
+	PARAMETER_TYPE type = PARAM_INT;
+	void *paramValue[1];
+	int inputBuffer = (int) *((uint16_t *) buffer);
+
+	paramValue[0] = (void *) &inputBuffer;
+	cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
+								&type,
+								paramValue,
+								1,
+								NULL,
+								NULL);
+
 
 	return cmdRes;
 

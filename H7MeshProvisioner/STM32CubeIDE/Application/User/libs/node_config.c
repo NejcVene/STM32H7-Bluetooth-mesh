@@ -70,6 +70,7 @@ Node_NetworkAddress_t nodeAddresses[5];
 Node_Config_t nodeConfigs[5];
 HT_HashTable_t *modelsData;
 static uint32_t numOfConfiguredNodes;
+static int deviceConfiguredFlag;
 char nodeModelsStr[10];
 char nodeFeaturesStr[5];
 
@@ -456,6 +457,18 @@ void NC_ResetDevice(void) {
 	HAL_GPIO_WritePin(COMM_NRST_PORT_MASTER, COMM_NRST_PIN_MASTER, GPIO_PIN_SET);
 	HAL_Delay(100);
 	NVIC_SystemReset();
+
+}
+
+int NC_IsDeviceConfigured(void) {
+
+	return deviceConfiguredFlag;
+
+}
+
+void NC_SetDeviceConfiguredFlag(int val) {
+
+	deviceConfiguredFlag = val;
 
 }
 

@@ -16,6 +16,12 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_TBYN" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_T9AC" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_X80R" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">None</Translation>
       </Text>

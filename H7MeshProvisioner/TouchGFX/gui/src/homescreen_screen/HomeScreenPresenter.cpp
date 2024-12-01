@@ -16,3 +16,9 @@ void HomeScreenPresenter::deactivate()
 {
 
 }
+
+void HomeScreenPresenter::GUI_NodeIsConfigured() {
+
+	view.GUI_NodeIsConfigured();
+
+}

@@ -51,6 +51,14 @@ public:
 
     }
 
+    void GUI_SendCommand(CMD_CommandGet_t *cmd) {
+
+    	model->GUI_SendCommand(cmd);
+
+    }
+
+    virtual void GUI_NodeIsConfigured();
+
 private:
     HomeScreenPresenter();
 

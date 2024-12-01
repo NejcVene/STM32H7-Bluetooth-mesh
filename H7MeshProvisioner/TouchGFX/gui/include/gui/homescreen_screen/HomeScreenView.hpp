@@ -14,11 +14,15 @@ public:
 
     virtual void handleTickEvent();
     void GUI_UpdateDigitalClock();
+    void GUI_CheckConfig();
+    void GUI_NodeIsConfigured();
+
 protected:
     int tickCounter;
     int digitalHours;
     int digitalMinutes;
     int digitalSeconds;
+    CMD_CommandGet_t *cmd;
 };
 
 #endif // HOMESCREENVIEW_HPP

@@ -25,8 +25,8 @@ typedef struct __attribute__((packed)) {
 	int val4;
 } SF_TestProtocol_t;
 
-void SF_UnprovisionEmbedded(char *resultBuffer);
-void SF_IsEmbeddedProvisioned(char *resultBuffer);
+void SF_UnprovisionEmbedded(uint8_t *receiveBuffer, uint8_t *resultBuffer);
+void SF_IsEmbeddedProvisioned(uint8_t *receiveBuffer, uint8_t *resultBuffer);
 void SF_PublishSubscribe(uint8_t *receiveBuffer, uint8_t *resultBuffer);
 void SF_SubscriptionRemove(uint8_t *receiveBuffer, uint8_t *resultBuffer);
 void SF_GetLibVersion(uint8_t *receiveBuffer, uint8_t *resultBuffer);
@@ -86,10 +86,11 @@ void SF_Process(uint8_t *receiveBuffer, uint16_t receiveSize) {
 
 	int flag;
 	uint8_t resultBuffer[PAC_MAX_PAYLOAD] = {0};
-	if (!strncmp((char *) receiveBuffer + FUN_INDENTIFIER_LEN + 1, "Unprovision", strlen("Unprovision"))) {
-		// SF_UnprovisionEmbedded(resultBuffer);
-	} else if (!strncmp((char *) receiveBuffer + FUN_INDENTIFIER_LEN + 1, "IsUnprovisioned", strlen("IsUnprovisioned"))) {
-		// SF_IsEmbeddedProvisioned(resultBuffer);
+
+	if (!strncmp((char *) receiveBuffer + FUN_INDENTIFIER_LEN + 1, "UNPROVISION", strlen("UNPROVISION"))) {
+		SF_UnprovisionEmbedded(receiveBuffer, resultBuffer);
+	} else if (!strncmp((char *) receiveBuffer + FUN_INDENTIFIER_LEN + 1, "ISUNPROVISIONED", strlen("ISUNPROVISIONED"))) {
+		SF_IsEmbeddedProvisioned(receiveBuffer, resultBuffer);
 	} else if (!strncmp((char *) receiveBuffer + FUN_INDENTIFIER_LEN + 1, "PUBSUB", strlen("PUBSUB"))) {
 		sscanf((char *) receiveBuffer, "%*s %d", &flag);
 		if (flag) {
@@ -108,21 +109,23 @@ void SF_Process(uint8_t *receiveBuffer, uint16_t receiveSize) {
 
 }
 
-void SF_UnprovisionEmbedded(char *resultBuffer) {
+void SF_UnprovisionEmbedded(uint8_t *receiveBuffer, uint8_t *resultBuffer) {
 
-	char tmp[2] = {'0', '\0'};
-	strcat(resultBuffer, "Unprovision: ");
-	tmp[0] = BLEMesh_Unprovision() + '0';
-	strcat(resultBuffer, tmp);
+	uint16_t convertedStatus = 0;
+
+	convertedStatus = (uint16_t) BLEMesh_Unprovision();
+	FSM_EncodePayload(resultBuffer, "BLEMesh_Unprovision", (void *) &convertedStatus, sizeof(uint16_t), PRO_DATATYPE_U16T);
+	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, PAC_MAX_PAYLOAD);
 
 }
 
-void SF_IsEmbeddedProvisioned(char *resultBuffer) {
+void SF_IsEmbeddedProvisioned(uint8_t *receiveBuffer, uint8_t *resultBuffer) {
 
-	char tmp[2] = {'0', '\0'};
-	strcat(resultBuffer, "IsUnprovisioned: ");
-	tmp[0] = BLEMesh_IsUnprovisioned() + '0';
-	strcat(resultBuffer, tmp);
+	uint16_t convertedStatus = 0;
+
+	convertedStatus = (uint16_t) BLEMesh_IsUnprovisioned();
+	FSM_EncodePayload(resultBuffer, "BLEMesh_IsUnprovisioned", (void *) &convertedStatus, sizeof(uint16_t), PRO_DATATYPE_U16T);
+	FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, PAC_MAX_PAYLOAD);
 
 }
 

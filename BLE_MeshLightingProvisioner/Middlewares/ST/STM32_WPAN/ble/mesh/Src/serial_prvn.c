@@ -85,6 +85,7 @@ void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, uint8_t *
   {   
 #if defined (ENABLE_PROVISIONER_FEATURE) || defined(DYNAMIC_PROVISIONER)
       /* Initializes Mesh network parameters */
+	*cmdResposneElsewhere = 1;
     Appli_StartProvisionerMode(1);
     result = MOBLE_RESULT_SUCCESS;
 #endif      

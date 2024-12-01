@@ -1049,7 +1049,7 @@ void StartDefaultTask(void *argument)
 	HT_Insert(cmdHashTable, CMD_MESH_ATCL_GENERIC_ON_OFF_ACK, &genericOnOffSetAck);
 	HT_Insert(cmdHashTable, CMD_MESH_ATCL_GENERIC_ON_OFF_GET, &genericOnOffGet);
 	HT_Insert(cmdHashTable, CMD_MESH_ATCL_UNPROV, &unprovisionNetworkDevice);
-	HT_Insert(cmdHashTable, CMD_FUN_PROV_EM_PROV, &unprovisionEmbeddedProv);
+	HT_Insert(cmdHashTable, CMD_FUN_UNPROV_EM_PROV, &unprovisionEmbeddedProv);
 	HT_Insert(cmdHashTable, CMD_FUN_IS_EM_PROV_PROV, &isEmbeddedProvProvisioned);
 	HT_Insert(cmdHashTable, CMD_FUN_PUB_SET_SUB_ADD, &pubSetSubAdd);
 	HT_Insert(cmdHashTable, CMD_FUN_GET_LIB_VER, &getLibInfo);
