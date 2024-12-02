@@ -39,6 +39,7 @@
 
 /* Private define ------------------------------------------------------------*/
 #define SERIAL_MODEL_DATA_OFFSET      15
+#define ENABLE_GENERIC_MODEL_CLIENT
 
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/

@@ -32,6 +32,7 @@
 #include "common.h"
 #include "mesh_cfg_usr.h"
 #include "appli_nvm.h"
+#include "dimmer_control.h"
 
 /** @addtogroup ST_BLE_Mesh
  *  @{
@@ -50,6 +51,7 @@ extern MOBLEUINT8 RestoreFlag;
 extern MOBLEUINT16 IntensityValue;
 extern MOBLEUINT8 IntensityFlag;
 extern MOBLEUINT8 PowerOnOff_flag;
+extern DC_Dimmer_t *dimmer;
 #ifdef ENABLE_LIGHT_MODEL_SERVER_LIGHTNESS
 extern Appli_LightPwmValue_t Appli_LightPwmValue;
 #endif
@@ -242,32 +244,57 @@ MOBLE_RESULT Appli_Generic_Level_Set(Generic_LevelStatus_t* plevelParam,
 */ 
 MOBLE_RESULT Appli_Generic_Delta_Set(Generic_LevelStatus_t* pdeltalevelParam, 
                                           MOBLEUINT8 OptionalValid,MOBLEUINT16 dstPeer, 
-                                              MOBLEUINT8 elementIndex)
-{
-  AppliLevelSet[elementIndex].Present_Level16 = pdeltalevelParam->Present_Level16;
-  
-  /* For demo, if Level is more than 50, switch ON the LED */
-  if (AppliLevelSet[elementIndex].Present_Level16 >= 50)
-  {
-#ifdef ENABLE_LIGHT_MODEL_SERVER_LIGHTNESS
-    Appli_LightPwmValue.IntensityValue = PWM_TIME_PERIOD;
-    Light_UpdateLedValue(LOAD_STATE , Appli_LightPwmValue);
-#endif
-    BSP_LED_On(LED_BLUE);
-  }
-  else
-  {
-#ifdef ENABLE_LIGHT_MODEL_SERVER_LIGHTNESS
-    Light_UpdateLedValue(RESET_STATE , Appli_LightPwmValue);
-#endif
-    BSP_LED_Off(LED_BLUE);
-  }
-  
-  TRACE_M(TF_GENERIC,"Generic_LevelDelta_Set callback received for element %d \r\n", elementIndex);
-  TRACE_M(TF_SERIAL_CTRL,"#8209!\r\n");
+                                              MOBLEUINT8 elementIndex) {
 
+	uint16_t dutyCycle = 0;
+	int16_t correctRange = 0;
+	int16_t diff = 0;
+	int16_t dynamicStep = 0;
+//	AppliLevelSet[elementIndex].Present_Level16 = pdeltalevelParam->Present_Level16;
+//	correctRange = DC_MapSliderToGenericLevelRange(pdeltalevelParam->Present_Level16);
+	AppliLevelSet[elementIndex].Target_Level16 = DC_MapSliderToGenericLevelRange(pdeltalevelParam->Present_Level16);
+	TRACE_M(TF_GENERIC,"Generic_LevelDelta_Set level value: %d \r\n", AppliLevelSet[elementIndex].Target_Level16);
+
+	while (AppliLevelSet[elementIndex].Present_Level16 != AppliLevelSet[elementIndex].Target_Level16) {
+		diff = AppliLevelSet[elementIndex].Target_Level16 - AppliLevelSet[elementIndex].Present_Level16;
+		dynamicStep = (abs(diff) < STEP_SIZE) ? abs(diff) : STEP_SIZE;
+		if (diff > 0) {
+			AppliLevelSet[elementIndex].Present_Level16 += dynamicStep;
+		} else {
+			AppliLevelSet[elementIndex].Present_Level16 -= dynamicStep;
+		}
+		if ((diff > 0 && AppliLevelSet[elementIndex].Present_Level16 > AppliLevelSet[elementIndex].Target_Level16) ||
+			(diff < 0 && AppliLevelSet[elementIndex].Present_Level16 < AppliLevelSet[elementIndex].Target_Level16)) {
+			AppliLevelSet[elementIndex].Present_Level16 = AppliLevelSet[elementIndex].Target_Level16;
+		}
+		dutyCycle = DC_CalcNewDutyCycle(dimmer, AppliLevelSet[elementIndex].Present_Level16);
+		DC_SetTimerCCR(dimmer, dutyCycle);
+		HAL_Delay(50);
+	}
+
+
+  /* For demo, if Level is more than 50, switch ON the LED */
+//  if (AppliLevelSet[elementIndex].Present_Level16 >= 50)
+//  {
+//#ifdef ENABLE_LIGHT_MODEL_SERVER_LIGHTNESS
+//    Appli_LightPwmValue.IntensityValue = PWM_TIME_PERIOD;
+//    Light_UpdateLedValue(LOAD_STATE , Appli_LightPwmValue);
+//#endif
+//    BSP_LED_On(LED_BLUE);
+//  }
+//  else
+//  {
+//#ifdef ENABLE_LIGHT_MODEL_SERVER_LIGHTNESS
+//    Light_UpdateLedValue(RESET_STATE , Appli_LightPwmValue);
+//#endif
+//    BSP_LED_Off(LED_BLUE);
+//  }
   
-  return MOBLE_RESULT_SUCCESS;
+	TRACE_M(TF_GENERIC,"Generic_LevelDelta_Set callback received for element %d \r\n", elementIndex);
+	TRACE_M(TF_SERIAL_CTRL,"#8209!\r\n");
+
+	return MOBLE_RESULT_SUCCESS;
+
 }
 
 

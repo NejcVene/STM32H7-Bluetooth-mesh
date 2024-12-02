@@ -35,6 +35,8 @@
 #include <gui/renamescreen_screen/RenameScreenPresenter.hpp>
 #include <gui/errorscreen_screen/ErrorScreenView.hpp>
 #include <gui/errorscreen_screen/ErrorScreenPresenter.hpp>
+#include <gui/nodelevelsetscreen_screen/NodeLevelSetScreenView.hpp>
+#include <gui/nodelevelsetscreen_screen/NodeLevelSetScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -232,4 +234,17 @@ void FrontendApplicationBase::gotoErrorScreenScreenSlideTransitionEast()
 void FrontendApplicationBase::gotoErrorScreenScreenSlideTransitionEastImpl()
 {
     touchgfx::makeTransition<ErrorScreenView, ErrorScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// NodeLevelSetScreen
+
+void FrontendApplicationBase::gotoNodeLevelSetScreenScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoNodeLevelSetScreenScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoNodeLevelSetScreenScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<NodeLevelSetScreenView, NodeLevelSetScreenPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

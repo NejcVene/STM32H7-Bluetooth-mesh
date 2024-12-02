@@ -420,7 +420,27 @@
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SwitchToErrorScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call HomeScreen goToErrorScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ErrorScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToErrorScreen",
+            "Description": "Called from user code to change screen"
+          }
+        ]
       },
       {
         "Name": "AddDeviceScreen",
@@ -1355,6 +1375,19 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "ErrorScreen"
             }
+          },
+          {
+            "InteractionName": "GUI_SwitchToLevelSetScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeProperScreen goToLevelSetScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "NodeLevelSetScreen"
+            }
           }
         ],
         "CustomActions": [
@@ -1376,6 +1409,10 @@
           },
           {
             "Name": "goToErrorScreen",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToLevelSetScreen",
             "Description": "Called from user code to change screen"
           }
         ]
@@ -2324,6 +2361,145 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "GUI_ResetDevice"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "NodeLevelSetScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "Slider",
+            "Name": "levelSetSlider",
+            "X": 74,
+            "Y": 120,
+            "Width": 332,
+            "Height": 32,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_medium.png",
+            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_medium.png",
+            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_dark.png",
+            "BackgroundX": 16,
+            "BackgroundY": 11,
+            "IndicatorMax": 300,
+            "ValueMax": 100,
+            "Preset": "alternate_theme\\presets\\slider\\horizontal\\thick\\medium_rounded_dark.json"
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 191,
+            "Y": 33,
+            "Width": 99,
+            "Height": 80,
+            "Color": {
+              "Red": 73,
+              "Green": 86,
+              "Blue": 101
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "valueSetText",
+            "X": 191,
+            "Y": 62,
+            "Width": 99,
+            "Height": 51,
+            "TextId": "__SingleUse_RH3W",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_CRF2",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "valueText",
+            "X": 215,
+            "Y": 42,
+            "Width": 50,
+            "Height": 20,
+            "TextId": "__SingleUse_FIW9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "levelSetBtn",
+            "X": 190,
+            "Y": 162,
+            "Width": 100,
+            "Height": 50,
+            "Pressed": "ButtonBackgroundTiny.png",
+            "Released": "ButtonBackgroundPressedTiny.png",
+            "TextId": "__SingleUse_5E0R",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_LevelSet",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "levelSetBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_LevelSet"
+            }
+          },
+          {
+            "InteractionName": "GUI_ChangeLevelValueText",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "levelSetSlider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ChangeLevelValueText"
             }
           }
         ]

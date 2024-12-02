@@ -5,13 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Application/Core/libs/apc1.c 
+../Application/Core/libs/apc1.c \
+../Application/Core/libs/dimmer_control.c 
 
 OBJS += \
-./Application/Core/libs/apc1.o 
+./Application/Core/libs/apc1.o \
+./Application/Core/libs/dimmer_control.o 
 
 C_DEPS += \
-./Application/Core/libs/apc1.d 
+./Application/Core/libs/apc1.d \
+./Application/Core/libs/dimmer_control.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +24,7 @@ Application/Core/libs/%.o Application/Core/libs/%.su Application/Core/libs/%.cyc
 clean: clean-Application-2f-Core-2f-libs
 
 clean-Application-2f-Core-2f-libs:
-	-$(RM) ./Application/Core/libs/apc1.cyclo ./Application/Core/libs/apc1.d ./Application/Core/libs/apc1.o ./Application/Core/libs/apc1.su
+	-$(RM) ./Application/Core/libs/apc1.cyclo ./Application/Core/libs/apc1.d ./Application/Core/libs/apc1.o ./Application/Core/libs/apc1.su ./Application/Core/libs/dimmer_control.cyclo ./Application/Core/libs/dimmer_control.d ./Application/Core/libs/dimmer_control.o ./Application/Core/libs/dimmer_control.su
 
 .PHONY: clean-Application-2f-Core-2f-libs
 

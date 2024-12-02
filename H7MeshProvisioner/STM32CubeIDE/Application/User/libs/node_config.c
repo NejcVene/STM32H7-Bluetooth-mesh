@@ -21,7 +21,8 @@
 											   }
 #define CLEAR_NODE_STATES() (Node_ModelState_t)				\
 							{.genericOnOffStatus = 0,		\
-							 .genericPowerOnOffStatus = 0	\
+							 .genericPowerOnOffStatus = 0,	\
+							 .levelSetValue = 0				\
 							}
 #define CLEAR_NODE_SENSORS() (Node_Sensor_t)			\
 							{.numOfSensors = 0,			\

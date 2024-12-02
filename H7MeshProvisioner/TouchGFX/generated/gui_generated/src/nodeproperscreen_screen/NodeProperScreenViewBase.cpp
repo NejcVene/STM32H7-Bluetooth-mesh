@@ -90,3 +90,11 @@ void NodeProperScreenViewBase::goToErrorScreen()
     //Go to ErrorScreen with screen transition towards East
     application().gotoErrorScreenScreenSlideTransitionEast();
 }
+
+void NodeProperScreenViewBase::goToLevelSetScreen()
+{
+    //GUI_SwitchToLevelSetScreen
+    //When goToLevelSetScreen is called change screen to NodeLevelSetScreen
+    //Go to NodeLevelSetScreen with screen transition towards East
+    application().gotoNodeLevelSetScreenScreenSlideTransitionEast();
+}

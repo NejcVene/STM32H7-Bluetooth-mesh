@@ -67,3 +67,11 @@ void HomeScreenViewBase::setupScreen()
     screenTitleBar1.initialize();
     loader1.initialize();
 }
+
+void HomeScreenViewBase::goToErrorScreen()
+{
+    //GUI_SwitchToErrorScreen
+    //When goToErrorScreen is called change screen to ErrorScreen
+    //Go to ErrorScreen with screen transition towards East
+    application().gotoErrorScreenScreenSlideTransitionEast();
+}

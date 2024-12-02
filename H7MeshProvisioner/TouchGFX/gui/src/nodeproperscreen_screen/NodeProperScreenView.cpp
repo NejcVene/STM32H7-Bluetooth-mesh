@@ -53,6 +53,7 @@ void NodeProperScreenView::setupGenericLevel(int *guiIndex, int numToCreate) {
 	for (int i = 0; i<numToCreate; i++) {
 		deviceFunctions[*guiIndex].setVisible(true);
 		deviceFunctions[*guiIndex].GUI_SetTextType("Level");
+		deviceFunctions[*guiIndex].GUI_SetIntigerStatus(this->node->states.levelSetValue);
 		deviceFunctions[*guiIndex].GUI_SetIcon(DeviceButton::GENERIC_LEVEL);
 		deviceFunctions[*guiIndex].GUI_ButtonSetOffState(DeviceButton::BUTTON_OFF, DeviceButton::GENERIC_LEVEL);
 		deviceFunctions[*guiIndex].setButtonAction(buttonClickCallback, generateInstanceID(i, DeviceButton::GENERIC_LEVEL));
@@ -198,7 +199,11 @@ void NodeProperScreenView::handleGenericOnOffClicked(int instanceID) {
 
 }
 
-void NodeProperScreenView::handleGenericLevelClicked(int instanceID) {}
+void NodeProperScreenView::handleGenericLevelClicked(int instanceID) {
+
+	goToLevelSetScreen();
+
+}
 
 void NodeProperScreenView::handleSensor(int instanceID) {
 

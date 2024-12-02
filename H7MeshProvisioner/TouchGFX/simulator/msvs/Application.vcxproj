@@ -77,6 +77,9 @@
     <ClCompile Include="..\..\gui\src\errorscreen_screen\ErrorScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\errorscreen_screen\ErrorScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\errorscreen_screen\ErrorScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\nodelevelsetscreen_screen\NodeLevelSetScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\nodelevelsetscreen_screen\NodeLevelSetScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\nodelevelsetscreen_screen\NodeLevelSetScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -285,6 +288,9 @@
     <ClInclude Include="..\..\gui\include\gui\errorscreen_screen\ErrorScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\errorscreen_screen\ErrorScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\errorscreen_screen\ErrorScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\nodelevelsetscreen_screen\NodeLevelSetScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\nodelevelsetscreen_screen\NodeLevelSetScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodelevelsetscreen_screen\NodeLevelSetScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

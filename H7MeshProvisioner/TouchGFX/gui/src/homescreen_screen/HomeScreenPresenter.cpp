@@ -22,3 +22,9 @@ void HomeScreenPresenter::GUI_NodeIsConfigured() {
 	view.GUI_NodeIsConfigured();
 
 }
+
+void HomeScreenPresenter::GUI_NotifyError() {
+
+	view.GUI_ErrorOccured();
+
+}

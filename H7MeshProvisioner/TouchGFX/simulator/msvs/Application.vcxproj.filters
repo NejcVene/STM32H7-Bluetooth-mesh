@@ -340,6 +340,18 @@
     <Filter Include="Header Files\generated\gui_generated\errorscreen_screen">
       <UniqueIdentifier>DA0C33FD-3468-FA65-E5E9-00B3ED490ED8</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\nodelevelsetscreen_screen">
+      <UniqueIdentifier>E06C5C83-CC0C-B208-7C10-48CECD8D2528</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\nodelevelsetscreen_screen">
+      <UniqueIdentifier>547E58C7-3EE3-0ED1-9649-0FA52EA29F87</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\nodelevelsetscreen_screen">
+      <UniqueIdentifier>7C07204D-0BDB-DFE2-ABC5-9E39197CAE20</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\nodelevelsetscreen_screen">
+      <UniqueIdentifier>AEA1F6A8-EFF6-7EF5-E94D-D7EED7707CB3</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -539,6 +551,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\errorscreen_screen\ErrorScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\errorscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodelevelsetscreen_screen\NodeLevelSetScreenPresenter.cpp">
+      <Filter>Source Files\gui\nodelevelsetscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodelevelsetscreen_screen\NodeLevelSetScreenView.cpp">
+      <Filter>Source Files\gui\nodelevelsetscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\nodelevelsetscreen_screen\NodeLevelSetScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\nodelevelsetscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1155,6 +1176,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\errorscreen_screen\ErrorScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\errorscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodelevelsetscreen_screen\NodeLevelSetScreenPresenter.hpp">
+      <Filter>Header Files\gui\nodelevelsetscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodelevelsetscreen_screen\NodeLevelSetScreenView.hpp">
+      <Filter>Header Files\gui\nodelevelsetscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodelevelsetscreen_screen\NodeLevelSetScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\nodelevelsetscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

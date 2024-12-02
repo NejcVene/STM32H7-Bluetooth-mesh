@@ -41,6 +41,7 @@ typedef enum {
 	CMD_FUN_PUB_SET_SUB_ADD,
 	CMD_FUN_GET_LIB_VER,
 	CMD_FUN_PRO_TEST,
+	CMD_MESH_ATCL_GENERIC_LEVEL_DELTA_SET,
 	CMD_ERROR,
 	CMD_MESH_NUM_OF_CMD
 } CMD_INDEX;
@@ -83,6 +84,7 @@ extern CMD_MeshCommand_t genericOnOffGet;
 extern CMD_MeshCommand_t unprovisionNetworkDevice;
 extern CMD_MeshCommand_t sensorGet;
 extern CMD_MeshCommand_t sensorDescriptorGet;
+extern CMD_MeshCommand_t genericLevelDeltaSet;
 
 // commands which are not part of mesh, but directly call functions
 // on the embedded provisioner

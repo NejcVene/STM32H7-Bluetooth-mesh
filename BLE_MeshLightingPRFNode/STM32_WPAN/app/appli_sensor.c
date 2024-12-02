@@ -475,6 +475,7 @@ MOBLE_RESULT Appli_Sensor_ReadValue(MOBLEUINT8 sensorOffset,
 				sensorData.eCO2 = APC1_Get_eCO2();
 				sensorData.tComp = APC1_Get_T_Comp();
 				sensorData.rh_comp = APC1_Get_RH_Comp();
+				strcpy(sensorData.aqiString, APC1_Get_AQI_String());
 			}
 			TRACE_M(TF_SENSOR, "APC1 size: %d\r\n", sizeof(APC1_SelectedData_t));
 			TRACE_M(TF_SENSOR, "APC1 PM1.0: %d\r\n", sensorData.pm1_0);

@@ -82,7 +82,7 @@ CMD_MeshCommand_t unprovisionNetworkDevice = {
 		.CMD_Execute = CMD_NotifyUnprovision
 };
 
-CMD_MeshCommand_t genericOnOffSetAck = { // currently hard-coded
+CMD_MeshCommand_t genericOnOffSetAck = {
 		.command = "ATCL %s 8202 %s 00",
 		.rxTimeout = CMD_MESH_RX_UACK,
 		.commandType = PRO_MSG_TYPE_UNACK,
@@ -163,6 +163,15 @@ CMD_MeshCommand_t protocolStructTest = {
 		.dataType = PRO_DATATYPE_STRUCT_TEST,
 		.CMD_Setup = NULL,
 		.CMD_Execute = CMD_ProtocolStructTest
+};
+
+CMD_MeshCommand_t genericLevelDeltaSet = {
+		.command = "ATCL %s 8209 %s 00 00 00",
+		.rxTimeout = CMD_MESH_RX_UACK,
+		.commandType = PRO_MSG_TYPE_UNACK,
+		.dataType = PRO_DATATYPE_STRING,
+		.CMD_Setup = CMD_GenericFormatCommand,
+		.CMD_Execute = NULL
 };
 
 static NC_MaskedFeatures *allModels;

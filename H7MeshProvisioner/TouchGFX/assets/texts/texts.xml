@@ -16,6 +16,18 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_5E0R" Alignment="Center" TypographyId="DefaultBold">
+        <Translation Language="GB">Set</Translation>
+      </Text>
+      <Text Id="__SingleUse_FIW9" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">Value</Translation>
+      </Text>
+      <Text Id="__SingleUse_CRF2" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_RH3W" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_TBYN" Alignment="Left" TypographyId="Text16px">
         <Translation Language="GB">None</Translation>
       </Text>

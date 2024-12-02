@@ -27,6 +27,8 @@ public:
 
     virtual ~HomeScreenPresenter() {}
 
+    virtual void GUI_NotifyError();
+
     uint8_t GUI_GetSeconds() {
 
     	return model->GUI_GetSeconds();

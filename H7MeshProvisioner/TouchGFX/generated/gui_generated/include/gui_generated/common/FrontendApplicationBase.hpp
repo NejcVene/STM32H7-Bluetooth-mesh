@@ -61,6 +61,9 @@ public:
     // ErrorScreen
     void gotoErrorScreenScreenSlideTransitionEast();
 
+    // NodeLevelSetScreen
+    void gotoNodeLevelSetScreenScreenSlideTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -106,6 +109,9 @@ protected:
 
     // ErrorScreen
     void gotoErrorScreenScreenSlideTransitionEastImpl();
+
+    // NodeLevelSetScreen
+    void gotoNodeLevelSetScreenScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

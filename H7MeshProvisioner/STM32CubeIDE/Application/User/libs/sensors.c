@@ -10,6 +10,15 @@
 #include "freertos_os2.h"
 #include <string.h>
 
+// APC1 sensor specific strings
+const char *APC1_AQI_Strings[5] = {
+		"Good",
+		"Fair",
+		"Poor",
+		"Very poor",
+		"Extremely Poor"
+};
+
 void SN_RegisterAPC1Sensor(Node_SensorInfo_t *sensor);
 Node_ButtonInterface_t *SN_CreateButtons(const char **buttonNames, uint8_t buttonCount);
 void SN_AllocateAndCopy(Sensor_MeasuredData_t *mea, void *buffer, size_t dataSize);

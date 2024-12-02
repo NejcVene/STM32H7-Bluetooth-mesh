@@ -116,6 +116,7 @@ void NodeSesnsorsScreenView::GUI_UpdateDeviceButtonValues() {
 				sensorButtons[APC1_BUTTON_EC02_INDEX].GUI_SetIntigerStatus(apcData->eCO2);
 				sensorButtons[APC1_BUTTON_RH_COMP_INDEX].GUI_SetDoubleStatus(apcData->rh_comp);
 				sensorButtons[APC1_BUTTON_TEMPERATURE_INDEX].GUI_SetDoubleStatus(apcData->tComp);
+				sensorButtons[APC1_BUTTON_AQI_INDEX].GUI_SetTextStatus(apcData->aqiString);
 			}
 			break;
 		default:

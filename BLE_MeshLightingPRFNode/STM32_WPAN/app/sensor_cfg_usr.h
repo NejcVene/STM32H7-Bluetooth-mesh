@@ -142,6 +142,7 @@ typedef struct __attribute__((packed)) {
 			 particles_2_5, particles_5_0, particles_10,
 			 TVOC, eCO2;
 	double rh_comp, tComp;
+	char aqiString[11];
 } APC1_SelectedData_t;
 
 #define APC1_SENSOR_ELEMENT_IDX			0

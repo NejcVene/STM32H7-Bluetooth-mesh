@@ -30,6 +30,7 @@ public:
     virtual void goToNodeSensorsScreen();
     virtual void goToRenameScreen();
     virtual void goToErrorScreen();
+    virtual void goToLevelSetScreen();
 
 protected:
     FrontendApplication& application() {

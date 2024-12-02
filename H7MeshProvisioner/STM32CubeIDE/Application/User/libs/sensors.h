@@ -14,9 +14,12 @@
 extern "C" {
 #endif
 
+#define MAX_NODE_NAME	10
+#define MAX_BUTTON_NAME	MAX_NODE_NAME
+
 // defines for APC1 sensor
 #define APC1_SENSOR_NAME								"APC1"
-#define	APC1_SENSOR_UI_COUNT							16
+#define	APC1_SENSOR_UI_COUNT							17
 #define APC1_BUTTON_PM1_0								"PM1.0"
 #define APC1_BUTTON_PM2_5								"PM2.5"
 #define APC1_BUTTON_PM10								"PM10"
@@ -33,6 +36,7 @@ extern "C" {
 #define APC1_BUTTON_EC02								"eC02"
 #define APC1_BUTTON_RH_COMP								"RH"
 #define APC1_BUTTON_TEMPERATURE							"Temp"
+#define APC1_BUTTON_AQI									"AQI"
 #define APC1_BUTTON_NAMES() 	\
 {								\
 	APC1_BUTTON_PM1_0,			\
@@ -50,7 +54,8 @@ extern "C" {
 	APC1_BUTTON_TVOC,			\
 	APC1_BUTTON_EC02,			\
 	APC1_BUTTON_RH_COMP,		\
-	APC1_BUTTON_TEMPERATURE		\
+	APC1_BUTTON_TEMPERATURE,	\
+	APC1_BUTTON_AQI				\
 }
 #define APC1_BUTTON_PM1_0_INDEX							0
 #define APC1_BUTTON_PM2_5_INDEX							1
@@ -68,9 +73,7 @@ extern "C" {
 #define APC1_BUTTON_EC02_INDEX							13
 #define APC1_BUTTON_RH_COMP_INDEX						14
 #define APC1_BUTTON_TEMPERATURE_INDEX					15
-
-#define MAX_NODE_NAME	10
-#define MAX_BUTTON_NAME	MAX_NODE_NAME
+#define APC1_BUTTON_AQI_INDEX							16
 
 typedef enum {
 	PRESENT_AMBIENT_TEMPERATURE_PID = 0x004F
@@ -83,6 +86,7 @@ typedef struct __attribute__((packed)) {
 			 particles_2_5, particles_5_0, particles_10,
 			 TVOC, eCO2;
 	double rh_comp, tComp;
+	char aqiString[11];
 } APC1_SelectedData_t;
 
 typedef struct __attribute__((packed)) {
@@ -115,6 +119,8 @@ Node_Sensor_t SN_RegisterSensor(SN_SensorDescriptorGet_t *descriptors);
 Sensor_MeasuredData_t *SN_GetMeasuredSensorData(SENSOR_PID inputPID, void *buffer);
 void SN_FreeMeasuredSensorData(Sensor_MeasuredData_t *mea);
 void SN_FreeSensorInfo(Node_Sensor_t *sensors);
+
+char *APC1_GetAQIString(int index);
 
 #ifdef __cplusplus
 }

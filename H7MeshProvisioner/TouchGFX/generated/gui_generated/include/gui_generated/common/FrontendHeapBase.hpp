@@ -40,6 +40,8 @@
 #include <gui/renamescreen_screen/RenameScreenPresenter.hpp>
 #include <gui/errorscreen_screen/ErrorScreenView.hpp>
 #include <gui/errorscreen_screen/ErrorScreenPresenter.hpp>
+#include <gui/nodelevelsetscreen_screen/NodeLevelSetScreenView.hpp>
+#include <gui/nodelevelsetscreen_screen/NodeLevelSetScreenPresenter.hpp>
 
 
 /**
@@ -75,7 +77,8 @@ public:
             touchgfx::meta::TypeList< NodeSesnsorsScreenView,
             touchgfx::meta::TypeList< RenameScreenView,
             touchgfx::meta::TypeList< ErrorScreenView,
-            touchgfx::meta::Nil > > > > > > > > > > > >
+            touchgfx::meta::TypeList< NodeLevelSetScreenView,
+            touchgfx::meta::Nil > > > > > > > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -100,7 +103,8 @@ public:
             touchgfx::meta::TypeList< NodeSesnsorsScreenPresenter,
             touchgfx::meta::TypeList< RenameScreenPresenter,
             touchgfx::meta::TypeList< ErrorScreenPresenter,
-            touchgfx::meta::Nil > > > > > > > > > > > >
+            touchgfx::meta::TypeList< NodeLevelSetScreenPresenter,
+            touchgfx::meta::Nil > > > > > > > > > > > > >
             > GeneratedPresenterTypes;
 
     /**

@@ -59,6 +59,7 @@ typedef struct {
 typedef struct {
 	uint8_t genericOnOffStatus : 1,
 			genericPowerOnOffStatus : 1;
+	int16_t levelSetValue;
 } Node_ModelState_t;
 
 typedef struct {

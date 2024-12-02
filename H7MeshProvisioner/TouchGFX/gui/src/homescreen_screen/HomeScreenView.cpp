@@ -11,8 +11,8 @@ void HomeScreenView::setupScreen()
     loaderModal.hide();
     loader1.GUI_SetDisable(true);
 
+	screenTitleBar1.GUI_SetTextTitleBar("Menu", "home");
     if (NC_IsDeviceConfigured()) {
-		screenTitleBar1.GUI_SetTextTitleBar("Menu", "home");
 		GUI_UpdateDigitalClock();
     } else {
     	GUI_CheckConfig();
@@ -69,6 +69,12 @@ void HomeScreenView::GUI_NodeIsConfigured() {
 	loaderModal.hide();
 	loader1.GUI_SetDisable(true);
 	loader1.GUI_ResetProgressValue();
+
+}
+
+void HomeScreenView::GUI_ErrorOccured() {
+
+	goToErrorScreen();
 
 }
 

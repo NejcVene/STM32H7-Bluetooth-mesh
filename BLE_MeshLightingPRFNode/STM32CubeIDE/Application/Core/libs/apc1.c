@@ -73,7 +73,7 @@ const char *APC1_AQI_Strings[5] = {
 		"Fair",
 		"Poor",
 		"Very poor",
-		"Extremely Poor"
+		"Ex. poor"
 };
 
 const char *APC1_Status_Strings[] = {

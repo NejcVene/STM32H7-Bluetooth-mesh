@@ -16,6 +16,7 @@ public:
     void GUI_UpdateDigitalClock();
     void GUI_CheckConfig();
     void GUI_NodeIsConfigured();
+    void GUI_ErrorOccured();
 
 protected:
     int tickCounter;

@@ -43,6 +43,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "apc1.h"
+#include "dimmer_control.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -73,7 +74,11 @@ RNG_HandleTypeDef hrng;
 RTC_HandleTypeDef hrtc;
 
 /* USER CODE BEGIN PV */
-
+TIM_HandleTypeDef htim2;
+DC_Dimmer_t *dimmer;
+//int16_t levelSetRx = -32767;
+//uint8_t dutyPercent = 0;
+//uint16_t newDutyCycle = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -87,11 +92,19 @@ static void MX_IPCC_Init(void);
 static void MX_RNG_Init(void);
 /* USER CODE BEGIN PFP */
 
+static void MX_TIM2_Init(void);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+//void calcDutyCycle(int16_t levelSet) {
+//
+//	dutyPercent = (levelSet + 32768) * 100 / 65535;
+//	newDutyCycle = (dutyPercent * (htim2.Init.Period + 1)) / 100;
+//	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, newDutyCycle);
+//
+//}
 /* USER CODE END 0 */
 
 /**
@@ -138,6 +151,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   /* Enable CRC clock */
   __HAL_RCC_CRC_CLK_ENABLE();
+  MX_TIM2_Init();
   /* USER CODE END 2 */
 
   /* Init code for STM32_WPAN */
@@ -145,6 +159,33 @@ int main(void)
   if (APC1_Init_Sensor(&hlpuart1) != APC1_OK) {
 	  Error_Handler();
   }
+  dimmer = DC_CreateControl(&htim2, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+//  uint8_t increase = 1;
+//  while (1)
+//    {
+//      /* USER CODE END WHILE */
+//
+//  	  if (increase) {
+//  		  if (levelSetRx <= 31767)
+//  			  levelSetRx += 1000;
+//  		  else
+//  			  levelSetRx = 32767;
+//  		  if (levelSetRx >= 32767)
+//  			  increase = 0;
+//  	  } else {
+//  		  if (levelSetRx >= -31767)
+//  			  levelSetRx -= 1000;
+//  		  else
+//  			  levelSetRx = -32767;
+//  		  if (levelSetRx <= -32767)
+//  			  increase = 1;
+//  	  }
+//  	  calcDutyCycle(levelSetRx);
+//  	  HAL_Delay(50);
+//
+//      /* USER CODE BEGIN 3 */
+//    }
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -501,6 +542,60 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 31;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 199;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
+  HAL_TIM_MspPostInit(&htim2);
+
+}
 
 /* USER CODE END 4 */
 

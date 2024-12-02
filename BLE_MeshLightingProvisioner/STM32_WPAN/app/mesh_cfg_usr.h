@@ -158,8 +158,8 @@ Either use 0 to disable or 1 to enable
 #define TF_MISC                                                                1
 #define TF_SERIAL_CTRL                                                         1
 /* Disabled by default */
-#define TF_COMMON                                                              0
-#define TF_GENERIC_M                                                           0
+#define TF_COMMON                                                              1
+#define TF_GENERIC_M                                                           1
 #define TF_GENERIC_CLIENT_M                                                    0
 #define TF_SENSOR_M                                                            1
 #define TF_SENSOR_CLIENT_M                                                     1
@@ -195,15 +195,15 @@ Either use 0 to disable or 1 to enable
 /******************************************************************************/
 
 /* Define the following Macros to enable the usage of the Server Generic Models  */
-#define ENABLE_GENERIC_MODEL_SERVER_ONOFF                                    (1)
-#define ENABLE_GENERIC_MODEL_SERVER_LEVEL                                    (1)
-#define ENABLE_GENERIC_MODEL_SERVER_POWER_ONOFF                              (1)
-#define ENABLE_GENERIC_MODEL_SERVER_POWER_ONOFF_SETUP                        (1)
+// #define ENABLE_GENERIC_MODEL_SERVER_ONOFF                                    (1)
+// #define ENABLE_GENERIC_MODEL_SERVER_LEVEL                                    (1)
+// #define ENABLE_GENERIC_MODEL_SERVER_POWER_ONOFF                              (1)
+// #define ENABLE_GENERIC_MODEL_SERVER_POWER_ONOFF_SETUP                        (1)
 //#define ENABLE_GENERIC_MODEL_SERVER_DEFAULT_TRANSITION_TIME                  (1)
 
-//#define ENABLE_GENERIC_MODEL_CLIENT_ONOFF                                    (1)
-//#define ENABLE_GENERIC_MODEL_CLIENT_LEVEL                                    (1)
-//#define ENABLE_GENERIC_MODEL_CLIENT_POWER_ONOFF                              (1)
+#define ENABLE_GENERIC_MODEL_CLIENT_ONOFF                                    (1)
+#define ENABLE_GENERIC_MODEL_CLIENT_LEVEL                                    (1)
+#define ENABLE_GENERIC_MODEL_CLIENT_POWER_ONOFF                              (1)
 //#define ENABLE_GENERIC_MODEL_CLIENT_DEFAULT_TRANSITION_TIME                  (1)
 
 /* The Following Models are not available in this version, will be developed in 
