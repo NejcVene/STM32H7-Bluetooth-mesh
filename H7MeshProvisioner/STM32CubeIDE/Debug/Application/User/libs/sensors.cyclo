@@ -1,0 +1,7 @@
+../Application/User/libs/sensors.c:66:6:SN_AllocateAndCopy	2
+../Application/User/libs/sensors.c:47:24:SN_GetMeasuredSensorData	4
+../Application/User/libs/sensors.c:74:6:SN_FreeMeasuredSensorData	2
+../Application/User/libs/sensors.c:83:6:SN_FreeSensorInfo	4
+../Application/User/libs/sensors.c:99:25:SN_CreateButtons	3
+../Application/User/libs/sensors.c:113:6:SN_RegisterAPC1Sensor	1
+../Application/User/libs/sensors.c:26:15:SN_RegisterSensor	4

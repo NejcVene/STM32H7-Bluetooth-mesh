@@ -1,0 +1,7 @@
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/pal_nvm.c:45:20:GetPage	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/pal_nvm.c:68:11:PalNvmIsWriteProtected	4	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/pal_nvm.c:82:14:PalNvmRead	32	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/pal_nvm.c:120:14:PalNvmCompare	40	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/pal_nvm.c:182:14:PalNvmErase	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/pal_nvm.c:200:14:PalNvmWrite	40	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/pal_nvm.c:334:14:PalNvmProcess	4	static

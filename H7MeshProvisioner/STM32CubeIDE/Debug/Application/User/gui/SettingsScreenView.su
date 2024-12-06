@@ -1,0 +1,13 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	16	static
+../../TouchGFX/gui/include/gui/settingsscreen_screen/SettingsScreenPresenter.hpp:32:10:void SettingsScreenPresenter::GUI_SendCommand(CMD_CommandGet_t*)	16	static
+../../TouchGFX/gui/include/gui/containers/ScreenTitleBar.hpp:14:10:void ScreenTitleBar::GUI_SetTextTitleBar(const char*, const char*)	24	static
+../../TouchGFX/gui/include/gui/settingsscreen_screen/SettingsScreenView.hpp:11:13:SettingsScreenView::~SettingsScreenView()	16	static
+../../TouchGFX/gui/include/gui/settingsscreen_screen/SettingsScreenView.hpp:11:13:virtual SettingsScreenView::~SettingsScreenView()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/settingsscreen_screen/SettingsScreenView.cpp:3:1:SettingsScreenView::SettingsScreenView()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/settingsscreen_screen/SettingsScreenView.cpp:8:6:virtual void SettingsScreenView::setupScreen()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/settingsscreen_screen/SettingsScreenView.cpp:14:6:virtual void SettingsScreenView::tearDownScreen()	16	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/settingsscreen_screen/SettingsScreenView.cpp:19:6:virtual void SettingsScreenView::GUI_GetDevInfo()	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/settingsscreen_screen/SettingsScreenView.cpp:31:6:virtual void SettingsScreenView::GUI_ChangeScreen()	16	static

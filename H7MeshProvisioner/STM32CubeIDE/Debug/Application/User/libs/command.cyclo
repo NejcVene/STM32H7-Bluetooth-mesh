@@ -1,0 +1,16 @@
+../Application/User/libs/command.c:261:6:CMD_GenericFormatCommand	14
+../Application/User/libs/command.c:297:6:CMD_SetupConfig	7
+../Application/User/libs/command.c:182:20:debugMessage	1
+../Application/User/libs/command.c:189:19:CMD_CreateCommandGet	6
+../Application/User/libs/command.c:337:19:CMD_NofitfyProvision	2
+../Application/User/libs/command.c:363:19:CMD_NotifyScan	5
+../Application/User/libs/command.c:398:19:CMD_SubsAdd	5
+../Application/User/libs/command.c:447:19:CMD_NotifyUnprovision	2
+../Application/User/libs/command.c:475:19:CMD_NotifyLibVersion	2
+../Application/User/libs/command.c:505:19:CMD_NotifySensorUpdate	1
+../Application/User/libs/command.c:531:19:CMD_SensorDescriptorGet	1
+../Application/User/libs/command.c:555:19:CMD_ProtocolStructTest	1
+../Application/User/libs/command.c:588:19:CMD_IsEmbeddedProvisioned	2
+../Application/User/libs/command.c:616:19:CMD_NotifyAtepRoot	2
+../Application/User/libs/command.c:644:19:CMD_UnprovEmProvisioner	1
+../Application/User/libs/command.c:234:6:CMD_FreeCommandGet	6

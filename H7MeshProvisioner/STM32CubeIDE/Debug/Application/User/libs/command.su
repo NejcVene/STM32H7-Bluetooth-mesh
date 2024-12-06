@@ -1,0 +1,16 @@
+../Application/User/libs/command.c:261:6:CMD_GenericFormatCommand	32	static
+../Application/User/libs/command.c:297:6:CMD_SetupConfig	40	static
+../Application/User/libs/command.c:182:20:debugMessage	8	static
+../Application/User/libs/command.c:189:19:CMD_CreateCommandGet	48	static
+../Application/User/libs/command.c:337:19:CMD_NofitfyProvision	56	static
+../Application/User/libs/command.c:363:19:CMD_NotifyScan	40	static
+../Application/User/libs/command.c:398:19:CMD_SubsAdd	48	static
+../Application/User/libs/command.c:447:19:CMD_NotifyUnprovision	32	static
+../Application/User/libs/command.c:475:19:CMD_NotifyLibVersion	104	static
+../Application/User/libs/command.c:505:19:CMD_NotifySensorUpdate	48	static
+../Application/User/libs/command.c:531:19:CMD_SensorDescriptorGet	64	static
+../Application/User/libs/command.c:555:19:CMD_ProtocolStructTest	296	static
+../Application/User/libs/command.c:588:19:CMD_IsEmbeddedProvisioned	32	static
+../Application/User/libs/command.c:616:19:CMD_NotifyAtepRoot	32	static
+../Application/User/libs/command.c:644:19:CMD_UnprovEmProvisioner	32	static
+../Application/User/libs/command.c:234:6:CMD_FreeCommandGet	16	static

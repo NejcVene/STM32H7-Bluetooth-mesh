@@ -1,0 +1,4 @@
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/App/app_touchgfx.c:58:6:MX_TouchGFX_PreOSInit	0	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/App/app_touchgfx.c:65:6:MX_TouchGFX_Init	8	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/App/app_touchgfx.c:75:6:MX_TouchGFX_Process	8	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/App/app_touchgfx.c:84:6:TouchGFX_Task	8	static

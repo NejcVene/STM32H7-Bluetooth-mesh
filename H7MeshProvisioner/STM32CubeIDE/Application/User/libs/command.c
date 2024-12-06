@@ -186,6 +186,18 @@ static inline void debugMessage(char *message) {
 }
 #endif
 
+/**
+  * @brief  Create CMD_CommandGet_t structure which will contain parameters and their values which are
+  * 		used in Comm_ex and GUI.
+  * @note	Depending on the passed parameter types not all parameters of this function are necessary.
+  * @param  cmdIndex		Enum value which represents the used command.
+  * @param  types			Enum value/s which are the data types of used parameters.
+  * @param  paramValues		Array of void pointers for individual parameter values.
+  * @param  numOfParams		The number of used parameters.
+  * @param  arrayLengths	The number of parameters of each type.
+  * @param  elementSizes	The size of each parameter used.
+  * @retval	CMD_CommandGet_t pointer
+  */
 CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[], void *paramValues[], int numOfParams, int arrayLengths[], size_t *elementSizes) {
 
 	CMD_CommandGet_t *cmd = NULL;
@@ -196,28 +208,36 @@ CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[
 	}
 	cmd->commandIndex = cmdIndex;
 	cmd->numOfParams = numOfParams;
+	// create an array of parameters
 	if (!(cmd->param = (CMD_Parameter_t *) pvPortMalloc(numOfParams * sizeof(CMD_Parameter_t)))) {
 		// raise error
 	}
+	// for each parameter, check its type and if needed create a deep copy or assign value
 	for (int i = 0; i<numOfParams; i++) {
 		cmd->param[i].type = types[i];
 		cmd->param[i].arrayLength = 0;
 		cmd->param[i].elementSize = 0;
 		switch (types[i]) {
 			case PARAM_INT:
+				// copy value, no memory allocation needed
 				cmd->param[i].value.i = *((int *) paramValues[i]);
 				break;
 			case PARAM_CHAR:
+				// allocate memory for string and copy it
 				len = strlen((char *) paramValues[i]);
 				cmd->param[i].value.str = (char *) pvPortMalloc((len + 1) * sizeof(char));
 				strcpy(cmd->param[i].value.str, (char *) paramValues[i]);
 				break;
 			case PARAM_INT_ARR:
+				// passed parameter is an array
+				// allocate memory and make a deep copy
 				cmd->param[i].value.intArr = (int *) pvPortMalloc(arrayLengths[i] * sizeof(int));
 				memcpy(cmd->param[i].value.intArr, (int *) paramValues, arrayLengths[i] * sizeof(int));
 				cmd->param[i].arrayLength = arrayLengths[i];
 				break;
 			case PARAM_VOID:
+				// passed parameter can be anything, so
+				// allocate memory and deep copy
 				cmd->param[i].elementSize = elementSizes[i];
 				cmd->param[i].value.voidPtr = pvPortMalloc(arrayLengths[i] * elementSizes[i]);
 				memcpy(cmd->param[i].value.voidPtr, paramValues[i], arrayLengths[i] * elementSizes[i]);
@@ -227,10 +247,17 @@ CMD_CommandGet_t *CMD_CreateCommandGet(CMD_INDEX cmdIndex, PARAMETER_TYPE types[
 		}
 	}
 
+	// since we create a deep copy, the original pointers can be "discarded"
 	return cmd;
 
 }
 
+/**
+  * @brief  Free allocated memory for CMD_CommandGet_t structure.
+  * @note	Depending on the passed parameter types not all parameters of this function are necessary.
+  * @param  cmd	CMD_CommandGet_t pointer which contains allocated parameters and their values.
+  * @retval	None
+  */
 void CMD_FreeCommandGet(CMD_CommandGet_t *cmd) {
 
 	if (!cmd) return;
@@ -258,31 +285,48 @@ void CMD_FreeCommandGet(CMD_CommandGet_t *cmd) {
 
 }
 
+/**
+  * @brief  Place values into command parameters.
+  * @note	If a command with no specifier is given, then it just copies it into the buffer.
+  * @param  buffer		Character pointer into which formatted command will be placed.
+  * @param  cmdTemplate	Character pointer to command template.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains allocated parameters and their values.
+  * @retval	None
+  */
 void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd) {
 
 	char *output = buffer;
 	const char *t = cmdTemplate;
 
 	for (int i = 0; i<guiCmd->numOfParams; i++) {
+		// loop over command template until we find a '%' or hit the end
+		// (copy command template into buffer)
 		while (*t && *t != '%') {
 			*output++ = *t++;
 		}
+		// found specifier might be an integer or an integer array
 		if (*t == '%' && *(t + 1) == 'd') {
+			// check if its a integer
 			if (guiCmd->param[i].type == PARAM_INT) {
 				output += sprintf(output, "%d", guiCmd->param[i].value.i);
 			} else if (guiCmd->param[i].type == PARAM_INT_ARR) {
+				// check if its an array of integers
 				int len = guiCmd->param[i].arrayLength;
 				int *arr = guiCmd->param[i].value.intArr;
 				for (int j = 0; j<len; j++) {
 					if (j > 0) {
+						// add spaces between array values
 						*output++ = ' ';
 					}
 					output += sprintf(output, "%d", arr[j]);
 				}
 			}
+			// increment pass the specifier
 			t += 2;
 		} else if (*t == '%' && *(t + 1)  == 's' && guiCmd->param->type == PARAM_CHAR) {
+			// specifier is a string
 			output += sprintf(output, "%s", guiCmd->param[i].value.str);
+			// increment pass
 			t += 2;
 		}
 	}
@@ -290,6 +334,7 @@ void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_Command
 	while (*t) {
 		*output++ = *t++;
 	}
+	// null terminate
 	*output = '\0';
 
 }

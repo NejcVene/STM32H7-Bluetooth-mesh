@@ -1,0 +1,4 @@
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jutils.c:124:1:jdiv_round_up	0	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jutils.c:133:1:jround_up	0	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jutils.c:177:1:jcopy_sample_rows	24	static
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jutils.c:211:1:jcopy_block_row	8	static

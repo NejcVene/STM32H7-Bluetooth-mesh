@@ -1,0 +1,41 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Bitmap.hpp:132:5:touchgfx::Bitmap::Bitmap(touchgfx::BitmapId)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:293:13:int16_t touchgfx::Drawable::getWidth() const	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:303:13:int16_t touchgfx::Drawable::getHeight() const	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:413:10:void touchgfx::Drawable::setWidthHeight(int16_t, int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:515:10:void touchgfx::Drawable::setVisible(bool)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp:404:25:static touchgfx::Unicode::UnicodeChar* touchgfx::Unicode::snprintfFloat(UnicodeChar*, uint16_t, const char*, float)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../../TouchGFX/gui/include/gui/model/Model.hpp:84:14:uint32_t Model::GUI_GetNodeAddress()	1
+../../TouchGFX/gui/include/gui/model/Model.hpp:145:9:int Model::GUI_GetSensorIndex()	1
+../../TouchGFX/gui/include/gui/model/Model.hpp:151:28:Sensor_MeasuredData_t* Model::GUI_GetSensorMeasuredData()	1
+../../TouchGFX/gui/include/gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenPresenter.hpp:33:10:void NodeSesnsorsScreenPresenter::GUI_SendCommand(CMD_CommandGet_t*)	1
+../../TouchGFX/gui/include/gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenPresenter.hpp:39:14:uint32_t NodeSesnsorsScreenPresenter::GUI_GetNodeAddress()	1
+../../TouchGFX/gui/include/gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenPresenter.hpp:45:9:int NodeSesnsorsScreenPresenter::GUI_GetSensorIndex()	1
+../../TouchGFX/gui/include/gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenPresenter.hpp:51:28:Sensor_MeasuredData_t* NodeSesnsorsScreenPresenter::GUI_GetSensorMeasuredData()	1
+../../TouchGFX/gui/include/gui/containers/ScreenTitleBar.hpp:14:10:void ScreenTitleBar::GUI_SetTextTitleBar(const char*, const char*)	1
+../../TouchGFX/gui/include/gui/containers/Loader.hpp:14:10:void Loader::GUI_ProgressLoader()	6
+../../TouchGFX/gui/include/gui/containers/Loader.hpp:40:10:void Loader::GUI_SetLoaderText(const char*)	1
+../../TouchGFX/gui/include/gui/containers/Loader.hpp:47:10:void Loader::GUI_SetDisable(bool)	1
+../../TouchGFX/gui/include/gui/containers/Loader.hpp:59:10:void Loader::GUI_ResetProgressValue()	1
+../../TouchGFX/gui/include/gui/containers/DeviceButton.hpp:32:10:void DeviceButton::GUI_SetTextStatus(const char*)	1
+../../TouchGFX/gui/include/gui/containers/DeviceButton.hpp:40:10:void DeviceButton::GUI_SetIntigerStatus(int)	1
+../../TouchGFX/gui/include/gui/containers/DeviceButton.hpp:48:10:void DeviceButton::GUI_SetDoubleStatus(double)	1
+../../TouchGFX/gui/include/gui/containers/DeviceButton.hpp:56:10:void DeviceButton::GUI_SetTextType(const char*)	1
+../../TouchGFX/gui/include/gui/containers/DeviceButton.hpp:64:10:void DeviceButton::GUI_SetIcon(ICON_TYPE)	8
+../../TouchGFX/gui/include/gui/containers/DeviceButton.hpp:109:10:void DeviceButton::GUI_ButtonSetOffState(STATE, ICON_TYPE)	9
+../../TouchGFX/gui/include/gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.hpp:14:13:NodeSesnsorsScreenView::~NodeSesnsorsScreenView()	3
+../../TouchGFX/gui/include/gui/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.hpp:14:13:virtual NodeSesnsorsScreenView::~NodeSesnsorsScreenView()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.cpp:3:1:NodeSesnsorsScreenView::NodeSesnsorsScreenView()	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.cpp:8:6:virtual void NodeSesnsorsScreenView::setupScreen()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.cpp:24:6:virtual void NodeSesnsorsScreenView::tearDownScreen()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.cpp:29:6:void NodeSesnsorsScreenView::GUI_RequestNewMeasurement()	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.cpp:59:6:virtual void NodeSesnsorsScreenView::handleTickEvent()	3
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.cpp:72:6:void NodeSesnsorsScreenView::GUI_SetupSensorButtons()	4
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.cpp:97:6:void NodeSesnsorsScreenView::GUI_UpdateDeviceButtonValues()	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.cpp:128:6:virtual void NodeSesnsorsScreenView::GUI_UpdateSensorValues()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/nodesesnsorsscreen_screen/NodeSesnsorsScreenView.cpp:142:6:void NodeSesnsorsScreenView::GUI_ErrorOccured()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp:59:18:void touchgfx::IconButtonStyle<T>::setIconBitmaps(const touchgfx::Bitmap&, const touchgfx::Bitmap&) [with T = touchgfx::ClickButtonTrigger]	5

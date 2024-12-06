@@ -1,0 +1,16 @@
+../../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h:1679:22:LL_RCC_LSE_SetDriveCapability	1
+../../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h:364:22:LL_AHB1_GRP1_EnableClock	1
+../../Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h:539:22:LL_AHB2_GRP1_EnableClock	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:114:5:main	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:212:6:SystemClock_Config	3
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:264:6:PeriphCommonClock_Config	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:289:13:MX_IPCC_Init	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:315:6:MX_LPUART1_UART_Init	5
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:363:6:MX_USART1_UART_Init	5
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:411:13:MX_RF_Init	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:432:13:MX_RNG_Init	2
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:459:13:MX_RTC_Init	3
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:500:13:MX_DMA_Init	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:523:13:MX_GPIO_Init	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:546:13:MX_TIM2_Init	6
+F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/main.c:606:6:Error_Handler	1

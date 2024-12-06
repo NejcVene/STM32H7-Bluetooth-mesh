@@ -1,0 +1,19 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../../TouchGFX/gui/include/gui/model/Model.hpp:121:17:const char* Model::GUI_GetLibVer()	1
+../../TouchGFX/gui/include/gui/model/Model.hpp:127:17:const char* Model::GUI_GetLibSubVer()	1
+../../TouchGFX/gui/include/gui/model/Model.hpp:133:17:const char* Model::GUI_GetCommExVer()	1
+../../TouchGFX/gui/include/gui/deviceinfoscreen_screen/DeviceInfoScreenPresenter.hpp:30:17:const char* DeviceInfoScreenPresenter::GUI_GetLibVer()	1
+../../TouchGFX/gui/include/gui/deviceinfoscreen_screen/DeviceInfoScreenPresenter.hpp:36:17:const char* DeviceInfoScreenPresenter::GUI_GetLibSubVer()	1
+../../TouchGFX/gui/include/gui/deviceinfoscreen_screen/DeviceInfoScreenPresenter.hpp:42:17:const char* DeviceInfoScreenPresenter::GUI_GetCommExVer()	1
+../../TouchGFX/gui/include/gui/containers/ScreenTitleBar.hpp:14:10:void ScreenTitleBar::GUI_SetTextTitleBar(const char*, const char*)	1
+../../TouchGFX/gui/include/gui/deviceinfoscreen_screen/DeviceInfoScreenView.hpp:11:13:DeviceInfoScreenView::~DeviceInfoScreenView()	1
+../../TouchGFX/gui/include/gui/deviceinfoscreen_screen/DeviceInfoScreenView.hpp:11:13:virtual DeviceInfoScreenView::~DeviceInfoScreenView()	1
+../../TouchGFX/gui/include/gui/deviceinfoscreen_screen/DeviceInfoScreenView.hpp:15:10:void DeviceInfoScreenView::GUI_SetTextLibVer(const char*)	1
+../../TouchGFX/gui/include/gui/deviceinfoscreen_screen/DeviceInfoScreenView.hpp:23:10:void DeviceInfoScreenView::GUI_SetTextLibSubVer(const char*)	1
+../../TouchGFX/gui/include/gui/deviceinfoscreen_screen/DeviceInfoScreenView.hpp:31:10:void DeviceInfoScreenView::GUI_SetTextCommExVer(const char*)	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/deviceinfoscreen_screen/DeviceInfoScreenView.cpp:3:1:DeviceInfoScreenView::DeviceInfoScreenView()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/deviceinfoscreen_screen/DeviceInfoScreenView.cpp:8:6:virtual void DeviceInfoScreenView::setupScreen()	1
+F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/gui/src/deviceinfoscreen_screen/DeviceInfoScreenView.cpp:17:6:virtual void DeviceInfoScreenView::tearDownScreen()	1
