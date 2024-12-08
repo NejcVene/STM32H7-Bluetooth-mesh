@@ -31,7 +31,7 @@ void DC_FreeControl(DC_Dimmer_t *dimmer) {
 
 int16_t DC_MapSliderToGenericLevelRange(int16_t sliderValue) {
 
-	return (int16_t) ((65535 * sliderValue) / 100) - 32768;
+	return (int16_t) ((65534 * sliderValue) / 100) - 32767;
 
 }
 

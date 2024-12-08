@@ -1,8 +1,0 @@
-../Application/User/libs/hash_table.c:24:12:HT_Hash	0	static
-../Application/User/libs/hash_table.c:66:17:HT_Create	24	static
-../Application/User/libs/hash_table.c:89:7:HT_Search	16	static
-../Application/User/libs/hash_table.c:103:6:HT_Insert	24	static
-../Application/User/libs/hash_table.c:38:13:HT_ResizeAndRehash	32	static
-../Application/User/libs/hash_table.c:136:6:HT_Delete	16	static
-../Application/User/libs/hash_table.c:152:6:HT_Print	16	static
-../Application/User/libs/hash_table.c:167:6:HT_Clear	16	static

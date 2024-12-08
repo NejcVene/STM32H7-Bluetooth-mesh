@@ -1,5 +1,0 @@
-../Application/Core/libs/dimmer_control.c:10:14:DC_CreateControl	24	static
-../Application/Core/libs/dimmer_control.c:24:6:DC_FreeControl	16	static
-../Application/Core/libs/dimmer_control.c:32:9:DC_MapSliderToGenericLevelRange	16	static
-../Application/Core/libs/dimmer_control.c:38:10:DC_CalcNewDutyCycle	24	static
-../Application/Core/libs/dimmer_control.c:50:6:DC_SetTimerCCR	16	static

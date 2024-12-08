@@ -1,7 +1,0 @@
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jdmerge.c:83:1:build_ycc_rgb_table	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jdmerge.c:126:1:start_pass_merged_upsample	0	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jdmerge.c:193:1:merged_1v_upsample	16	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jdmerge.c:226:1:h2v1_merged_upsample	56	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jdmerge.c:288:1:h2v2_merged_upsample	64	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jdmerge.c:144:1:merged_2v_upsample	40	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/Middlewares/Third_Party/LibJPEG/source/jdmerge.c:370:1:jinit_merged_upsampler	16	static

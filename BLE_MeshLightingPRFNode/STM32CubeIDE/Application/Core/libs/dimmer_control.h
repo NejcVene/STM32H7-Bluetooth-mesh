@@ -10,7 +10,7 @@
 
 #include "main.h"
 
-#define STEP_SIZE	1000 // should be cca. one percent
+#define STEP_SIZE	1000 // should be cca. 1%
 
 typedef struct {
 	TIM_HandleTypeDef *timer;

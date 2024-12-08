@@ -464,7 +464,7 @@ uint16_t APC1_Get_Particles_GT_0_3(void) {
   */
 uint16_t APC1_Get_Particles_GT_0_5(void) {
 
-	return processed_data.particles_0_5 - processed_data.particles_0_3;
+	return processed_data.particles_0_3 - processed_data.particles_0_5;
 
 }
 
@@ -474,7 +474,7 @@ uint16_t APC1_Get_Particles_GT_0_5(void) {
   */
 uint16_t APC1_Get_Particles_GT_1_0(void) {
 
-	return processed_data.particles_1_0 - processed_data.particles_0_3;
+	return processed_data.particles_0_3 - processed_data.particles_1_0;
 
 }
 
@@ -484,7 +484,7 @@ uint16_t APC1_Get_Particles_GT_1_0(void) {
   */
 uint16_t APC1_Get_Particles_GT_2_5(void) {
 
-	return processed_data.particles_2_5 - processed_data.particles_0_3;
+	return processed_data.particles_0_3 - processed_data.particles_2_5;
 
 }
 
@@ -494,7 +494,7 @@ uint16_t APC1_Get_Particles_GT_2_5(void) {
   */
 uint16_t APC1_Get_Particles_GT_5_0(void) {
 
-	return processed_data.particles_5_0 - processed_data.particles_0_3;
+	return processed_data.particles_0_3 - processed_data.particles_5_0;
 
 }
 
@@ -504,7 +504,7 @@ uint16_t APC1_Get_Particles_GT_5_0(void) {
   */
 uint16_t APC1_Get_Particles_GT_10(void) {
 
-	return processed_data.particles_10 - processed_data.particles_0_3;
+	return processed_data.particles_0_3 - processed_data.particles_10;
 
 }
 

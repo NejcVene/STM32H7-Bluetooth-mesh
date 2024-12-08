@@ -248,16 +248,20 @@ MOBLE_RESULT Appli_Generic_Delta_Set(Generic_LevelStatus_t* pdeltalevelParam,
 
 	uint16_t dutyCycle = 0;
 	int16_t correctRange = 0;
-	int16_t diff = 0;
+	int32_t diff = 0;
 	int16_t dynamicStep = 0;
 //	AppliLevelSet[elementIndex].Present_Level16 = pdeltalevelParam->Present_Level16;
 //	correctRange = DC_MapSliderToGenericLevelRange(pdeltalevelParam->Present_Level16);
 	AppliLevelSet[elementIndex].Target_Level16 = DC_MapSliderToGenericLevelRange(pdeltalevelParam->Present_Level16);
 	TRACE_M(TF_GENERIC,"Generic_LevelDelta_Set level value: %d \r\n", AppliLevelSet[elementIndex].Target_Level16);
 
+	if (AppliLevelSet[elementIndex].Present_Level16 == 0) {
+		AppliLevelSet[elementIndex].Present_Level16 = -32767;
+	}
 	while (AppliLevelSet[elementIndex].Present_Level16 != AppliLevelSet[elementIndex].Target_Level16) {
-		diff = AppliLevelSet[elementIndex].Target_Level16 - AppliLevelSet[elementIndex].Present_Level16;
+		diff = (int32_t) AppliLevelSet[elementIndex].Target_Level16 - (int32_t) AppliLevelSet[elementIndex].Present_Level16;
 		dynamicStep = (abs(diff) < STEP_SIZE) ? abs(diff) : STEP_SIZE;
+		TRACE_M(TF_GENERIC,"Generic_LevelDelta_Set step: %d \r\n", dynamicStep);
 		if (diff > 0) {
 			AppliLevelSet[elementIndex].Present_Level16 += dynamicStep;
 		} else {

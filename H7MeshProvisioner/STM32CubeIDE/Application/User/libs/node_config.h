@@ -15,6 +15,7 @@
 extern "C" {
 #endif
 
+#define	MAX_CONF_NODES					5
 #define MAX_MODELS_PER_NODE				5
 #define MAX_NODE_NAME					10
 #define NODE_DEF_VAL					100

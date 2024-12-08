@@ -16,6 +16,9 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_4EUC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">None</Translation>
+      </Text>
       <Text Id="__SingleUse_5E0R" Alignment="Center" TypographyId="DefaultBold">
         <Translation Language="GB">Set</Translation>
       </Text>
@@ -176,7 +179,7 @@
         <Translation Language="GB">Device is configured</Translation>
       </Text>
       <Text Id="__SingleUse_M1AF" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">No nodes found</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_J4Q1" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">ATEP ROOT</Translation>
@@ -239,7 +242,7 @@
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_2JW3" Alignment="Center" TypographyId="Medium">
-        <Translation Language="GB">25*C</Translation>
+        <Translation Language="GB"></Translation>
       </Text>
       <Text Id="__SingleUse_PGKI" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">&lt;&gt;</Translation>

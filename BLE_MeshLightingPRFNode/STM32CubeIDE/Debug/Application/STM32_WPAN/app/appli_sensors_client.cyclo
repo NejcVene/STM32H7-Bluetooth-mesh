@@ -1,8 +1,0 @@
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensors_client.c:66:14:Appli_SensorsClient_API	1
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensors_client.c:159:6:Appli_Sensor_Cadence_Status	2
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensors_client.c:184:6:Appli_Sensor_Settings_Status	2
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensors_client.c:209:6:Appli_Sensor_Setting_Status	2
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensors_client.c:234:6:Appli_Sensor_Descriptor_Status	2
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensors_client.c:259:6:Appli_Sensor_Status	3
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensors_client.c:308:6:Appli_Sensor_Column_Status	2
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/STM32_WPAN/app/appli_sensors_client.c:333:6:Appli_Sensor_Series_Status	2

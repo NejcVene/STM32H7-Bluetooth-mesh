@@ -1,9 +1,0 @@
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/hw_uart.c:73:6:HW_UART_Init	2
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/hw_uart.c:95:6:HW_UART_Receive_IT	2
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/hw_uart.c:118:6:HW_UART_Transmit_IT	2
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/hw_uart.c:141:13:HW_UART_Transmit	6
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/hw_uart.c:189:13:HW_UART_Transmit_DMA	6
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/hw_uart.c:241:6:HW_UART_Interrupt_Handler	2
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/hw_uart.c:264:6:HW_UART_DMA_Interrupt_Handler	2
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/hw_uart.c:287:6:HAL_UART_RxCpltCallback	5
-F:/Nejc/Projekti/BLEMeshHomeAutomation/BLE_MeshLightingPRFNode/Core/Src/hw_uart.c:320:6:HAL_UART_TxCpltCallback	3

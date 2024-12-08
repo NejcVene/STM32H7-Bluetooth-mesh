@@ -19,6 +19,14 @@ public:
     virtual void GUI_SwitchScreenAfterProv();
     void GUI_ErrorOccured();
 
+    void GUI_NotificationSetText(const char *text) {
+
+    	touchgfx::Unicode::strncpy(noNodesFoundTextBuffer, text, NONODESFOUNDTEXT_SIZE);
+    	noNodesFoundText.invalidate();
+    	noNodesFoundMsg.setVisible(true);
+
+    }
+
 protected:
 
     static const int maxButtons = 5;

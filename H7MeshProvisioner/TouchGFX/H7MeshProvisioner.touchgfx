@@ -494,10 +494,9 @@
                   {
                     "Type": "TextArea",
                     "Name": "noNodesFoundText",
-                    "X": 136,
-                    "Y": 16,
-                    "Width": 189,
-                    "Height": 29,
+                    "Y": 15,
+                    "Width": 460,
+                    "Height": 30,
                     "TextId": "__SingleUse_M1AF",
                     "TextRotation": "0",
                     "Color": {
@@ -505,7 +504,11 @@
                       "Green": 255,
                       "Blue": 254
                     },
-                    "AutoSize": true
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_4EUC",
+                      "UseBuffer": true,
+                      "BufferSize": 50
+                    }
                   }
                 ]
               }
@@ -523,6 +526,7 @@
             "Name": "modalWindow1",
             "Width": 480,
             "Height": 272,
+            "Visible": false,
             "FileName": "H7ModalBackgroundSmall.png",
             "ModalX": 133,
             "ModalY": 61,

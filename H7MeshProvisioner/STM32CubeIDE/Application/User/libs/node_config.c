@@ -68,7 +68,7 @@ NC_MaskedFeatures groupAddress[] = {
 };
 
 Node_NetworkAddress_t nodeAddresses[5];
-Node_Config_t nodeConfigs[5];
+Node_Config_t nodeConfigs[MAX_CONF_NODES];
 HT_HashTable_t *modelsData;
 static uint32_t numOfConfiguredNodes;
 static int deviceConfiguredFlag;

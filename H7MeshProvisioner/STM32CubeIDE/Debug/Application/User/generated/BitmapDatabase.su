@@ -1,2 +1,0 @@
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/images/src/BitmapDatabase.cpp:141:37:const touchgfx::Bitmap::BitmapData* BitmapDatabase::getInstance()	4	static
-F:/Nejc/Projekti/BLEMeshHomeAutomation/H7MeshProvisioner/TouchGFX/generated/images/src/BitmapDatabase.cpp:146:10:uint16_t BitmapDatabase::getInstanceSize()	4	static

@@ -12,7 +12,7 @@
 #include <gui/containers/BottomMenu.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
 #include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <gui/containers/ScreenTitleBar.hpp>
 #include <touchgfx/containers/ModalWindow.hpp>
 #include <gui/containers/Loader.hpp>
@@ -44,10 +44,16 @@ protected:
     touchgfx::ScrollableContainer scrollableContainer1;
     touchgfx::Container noNodesFoundMsg;
     touchgfx::Box box1;
-    touchgfx::TextArea noNodesFoundText;
+    touchgfx::TextAreaWithOneWildcard noNodesFoundText;
     ScreenTitleBar screenTitleBar1;
     touchgfx::ModalWindow modalWindow1;
     Loader loader1;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t NONODESFOUNDTEXT_SIZE = 50;
+    touchgfx::Unicode::UnicodeChar noNodesFoundTextBuffer[NONODESFOUNDTEXT_SIZE];
 
 private:
 

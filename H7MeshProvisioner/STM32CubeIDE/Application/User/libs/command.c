@@ -28,6 +28,13 @@ CMD_CommandGet_t *CMD_IsEmbeddedProvisioned(void *buffer, CMD_CommandGet_t *guiC
 CMD_CommandGet_t *CMD_UnprovEmProvisioner(void *buffer, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_NotifyAtepRoot(void *buffer, CMD_CommandGet_t *guiCmd);
 
+/*
+ * Use: for provisioning the embedded provisioner (WB55)
+ * Timeout: 60 seconds
+ * Command type: acknowledge (requires response from WB55)
+ * Setup function: none (no parameters)
+ * Execute function: CMD_NotifyAtepRoot
+ */
 CMD_MeshCommand_t defineRootNetworkNode = {
 		.command = "ATEP ROOT",
 		.rxTimeout = 60,
@@ -37,6 +44,14 @@ CMD_MeshCommand_t defineRootNetworkNode = {
 		.CMD_Execute = CMD_NotifyAtepRoot
 };
 
+/*
+ * Use: scanning for unprovisioned devices on WB55
+ * Timeout: 60 seconds
+ * Command type: acknowledge (requires response from WB55)
+ * Response: string where cut UUID of nodes are separated by ';'
+ * Setup function: none (no parameters)
+ * Execute function: CMD_NotifyScan
+ */
 CMD_MeshCommand_t scanForUnprovisionedNetworkDevices = {
 		.command = "ATEP SCAN",
 		.rxTimeout = 60,
@@ -46,6 +61,15 @@ CMD_MeshCommand_t scanForUnprovisionedNetworkDevices = {
 		.CMD_Execute = CMD_NotifyScan
 };
 
+/*
+ * Use: provision node (add to network)
+ * Timeout: 120 seconds
+ * Command type: acknowledge (requires response from WB55)
+ * Response: uint16_t value which is assigned node address
+ * Setup function: CMD_GenericFormatCommand
+ * Execute function: CMD_NofitfyProvision
+ * Params (in order): node ID
+ */
 CMD_MeshCommand_t provisionNetworkDevice = {
 		.command = "ATEP PRVN-%d",
 		.rxTimeout = 120,
@@ -55,6 +79,15 @@ CMD_MeshCommand_t provisionNetworkDevice = {
 		.CMD_Execute = CMD_NofitfyProvision
 };
 
+/*
+ * Use: scan for unprovisioned devices by using already provisioned nodes
+ * 		(this should find nodes which are out of reach of the embedded provisioner)
+ * Timeout: 60 seconds
+ * Command type: acknowledge (requires response from WB55)
+ * Response: string where cut UUID of nodes are separated by ';'
+ * Setup function: none (no parameters)
+ * Execute function: CMD_NotifyScan
+ */
 CMD_MeshCommand_t scanForUnprovisionedNetworkDevicesOutOfRangePvrn = {
 		.command = "ATEP NDSCAN",
 		.rxTimeout = 60,
@@ -64,6 +97,16 @@ CMD_MeshCommand_t scanForUnprovisionedNetworkDevicesOutOfRangePvrn = {
 		.CMD_Execute = CMD_NotifyScan
 };
 
+/*
+ * Use: provision nodes which are out of range of the embedded provisioner and
+ * 		found by ATEP NDSCAN
+ * Timeout: 120 seconds
+ * Command type: acknowledge (requires response from WB55)
+ * Response: uint16_t value which is assigned node address
+ * Setup function: CMD_GenericFormatCommand
+ * Execute function: CMD_NofitfyProvision
+ * Params (in order): node ID
+ */
 CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn = {
 		.command = "ATEP NDPRVN-%d",
 		.rxTimeout = 120,
@@ -73,6 +116,15 @@ CMD_MeshCommand_t provisionNetworkDeviceOutOfRangePvrn = {
 		.CMD_Execute = CMD_NofitfyProvision
 };
 
+/*
+ * Use: unprovision (delete) node from network
+ * Timeout: 60 seconds
+ * Command type: acknowledge (requires response from WB55)
+ * Response: uint16_t value which is 0 or 1 (success of error)
+ * Setup function: CMD_GenericFormatCommand
+ * Execute function: CMD_NotifyUnprovision
+ * Params (in order): node address
+ */
 CMD_MeshCommand_t unprovisionNetworkDevice = {
 		.command = "ATEP UNPV %d",
 		.rxTimeout = 60,
@@ -82,6 +134,15 @@ CMD_MeshCommand_t unprovisionNetworkDevice = {
 		.CMD_Execute = CMD_NotifyUnprovision
 };
 
+/*
+ * Use: generic on/off command
+ * Timeout: 0 seconds
+ * Command type: unacknowledged (requires no response from WB55)
+ * Response: none
+ * Setup function: CMD_GenericFormatCommand
+ * Execute function: none
+ * Params (in order): node address, on/off
+ */
 CMD_MeshCommand_t genericOnOffSetAck = {
 		.command = "ATCL %s 8202 %s 00",
 		.rxTimeout = CMD_MESH_RX_UACK,
@@ -91,7 +152,16 @@ CMD_MeshCommand_t genericOnOffSetAck = {
 		.CMD_Execute = NULL
 };
 
-// broken ???
+/*
+ * Use: generic on/off status
+ * Timeout: 0 seconds
+ * Command type: unacknowledged (requires no response from WB55)
+ * Response: none
+ * Setup function: CMD_GenericFormatCommand
+ * Execute function: none
+ * Note: not used
+ * Params (in order): node address
+ */
 CMD_MeshCommand_t genericOnOffGet = {
 		.command = "ATCL %s 8201",
 		.rxTimeout = CMD_MESH_RX_UACK,
@@ -101,7 +171,14 @@ CMD_MeshCommand_t genericOnOffGet = {
 		.CMD_Execute = NULL
 };
 
-// not used
+/*
+ * Use: unprovision embedded provisioner
+ * Timeout: 60 seconds
+ * Command type: acknowledged (requires response from WB55)
+ * Response: uint16_t value which is 0 or 1 (success of error)
+ * Setup function: none
+ * Execute function: CMD_UnprovEmProvisioner
+ */
 CMD_MeshCommand_t unprovisionEmbeddedProv = {
 		.command = "BLEMesh_Unprovision",
 		.rxTimeout = 60,
@@ -111,6 +188,14 @@ CMD_MeshCommand_t unprovisionEmbeddedProv = {
 		.CMD_Execute = CMD_UnprovEmProvisioner
 };
 
+/*
+ * Use: check if embedded provisioner is provisioned
+ * Timeout: 60 seconds
+ * Command type: acknowledged (requires response from WB55)
+ * Response: uint16_t value which is 0 or 1 (success of error)
+ * Setup function: none
+ * Execute function: CMD_IsEmbeddedProvisioned
+ */
 CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 		.command = "BLEMesh_IsUnprovisioned",
 		.rxTimeout = 60,
@@ -120,6 +205,15 @@ CMD_MeshCommand_t isEmbeddedProvProvisioned = {
 		.CMD_Execute = CMD_IsEmbeddedProvisioned
 };
 
+/*
+ * Use: add/remove node from a subscription
+ * Timeout: 120 seconds
+ * Command type: acknowledged (requires response from WB55)
+ * Response: uint16_t value which is 0 or 1 (success of error)
+ * Setup function: CMD_SetupConfig
+ * Execute function: CMD_SubsAdd
+ * Params (in order): flag, element address, address, model ID
+ */
 CMD_MeshCommand_t pubSetSubAdd = {
 		.command = "BLEMesh_PubSub %d %d %d %d",
 		.rxTimeout = 120,
@@ -129,15 +223,32 @@ CMD_MeshCommand_t pubSetSubAdd = {
 		.CMD_Execute = CMD_SubsAdd
 };
 
+/*
+ * Use: get libraries version
+ * Timeout: 60 seconds
+ * Command type: acknowledged (requires response from WB55)
+ * Response: string which has versions seperated by ';'
+ * Setup function: none
+ * Execute function: CMD_NotifyLibVersion
+ */
 CMD_MeshCommand_t getLibInfo = {
 		.command = "BLEMesh_LibVer",
 		.rxTimeout = 60,
 		.commandType = PRO_MSG_TYPE_OTHER,
 		.dataType = PRO_DATATYPE_STRING,
-		.CMD_Setup = CMD_GenericFormatCommand,
+		.CMD_Setup = NULL,
 		.CMD_Execute = CMD_NotifyLibVersion
 };
 
+/*
+ * Use: get sensor measurement identified by PID
+ * Timeout: 60 seconds
+ * Command type: acknowledged (requires response from WB55)
+ * Response: APC1 data structure
+ * Setup function: CMD_GenericFormatCommand
+ * Execute function: CMD_NotifySensorUpdate
+ * Params (in order): node address, sensor PID
+ */
 CMD_MeshCommand_t sensorGet = {
 		.command = "ATCL %s 8231 %s",
 		.rxTimeout = 60,
@@ -147,6 +258,15 @@ CMD_MeshCommand_t sensorGet = {
 		.CMD_Execute = CMD_NotifySensorUpdate
 };
 
+/*
+ * Use: get sensor PIDs from a node
+ * Timeout: 60 seconds
+ * Command type: acknowledged (requires response from WB55)
+ * Response: sensor descriptor structure
+ * Setup function: CMD_GenericFormatCommand
+ * Execute function: CMD_SensorDescriptorGet
+ * Params (in order): node address
+ */
 CMD_MeshCommand_t sensorDescriptorGet = {
 		.command = "ATCL %s 8230",
 		.rxTimeout = 60,
@@ -156,6 +276,14 @@ CMD_MeshCommand_t sensorDescriptorGet = {
 		.CMD_Execute = CMD_SensorDescriptorGet
 };
 
+/*
+ * Use: test comm_ex if it is working
+ * Timeout: 60 seconds
+ * Command type: acknowledged (requires response from WB55)
+ * Response: comm_ex test structure
+ * Setup function: none
+ * Execute function: CMD_ProtocolStructTest
+ */
 CMD_MeshCommand_t protocolStructTest = {
 		.command = "BLEMesh_Protest",
 		.rxTimeout = 60,
@@ -165,6 +293,15 @@ CMD_MeshCommand_t protocolStructTest = {
 		.CMD_Execute = CMD_ProtocolStructTest
 };
 
+/*
+ * Use: generic level delta set
+ * Timeout: 0 seconds
+ * Command type: unacknowledged (requires no response from WB55)
+ * Response: none
+ * Setup function: CMD_GenericFormatCommand
+ * Execute function: none
+ * Params (in order): node address, delta set
+ */
 CMD_MeshCommand_t genericLevelDeltaSet = {
 		.command = "ATCL %s 8209 %s 00 00 00",
 		.rxTimeout = CMD_MESH_RX_UACK,
@@ -339,6 +476,13 @@ void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_Command
 
 }
 
+/**
+  * @brief  Place values into command parameters specific for pubSetSubAdd.
+  * @param  buffer		Character pointer into which formatted command will be placed.
+  * @param  cmdTemplate	Character pointer to command template.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains allocated parameters and their values.
+  * @retval	None
+  */
 void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd) {
 
 	static int isAllocated = 0;
@@ -347,14 +491,18 @@ void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *gu
 	NC_MaskedFeatures *groupAddress = NC_GetAllGroupAddresses();
 	char *output = buffer;
 	const char *t = cmdTemplate;
-	int numOfModels = NC_GetPopCount(node->address.nodeModels);
+	int numOfModels = NC_GetPopCount(node->address.nodeModels); // get the number of model in a node
 	static int i = 0;
 	static int j = 0;
 
 	if (!isAllocated) {
+		// get model information for enabled models on a node
 		allModels = NC_GetNodeFeature(NC_GetAllModels(), node->address.nodeModels);
 		isAllocated = 1;
 	}
+	// this is basically a loop, but the looping part comes from the FSM
+	// two loops i and j, where j is the inner loop
+	// check if the outer loop finished
 	if (i < toSubb->numOfSubs) {
 		if (j < numOfModels) {
 			sprintf(output, t, toSubb->subbedAddresses[i].subbTo,
@@ -363,11 +511,13 @@ void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *gu
 							   allModels[j].value);
 			j++;
 		}
+		// check if the inner loop finished
 		if (j == numOfModels) {
 			j = 0;
 			i++;
 		}
 	}
+	// when finished, free allocated memory for node models info
 	if (i == toSubb->numOfSubs) {
 		i = 0;
 		j = 0;
@@ -379,6 +529,13 @@ void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *gu
 
 }
 
+/**
+  * @brief  Configure node the newly added node and inform GUI.
+  * @param  buffer		buffer which contains response data from WB55.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains command, allocated parameters
+  * 					and their values for the command that was sent to WB55 for execution.
+  * @retval	CMD_CommandGet_t pointer
+  */
 CMD_CommandGet_t *CMD_NofitfyProvision(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	int index;
@@ -390,6 +547,7 @@ CMD_CommandGet_t *CMD_NofitfyProvision(void *buffer, CMD_CommandGet_t *guiCmd) {
 	Node_Config_t *configNodes = NC_GetNodeConfigArray();
 	uint32_t assignedNodeAddress = (uint32_t) *((uint16_t *) buffer);
 
+	// the correct assigned node address is provided by WB55 in the buffer
 	if ((index = NC_ProvisionNode(guiCmd->param[0].value.i, assignedNodeAddress)) >= 0) {
 		paramValue[0] = (void *) &configNodes[index];
 		paramValue[1] = (void *) NC_GetAllGroupAddresses();
@@ -405,6 +563,14 @@ CMD_CommandGet_t *CMD_NofitfyProvision(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 }
 
+/**
+  * @brief  Notify GUI that unprov. node/s have been found.
+  * @note	Switches command index if necessary.
+  * @param  buffer		buffer which contains response data from WB55.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains command, allocated parameters
+  * 					and their values for the command that was sent to WB55 for execution.
+  * @retval	CMD_CommandGet_t pointer
+  */
 CMD_CommandGet_t *CMD_NotifyScan(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
@@ -414,9 +580,13 @@ CMD_CommandGet_t *CMD_NotifyScan(void *buffer, CMD_CommandGet_t *guiCmd) {
 	size_t sizes[] = {sizeof(Node_NetworkAddress_t)};
 	char *inputBuffer = (char *) buffer;
 
+	// if result from WB55 is none and ordinary scan was used, then no unprov. node
+	// was found. Switch to scan range and scan again.
 	if (!strcmp(inputBuffer, "NONE") && guiCmd->commandIndex == CMD_MESH_ATEP_SCAN) {
 		guiCmd->commandIndex = CMD_MESH_ATEP_SCAN_RANGE;
 	} else if (!strcmp(inputBuffer, "NONE") && guiCmd->commandIndex == CMD_MESH_ATEP_SCAN_RANGE) {
+		// if result from WB55 is none and scan range was used, then no unprov. node
+		// was found; notify GUI about this
 		paramValue[0] = (void *) NC_GetNodeNetworkAddressArray();
 		cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
 									&type,
@@ -425,6 +595,8 @@ CMD_CommandGet_t *CMD_NotifyScan(void *buffer, CMD_CommandGet_t *guiCmd) {
 									arrayLength,
 									sizes);
 	} else {
+		// one or multiple unprov. nodes have been found. Notify
+		// the GUI about this
 		NC_ReportFoundNodes(inputBuffer);
 		NC_CheckEnabledModelsFeatures();
 		paramValue[0] = (void *) NC_GetNodeNetworkAddressArray();
@@ -440,6 +612,14 @@ CMD_CommandGet_t *CMD_NotifyScan(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 }
 
+/**
+  * @brief  Add and/or remove subscription from node; when finished notify GUI.
+  * @note	Loops FSM if needed.
+  * @param  buffer		buffer which contains response data from WB55.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains command, allocated parameters
+  * 					and their values for the command that was sent to WB55 for execution.
+  * @retval	CMD_CommandGet_t pointer
+  */
 CMD_CommandGet_t *CMD_SubsAdd(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
@@ -456,6 +636,7 @@ CMD_CommandGet_t *CMD_SubsAdd(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	} else if (!inputBuffer) {
 		runCounter++;
+		// this loops until all models have been used for
 		if (runCounter >= (NC_GetPopCount(node->address.nodeModels) * toSubb->numOfSubs)) {
 			// for some reason, the compiler here puts add instruction before cmp
 			// making the for loop run less then it should (ex. upper bound is 1
@@ -489,6 +670,14 @@ CMD_CommandGet_t *CMD_SubsAdd(void *buffer, CMD_CommandGet_t *guiCmd) {
 //
 //}
 
+/**
+  * @brief  Delete node; when finished notify GUI.
+  * @note	Resets node data to default values.
+  * @param  buffer		buffer which contains response data from WB55.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains command, allocated parameters
+  * 					and their values for the command that was sent to WB55 for execution.
+  * @retval	CMD_CommandGet_t pointer
+  */
 CMD_CommandGet_t *CMD_NotifyUnprovision(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
@@ -498,6 +687,7 @@ CMD_CommandGet_t *CMD_NotifyUnprovision(void *buffer, CMD_CommandGet_t *guiCmd) 
 	void *paramValue[] = {(void *) &ok};
 	uint16_t inputBuffer = *((uint16_t *) buffer);
 
+	// input buffer has either 0 or 1
 	if (inputBuffer) {
 
 	} else if (!inputBuffer) {
@@ -517,6 +707,14 @@ CMD_CommandGet_t *CMD_NotifyUnprovision(void *buffer, CMD_CommandGet_t *guiCmd) 
 
 }
 
+/**
+  * @brief  Show libraries versions on GUI.
+  * @note	Shows STBle mesh version, its subversion & Comm_ex version.
+  * @param  buffer		buffer which contains response data from WB55.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains command, allocated parameters
+  * 					and their values for the command that was sent to WB55 for execution.
+  * @retval	CMD_CommandGet_t pointer
+  */
 CMD_CommandGet_t *CMD_NotifyLibVersion(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
@@ -527,6 +725,7 @@ CMD_CommandGet_t *CMD_NotifyLibVersion(void *buffer, CMD_CommandGet_t *guiCmd) {
 	PARAMETER_TYPE types[] = {PARAM_CHAR, PARAM_CHAR, PARAM_CHAR};
 	char *inputBuffer = (char *) buffer;
 
+	// input buffer has library versions separated by ';'
 	if (!strcmp(inputBuffer, "NONE")) {
 
 	} else {
@@ -547,6 +746,13 @@ CMD_CommandGet_t *CMD_NotifyLibVersion(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 }
 
+/**
+  * @brief  Figure out which sensors data has been polled then notify GUI.
+  * @param  buffer		buffer which contains response data from WB55.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains command, allocated parameters
+  * 					and their values for the command that was sent to WB55 for execution.
+  * @retval	CMD_CommandGet_t pointer
+  */
 CMD_CommandGet_t *CMD_NotifySensorUpdate(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
@@ -555,13 +761,11 @@ CMD_CommandGet_t *CMD_NotifySensorUpdate(void *buffer, CMD_CommandGet_t *guiCmd)
 	size_t sizes[] = {sizeof(Sensor_MeasuredData_t)};
 	void *paramValues[1];
 	unsigned int inputPID;
-//	APC1_SelectedData_t *inputBuffer = (APC1_SelectedData_t *) buffer;
-//	char message[256];
 
-//	sprintf(message, "APC1 PM1.0: %d\r\n", inputBuffer->pm1_0);
-//	debugMessage(message);
+	// get sensor PID which was used as input parameter for command
 	sscanf(guiCmd->param[1].value.str, "%X", &inputPID);
-	paramValues[0] = (void *) SN_GetMeasuredSensorData((SENSOR_PID ) inputPID, buffer);
+	// get measured data
+	paramValues[0] = (void *) SN_GetMeasuredSensorData((SENSOR_PID) inputPID, buffer);
 	cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
 								&type,
 								paramValues,
@@ -573,6 +777,13 @@ CMD_CommandGet_t *CMD_NotifySensorUpdate(void *buffer, CMD_CommandGet_t *guiCmd)
 
 }
 
+/**
+  * @brief  Register sensor and add it to correct node config.
+  * @param  buffer		buffer which contains response data from WB55.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains command, allocated parameters
+  * 					and their values for the command that was sent to WB55 for execution.
+  * @retval	CMD_CommandGet_t pointer
+  */
 CMD_CommandGet_t *CMD_SensorDescriptorGet(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
@@ -582,8 +793,10 @@ CMD_CommandGet_t *CMD_SensorDescriptorGet(void *buffer, CMD_CommandGet_t *guiCmd
 	void *paramValue[] = {(void *) &ok};
 	unsigned int nodeAddress;
 
+	// get used node address which was used as command parameter
 	sscanf(guiCmd->param[0].value.str, "%X", &nodeAddress);
 	node = NC_GetConfigNodeFromAddress(nodeAddress);
+	// register sensor which is tied to PID (we got PID as input from WB55)
 	node->sensors = SN_RegisterSensor((SN_SensorDescriptorGet_t *) buffer);
 
 	cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
@@ -597,6 +810,14 @@ CMD_CommandGet_t *CMD_SensorDescriptorGet(void *buffer, CMD_CommandGet_t *guiCmd
 
 }
 
+/**
+  * @brief  Used for testing; checks if Comm_ex is working properly.
+  * @note	Prints received data on terminal and nothing else. Used for testing.
+  * @param  buffer		buffer which contains response data from WB55.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains command, allocated parameters
+  * 					and their values for the command that was sent to WB55 for execution.
+  * @retval	CMD_CommandGet_t pointer
+  */
 CMD_CommandGet_t *CMD_ProtocolStructTest(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
@@ -627,9 +848,14 @@ CMD_CommandGet_t *CMD_ProtocolStructTest(void *buffer, CMD_CommandGet_t *guiCmd)
 
 }
 
-/** \brief Check if node configures as Unprovisioned node.
-* \return MOBLE_TRUE if node configured as Unprovisioned node. MOBLE_FALSE otherwise.
-*/
+/**
+  * @brief  Check if node configures as unprov. node.
+  * @note	Changes command index if necessary.
+  * @param  buffer		buffer which contains response data from WB55.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains command, allocated parameters
+  * 					and their values for the command that was sent to WB55 for execution.
+  * @retval	CMD_CommandGet_t pointer
+  */
 CMD_CommandGet_t *CMD_IsEmbeddedProvisioned(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
@@ -637,8 +863,10 @@ CMD_CommandGet_t *CMD_IsEmbeddedProvisioned(void *buffer, CMD_CommandGet_t *guiC
 	void *paramValue[1];
 	int inputBuffer = (int) *((uint16_t *) buffer);
 
+	// input buffer is either 0 or 1
 	if (inputBuffer) {
 		// em. prov. is unprovisioned
+		// switch command so than next loop provisions
 		guiCmd->commandIndex = CMD_MESH_ATEP_ROOT;
 	} else {
 		// em. prov. is provisioned
@@ -658,6 +886,13 @@ CMD_CommandGet_t *CMD_IsEmbeddedProvisioned(void *buffer, CMD_CommandGet_t *guiC
 
 }
 
+/**
+  * @brief  Notify GUI that em. prov. is correctly setup.
+  * @param  buffer		buffer which contains response data from WB55.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains command, allocated parameters
+  * 					and their values for the command that was sent to WB55 for execution.
+  * @retval	CMD_CommandGet_t pointer
+  */
 CMD_CommandGet_t *CMD_NotifyAtepRoot(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
@@ -665,10 +900,13 @@ CMD_CommandGet_t *CMD_NotifyAtepRoot(void *buffer, CMD_CommandGet_t *guiCmd) {
 	void *paramValue[1];
 	uint16_t inputBuffer = *((uint16_t *) buffer);
 
+	// input buffer is either 0 or 1
 	if (inputBuffer) {
 
 	} else if (!inputBuffer) {
+		// save that em. prov. is provisioned
 		NC_SetDeviceConfiguredFlag(1);
+		// notify GUI
 		paramValue[0] = (void *) &inputBuffer;
 		cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
 									&type,
@@ -682,10 +920,14 @@ CMD_CommandGet_t *CMD_NotifyAtepRoot(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 }
 
-/** \brief Unprovisions the node if it is provisioned.
-* \return MOBLE_RESULT_SUCCESS on success, MOBLE_RESULT_FALSE if node us already
-*                               unprovisioned, and failure code in other cases.
-*/
+/**
+  * @brief  Unprovisions the em. prov. if it is provisioned.
+  * @note	Used for testing and should not be accessible to the end user.
+  * @param  buffer		buffer which contains response data from WB55.
+  * @param  guiCmd		CMD_CommandGet_t pointer which contains command, allocated parameters
+  * 					and their values for the command that was sent to WB55 for execution.
+  * @retval	CMD_CommandGet_t pointer
+  */
 CMD_CommandGet_t *CMD_UnprovEmProvisioner(void *buffer, CMD_CommandGet_t *guiCmd) {
 
 	CMD_CommandGet_t *cmdRes = NULL;
@@ -693,6 +935,7 @@ CMD_CommandGet_t *CMD_UnprovEmProvisioner(void *buffer, CMD_CommandGet_t *guiCmd
 	void *paramValue[1];
 	int inputBuffer = (int) *((uint16_t *) buffer);
 
+	// does not do anything, just passed inputBuffer value to GUI
 	paramValue[0] = (void *) &inputBuffer;
 	cmdRes = CMD_CreateCommandGet(guiCmd->commandIndex,
 								&type,

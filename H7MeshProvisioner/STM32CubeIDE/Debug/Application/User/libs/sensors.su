@@ -1,7 +1,0 @@
-../Application/User/libs/sensors.c:66:6:SN_AllocateAndCopy	16	static
-../Application/User/libs/sensors.c:47:24:SN_GetMeasuredSensorData	16	static
-../Application/User/libs/sensors.c:74:6:SN_FreeMeasuredSensorData	8	static
-../Application/User/libs/sensors.c:83:6:SN_FreeSensorInfo	16	static
-../Application/User/libs/sensors.c:99:25:SN_CreateButtons	24	static
-../Application/User/libs/sensors.c:113:6:SN_RegisterAPC1Sensor	88	static
-../Application/User/libs/sensors.c:26:15:SN_RegisterSensor	24	static

@@ -31,9 +31,11 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase()
     box1.setColor(touchgfx::Color::getColorFromRGB(73, 86, 101));
     noNodesFoundMsg.add(box1);
 
-    noNodesFoundText.setXY(136, 16);
+    noNodesFoundText.setPosition(0, 15, 460, 30);
     noNodesFoundText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 254));
     noNodesFoundText.setLinespacing(0);
+    Unicode::snprintf(noNodesFoundTextBuffer, NONODESFOUNDTEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_4EUC).getText());
+    noNodesFoundText.setWildcard(noNodesFoundTextBuffer);
     noNodesFoundText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M1AF));
     noNodesFoundMsg.add(noNodesFoundText);
 
@@ -47,6 +49,7 @@ AddDeviceScreenViewBase::AddDeviceScreenViewBase()
     modalWindow1.setBackground(touchgfx::BitmapId(BITMAP_H7MODALBACKGROUNDSMALL_ID), 133, 61);
     modalWindow1.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     modalWindow1.setShadeAlpha(100);
+    modalWindow1.hide();
     loader1.setXY(7, 0);
     modalWindow1.add(loader1);
 

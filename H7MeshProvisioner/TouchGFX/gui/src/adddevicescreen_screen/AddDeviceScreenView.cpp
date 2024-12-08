@@ -23,16 +23,23 @@ void AddDeviceScreenView::setupScreen()
     	deviceAdds[i].setVisible(false);
     	scrollableContainer1.add(deviceAdds[i]);
     }
-    modalWindow1.show();
-    loader1.GUI_SetLoaderText("Searching");
-    loader1.GUI_SetDisable(false);
-    this->cmd = CMD_CreateCommandGet(CMD_MESH_ATEP_SCAN,
-    								NULL,
-									NULL,
-									0,
-									NULL,
-									NULL);
-    presenter->GUI_SendCommand(this->cmd);
+
+    if (NC_GetNumOfConfNodes() == MAX_CONF_NODES) {
+    	// show message that no more nodes can be provisioned
+    	GUI_NotificationSetText("Maximum number of nodes reached");
+    } else {
+    	modalWindow1.show();
+		loader1.GUI_SetLoaderText("Searching");
+		loader1.GUI_SetDisable(false);
+		this->cmd = CMD_CreateCommandGet(CMD_MESH_ATEP_SCAN,
+										NULL,
+										NULL,
+										0,
+										NULL,
+										NULL);
+		presenter->GUI_SendCommand(this->cmd);
+    }
+
 }
 
 void AddDeviceScreenView::tearDownScreen()
@@ -64,7 +71,7 @@ void AddDeviceScreenView::GUI_SetDevicesFound(Node_NetworkAddress_t *foundDevice
 		}
 	}
 	if (!nodeFound) {
-		noNodesFoundMsg.setVisible(true);
+		GUI_NotificationSetText("No nodes found");
 	}
 	scrollableContainer1.invalidateContent();
 
