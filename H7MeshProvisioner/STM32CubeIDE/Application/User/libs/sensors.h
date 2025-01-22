@@ -16,6 +16,7 @@ extern "C" {
 
 #define MAX_NODE_NAME	10
 #define MAX_BUTTON_NAME	MAX_NODE_NAME
+#define MAX_SENSOR_BUTTONS	20
 
 // defines for APC1 sensor
 #define APC1_SENSOR_NAME								"APC1"
@@ -37,7 +38,8 @@ extern "C" {
 #define APC1_BUTTON_RH_COMP								"RH"
 #define APC1_BUTTON_TEMPERATURE							"Temp"
 #define APC1_BUTTON_AQI									"AQI"
-#define APC1_BUTTON_NAMES() 	\
+#define APC1_BUTTON_NAMES	 	\
+(const char *[])				\
 {								\
 	APC1_BUTTON_PM1_0,			\
 	APC1_BUTTON_PM2_5,			\
@@ -119,8 +121,6 @@ Node_Sensor_t SN_RegisterSensor(SN_SensorDescriptorGet_t *descriptors);
 Sensor_MeasuredData_t *SN_GetMeasuredSensorData(SENSOR_PID inputPID, void *buffer);
 void SN_FreeMeasuredSensorData(Sensor_MeasuredData_t *mea);
 void SN_FreeSensorInfo(Node_Sensor_t *sensors);
-
-char *APC1_GetAQIString(int index);
 
 #ifdef __cplusplus
 }
