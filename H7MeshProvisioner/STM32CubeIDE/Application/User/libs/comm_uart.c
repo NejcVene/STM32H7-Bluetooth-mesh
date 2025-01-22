@@ -11,6 +11,10 @@
 #include <math.h>
 #include <limits.h>
 
+#ifdef _DEBUG
+#include "lib_utils.h"
+#endif
+
 #ifdef _SLAVE
 #define	Toggle_Pin(port, pin, state)			{ HAL_GPIO_WritePin(port, pin, state); }
 #define HS_LOW									{ Toggle_Pin(COMM_HS_PORT_SLAVE, COMM_HS_PIN_SLAVE, GPIO_PIN_RESET); }
@@ -20,15 +24,6 @@
 static volatile int timerTrigger;
 Comm_IT_Responses_t itResponses;
 volatile int hsTrigger;
-
-#ifdef _DEBUG
-extern UART_HandleTypeDef huart3;
-static inline void debugMessage(char *message) {
-
-	HAL_UART_Transmit(&huart3, (uint8_t *) message, strlen(message), 3000);
-
-}
-#endif
 
 /**
   * @brief  Wait for transmission on LPUART to complete.
@@ -290,8 +285,8 @@ void TIM_SetTimeout(Comm_Settings_t *setting, uint32_t timeout) {
 #ifdef _DEBUG
 	char message[30];
 	float updateEvent = ((float) (TIM2_BASE_CLOCK * 1e6)) / ((float) TIM2_BASE_PRESCALER * newARR);
-	sprintf(message, "Calc. delay: %d (%ld)\r\n", (int) (1 / updateEvent), timeout);
-	debugMessage(message);
+	sprintf(message, "Calc. delay: %d (%ld)", (int) (1 / updateEvent), timeout);
+	debugMessage(message, strlen(message), PRINT_CHAR);
 #endif
 
 	TIM_Reset(setting);

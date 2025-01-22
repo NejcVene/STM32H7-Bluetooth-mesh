@@ -27,16 +27,8 @@
 #include "mesh_cfg.h"
 #endif
 
-// debug function
 #ifdef _DEBUG
-#ifdef _MASTER
-extern UART_HandleTypeDef huart3;
-#define UART_DEBUG &huart3
-#else
-extern UART_HandleTypeDef huart1;
-#define UART_DEBUG &huart1
-#endif
-static void debugMessage(char *message, uint16_t payloadLenght);
+#include "lib_utils.h"
 #endif
 
 // UART functions
@@ -116,65 +108,6 @@ static FSM_TransitionState_t stateTransitionTable[MAIN_FSM_NUM_OF_STATES][MAIN_F
 		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_TRANSMIT_COMPLETE] 	= {MAIN_FSM_IDLE, FSM_Idle},
 		[MAIN_FSM_TRANSMIT][MAIN_FSM_EVENT_ERROR] 				= {MAIN_FSM_ERROR, FSM_Error}
 };
-#endif
-
-#ifdef _DEBUG
-static inline void debugMessage(char *message, uint16_t payloadLength) {
-
-    char tmp[5];
-    char output[PAC_MAX_PAYLOAD];
-    int index = 0;
-    int isBinary = 0;
-
-    for (int i = 0; i < payloadLength; i++) {
-        if (!isBinary) {
-            if (message[i] == ':') {
-                // add ':' to the output and switch to binary mode
-                if (index < sizeof(output) - 1) {
-                    output[index++] = ':';
-                }
-                isBinary = 1; // switch to binary processing
-            } else if (isprint((uint8_t)message[i])) {
-                // append printable character before ':' in string mode
-                if (index < sizeof(output) - 1) {
-                    output[index++] = message[i];
-                }
-            } else {
-                // non-printable character before ':' should be escaped
-            	// this should never happen, right?
-                snprintf(tmp, sizeof(tmp), "\\x%02X", (uint8_t)message[i]);
-                size_t len = strlen(tmp);
-                if (index + len < sizeof(output)) {
-                    strcpy(&output[index], tmp);
-                    index += len;
-                }
-            }
-        } else {
-            // binary mode; always output as hex
-            snprintf(tmp, sizeof(tmp), "\\x%02X", (uint8_t)message[i]);
-            size_t len = strlen(tmp);
-            if (index + len < sizeof(output)) {
-                strcpy(&output[index], tmp);
-                index += len;
-            } else {
-                break; // prevent overflow
-            }
-        }
-    }
-    // always append \r\n to the output buffer at the end
-    if (index + 2 < sizeof(output)) {
-        output[index++] = '\r';
-        output[index++] = '\n';
-    }
-    // terminate the output buffer
-    if (index < sizeof(output)) {
-        output[index] = '\0';
-    } else {
-        output[sizeof(output) - 1] = '\0';
-    }
-    HAL_UART_Transmit(UART_DEBUG, (uint8_t *)output, index, 3000);
-
-}
 #endif
 
 static inline void Protocol_ConvertMessage(uint8_t *payload, uint16_t payload_lenght) {
@@ -345,7 +278,7 @@ void FSM_FreeEventsDeleteQueue(Queue *queue) {
 void FSM_Idle(void *param) {
 
 #ifdef _DEBUG
-	debugMessage("IDLE State", strlen("IDLE State"));
+	debugMessage("IDLE State", strlen("IDLE State"), PRINT_CHAR);
 #endif
 	errorCounter = 0;
 }
@@ -353,7 +286,7 @@ void FSM_Idle(void *param) {
 void FSM_Setup(void *param) {
 
 #ifdef _DEBUG
-	debugMessage("SETUP State", strlen("SETUP State"));
+	debugMessage("SETUP State", strlen("SETUP State"), PRINT_CHAR);
 #endif
 	// error.commandIndex = *((int *) param);
 	startByteRx = 0;
@@ -375,7 +308,7 @@ void FSM_Setup(void *param) {
 void FSM_Transmit(void *param) {
 
 #ifdef _DEBUG
-	debugMessage("TRANSMIT State", strlen("TRANSMIT State"));
+	debugMessage("TRANSMIT State", strlen("TRANSMIT State"), PRINT_CHAR);
 #endif
 #ifdef _MASTER
 	char cmdToSend[CMD_MESH_COMMAND_LENGHT] = {0};
@@ -415,7 +348,7 @@ void FSM_Transmit(void *param) {
 void FSM_Receive(void *param) {
 
 #ifdef _DEBUG
-	debugMessage("RECEIVE State", strlen("RECEIVE State"));
+	debugMessage("RECEIVE State", strlen("RECEIVE State"), PRINT_CHAR);
 #endif
 	PROTOCOL_STATUS status;
 	FSM_ErrorReport_t error;
@@ -437,8 +370,8 @@ void FSM_Receive(void *param) {
 void FSM_Execute(void *param) {
 
 #ifdef _DEBUG
-	debugMessage("EXECUTE State -> RECEIVED: ", strlen("EXECUTE State -> RECEIVED: "));
-	debugMessage((char *) CommandString, payloadLengthRx);
+	debugMessage("EXECUTE State -> RECEIVED: ", strlen("EXECUTE State -> RECEIVED: "), PRINT_CHAR);
+	debugMessage((char *) CommandString, payloadLengthRx, PRINT_BINARY);
 #endif
 #ifdef _MASTER
 	size_t len = 0;
@@ -503,7 +436,7 @@ void FSM_Error(void *param) {
 #ifdef _DEBUG
 	char errString[40];
 	sprintf(errString, "ERROR State [%d](%d)", error->status, errorCounter);
-	debugMessage(errString, strlen(errString));
+	debugMessage(errString, strlen(errString), PRINT_CHAR);
 #endif
 	if (errorCounter++ >= ERROR_THRESHOLD
 		|| error->status == PRO_ERROR_UN_CMD

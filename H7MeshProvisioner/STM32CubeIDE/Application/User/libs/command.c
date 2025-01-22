@@ -13,6 +13,10 @@
 #include "sensors.h"
 #include <string.h>
 
+#ifdef _DEBUG
+#include "lib_utils.h"
+#endif
+
 void CMD_GenericFormatCommand(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);
 void CMD_SetupConfig(char *buffer, const char *cmdTemplate, CMD_CommandGet_t *guiCmd);
 CMD_CommandGet_t *CMD_NofitfyProvision(void *buffer, CMD_CommandGet_t *guiCmd);
@@ -312,16 +316,6 @@ CMD_MeshCommand_t genericLevelDeltaSet = {
 };
 
 static NC_MaskedFeatures *allModels;
-
-extern UART_HandleTypeDef huart3;
-
-#ifdef _DEBUG
-static inline void debugMessage(char *message) {
-
-	HAL_UART_Transmit(&huart3, (uint8_t *) message, strlen(message), 6000);
-
-}
-#endif
 
 /**
   * @brief  Create CMD_CommandGet_t structure which will contain parameters and their values which are
@@ -829,11 +823,13 @@ CMD_CommandGet_t *CMD_ProtocolStructTest(void *buffer, CMD_CommandGet_t *guiCmd)
 
 	// note: it does not like printing float variables, as sprintf crashes
 	// even with the correct flags to the linker
-	sprintf(message, "uint16_t: %d\r\nuint8_t: %d\r\nint: %d\r\n",
+	sprintf(message, "uint16_t: %d\r\nuint8_t: %d\r\nint: %d",
 				inputBuffer->val1,
 				inputBuffer->val2,
 				inputBuffer->val4);
-	debugMessage(message);
+#ifdef _DEBUG
+	debugMessage(message, strlen(message), PRINT_CHAR);
+#endif
 
 	// something has to be returned to avoid looping
 	// the returned value is ignored

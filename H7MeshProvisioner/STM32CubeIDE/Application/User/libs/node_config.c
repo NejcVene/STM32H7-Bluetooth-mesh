@@ -13,6 +13,10 @@
 #include <string.h>
 #include <inttypes.h>
 
+#ifdef _DEBUG
+#include "lib_utils.h"
+#endif
+
 #define CLEAR_NODE_ADDRESSES(nodeAddressValue) (Node_NetworkAddress_t) 				\
 											   { .nodeAddress = (nodeAddressValue), \
 												 .uuid = "",						\
@@ -74,15 +78,6 @@ static uint32_t numOfConfiguredNodes;
 static int deviceConfiguredFlag;
 char nodeModelsStr[10];
 char nodeFeaturesStr[5];
-
-#ifdef _DEBUG
-extern UART_HandleTypeDef huart3;
-static inline void debugMessage(char *message) {
-
-	HAL_UART_Transmit(&huart3, (uint8_t *) message, strlen(message), 3000);
-
-}
-#endif
 
 void NC_Init(void) {
 
@@ -175,8 +170,8 @@ void NC_AddSubscription(Node_Config_t *node, uint16_t bitmask) {
 
 #ifdef _DEBUG
 	char buffer[100];
-	sprintf(buffer, "Sub add: %d\r\n", bitmask);
-	debugMessage(buffer);
+	sprintf(buffer, "Sub add: %d", bitmask);
+	debugMessage(buffer, strlen(buffer), PRINT_CHAR);
 #endif
 	for (int i = 0; groupAddress[i].name != NULL; i++) {
 		if (groupAddress[i].bitmask == bitmask) {
@@ -191,8 +186,8 @@ void NC_RemoveSubscription(Node_Config_t *node, uint16_t bitmask) {
 
 #ifdef _DEBUG
 	char buffer[100];
-	sprintf(buffer, "Sub remove: %d\r\n", bitmask);
-	debugMessage(buffer);
+	sprintf(buffer, "Sub remove: %d", bitmask);
+	debugMessage(buffer, strlen(buffer), PRINT_CHAR);
 #endif
 	for (int i = 0; groupAddress[i].name != NULL; i++) {
 		if (groupAddress[i].bitmask == bitmask) {
