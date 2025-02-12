@@ -4,49 +4,260 @@
     <Language Id="GB" />
   </Languages>
   <Texts>
-    <TextGroup Id="Group1" />
+    <TextGroup Id="Group1">
+      <Text Id="EnteredText" Alignment="Left" TypographyId="Display">
+        <Translation Language="GB">&lt;placeholder&gt;</Translation>
+      </Text>
+      <Text Id="NumMode" Alignment="Center" TypographyId="Mode">
+        <Translation Language="GB">ABC</Translation>
+      </Text>
+      <Text Id="AlphaMode" Alignment="Center" TypographyId="Mode">
+        <Translation Language="GB">123</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_RUCY" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Add device</Translation>
+      <Text Id="__SingleUse_4EUC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">None</Translation>
       </Text>
-      <Text Id="__SingleUse_2JW3" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">25*C</Translation>
+      <Text Id="__SingleUse_5E0R" Alignment="Center" TypographyId="DefaultBold">
+        <Translation Language="GB">Set</Translation>
       </Text>
-      <Text Id="__SingleUse_JF9F" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB"></Translation>
+      <Text Id="__SingleUse_FIW9" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">Value</Translation>
       </Text>
-      <Text Id="__SingleUse_MVY0" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_CRF2" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_RH3W" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_M33F" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">Searching ...</Translation>
+      <Text Id="__SingleUse_TBYN" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_T9AC" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_X80R" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_XY6N" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8ZWP" Alignment="Center" TypographyId="DefaultBold">
+        <Translation Language="GB">Reset</Translation>
+      </Text>
+      <Text Id="__SingleUse_DAI8" Alignment="Center" TypographyId="DefaultBold">
+        <Translation Language="GB">Save</Translation>
+      </Text>
+      <Text Id="__SingleUse_WP2P" Alignment="Center" TypographyId="DefaultBold">
+        <Translation Language="GB">Cancel</Translation>
+      </Text>
+      <Text Id="__SingleUse_S5PQ" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Protocol test</Translation>
+      </Text>
+      <Text Id="__SingleUse_MFFZ" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_4AS9" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Comm_ex version: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_3GFH" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_RZQR" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Mesh library sub version: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_0RUS" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_J0YL" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Mesh library version: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4F49" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZXED" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_VUYR" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">Minute</Translation>
+      </Text>
+      <Text Id="__SingleUse_HZRE" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_OGC8" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_2QJM" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">Hour</Translation>
+      </Text>
+      <Text Id="__SingleUse_O4YG" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_VZDO" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_AVYH" Alignment="Center" TypographyId="DefaultBold">
+        <Translation Language="GB">Save</Translation>
+      </Text>
+      <Text Id="__SingleUse_64IT" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">Device information</Translation>
+      </Text>
+      <Text Id="__SingleUse_7MZW" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">Developer options</Translation>
+      </Text>
+      <Text Id="__SingleUse_G6K4" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">Set clock</Translation>
+      </Text>
+      <Text Id="__SingleUse_KVUU" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_W7F3" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_RZFU" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">&lt;value&gt;: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8EB0" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">Bathroom</Translation>
+      </Text>
+      <Text Id="__SingleUse_XYN8" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">Bedroom</Translation>
+      </Text>
+      <Text Id="__SingleUse_GV96" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">Living room</Translation>
+      </Text>
+      <Text Id="__SingleUse_V9M3" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">Kitchen</Translation>
+      </Text>
+      <Text Id="__SingleUse_EMB5" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">All devices</Translation>
+      </Text>
+      <Text Id="__SingleUse_CUTS" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_6FPD" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_1X0H" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Settings</Translation>
+      </Text>
+      <Text Id="__SingleUse_VTO1" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Add device</Translation>
+      </Text>
+      <Text Id="__SingleUse_NZUG" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Rooms</Translation>
+      </Text>
+      <Text Id="__SingleUse_YTJT" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Home</Translation>
+      </Text>
+      <Text Id="__SingleUse_KOKE" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_N2HL" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_319A" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">No devices in this room</Translation>
+      </Text>
+      <Text Id="__SingleUse_3FEL" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">Options</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZQHI" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Liv room grp addr</Translation>
+      </Text>
+      <Text Id="__SingleUse_GVRS" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Kitchen grp addr</Translation>
+      </Text>
+      <Text Id="__SingleUse_4TTE" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Unprovision em</Translation>
+      </Text>
+      <Text Id="__SingleUse_52I8" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">OK</Translation>
+      </Text>
+      <Text Id="__SingleUse_PIBO" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Device is configured</Translation>
+      </Text>
+      <Text Id="__SingleUse_M1AF" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_J4Q1" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">ATEP ROOT</Translation>
+      </Text>
+      <Text Id="__SingleUse_8ZXX" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_KPYR" Alignment="Left" TypographyId="Text16px">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_KAJT" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_FHXT" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_W5ZN" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_B8P1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_2W0E" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_OPFS" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_0LTB" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Cancel</Translation>
+      </Text>
+      <Text Id="__SingleUse_EMI2" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">Save</Translation>
+      </Text>
+      <Text Id="__SingleUse_TWFN" Alignment="Center" TypographyId="Text16px">
+        <Translation Language="GB">Provision</Translation>
+      </Text>
+      <Text Id="__SingleUse_T1HH" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_Z4S0" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_9YKB" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">None</Translation>
+      </Text>
+      <Text Id="__SingleUse_L7DV" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_UH6U" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_YBUN" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_99CM" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Default</Translation>
+      </Text>
+      <Text Id="__SingleUse_486T" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_2JW3" Alignment="Center" TypographyId="Medium">
+        <Translation Language="GB"></Translation>
       </Text>
       <Text Id="__SingleUse_PGKI" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_BATJ" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Home</Translation>
-      </Text>
-      <Text Id="__SingleUse_XGDV" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Undefined</Translation>
-      </Text>
-      <Text Id="__SingleUse_RE6P" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Settings</Translation>
-      </Text>
-      <Text Id="__SingleUse_7Z3U" Alignment="Center" TypographyId="Small">
-        <Translation Language="GB">Devices</Translation>
-      </Text>
-      <Text Id="__SingleUse_B85K" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">OFF</Translation>
-      </Text>
-      <Text Id="__SingleUse_6IT6" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">ON</Translation>
-      </Text>
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
-    <Typography Id="Small" Font="verdana.ttf" Size="14" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,a-z,A-Z,0x2E" />
+    <Typography Id="Medium" Font="verdana.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Text16px" Font="verdanab.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,a-z,A-Z,0x20,0x2E,0x3C,0x3E" />
+    <Typography Id="DefaultBold" Font="verdanab.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,a-z,A-Z,0x20" />
+    <Typography Id="Display" Font="verdana.ttf" Size="28" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="Keyboard" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="a-z,A-Z,0-9" />
+    <Typography Id="Mode" Font="verdana.ttf" Size="24" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

@@ -9,12 +9,13 @@
 #include <gui/adddevicescreen_screen/AddDeviceScreenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
+#include <gui/containers/BottomMenu.hpp>
 #include <touchgfx/containers/ScrollableContainer.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
+#include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <gui/containers/ScreenTitleBar.hpp>
 #include <touchgfx/containers/ModalWindow.hpp>
-#include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
-#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
+#include <gui/containers/Loader.hpp>
 
 class AddDeviceScreenViewBase : public touchgfx::View<AddDeviceScreenPresenter>
 {
@@ -24,12 +25,10 @@ public:
     virtual void setupScreen();
 
     /*
-     * Virtual Action Handlers
+     * Custom Actions
      */
-    virtual void GUI_ProvisionNode()
-    {
-        // Override and implement this function in AddDeviceScreen
-    }
+    virtual void goToDeviceConfigScreen();
+    virtual void goToErrorScreen();
 
 protected:
     FrontendApplication& application() {
@@ -41,12 +40,20 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::TiledImage tiledImage1;
+    BottomMenu bottomMenu1;
     touchgfx::ScrollableContainer scrollableContainer1;
-    touchgfx::WildcardTextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  foudNodeBtn;
+    touchgfx::Container noNodesFoundMsg;
+    touchgfx::Box box1;
+    touchgfx::TextAreaWithOneWildcard noNodesFoundText;
+    ScreenTitleBar screenTitleBar1;
     touchgfx::ModalWindow modalWindow1;
-    touchgfx::CircleProgress circleProgress1;
-    touchgfx::PainterRGB565 circleProgress1Painter;
-    touchgfx::TextArea textArea1;
+    Loader loader1;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t NONODESFOUNDTEXT_SIZE = 50;
+    touchgfx::Unicode::UnicodeChar noNodesFoundTextBuffer[NONODESFOUNDTEXT_SIZE];
 
 private:
 
@@ -55,16 +62,6 @@ private:
      */
     static const uint32_t CANVAS_BUFFER_SIZE = 7200;
     uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
-
-    /*
-     * Callback Declarations
-     */
-    touchgfx::Callback<AddDeviceScreenViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
-
-    /*
-     * Callback Handler Declarations
-     */
-    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 

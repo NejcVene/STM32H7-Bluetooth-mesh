@@ -27,6 +27,40 @@ public:
 
     virtual ~HomeScreenPresenter() {}
 
+    virtual void GUI_NotifyError();
+
+    uint8_t GUI_GetSeconds() {
+
+    	return model->GUI_GetSeconds();
+
+    }
+
+    uint8_t GUI_GetMinutes() {
+
+    	return model->GUI_GetMinutes();
+
+    }
+
+    uint8_t GUI_GetHours() {
+
+    	return model->GUI_GetHours();
+
+    }
+
+    void GUI_DigitalClock() {
+
+    	model->DigitalClock();
+
+    }
+
+    void GUI_SendCommand(CMD_CommandGet_t *cmd) {
+
+    	model->GUI_SendCommand(cmd);
+
+    }
+
+    virtual void GUI_NodeIsConfigured();
+
 private:
     HomeScreenPresenter();
 

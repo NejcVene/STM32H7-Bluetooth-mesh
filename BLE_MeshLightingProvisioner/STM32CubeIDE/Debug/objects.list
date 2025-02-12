@@ -2,6 +2,7 @@
 "./Application/Core/Libs/communication_ex.o"
 "./Application/Core/Libs/hw_spi.o"
 "./Application/Core/Libs/queue.o"
+"./Application/Core/Libs/serial_fun.o"
 "./Application/Core/app_debug.o"
 "./Application/Core/app_entry.o"
 "./Application/Core/flash_driver.o"

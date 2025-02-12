@@ -9,11 +9,13 @@
 #include <gui/homescreen_screen/HomeScreenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
+#include <gui/containers/BottomMenu.hpp>
+#include <gui/containers/ScreenTitleBar.hpp>
+#include <touchgfx/containers/ModalWindow.hpp>
+#include <gui/containers/Loader.hpp>
 
 class HomeScreenViewBase : public touchgfx::View<HomeScreenPresenter>
 {
@@ -21,6 +23,11 @@ public:
     HomeScreenViewBase();
     virtual ~HomeScreenViewBase();
     virtual void setupScreen();
+
+    /*
+     * Custom Actions
+     */
+    virtual void goToErrorScreen();
 
 protected:
     FrontendApplication& application() {
@@ -32,26 +39,22 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::TiledImage tiledImage1;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  deviceBtn;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  undefinedBtn;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  settingsBtn;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  addDeviceBtn;
     touchgfx::Container container1;
-    touchgfx::Image image1;
+    touchgfx::Box box1;
     touchgfx::TextArea textArea1;
     touchgfx::DigitalClock mainDigitalClock;
+    BottomMenu bottomMenu1;
+    ScreenTitleBar screenTitleBar1;
+    touchgfx::ModalWindow loaderModal;
+    Loader loader1;
 
 private:
 
     /*
-     * Callback Declarations
+     * Canvas Buffer Size
      */
-    touchgfx::Callback<HomeScreenViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
-
-    /*
-     * Callback Handler Declarations
-     */
-    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
+    static const uint32_t CANVAS_BUFFER_SIZE = 7200;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 
 };
 

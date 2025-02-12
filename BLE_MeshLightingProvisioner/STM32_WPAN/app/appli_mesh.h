@@ -130,7 +130,7 @@ MOBLEUINT16 PWM_CoolValue(float colourValue ,float brightValue);
 MOBLEUINT16 PWM_WarmValue(float colourValue ,float brightValue);
 MOBLEUINT16 PwmValueMapping(MOBLEUINT16 setValue , MOBLEUINT16 maxRange , MOBLEINT16 minRange);
 
-MOBLE_RESULT BLEMesh_ScanDevices(neighbor_params_t *unprovDeviceArray, MOBLEUINT8 *noOfUnprovDevices);
+MOBLE_RESULT BLEMesh_ScanDevices(neighbor_params_t *unprovDeviceArray, MOBLEUINT8 *noOfUnprovDevices, uint8_t *resultBuffer);
 MOBLE_RESULT BLEMesh_ProvisionDevice(neighbor_params_t *unprovDeviceArray, MOBLEUINT16 index);
 
 #endif /* APPLI_MESH_H */

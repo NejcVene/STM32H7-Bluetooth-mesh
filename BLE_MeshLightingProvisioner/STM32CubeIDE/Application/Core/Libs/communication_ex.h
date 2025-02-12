@@ -16,7 +16,7 @@
 #define PAC_SIZE				7
 #define PAC_MAX_PAYLOAD 		256
 #define CMD_INDEX_SIZE			10
-#define ERROR_TRESHOLD			3
+#define ERROR_THRESHOLD			3
 
 typedef enum {
 	PRO_MSG_TYPE_OTHER = 0,				// for custom messages
@@ -25,7 +25,22 @@ typedef enum {
 	PRO_MSG_TYPE_GET,					// to get status of device
 	PRO_MSG_TYPE_STATUS,				// response to get command
 	PRO_MSG_TYPE_ERROR,					// for reporting regular errors
+	PRO_MSH_TYPE_FUN
 } PROTOCOL_MSG_TYPE;
+
+typedef enum {
+	PRO_DATATYPE_8T = 0,
+	PRO_DATATYPE_U8T,
+	PRO_DATATYPE_16T,
+	PRO_DATATYPE_U16T,
+	PRO_DATATYPE_32T,
+	PRO_DATATYPE_U32T,
+	PRO_DATATYPE_DOUBLE,
+	PRO_DATATYPE_STRING,
+	PRO_DATATYPE_STRUCT_APC1,
+	PRO_DATATYPE_STRUCT_DESC_GET,
+	PRO_DATATYPE_STRUCT_TEST
+} PROTOCOL_DATATYPE;
 
 typedef enum {
 	MAIN_FSM_IDLE = 0,					// FSM is waiting for an user event
@@ -49,6 +64,8 @@ typedef enum {
 	MAIN_FSM_EVENT_EXE_COMPLETE,		// execution of command/update is complete,
 #ifdef SLAVE
 	MAIN_FSM_EVENT_INTERRUPT,
+	MAIN_FSM_EVENT_LOOP,
+	MAIN_FSM_EVENT_RESET,
 #endif
 	MAIN_FSM_NUM_OF_EVENTS
 } MAIN_FSM_EVENT;
@@ -83,8 +100,18 @@ typedef struct {
 
 typedef struct {
 	PROTOCOL_STATUS status;
-	int commandIndex;
+	void *param;
 } FSM_ErrorReport_t;
+
+typedef struct {
+	PROTOCOL_DATATYPE datatype;
+	uint8_t *payload;
+} FSM_SlaveDataSend_t;
+
+typedef struct {
+	char command[30];
+	void *data;
+} FSM_DecodedPayload_t;
 
 extern Comm_IT_Responses_t itResponses;
 extern void (*LPUART_CallbackTx)(void);
@@ -97,4 +124,9 @@ FSM_QueuedEvent_t *FSM_GetEvent(Queue *queue);
 void FSM_FreeEvent(FSM_QueuedEvent_t *event);
 void FSM_FreeEventsDeleteQueue(Queue *queue);
 
+void FSM_SetNdpvrn(void);
+void FSM_UnsetNdpvrn(void);
+int FSM_GetNdprn(void);
+void FSM_EncodePayload(uint8_t *buffer, const char *command, void *data, size_t dataSize, PROTOCOL_DATATYPE type);
+//FSM_DecodedPayload_t *FSM_DecodePayload(char *buffer, PROTOCOL_DATATYPE type);
 #endif /* APPLICATION_CORE_LIBS_COMMUNICATION_EX_H_ */

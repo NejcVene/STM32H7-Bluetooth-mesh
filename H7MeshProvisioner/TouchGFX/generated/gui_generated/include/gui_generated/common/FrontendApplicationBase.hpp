@@ -21,15 +21,48 @@ public:
     }
 
     // Screen1
-    void gotoScreen1ScreenWipeTransitionEast();
+    void gotoScreen1ScreenSlideTransitionEast();
 
     // HomeScreen
     void gotoHomeScreenScreenNoTransition();
 
-    void gotoHomeScreenScreenWipeTransitionEast();
+    void gotoHomeScreenScreenSlideTransitionEast();
 
     // AddDeviceScreen
-    void gotoAddDeviceScreenScreenWipeTransitionEast();
+    void gotoAddDeviceScreenScreenSlideTransitionEast();
+
+    // ConfigureNodeScreen
+    void gotoConfigureNodeScreenScreenSlideTransitionEast();
+
+    // DebugScreen
+    void gotoDebugScreenScreenSlideTransitionEast();
+
+    // NodesScreen
+    void gotoNodesScreenScreenSlideTransitionEast();
+
+    // NodeProperScreen
+    void gotoNodeProperScreenScreenSlideTransitionEast();
+
+    // SettingsScreen
+    void gotoSettingsScreenScreenSlideTransitionEast();
+
+    // ClockSettingsScreen
+    void gotoClockSettingsScreenScreenSlideTransitionEast();
+
+    // DeviceInfoScreen
+    void gotoDeviceInfoScreenScreenSlideTransitionEast();
+
+    // NodeSesnsorsScreen
+    void gotoNodeSesnsorsScreenScreenSlideTransitionEast();
+
+    // RenameScreen
+    void gotoRenameScreenScreenSlideTransitionEast();
+
+    // ErrorScreen
+    void gotoErrorScreenScreenSlideTransitionEast();
+
+    // NodeLevelSetScreen
+    void gotoNodeLevelSetScreenScreenSlideTransitionEast();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -37,15 +70,48 @@ protected:
     Model& model;
 
     // Screen1
-    void gotoScreen1ScreenWipeTransitionEastImpl();
+    void gotoScreen1ScreenSlideTransitionEastImpl();
 
     // HomeScreen
     void gotoHomeScreenScreenNoTransitionImpl();
 
-    void gotoHomeScreenScreenWipeTransitionEastImpl();
+    void gotoHomeScreenScreenSlideTransitionEastImpl();
 
     // AddDeviceScreen
-    void gotoAddDeviceScreenScreenWipeTransitionEastImpl();
+    void gotoAddDeviceScreenScreenSlideTransitionEastImpl();
+
+    // ConfigureNodeScreen
+    void gotoConfigureNodeScreenScreenSlideTransitionEastImpl();
+
+    // DebugScreen
+    void gotoDebugScreenScreenSlideTransitionEastImpl();
+
+    // NodesScreen
+    void gotoNodesScreenScreenSlideTransitionEastImpl();
+
+    // NodeProperScreen
+    void gotoNodeProperScreenScreenSlideTransitionEastImpl();
+
+    // SettingsScreen
+    void gotoSettingsScreenScreenSlideTransitionEastImpl();
+
+    // ClockSettingsScreen
+    void gotoClockSettingsScreenScreenSlideTransitionEastImpl();
+
+    // DeviceInfoScreen
+    void gotoDeviceInfoScreenScreenSlideTransitionEastImpl();
+
+    // NodeSesnsorsScreen
+    void gotoNodeSesnsorsScreenScreenSlideTransitionEastImpl();
+
+    // RenameScreen
+    void gotoRenameScreenScreenSlideTransitionEastImpl();
+
+    // ErrorScreen
+    void gotoErrorScreenScreenSlideTransitionEastImpl();
+
+    // NodeLevelSetScreen
+    void gotoNodeLevelSetScreenScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

@@ -20,7 +20,8 @@ extern "C" {
 #define PAC_SIZE				7
 #define PAC_MAX_PAYLOAD 		256
 #define CMD_INDEX_SIZE			10
-#define ERROR_TRESHOLD			3
+#define CMD_MESH_MAX_PARAMS		10
+#define ERROR_THRESHOLD			3
 
 typedef enum {
 	PRO_MSG_TYPE_OTHER = 0,				// for custom messages
@@ -29,7 +30,22 @@ typedef enum {
 	PRO_MSG_TYPE_GET,					// to get status of device
 	PRO_MSG_TYPE_STATUS,				// response to get command
 	PRO_MSG_TYPE_ERROR,					// for reporting regular errors
+	PRO_MSH_TYPE_FUN
 } PROTOCOL_MSG_TYPE;
+
+typedef enum {
+	PRO_DATATYPE_8T = 0,
+	PRO_DATATYPE_U8T,
+	PRO_DATATYPE_16T,
+	PRO_DATATYPE_U16T,
+	PRO_DATATYPE_32T,
+	PRO_DATATYPE_U32T,
+	PRO_DATATYPE_DOUBLE,
+	PRO_DATATYPE_STRING,
+	PRO_DATATYPE_STRUCT_APC1,
+	PRO_DATATYPE_STRUCT_DESC_GET,
+	PRO_DATATYPE_STRUCT_TEST
+} PROTOCOL_DATATYPE;
 
 typedef enum {
 	MAIN_FSM_IDLE = 0,					// FSM is waiting for an user event
@@ -49,9 +65,12 @@ typedef enum {
 	MAIN_FSM_EVENT_RECEIVE_COMPLETE,	// once receive is complete without errors
 	MAIN_FSM_EVENT_AKC,					// message requires an answer
 	MAIN_FSM_EVENT_UNACK,				// message does not require an answer
-	MAIN_FSM_EVENT_ERROR,				// an error occurred during transmission/reception,
-	MAIN_FSM_EVENT_EXE_COMPLETE,		// execution of command/update is complete,
-#ifdef SLAVE
+	MAIN_FSM_EVENT_ERROR,				// an error occurred during transmission/reception
+	MAIN_FSM_EVENT_EXE_COMPLETE,		// execution of command/update is complete
+	MAIN_FSM_EVENT_LOOP,				// when in execution, it is possible that slave node sends empty response (ex. no nodes found)
+										// we must then send to the slave to execute another command which might yield correct results or
+										// a command must be sent again with different parameters (ex. subscribe add/publish set)
+#ifdef _SLAVE
 	MAIN_FSM_EVENT_INTERRUPT,
 #endif
 	MAIN_FSM_NUM_OF_EVENTS
@@ -66,10 +85,6 @@ typedef enum {
 	CHECK_END_BYTE,						// FSM checks received end byte
 	CHECK_OK							// everything is OK and received data can be processed further
 } PROCESS_MESSAGE_STATE;
-
-typedef struct {
-	int commandIndex;
-} FSM_CommandGet_t;
 
 typedef struct {
 	MAIN_FSM_STATE nextState;
@@ -87,8 +102,13 @@ typedef struct {
 
 typedef struct {
 	PROTOCOL_STATUS status;
-	int commandIndex;
+	void *param;
 } FSM_ErrorReport_t;
+
+typedef struct {
+	char command[30];
+	void *data;
+} FSM_DecodedPayload_t;
 
 extern Comm_IT_Responses_t itResponses;
 extern void (*LPUART_CallbackTx)(void);
@@ -100,6 +120,10 @@ FSM_QueuedEvent_t *FSM_GetEvent(Queue *queue);
 void FSM_FreeEvent(FSM_QueuedEvent_t *event);
 void FSM_FreeEventsDeleteQueue(Queue *queue);
 
+
+void FSM_EncodePayload(char *buffer, const char *command, void *data, size_t dataSize, PROTOCOL_DATATYPE type);
+FSM_DecodedPayload_t *FSM_DecodePayload(uint8_t *buffer, PROTOCOL_DATATYPE type);
+void FSM_FreeDecodedPayload(FSM_DecodedPayload_t *payload);
 #ifdef __cplusplus
 }
 #endif

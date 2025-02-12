@@ -24,6 +24,7 @@
 #include "hal_common.h"
 #include "mesh_cfg.h"
 #include "communication_ex.h"
+#include "serial_fun.h"
 #if ENABLE_SERIAL_CONTROL
 #include "serial_ctrl.h"
 #endif
@@ -190,14 +191,15 @@ __weak void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize)
 */
 void Serial_InterfaceProcess(void)
 {
-	char resultBuffer[PAC_MAX_PAYLOAD] = {0};
+	uint8_t resultBuffer[PAC_MAX_PAYLOAD] = {0};
+	int cmdResposneElsewhere = 0;
   /* Reset button emulation state */
   button_emulation = 0;
   LongPressButton = 0;
 #ifdef ENABLE_SERIAL_CONTROL
   if (!strncmp((char const*)CommandString, "ATCL", 4))
-  {            
-    SerialCtrl_Process((char *)CommandString, indexReceiveChar);
+  {
+    SerialCtrl_Process((char *)CommandString, indexReceiveChar, &cmdResposneElsewhere);
   }
   else if (!strncmp((char const*)CommandString, "ATVR", 4))
   {            
@@ -229,7 +231,7 @@ void Serial_InterfaceProcess(void)
 #if ENABLE_SERIAL_PRVN        
   else if(!strncmp((char const*)CommandString, "ATEP", 4))
   {
-     SerialPrvn_Process((char *)CommandString, indexReceiveChar, resultBuffer);
+     SerialPrvn_Process((char *)CommandString, indexReceiveChar, resultBuffer, &cmdResposneElsewhere);
   }
 #endif        
 #ifdef ENABLE_SENSOR_MODEL_SERVER_SETUP
@@ -269,20 +271,25 @@ void Serial_InterfaceProcess(void)
   {
     TRACE_I(TF_SERIAL_PRINTS,"LONG_PRESS OK\r\n");
     LongPressButton=1;
-  } 
+  } else if (!strncmp((char const *) CommandString, FUN_INDENTIFIER, FUN_INDENTIFIER_LEN)) {
+	  cmdResposneElsewhere = 1;
+	  SF_Process(CommandString, indexReceiveChar);
+  }
   else
   {
     TRACE_I(TF_SERIAL_PRINTS,"Not Entered valid test parameters\r\n");  
     SerialCurrentState = STATE_IDLE;
   }      
-  while(indexReceiveChar)
-  {
-    CommandString[--indexReceiveChar] = 0;
-  }
-  if (cmdTypeConverted != PRO_MSG_TYPE_UNACK) {
-  		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, sizeof(resultBuffer));
-  } else {
-  		FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_UNACK, NULL, 0);
+  if (!cmdResposneElsewhere) {
+	  while(indexReceiveChar)
+	  {
+		CommandString[--indexReceiveChar] = 0;
+	  }
+	  if (cmdTypeConverted != PRO_MSG_TYPE_UNACK) {
+			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, PAC_MAX_PAYLOAD);
+	  } else {
+			FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_UNACK, NULL, 0);
+	  }
   }
   // UTIL_SEQ_SetTask(1 << CFG_TASK_MESH_SPI_TX_REQ_ID, CFG_SCH_PRIO_0); this here might be important
 }

@@ -8,6 +8,7 @@
 #include "hash_table.h"
 #include "freertos_os2.h"
 
+// at what hash table fullness should it be resized and rehashed
 #define REHASH_THRESHOLD 0.75
 
 static inline void HT_Resize(HT_HashTable_t *ht);
@@ -15,12 +16,27 @@ static void HT_ResizeAndRehash(HT_HashTable_t *ht);
 static int HT_Hash(HT_HashTable_t *ht, int k);
 // static int HT_Rehash(HT_HashTable_t *ht, int k, int i);
 
+/**
+  * @brief  Resize hash table.
+  * @note	Static function to be used only within this file. Resize
+  * 		by multiple of 2.
+  * @param  ht		Pointer to the used hash table data structure.
+  * @retval	None
+  */
 static inline void HT_Resize(HT_HashTable_t *ht) {
 
 	ht->m = 2 * ht->m + 1;
 
 }
 
+/**
+  * @brief  Calculate hash for inserted key for hash table of size m
+  * 		with prime number p.
+  * @note	Static function to be used only within this file.
+  * @param  ht		Pointer to the used hash table data structure.
+  * @param	k		Key
+  * @retval	int value
+  */
 static int HT_Hash(HT_HashTable_t *ht, int k) {
 
 	return (k * ht->p) % ht->m;
@@ -35,6 +51,12 @@ static int HT_Rehash(HT_HashTable_t *ht, int k, int i) {
 }
 */
 
+/**
+  * @brief  Resize hash table and reinsert/rehash its content.
+  * @note	Static function to be used only within this file.
+  * @param  ht		Pointer to the used hash table data structure.
+  * @retval	None
+  */
 static void HT_ResizeAndRehash(HT_HashTable_t *ht) {
 
 	HT_Element_t **oldTable = ht->table;
@@ -63,6 +85,12 @@ static void HT_ResizeAndRehash(HT_HashTable_t *ht) {
 
 }
 
+/**
+  * @brief  Create new hash table.
+  * @param  p	A prime number.
+  * @param  m	Initial size of the hash table.
+  * @retval	HT_HashTable_t pointer
+  */
 HT_HashTable_t *HT_Create(int p, int m) {
 
 	HT_HashTable_t *ht;
@@ -86,6 +114,13 @@ HT_HashTable_t *HT_Create(int p, int m) {
 
 }
 
+/**
+  * @brief  Search hash table for a certain key and return the data associated
+  * 		with it.
+  * @param  ht	Pointer to the used hash table data structure.
+  * @param  key	Key to be searched.
+  * @retval	void pointer
+  */
 void *HT_Search(HT_HashTable_t *ht, int key) {
 
 	HT_Element_t *pair = ht->table[HT_Hash(ht, key)];
@@ -100,6 +135,14 @@ void *HT_Search(HT_HashTable_t *ht, int key) {
 
 }
 
+/**
+  * @brief  Insert data into the hash table with the specified key.
+  * @note	Duplicate keys are not inserted.
+  * @param  ht		Pointer to the used hash table data structure.
+  * @param  key		Key to be inserted.
+  * @param	value	Void pointer to data which is to be inserted.
+  * @retval	None
+  */
 void HT_Insert(HT_HashTable_t *ht, int key, void *value) {
 
 	if ((double) ht->numOfElements / ht->m >= REHASH_THRESHOLD) {
@@ -133,6 +176,15 @@ void HT_Insert(HT_HashTable_t *ht, int key, void *value) {
 
 }
 
+/**
+  * @brief  Delete data from the hash table with the specified key.
+  * @note	Used lazy delete. The data is still present, but marked as deleted
+  * 		which opens it up to be overwritten and prevents it from being
+  * 		retrieved.
+  * @param  ht		Pointer to the used hash table data structure.
+  * @param  key		Key to be inserted.
+  * @retval	None
+  */
 void HT_Delete(HT_HashTable_t *ht, int key) {
 
 	HT_Element_t *toDelete = ht->table[HT_Hash(ht, key)];
@@ -149,6 +201,12 @@ void HT_Delete(HT_HashTable_t *ht, int key) {
 
 }
 
+/**
+  * @brief  Print all contents of the hash table.
+  * @note	Only used for testing. If used on actual hardware the result is unknown.
+  * @param  ht		Pointer to the used hash table data structure.
+  * @retval	None
+  */
 void HT_Print(HT_HashTable_t *ht) {
 
 	HT_Element_t *toPrint;
@@ -164,6 +222,11 @@ void HT_Print(HT_HashTable_t *ht) {
 
 }
 
+/**
+  * @brief  Delete contents of the hash table, then delete itself.
+  * @param  ht		Pointer to the used hash table data structure.
+  * @retval	None
+  */
 void HT_Clear(HT_HashTable_t *ht) {
 
 	HT_Element_t *toClear, *toClearCon;

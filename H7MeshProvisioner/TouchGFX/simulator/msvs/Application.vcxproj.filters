@@ -208,6 +208,150 @@
     <Filter Include="Header Files\generated\gui_generated\screen1_screen">
       <UniqueIdentifier>796CAA80-5DA8-434D-A4B4-EBE691462ECD</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\containers">
+      <UniqueIdentifier>00B4E5A6-9825-0A2F-94D1-AD75EF5BEF80</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\containers">
+      <UniqueIdentifier>F0FCFFBB-201A-1FDD-1166-FE1A31F8CA8D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\containers">
+      <UniqueIdentifier>55CCEF18-EF84-B67C-D19F-6D66691C7656</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\containers">
+      <UniqueIdentifier>3F4FB406-1ECD-B6F9-DEE2-AEF6EE6D3865</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\configurenodescreen_screen">
+      <UniqueIdentifier>E8AFE70F-4835-11A9-FE6E-A47614AD473C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\configurenodescreen_screen">
+      <UniqueIdentifier>2133406A-902E-1F22-5984-C73731BE5927</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\configurenodescreen_screen">
+      <UniqueIdentifier>D55968AA-4D07-AB07-7CB7-26E13892594E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\configurenodescreen_screen">
+      <UniqueIdentifier>74932F49-4272-6636-545E-302E3EF698B9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\debugscreen_screen">
+      <UniqueIdentifier>F27BEEDE-FEAE-1699-D944-3646A70118C2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\debugscreen_screen">
+      <UniqueIdentifier>5AAAD660-5966-240C-191A-04530834AFE9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\debugscreen_screen">
+      <UniqueIdentifier>A1A47D70-B59F-E2DD-BF8D-0EC89834B4C6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\debugscreen_screen">
+      <UniqueIdentifier>29AFF364-A381-B2F6-50ED-95AF6E9F7E95</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\nodesscreen_screen">
+      <UniqueIdentifier>6D5F7D96-8013-FEBF-942C-9D59375EB47E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\nodesscreen_screen">
+      <UniqueIdentifier>22BE8416-6E30-32B4-0780-DB6CC59A86E7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\nodesscreen_screen">
+      <UniqueIdentifier>B6D4A19E-9C3A-0797-E56E-0930365BD43B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\nodesscreen_screen">
+      <UniqueIdentifier>7ACA1378-975A-4025-4E39-02BC9E1D36BF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\nodeproperscreen_screen">
+      <UniqueIdentifier>26727907-1CE3-DFF4-7E7E-0AC4FF784991</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\nodeproperscreen_screen">
+      <UniqueIdentifier>BAEF8EDD-C413-A498-79C0-7ACD9775F976</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\nodeproperscreen_screen">
+      <UniqueIdentifier>8A086812-7475-70D1-6820-4610FD590A18</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\nodeproperscreen_screen">
+      <UniqueIdentifier>2D86034D-1C18-1D4C-8FA9-D0F0494B353B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\settingsscreen_screen">
+      <UniqueIdentifier>FF70B07D-42BA-4EC3-E021-427600916CEA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\settingsscreen_screen">
+      <UniqueIdentifier>D9AF30D8-F4D1-F5DB-9C60-778D2AA5C63C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\settingsscreen_screen">
+      <UniqueIdentifier>843184E1-E953-C9F8-6458-78C3EDC2837E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\settingsscreen_screen">
+      <UniqueIdentifier>6CE59251-39C1-1724-EC5A-42D6B938C9BB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\clocksettingsscreen_screen">
+      <UniqueIdentifier>6A24B61D-115B-340B-7A2C-195F93BB8CAC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\clocksettingsscreen_screen">
+      <UniqueIdentifier>66092168-6295-E263-475C-718305408C63</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\clocksettingsscreen_screen">
+      <UniqueIdentifier>E240E837-B883-EEE2-5A0D-0893F1358D4F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\clocksettingsscreen_screen">
+      <UniqueIdentifier>FE1D51AB-034D-F00F-9F9C-606DDC63AF67</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\deviceinfoscreen_screen">
+      <UniqueIdentifier>A7A94846-DC90-50F0-048F-A748A28C7E27</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\deviceinfoscreen_screen">
+      <UniqueIdentifier>A1A7C154-A05F-D9DD-CAA8-E1154D411E5E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\deviceinfoscreen_screen">
+      <UniqueIdentifier>720E9F64-C0BE-294C-9C1F-3396E7882FF7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\deviceinfoscreen_screen">
+      <UniqueIdentifier>C7EE3F35-F5F3-EDF6-4B4D-35363560F130</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\nodesesnsorsscreen_screen">
+      <UniqueIdentifier>F810069C-0ACB-692B-4FAE-B2EBBEB2D1DB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\nodesesnsorsscreen_screen">
+      <UniqueIdentifier>D75A6639-87B2-A1E5-A3E4-0BD88A786513</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\nodesesnsorsscreen_screen">
+      <UniqueIdentifier>5C82D99B-3B31-566C-161F-7FB8618B2C48</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\nodesesnsorsscreen_screen">
+      <UniqueIdentifier>F45CE568-5D6A-78FD-2725-B256C8920F58</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\renamescreen_screen">
+      <UniqueIdentifier>3CE5B54D-0234-4AA4-F607-B1A2960DB1CF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\renamescreen_screen">
+      <UniqueIdentifier>1A6C1301-C8F5-5178-032E-410CFACF7FB4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\renamescreen_screen">
+      <UniqueIdentifier>7273056D-3355-59B7-8060-1704B1618B67</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\renamescreen_screen">
+      <UniqueIdentifier>AF056F7D-770F-5C8B-AEA8-F7A14764230D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\errorscreen_screen">
+      <UniqueIdentifier>112491CB-6E03-C69F-CB39-119EA7C800DD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\errorscreen_screen">
+      <UniqueIdentifier>957FA847-685A-18EE-C646-DA74DCD36166</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\errorscreen_screen">
+      <UniqueIdentifier>6DD7F79C-0BE4-51DC-0B6C-B494B951427C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\errorscreen_screen">
+      <UniqueIdentifier>DA0C33FD-3468-FA65-E5E9-00B3ED490ED8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\nodelevelsetscreen_screen">
+      <UniqueIdentifier>E06C5C83-CC0C-B208-7C10-48CECD8D2528</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\nodelevelsetscreen_screen">
+      <UniqueIdentifier>547E58C7-3EE3-0ED1-9649-0FA52EA29F87</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\nodelevelsetscreen_screen">
+      <UniqueIdentifier>7C07204D-0BDB-DFE2-ABC5-9E39197CAE20</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\nodelevelsetscreen_screen">
+      <UniqueIdentifier>AEA1F6A8-EFF6-7EF5-E94D-D7EED7707CB3</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -266,6 +410,156 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\screen1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\DeviceToggle.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceToggleBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\DeviceAdd.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceAddBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configurenodescreen_screen\ConfigureNodeScreenPresenter.cpp">
+      <Filter>Source Files\gui\configurenodescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configurenodescreen_screen\ConfigureNodeScreenView.cpp">
+      <Filter>Source Files\gui\configurenodescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\configurenodescreen_screen\ConfigureNodeScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\configurenodescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\DeviceSubs.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceSubsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\debugscreen_screen\DebugScreenPresenter.cpp">
+      <Filter>Source Files\gui\debugscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\debugscreen_screen\DebugScreenView.cpp">
+      <Filter>Source Files\gui\debugscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\debugscreen_screen\DebugScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\debugscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodesscreen_screen\NodesScreenPresenter.cpp">
+      <Filter>Source Files\gui\nodesscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodesscreen_screen\NodesScreenView.cpp">
+      <Filter>Source Files\gui\nodesscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\nodesscreen_screen\NodesScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\nodesscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodeproperscreen_screen\NodeProperScreenPresenter.cpp">
+      <Filter>Source Files\gui\nodeproperscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodeproperscreen_screen\NodeProperScreenView.cpp">
+      <Filter>Source Files\gui\nodeproperscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\nodeproperscreen_screen\NodeProperScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\nodeproperscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\DeviceButton.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\DeviceButtonBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\BottomMenu.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\BottomMenuBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\AllIcons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AllIconsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\ScreenTitleBar.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ScreenTitleBarBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp">
+      <Filter>Source Files\gui\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp">
+      <Filter>Source Files\gui\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\clocksettingsscreen_screen\ClockSettingsScreenPresenter.cpp">
+      <Filter>Source Files\gui\clocksettingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\clocksettingsscreen_screen\ClockSettingsScreenView.cpp">
+      <Filter>Source Files\gui\clocksettingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\clocksettingsscreen_screen\ClockSettingsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\clocksettingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\Loader.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\LoaderBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\deviceinfoscreen_screen\DeviceInfoScreenPresenter.cpp">
+      <Filter>Source Files\gui\deviceinfoscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\deviceinfoscreen_screen\DeviceInfoScreenView.cpp">
+      <Filter>Source Files\gui\deviceinfoscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\deviceinfoscreen_screen\DeviceInfoScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\deviceinfoscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodesesnsorsscreen_screen\NodeSesnsorsScreenPresenter.cpp">
+      <Filter>Source Files\gui\nodesesnsorsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodesesnsorsscreen_screen\NodeSesnsorsScreenView.cpp">
+      <Filter>Source Files\gui\nodesesnsorsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\nodesesnsorsscreen_screen\NodeSesnsorsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\nodesesnsorsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\CustomKeyboard.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\renamescreen_screen\RenameScreenPresenter.cpp">
+      <Filter>Source Files\gui\renamescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\renamescreen_screen\RenameScreenView.cpp">
+      <Filter>Source Files\gui\renamescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\renamescreen_screen\RenameScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\renamescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\errorscreen_screen\ErrorScreenPresenter.cpp">
+      <Filter>Source Files\gui\errorscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\errorscreen_screen\ErrorScreenView.cpp">
+      <Filter>Source Files\gui\errorscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\errorscreen_screen\ErrorScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\errorscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodelevelsetscreen_screen\NodeLevelSetScreenPresenter.cpp">
+      <Filter>Source Files\gui\nodelevelsetscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\nodelevelsetscreen_screen\NodeLevelSetScreenView.cpp">
+      <Filter>Source Files\gui\nodelevelsetscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\nodelevelsetscreen_screen\NodeLevelSetScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\nodelevelsetscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -735,6 +1029,162 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\Screen1ViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\screen1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\DeviceToggle.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceToggleBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\DeviceAdd.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceAddBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configurenodescreen_screen\ConfigureNodeScreenPresenter.hpp">
+      <Filter>Header Files\gui\configurenodescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configurenodescreen_screen\ConfigureNodeScreenView.hpp">
+      <Filter>Header Files\gui\configurenodescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configurenodescreen_screen\ConfigureNodeScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\configurenodescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\DeviceSubs.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceSubsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\debugscreen_screen\DebugScreenPresenter.hpp">
+      <Filter>Header Files\gui\debugscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\debugscreen_screen\DebugScreenView.hpp">
+      <Filter>Header Files\gui\debugscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\debugscreen_screen\DebugScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\debugscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodesscreen_screen\NodesScreenPresenter.hpp">
+      <Filter>Header Files\gui\nodesscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodesscreen_screen\NodesScreenView.hpp">
+      <Filter>Header Files\gui\nodesscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodesscreen_screen\NodesScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\nodesscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodeproperscreen_screen\NodeProperScreenPresenter.hpp">
+      <Filter>Header Files\gui\nodeproperscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodeproperscreen_screen\NodeProperScreenView.hpp">
+      <Filter>Header Files\gui\nodeproperscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodeproperscreen_screen\NodeProperScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\nodeproperscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\DeviceButton.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\DeviceButtonBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\BottomMenu.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BottomMenuBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\AllIcons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AllIconsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\ScreenTitleBar.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ScreenTitleBarBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenPresenter.hpp">
+      <Filter>Header Files\gui\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenView.hpp">
+      <Filter>Header Files\gui\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\clocksettingsscreen_screen\ClockSettingsScreenPresenter.hpp">
+      <Filter>Header Files\gui\clocksettingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\clocksettingsscreen_screen\ClockSettingsScreenView.hpp">
+      <Filter>Header Files\gui\clocksettingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\clocksettingsscreen_screen\ClockSettingsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\clocksettingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\Loader.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\LoaderBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\deviceinfoscreen_screen\DeviceInfoScreenPresenter.hpp">
+      <Filter>Header Files\gui\deviceinfoscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\deviceinfoscreen_screen\DeviceInfoScreenView.hpp">
+      <Filter>Header Files\gui\deviceinfoscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\deviceinfoscreen_screen\DeviceInfoScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\deviceinfoscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodesesnsorsscreen_screen\NodeSesnsorsScreenPresenter.hpp">
+      <Filter>Header Files\gui\nodesesnsorsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodesesnsorsscreen_screen\NodeSesnsorsScreenView.hpp">
+      <Filter>Header Files\gui\nodesesnsorsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodesesnsorsscreen_screen\NodeSesnsorsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\nodesesnsorsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\CustomKeyboard.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardKeyMapping.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardLayout.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\renamescreen_screen\RenameScreenPresenter.hpp">
+      <Filter>Header Files\gui\renamescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\renamescreen_screen\RenameScreenView.hpp">
+      <Filter>Header Files\gui\renamescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\renamescreen_screen\RenameScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\renamescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\errorscreen_screen\ErrorScreenPresenter.hpp">
+      <Filter>Header Files\gui\errorscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\errorscreen_screen\ErrorScreenView.hpp">
+      <Filter>Header Files\gui\errorscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\errorscreen_screen\ErrorScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\errorscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodelevelsetscreen_screen\NodeLevelSetScreenPresenter.hpp">
+      <Filter>Header Files\gui\nodelevelsetscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\nodelevelsetscreen_screen\NodeLevelSetScreenView.hpp">
+      <Filter>Header Files\gui\nodelevelsetscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\nodelevelsetscreen_screen\NodeLevelSetScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\nodelevelsetscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

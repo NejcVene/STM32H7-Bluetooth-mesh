@@ -533,7 +533,8 @@ MOBLE_RESULT Generic_Delta_Set(const MOBLEUINT8* plevel_param, MOBLEUINT32 lengt
   Generic_LevelStatus[pmsgParam->elementIndex].Last_Level_TID = Generic_DeltaLevelParam.Generic_TID; 
       
   /* Application Callback */
-  (GenericAppli_cb.Level_Set_cb)(&Generic_LevelStatus[pmsgParam->elementIndex], 0, pmsgParam->dst_peer, pmsgParam->elementIndex);
+  // gotta love it when you have to fix others mistakes
+  (GenericAppli_cb.LevelDelta_Set_cb)(&Generic_LevelStatus[pmsgParam->elementIndex], 0, pmsgParam->dst_peer, pmsgParam->elementIndex);
 #ifdef ENABLE_MODEL_BINDING    
 #ifdef ENABLE_LIGHT_MODEL_SERVER_LIGHTNESS  
   /* Binding of Generic level with light lightnes actual */
@@ -922,7 +923,7 @@ MOBLE_RESULT GenericModelServer_ProcessMessageCb(MODEL_MessageHeader_t *pmsgPara
     case GENERIC_ON_OFF_SET_UNACK:
     {
       result = Chk_ParamValidity(pRxData[0], 1); 
-      /* 3.1.1 Generic OnOff 0x02–0xFF Prohibited */
+      /* 3.1.1 Generic OnOff 0x02ï¿½0xFF Prohibited */
       /* 3.2.1.2 Generic OnOff Set If the Transition Time field is present, 
       the Delay field shall also be present; otherwise these fields shall 
       not be present*/
@@ -1516,7 +1517,7 @@ void Light_HslSaturation_GenericLevelBinding(Light_HslStatus_t* bHslSatParam,
                                              MOBLEUINT8 elementIndex)
 {
   /* 6.1.4.4.1 Binding with the Generic Level state
-  Generic Level = Light HSL Saturation – 32768
+  Generic Level = Light HSL Saturation ï¿½ 32768
   */ 
  
   Generic_LevelStatus[elementIndex].Present_Level16 = (MOBLEINT16)(bHslSatParam->PresentHslSaturation16 - 32768);

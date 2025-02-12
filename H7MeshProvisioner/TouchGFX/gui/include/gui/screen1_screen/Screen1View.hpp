@@ -12,9 +12,17 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    virtual void GUI_OnBtn();
-    virtual void GUI_OffBtn();
+    virtual void GUI_ShowAllDevices();
+    virtual void GUI_ShowKitchenDevices();
+    virtual void GUI_ShowLivingRoomDevices();
+    virtual void GUI_ShowBedroomDevices();
+    virtual void GUI_ShowBathroomDevices();
+
 protected:
+private:
+    touchgfx::Callback<Screen1View, int> buttonClickCallback;
+    void handleButtonClicked(int instanceID);
+//    Node_Config_t *nodes;
 };
 
 #endif // SCREEN1VIEW_HPP

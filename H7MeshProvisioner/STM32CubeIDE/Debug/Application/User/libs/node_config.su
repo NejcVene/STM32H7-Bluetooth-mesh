@@ -1,3 +1,0 @@
-../Application/User/libs/node_config.c:16:6:NC_ReportFoundNodes	120	static
-../Application/User/libs/node_config.c:34:24:NC_GetNodeNetworkAddress	16	static
-../Application/User/libs/node_config.c:40:24:NC_GetNodeNetworkAddressArray	4	static

@@ -17,8 +17,8 @@ void Screen1Presenter::deactivate()
 
 }
 
-void Screen1Presenter::GUI_SendCommand(uint16_t cmdIndex) {
+void Screen1Presenter::GUI_SendCommand(CMD_CommandGet_t *cmd) {
 
-	model->GUI_SendCommand(cmdIndex);
+	model->GUI_SendCommand(cmd);
 
 }

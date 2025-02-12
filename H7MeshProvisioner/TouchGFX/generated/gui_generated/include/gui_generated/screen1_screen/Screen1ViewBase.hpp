@@ -8,8 +8,11 @@
 #include <mvp/View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/TiledImage.hpp>
+#include <touchgfx/containers/ScrollableContainer.hpp>
+#include <touchgfx/containers/buttons/Buttons.hpp>
+#include <gui/containers/BottomMenu.hpp>
+#include <gui/containers/ScreenTitleBar.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -19,13 +22,30 @@ public:
     virtual void setupScreen();
 
     /*
+     * Custom Actions
+     */
+    virtual void goToNodeScreen();
+
+    /*
      * Virtual Action Handlers
      */
-    virtual void GUI_OnBtn()
+    virtual void GUI_ShowAllDevices()
     {
         // Override and implement this function in Screen1
     }
-    virtual void GUI_OffBtn()
+    virtual void GUI_ShowKitchenDevices()
+    {
+        // Override and implement this function in Screen1
+    }
+    virtual void GUI_ShowLivingRoomDevices()
+    {
+        // Override and implement this function in Screen1
+    }
+    virtual void GUI_ShowBedroomDevices()
+    {
+        // Override and implement this function in Screen1
+    }
+    virtual void GUI_ShowBathroomDevices()
     {
         // Override and implement this function in Screen1
     }
@@ -39,22 +59,27 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image image1;
-    touchgfx::ButtonWithLabel onBtn;
-    touchgfx::ButtonWithLabel offBtn;
-    touchgfx::ButtonWithLabel buttonWithLabel1;
+    touchgfx::TiledImage tiledImage1;
+    touchgfx::ScrollableContainer scrollableContainer1;
+    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  bathroomBtn;
+    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  bedroomBtn;
+    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  livingRoomBtn;
+    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  kitchenBtn;
+    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::ImageButtonStyle< touchgfx::ClickButtonTrigger >  >  >  allDevicesBtn;
+    BottomMenu bottomMenu1;
+    ScreenTitleBar screenTitleBar1;
 
 private:
 
     /*
      * Callback Declarations
      */
-    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButton&> buttonCallback;
+    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
 
     /*
      * Callback Handler Declarations
      */
-    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 

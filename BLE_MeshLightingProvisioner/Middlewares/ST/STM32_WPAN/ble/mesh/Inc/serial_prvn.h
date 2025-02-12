@@ -27,7 +27,7 @@
 #define COMMAND_OFFSET      5
 /* Exported variables  ------------------------------------------------------- */
 /* Exported Functions Prototypes ---------------------------------------------*/
-void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *resultBuffer);
+void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, uint8_t *resultBuffer, int *cmdResposneElsewhere);
 void SerialPrvn_ProvisioningStatusUpdateCb(uint8_t flagPrvningInProcess, MOBLEUINT16 nodeAddress);
 neighbor_params_t *getNeighborTable(void);
 #endif /* __SERIAL_PRVN_H */

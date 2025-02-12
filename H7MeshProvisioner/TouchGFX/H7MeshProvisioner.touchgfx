@@ -5,369 +5,440 @@
         "Name": "Screen1",
         "Components": [
           {
-            "Type": "Image",
-            "Name": "image1",
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
             "Width": 480,
             "Height": 272,
-            "RelativeFilename": "__generated\\alternate_theme_images_backgrounds_480x272_meteor_rain.png"
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
           },
           {
-            "Type": "ButtonWithLabel",
-            "Name": "onBtn",
-            "X": 120,
-            "Y": 65,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "TextId": "__SingleUse_6IT6",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+            "Type": "ScrollableContainer",
+            "Name": "scrollableContainer1",
+            "Y": 30,
+            "Width": 480,
+            "Height": 182,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "FlexButton",
+                "Name": "bathroomBtn",
+                "X": 184,
+                "Y": 122,
+                "Width": 112,
+                "Height": 112,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 78,
+                    "TextId": "__SingleUse_8EB0",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "ColorPressed": {
+                      "Red": 214,
+                      "Green": 214,
+                      "Blue": 213
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 33,
+                    "Y": 27,
+                    "IconReleased": "__generated\\icon_theme_images_places_bathtub_50_50_FFFFFE.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_places_bathtub_50_50_D6D6D5.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "ButtonBackground.png",
+                    "ImagePressed": "ButtonBackgroundPressed.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "bedroomBtn",
+                "X": 10,
+                "Y": 122,
+                "Width": 112,
+                "Height": 112,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 78,
+                    "TextId": "__SingleUse_XYN8",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "ColorPressed": {
+                      "Red": 214,
+                      "Green": 214,
+                      "Blue": 213
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 33,
+                    "Y": 27,
+                    "IconReleased": "__generated\\icon_theme_images_social_king_bed_50_50_FFFFFE.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_social_king_bed_50_50_D6D6D5.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "ButtonBackground.png",
+                    "ImagePressed": "ButtonBackgroundPressed.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "livingRoomBtn",
+                "X": 358,
+                "Width": 112,
+                "Height": 112,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 78,
+                    "TextId": "__SingleUse_GV96",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "ColorPressed": {
+                      "Red": 214,
+                      "Green": 214,
+                      "Blue": 213
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 33,
+                    "Y": 27,
+                    "IconReleased": "__generated\\icon_theme_images_hardware_tv_50_50_FFFFFE.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_tv_50_50_D6D6D5.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "ButtonBackground.png",
+                    "ImagePressed": "ButtonBackgroundPressed.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "kitchenBtn",
+                "X": 184,
+                "Width": 112,
+                "Height": 112,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 78,
+                    "TextId": "__SingleUse_V9M3",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "ColorPressed": {
+                      "Red": 214,
+                      "Green": 214,
+                      "Blue": 213
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 33,
+                    "Y": 27,
+                    "IconReleased": "__generated\\icon_theme_images_places_kitchen_50_50_FFFFFE.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_places_kitchen_50_50_D6D6D5.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "ButtonBackground.png",
+                    "ImagePressed": "ButtonBackgroundPressed.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "allDevicesBtn",
+                "X": 10,
+                "Width": 112,
+                "Height": 112,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 78,
+                    "TextId": "__SingleUse_EMB5",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "ColorPressed": {
+                      "Red": 214,
+                      "Green": 214,
+                      "Blue": 213
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 33,
+                    "Y": 27,
+                    "IconReleased": "__generated\\icon_theme_images_hardware_devices_other_50_50_FFFFFE.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_devices_other_50_50_D6D6D5.svg.png"
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "ButtonBackground.png",
+                    "ImagePressed": "ButtonBackgroundPressed.png"
+                  }
+                ]
+              }
+            ]
           },
           {
-            "Type": "ButtonWithLabel",
-            "Name": "offBtn",
-            "X": 120,
-            "Y": 136,
-            "Width": 240,
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
             "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "TextId": "__SingleUse_B85K",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+            "CustomContainerDefinitionName": "BottomMenu"
           },
           {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "X": 120,
-            "Y": 202,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "TextId": "__SingleUse_BATJ",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "GUI_OnBtn",
+            "InteractionName": "GUI_ShowAllDevices",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "onBtn"
+              "TriggerComponent": "allDevicesBtn"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "GUI_OnBtn"
+              "FunctionName": "GUI_ShowAllDevices"
             }
           },
           {
-            "InteractionName": "GUI_OffBtn",
+            "InteractionName": "GUI_ShowKitchenDevices",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "offBtn"
+              "TriggerComponent": "kitchenBtn"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "GUI_OffBtn"
+              "FunctionName": "GUI_ShowKitchenDevices"
             }
           },
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "GUI_ShowLivingRoomDevices",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonWithLabel1"
+              "TriggerComponent": "livingRoomBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ShowLivingRoomDevices"
+            }
+          },
+          {
+            "InteractionName": "GUI_ShowBedroomDevices",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bedroomBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ShowBedroomDevices"
+            }
+          },
+          {
+            "InteractionName": "GUI_ShowBathroomDevices",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bathroomBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ShowBathroomDevices"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToNodeScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Screen1 goToNodeScreen"
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "HomeScreen"
+              "ActionComponent": "NodesScreen"
             }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToNodeScreen",
+            "Description": "Called from user code to change screen"
           }
         ]
       },
       {
         "Name": "HomeScreen",
+        "CanvasBufferSize": 7200,
         "Components": [
           {
             "Type": "TiledImage",
             "Name": "tiledImage1",
             "Width": 480,
             "Height": 272,
-            "FileName": "H7Background.png"
-          },
-          {
-            "Type": "FlexButton",
-            "Name": "deviceBtn",
-            "X": 219,
-            "Y": 10,
-            "Width": 121,
-            "Height": 121,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "TextButtonStyle",
-                "Y": 97,
-                "TextId": "__SingleUse_7Z3U",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                },
-                "ColorPressed": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                }
-              },
-              {
-                "Type": "IconButtonStyle",
-                "X": 36,
-                "Y": 36,
-                "IconReleased": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_hardware_device_hub_50_50_3DA9FC.svg.png"
-              },
-              {
-                "Type": "ImageButtonStyle",
-                "ImageReleased": "H7Button.png",
-                "ImagePressed": "H7Button.png"
-              }
-            ]
-          },
-          {
-            "Type": "FlexButton",
-            "Name": "undefinedBtn",
-            "X": 350,
-            "Y": 141,
-            "Width": 121,
-            "Height": 121,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "TextButtonStyle",
-                "Y": 97,
-                "TextId": "__SingleUse_XGDV",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                },
-                "ColorPressed": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                }
-              },
-              {
-                "Type": "IconButtonStyle",
-                "X": 36,
-                "Y": 36,
-                "IconReleased": "__generated\\icon_theme_images_maps_multiple_stop_50_50_3DA9FC.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_maps_multiple_stop_50_50_3DA9FC.svg.png"
-              },
-              {
-                "Type": "ImageButtonStyle",
-                "ImageReleased": "H7Button.png",
-                "ImagePressed": "H7Button.png"
-              }
-            ]
-          },
-          {
-            "Type": "FlexButton",
-            "Name": "settingsBtn",
-            "X": 219,
-            "Y": 141,
-            "Width": 121,
-            "Height": 121,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "TextButtonStyle",
-                "Y": 97,
-                "TextId": "__SingleUse_RE6P",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                },
-                "ColorPressed": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                }
-              },
-              {
-                "Type": "IconButtonStyle",
-                "X": 36,
-                "Y": 36,
-                "IconReleased": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_action_settings_50_50_3DA9FC.svg.png"
-              },
-              {
-                "Type": "ImageButtonStyle",
-                "ImageReleased": "H7Button.png",
-                "ImagePressed": "H7Button.png"
-              }
-            ]
-          },
-          {
-            "Type": "FlexButton",
-            "Name": "addDeviceBtn",
-            "X": 350,
-            "Y": 10,
-            "Width": 121,
-            "Height": 121,
-            "ButtonTrigger": {
-              "Type": "ClickButtonTrigger"
-            },
-            "ButtonStyles": [
-              {
-                "Type": "TextButtonStyle",
-                "Y": 97,
-                "TextId": "__SingleUse_RUCY",
-                "TextRotation": "0",
-                "ColorReleased": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                },
-                "ColorPressed": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
-                }
-              },
-              {
-                "Type": "IconButtonStyle",
-                "X": 36,
-                "Y": 36,
-                "IconReleased": "__generated\\icon_theme_images_device_bluetooth_searching_50_50_3DA9FC.svg.png",
-                "IconPressed": "__generated\\icon_theme_images_device_bluetooth_searching_50_50_3DA9FC.svg.png"
-              },
-              {
-                "Type": "ImageButtonStyle",
-                "ImageReleased": "H7Button.png",
-                "ImagePressed": "H7Button.png"
-              }
-            ]
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
           },
           {
             "Type": "Container",
             "Name": "container1",
-            "X": 10,
-            "Y": 10,
+            "X": 141,
+            "Y": 30,
             "Width": 199,
-            "Height": 252,
+            "Height": 182,
             "Components": [
               {
-                "Type": "Image",
-                "Name": "image1",
+                "Type": "Box",
+                "Name": "box1",
                 "Width": 199,
-                "Height": 252,
-                "RelativeFilename": "H7MainInfo.png"
+                "Height": 182,
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                }
               },
               {
                 "Type": "TextArea",
                 "Name": "textArea1",
-                "X": 68,
-                "Y": 179,
-                "Width": 62,
-                "Height": 24,
+                "X": 60,
+                "Y": 131,
+                "Width": 78,
+                "Height": 30,
                 "TextId": "__SingleUse_2JW3",
                 "TextRotation": "0",
                 "Color": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
                 },
                 "AutoSize": true
               },
               {
                 "Type": "DigitalClock",
                 "Name": "mainDigitalClock",
-                "Y": 35,
+                "Y": 30,
                 "Width": 199,
                 "Height": 51,
                 "TextColor": {
-                  "Red": 9,
-                  "Green": 64,
-                  "Blue": 103
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
                 },
                 "TextId": "__SingleUse_PGKI",
                 "DisplaySeconds": true,
                 "DisplayLeadingZeroForHourIndicator": true
               }
             ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "loaderModal",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7ModalBackgroundSmall.png",
+            "ModalX": 133,
+            "ModalY": 61,
+            "ModalWidth": 214,
+            "ModalHeight": 150,
+            "Alpha": 100,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "loader1",
+                "X": 7,
+                "Width": 200,
+                "Height": 150,
+                "CustomContainerDefinitionName": "Loader"
+              }
+            ]
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "a",
+            "InteractionName": "GUI_SwitchToErrorScreen",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "deviceBtn"
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call HomeScreen goToErrorScreen"
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "Screen1"
+              "ActionComponent": "ErrorScreen"
             }
-          },
+          }
+        ],
+        "CustomActions": [
           {
-            "InteractionName": "b",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "addDeviceBtn"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionWipe",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "AddDeviceScreen"
-            }
+            "Name": "goToErrorScreen",
+            "Description": "Called from user code to change screen"
           }
         ]
       },
@@ -380,73 +451,63 @@
             "Name": "tiledImage1",
             "Width": 480,
             "Height": 272,
-            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_meteor_rain.png"
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
           },
           {
             "Type": "ScrollableContainer",
             "Name": "scrollableContainer1",
-            "X": 29,
-            "Y": 11,
-            "Width": 423,
-            "Height": 250,
+            "Y": 30,
+            "Width": 480,
+            "Height": 182,
             "HorizontalScrollEnabled": true,
             "VerticalScrollEnabled": true,
             "ScrollbarsVisibleOnPressed": true,
             "ScrollbarsAlpha": 255,
             "Components": [
               {
-                "Type": "FlexButton",
-                "Name": "foudNodeBtn",
-                "Width": 423,
-                "Height": 50,
-                "ButtonTrigger": {
-                  "Type": "ClickButtonTrigger"
-                },
-                "ButtonStyles": [
+                "Type": "Container",
+                "Name": "noNodesFoundMsg",
+                "X": 10,
+                "Y": 10,
+                "Width": 460,
+                "Height": 60,
+                "Components": [
                   {
-                    "Type": "TextButtonStyle",
-                    "Y": 16,
-                    "TextId": "__SingleUse_MVY0",
-                    "TextRotation": "0",
-                    "Wildcard1": {
-                      "TextId": "__SingleUse_JF9F"
-                    },
-                    "ColorReleased": {
-                      "Red": 10,
-                      "Green": 10,
-                      "Blue": 10
-                    },
-                    "ColorPressed": {
-                      "Red": 10,
-                      "Green": 10,
-                      "Blue": 10
+                    "Type": "Box",
+                    "Name": "box1",
+                    "Width": 460,
+                    "Height": 60,
+                    "Color": {
+                      "Red": 73,
+                      "Green": 86,
+                      "Blue": 101
                     }
                   },
                   {
-                    "Type": "BoxWithBorderButtonStyle",
-                    "Width": 423,
-                    "Height": 50,
-                    "LockToFlexButtonSize": true,
-                    "BorderSize": 5,
-                    "ColorReleased": {
+                    "Type": "TextArea",
+                    "Name": "noNodesFoundText",
+                    "Y": 15,
+                    "Width": 460,
+                    "Height": 30,
+                    "TextId": "__SingleUse_M1AF",
+                    "TextRotation": "0",
+                    "Color": {
                       "Red": 255,
                       "Green": 255,
-                      "Blue": 255
+                      "Blue": 254
                     },
-                    "ColorPressed": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "ColorBorderReleased": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "ColorBorderPressed": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_4EUC",
+                      "UseBuffer": true,
+                      "BufferSize": 50
                     }
                   }
                 ]
@@ -454,68 +515,2750 @@
             ]
           },
           {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
             "Type": "ModalWindow",
             "Name": "modalWindow1",
             "Width": 480,
             "Height": 272,
-            "FileName": "__generated\\alternate_theme_images_containers_small_wide_outlined_light.png",
+            "Visible": false,
+            "FileName": "H7ModalBackgroundSmall.png",
             "ModalX": 133,
             "ModalY": 61,
             "ModalWidth": 214,
             "ModalHeight": 150,
-            "Alpha": 54,
+            "Alpha": 100,
             "Components": [
               {
-                "Type": "CircleProgress",
-                "Name": "circleProgress1",
-                "X": 52,
-                "Y": 8,
-                "Width": 110,
-                "Height": 110,
-                "Color": {
-                  "Red": 52,
-                  "Green": 94,
-                  "Blue": 116
-                },
-                "CenterX": 55.0,
-                "CenterY": 55.0,
-                "Radius": 50.0,
-                "LineWidth": 10.0,
-                "EndAngle": 360.0,
-                "CapPrecision": "Butt",
-                "FileNameBackground": "__generated\\alternate_theme_images_widgets_circleprogress_backgrounds_small.png",
-                "ProgressRangeMax": 100
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textArea1",
-                "X": 62,
-                "Y": 126,
-                "Width": 90,
-                "Height": 17,
-                "TextId": "__SingleUse_M33F",
-                "TextRotation": "0",
-                "AutoSize": true
+                "Type": "CustomContainerInstance",
+                "Name": "loader1",
+                "X": 7,
+                "Width": 200,
+                "Height": 150,
+                "CustomContainerDefinitionName": "Loader"
               }
             ]
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "GUI_ProvisionNode",
+            "InteractionName": "GUI_SwitchScreenToDeviceConfig",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call AddDeviceScreen goToDeviceConfigScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ConfigureNodeScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToErrorScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call AddDeviceScreen goToErrorScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ErrorScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToDeviceConfigScreen",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToErrorScreen",
+            "Description": "Called from user code to change screen"
+          }
+        ]
+      },
+      {
+        "Name": "ConfigureNodeScreen",
+        "CanvasBufferSize": 7200,
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "cancelBtn",
+            "X": 358,
+            "Y": 151,
+            "Width": 112,
+            "Height": 112,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 34,
+                "Y": 30,
+                "IconReleased": "__generated\\icon_theme_images_navigation_cancel_50_50_FFFFFE.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_navigation_cancel_50_50_FFFFFE.svg.png"
+              },
+              {
+                "Type": "TextButtonStyle",
+                "X": 1,
+                "Y": 83,
+                "TextId": "__SingleUse_0LTB",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                }
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "ImageReleased": "ButtonBackgroundPressed.png",
+                "ImagePressed": "ButtonBackground.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "saveBtn",
+            "X": 358,
+            "Y": 30,
+            "Width": 112,
+            "Height": 112,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "X": 34,
+                "Y": 30,
+                "IconReleased": "__generated\\icon_theme_images_action_done_50_50_FFFFFE.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_FFFFFE.svg.png"
+              },
+              {
+                "Type": "TextButtonStyle",
+                "X": 1,
+                "Y": 83,
+                "TextId": "__SingleUse_EMI2",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                }
+              },
+              {
+                "Type": "ImageButtonStyle",
+                "ImageReleased": "ButtonBackgroundPressed.png",
+                "ImagePressed": "ButtonBackground.png"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "container1",
+            "X": 10,
+            "Y": 30,
+            "Width": 330,
+            "Height": 112,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box1",
+                "Width": 330,
+                "Height": 111,
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "nodeVendor",
+                "X": 10,
+                "Y": 73,
+                "Width": 62,
+                "Height": 29,
+                "TextId": "__SingleUse_FHXT",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_KAJT",
+                  "UseBuffer": true,
+                  "BufferSize": 20
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "nodeUUID",
+                "X": 10,
+                "Y": 42,
+                "Width": 62,
+                "Height": 29,
+                "TextId": "__SingleUse_B8P1",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_W5ZN",
+                  "UseBuffer": true,
+                  "BufferSize": 20
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "nodeName",
+                "X": 10,
+                "Y": 10,
+                "Width": 62,
+                "Height": 29,
+                "TextId": "__SingleUse_OPFS",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_2W0E",
+                  "UseBuffer": true,
+                  "BufferSize": 20
+                }
+              }
+            ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "allNodeSubsCont",
+            "X": 10,
+            "Y": 151,
+            "Width": 330,
+            "Height": 112,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box2",
+                "Width": 330,
+                "Height": 350,
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                }
+              }
+            ]
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "GUI_CongPopup",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7ModalBackgroundSmall.png",
+            "ModalX": 133,
+            "ModalY": 61,
+            "ModalWidth": 214,
+            "ModalHeight": 150,
+            "Alpha": 100,
+            "Components": [
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "GUI_ConfBtnPopup",
+                "X": 57,
+                "Y": 91,
+                "Width": 100,
+                "Height": 50,
+                "Pressed": "ButtonBackgroundTiny.png",
+                "Released": "ButtonBackgroundPressedTiny.png",
+                "TextId": "__SingleUse_52I8",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "GUI_ConfTextPopup",
+                "X": 26,
+                "Y": 41,
+                "Width": 162,
+                "Height": 19,
+                "TextId": "__SingleUse_PIBO",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                },
+                "AutoSize": true
+              }
+            ]
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "GUI_ConfLoaderPopup",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7ModalBackgroundSmall.png",
+            "ModalX": 133,
+            "ModalY": 61,
+            "ModalWidth": 214,
+            "ModalHeight": 150,
+            "Alpha": 100,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "loader1",
+                "X": 7,
+                "Width": 200,
+                "Height": 150,
+                "CustomContainerDefinitionName": "Loader"
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SaveConfNode",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "foudNodeBtn"
+              "TriggerComponent": "saveBtn"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "GUI_ProvisionNode"
+              "FunctionName": "GUI_SaveConfNode"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchCreenToHome",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call ConfigureNodeScreen goToHomeScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "HomeScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_ConfBtnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "GUI_ConfBtnPopup"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ConfBtnClicked"
+            }
+          },
+          {
+            "InteractionName": "GUI_CancelBtnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cancelBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_CancelBtnClicked"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToErrorScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call ConfigureNodeScreen goToErrorScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ErrorScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToHomeScreen",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToErrorScreen",
+            "Description": "Called from user code to change screen"
+          }
+        ]
+      },
+      {
+        "Name": "DebugScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "scrollableContainer1",
+            "X": 115,
+            "Y": 30,
+            "Width": 250,
+            "Height": 182,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "testProtocolStruct",
+                "X": 5,
+                "Y": 254,
+                "Width": 240,
+                "Height": 50,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+                "TextId": "__SingleUse_S5PQ",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "livingroomGrpAddrBtn",
+                "X": 5,
+                "Y": 194,
+                "Width": 240,
+                "Height": 50,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+                "TextId": "__SingleUse_ZQHI",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "kitchenGrpAddrBtn",
+                "X": 5,
+                "Y": 130,
+                "Width": 240,
+                "Height": 50,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+                "TextId": "__SingleUse_GVRS",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "unpvrEmNodeBtn",
+                "X": 5,
+                "Y": 65,
+                "Width": 240,
+                "Height": 50,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+                "TextId": "__SingleUse_4TTE",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "atepRootBtn",
+                "X": 5,
+                "Width": 240,
+                "Height": 50,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+                "TextId": "__SingleUse_J4Q1",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+              }
+            ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_DebugAtepRoot",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "atepRootBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_DebugAtepRoot"
+            }
+          },
+          {
+            "InteractionName": "GUI_UnprovEm",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "unpvrEmNodeBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_UnprovEm"
+            }
+          },
+          {
+            "InteractionName": "GUI_DebugKitGrpAddr",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "kitchenGrpAddrBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_DebugKitGrpAddr"
+            }
+          },
+          {
+            "InteractionName": "GUI_DebugLivRoomGrpAddr",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "livingroomGrpAddrBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_DebugLivRoomGrpAddr"
+            }
+          },
+          {
+            "InteractionName": "GUI_DebugTestProStruct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "testProtocolStruct"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_DebugTestProStruct"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "NodesScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "roomNodesContainer",
+            "X": 10,
+            "Y": 30,
+            "Width": 460,
+            "Height": 182,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": []
+          },
+          {
+            "Type": "Container",
+            "Name": "noNodesInRoom",
+            "X": 10,
+            "Y": 80,
+            "Width": 460,
+            "Height": 60,
+            "Visible": false,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box1",
+                "Width": 460,
+                "Height": 60,
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1",
+                "X": 88,
+                "Y": 16,
+                "Width": 284,
+                "Height": 29,
+                "TextId": "__SingleUse_319A",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "AutoSize": true
+              }
+            ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SwitchScreenToNodeProper",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodesScreen goToNodeProperScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "NodeProperScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToNodeProperScreen",
+            "Description": "Called from user code to change screen"
+          }
+        ]
+      },
+      {
+        "Name": "NodeProperScreen",
+        "CanvasBufferSize": 7200,
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "nodeOptions",
+            "Y": 30,
+            "Width": 480,
+            "Height": 182,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": []
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "loaderModal",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7ModalBackgroundSmall.png",
+            "ModalX": 133,
+            "ModalY": 61,
+            "ModalWidth": 214,
+            "ModalHeight": 150,
+            "Alpha": 100,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "loader1",
+                "X": 7,
+                "Width": 200,
+                "Height": 150,
+                "CustomContainerDefinitionName": "Loader"
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SwitchToNodeConfigScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeProperScreen goToConfigureScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ConfigureNodeScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToScreen1",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeProperScreen goToScreen1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToNodeSensorsScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeProperScreen goToNodeSensorsScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "NodeSesnsorsScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToRenameScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeProperScreen goToRenameScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "RenameScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToErrorScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeProperScreen goToErrorScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ErrorScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToLevelSetScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeProperScreen goToLevelSetScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "NodeLevelSetScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToConfigureScreen",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToScreen1",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToNodeSensorsScreen",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToRenameScreen",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToErrorScreen",
+            "Description": "Called from user code to change screen"
+          },
+          {
+            "Name": "goToLevelSetScreen",
+            "Description": "Called from user code to change screen"
+          }
+        ]
+      },
+      {
+        "Name": "SettingsScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "settingsContainer",
+            "Y": 30,
+            "Width": 480,
+            "Height": 182,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "FlexButton",
+                "Name": "deviceInfoBtn",
+                "X": 10,
+                "Y": 140,
+                "Width": 460,
+                "Height": 60,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "X": 10,
+                    "Y": 20,
+                    "TextId": "__SingleUse_64IT",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    }
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "SettingBtnPressed.png",
+                    "ImagePressed": "SettingBtn.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "debugBtn",
+                "X": 10,
+                "Y": 70,
+                "Width": 460,
+                "Height": 60,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "X": 10,
+                    "Y": 20,
+                    "TextId": "__SingleUse_7MZW",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    }
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "SettingBtnPressed.png",
+                    "ImagePressed": "SettingBtn.png"
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "setClockBtn",
+                "X": 10,
+                "Width": 460,
+                "Height": 60,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "X": 10,
+                    "Y": 20,
+                    "TextId": "__SingleUse_G6K4",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    }
+                  },
+                  {
+                    "Type": "ImageButtonStyle",
+                    "ImageReleased": "SettingBtnPressed.png",
+                    "ImagePressed": "SettingBtn.png"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SwitchToDebugScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "debugBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "DebugScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToClockSettingsScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "setClockBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ClockSettingsScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_GetDevInfo",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "deviceInfoBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_GetDevInfo"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToDevInfoScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call SettingsScreen goToDevInfo"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "DeviceInfoScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToDevInfo",
+            "Description": "Called from user code to change screen"
+          }
+        ]
+      },
+      {
+        "Name": "ClockSettingsScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "Container",
+            "Name": "elements",
+            "X": 10,
+            "Y": 30,
+            "Width": 460,
+            "Height": 182,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "timeContainerHour",
+                "Width": 189,
+                "Height": 110,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "hourBackground",
+                    "Width": 79,
+                    "Height": 110,
+                    "Color": {
+                      "Red": 73,
+                      "Green": 86,
+                      "Blue": 101
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "hourSetText",
+                    "X": 14,
+                    "Y": 45,
+                    "Width": 50,
+                    "Height": 41,
+                    "TextId": "__SingleUse_VZDO",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_O4YG",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "hourText",
+                    "X": 18,
+                    "Width": 43,
+                    "Height": 20,
+                    "TextId": "__SingleUse_2QJM",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "hourUpBtn",
+                    "X": 89,
+                    "Width": 100,
+                    "Height": 50,
+                    "Pressed": "ButtonBackgroundTiny.png",
+                    "Released": "ButtonBackgroundPressedTiny.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_up_50_50_FFFFFE.svg.png",
+                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_up_50_50_FFFFFE.svg.png",
+                    "IconX": 26,
+                    "IconHeight": 50,
+                    "IconWidth": 50
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "hourDownBtn",
+                    "X": 89,
+                    "Y": 60,
+                    "Width": 100,
+                    "Height": 50,
+                    "Pressed": "ButtonBackgroundTiny.png",
+                    "Released": "ButtonBackgroundPressedTiny.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_down_50_50_FFFFFE.svg.png",
+                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_down_50_50_FFFFFE.svg.png",
+                    "IconX": 26,
+                    "IconHeight": 50,
+                    "IconWidth": 50
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "timeContainerMinute",
+                "X": 271,
+                "Width": 189,
+                "Height": 110,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "minuteBackground",
+                    "X": 110,
+                    "Width": 79,
+                    "Height": 110,
+                    "Color": {
+                      "Red": 73,
+                      "Green": 86,
+                      "Blue": 101
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "minuteSetText",
+                    "X": 124,
+                    "Y": 45,
+                    "Width": 50,
+                    "Height": 41,
+                    "TextId": "__SingleUse_OGC8",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_HZRE",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "minuteText",
+                    "X": 119,
+                    "Width": 60,
+                    "Height": 20,
+                    "TextId": "__SingleUse_VUYR",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "minuteUpBtn",
+                    "Width": 100,
+                    "Height": 50,
+                    "Pressed": "ButtonBackgroundTiny.png",
+                    "Released": "ButtonBackgroundPressedTiny.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_up_50_50_FFFFFE.svg.png",
+                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_up_50_50_FFFFFE.svg.png",
+                    "IconX": 26,
+                    "IconHeight": 50,
+                    "IconWidth": 50
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "minuteDownBtn",
+                    "Y": 60,
+                    "Width": 100,
+                    "Height": 50,
+                    "Pressed": "ButtonBackgroundTiny.png",
+                    "Released": "ButtonBackgroundPressedTiny.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_down_50_50_FFFFFE.svg.png",
+                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_down_50_50_FFFFFE.svg.png",
+                    "IconX": 26,
+                    "IconHeight": 50,
+                    "IconWidth": 50
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "saveClockBtn",
+            "X": 190,
+            "Y": 162,
+            "Width": 100,
+            "Height": 50,
+            "Pressed": "ButtonBackgroundTiny.png",
+            "Released": "ButtonBackgroundPressedTiny.png",
+            "TextId": "__SingleUse_AVYH",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SaveClock",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "saveClockBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_SaveClock"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToSettingsScreenAfterInteraction",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "GUI_SaveClock"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "SettingsScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_HourUpBtnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "hourUpBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_HourUpBtnClicked"
+            }
+          },
+          {
+            "InteractionName": "GUI_HourDownBtnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "hourDownBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_HourDownBtnClicked"
+            }
+          },
+          {
+            "InteractionName": "GUI_MinuteUpBtnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "minuteUpBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_MinuteUpBtnClicked"
+            }
+          },
+          {
+            "InteractionName": "GUI_MinuteDownBtnClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "minuteDownBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_MinuteDownBtnClicked"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "DeviceInfoScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "elements",
+            "X": 10,
+            "Y": 30,
+            "Width": 460,
+            "Height": 182,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "container1_2",
+                "Y": 100,
+                "Width": 460,
+                "Height": 40,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box1_2",
+                    "Width": 460,
+                    "Height": 40,
+                    "Color": {
+                      "Red": 73,
+                      "Green": 86,
+                      "Blue": 101
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "commExVerTxt",
+                    "X": 10,
+                    "Y": 11,
+                    "Width": 201,
+                    "Height": 19,
+                    "TextId": "__SingleUse_4AS9",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_MFFZ",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container1_1",
+                "Y": 50,
+                "Width": 460,
+                "Height": 40,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box1_1",
+                    "Width": 460,
+                    "Height": 40,
+                    "Color": {
+                      "Red": 73,
+                      "Green": 86,
+                      "Blue": 101
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "libSubVerTxt",
+                    "X": 10,
+                    "Y": 11,
+                    "Width": 251,
+                    "Height": 19,
+                    "TextId": "__SingleUse_RZQR",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_3GFH",
+                      "UseBuffer": true,
+                      "BufferSize": 20
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container1",
+                "Width": 460,
+                "Height": 40,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box1",
+                    "Width": 460,
+                    "Height": 40,
+                    "Color": {
+                      "Red": 73,
+                      "Green": 86,
+                      "Blue": 101
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "libVerTxt",
+                    "X": 10,
+                    "Y": 11,
+                    "Width": 217,
+                    "Height": 19,
+                    "TextId": "__SingleUse_J0YL",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 254
+                    },
+                    "AutoSize": true,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_0RUS",
+                      "UseBuffer": true,
+                      "BufferSize": 20
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "NodeSesnsorsScreen",
+        "CanvasBufferSize": 7200,
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "ScrollableContainer",
+            "Name": "allNodeSensors",
+            "Y": 30,
+            "Width": 480,
+            "Height": 182,
+            "HorizontalScrollEnabled": true,
+            "VerticalScrollEnabled": true,
+            "ScrollbarsVisibleOnPressed": true,
+            "ScrollbarsAlpha": 255,
+            "Components": []
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "loaderModal",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "H7ModalBackgroundSmall.png",
+            "ModalX": 133,
+            "ModalY": 61,
+            "ModalWidth": 214,
+            "ModalHeight": 150,
+            "Alpha": 100,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "loader1",
+                "X": 7,
+                "Width": 200,
+                "Height": 150,
+                "CustomContainerDefinitionName": "Loader"
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SwitchToErrorScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call NodeSesnsorsScreen goToErrorScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ErrorScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToErrorScreen",
+            "Description": "Called from user code to change screen"
+          }
+        ]
+      },
+      {
+        "Name": "RenameScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "cancelRenameBtn",
+            "X": 370,
+            "Y": 146,
+            "Width": 100,
+            "Height": 50,
+            "Pressed": "ButtonBackgroundTiny.png",
+            "Released": "ButtonBackgroundPressedTiny.png",
+            "TextId": "__SingleUse_WP2P",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "saveRenameBtn",
+            "X": 370,
+            "Y": 86,
+            "Width": 100,
+            "Height": 50,
+            "Pressed": "ButtonBackgroundTiny.png",
+            "Released": "ButtonBackgroundPressedTiny.png",
+            "TextId": "__SingleUse_DAI8",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_SwitchToScreen1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cancelRenameBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "GUI_SaveRename",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "saveRenameBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_SaveRename"
+            }
+          },
+          {
+            "InteractionName": "GUI_SwitchToScreen12",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call RenameScreen goToScreen1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen1"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToScreen1",
+            "Description": "Called from user code to change screen"
+          }
+        ]
+      },
+      {
+        "Name": "ErrorScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "Container",
+            "Name": "container1",
+            "X": 11,
+            "Y": 30,
+            "Width": 460,
+            "Height": 232,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box1",
+                "Width": 460,
+                "Height": 116,
+                "Color": {
+                  "Red": 73,
+                  "Green": 86,
+                  "Blue": 101
+                }
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "resetBtn",
+                "X": 180,
+                "Y": 146,
+                "Width": 100,
+                "Height": 50,
+                "Pressed": "ButtonBackgroundTiny.png",
+                "Released": "ButtonBackgroundPressedTiny.png",
+                "TextId": "__SingleUse_8ZWP",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "errorDesc",
+                "Width": 460,
+                "Height": 116,
+                "TextId": "__SingleUse_XY6N",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "Wildcard1": {
+                  "TextId": "__SingleUse_X80R",
+                  "UseBuffer": true,
+                  "BufferSize": 100
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_ResetDevice",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "resetBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ResetDevice"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "NodeLevelSetScreen",
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 272,
+            "FileName": "__generated\\alternate_theme_images_backgrounds_480x272_rays.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "screenTitleBar1",
+            "Width": 480,
+            "Height": 20,
+            "CustomContainerDefinitionName": "ScreenTitleBar"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomMenu1",
+            "Y": 222,
+            "Width": 480,
+            "Height": 50,
+            "CustomContainerDefinitionName": "BottomMenu"
+          },
+          {
+            "Type": "Slider",
+            "Name": "levelSetSlider",
+            "X": 74,
+            "Y": 120,
+            "Width": 332,
+            "Height": 32,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_medium.png",
+            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_medium.png",
+            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_dark.png",
+            "BackgroundX": 16,
+            "BackgroundY": 11,
+            "IndicatorMax": 300,
+            "ValueMax": 100,
+            "Preset": "alternate_theme\\presets\\slider\\horizontal\\thick\\medium_rounded_dark.json"
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 191,
+            "Y": 33,
+            "Width": 99,
+            "Height": 80,
+            "Color": {
+              "Red": 73,
+              "Green": 86,
+              "Blue": 101
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "valueSetText",
+            "X": 191,
+            "Y": 62,
+            "Width": 99,
+            "Height": 51,
+            "TextId": "__SingleUse_RH3W",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_CRF2",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "valueText",
+            "X": 215,
+            "Y": 42,
+            "Width": 50,
+            "Height": 20,
+            "TextId": "__SingleUse_FIW9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "levelSetBtn",
+            "X": 190,
+            "Y": 162,
+            "Width": 100,
+            "Height": 50,
+            "Pressed": "ButtonBackgroundTiny.png",
+            "Released": "ButtonBackgroundPressedTiny.png",
+            "TextId": "__SingleUse_5E0R",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_LevelSet",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "levelSetBtn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_LevelSet"
+            }
+          },
+          {
+            "InteractionName": "GUI_ChangeLevelValueText",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "levelSetSlider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "GUI_ChangeLevelValueText"
             }
           }
         ]
       }
     ],
-    "CustomContainerDefinitions": [],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "DeviceToggle",
+        "X": 10,
+        "Y": 9,
+        "Width": 460,
+        "Height": 60,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 460,
+            "Height": 60,
+            "Color": {
+              "Red": 73,
+              "Green": 86,
+              "Blue": 101
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "deviceNameText",
+            "X": 10,
+            "Y": 16,
+            "Width": 86,
+            "Height": 29,
+            "TextId": "__SingleUse_486T",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_99CM",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "useNodeBtn",
+            "X": 350,
+            "Y": 5,
+            "Width": 100,
+            "Height": 50,
+            "Pressed": "ButtonBackgroundTiny.png",
+            "Released": "ButtonBackgroundPressedTiny.png",
+            "TextId": "__SingleUse_3FEL",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "DeviceAdd",
+        "Width": 460,
+        "Height": 60,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 460,
+            "Height": 60,
+            "Color": {
+              "Red": 73,
+              "Green": 86,
+              "Blue": 101
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "nodeUUID",
+            "X": 10,
+            "Y": 16,
+            "Width": 62,
+            "Height": 29,
+            "TextId": "__SingleUse_YBUN",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_9YKB",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "nodeModels",
+            "X": 82,
+            "Y": 16,
+            "Width": 62,
+            "Height": 29,
+            "TextId": "__SingleUse_UH6U",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_Z4S0",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "nodeFeatures",
+            "X": 154,
+            "Y": 16,
+            "Width": 62,
+            "Height": 29,
+            "TextId": "__SingleUse_L7DV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_T1HH",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "provBtn",
+            "X": 350,
+            "Y": 5,
+            "Width": 100,
+            "Height": 50,
+            "Pressed": "ButtonBackgroundTiny.png",
+            "Released": "ButtonBackgroundPressedTiny.png",
+            "TextId": "__SingleUse_TWFN",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "DeviceSubs",
+        "Width": 310,
+        "Height": 60,
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 310,
+            "Height": 60,
+            "FileName": "ButtonBackgroundMediumPressed.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "addressLabel",
+            "X": 10,
+            "Y": 21,
+            "Width": 47,
+            "Height": 19,
+            "TextId": "__SingleUse_KPYR",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_8ZXX",
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "subscribeBtn",
+            "X": 164,
+            "Y": 8,
+            "Width": 132,
+            "Height": 45,
+            "Pressed": "ToggleButton.png",
+            "Released": "ToggleButtonPressed.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "grayBox",
+            "Width": 310,
+            "Height": 60,
+            "Visible": false,
+            "Color": {
+              "Red": 95,
+              "Green": 108,
+              "Blue": 123
+            },
+            "Alpha": 100
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "DeviceButton",
+        "X": 189,
+        "Y": 69,
+        "Width": 112,
+        "Height": 112,
+        "Components": [
+          {
+            "Type": "Button",
+            "Name": "interactBtn",
+            "Width": 112,
+            "Height": 112,
+            "Pressed": "ButtonBackground.png",
+            "Released": "ButtonBackgroundPressed.png"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "icon",
+            "X": 3,
+            "Y": 3,
+            "Width": 50,
+            "Height": 50,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "IconButtonStyle",
+                "IconReleased": "__generated\\icon_theme_images_action_lightbulb_outline_50_50_FFFFFE.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_FFFFFE.svg.png"
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "typeText",
+            "X": 13,
+            "Y": 56,
+            "Width": 47,
+            "Height": 19,
+            "TextId": "__SingleUse_N2HL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_CUTS",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "statusText",
+            "X": 13,
+            "Y": 78,
+            "Width": 47,
+            "Height": 19,
+            "TextId": "__SingleUse_KOKE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_6FPD",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "BottomMenu",
+        "Y": 222,
+        "Width": 480,
+        "Height": 50,
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "tiledImage1",
+            "Width": 480,
+            "Height": 50,
+            "FileName": "MenuBottomBackground.png"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "settingsBtn",
+            "X": 360,
+            "Width": 120,
+            "Height": 50,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 28,
+                "TextId": "__SingleUse_1X0H",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "ColorPressed": {
+                  "Red": 214,
+                  "Green": 214,
+                  "Blue": 213
+                }
+              },
+              {
+                "Type": "IconButtonStyle",
+                "X": 44,
+                "IconReleased": "__generated\\icon_theme_images_action_settings_35_35_FFFFFE.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_settings_35_35_D6D6D5.svg.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "addDeviceBtn",
+            "X": 240,
+            "Width": 120,
+            "Height": 50,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 28,
+                "TextId": "__SingleUse_VTO1",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "ColorPressed": {
+                  "Red": 214,
+                  "Green": 214,
+                  "Blue": 213
+                }
+              },
+              {
+                "Type": "IconButtonStyle",
+                "X": 44,
+                "IconReleased": "__generated\\icon_theme_images_device_bluetooth_searching_35_35_FFFFFE.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_device_bluetooth_searching_35_35_D6D6D5.svg.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "roomsBtn",
+            "X": 120,
+            "Width": 120,
+            "Height": 50,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 28,
+                "TextId": "__SingleUse_NZUG",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "ColorPressed": {
+                  "Red": 214,
+                  "Green": 214,
+                  "Blue": 213
+                }
+              },
+              {
+                "Type": "IconButtonStyle",
+                "X": 44,
+                "IconReleased": "__generated\\icon_theme_images_navigation_apps_35_35_FFFFFE.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_navigation_apps_35_35_D6D6D5.svg.png"
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "homeBtn",
+            "Width": 120,
+            "Height": 50,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 28,
+                "TextId": "__SingleUse_YTJT",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 254
+                },
+                "ColorPressed": {
+                  "Red": 214,
+                  "Green": 214,
+                  "Blue": 213
+                }
+              },
+              {
+                "Type": "IconButtonStyle",
+                "X": 44,
+                "IconReleased": "__generated\\icon_theme_images_action_home_35_35_FFFFFE.svg.png",
+                "IconPressed": "__generated\\icon_theme_images_action_home_35_35_D6D6D5.svg.png"
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GUI_ToHomeScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "homeBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "HomeScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_ToRoomsScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "roomsBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "GUI_ToAddDeviceScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "addDeviceBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "AddDeviceScreen"
+            }
+          },
+          {
+            "InteractionName": "GUI_ToSettingsScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "settingsBtn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "SettingsScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "AllIcons",
+        "Width": 480,
+        "Height": 272,
+        "Components": [
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1",
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_device_data_usage_50_50_FFFFFE.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon2",
+            "Y": 50,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_communication_import_export_50_50_FFFFFE.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon3",
+            "X": 240,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_toggle_toggle_off_50_50_FFFFFE.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon4",
+            "X": 240,
+            "Y": 53,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_settings_applications_50_50_FFFFFE.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon5",
+            "Y": 100,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_delete_outline_50_50_FFFFFE.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon6",
+            "X": 240,
+            "Y": 100,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_toggle_toggle_on_50_50_FFFFFE.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon7",
+            "Y": 150,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_notification_power_50_50_FFFFFE.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon8",
+            "X": 240,
+            "Y": 150,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_notification_power_off_50_50_FFFFFE.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon9",
+            "Y": 200,
+            "Width": 240,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_file_drive_file_rename_outline_50_50_FFFFFE.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "ScreenTitleBar",
+        "Width": 480,
+        "Height": 20,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 20,
+            "Color": {
+              "Red": 73,
+              "Green": 86,
+              "Blue": 101
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "titleBarTxt",
+            "X": 10,
+            "Width": 105,
+            "Height": 19,
+            "TextId": "__SingleUse_RZFU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 254
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_W7F3",
+              "UseBuffer": true,
+              "BufferSize": 30
+            },
+            "Wildcard2": {
+              "TextId": "__SingleUse_KVUU",
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Loader",
+        "X": 140,
+        "Y": 61,
+        "Width": 200,
+        "Height": 150,
+        "Components": [
+          {
+            "Type": "CircleProgress",
+            "Name": "loaderProgress",
+            "X": 45,
+            "Y": 10,
+            "Width": 110,
+            "Height": 110,
+            "Color": {
+              "Red": 61,
+              "Green": 169,
+              "Blue": 252
+            },
+            "CenterX": 55.0,
+            "CenterY": 55.0,
+            "Radius": 50.0,
+            "LineWidth": 10.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "H7SpinnerSmall.png",
+            "ProgressRangeMax": 100
+          },
+          {
+            "Type": "TextArea",
+            "Name": "loaderText",
+            "Y": 125,
+            "Width": 200,
+            "Height": 19,
+            "TextId": "__SingleUse_ZXED",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 73,
+              "Green": 86,
+              "Blue": 101
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_4F49",
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          }
+        ],
+        "Interactions": []
+      }
+    ],
     "Name": "H7MeshProvisioner",
     "Resolution": {
       "Width": 480,

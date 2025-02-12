@@ -14,6 +14,18 @@ public:
     {
         model = m;
     }
+
+    virtual void GUI_DevicesFound() {};
+    virtual void GUI_ChangeScreen() {};
+    virtual void GUI_ConfigureDevice() {};
+    virtual void GUI_ConfShowPopup() {};
+    virtual void GUI_ChangeScreenAfterUnprov() {};
+    virtual void GUI_ChangeScreenDevInfo() {};
+    virtual void GUI_ConfirmDescGet() {};
+    virtual void GUI_UpdateSensorValues() {};
+    virtual void GUI_NotifyError() {};
+    virtual void GUI_NodeIsConfigured() {};
+
 protected:
     Model* model;
 };

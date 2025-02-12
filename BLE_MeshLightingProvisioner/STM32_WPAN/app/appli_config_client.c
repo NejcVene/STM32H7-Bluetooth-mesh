@@ -34,6 +34,9 @@
 #include "light_lc.h"
 #include "vendor.h"
 
+#include "communication_ex.h"
+#include "appli_config_client_ex.h"
+
 /** @addtogroup ST_BLE_Mesh
 *  @{
 */
@@ -62,6 +65,12 @@
 /******************************************************************************/
 #if defined (ENABLE_PROVISIONER_FEATURE) || defined(DYNAMIC_PROVISIONER)
 /******************************************************************************/
+
+extern Queue *eventQueue;
+
+SF_OPERATION_STATUS sfStatus = SF_CALLBACK_IDLE;
+SF_VAR_ACCESS access = SF_DISABLE_ACCESS;
+
 
 const MOBLEUINT8 aConfigAppKeyDefault[19]= 
                 { /* NetKeyIndexAndAppKeyIndex : 3B
@@ -877,6 +886,16 @@ MOBLE_RESULT Appli_ConfigClient_ConfigureNode(void)
       eClientSendMsgState = ConfigurationDone_State;  /* Change the send state */
       eServerRespRecdState = NodeIdle_State;
       TRACE_I(TF_CONFIG_CLIENT,"**Node is configured** \r\n");  
+
+      // added
+      // register event to send result as node provision and configuration is complete
+      uint8_t resultBuffer[PAC_MAX_PAYLOAD];
+      char usedCommand[30];
+      uint16_t address = GetAddressToConfigure();
+      sprintf(usedCommand, "ATEP %s", FSM_GetNdprn() ? "NDPRVN" : "PRVN");
+      FSM_EncodePayload(resultBuffer, usedCommand, (void *) &address, sizeof(uint16_t), PRO_DATATYPE_U16T);
+      FSM_RegisterEvent(eventQueue, MAIN_FSM_EVENT_AKC, resultBuffer, PAC_MAX_PAYLOAD);
+
     }
     else 
     {
@@ -1818,8 +1837,12 @@ void Appli_AppBindModelStatusCb(MOBLEUINT8 status)
 */ 
 void Appli_SubscriptionAddStatusCb(MOBLEUINT8 status)
 {
-   /* Change the received state for application  */
-   eServerRespRecdState = SubscriptionAck_State;
+   if (access == SF_ENABLE_ACCESS) {
+	   sfStatus = SF_CALLBACK_SUBSCRIBE_OK;
+   } else {
+	   /* Change the received state for application  */
+	   eServerRespRecdState = SubscriptionAck_State;
+   }
 }
 
 
@@ -1831,8 +1854,12 @@ void Appli_SubscriptionAddStatusCb(MOBLEUINT8 status)
 */ 
 void Appli_PublicationStatusCb(MOBLEUINT8 status)
 {
-   /* Change the received state for application  */
-   eServerRespRecdState = PublicationStatus_State;
+   if (access == SF_ENABLE_ACCESS) {
+	   sfStatus = SF_CALLBACK_PUBLISH_OK;
+   } else {
+	   /* Change the received state for application  */
+	   eServerRespRecdState = PublicationStatus_State;
+   }
 }
 
 
@@ -2037,6 +2064,30 @@ MOBLEUINT8 GetCountVendorModelToSubscribe(MOBLEUINT8 elementIndex)
 MOBLEUINT8 AppliConfigClient_SendMessageDefault(MOBLEUINT8 elementIdx)
 {
   return NUM_VENDOR_MODELS_TO_SUBSCRIBE; 
+}
+
+SF_OPERATION_STATUS Appli_SFGetOpStatus(void) {
+
+	return sfStatus;
+
+}
+
+void Appli_SFResetStatus(void) {
+
+	sfStatus = SF_CALLBACK_IDLE;
+
+}
+
+void Appli_SFSetStatus(SF_OPERATION_STATUS state) {
+
+	sfStatus = state;
+
+}
+
+void Appli_SFSetAccess(SF_VAR_ACCESS setting) {
+
+	access = setting;
+
 }
 
 /******************************************************************************/

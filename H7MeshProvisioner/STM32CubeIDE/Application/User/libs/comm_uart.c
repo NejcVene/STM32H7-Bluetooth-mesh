@@ -7,6 +7,13 @@
 
 #include "comm_uart.h"
 #include "freertos_os2.h"
+#include "task.h"
+#include <math.h>
+#include <limits.h>
+
+#ifdef _DEBUG
+#include "lib_utils.h"
+#endif
 
 #ifdef _SLAVE
 #define	Toggle_Pin(port, pin, state)			{ HAL_GPIO_WritePin(port, pin, state); }
@@ -14,22 +21,37 @@
 #define HS_HIGH									{ Toggle_Pin(COMM_HS_PORT_SLAVE, COMM_HS_PIN_SLAVE, GPIO_PIN_SET); }
 #endif
 
-volatile int timerTrigger;
+static volatile int timerTrigger;
 Comm_IT_Responses_t itResponses;
 volatile int hsTrigger;
 
+/**
+  * @brief  Wait for transmission on LPUART to complete.
+  * @param  None
+  * @retval	None
+  */
 void Protocol_WaitForTX(void) {
 
 	while (!itResponses.lpUartTxFlag);
 
 }
 
+/**
+  * @brief  Wait for reception on LPUART to complete.
+  * @param  None
+  * @retval	None
+  */
 void Protocol_WaitForRX(void) {
 
 	while (!itResponses.lpUartRxFlag);
 
 }
 
+/**
+  * @brief  Wait for either handshake pin or timeout (whichever comes first).
+  * @param  None
+  * @retval	None
+  */
 void Protocol_WaitForHS(void) {
 
 	while (!hsTrigger && !timerTrigger);
@@ -37,6 +59,14 @@ void Protocol_WaitForHS(void) {
 
 }
 
+/**
+  * @brief  Initializes the Communication interface.
+  * @param  lpuart	Pointer to a UART_HandleTypeDef structure that contains
+  *               	the configuration information for the specified UART module.
+  * @param	timer	Pointer to a TIM_HandleTypeDef structure that contains the
+  * 				configuration information for the specified timer.
+  * @retval	Comm_Settings_t	pointer
+  */
 Comm_Settings_t *Comm_Init(UART_HandleTypeDef *lpuart, TIM_HandleTypeDef *timer) {
 
 	Comm_Settings_t *tmp;
@@ -51,6 +81,15 @@ Comm_Settings_t *Comm_Init(UART_HandleTypeDef *lpuart, TIM_HandleTypeDef *timer)
 
 }
 
+/**
+  * @brief  Check for correct communication parameters before use on LPUART.
+  * @param  buffer		Pointer to a uint8_t buffer that contains data to be sent,
+  * 					or received.
+  * @param	size		A uint16_t value which specified the amount of data to be
+  * 					sent or received.
+  * @param	bufferSize	A uint16_t value which specifies size of the used buffer.
+  * @retval	COMM_STATUS	status
+  */
 COMM_STATUS Comm_CheckParameters(uint8_t *buffer, uint16_t size, uint16_t bufferSize) {
 
 	if (!buffer ||
@@ -64,7 +103,17 @@ COMM_STATUS Comm_CheckParameters(uint8_t *buffer, uint16_t size, uint16_t buffer
 
 }
 
-PROTOCOL_STATUS Comm_LPUART_Send_IT(Comm_Settings_t *setting, uint8_t *buffer, uint16_t sizeToSend, uint16_t bufferSize) {
+/**
+  * @brief  Send data using LPUART.
+  * @param  setting		Pointer to a Comm_Settings_t structure that contains initialization
+  * 					data for the communication interface.
+  * @param	buffer		A uint8_t pointer to a buffer which contains data to be sent.
+  * @param	sizeToSend	A uint16_t value which specifies the amount of data to sent.
+  * @param	bufferSize	A uint16_t value which specifies size of the used buffer.
+  * @param	timeout		A uint32_t value which when timeout should occur.
+  * @retval	PROTOCOL_STATUS	status
+  */
+PROTOCOL_STATUS Comm_LPUART_Send_IT(Comm_Settings_t *setting, uint8_t *buffer, uint16_t sizeToSend, uint16_t bufferSize, uint32_t timeout) {
 
 	if (Comm_CheckParameters(buffer, sizeToSend, bufferSize) != COMM_OK) {
 		return PRO_ERROR_PARAM;
@@ -72,6 +121,7 @@ PROTOCOL_STATUS Comm_LPUART_Send_IT(Comm_Settings_t *setting, uint8_t *buffer, u
 	itResponses.lpUartTxFlag = 0;
 
 #ifdef _MASTER
+	TIM_SetTimeout(setting, timeout);
 	TIM_Start(setting);
 	Protocol_WaitForHS();
 	if (timerTrigger) {
@@ -94,7 +144,17 @@ PROTOCOL_STATUS Comm_LPUART_Send_IT(Comm_Settings_t *setting, uint8_t *buffer, u
 
 }
 
-PROTOCOL_STATUS Comm_LPUART_Receive_IT(Comm_Settings_t *setting, uint8_t *buffer, uint16_t sizeToReceive, uint16_t bufferSize) {
+/**
+  * @brief  Receive data using LPUART.
+  * @param  setting			Pointer to a Comm_Settings_t structure that contains initialization
+  * 						data for the communication interface.
+  * @param	buffer			A uint8_t pointer to a buffer which will contain received data.
+  * @param	sizeToReceive	A uint16_t value which specifies the amount of data to receive.
+  * @param	bufferSize		A uint16_t value which specifies size of the used buffer.
+  * @param	timeout			A uint32_t value which when timeout should occur.
+  * @retval	PROTOCOL_STATUS	status
+  */
+PROTOCOL_STATUS Comm_LPUART_Receive_IT(Comm_Settings_t *setting, uint8_t *buffer, uint16_t sizeToReceive, uint16_t bufferSize, uint32_t timeout) {
 
 	HAL_StatusTypeDef status;
 	if (Comm_CheckParameters(buffer, sizeToReceive, bufferSize)) {
@@ -103,6 +163,7 @@ PROTOCOL_STATUS Comm_LPUART_Receive_IT(Comm_Settings_t *setting, uint8_t *buffer
 	itResponses.lpUartRxFlag = 0;
 
 #ifdef _MASTER
+	TIM_SetTimeout(setting, timeout);
 	TIM_Start(setting);
 	Protocol_WaitForHS();
 	if (timerTrigger) {
@@ -125,6 +186,12 @@ PROTOCOL_STATUS Comm_LPUART_Receive_IT(Comm_Settings_t *setting, uint8_t *buffer
 
 }
 
+/**
+  * @brief  Free allocated memory for communication interface.
+  * @param  setting			Pointer to a Comm_Settings_t structure that contains initialization
+  * 						data for the communication interface.
+  * @retval	None
+  */
 void Comm_Free(Comm_Settings_t *setting) {
 
 	vPortFree(setting);
@@ -132,6 +199,36 @@ void Comm_Free(Comm_Settings_t *setting) {
 }
 
 #ifdef _MASTER
+
+/**
+  * @brief  Get timerTrigger value.
+  * @param  None
+  * @retval	int
+  */
+int TIM_GetTimerTrigger() {
+
+	return timerTrigger;
+
+}
+
+/**
+  * @brief  Set timerTrigger value.
+  * @param  A int value to which timerTrigger will be set
+  * @retval	None
+  */
+void TIM_SetTimerTrigger(int val) {
+
+	timerTrigger = val;
+
+}
+
+/**
+  * @brief  Start timer for timeout.
+  * @note	Will also reset the timer.
+  * @param  setting	Pointer to a Comm_Settings_t structure that contains initialization
+  * 				data for the communication interface.
+  * @retval	None
+  */
 void TIM_Start(Comm_Settings_t *setting) {
 
 	TIM_Reset(setting);
@@ -139,17 +236,61 @@ void TIM_Start(Comm_Settings_t *setting) {
 
 }
 
+/**
+  * @brief  Stop timer for timeout.
+  * @param  setting	Pointer to a Comm_Settings_t structure that contains initialization
+  * 				data for the communication interface.
+  * @retval	None
+  */
 void TIM_Stop(Comm_Settings_t *setting) {
 
 	HAL_TIM_Base_Stop_IT(setting->timer);
 
 }
 
+/**
+  * @brief  Reset timer for timeout.
+  * @note	Will stop the timer, reset its counter and clear flags.
+  * @param  setting	Pointer to a Comm_Settings_t structure that contains initialization
+  * 				data for the communication interface.
+  * @retval	None
+  */
 void TIM_Reset(Comm_Settings_t *setting) {
 
 	timerTrigger = 0;
 	HAL_TIM_Base_Stop_IT(setting->timer);
 	__HAL_TIM_SET_COUNTER(setting->timer, 0);
+	__HAL_TIM_CLEAR_FLAG(setting->timer, TIM_FLAG_UPDATE);
 
 }
+
+/**
+  * @brief  Set timeout for timer in seconds.
+  * @note	Will also reset the timer.
+  * @param  setting	Pointer to a Comm_Settings_t structure that contains initialization
+  * 				data for the communication interface.
+  * @param  timeout	A uint32_t value which represents the set timeout in seconds.
+  * @retval	None
+  */
+void TIM_SetTimeout(Comm_Settings_t *setting, uint32_t timeout) {
+
+	// float will give us enough precision
+	float Tcounter = 0;
+	uint32_t newARR = 0;
+
+	Tcounter = (float) TIM2_BASE_PRESCALER / (float) (TIM2_BASE_CLOCK * 1e6);
+	newARR = (uint32_t) (timeout / Tcounter);
+	__HAL_TIM_SET_AUTORELOAD(setting->timer, newARR);
+
+#ifdef _DEBUG
+	char message[30];
+	float updateEvent = ((float) (TIM2_BASE_CLOCK * 1e6)) / ((float) TIM2_BASE_PRESCALER * newARR);
+	sprintf(message, "Calc. delay: %d (%ld)", (int) (1 / updateEvent), timeout);
+	debugMessage(message, strlen(message), PRINT_CHAR);
+#endif
+
+	TIM_Reset(setting);
+
+}
+
 #endif

@@ -59,18 +59,12 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define FRAME_RATE_Pin GPIO_PIN_6
-#define FRAME_RATE_GPIO_Port GPIOB
 #define LCD_DE_Pin GPIO_PIN_7
 #define LCD_DE_GPIO_Port GPIOD
-#define VSYNC_FREQ_Pin GPIO_PIN_3
-#define VSYNC_FREQ_GPIO_Port GPIOG
 #define LCD_BL_CTRL_Pin GPIO_PIN_0
 #define LCD_BL_CTRL_GPIO_Port GPIOK
 #define LCD_RESET_Pin GPIO_PIN_2
 #define LCD_RESET_GPIO_Port GPIOA
-#define MCU_ACTIVE_Pin GPIO_PIN_6
-#define MCU_ACTIVE_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 

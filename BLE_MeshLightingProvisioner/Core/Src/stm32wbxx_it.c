@@ -357,6 +357,7 @@ void PUSH_BUTTON_SW2_EXTI_IRQHandler(void)
 void PUSH_BUTTON_SW3_EXTI_IRQHandler(void)
 {
   HAL_GPIO_EXTI_IRQHandler(BUTTON_SW3_PIN);
+//  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
 }
 
 /**
@@ -374,6 +375,46 @@ void SPI1_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles EXTI line1 interrupt.
+  */
+//void EXTI1_IRQHandler(void)
+//{
+//  /* USER CODE BEGIN EXTI1_IRQn 0 */
+//
+//  /* USER CODE END EXTI1_IRQn 0 */
+//  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
+//  /* USER CODE BEGIN EXTI1_IRQn 1 */
+//
+//  /* USER CODE END EXTI1_IRQn 1 */
+//}
+
+/**
+  * @brief This function handles EXTI line3 interrupt.
+  */
+
+void EXTI2_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI2_IRQn 0 */
+
+  /* USER CODE END EXTI2_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
+  /* USER CODE BEGIN EXTI2_IRQn 1 */
+
+  /* USER CODE END EXTI2_IRQn 1 */
+}
+
+void EXTI3_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI3_IRQn 0 */
+
+  /* USER CODE END EXTI3_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
+  /* USER CODE BEGIN EXTI3_IRQn 1 */
+
+  /* USER CODE END EXTI3_IRQn 1 */
+}
+
+/**
   * @brief This function handles EXTI line[9:5] interrupts.
   */
 void EXTI9_5_IRQHandler(void)
@@ -386,6 +427,14 @@ void EXTI9_5_IRQHandler(void)
 
   /* USER CODE END EXTI9_5_IRQn 1 */
 }
+
+void EXTI15_10_IRQHandler(void) {
+
+	// Call the HAL EXTI handler to process the interrupt
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_15);
+
+}
+
 
 #ifdef SAVE_MODEL_STATE_POWER_FAILURE_DETECTION       
 /**

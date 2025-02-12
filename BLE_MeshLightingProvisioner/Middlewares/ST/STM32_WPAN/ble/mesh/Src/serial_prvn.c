@@ -27,6 +27,7 @@
 #include "appli_config_client.h"
 #include "serial_prvn.h"
 #include "appli_mesh.h"
+#include "communication_ex.h"
 
 /** @addtogroup BlueNRG_Mesh
 *  @{
@@ -46,8 +47,8 @@ static MOBLEUINT16 PrvndNodeAddress = 0;
 extern MOBLEUINT16 nodeAddressOffset;
 /* Private function prototypes -----------------------------------------------*/
 static MOBLE_RESULT SerialPrvn_ProvisionDevice(char *text);
-static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text);
-static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, char *resultBuffer);
+static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text, uint8_t *resultBuffer);
+static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, uint8_t *resultBuffer);
 /* Private functions ---------------------------------------------------------*/ 
 /**
 * @brief  This function scans and prints unprovisioned devices  
@@ -55,7 +56,7 @@ static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, char *resultBuffer);
 * @param  noOfUnprovDevices: Pointer to take total count of nearby unprovisioned devices
 * @retval MOBLE_RESULT
 */  
-__weak MOBLE_RESULT BLEMesh_ScanDevices(neighbor_params_t *unprovDeviceArray, MOBLEUINT8 *noOfUnprovDevices)
+__weak MOBLE_RESULT BLEMesh_ScanDevices(neighbor_params_t *unprovDeviceArray, MOBLEUINT8 *noOfUnprovDevices, uint8_t *resultBuffer)
 {
   return MOBLE_RESULT_NOTIMPL;
 }
@@ -75,7 +76,7 @@ __weak MOBLE_RESULT BLEMesh_ProvisionDevice(neighbor_params_t *unprovDeviceArray
 * @param  rcvdStringSize: length of the input string 
 * @retval void
 */ 
-void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *resultBuffer)
+void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, uint8_t *resultBuffer, int *cmdResposneElsewhere)
 {
   MOBLE_RESULT result = MOBLE_RESULT_INVALIDARG;
 
@@ -84,6 +85,7 @@ void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *res
   {   
 #if defined (ENABLE_PROVISIONER_FEATURE) || defined(DYNAMIC_PROVISIONER)
       /* Initializes Mesh network parameters */
+	*cmdResposneElsewhere = 1;
     Appli_StartProvisionerMode(1);
     result = MOBLE_RESULT_SUCCESS;
 #endif      
@@ -95,7 +97,8 @@ void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *res
   }
    /* Command to start the unprovisioned devices */
   else if (!strncmp(rcvdStringBuff+COMMAND_OFFSET, "PRVN-",4))
-  {   
+  {   *cmdResposneElsewhere = 1;
+  	  FSM_UnsetNdpvrn();
       if(!PrvningInProcess)
       {
           result = SerialPrvn_ProvisionDevice(rcvdStringBuff+COMMAND_OFFSET);
@@ -109,7 +112,7 @@ void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *res
   else if (!strncmp(rcvdStringBuff+COMMAND_OFFSET, "UNPV",4))
   {
       
-    result = SerialPrvn_UnProvisionDevice(rcvdStringBuff+COMMAND_OFFSET);
+    result = SerialPrvn_UnProvisionDevice(rcvdStringBuff+COMMAND_OFFSET, resultBuffer);
       
   }
      /* Command to start the unprovisioned devices */
@@ -121,12 +124,14 @@ void SerialPrvn_Process(char *rcvdStringBuff, uint16_t rcvdStringSize, char *res
   /* Command to scan the unprovisioned devices - Used By node only */
   else if (!strncmp(rcvdStringBuff+COMMAND_OFFSET, "NDSCAN",4))
   {   
-      result = BLEMesh_ScanDevices(NeighborTable, &NoOfNeighborPresent);
+      result = BLEMesh_ScanDevices(NeighborTable, &NoOfNeighborPresent, resultBuffer);
   }
    /* Command to start the unprovisioned devices - Used By node only */
   else if (!strncmp(rcvdStringBuff+COMMAND_OFFSET, "NDPRVN-",4))
   {   
       MOBLEINT16 index = 0;  
+      *cmdResposneElsewhere = 1;
+      FSM_SetNdpvrn();
       sscanf(rcvdStringBuff, "PRVN-%hd", &index);
       result = BLEMesh_ProvisionDevice(NeighborTable, index);
   }
@@ -195,10 +200,11 @@ static MOBLE_RESULT SerialPrvn_ProvisionDevice(char *text)
 * @param  text: received array
 * @retval MOBLE_RESULT
 */  
-static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text)
+static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text, uint8_t *resultBuffer)
 {
   MOBLEINT16 na = 0;
   MOBLE_RESULT result = MOBLE_RESULT_SUCCESS;
+  uint16_t convertedResult = 0;
   
   sscanf(text, "UNPV %hd", &na);  
   if(na>1)
@@ -221,7 +227,8 @@ static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text)
   {
     result = MOBLE_RESULT_INVALIDARG;
   }
-
+  convertedResult = (uint16_t) result;
+  FSM_EncodePayload(resultBuffer, "ATEP UNPV", (void *) &convertedResult, sizeof(uint16_t), PRO_DATATYPE_U16T);
   return result;
 }
 
@@ -230,38 +237,41 @@ static MOBLE_RESULT SerialPrvn_UnProvisionDevice(char *text)
 * @param  text: received array
 * @retval MOBLE_RESULT
 */  
-static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, char *resultBuffer)
+static MOBLE_RESULT SerialPrvn_ScanDevices(char *text, uint8_t *resultBuffer)
 {
   MOBLE_RESULT result;
+  char buffer[PAC_MAX_PAYLOAD] = {0};
   
     result = BLEMesh_GetNeighborState(NeighborTable,&NoOfNeighborPresent);
     /* Check if any unprovisioned device is available */
-    if(!NoOfNeighborPresent)
-    {
-      TRACE_I(TF_PROVISION,"No Unprovisioned Device Nearby\r\n");  
+    if(!NoOfNeighborPresent) {
+    	strcat(buffer, "NONE");
+    	TRACE_I(TF_PROVISION,"No Unprovisioned Device Nearby\r\n");
     }
-    else
-    {
-    	strcat(resultBuffer, "ATEP SCAN: ");
-      for(MOBLEINT8 count=0; count < NoOfNeighborPresent; count++)
-      {
-    	  char tmp[40];
-    	  sprintf(tmp, "%d-", count);
-    	  strcat(resultBuffer, tmp);
-    	  for (int j = 0; j<16; j++) {
-    		  sprintf(&tmp[j * 2], "%02X", NeighborTable[count].uuid[j]);
-    	  }
-    	  tmp[32] = '\0';
-    	  strcat(resultBuffer, tmp);
-    	  if (count < NoOfNeighborPresent - 1) {
-    		  strcat(resultBuffer, "\n");
-    	  }
-    	  BLEMesh_PrintStringCb("");
-    	  TRACE_I(TF_PROVISION,"Device-%d -> ", count);
-    	  BLEMesh_PrintDataCb(NeighborTable[count].uuid, 16);
-      }
+    else {
+//    	strcat(resultBuffer, "ATEP SCAN: ");
+    	for(MOBLEINT8 count=0; count < NoOfNeighborPresent; count++) {
+    		char tmp[40];
+    		char cutUuid[5];
+    		sprintf(tmp, "%d-", count);
+    		strcat(buffer, tmp);
+    		for (int j = 0; j<16; j++) {
+    			sprintf(&tmp[j * 2], "%02X", NeighborTable[count].uuid[j]);
+    		}
+    		tmp[32] = '\0';
+    		strncpy(cutUuid, tmp, 4);
+    		cutUuid[4] = '\0';
+    		strcat(buffer, cutUuid);
+    		if (count < NoOfNeighborPresent - 1) {
+    			strcat(buffer, ";");
+    		}
+    		BLEMesh_PrintStringCb("");
+    		TRACE_I(TF_PROVISION,"Device-%d -> ", count);
+    		BLEMesh_PrintDataCb(NeighborTable[count].uuid, 16);
+    	}
     }
-  return result;
+    FSM_EncodePayload(resultBuffer, "ATEP SCAN", (void *) buffer, 0, PRO_DATATYPE_STRING);
+    return result;
   }
 /**
 * @brief  This funcrion is used to update the status of the provisioning

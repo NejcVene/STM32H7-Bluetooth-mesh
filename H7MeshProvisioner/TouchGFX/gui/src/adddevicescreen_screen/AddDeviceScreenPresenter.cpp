@@ -16,3 +16,27 @@ void AddDeviceScreenPresenter::deactivate()
 {
 
 }
+
+void AddDeviceScreenPresenter::GUI_SendCommand(CMD_CommandGet_t *cmd) {
+
+	model->GUI_SendCommand(cmd);
+
+}
+
+void AddDeviceScreenPresenter::GUI_DevicesFound() {
+
+	view.GUI_SetDevicesFound(model->GUI_GetFoundDevices());
+
+}
+
+void AddDeviceScreenPresenter::GUI_ChangeScreen() {
+
+	view.GUI_SwitchScreenAfterProv();
+
+}
+
+void AddDeviceScreenPresenter::GUI_NotifyError() {
+
+	view.GUI_ErrorOccured();
+
+}

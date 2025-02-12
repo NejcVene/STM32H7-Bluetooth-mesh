@@ -8,19 +8,22 @@ C_SRCS += \
 ../Application/Core/Libs/comm_uart.c \
 ../Application/Core/Libs/communication_ex.c \
 ../Application/Core/Libs/hw_spi.c \
-../Application/Core/Libs/queue.c 
+../Application/Core/Libs/queue.c \
+../Application/Core/Libs/serial_fun.c 
 
 OBJS += \
 ./Application/Core/Libs/comm_uart.o \
 ./Application/Core/Libs/communication_ex.o \
 ./Application/Core/Libs/hw_spi.o \
-./Application/Core/Libs/queue.o 
+./Application/Core/Libs/queue.o \
+./Application/Core/Libs/serial_fun.o 
 
 C_DEPS += \
 ./Application/Core/Libs/comm_uart.d \
 ./Application/Core/Libs/communication_ex.d \
 ./Application/Core/Libs/hw_spi.d \
-./Application/Core/Libs/queue.d 
+./Application/Core/Libs/queue.d \
+./Application/Core/Libs/serial_fun.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -30,7 +33,7 @@ Application/Core/Libs/%.o Application/Core/Libs/%.su Application/Core/Libs/%.cyc
 clean: clean-Application-2f-Core-2f-Libs
 
 clean-Application-2f-Core-2f-Libs:
-	-$(RM) ./Application/Core/Libs/comm_uart.cyclo ./Application/Core/Libs/comm_uart.d ./Application/Core/Libs/comm_uart.o ./Application/Core/Libs/comm_uart.su ./Application/Core/Libs/communication_ex.cyclo ./Application/Core/Libs/communication_ex.d ./Application/Core/Libs/communication_ex.o ./Application/Core/Libs/communication_ex.su ./Application/Core/Libs/hw_spi.cyclo ./Application/Core/Libs/hw_spi.d ./Application/Core/Libs/hw_spi.o ./Application/Core/Libs/hw_spi.su ./Application/Core/Libs/queue.cyclo ./Application/Core/Libs/queue.d ./Application/Core/Libs/queue.o ./Application/Core/Libs/queue.su
+	-$(RM) ./Application/Core/Libs/comm_uart.cyclo ./Application/Core/Libs/comm_uart.d ./Application/Core/Libs/comm_uart.o ./Application/Core/Libs/comm_uart.su ./Application/Core/Libs/communication_ex.cyclo ./Application/Core/Libs/communication_ex.d ./Application/Core/Libs/communication_ex.o ./Application/Core/Libs/communication_ex.su ./Application/Core/Libs/hw_spi.cyclo ./Application/Core/Libs/hw_spi.d ./Application/Core/Libs/hw_spi.o ./Application/Core/Libs/hw_spi.su ./Application/Core/Libs/queue.cyclo ./Application/Core/Libs/queue.d ./Application/Core/Libs/queue.o ./Application/Core/Libs/queue.su ./Application/Core/Libs/serial_fun.cyclo ./Application/Core/Libs/serial_fun.d ./Application/Core/Libs/serial_fun.o ./Application/Core/Libs/serial_fun.su
 
 .PHONY: clean-Application-2f-Core-2f-Libs
 
