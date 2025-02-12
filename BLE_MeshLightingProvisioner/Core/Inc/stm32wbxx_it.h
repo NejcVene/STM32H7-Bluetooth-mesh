@@ -68,6 +68,9 @@ void CFG_HW_USART1_DMA_TX_IRQHandler( void );
 void CFG_HW_LPUART1_DMA_TX_IRQHandler( void );
 /* USER CODE BEGIN EFP */
 void SPI1_IRQHandler(void);
+//void EXTI1_IRQHandler(void);
+void EXTI2_IRQHandler(void);
+void EXTI3_IRQHandler(void);
 void EXTI9_5_IRQHandler(void);
 void EXTI15_10_IRQHandler(void);
 void PUSH_BUTTON_SW1_EXTI_IRQHandler(void);

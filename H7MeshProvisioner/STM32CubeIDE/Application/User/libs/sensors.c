@@ -17,8 +17,8 @@ void SN_AllocateAndCopy(Sensor_MeasuredData_t *mea, void *buffer, size_t dataSiz
 /*
  * How to add a sensor?
  * 		1.	Inside SN_RegisterSensor function, add a new case with the sensor
- * 			PID as its value. Inside this case call the SN_SaveSensor function you created
- * 			into which pass the required sensor parameters.
+ * 			PID as its value. Inside this case call the SN_SaveSensor function and
+ * 			pass the required sensor parameters.
  * 		2. 	Create a new structure in sensors.h which will represent
  * 			the actual measurement from the sensor.
  * 		3.	Inside SN_GetMeasuredSensorData function, add a new case with

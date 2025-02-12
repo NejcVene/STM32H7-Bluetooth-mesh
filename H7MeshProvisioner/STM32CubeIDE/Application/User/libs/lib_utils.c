@@ -9,6 +9,13 @@
 #include <ctype.h>
 #include "lib_utils.h"
 
+/**
+  * @brief  Print message to terminal.
+  * @param  message			Pointer to the message which will be printed.
+  * @param	payloadLength	Length of the message to be printed.
+  * @param	printType		Message contains either characters or binary data.
+  * @retval	None
+  */
 void debugMessage(char *message, uint16_t payloadLength, DEBUG_PRINT_TYPE printType) {
 
     char tmp[5];
@@ -60,6 +67,7 @@ void debugMessage(char *message, uint16_t payloadLength, DEBUG_PRINT_TYPE printT
     } else {
         output[sizeof(output) - 1] = '\0';
     }
+    // print to terminal defined by UART_DEBUG
     HAL_UART_Transmit(UART_DEBUG, (uint8_t *) output, index, 3000);
 
 }

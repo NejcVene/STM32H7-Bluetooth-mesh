@@ -22,17 +22,17 @@
 
 #ifdef MASTER
 // edit these only if master device
-#define COMM_CS_PORT_MASTER		GPIOE	 // port and pin used for output chip select (NSS) line in SPI (master)
-#define COMM_CS_PIN_MASTER		GPIO_PIN_3
+#define COMM_CS_PORT_MASTER		GPIOK	 // port and pin used for output chip select (NSS) line in SPI (master)
+#define COMM_CS_PIN_MASTER		GPIO_PIN_1
 
-#define COMM_HS_PORT_MASTER		GPIOH	// port and pin used for handshake pin (input)
-#define COMM_HS_PIN_MASTER		GPIO_PIN_15
+#define COMM_HS_PORT_MASTER		GPIOG	// port and pin used for handshake pin (input)
+#define COMM_HS_PIN_MASTER		GPIO_PIN_3
 
-#define COMM_NRST_PORT_MASTER	GPIOB
-#define COMM_NRST_PIN_MASTER	GPIO_PIN_15
+#define COMM_NRST_PORT_MASTER	GPIOA
+#define COMM_NRST_PIN_MASTER	GPIO_PIN_8
 
-#define COMM_ERROR_PORT_MASTER	GPIOI
-#define COMM_ERROR_PIN_MASTER	GPIO_PIN_2
+#define COMM_ERROR_PORT_MASTER	GPIOA
+#define COMM_ERROR_PIN_MASTER	GPIO_PIN_6
 
 #else
 // edit these only if slave device

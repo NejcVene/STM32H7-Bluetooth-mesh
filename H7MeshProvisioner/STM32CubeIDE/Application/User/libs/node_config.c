@@ -17,6 +17,19 @@
 #include "lib_utils.h"
 #endif
 
+/*
+ * What could be updated here:
+ * 	- upgrade to hash tables instead of arrays,
+ * 	- add saving of provisioned nodes to long term storage (flash, NAND, NOR ...)
+ */
+
+/*
+ * When a unprovisioned node is found, it is assigned a temporary address.
+ * When a node gets provisioned, it gets assigned its proper network address.
+ * This is why two addresses are used.
+ */
+
+// macros to clear values
 #define CLEAR_NODE_ADDRESSES(nodeAddressValue) (Node_NetworkAddress_t) 				\
 											   { .nodeAddress = (nodeAddressValue), \
 												 .uuid = "",						\
@@ -43,6 +56,7 @@
 void NC_ReportItems(uint8_t uuid, NC_MaskedFeatures *items, uint16_t *report);
 uint8_t NC_HexCharToInt(char c);
 
+// supported models (always ends with NULL, 0, 0)
 NC_MaskedFeatures models[] = {
 		{.name = "O",	.bitmask = NC_GENERIC_ON_OFF_MODEL,			.value = SF_GEN_ON_OFF_SERVER_MODEL_ID},
 		{.name = "E",	.bitmask = NC_GENERIC_LEVEL_MODEL,			.value = SF_GEN_LEVEL_SERVER_MODEL_ID},
@@ -55,6 +69,7 @@ NC_MaskedFeatures models[] = {
 		{.name = "V",	.bitmask = NC_VENDOR_MODEL_1,				.value = SF_MAYBE_VENDOR_MODEL_ID},
 		{.name = NULL,	.bitmask = 0,								.value = 0}
 };
+// supported features (always ends with NULL, 0, 0)
 NC_MaskedFeatures features[] = {
 		{.name = "R",	.bitmask = NC_RELAY_FEATURE,				.value = 0},
 		{.name = "P", 	.bitmask = NC_PROXY_FEATURE,				.value = 0},
@@ -62,6 +77,7 @@ NC_MaskedFeatures features[] = {
 		{.name = "E", 	.bitmask = NC_EMBEDDED_PROVISIONER_FEATURE,	.value = 0},
 		{.name = NULL,	.bitmask = 0}
 };
+// defined group addresses (always ends with NULL, 0, 0)
 NC_MaskedFeatures groupAddress[] = {
 		{.name = "Default",  	.bitmask = GROUP_ADDRESS_DEFAULT_BIT,		.value = GROUP_ADDRESS_DEFAULT},
 		{.name = "Kitchen",		.bitmask = GROUP_ADDRESS_KITCHEN_BIT,		.value = GROUP_ADDRESS_KITCHEN},
@@ -79,6 +95,11 @@ static int deviceConfiguredFlag;
 char nodeModelsStr[10];
 char nodeFeaturesStr[5];
 
+/**
+  * @brief  Initialize required arrays for node configuration.
+  * @note	For debug purposes, can simulate nodes in a network.
+  * @retval	None
+  */
 void NC_Init(void) {
 
 //	modelsData = HT_Create(7, 11);
@@ -124,6 +145,11 @@ void NC_Init(void) {
 
 }
 
+/**
+  * @brief  Reset timer for timeout.
+  * @param  param Pointer to node parameters (node address and UUID).
+  * @retval	None
+  */
 void NC_ReportFoundNodes(char *param) {
 
 	int i = 0;
@@ -133,7 +159,10 @@ void NC_ReportFoundNodes(char *param) {
 	char *rest = param;
 	Node_NetworkAddress_t tmp;
 
+	// clear any existing found nodes
 	NC_ClearNodeNetworkAddressArray();
+	// parse input param with strtok_r
+	// which is separated by ';'
 	while ((token = strtok_r(rest, ";", &rest))) {
 		tmp = CLEAR_NODE_ADDRESSES(NODE_DEF_VAL);
 		sscanf(token, "%" PRIu32 "-%s", &index, uuid);
@@ -145,6 +174,11 @@ void NC_ReportFoundNodes(char *param) {
 
 }
 
+/**
+  * @brief  Check for enabled models and features for found nodes.
+  * @note	This will run for all found nodes in nodeAdresses array.
+  * @retval	None
+  */
 void NC_CheckEnabledModelsFeatures() {
 
 	for (int i = 0; i<5; i++) {
@@ -156,6 +190,15 @@ void NC_CheckEnabledModelsFeatures() {
 
 }
 
+/**
+  * @brief  For the correct UUID and bitmask bit, add bit to report.
+  * @note	Used for adding correct bits to nodeFeatures and nodeModels.
+  * @param	uuid	UUID of a node.
+  * @param	items	Pointer to either features or models array, which contains
+  * 				features/models definitions.
+  * @param	report	Where to save constructed bitmask. Either nodeFeatures or nodeModels.
+  * @retval	None
+  */
 void NC_ReportItems(uint8_t uuid, NC_MaskedFeatures *items, uint16_t *report) {
 
 	for (int i = 0; items[i].name != NULL; i++) {
@@ -166,6 +209,13 @@ void NC_ReportItems(uint8_t uuid, NC_MaskedFeatures *items, uint16_t *report) {
 
 }
 
+/**
+  * @brief	For inputed node, add correct subscription (address) bitmask.
+  * @note	Can print debug information (address subscribed too).
+  * @param	node	Pointer to a node.
+  * @param	bitmask	bitmask value.
+  * @retval	None
+  */
 void NC_AddSubscription(Node_Config_t *node, uint16_t bitmask) {
 
 #ifdef _DEBUG
@@ -182,6 +232,13 @@ void NC_AddSubscription(Node_Config_t *node, uint16_t bitmask) {
 
 }
 
+/**
+  * @brief	For inputed node, remove subscription (address) bitmask.
+  * @note	Can print debug information (address removed).
+  * @param	node	Pointer to a node.
+  * @param	bitmask	bitmask value.
+  * @retval	None
+  */
 void NC_RemoveSubscription(Node_Config_t *node, uint16_t bitmask) {
 
 #ifdef _DEBUG
@@ -198,6 +255,11 @@ void NC_RemoveSubscription(Node_Config_t *node, uint16_t bitmask) {
 
 }
 
+/**
+  * @brief	Convert HEX value, which is a character to decimal.
+  * @param	c	HEX value represented as a character.
+  * @retval	uint8_t decimal value.
+  */
 uint8_t NC_HexCharToInt(char c) {
 
     if (c >= '0' && c <= '9') {
@@ -211,6 +273,12 @@ uint8_t NC_HexCharToInt(char c) {
     return 0;
 }
 
+/**
+  * @brief	Return node Node_NetworkAddress_t with inputed address.
+  * @note	Returns only node information from Node_NetworkAddress_t struct.
+  * @param	address	Node address.
+  * @retval	Node_NetworkAddress_t pointer.
+  */
 Node_NetworkAddress_t *NC_GetNodeFromAddress(uint32_t address) {
 
 	for (int i = 0; i<5; i++) {
@@ -223,6 +291,13 @@ Node_NetworkAddress_t *NC_GetNodeFromAddress(uint32_t address) {
 
 }
 
+/**
+  * @brief	Return node Node_Config_t with inputed address (provisioned node).
+  * @note	Should be used with provisioned nodes, as node addressed differ before
+  * 		and after provisioning.
+  * @param	address	Node address.
+  * @retval	Node_Config_t pointer.
+  */
 Node_Config_t *NC_GetConfigNodeFromAddress(uint32_t nodeAddress) {
 
 	for (int i = 0; i<5; i++) {
@@ -235,42 +310,71 @@ Node_Config_t *NC_GetConfigNodeFromAddress(uint32_t nodeAddress) {
 
 }
 
+/**
+  * @brief	Return node Node_NetworkAddress_t from index.
+  * @param	index Node index.
+  * @retval	Node_NetworkAddress_t pointer.
+  */
 Node_NetworkAddress_t *NC_GetNodeNetworkAddress(int index) {
 
 	return &nodeAddresses[index];
 
 }
 
+/**
+  * @brief	Return pointer to Node_NetworkAddress_t array.
+  * @retval	Node_NetworkAddress_t pointer.
+  */
 Node_NetworkAddress_t *NC_GetNodeNetworkAddressArray(void) {
 
 	return nodeAddresses;
 
 }
 
+/**
+  * @brief	Return pointer to Node_Config_t array.
+  * @retval	Node_Config_t pointer.
+  */
 Node_Config_t *NC_GetNodeConfigArray(void) {
 
 	return nodeConfigs;
 
 }
 
+/**
+  * @brief	Get the number of provisioned nodes.
+  * @retval	uint32_t value.
+  */
 uint32_t NC_GetNumOfConfNodes(void) {
 
 	return numOfConfiguredNodes;
 
 }
 
+/**
+  * @brief	Increment the number of provisioned nodes.
+  * @retval	None.
+  */
 void NC_IncrementNumOfConfNodes(void) {
 
 	numOfConfiguredNodes++;
 
 }
 
+/**
+  * @brief	Decrement the number of provisioned nodes.
+  * @retval	None.
+  */
 void NC_DecrementNumOfConfNodes(void) {
 
 	numOfConfiguredNodes--;
 
 }
 
+/**
+  * @brief	Get the number of defined models in models array.
+  * @retval	int value.
+  */
 int NC_GetNumOfModels(void) {
 
 	int count = 0;
@@ -282,30 +386,55 @@ int NC_GetNumOfModels(void) {
 
 }
 
+/**
+  * @brief	Return pointer to NC_MaskedFeatures array of models.
+  * @retval	NC_MaskedFeatures pointer.
+  */
 NC_MaskedFeatures *NC_GetAllModels(void) {
 
 	return models;
 
 }
 
+/**
+  * @brief	Return pointer to NC_MaskedFeatures array of features.
+  * @retval	NC_MaskedFeatures pointer.
+  */
 NC_MaskedFeatures *NC_GetAllFeatures(void) {
 
 	return features;
 
 }
 
+/**
+  * @brief	Return pointer to NC_MaskedFeatures array of group addresses.
+  * @retval	NC_MaskedFeatures pointer.
+  */
 NC_MaskedFeatures *NC_GetAllGroupAddresses(void) {
 
 	return groupAddress;
 
 }
 
+/**
+  * @brief	Get the number of bits set to 1 in a number (population count).
+  * @note	Uses built in operation for popcount, which should execute as one
+  * 		instruction.
+  * @param	bitmask	Value to get popcount from.
+  * @retval	int value.
+  */
 int NC_GetPopCount(uint16_t bitmask) {
 
 	return __builtin_popcount(bitmask);
 
 }
 
+/**
+  * @brief	Get node features or models as NC_MaskedFeatures pointer.
+  * @param	maskedFeatures Pointer to NC_MaskedFeatures.
+  * @param	featureBitmask Bitmask from node (nodeModels or nodeFeatures)
+  * @retval	NC_MaskedFeatures pointer.
+  */
 NC_MaskedFeatures *NC_GetNodeFeature(NC_MaskedFeatures *maskedFeatures, uint16_t featureBitmask) {
 
 	NC_MaskedFeatures *tmp = NULL;
@@ -331,6 +460,12 @@ NC_MaskedFeatures *NC_GetNodeFeature(NC_MaskedFeatures *maskedFeatures, uint16_t
 
 }
 
+/**
+  * @brief	Get model name from bitmask.
+  * @note	Names of all models supported by a node whose bitmask was passed in.
+  * @param	nodeModels Bitmask for supported node models.
+  * @retval	character pointer.
+  */
 char *NC_GetNodeModelString(uint16_t nodeModels) {
 
 	for (int i = 0; models[i].name != NULL; i++) {
@@ -343,6 +478,12 @@ char *NC_GetNodeModelString(uint16_t nodeModels) {
 
 }
 
+/**
+  * @brief	Get feature name from bitmask.
+  * @note	Names of all features supported by a node whose bitmask was passed in.
+  * @param	nodeModels Bitmask for supported node features.
+  * @retval	character pointer.
+  */
 char *NC_GetNodeFeatureString(uint16_t nodeFeatures) {
 
 	for (int i = 0; features[i].name != NULL; i++) {
@@ -355,12 +496,27 @@ char *NC_GetNodeFeatureString(uint16_t nodeFeatures) {
 
 }
 
+/**
+  * @brief	Add model bitmask to node.
+  * @param	node			Node_NetworkAddress_t pointer for a node.
+  * @param	modelBitmask	Bitmask for a model.
+  * @retval	None.
+  */
 void NC_AddModel(Node_NetworkAddress_t *node, uint32_t modelBitmask) {
 
 	node->nodeModels |= modelBitmask;
 
 }
 
+/**
+  * @brief	Add missing models.
+  * @note	A node supports one model, but does not specify others.
+  * 		Some models, like Sensor model, have with it tied other models
+  * 		like, Sensor setup model. UUID only specifies one of them.
+  * 		Because of this, we have to fill in for the missing models.
+  * @param	node Node_NetworkAddress_t pointer for a node.
+  * @retval	None.
+  */
 void NC_FillMissingNodeModels(Node_NetworkAddress_t *node) {
 
 	if (node->nodeModels & NC_SENSOR_MODEL) {
@@ -376,6 +532,15 @@ void NC_FillMissingNodeModels(Node_NetworkAddress_t *node) {
 
 }
 
+/**
+  * @brief	Delete a provisioned node.
+  * @note	Deletes a node by returning all of its values to default.
+  * 		Also frees all sensor data and decrements the number
+  * 		of provisioned nodes.
+  * 		To be used in conjunction with unprovisioning process.
+  * @param	nodeAddress Address to a node.
+  * @retval	None.
+  */
 void NC_DeleteConfiguredNode(uint32_t nodeAddress) {
 
 	if (NC_GetNumOfConfNodes() > 0) {
@@ -391,6 +556,18 @@ void NC_DeleteConfiguredNode(uint32_t nodeAddress) {
 
 }
 
+/**
+  * @brief	Provision a unprovisioned node.
+  * @note	Assigns new node address, adds data from Node_NetworkAddress_t,
+  * 		adds default subscription, changes node name, fills missing models (if any),
+  * 		increments the number of provisioned nodes and clears Node_NetworkAddress_t
+  * 		array. To be used in conjunction with provisioning process.
+  * 		Fails if the number of supported models is exceeded.
+  * @param	nodeAddress Old address of a node.
+  * @param	assignedNodeAddress	New address of the node, which is now provisioned
+  * 		in the network.
+  * @retval	int index of provisioned node in Node_Config_t array.
+  */
 int NC_ProvisionNode(uint32_t nodeAddress, uint32_t assignedNodeAddress) {
 
 	Node_NetworkAddress_t *prvnNode = NC_GetNodeFromAddress(nodeAddress);
@@ -414,6 +591,12 @@ int NC_ProvisionNode(uint32_t nodeAddress, uint32_t assignedNodeAddress) {
 
 }
 
+/**
+  * @brief	Get value of a bitmask.
+  * @param	maskedFeatures Pointer to NC_MaskedFeatures.
+  * @param	bitmask	Bitmask value.
+  * @retval	uint32_t value.
+  */
 uint32_t NC_GetValueFromBitmask(NC_MaskedFeatures *maskedFeatures, uint16_t bitmask) {
 
 	for (int i = 0; maskedFeatures[i].name != NULL; i++) {
@@ -426,6 +609,12 @@ uint32_t NC_GetValueFromBitmask(NC_MaskedFeatures *maskedFeatures, uint16_t bitm
 
 }
 
+/**
+  * @brief	Change the name of a node.
+  * @param	node Pointer to Node_Config_t.
+  * @param	newNodeName	Pointer to the new node name.
+  * @retval	None.
+  */
 void NC_ChangeNodeName(Node_Config_t *node, const char *newNodeName) {
 
 	if (!node || !newNodeName) {
@@ -438,6 +627,10 @@ void NC_ChangeNodeName(Node_Config_t *node, const char *newNodeName) {
 
 }
 
+/**
+  * @brief	Set nodeAddresses (Node_NetworkAddress_t) array to default values.
+  * @retval	None.
+  */
 void NC_ClearNodeNetworkAddressArray(void) {
 
 	for (int i = 0; i<5; i++) {
@@ -446,6 +639,11 @@ void NC_ClearNodeNetworkAddressArray(void) {
 
 }
 
+/**
+  * @brief	Reset WB55 and H7.
+  * @note	Using NRST and NVIC_SystemReset.
+  * @retval	None.
+  */
 void NC_ResetDevice(void) {
 
 	HAL_GPIO_WritePin(COMM_NRST_PORT_MASTER, COMM_NRST_PIN_MASTER, GPIO_PIN_RESET);
@@ -456,12 +654,20 @@ void NC_ResetDevice(void) {
 
 }
 
+/**
+  * @brief	Return device configured flag.
+  * @retval	int value.
+  */
 int NC_IsDeviceConfigured(void) {
 
 	return deviceConfiguredFlag;
 
 }
 
+/**
+  * @brief	Set device configured flag.
+  * @retval	None.
+  */
 void NC_SetDeviceConfiguredFlag(int val) {
 
 	deviceConfiguredFlag = val;

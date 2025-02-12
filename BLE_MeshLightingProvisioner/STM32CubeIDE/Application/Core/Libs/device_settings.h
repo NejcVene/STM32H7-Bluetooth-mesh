@@ -31,14 +31,14 @@
 #define COMM_NRST_PIN_MASTER	GPIO_PIN_15
 #else
 // edit these only if slave device
-#define COMM_CS_PORT_SLAVE		GPIOA	// port and pin used for input chip select (NSS) line in SPI (slave)
-#define COMM_CS_PIN_SLAVE		GPIO_PIN_5
+#define COMM_CS_PORT_SLAVE		GPIOC	// port and pin used for input chip select (NSS) line in SPI (slave)
+#define COMM_CS_PIN_SLAVE		GPIO_PIN_2
 
-#define COMM_HS_PORT_SLAVE		GPIOC	// port and pin used for handshake pin (output)
+#define COMM_HS_PORT_SLAVE		GPIOA	// port and pin used for handshake pin (output)
 #define COMM_HS_PIN_SLAVE		GPIO_PIN_0
 
-#define COMM_ERROR_PORT_SLAVE	GPIOA
-#define COMM_ERROR_PIN_SLAVE	GPIO_PIN_15 // CHANGE!
+#define COMM_ERROR_PORT_SLAVE	GPIOC
+#define COMM_ERROR_PIN_SLAVE	GPIO_PIN_3 // CHANGE!
 #endif
 
 /*

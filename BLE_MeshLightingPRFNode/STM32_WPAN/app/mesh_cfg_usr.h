@@ -265,7 +265,7 @@ Either use 0 to disable or 1 to enable
 /* Example: 6 means Model enabled in element 2 and 3                          */
 /******************************************************************************/
 
-#define ENABLE_SENSOR_MODEL_SERVER                                           (1)
+// #define ENABLE_SENSOR_MODEL_SERVER                                           (1)
 
 // #define ENABLE_SENSOR_MODEL_CLIENT                                           (1)
 
