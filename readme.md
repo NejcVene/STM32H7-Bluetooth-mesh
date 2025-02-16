@@ -1,11 +1,11 @@
 # Home automation system based on Bluetooth Mesh and STM32
 
 ## Table of Contents
--[Overview](#Overview)
--[Features](#Features)
--[Getting started](#Getting%20started)
--[Usage](#Usage)
--[Notes](#Notes)
+- [Overview](#Overview)
+- [Features](#Features)
+- [Getting started](#Getting%20started)
+- [Usage](#Usage)
+- [Notes](#Notes)
 
 ## Overview
 This project was created as part of my BSC at University of Ljubljana, Faculty of Computer and Information Science.
@@ -78,7 +78,7 @@ STM32H750B-DK with flashed H7MeshProvisioner project and one P-NUCLEO-WB55 with 
 must be connected together in order for the UART communication to take place. This is essential,
 as it ensures user interaction with the Bluetooth Mesh network. To create the connection, follow the diagram below.
 
-![wiring diagram](connection.png)
+![wiring diagram](connection.PNG)
 
 ## Usage
 1. Power on the STM32 boards with the flashed firmware.
