@@ -35,6 +35,7 @@ the Bluetooth Mesh examples (with heavy modification). H7 project is built from 
 To build and run this project, you will need:
 - At least three STM32 development boards (**ONE** [STM32H750B-DK](https://www.st.com/en/evaluation-tools/stm32h750b-dk.html#st_all-features_sec-nav-tab), **MULTIPLE** [P-NUCLEO-WB55](https://www.st.com/en/evaluation-tools/p-nucleo-wb55.html#overview))
 - STM32CubeIDE
+
 Optional components:
 - [ScioSence APC1 sensor](https://www.sciosense.com/apc1-air-quality-combo-sensor/)
 
