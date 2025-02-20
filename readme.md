@@ -5,6 +5,7 @@
 - [Features](#Features)
 - [Getting started](#Getting%20started)
 - [Usage](#Usage)
+- [Custom cases](#Custom%20cases)
 - [Notes](#Notes)
 
 ## Overview
@@ -87,6 +88,15 @@ as it ensures user interaction with the Bluetooth Mesh network. To create the co
 3. Once provisioning is complete, you can change settings for each individual node (name, room placement).
 4. Based on what models are enabled on a node, you can test the communication by either turning a connected device on or off, dim a light or get sensor measurements.
 5. When you are done using a node, it can be removed from the network through the GUI.
+
+## Custom cases
+3D printable cases have been constructed (images provided below) in an effort, to give the project a professional look and to protect individual
+components from damage. Inside `Custom cases` folder you will see `.STL` files for STM32H750B-DK and P-NUCLEO-WB55. You can open them using
+UltiMaker Cura, for example.
+
+![H7 3D case](h7.png)
+
+![WB55 3D case](wb55.png)
 
 ## Notes
 This project is considered as done as I don't plan to create any updates in the near future. However, contributions are welcome as there are
