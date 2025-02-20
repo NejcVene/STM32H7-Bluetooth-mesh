@@ -92,8 +92,7 @@ Node_Config_t nodeConfigs[MAX_CONF_NODES];
 HT_HashTable_t *modelsData;
 static uint32_t numOfConfiguredNodes;
 static int deviceConfiguredFlag;
-char nodeModelsStr[10];
-char nodeFeaturesStr[5];
+char nodeModelFeatureStr[10];
 
 /**
   * @brief  Initialize required arrays for node configuration.
@@ -159,8 +158,6 @@ void NC_ReportFoundNodes(char *param) {
 	char *rest = param;
 	Node_NetworkAddress_t tmp;
 
-	// clear any existing found nodes
-	NC_ClearNodeNetworkAddressArray();
 	// parse input param with strtok_r
 	// which is separated by ';'
 	while ((token = strtok_r(rest, ";", &rest))) {
@@ -461,38 +458,22 @@ NC_MaskedFeatures *NC_GetNodeFeature(NC_MaskedFeatures *maskedFeatures, uint16_t
 }
 
 /**
-  * @brief	Get model name from bitmask.
-  * @note	Names of all models supported by a node whose bitmask was passed in.
-  * @param	nodeModels Bitmask for supported node models.
+  * @brief	Get model name and features from bitmask.
+  * @note	Names of all models and features supported by a node whose bitmask was passed in.
+  * @param	maskedFeatures	NC_MaskedFeatures pointer to all models or all features.
+  * @param	nodeInfo		Models or features of a node
   * @retval	character pointer.
   */
-char *NC_GetNodeModelString(uint16_t nodeModels) {
+char *NC_GetNodeModelsFeaturesString(NC_MaskedFeatures *maskedFeatures, uint16_t nodeInfo) {
 
-	for (int i = 0; models[i].name != NULL; i++) {
-		if (models[i].bitmask & nodeModels) {
-			strcat(nodeModelsStr, models[i].name);
+	memset(nodeModelFeatureStr, 0, 10);
+	for (int i = 0; maskedFeatures[i].name != NULL; i++) {
+		if (maskedFeatures[i].bitmask & nodeInfo) {
+			strcat(nodeModelFeatureStr, maskedFeatures[i].name);
 		}
 	}
 
-	return nodeModelsStr;
-
-}
-
-/**
-  * @brief	Get feature name from bitmask.
-  * @note	Names of all features supported by a node whose bitmask was passed in.
-  * @param	nodeModels Bitmask for supported node features.
-  * @retval	character pointer.
-  */
-char *NC_GetNodeFeatureString(uint16_t nodeFeatures) {
-
-	for (int i = 0; features[i].name != NULL; i++) {
-		if (features[i].bitmask & nodeFeatures) {
-			strcat(nodeFeaturesStr, features[i].name);
-		}
-	}
-
-	return nodeFeaturesStr;
+	return nodeModelFeatureStr;
 
 }
 

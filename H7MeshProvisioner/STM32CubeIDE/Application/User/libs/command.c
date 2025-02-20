@@ -574,6 +574,8 @@ CMD_CommandGet_t *CMD_NotifyScan(void *buffer, CMD_CommandGet_t *guiCmd) {
 	size_t sizes[] = {sizeof(Node_NetworkAddress_t)};
 	char *inputBuffer = (char *) buffer;
 
+	// clear any existing found nodes
+	NC_ClearNodeNetworkAddressArray();
 	// if result from WB55 is none and ordinary scan was used, then no unprov. node
 	// was found. Switch to scan range and scan again.
 	if (!strcmp(inputBuffer, "NONE") && guiCmd->commandIndex == CMD_MESH_ATEP_SCAN) {
