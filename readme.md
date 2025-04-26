@@ -107,7 +107,5 @@ multiple things that can still be implemented, for example:
 - add more sensors.
 
 Driver for ScioSence APC1 is available [here](https://github.com/NejcVene/NucleoF411RE-APC1).
-A much more in-depth explanation is available [here](#) **(only in Slovene)**.
-Video demonstration is available [here](#).
 Although relay feature is enabled by default it is not tested, therefor the behavior of a node connected to the network and a mobile app
 is unknown.
